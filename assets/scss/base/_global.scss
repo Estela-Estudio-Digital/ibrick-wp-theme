@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+body {
+  font-family: $primary-font;
+  color: $brand-secondary-color;
+  background: #E6E6E6;
+  font-size: .9rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  @include MQ(M){
+    font-size: 2rem;
+  }
+}
+
+h3 {
+  font-size: 1.2rem;
+  @include MQ(M){
+    font-size: 1.8rem;
+  }
+}
+
+a {
+  color: $brand-secondary-color;
+  transition: .2s ease-in-out all;
+  font-weight: $font-regular;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: $brand-primary-color;
+  }
+  &:focus {
+    text-decoration: none;
+  }
+}
+ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+strong, .font-bold {
+  font-weight: $font-bold;
+}
+
+label {
+  font-weight: $font-regular;
+}
+
+.content-wrapper {
+  min-height: calc(100vh - 360px);
+}
+.bk-text-justify{
+  &--center{
+    text-align: center;
+    @include MQ(L){
+      text-align: justify;
+    }
+  }
+}
+.mh-100{
+  min-height: 100vh;
+}
+label.error{
+  color: red;
+  font-size: 11px !important;
+}
+
+@each $name, $color in $palette {
+  .bg-#{$name} {
+      background-color: $color; 
+  }
+}

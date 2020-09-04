@@ -1,0 +1,53 @@
+.btn {
+    border-radius: 0 !important;
+    border: none;
+    padding: 6px 20px;
+    transition: .2s ease-in-out all;
+    border-radius: 0;
+    cursor: pointer;
+    &:focus{
+        box-shadow: none !important;
+    }
+
+    &-primary{
+        background: $brand-primary-color !important;
+        border: 0;
+        border-radius: 0 !important;
+        color: $white !important;
+        &:hover {
+            color: $dark-grey !important;
+            background: $ligth-grey !important;
+        }
+    }
+    &-secondary{
+        background: $brand-secondary-color !important;
+        //border-radius: 5px;
+        border-radius: 0 !important;
+            border: none;
+        color: $white !important;
+        &:hover {
+            color: $dark-grey !important;
+            background: $ligth-grey !important;
+        }
+        &.active{
+            background: $brand-primary-color !important;
+            border: 0;
+            border-radius: 0 !important;
+            color: $white !important;
+            &:hover {
+                color: $dark-grey !important;
+                background: $ligth-grey !important;
+            }
+        }
+    }
+    &-emphasis{
+        background: $brand-emphasis-color !important;
+        border: 0;
+        border-radius: 0 !important;
+        color: $white !important;
+        &:hover {
+            color: $dark-grey !important;
+            background: $ligth-grey !important;
+        }
+    }
+}

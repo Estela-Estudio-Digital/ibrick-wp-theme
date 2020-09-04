@@ -1,0 +1,30 @@
+$primary-font: "Lato", sans-serif;
+$display-font: "Lato", sans-serif;
+$font-regular: 400;
+$font-bold: 700;
+$font-extra-bold: 900;
+
+// Colores
+$palette: (
+    ultra-ligth-grey: #E6E6E6,
+    ligth-grey: #a1a1a1,
+    medium-grey: #697789,
+    dark-grey: #121212,
+    primary-color: #2876A2, //#0a2240,
+    secondary-color: #3c3c3c,
+    emphasis-color: #FFB221
+);
+
+$ultra-ligth-grey: map-get($palette,ultra-ligth-grey);
+$ligth-grey: map-get($palette,ligth-grey);
+$medium-grey: map-get($palette,medium-grey);
+$dark-grey: map-get($palette,dark-grey);
+$brand-primary-color: map-get($palette,primary-color);
+$brand-secondary-color: map-get($palette,secondary-color);
+$brand-emphasis-color: map-get($palette,emphasis-color);
+
+$white:white;
+$black: black;
+//Gradientes
+// $gradient-yellow-green: linear-gradient(to right, $page-yellow, $brand-primary-color);
+// $gradient-red-yellow: linear-gradient(to right, $brand-red, $page-yellow);

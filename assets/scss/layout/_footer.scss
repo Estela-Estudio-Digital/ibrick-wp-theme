@@ -1,0 +1,13 @@
+.footer-icon{
+    &-span{
+        width: 20px;
+        height: 30px;
+        display: inline-block;
+    }
+    &-img{
+		min-width: 100%;
+    }
+}
+.footer-legal-text , .footer-legal-text a{
+    color: rgb(158, 158, 158)
+}
