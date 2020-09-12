@@ -58,7 +58,11 @@ $query = new WP_Query(array(
           <div class="col-md-4 <?php echo ( $count % 2 === 0 ) ? '' : 'order-md-2'; ?>">
               <div class="project-info-wrapper">
                   <div class="project-info-logo">
-                      <img src="<?php echo $logo_proyecto['url'];?>" alt="<?php echo $logo_proyecto['alt'];?>" class="primary-logo">
+                        <?php if($logo_proyecto):?>
+                        <img src="<?php echo $logo_proyecto['url'];?>" alt="<?php echo $logo_proyecto['alt'];?>" class="primary-logo">
+                        <?php else:?>
+                        <h3 class="text-uppercase"><?php echo the_title(); ?></h3>
+                        <?php endif;?>
                   </div>
                   <div class="project-info-text my-5">
                       <?php if ($tipologia_txt):?>
@@ -81,10 +85,14 @@ $query = new WP_Query(array(
           </div>
           <div class="col-md-7 <?php echo ( $count % 2 === 0 ) ? '' : 'order-md-1'; ?>">
               <div class="shadow">
+                    <?php if(has_post_thumbnail()):?>
                   <picture>
                       <source media="(min-width: 768px)" srcset="<?php echo $desktop[0]; ?>">
                       <img src="<?php echo $mobile[0]; ?>" alt="Inmobiliaria Brick">
                   </picture>
+                    <?php else:?><h3>
+                        <img src="<?php bloginfo('template_directory');?>/assets/img/imgNoDisponible.png" alt="Inmobiliaria Brick">
+                    <?php endif;?>
               </div>
           </div>
         </div>

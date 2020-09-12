@@ -111,7 +111,7 @@ $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
 
         <div class="col-lg-4 mb-5">
             <div class="plantas-info-wrap px-md-5 d-flex flex-column align-items-center">
-                <div class="wrapper">
+                <div class="wrapper w-100">
                     <h2 class="pb-4"><span class="plantas-info-title"><?php echo the_title();?></span></h2>
                     <p class="mb-4">
                         <img src="<?php bloginfo('template_directory'); ?>/assets/img/bedIcon.png" alt="Dormitorios" style="max-width:24px"> 

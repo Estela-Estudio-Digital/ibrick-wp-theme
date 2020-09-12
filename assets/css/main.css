@@ -727,7 +727,7 @@ button:focus {
   max-width: 60px;
 }
 .project-carousel--item p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1;
 }
 
@@ -753,7 +753,7 @@ button:focus {
   height: 70%;
   width: 70%;
   position: absolute;
-  bottom: 0;
+  bottom: 5%;
   right: 0;
   background: #d6d5d5;
   z-index: -1;
@@ -827,5 +827,85 @@ button:focus {
 }
 .home-hero-container img {
   width: auto !important;
+}
+
+.color-primary {
+  color: #2876A2;
+}
+
+.rentas-sub-title {
+  font-size: 1.2rem;
+}
+
+.after-number-1 {
+  position: relative;
+}
+.after-number-1::after {
+  content: "1";
+  display: block;
+  width: 50px;
+  height: 50px;
+  color: white;
+  background: #2876A2;
+  position: absolute;
+  padding-left: 15px;
+  font-size: 2rem;
+  font-weight: bold;
+  right: -10px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.after-number-2 {
+  position: relative;
+}
+.after-number-2::after {
+  content: "2";
+  display: block;
+  width: 50px;
+  height: 50px;
+  color: white;
+  background: #2876A2;
+  position: absolute;
+  padding-left: 15px;
+  font-size: 2rem;
+  font-weight: bold;
+  right: -10px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.after-number-3 {
+  position: relative;
+}
+.after-number-3::after {
+  content: "3";
+  display: block;
+  width: 50px;
+  height: 50px;
+  color: white;
+  background: #2876A2;
+  position: absolute;
+  padding-left: 15px;
+  font-size: 2rem;
+  font-weight: bold;
+  right: -10px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.after-number-4 {
+  position: relative;
+}
+.after-number-4::after {
+  content: "4";
+  display: block;
+  width: 50px;
+  height: 50px;
+  color: white;
+  background: #2876A2;
+  position: absolute;
+  padding-left: 15px;
+  font-size: 2rem;
+  font-weight: bold;
+  right: -10px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 /*# sourceMappingURL=main.css.map */

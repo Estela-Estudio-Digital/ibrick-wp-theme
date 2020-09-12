@@ -21,6 +21,7 @@
     $precio_desde = $grupo_de_datos['precio_desde'];
     $tipologia_txt = $grupo_de_datos['tipologia_txt'];
     $tag_del_ptroyecto = $grupo_de_datos['tag_del_ptroyecto'];
+    $descripcion_proyecto = $grupo_de_datos['descripcion_proyecto'];
     
     // CUSTOM FLIELDS Imágenes Generales
     $slider_proyecto = get_field('slider_proyecto');
@@ -47,9 +48,16 @@
                       <?php if ($precio_desde):?>
                       <p><span>Desde</span> <span>UF <?php echo $precio_desde;?></span></p>
                       <?php endif; ?>
+                        <?php if (is_front_page() && $descripcion_proyecto): ?>
+                          <div class="descripcion_proyecto">
+                          <small>
+                            <?php echo $descripcion_proyecto;?>
+                          </small>
+                          </div>
+                        <?php endif; ?>
                   </div>
                   <?php if ($tiene_contenidos === 'si') :?>
-                    <a href="<?php echo bloginfo('url');?>/proyectos/tarapaca" class="btn btn-secondary shadow"> Ver proyecto</a>
+                    <a href="<?php echo the_permalink();?>" class="btn btn-secondary shadow"> Ver proyecto</a>
                   <?php endif; ?>
                   <?php if ($tag_del_ptroyecto['label'] != 'Normal') :?>
                       <span class="label-vendido shadow bg-primary-color text-white px-3 py-1"><?php echo $tag_del_ptroyecto['label']; ?></span>

@@ -4,47 +4,68 @@ Template Name: homepage
 get_template_part('includes/header'); 
 bk_main_before();
 ?>
-<section class="primary-hero">
-    <div class="pm3-carousel owl-carousel owl-theme">
-        <div class="item home-hero-container d-flex align-items-center" style="background:url('<?php bloginfo('template_directory');?>/assets/img/homeTarapaca.jpg')">
+
+<?php 
+    $ids_2 = get_field('slider_principal');
+    
+    $query = new WP_Query(array(
+        'post_type'      	=> 'proyectos',
+        'posts_per_page'	=> 4,
+        'post_status'		=> 'publish',
+        'post__in'			=> $ids_2,
+    ));
+    $count = 1;
+    if ( $query->have_posts() ) : ?>
+    <section class="primary-hero">
+        <div class="pm3-carousel owl-carousel owl-theme">
+        <?php while ( $query->have_posts() ) : $query->the_post();
+        $count++;
+
+        $tiene_contenidos = get_field('tiene_contenidos');
+
+        // CUSTOM FLIELDS Descripciones
+        $grupo_de_datos = get_field('grupo_de_datos');
+        $ubicacion = $grupo_de_datos['ubicacion'];
+        $precio_desde = $grupo_de_datos['precio_desde'];
+        $tipologia_select = $grupo_de_datos['tipologia_select'];
+        $titulo_sliders = $grupo_de_datos['titulo_sliders'];
+        $tag_del_ptroyecto = $grupo_de_datos['tag_del_ptroyecto'];
+        
+        // CUSTOM FLIELDS Imágenes Generales
+        $slider_proyecto = get_field('slider_proyecto');
+        $logo_proyecto = get_field('logo_proyecto_blanco');
+
+        // Setup this post for WP functions (variable must be named $post).
+        setup_postdata($post); 
+        $desktop = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+        $mobile = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
+
+        
+    ?>
+
+    
+        <div class="item home-hero-container d-flex align-items-center" style="background-position:bottom !important;background:url('<?php echo (sizeof($slider_proyecto) > 1) ? $slider_proyecto[1]["slider_proyecto_desktop"]["url"] : $slider_proyecto[0]["slider_proyecto_desktop"]["url"];?>')">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
-                        <img src="<?php bloginfo('template_directory');?>/assets/img/logoTarapacaBlanco.png" alt="Tarapacá">
-                        <h3 class="text-white text-uppercase font-weight-bold shadow-sm">Invierte en el centro de santiago, <br>A pasos del metro U de Chile</h3>
+                    <div class="col-12" style="text-shadow: 1px 1px 2px black;letter-spacing:1.2px">
+                        <img src="<?php echo $logo_proyecto['url'];?>" alt="<?php echo $logo_proyecto['alt'];?>" class="mb-5">
+                        <?php if ($tipologia_select && $tipologia_select != 'seleccionar') :?>
+                        <h2 class="text-white text-uppercase font-weight-bold"><?php echo $tipologia_select['label']; ?></h2>
+                        <?php endif;?>
+                        <h4 class="text-white text-uppercase font-weight-bold mb-5"><?php echo $titulo_sliders; ?></h4>
+                        <?php if ($tiene_contenidos === 'si') :?>
+                        <a href="<?php echo the_permalink();?>" class="btn btn-primary shadow"> Ver proyecto</a>
+                        <?php endif;?>
                     </div>
                 </div>
             </div>
-        </div> 
-        <div class="item d-md-flex justify-content-center align-items-center">
-            <picture class="project-home-hero">
-                <source media="(max-width: 768px)" srcset="<?php bloginfo('template_directory');?>/assets/img/homeTarapacaMobile.png">
-                <img class="w-100" src="<?php bloginfo('template_directory');?>/assets/img/homeTarapaca.jpg" alt="Centro Andino">
-            </picture>
-            <div class="d-md-none bg-primary-color px-2 py-3">
-                <h3 class="text-white text-center"><b>Un nuevo polo de desarrollo comercial</b></h3>
-            </div>
         </div>
-        <div class="item d-md-flex justify-content-center align-items-center">
-            <picture class="project-home-hero">
-                <source media="(max-width: 768px)" srcset="<?php bloginfo('template_directory');?>/assets/img/homeCentroMobile.png">
-                <img class="w-100" src="<?php bloginfo('template_directory');?>/assets/img/homeCentro.jpg" alt="Centro Andino">
-            </picture>
-            <div class="d-md-none bg-primary-color px-2 py-3">
-                <h3 class="text-white text-center"><b>Un nuevo polo de desarrollo comercial</b></h3>
-            </div>
-        </div>
-        <div class="item d-md-flex justify-content-center align-items-center">
-            <picture class="project-home-hero">
-                <source media="(max-width: 768px)" srcset="<?php bloginfo('template_directory');?>/assets/img/homeCarmenMobile.png">
-                <img class="w-100" src="<?php bloginfo('template_directory');?>/assets/img/homeCarmen.jpg" alt="Centro Andino">
-            </picture>
-            <div class="d-md-none bg-primary-color px-2 py-3">
-                <h3 class="text-white text-center"><b>Vanguardista, 52 departamentos</b></h3>
-            </div>
-        </div>
+
+
+        <?php endwhile; wp_reset_postdata(); ?>
     </div>
 </section>
+<?php endif;?>
 
 <?php get_template_part('includes/templates/proyectos_destacados'); ?>
 

@@ -80,9 +80,9 @@ if(is_singular('proyectos')):
           </span>
         </button>
         <a href="<?php bloginfo('url');?>">
-          <h1>
+          
             <img src="<?php bloginfo('template_directory');?>/assets/img/primary-logo.svg" alt="Inmobiliaria Brick" class="primary-logo">
-          </h1>
+         
         </a>
       </div>
       <ul class="text-uppercase d-none d-md-flex align-items-center m-0 w-100 justify-content-end text-center text-md-left main-menu">

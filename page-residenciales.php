@@ -58,13 +58,12 @@ $query = new WP_Query(array(
           <div class="col-md-4 <?php echo ( $count % 2 === 0 ) ? '' : 'order-md-2'; ?>">
               <div class="project-info-wrapper">
                   <div class="project-info-logo">
-                      <?php if ($logo_proyecto) : ?>
-                      <img src="<?php echo $logo_proyecto['url'];?>" alt="<?php echo $logo_proyecto['alt'];?>" class="primary-logo">
-                      <?php else: 
-                      echo the_title();
-                      ?>
-                      <?php endif; ?>
-                    </div>
+                        <?php if($logo_proyecto):?>
+                        <img src="<?php echo $logo_proyecto['url'];?>" alt="<?php echo $logo_proyecto['alt'];?>" class="primary-logo">
+                        <?php else:?>
+                        <h4 class="text-uppercase"><?php echo the_title(); ?></h4>
+                        <?php endif;?>
+                  </div>
                   <div class="project-info-text my-5">
                       <?php if ($tipologia_txt):?>
                       <p><b><?php echo $tipologia_txt;?></b></p>
@@ -77,7 +76,7 @@ $query = new WP_Query(array(
                       <?php endif; ?>
                   </div>
                   <?php if ($tiene_contenidos === 'si') :?>
-                    <a href="<?php echo bloginfo('url');?>/proyectos/tarapaca" class="btn btn-secondary shadow"> Ver proyecto</a>
+                    <a href="<?php echo the_permalink();?>" class="btn btn-secondary shadow"> Ver proyecto</a>
                   <?php endif; ?>
                   <?php if ($tag_del_ptroyecto['label'] != 'Normal') :?>
                       <span class="label-vendido shadow bg-primary-color text-white px-3 py-1"><?php echo $tag_del_ptroyecto['label']; ?></span>
@@ -86,10 +85,14 @@ $query = new WP_Query(array(
           </div>
           <div class="col-md-7 <?php echo ( $count % 2 === 0 ) ? '' : 'order-md-1'; ?>">
               <div class="shadow">
+                    <?php if(has_post_thumbnail()):?>
                   <picture>
                       <source media="(min-width: 768px)" srcset="<?php echo $desktop[0]; ?>">
                       <img src="<?php echo $mobile[0]; ?>" alt="Inmobiliaria Brick">
                   </picture>
+                    <?php else:?><h3>
+                        <img src="<?php bloginfo('template_directory');?>/assets/img/imgNoDisponible.png" alt="Inmobiliaria Brick">
+                    <?php endif;?>
               </div>
           </div>
         </div>

@@ -340,7 +340,7 @@
             max-width: 60px;
         }
         p{
-            font-size: 12px;
+            font-size: 14px;
             line-height: 1;
         }
     }
@@ -368,7 +368,7 @@
         height: 70%;
         width: 70%;
         position: absolute;
-        bottom: 0;
+        bottom: 5%;
         right: 0;
         background: #d6d5d5;
         z-index: -1;
@@ -438,3 +438,33 @@
         width: auto !important;
     }
 }
+
+.color-primary{
+    color: $brand-primary-color;
+}
+
+.rentas-sub-title{
+    font-size: 1.2rem;
+}
+
+$items: 1,2,3,4;
+
+@each $item in $items{
+    .after-number-#{$item} {
+        position: relative;
+        &::after{
+            content:"#{$item}";
+            display: block;
+            width: 50px;
+            height: 50px;
+            color: $white;
+            background:$brand-primary-color;
+            position: absolute;
+            padding-left: 15px;
+            font-size: 2rem;
+            font-weight: bold;
+            right: -10px;
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+        }
+    }
+  }

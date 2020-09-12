@@ -8,16 +8,16 @@ $tiene_contenidos = get_field('tiene_contenidos');
 $grupo_de_datos = get_field('grupo_de_datos');
 $ubicacion = $grupo_de_datos['ubicacion'];
 $precio_desde = $grupo_de_datos['precio_desde'];
-$tipologia_txt = $grupo_de_datos['tipologia_txt'];
+$tipologia_select = $grupo_de_datos['tipologia_select'];
 $legal = $grupo_de_datos['legal'];
 $whatsapp = $grupo_de_datos['whatsapp'];
 $tag_del_ptroyecto = $grupo_de_datos['tag_del_ptroyecto'];
 $caracteristicas_proyecto = $grupo_de_datos['caracteristicas_proyecto'];
+$terminaciones_repeater = $grupo_de_datos['terminaciones_repeater'];
 
 // CUSTOM FLIELDS Imágenes Generales
 $slider_proyecto = get_field('slider_proyecto');
 $logo_proyecto = get_field('logo_proyecto');
-$tipologia_wincha = get_field('tipologia_wincha');
 
 // CUSTOM FLIELDS Arquitectura e Interiorismo
 $arquitectura_interiorismo = get_field('arquitectura_interiorismo');
@@ -53,7 +53,7 @@ if (!empty($terms)) {
         </a>
     </li>
     <li class="pr-3">
-        <a href="#" class="btn btn-emphasis btn-sm bk--btn__primary shadow py-2">
+        <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ibrick/30min'});return false;" class="btn btn-emphasis btn-sm bk--btn__primary shadow py-2">
             <i class="far fa-calendar-alt"></i>
             Agendar Visita
         </a>
@@ -97,10 +97,10 @@ if (!empty($terms)) {
                     </div>
                 </li>
                 <?php endif; ?>
-                <?php if ($tipologia_wincha):?>
+                <?php if ($tipologia_select && $tipologia_select != 'seleccionar') :?>
                 <li class="projec-wrapper-content-tipo d-flex align-items-center justify-content-center">
                     <div>
-                        <img src="<?php echo $tipologia_wincha['url']; ?>" alt="<?php echo $tipologia_wincha['alt']; ?>">
+                        <img src="<?php echo bloginfo('template_directory').'/assets/img/'. $tipologia_select['value'] .'.svg'; ?>" alt="<?php echo $tipologia_select['label']; ?>">
                     </div>
                 </li>
                 <?php endif; ?>
@@ -108,7 +108,7 @@ if (!empty($terms)) {
                 <li class="projec-wrapper-content-precio d-flex align-items-center justify-content-center">
                     <div>
                         <p class="m-0">Precio desde</p>
-                        <h4><b><?php echo $precio_desde;?></b></h4>
+                        <h4><b>UF <?php echo $precio_desde;?></b></h4>
                     </div>
                 </li>
                 <?php endif; ?>
@@ -122,7 +122,7 @@ if (!empty($terms)) {
                         <div class="pt-3">
                             <img src="<?php bloginfo('template_directory');?>/assets/img/<?php echo $caracteristicas_proyect['value']; ?>.svg" alt="<?php echo $caracteristicas_proyect['label']; ?>">
                         </div>
-                        <p class="m-0 py-2"><?php echo $caracteristicas_proyect['label']; ?></p>
+                        <p class="m-0 pb-2"><?php echo $caracteristicas_proyect['label']; ?></p>
                     </li>
                 <?php endforeach; ?>
             </ul>
@@ -140,6 +140,16 @@ if (!empty($terms)) {
             <p class="pr-5" >
                 <?php echo $arquitectura_interiorismo; ?>
             </p>
+            <?php if ($terminaciones_repeater) : ?>
+            <p class="pr-5" >
+                <b>Los espacios y terminaciones que hacen la diferencia:</b>
+            </p>
+            <ul class="pl-4" style="list-style-type: disc !important;">
+                <?php foreach ($terminaciones_repeater as $clave=>$terminaciones_item):?>
+                <li><?php echo $terminaciones_item['terminaciones_item'];?></li>
+                <?php endforeach; ?>
+            </ul>
+            <?php endif; ?>
         </div>
         <?php if (have_rows('slider_arquitectura')) : ?>
         <div class="col-md-6 d-none d-md-block">
@@ -251,63 +261,64 @@ if ($query->have_posts()) : ?>
 
         <div
             class="col-sm-6 col-lg-4 planta <?php echo $value; ?> <?php echo ($estado == 'Normal') ? "active" : ""; if ( wp_is_mobile() ){echo ($estado == 'Normal') ? " " : "d-none";} ?>">
-            <div class="planta-item d-block text-center shadow ">
+            <a href="<?php echo the_permalink(); ?>">
+                <div class="planta-item d-block text-center shadow ">
 
-                <h3 class="d-none p-3 text-uppercase mb-2 <?php echo ($estado == 'Normal') ? "bg-secondary text-white " : "bg-grey" ?>">
-                    <?php echo the_title(); ?>
-                </h3>
+                    <h3 class="d-none p-3 text-uppercase mb-2 <?php echo ($estado == 'Normal') ? "bg-secondary text-white " : "bg-grey" ?>">
+                        <?php echo the_title(); ?>
+                    </h3>
 
-                <div class="bk-info-wrap  mb-5 card rounded-0">
-                    <p class="pl-5 pt-4 m-0 text-left" style="font-size:1rem;">
-                        <b><?php echo esc_html($label); ?> +</b>
-                        <b><?php echo $cantidad_de_banos; echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
-                        </b>
-                    </p>
-                    
-                    <?php if ($fotografia_planta) : ?>
-                    <img class="m-auto pb-4 fotografia-planta <?php echo ($estado == 'Normal') ? "" : "img-overlay" ?>"
-                        src="<?php echo $fotografia_planta[0]['fotografia_planta']['sizes']['medium']; ?>"
-                        alt="<?php echo $row['fotografia_planta']['name']; ?>">
-                    <?php endif; ?>
+                    <div class="bk-info-wrap  mb-5 card rounded-0">
+                        <p class="pl-5 pt-4 m-0 text-left" style="font-size:1rem;">
+                            <b><?php echo esc_html($label); ?> +</b>
+                            <b><?php echo $cantidad_de_banos; echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
+                            </b>
+                        </p>
+                        
+                        <?php if ($fotografia_planta) : ?>
+                        <img class="m-auto pb-4 fotografia-planta <?php echo ($estado == 'Normal') ? "" : "img-overlay" ?>"
+                            src="<?php echo $fotografia_planta[0]['fotografia_planta']['sizes']['medium']; ?>"
+                            alt="<?php echo $row['fotografia_planta']['name']; ?>">
+                        <?php endif; ?>
 
-                    <ul class="d-flex py-3 m-0 border-right-0 border-left-0" style="border-bottom:1px solid #D3D3D3;">
-                        <li class="d-none">
-                            <img src="<?php bloginfo('template_directory');?>/assets/img/bedIcon.png" alt="Dormitorios"
-                                style="max-width:26px">
-                            <small><?php echo esc_html($label); ?></small>
-                        </li>
-                        <li class="d-none">
-                            <img src="<?php bloginfo('template_directory');?>/assets/img/batIcon.png" alt="Baños"
-                                style="max-width:24px">
-                            <small><?php echo $cantidad_de_banos;
-                                        echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
-                            </small>
-                        </li>
-                        <li class="pl-5">
-                            <p style="font-size:1rem"><img
-                                    src="<?php bloginfo('template_directory');?>/assets/img/areaIcon.png" alt="Area"
-                                    style="max-width:22px">
-                                <span class="pl-2">Sup Total</span> <b><?php echo $superficie_total; ?>m<sup>2</sup></b>
-                            </p>
-                        </li>
-                    </ul>
+                        <ul class="d-flex py-3 m-0 border-right-0 border-left-0" style="border-bottom:1px solid #D3D3D3;">
+                            <li class="d-none">
+                                <img src="<?php bloginfo('template_directory');?>/assets/img/bedIcon.png" alt="Dormitorios"
+                                    style="max-width:26px">
+                                <small><?php echo esc_html($label); ?></small>
+                            </li>
+                            <li class="d-none">
+                                <img src="<?php bloginfo('template_directory');?>/assets/img/batIcon.png" alt="Baños"
+                                    style="max-width:24px">
+                                <small><?php echo $cantidad_de_banos;
+                                            echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
+                                </small>
+                            </li>
+                            <li class="pl-5">
+                                <p style="font-size:1rem"><img
+                                        src="<?php bloginfo('template_directory');?>/assets/img/areaIcon.png" alt="Area"
+                                        style="max-width:22px">
+                                    <span class="pl-2">Sup. Total</span> <b><?php echo $superficie_total; ?>m<sup>2</sup></b>
+                                </p>
+                            </li>
+                        </ul>
 
-                    <ul class="d-flex justify-content-between align-items-center py-3 m-0" style="background:#F6F8FA">
-                        <li class="pl-5 d-none">
-                            Desde <b class="">UF 2300</b>
-                        </li>
-                        <li class="ml-auto">
-                            <?php if ($estado == 'Normal') : ?>
-                            <a class="btn btn-primary px-4 mr-3 text-uppercase" href="<?php echo the_permalink(); ?>">cotizar</a>
-                            <?php else : ?>
-                            <p class="bg-grey ">AGOTADO</p>
-                            <?php endif; ?>
-                        </li>
-                    </ul>
+                        <ul class="d-flex justify-content-between align-items-center py-3 m-0" style="background:#F6F8FA">
+                            <li class="pl-5 d-none">
+                                Desde <b class="">UF 2300</b>
+                            </li>
+                            <li class="ml-auto">
+                                <?php if ($estado == 'Normal') : ?>
+                                <div class="btn btn-primary px-4 mr-3 text-uppercase">cotizar</div>
+                                <?php else : ?>
+                                <p class="bg-grey ">AGOTADO</p>
+                                <?php endif; ?>
+                            </li>
+                        </ul>
 
+                    </div>
                 </div>
-            </div>
-
+            </a>
         </div>
 
         <?php endwhile;
@@ -350,7 +361,7 @@ if ($query->have_posts()) : ?>
 <?php if (have_rows('repeater_galerias')) : 
     $counter2 = 1; 
 ?>
-    <div class="tab-content" id="galleryTabContent">
+<div class="tab-content" id="galleryTabContent">
     <?php while (have_rows('repeater_galerias')) : the_row(); ?>
         <?php if (have_rows('slider_galerias')) : ?>
             <div class="tab-pane fade" id="edificio-<?php echo $counter2;?>" role="tabpanel" aria-labelledby="edificio-<?php echo $counter2;?>-tab" style="position:relative;">
@@ -391,9 +402,14 @@ if ($query->have_posts()) : ?>
                             <?php while (have_rows('slider_master_plan')) : the_row();
                                 // vars
                                 $slider_master_plan_desktop = get_sub_field('slider_master_plan_desktop');
+                                $slider_master_plan_detalle = get_sub_field('slider_master_plan_detalle');
+                                $slider_master_plan_titulo = get_sub_field('slider_master_plan_titulo');
                             ?>
                             <div class="item p-5" id="masterPlanContent<?php echo $counter3; ?>">
-                                <img src="<?php echo $slider_master_plan_desktop['url'];?>" alt="<?php echo $slider_master_plan_desktop['alt'];?>" class="w-100">
+                                <h5 class="ml-auto mb-4 color-primary text-uppercase font-weight-bold"><?php echo $slider_master_plan_titulo;?></h5>
+                                <a href="<?php echo esc_url($slider_master_plan_detalle['url']); ?>" data-fancybox="gallery">
+                                    <img src="<?php echo $slider_master_plan_desktop['url'];?>" alt="<?php echo $slider_master_plan_desktop['alt'];?>" class="w-100">
+                                </a>
                             </div>
                             <?php $counter3++; endwhile; ?>
                         </div>

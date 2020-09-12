@@ -47,7 +47,9 @@ if ( ! function_exists('bk_enqueues') ) {
 		wp_register_style('owl-carousel-theme-css', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css');
 		wp_enqueue_style('owl-carousel-theme-css');
 
-		
+		wp_register_style('calenly-css', 'https://assets.calendly.com/assets/external/widget.css');
+		wp_enqueue_style('calenly-css');
+
 		wp_register_style('animete-css', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css');
 		wp_enqueue_style('animete-css');
 		
@@ -80,6 +82,11 @@ if ( ! function_exists('bk_enqueues') ) {
 
 		wp_register_script('sbjs', get_template_directory_uri() . '/assets/js/sourcebuster.min.js', false, null, true);
 		wp_enqueue_script('sbjs');
+
+		if (is_singular('proyectos')) {
+			wp_register_script('calenly-js', 'https://assets.calendly.com/assets/external/widget.js', false, null, true);
+			wp_enqueue_script('calenly-js');
+		}
 
 		wp_register_script('main', get_template_directory_uri() . '/assets/js/main.js', false, null, true);
 
