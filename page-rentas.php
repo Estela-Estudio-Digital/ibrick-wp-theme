@@ -11,7 +11,7 @@ Template Name: Rentas
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <img src="<?php bloginfo('template_directory');?>/assets/img/rentas1Brick.jpg" alt="Rentas Brick">
+                <img src="<?php bloginfo('template_directory');?>/assets/img/rentas1Brick.jpg" alt="Rentas Brick" class="w-100">
                 <h3 class="text-uppercase section-title rentas-hero-title font-weight-bold">
                     <span class="primary-title">Gestionamos el arriendo</span><br>
                     <span class="secondary-title">de tu propiedad</span>
@@ -21,13 +21,18 @@ Template Name: Rentas
     </div> 
 </section>
 <div class="container">
-    <div class="row border-bottom">
-        <div class="col-12 mt-5">
+    <div class="row align-items-end">
+        <div class="col-md-6 mt-5">
             <h3 class="text-uppercase mt-5">
                 <span class="secondary-title primary-color font-weight-bold">¿POR QUÉ ES BUEN NEGOCIO </span><br>
                 <span class="secondary-title color-primary font-weight-bold" >INVERTIR EN PROPIEDADES?</span>
             </h3>
         </div>
+        <div class="col-md-6">
+            <img src="<?php bloginfo('template_directory');?>/assets/img/logoBrickRentas.png" alt="Rentas Brick" style="width:200px">
+        </div>
+    </div>
+    <div class="row border-bottom">
         <div class="col-lg-6">
             <ul class="pr-md-5 my-5">
                 <li class="mb-4">
@@ -130,43 +135,6 @@ Template Name: Rentas
         </div>
     </div>
 </div>
-<section class="container mt-5 pt-5">
-    <div class="row">
-<?php 
-$taxonomy = 'tipo';
-$terms = get_terms($taxonomy);
-
-foreach ($terms as $term):
-$query = new WP_Query(array(
-    'post_type'      	=> 'proyectos',
-    'posts_per_page'	=> 4,
-    'post_status'		=> 'publish',
-    'orderby'           => 'title',
-    'order'             => 'ASC',
-    'tax_query'         => array (
-        array(
-            'taxonomy'      => $taxonomy,
-            'field'          => 'slug',
-            'terms'         => $term->slug
-        ),
-    ),
-  ));
-?>
-        <div class="col-md-4">
-            <h2 class="text-uppercase section-title">
-                <span class="primary-title"><?php echo $term->name;?></span>
-            </h2>
-            <?php   if ( $query->have_posts() ) : ?>
-            <ul>
-            <?php while ( $query->have_posts() ) : $query->the_post();?>
-                <li><a href="<?php echo the_permalink();?>"><?php echo the_title();?></a></li>
-            <?php endwhile; wp_reset_postdata(); ?>
-            </ul>
-            <?php endif;?>
-        </div>
-  <?php endforeach;?>
-    </div>
-</section>
 <?php 
 $taxonomy = 'tipo';
 $query = new WP_Query(array(
@@ -240,10 +208,10 @@ $query = new WP_Query(array(
                     <?php if(has_post_thumbnail()):?>
                   <picture>
                       <source media="(min-width: 768px)" srcset="<?php echo $desktop[0]; ?>">
-                      <img src="<?php echo $mobile[0]; ?>" alt="Inmobiliaria Brick">
+                      <img src="<?php echo $mobile[0]; ?>" alt="Inmobiliaria Brick" class="w-100">
                   </picture>
                     <?php else:?><h3>
-                        <img src="<?php bloginfo('template_directory');?>/assets/img/imgNoDisponible.png" alt="Inmobiliaria Brick">
+                        <img src="<?php bloginfo('template_directory');?>/assets/img/imgNoDisponible.png" alt="Inmobiliaria Brick" class="w-100">
                     <?php endif;?>
               </div>
           </div>

@@ -10,7 +10,7 @@ bk_main_before();
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <img src="<?php echo the_post_thumbnail_url( );?>" alt="Somos Brick">
+                    <img src="<?php echo the_post_thumbnail_url( );?>" alt="Somos Brick" class="w-100">
                 </div>
             </div>
     </div> 
@@ -55,7 +55,31 @@ bk_main_before();
         </div>
     </div>
 </div>
-
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-4">
+            <h2 class="text-uppercase section-title mb-3">
+                <span class="primary-title">Proyectos</span><br>
+                <span class="secondary-title">RESIDENCIALES</span>
+            </h2>
+            <a href="<?php echo site_url('residencial');?>" class="btn btn-primary shadow"> Ver proyectos</a>
+        </div>
+        <div class="col-md-4">
+            <h2 class="text-uppercase section-title mb-3">
+                <span class="primary-title">Proyectos</span><br>
+                <span class="secondary-title">COMERCIALES</span>
+            </h2>
+            <a href="<?php echo site_url('comercial');?>" class="btn btn-primary shadow"> Ver proyectos</a>
+        </div>
+        <div class="col-md-4">
+            <h2 class="text-uppercase section-title mb-3">
+                <span class="primary-title">Proyectos</span><br>
+                <span class="secondary-title">Rentas</span>
+            </h2>
+            <a href="<?php echo site_url('rentas');?>" class="btn btn-primary shadow"> Ver proyectos</a>
+        </div>
+    </div>
+</div>
 <section class="section shadow">
     <div class="long-content">
         <video id="myVideo" loop autoplay muted class="active muted" style="max-width:100% !important;">

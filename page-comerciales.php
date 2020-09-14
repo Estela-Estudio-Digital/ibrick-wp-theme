@@ -59,7 +59,7 @@ $query = new WP_Query(array(
               <div class="project-info-wrapper">
                   <div class="project-info-logo">
                         <?php if($logo_proyecto):?>
-                        <img src="<?php echo $logo_proyecto['url'];?>" alt="<?php echo $logo_proyecto['alt'];?>" class="primary-logo">
+                        <img src="<?php echo $logo_proyecto['url'];?>" alt="<?php echo $logo_proyecto['alt'];?>" >
                         <?php else:?>
                         <h3 class="text-uppercase"><?php echo the_title(); ?></h3>
                         <?php endif;?>
@@ -76,7 +76,7 @@ $query = new WP_Query(array(
                       <?php endif; ?>
                   </div>
                   <?php if ($tiene_contenidos === 'si') :?>
-                    <a href="<?php echo bloginfo('url');?>/proyectos/tarapaca" class="btn btn-secondary shadow"> Ver proyecto</a>
+                    <a href="<?php echo the_permalink();?>" class="btn btn-secondary shadow"> Ver proyecto</a>
                   <?php endif; ?>
                   <?php if ($tag_del_ptroyecto['label'] != 'Normal') :?>
                       <span class="label-vendido shadow bg-primary-color text-white px-3 py-1"><?php echo $tag_del_ptroyecto['label']; ?></span>
@@ -88,10 +88,10 @@ $query = new WP_Query(array(
                     <?php if(has_post_thumbnail()):?>
                   <picture>
                       <source media="(min-width: 768px)" srcset="<?php echo $desktop[0]; ?>">
-                      <img src="<?php echo $mobile[0]; ?>" alt="Inmobiliaria Brick">
+                      <img src="<?php echo $mobile[0]; ?>" alt="Inmobiliaria Brick" class="w-100">
                   </picture>
                     <?php else:?><h3>
-                        <img src="<?php bloginfo('template_directory');?>/assets/img/imgNoDisponible.png" alt="Inmobiliaria Brick">
+                        <img src="<?php bloginfo('template_directory');?>/assets/img/imgNoDisponible.png" alt="Inmobiliaria Brick" class="w-100">
                     <?php endif;?>
               </div>
           </div>

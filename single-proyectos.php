@@ -86,7 +86,7 @@ if (!empty($terms)) {
             <ul class="projec-wrapper-content d-flex justify-content-around align-items-stretch m-0 mb-2 pt-3">
                 <?php if ($logo_proyecto):?>
                 <li class="projec-wrapper-content-img d-flex align-items-center justify-content-center ml-4">
-                    <img src="<?php echo $logo_proyecto['url'];?>" alt="<?php echo $logo_proyecto['alt'];?>" class="pr-4" style="max-height: 50px;">
+                    <img src="<?php echo $logo_proyecto['url'];?>" alt="<?php echo $logo_proyecto['alt'];?>" class="pr-4 w-100" style="max-height: 50px;">
                 </li>
                 <?php endif; ?>
                 <?php if ($ubicacion):?>

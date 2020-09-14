@@ -451,7 +451,7 @@ button:focus {
 
 .label-vendido {
   position: absolute;
-  top: 0;
+  top: -55px;
   right: 10px;
 }
 

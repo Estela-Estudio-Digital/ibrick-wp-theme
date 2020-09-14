@@ -66,10 +66,14 @@
           </div>
           <div class="col-md-7 <?php echo ( $count % 2 === 0 ) ? '' : 'order-md-1'; ?>">
               <div class="shadow">
+                <?php if(has_post_thumbnail()):?>
                   <picture>
                       <source media="(min-width: 768px)" srcset="<?php echo $desktop[0]; ?>">
-                      <img src="<?php echo $mobile[0]; ?>" alt="Inmobiliaria Brick">
+                      <img src="<?php echo $mobile[0]; ?>" alt="Inmobiliaria Brick" class="w-100">
                   </picture>
+                    <?php else:?><h3>
+                        <img src="<?php bloginfo('template_directory');?>/assets/img/imgNoDisponible.png" alt="Inmobiliaria Brick" class="w-100">
+                    <?php endif;?>
               </div>
           </div>
         </div>

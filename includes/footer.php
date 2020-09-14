@@ -29,17 +29,13 @@
             <li>
               <ul class="d-flex justify-content-center">
                 <li class="mr-2">
-                  <a href="https://www.instagram.com/inmobiliariabrick/" target="_blank">
-                    <span class="footer-icon-span">
-                      <img src="<?php bloginfo('template_directory');?>/assets/img/instagram-brands.svg" alt="Instagram" class="footer-icon-img">
-                    </span>
+                  <a href="https://www.instagram.com/inmobiliariabrick/" target="_blank" class=" text-white">
+                    <i class="fab fa-instagram"></i>
                   </a>
                 </li>
                 <li class="mr-2">
-                  <a href="https://www.facebook.com/InmobBrick" target="_blank">
-                    <span class="footer-icon-span">
-                      <img src="<?php bloginfo('template_directory');?>/assets/img/facebook-brands.svg" alt="Facebook" class="footer-icon-img">
-                    </span>
+                  <a href="https://www.facebook.com/InmobBrick" target="_blank" class=" text-white">
+                    <i class="fab fa-facebook-square"></i>
                   </a>
                 </li>
                 <li>
