@@ -345,8 +345,7 @@ if ($query->have_posts()) : ?>
                     $tipo_de_galeria = get_sub_field('tipo_de_galeria');
                     ?>
                         <li class="tab-item mx-md-2">
-                            <a class="btn btn-sm btn-secondary" id="edificio-<?php echo $counter; ?>-tab" data-toggle="tab"
-                                href="#edificio-<?php echo $counter; ?>" role="tab" aria-controls="edificio-<?php echo $counter; ?>" aria-selected="true"><?php echo $tipo_de_galeria;?></a>
+                            <a class="btn btn-sm btn-secondary" id="edificio-<?php echo $counter; ?>-tab" data-toggle="tab" href="#edificio-<?php echo $counter; ?>" role="tab" aria-controls="edificio-<?php echo $counter; ?>" aria-selected="true"><?php echo $tipo_de_galeria;?></a>
                         </li>
 
                     <?php $counter++;
@@ -369,10 +368,12 @@ if ($query->have_posts()) : ?>
                     <?php while (have_rows('slider_galerias')) : the_row();
                     // vars
                     $slider_galerias_desktop = get_sub_field('slider_galerias_desktop');
+                    $etiqueta_imagen= get_sub_field('etiqueta_imagen');
                     ?>
         
                     <div class="item">
                         <img src="<?php echo $slider_galerias_desktop['url'];?>" alt="<?php echo $slider_galerias_desktop['alt'];?>">
+                        <p class="pl-4"><?php echo $etiqueta_imagen;?></p>
                     </div>
 
                     <?php endwhile; ?>
@@ -386,48 +387,75 @@ if ($query->have_posts()) : ?>
 <?php endif; ?>
 
 <?php if (have_rows('slider_master_plan')) : 
-    $counter3 = 0;?>
-<div class="py-5">
-    <div class="container-fluid bg-medio-azul">
+    $counter3 = 1;?>
+<div class="pt-5">
+    <div class="container-fluid">
         <div class="container">
             <div class="row" id="masterPlan">
-                <div class="col-12 mb-5">
-                    <div class="wrapper-only">
-                        <h3 class="text-uppercase section-title">
-                            <span class="primary-title">Master</span><br><span class="secondary-title">Plan</span>
-                        </h3>
-                    </div>
-                    <div class="shadow bg-white p-5 mb-5">
-                        <div class="master-plan-content" id="masterPlanContent">
-                            <?php while (have_rows('slider_master_plan')) : the_row();
-                                // vars
-                                $slider_master_plan_desktop = get_sub_field('slider_master_plan_desktop');
-                                $slider_master_plan_detalle = get_sub_field('slider_master_plan_detalle');
-                                $slider_master_plan_titulo = get_sub_field('slider_master_plan_titulo');
-                            ?>
-                            <div class="item p-5" id="masterPlanContent<?php echo $counter3; ?>">
-                                <h5 class="ml-auto mb-4 color-primary text-uppercase font-weight-bold"><?php echo $slider_master_plan_titulo;?></h5>
-                                <a href="<?php echo esc_url($slider_master_plan_detalle['url']); ?>" data-fancybox="gallery">
-                                    <img src="<?php echo $slider_master_plan_desktop['url'];?>" alt="<?php echo $slider_master_plan_desktop['alt'];?>" class="w-100">
-                                </a>
-                            </div>
-                            <?php $counter3++; endwhile; ?>
+                <div class="col-12">
+                    <div class="flex-wrapper d-flex justify-content-between alig-items-center">
+                        <div class="wrapper-only">
+                            <h3 class="text-uppercase section-title">
+                                <span class="primary-title">Master</span><br><span class="secondary-title">Plan</span>
+                            </h3>
                         </div>
+                        <ul class="nav nav-tabs border-0 text-uppercase" id="masterPlanTab" role="tablist">
+                        <?php while (have_rows('slider_master_plan')) : the_row();
+                        // vars
+                        $slider_master_plan_titulo = get_sub_field('slider_master_plan_titulo');
+                        ?>
+                            <li class="tab-item mx-md-2">
+                                <a class="btn btn-sm btn-secondary" id="plan-<?php echo $counter3; ?>-tab" data-toggle="tab" href="#plan-<?php echo $counter3; ?>" role="tab" aria-controls="plan-<?php echo $counter3; ?>" aria-selected="true"><?php echo $slider_master_plan_titulo;?></a>
+                            </li>
+
+                        <?php $counter3++; endwhile; ?>
+                        </ul>
                     </div>
-                    <ul class="general-slide-nav text-uppercase" id="masterPlanSlideNav">
-                        <li class="mx-md-2">
-                            <a class="p-2 general-slide-nav-prev" href="#"><span aria-label="Previous">‹</span></a>
-                        </li>
-                        <li class="mx-md-2">
-                            <a class="p-2 general-slide-nav-next" href="#"><span aria-label="Next">›</span></a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <?php endif; ?>
+
+<?php if (have_rows('slider_master_plan')) : 
+    $counter4 = 1;
+    $counter5 = 1;
+?>
+<div class="container-fluid bg-medio-azul pt-3 pb-4 mb-5">
+    <div class="container tab-content mt-2">
+        <?php while (have_rows('slider_master_plan')) : the_row();
+            // vars
+            $slider_master_plan_desktop = get_sub_field('slider_master_plan_desktop');
+            $slider_master_plan_detalle = get_sub_field('slider_master_plan_detalle');
+            $slider_master_plan_titulo = get_sub_field('slider_master_plan_titulo');
+        ?>
+        <div class="tab-pane fade" id="plan-<?php echo $counter4;?>" role="tabpanel" aria-labelledby="plan-<?php echo $counter4;?>-tab" style="position:relative;">
+            <div class="shadow bg-white p-5">
+                <h5 class="ml-auto py-4 color-primary text-uppercase font-weight-bold"><?php echo $slider_master_plan_titulo;?></h5>
+                <a href="<?php echo esc_url($slider_master_plan_detalle['url']); ?>" data-fancybox="gallery">
+                    <img src="<?php echo $slider_master_plan_desktop['url'];?>" alt="<?php echo $slider_master_plan_desktop['alt'];?>" class="w-100">
+                </a>
+            </div>
+        </div>
+        <?php $counter4++; endwhile; ?>
+    </div>
+    <div class="container">
+        <ul class="nav nav-tabs border-0 text-uppercase planB-tab" id="masterPlanTab2" role="tablist">
+        <?php while (have_rows('slider_master_plan')) : the_row();?>
+            <li class="tab-item mx-md-2">
+                <a class="p-2 planB-tab-item" id="planB-<?php echo $counter5; ?>-tab" data-toggle="tab" href="#plan-<?php echo $counter5; ?>" role="tab" aria-controls="plan-<?php echo $counter5; ?>" aria-selected="true">
+                <?php echo $counter5 === 1 ? '<span aria-label="Next">‹</span>': '<span aria-label="Next">›</span>';?>
+                </a>
+            </li>
+
+        <?php $counter5++; endwhile; ?>
+        </ul>
+        
+    </div>
+</div>
+<?php endif; ?>
+
 
 <?php if ( ($descripcion_de_entorno and $gmaps) || ($descripcion_de_entorno and $mapa_de_ubicacion) ) : ?>
 <section class="container-fluid bg-white">

@@ -293,6 +293,25 @@
     }
 }
 
+
+.planB-tab{
+    font-size: 40px;
+    color: $white;
+    position: relative;
+    margin-top: -20px;
+    display: flex;
+    justify-content: flex-end;
+    &-item{
+        color: $white;
+        border-radius: 0;
+        background: rgba($brand-secondary-color, .9);
+        &.active{
+            background: rgba($brand-primary-color, .9) !important;
+        }
+        span{padding: 10px  !important;}
+    }
+}
+
 .bg-medio-azul{
     background: linear-gradient(90deg,#e6e6e6 0%,#e6e6e6 50%,#d6d5d5 50%,#d6d5d5  100%);
 }
@@ -467,4 +486,7 @@ $items: 1,2,3,4;
             box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
         }
     }
+  }
+  .descripcion_proyecto p{
+      font-size: .9rem;
   }

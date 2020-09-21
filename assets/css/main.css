@@ -684,6 +684,26 @@ button:focus {
   padding: 10px 20px !important;
 }
 
+.planB-tab {
+  font-size: 40px;
+  color: white;
+  position: relative;
+  margin-top: -20px;
+  display: flex;
+  justify-content: flex-end;
+}
+.planB-tab-item {
+  color: white;
+  border-radius: 0;
+  background: rgba(60, 60, 60, 0.9);
+}
+.planB-tab-item.active {
+  background: rgba(40, 118, 162, 0.9) !important;
+}
+.planB-tab-item span {
+  padding: 10px !important;
+}
+
 .bg-medio-azul {
   background: linear-gradient(90deg, #e6e6e6 0%, #e6e6e6 50%, #d6d5d5 50%, #d6d5d5 100%);
 }
@@ -907,5 +927,9 @@ button:focus {
   font-weight: bold;
   right: -10px;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.descripcion_proyecto p {
+  font-size: 0.9rem;
 }
 /*# sourceMappingURL=main.css.map */

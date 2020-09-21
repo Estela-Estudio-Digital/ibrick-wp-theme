@@ -11,7 +11,9 @@
         <div class="col-sm-12">
           <ul class="d-md-flex align-items-center text-center text-md-left text-uppercase main-menu">
             <li class=" pr-md-5">
-              <img src="<?php bloginfo('template_directory');?>/assets/img/footer-logo.svg" alt="Brick Inmobiliaria" class="primary-logo">
+              <a href="<?php echo site_url();?>">
+                <img src="<?php bloginfo('template_directory');?>/assets/img/footer-logo.svg" alt="Brick Inmobiliaria" class="primary-logo">
+              </a>
             </li>
             <li class="d-none d-md-block"><a href="<?php echo site_url();?>" class="text-white mr-5">Inicio</a></li>
             <li class="d-none d-md-block"><a href="<?php echo site_url('residencial');?>" class="text-white mr-5">Residencial</a></li>
@@ -129,17 +131,6 @@
                   <div class="col-md-6 d-flex align-items-center">
                     <ul class="pl-lg-5">
                       <li>
-                            <h3>
-                            <a href="https://www.instagram.com/inmobiliariabrick/" target="_blank">
-                              <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://www.facebook.com/InmobBrick" target="_blank">
-                              <i class="fab fa-facebook-square"></i>
-                            </a>
-                              <span>Síguenos</span>
-                            </h3>
-                      </li>
-                      <li>
                         <p><a href="tel:+56233234100"><i class="fas fa-mobile-alt"></i> +562 3323 4100</a></p>
                       </li>
                       <li>
@@ -147,6 +138,16 @@
                       </li>
                       <li>
                         <p><a href="https://goo.gl/maps/W5hF3kUTZL2CTce3A"><i class="fas fa-map-marker-alt"></i> Américo Vespucio Norte 1090 of. 403, Vitacura, Santiago </a></p>
+                      </li>
+                      <li>
+                            <h3>
+                            <a href="https://www.instagram.com/inmobiliariabrick/" target="_blank">
+                              <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/InmobBrick" target="_blank">
+                              <i class="fab fa-facebook-square"></i>
+                            </a>
+                            </h3>
                       </li>
                     </ul>
                   </div>

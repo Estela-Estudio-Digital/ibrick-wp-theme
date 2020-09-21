@@ -6,7 +6,7 @@
 // CUSTOM ADMIN LOGIN HEADER LOGO
 function my_custom_login_logo()
 {
-    echo '<style  type="text/css">#login{padding:0;} .login h1 a {  background-image:url(' . get_bloginfo('template_directory') . '/assets/img/menu-logo.png)  !important;background-size: 180px; margin: 0 auto;width: 180px;height: 180px;} </style>';
+    echo '<style  type="text/css">#login{padding:0;} .login h1 a {  background-image:url(' . get_bloginfo('template_directory') . '/assets/img/primary-logo.png)  !important;background-size: 180px; margin: 0 auto;width: 180px;height: 180px;background-position: bottom!important;} </style>';
 }
 add_action('login_head',  'my_custom_login_logo');
 
@@ -47,6 +47,15 @@ function edit_admin_menus() {
 }
 add_action( 'admin_menu', 'edit_admin_menus' );
 */
+function add_type_attribute($tag, $handle, $src) {
+    // if not your script, do nothing and return original $tag
+    if ( 'your-script-handle' !== $handle ) {
+        return $tag;
+    }
+    // change the script tag by adding type="module" and return it.
+    $tag = '<script type="module" src="' . esc_url( $src ) . '"></script>';
+    return $tag;
+}
 
 // Admin footer modification
 function remove_footer_admin ()

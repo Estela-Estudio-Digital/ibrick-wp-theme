@@ -36,9 +36,9 @@ if(is_singular('proyectos')):
           </span>
         </button>
         <a href="<?php bloginfo('url');?>">
-          <h1>
+          
             <img src="<?php bloginfo('template_directory');?>/assets/img/primary-logo.svg" alt="Inmobiliaria Brick" class="primary-logo">
-          </h1>
+          
         </a>
       </div>
       <ul id="projectMenu" class="text-uppercase d-none d-md-flex align-items-center m-0 w-100 justify-content-end text-center text-md-left main-menu">
@@ -107,9 +107,9 @@ if(is_singular('proyectos')):
 <nav class="navbar navbar-expand-lg bg-white py-2 main-menu">
   <div class="container d-flex justify-content-between">
     <a href="<?php bloginfo('url');?>">
-      <h1>
+      
         <img src="<?php bloginfo('template_directory');?>/assets/img/primary-logo.svg" alt="Inmobiliaria Brick" class="primary-logo">
-      </h1>
+      
     </a>
     <button class="colapse-hamburger hamburger hamburger--emphatic navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="hamburger-box">

@@ -89,8 +89,8 @@ bk_main_before();
         <div class="container video-text">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="text-white"><span class="font-weight-light">Proyectos Inmobiliarios innovadores,</span> <br>
-                    <span>eficientes y de alta plusvalía</span></h1>
+                    <h2 class="text-white"><span class="font-weight-light">Proyectos Inmobiliarios innovadores,</span> <br>
+                    <span>eficientes y de alta plusvalía</span></h2>
                 </div>
             </div>
         </div>

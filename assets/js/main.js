@@ -101,7 +101,7 @@ $(function () {
 	------------------------------------------------------------------
 		MasterPlan
 	------------------------------------------------------------------
-    */
+    
    $('#masterPlanContent1').addClass('active');
    $('#masterPlanContent .item').not('.active').fadeOut();
    $('#masterPlanSlideNav a').click(function(e){
@@ -109,7 +109,7 @@ $(function () {
        $('#masterPlanContent .item.active').fadeOut();
         $('#masterPlanContent .item').not('.active').fadeIn('fast');
         $('#masterPlanContent .item').toggleClass('active')
-   })
+   })*/
 
     /* 
 	------------------------------------------------------------------
@@ -174,6 +174,10 @@ $(function () {
 
     $('#edificio-1-tab').addClass('active');
     $('#edificio-1').addClass('active show');
+    $('#plan-1-tab').addClass('active');
+    $('#plan-1').addClass('active show');
+    $('#planB-1-tab').addClass('active')
+    //$('#planB-2-tab').addClass('general-slide-nav')
 
    $('.project-carousel').owlCarousel({
         loop: true,
