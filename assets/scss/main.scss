@@ -44,6 +44,12 @@
 .video-text{
     position: relative;
     @include centerer();
+    & h1{
+        font-size: 1.8rem;
+        @include MQ(M){
+            font-size: 2.5rem;
+        }
+    }
 }
 
 .home-content{
@@ -60,8 +66,8 @@
 }
 .label-vendido{
     position: absolute;
-    top: -55px;
-    right: 10px;
+    top: -10px;
+    right: 20px;
 }
 
 .formulario-general{
@@ -131,67 +137,76 @@
 }
 
 .gallery-caarousel{
-    .owl-stage {
-        display: flex;
-        align-items: center;
-    }
-    .owl-item.active > div {
-        opacity: .5;
-        //width: 60%;
-        transition: .5s all ease-in-out;
-        
-      }
-      .owl-item.center {
-          position: relative;
-          z-index: 9 !important;
-          div {
-            //transition: 1s all ease-in-out;
-            opacity: 1;
-            width: 140%;
-            position: relative;
-            right: -20%;
-            z-index: 9 !important;
-          }
-      } 
-      .owl-item.active .item{
-            transition: .5s all ease-in-out;
-          float: right;
-          position: relative;
-            z-index: 2;
-      }
-      
-      .owl-item.center+.owl-item .item {
-        float: none;
-        position: relative;
-        z-index: 2 !important;
-    }
     .owl-nav{
-        font-size: 40px;
-        color: $white;
-        position: relative;
-        max-width: 700px;
-        margin: 0 auto;
-        margin-top: -20px;
-        text-align: right;
-        .owl-prev{
-            border-radius: 0;
-            background: rgba($brand-primary-color, .9) !important;
-            span{padding: 10px 20px !important;}
+        display: none;
+    }
+    @include MQ(M){
+        .owl-stage {
+            display: flex;
+            align-items: center;
         }
-        .owl-next{
-            border-radius: 0;
-            background: rgba($brand-secondary-color, .9) !important;
-            span{padding: 10px 20px  !important;}
+        .owl-item.active > div {
+            opacity: .5;
+            //width: 60%;
+            transition: .5s all ease-in-out;
+            
+        }
+        .owl-item.center {
+            position: relative;
+            z-index: 9 !important;
+            div {
+                //transition: 1s all ease-in-out;
+                opacity: 1;
+                width: 140%;
+                position: relative;
+                right: -20%;
+                z-index: 9 !important;
+            }
+        } 
+        .owl-item.active .item{
+                transition: .5s all ease-in-out;
+            float: right;
+            position: relative;
+                z-index: 2;
+        }
+        
+        .owl-item.center+.owl-item .item {
+            float: none;
+            position: relative;
+            z-index: 2 !important;
+        }
+        .owl-nav{
+            font-size: 40px;
+            color: $white;
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto;
+            margin-top: -20px;
+            text-align: right;
+            display: block;
+            .owl-prev{
+                border-radius: 0;
+                background: rgba($brand-primary-color, .9) !important;
+                span{padding: 10px 20px !important;}
+            }
+            .owl-next{
+                border-radius: 0;
+                background: rgba($brand-secondary-color, .9) !important;
+                span{padding: 10px 20px  !important;}
+            }
+        }
+        .owl-dots.disabled, .owl-nav.disabled{
+            display: block;
         }
     }
-    .owl-dots.disabled, .owl-nav.disabled{
-        display: block;
-    }
-    
 }
 .btns-map{
-    position: absolute;
-    bottom: 20px;
+    position: relative;
+    bottom: 45px;
+    @include MQ(M){
+        position: absolute;
+        bottom: 20px;
+    }
 }
 .br-shadow{
     @include MQ(M){
@@ -297,10 +312,12 @@
 .planB-tab{
     font-size: 40px;
     color: $white;
-    position: relative;
-    margin-top: -20px;
-    display: flex;
-    justify-content: flex-end;
+    @include MQ(M){
+        position: relative;
+        margin-top: -20px;
+        display: flex;
+        justify-content: flex-end;
+    }
     &-item{
         color: $white;
         border-radius: 0;
@@ -320,10 +337,15 @@
     
     position: fixed;
     bottom: -20px;
-    right: 10%;
     z-index: 3;
-    padding: 1rem 3rem;
-    
+    width: 100%;
+    padding: 1rem;
+
+    @include MQ(M){
+        padding: 1rem 3rem;
+        width: auto;
+        right: 10%;
+    }
 }
 
 #caracteristicas img{
@@ -338,6 +360,7 @@
     }
     .owl-item, .owl-stage{
         display: flex;
+        height: 100%;
     }
     & .owl-item:nth-child(odd){
         background:rgba($brand-primary-color, .9);
@@ -364,17 +387,38 @@
         }
     }
 }
-.projec-wrapper-content {
-    li{
-        width: 25%;
-        text-align: center;
+.projec-wrapper{
+    &-container{
+        @include MQ(M){
+            z-index:4;
+            position: relative; 
+            margin-top:-50px;
+        }
     }
-    &-ubicacion{
-        border-left: 1px solid #d6d5d5;
-        border-right: 1px solid #d6d5d5;
-    }
-    &-precio {
-        border-left: 1px solid #d6d5d5;
+    &-content {
+        li{
+            text-align: center;
+            @include MQ(M){
+                width: 25%;
+            }
+        }
+        &-ubicacion{
+                @include MQ(M){
+                    border-left: 1px solid #d6d5d5;
+                    border-right: 1px solid #d6d5d5;
+                }
+            }
+        &-precio {
+            @include MQ(M){
+                border-left: 1px solid #d6d5d5;
+            }
+        } 
+        &-img img {
+            @include MQ(M) {
+                max-width: 100%;
+                max-height: 50px;
+            }
+        }
     }
 }
 
@@ -402,6 +446,14 @@
     z-index: 2;
     background: #e6e6e6;
 }
+.home-hero-container .overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: rgba($black, .3);
+}
 .buttons-next-prev-plantas{
     display:none;
 
@@ -419,7 +471,11 @@
     }
 }
 
-
+.map-column{
+    @include MQ(M){
+        height:670px
+    }
+}
 .mapItem{
     opacity: 0;
     height: 0;
@@ -489,4 +545,37 @@ $items: 1,2,3,4;
   }
   .descripcion_proyecto p{
       font-size: .9rem;
+  }
+  .project-icons{
+      width: 50%;
+      float: left;
+      @include MQ(M){
+          width: auto;
+          float: none;
+      }
+  }
+  .fixed-menu-primary{
+      position: fixed;
+      z-index: 4;
+      width: 100%;
+  }
+
+  .link-active::after{
+      content:"";
+      height: 1px;
+      background: $brand-primary-color;
+      display: block;
+      width: 100%;
+
+      @include MQ(M){
+          height: 4px;
+          width: 110%;
+      }
+  }
+
+  .mp-list-number{
+      font-size: 12px;
+      min-width: 30px;
+      min-height: 30px;
+      text-align: center;
   }

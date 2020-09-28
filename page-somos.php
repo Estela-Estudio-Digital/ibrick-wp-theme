@@ -18,64 +18,63 @@ bk_main_before();
 
 <div class="container py-5">
     <div class="row align-items-stretch">
-        <div class="col-md-6 d-flex align-items-center">
-            <div class="wrapper">
-
-                <h1 class="py-2 "><?php echo the_title();?></h1>
-                <div class="pb-5">
-                    <?php echo the_content()?>
-                </div>
-                <a href="#" class="btn btn-secondary btn-sm bk--btn__primary shadow contactoModalBtn"><i class="far fa-envelope"></i> 
-                Contáctanos</a>
-            </div>
+        <div class="col-12">
+            <h1 class="py-2 "><?php echo the_title();?></h1>
         </div>
+        
+                    <?php echo the_content()?>
+                    
+    </div>
+    <hr>
+    <div class="row align-items-stretch">
         <div class="col-md-6 d-flex align-items-center">
+            <img class="w-100" src="<?php bloginfo('template_directory');?>/assets/img/teamBrick2.jpg" alt="Somos">
+        </div>
+        <div class="col-md-6 d-flex align-items-center mt-5 mt-md-0">
                 <ul class="pl-md-5">
                     <li class="py-1">
                         <img src="<?php bloginfo('template_directory');?>/assets/img/ubicaciones.svg" alt="">
                         <p>
-                        
-                            Buscamos la <b>innovación</b> en cada proyecto que desarrollamos, siendo vanguardistas y preocupándonos de cada detalle.
+                        Buscamos la <b>innovación</b> continua en nuestra empresa y en cada proyecto que desarrollamos, generando valor en toda nuestra cadena, marcando una diferencia en como hacemos nuestro trabajo.
                         </p>
                     </li>
                     <li class="py-1">
                         <img src="<?php bloginfo('template_directory');?>/assets/img/arquitectura.svg" alt="">
                         <p>
-                            
-                            Nuestra <b>arquitectura</b> busca reflejar a través de ella la dedicación y profesionalismo que ponemos en cada proyecto
+                            Nuestra <b>arquitectura</b> busca ser un aporte a la ciudad y a quienes viven nuestros proyectos, reflejando a través de ella la dedicación y profesionalismo que ponemos en cada trabajo que emprendemos
                         </p>    
                     </li>
                     <li class="py-1">
                     <img src="<?php bloginfo('template_directory');?>/assets/img/entornos.svg" alt="">
                         <p>
-                            Las <b>ubicaciones</b> de nuestros edificios son privilegiadas, buscando siempre el beneficio de nuestros clientes.
-                        </p>
+                            Las <b>ubicaciones</b> de nuestros edificios son privilegiadas, buscando ser un aporte a la comunidad y a quienes habitan nuestros edificios, generando plusvalía en el tiempo                        </p>
                     </li>
                 </ul>
         </div>
     </div>
+    <hr>
 </div>
 <div class="container py-5">
     <div class="row">
-        <div class="col-md-4">
-            <h2 class="text-uppercase section-title mb-3">
+        <div class="col-md-4 text-center text-md-left my-5 my-md-0">
+            <h4 class="text-uppercase section-title mb-3">
                 <span class="primary-title">Proyectos</span><br>
                 <span class="secondary-title">RESIDENCIALES</span>
-            </h2>
+            </h4>
             <a href="<?php echo site_url('residencial');?>" class="btn btn-primary shadow"> Ver proyectos</a>
         </div>
-        <div class="col-md-4">
-            <h2 class="text-uppercase section-title mb-3">
+        <div class="col-md-4 text-center text-md-left my-5 my-md-0">
+            <h4 class="text-uppercase section-title mb-3">
                 <span class="primary-title">Proyectos</span><br>
                 <span class="secondary-title">COMERCIALES</span>
-            </h2>
+            </h4>
             <a href="<?php echo site_url('comercial');?>" class="btn btn-primary shadow"> Ver proyectos</a>
         </div>
-        <div class="col-md-4">
-            <h2 class="text-uppercase section-title mb-3">
+        <div class="col-md-4 text-center text-md-left my-5 my-md-0">
+            <h4 class="text-uppercase section-title mb-3">
                 <span class="primary-title">Proyectos</span><br>
                 <span class="secondary-title">Rentas</span>
-            </h2>
+            </h4>
             <a href="<?php echo site_url('rentas');?>" class="btn btn-primary shadow"> Ver proyectos</a>
         </div>
     </div>

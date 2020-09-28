@@ -33,7 +33,8 @@ bk_main_before();
         
         // CUSTOM FLIELDS Imágenes Generales
         $slider_proyecto = get_field('slider_proyecto');
-        $logo_proyecto = get_field('logo_proyecto_blanco');
+        $logo_proyecto = get_field('logo_proyecto');
+        $logo_proyecto_blanco = get_field('logo_proyecto_blanco');
 
         // Setup this post for WP functions (variable must be named $post).
         setup_postdata($post); 
@@ -43,13 +44,31 @@ bk_main_before();
         
     ?>
 
-    
-        <div class="item home-hero-container d-flex align-items-center" style="background-position:bottom !important;background:url('<?php echo (sizeof($slider_proyecto) > 1) ? $slider_proyecto[1]["slider_proyecto_desktop"]["url"] : $slider_proyecto[0]["slider_proyecto_desktop"]["url"];?>')">
+        <?php if(wp_is_mobile()): ?>
+            <div class="container-fluid p-0">
+                <div class="row">
+                    <div class="col-12">
+                        <img src="<?php echo (sizeof($slider_proyecto) > 1) ? $slider_proyecto[1]["slider_proyecto_mobile"]["url"] : $slider_proyecto[0]["slider_proyecto_desktop"]["url"];?>" alt="<?php echo $logo_proyecto['alt'];?>" class="w-100">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <?php if ($tipologia_select && $tipologia_select['value'] != 'seleccionar') :?>
+                                    <p class="mb-0 mt-2 text-uppercase font-weight-bold"><u><?php echo the_title(); ?><br><?php echo $tipologia_select['label']; ?></u></p>
+                                    <h4><?php echo $titulo_sliders; ?></h4>
+                                    <?php endif;?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php else:?>
+        <div class="item home-hero-container d-flex align-items-center" style="background-position:bottom !important;background:url('<?php echo (sizeof($slider_proyecto) > 1) ? $slider_proyecto[1]["slider_proyecto_desktop"]["url"] : $slider_proyecto[0]["slider_proyecto_desktop"]["url"];?>'); background-size: cover;">
             <div class="container">
                 <div class="row">
-                    <div class="col-12" style="text-shadow: 1px 1px 2px black;letter-spacing:1.2px">
-                        <img src="<?php echo $logo_proyecto['url'];?>" alt="<?php echo $logo_proyecto['alt'];?>" class="mb-5">
-                        <?php if ($tipologia_select && $tipologia_select != 'seleccionar') :?>
+                    <div class="col-12" style="text-shadow: 1px 1px 2px black;letter-spacing:1.2px;position:relative;z-index:2">
+                        <img src="<?php echo $logo_proyecto_blanco['url'];?>" alt="<?php echo $logo_proyecto_blanco['alt'];?>" class="mb-5">
+                        <?php if ($tipologia_select && $tipologia_select['value'] != 'seleccionar') :?>
                         <h2 class="text-white text-uppercase font-weight-bold"><?php echo $tipologia_select['label']; ?></h2>
                         <?php endif;?>
                         <h4 class="text-white text-uppercase font-weight-bold mb-5"><?php echo $titulo_sliders; ?></h4>
@@ -59,15 +78,25 @@ bk_main_before();
                     </div>
                 </div>
             </div>
+            <div class="overlay"></div>
         </div>
-
+        <?php endif;?>
 
         <?php endwhile; wp_reset_postdata(); ?>
     </div>
 </section>
 <?php endif;?>
 
-<?php get_template_part('includes/templates/proyectos_destacados'); ?>
+<?php 
+$ids_2 = get_field('proyectos_destacados', 5, false);
+$query = new WP_Query(array(
+    'post_type'      	=> 'proyectos',
+    'posts_per_page'	=> 4,
+    'post_status'		=> 'publish',
+    'post__in'			=> $ids_2,
+));
+
+include( locate_template( './includes/templates/proyectos_destacados.php', false, false) ); ?>
 
 <section class="section shadow">
     <div class="long-content">

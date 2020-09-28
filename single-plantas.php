@@ -4,7 +4,7 @@ bk_main_before();
 $vincular_planta_a_proyecto = get_field('vincular_planta_a_proyecto');
 $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
 ?>
-
+<?php if(!wp_is_mobile()): ?>
 <div class="collapse" id="navbarToggleExternalContent" style="position:relative">
     <?php 
         $query = new WP_Query(array(
@@ -68,7 +68,7 @@ $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
         <div class="gallery-overlay"></div>
     <?php endif; ?>
 </div>
-
+<?php endif; ?>
 
 <?php if (have_posts()) : ?>
 <section id="plantas" class="container-fluid my-5">
@@ -85,6 +85,8 @@ $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
                 $superficie_jardin = get_field("superficie_jardin");
                 $superficie_jardinera = get_field("superficie_jardinera");
                 $superficie_total = get_field("superficie_total");
+                $unidades = get_field("unidades");
+                $corresponde = get_field("corresponde");
 
                 $legal = get_field("legal");
                 $sala_de_estar = get_field('sala_de_estar', $vincular_planta_a_proyecto->ID);
@@ -100,8 +102,8 @@ $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
                 <span class="prev"><?php previous_post_link() ?></span>
                 <span class="next"><?php next_post_link() ?></span>
             </div>
-        <div class="col-lg-4 text-center">
-            <a class="gridItemH1 pl-5" href="<?php echo esc_url($img_repeater[0]['fotografia_planta']['url']); ?>" data-fancybox="gallery">
+        <div class="col-lg-4 text-md-center">
+            <a class="gridItemH1 pl-lg-5" href="<?php echo esc_url($img_repeater[0]['fotografia_planta']['url']); ?>" data-fancybox="gallery">
                 <img src="<?php echo $img_repeater[0]['fotografia_planta']['url']; ?>" alt="Planta" class="w-100">
             </a>
             <p class="mt-5">
@@ -109,10 +111,13 @@ $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
             </p>
         </div>
 
-        <div class="col-lg-4 mb-5">
+        <div class="col-lg-4 mt-5 mt-md-0 mb-5">
             <div class="plantas-info-wrap px-md-5 d-flex flex-column align-items-center">
                 <div class="wrapper w-100">
-                    <h2 class="pb-4"><span class="plantas-info-title"><?php echo the_title();?></span></h2>
+                    <h2 class=""><span class="plantas-info-title"><?php echo esc_html($label); ?></span></h2>
+                    <?php if($unidades ): ?>
+                        <p class="pb-4"><small><?php echo $unidades; ?></small></p>
+                    <?php endif;?>
                     <p class="mb-4">
                         <img src="<?php bloginfo('template_directory'); ?>/assets/img/bedIcon.png" alt="Dormitorios" style="max-width:24px"> 
                         <span class="px-2"><b><?php echo esc_html($label); ?></b></span>
@@ -130,36 +135,39 @@ $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
                         <ul class="d-flex justify-content-between w-100">
                             <li>Útil:</li>
                             <li class="ml-auto"><span><?php echo $superficie_construida; ?></span></li>
-                            <li><span class="mx-4">m2</span></li>
+                            <li><span class="mx-4">m2 apróx.</span></li>
                         </ul>
                         <?php endif; ?>
                         <?php if ($superficie_terraza != "") : ?>
                         <ul class="d-flex justify-content-between w-100">
                             <li>Terraza: </li>
                             <li class="ml-auto"><span><?php echo $superficie_terraza; ?></span></li>
-                            <li><span class="mx-4">m2</span></li>
+                            <li><span class="mx-4">m2 apróx.</span></li>
                         </ul>
                         <?php endif; ?>
                         <?php if ($superficie_jardin != "") : ?>
                         <ul class="d-flex justify-content-between w-100">
                             <li>Jardínera: </li>
                             <li class="ml-auto"><span><?php echo $superficie_jardin; ?></span></li>
-                            <li><span class="mx-4">m2</span></li>
+                            <li><span class="mx-4">m2 apróx.</span></li>
                         </ul>
                         <?php endif; ?>
                         <?php if ($superficie_jardin != "") : ?>
                         <ul class="d-flex justify-content-between w-100">
                             <li>Jardín: </li>
                             <li class="ml-auto"><span><?php echo $superficie_jardin; ?> </span></li>
-                            <li><span class="mx-4">m2</span></li>
+                            <li><span class="mx-4">m2 apróx.</span></li>
                         </ul>
                         <?php endif; ?>
                         <ul class="d-flex justify-content-between w-100 " style="font-size:1rem">
                             <li><b>Total:</b></li>
                             <li class="ml-auto"><span><b><?php echo $superficie_total; ?></b></span></li>
-                            <li><span class="mx-4"><b>m2</b></span></li>
+                            <li><span class="mx-4"><b>m2 apróx.</b></span></li>
                         </ul>
                     </div>
+                    <?php if($corresponde): ?>
+                            <p><small><?php echo $corresponde; ?></small></p>
+                            <?php endif;?>
                     <?php if($esquicio): ?>
                         <div class="esquicio pt-4">
                             <img src="<?php echo $esquicio['url']; ?>" alt="Planta" class="w-100">

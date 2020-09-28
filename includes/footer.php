@@ -9,7 +9,7 @@
   <div class="container">
     <div class="row align-items-center">
         <div class="col-sm-12">
-          <ul class="d-md-flex align-items-center text-center text-md-left text-uppercase main-menu">
+          <ul class="d-md-flex align-items-center text-center text-md-left text-uppercase footer-menu">
             <li class=" pr-md-5">
               <a href="<?php echo site_url();?>">
                 <img src="<?php bloginfo('template_directory');?>/assets/img/footer-logo.svg" alt="Brick Inmobiliaria" class="primary-logo">
@@ -61,7 +61,7 @@
     <hr>
     <div class="row">
       <div class="col-sm-12">
-        <div class="d-sm-flex justify-content-between">
+        <div class="d-md-flex justify-content-between text-center text-md-left">
           <p class="footer-legal-text"><small>&copy; <?php echo date('Y'); ?> <a href="<?php echo home_url('/'); ?>">Inmobiliaria Brick</a>. Todos los derechos reservados. </small></p>
           <p class="footer-legal-text"><a href="https://www.zinker.cl/" target="_blank"><small>Desarrollado por <b>Zinker</b></small></a></p>
         </div>

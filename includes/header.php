@@ -73,38 +73,30 @@ if(is_singular('proyectos')):
   <nav class="bg-white py-3 ">
   <div class="container">
     <div class="d-flex align-items-center">
-      <div class="d-flex align-items-center">
-        <button class="slide-nav-button hamburger hamburger--emphatic p-2 mr-4">
-          <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-          </span>
-        </button>
-        <a href="<?php bloginfo('url');?>">
-          
-            <img src="<?php bloginfo('template_directory');?>/assets/img/primary-logo.svg" alt="Inmobiliaria Brick" class="primary-logo">
-         
-        </a>
-      </div>
-      <ul class="text-uppercase d-none d-md-flex align-items-center m-0 w-100 justify-content-end text-center text-md-left main-menu">
-          <li class="mr-5 my-5 my-md-0">
+      <a href="<?php bloginfo('url');?>">
+          <img src="<?php bloginfo('template_directory');?>/assets/img/primary-logo.svg" alt="Inmobiliaria Brick" class="primary-logo">
+      </a>
+      <ul class="text-uppercase d-md-flex align-items-center m-0 w-100 justify-content-end text-center text-md-left main-menu">
+          <li class="mr-md-5  d-none d-md-block">
             <a href="#" id="verMasModelos" class="btn btn-primary btn-sm bk--btn__primary shadow" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
               Ver más modelos
             </a>
           </li>
-          <li class="mr-5 my-5 my-md-0">
-            <a href="<?php echo get_permalink($vincular_planta_a_proyecto); ?>" class="btn btn-secondary btn-sm bk--btn__primary shadow">
+          <li class="mr-md-5 my-md-0">
+            <a href="<?php echo get_permalink($vincular_planta_a_proyecto); ?>#plantas" class="btn btn-secondary btn-sm bk--btn__primary shadow">
               Volver
             </a>
           </li>
-          <li class="mr-5 my-5 my-md-0">
+          <li class="mr-md-5 d-none d-md-block">
             <img src="<?php echo $logo_proyecto['url'];?>" alt="Inmobiliaria Brick" style="max-height:40px">
           </li>
       </ul>
+
     </div>
   </div>
 </nav >
 <?php else: ?>
-<nav class="navbar navbar-expand-lg bg-white py-2 main-menu">
+<nav class="navbar navbar-expand-lg bg-white py-3 main-menu">
   <div class="container d-flex justify-content-between">
     <a href="<?php bloginfo('url');?>">
       
@@ -118,19 +110,19 @@ if(is_singular('proyectos')):
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="text-uppercase d-md-flex align-items-center m-0 w-100 justify-content-end text-center text-md-left">
-          <li class="mr-5 my-5 my-md-0"><a href="<?php echo site_url('residencial');?>">
+          <li class="mr-md-5 my-5 my-md-0 link-residencial"><a href="<?php echo site_url('residencial');?>">
             <b>Residencial</b></a>
           </li>
-          <li class="mr-5 my-5 my-md-0"><a href="<?php echo site_url('comercial');?>">
+          <li class="mr-md-5 my-5 my-md-0 link-comercial"><a href="<?php echo site_url('comercial');?>">
             <b>Comercial</b></a>
           </li>
-          <li class="mr-5 my-5 my-md-0"><a href="<?php echo site_url('rentas');?>">
+          <li class="mr-md-5 my-5 my-md-0 link-rentas"><a href="<?php echo site_url('rentas');?>">
             <b>Rentas</b></a>
           </li>
-          <li class="mr-5 my-5 my-md-0"><a href="<?php echo site_url('somos-brick');?>">
+          <li class="mr-md-5 my-5 my-md-0 link-somos-brick"><a href="<?php echo site_url('somos-brick');?>">
             <b>Somos Brick</b></a>
           </li>
-          <li class="mr-5 my-5 my-md-0"><a href="#" class="btn btn-secondary btn-sm bk--btn__primary shadow contactoModalBtn"><i class="far fa-envelope"></i> 
+          <li class="mr-md-5 my-5 my-md-0"><a href="#" class="btn btn-secondary btn-sm bk--btn__primary shadow contactoModalBtn"><i class="far fa-envelope"></i> 
             Contáctanos</a>
           </li>
       </ul>
@@ -155,8 +147,8 @@ if(is_singular('proyectos')):
 </nav>
 <main id="main">
   <div class="cd-loader">
-    <small></small>
-    <div class="cd-loader__grid">
-      <div class="cd-loader__item"></div>
+    <div class="cd-loader__grid text-center">
+      <div class="spinner"></div>
+      <small>cargando...</small>
     </div>
   </div>

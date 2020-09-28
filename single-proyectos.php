@@ -14,6 +14,7 @@ $whatsapp = $grupo_de_datos['whatsapp'];
 $tag_del_ptroyecto = $grupo_de_datos['tag_del_ptroyecto'];
 $caracteristicas_proyecto = $grupo_de_datos['caracteristicas_proyecto'];
 $terminaciones_repeater = $grupo_de_datos['terminaciones_repeater'];
+$folleto = $grupo_de_datos['folleto'];
 
 // CUSTOM FLIELDS Imágenes Generales
 $slider_proyecto = get_field('slider_proyecto');
@@ -45,7 +46,7 @@ if (!empty($terms)) {
 }
 ?>
 
-<ul class="follow-button-pay bg-white shadow">
+<ul class="follow-button-pay bg-white shadow justify-content-center">
     <li class="pr-3">
         <a href="#" class="contactoModalBtn btn btn-secondary btn-sm bk--btn__primary shadow py-2">
             <i class="far fa-envelope"></i> 
@@ -53,7 +54,7 @@ if (!empty($terms)) {
         </a>
     </li>
     <li class="pr-3">
-        <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ibrick/30min'});return false;" class="btn btn-emphasis btn-sm bk--btn__primary shadow py-2">
+        <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ibrick/30min'});return false;" class="btn btn-secondary btn-sm bk--btn__primary shadow py-2">
             <i class="far fa-calendar-alt"></i>
             Agendar Visita
         </a>
@@ -80,14 +81,17 @@ if (!empty($terms)) {
 </section>
 <?php endif; ?>
 
-<div class="container" style="position: relative; margin-top:-50px;z-index:4;">
-    <div class="row mb-4">
-        <div class="<?php echo ($caracteristicas_proyecto) ? "col-8" : "col-12";?> bg-white shadow mb-3">
-            <ul class="projec-wrapper-content d-flex justify-content-around align-items-stretch m-0 mb-2 pt-3">
+<div class="container projec-wrapper-container">
+    <div class="row align-items-stretch mb-4">
+        <div class="<?php echo ($caracteristicas_proyecto) ? "col-md-8" : "col-md-12";?> bg-white shadow mb-3">
+            <ul class="projec-wrapper-content d-md-flex justify-content-around align-items-stretch m-0 mb-2 pt-3">
                 <?php if ($logo_proyecto):?>
                 <li class="projec-wrapper-content-img d-flex align-items-center justify-content-center ml-4">
-                    <img src="<?php echo $logo_proyecto['url'];?>" alt="<?php echo $logo_proyecto['alt'];?>" class="pr-4 w-100" style="max-height: 50px;">
+                    <div class="wrapper-img-project">
+                        <img src="<?php echo $logo_proyecto['url'];?>" alt="<?php echo $logo_proyecto['alt'];?>" class="pr-4" >
+                    </div>
                 </li>
+                <hr class="d-md-none">
                 <?php endif; ?>
                 <?php if ($ubicacion):?>
                 <li class="projec-wrapper-content-ubicacion d-flex align-items-center justify-content-center">
@@ -96,26 +100,29 @@ if (!empty($terms)) {
                         <p class="px-3"><?php echo $ubicacion;?></p>
                     </div>
                 </li>
+                <hr class="d-md-none">
                 <?php endif; ?>
                 <?php if ($tipologia_select && $tipologia_select != 'seleccionar') :?>
                 <li class="projec-wrapper-content-tipo d-flex align-items-center justify-content-center">
                     <div>
-                        <img src="<?php echo bloginfo('template_directory').'/assets/img/'. $tipologia_select['value'] .'.svg'; ?>" alt="<?php echo $tipologia_select['label']; ?>">
+                        <img style="min-height: 50px; width:100%; max-width: 150px;" class="px-4" src="<?php echo bloginfo('template_directory').'/assets/img/'. $tipologia_select['value'] .'.svg'; ?>" alt="<?php echo $tipologia_select['label']; ?>">
                     </div>
                 </li>
+                <hr class="d-md-none">
                 <?php endif; ?>
                 <?php if ($precio_desde):?>
                 <li class="projec-wrapper-content-precio d-flex align-items-center justify-content-center">
                     <div>
                         <p class="m-0">Precio desde</p>
-                        <h4><b>UF <?php echo $precio_desde;?></b></h4>
+                        <h4 class="m-0"><b>UF <?php echo $precio_desde;?></b></h4>
+                        <p class="m-0" style="line-height:.8;color:#c3c3c3;"><small ><?php echo $legal; ?></small></p>
                     </div>
                 </li>
                 <?php endif; ?>
             </ul>
         </div>
         <?php if ($caracteristicas_proyecto) : ?>
-        <div class="col-4">
+        <div class="col-md-4 mb-3 d-flex">
             <ul class="owl-carousel project-carousel d-none d-md-flex justify-content-around m-0">
                 <?php foreach ($caracteristicas_proyecto as $caracteristicas_proyect) : ?>
                     <li class="project-carousel--item mx-3 align-items-center d-flex flex-column justify-content-between">
@@ -150,6 +157,9 @@ if (!empty($terms)) {
                 <?php endforeach; ?>
             </ul>
             <?php endif; ?>
+            <?php if( $folleto ): ?>
+                <a href="<?php echo $folleto; ?>" class="btn btn-secondary btn-sm bk--btn__primary shadow py-2 my-3 text-capitalize">descargar folleto</a>
+            <?php endif; ?>
         </div>
         <?php if (have_rows('slider_arquitectura')) : ?>
         <div class="col-md-6 d-none d-md-block">
@@ -176,9 +186,9 @@ if (!empty($terms)) {
             <div class="col-12 text-white">
                 <h4 class="text-white text-uppercase text-center py-5">Los espacios que necesitas para <strong>la vida
                         de hoy</strong> </h4>
-                <ul class="d-none d-md-flex justify-content-around ">
+                <ul class="d-md-flex justify-content-around ">
                     <?php foreach ($caracteristicas_proyecto as $caracteristicas_proyect) : ?>
-                        <li class="mx-4 text-center d-flex flex-column justify-content-between">
+                        <li class="mx-md-4 text-center d-flex flex-column justify-content-between project-icons">
                             <div>
                                 <img src="<?php bloginfo('template_directory');?>/assets/img/<?php echo $caracteristicas_proyect['value']; ?>.svg" alt="<?php echo $caracteristicas_proyect['label']; ?>">
                             </div>
@@ -210,7 +220,7 @@ if (!empty($terms)) {
     )
 ));
 if ($query->have_posts()) : ?>
-<section class="container-fluid my-5 pt-5">
+<section class="container-fluid my-5 pt-5" id="plantas">
     <div class="container mt-5">
         <div class="row mt-5">
             <div class="col-sm-12">
@@ -298,7 +308,7 @@ if ($query->have_posts()) : ?>
                                 <p style="font-size:1rem"><img
                                         src="<?php bloginfo('template_directory');?>/assets/img/areaIcon.png" alt="Area"
                                         style="max-width:22px">
-                                    <span class="pl-2">Sup. Total</span> <b><?php echo $superficie_total; ?>m<sup>2</sup></b>
+                                    <span class="pl-2">Sup. Total</span> <b><?php echo $superficie_total; ?>m<sup>2</sup></b> apróx.
                                 </p>
                             </li>
                         </ul>
@@ -335,7 +345,7 @@ if ($query->have_posts()) : ?>
     <div class="container mb-5">
         <div class="row mt-5" id="galeria">
             <div class="col-sm-12">
-                <div class="flex-wrapper d-flex justify-content-between alig-items-center">
+                <div class="flex-wrapper d-md-flex justify-content-between alig-items-center">
                     <div class="wrapper-only">
                         <h3 class="text-uppercase section-title"><span class="primary-title">Galería</span></h3>
                     </div>
@@ -344,7 +354,7 @@ if ($query->have_posts()) : ?>
                     // vars
                     $tipo_de_galeria = get_sub_field('tipo_de_galeria');
                     ?>
-                        <li class="tab-item mx-md-2">
+                        <li class="tab-item mr-2 mb-2 mx-md-2">
                             <a class="btn btn-sm btn-secondary" id="edificio-<?php echo $counter; ?>-tab" data-toggle="tab" href="#edificio-<?php echo $counter; ?>" role="tab" aria-controls="edificio-<?php echo $counter; ?>" aria-selected="true"><?php echo $tipo_de_galeria;?></a>
                         </li>
 
@@ -372,8 +382,10 @@ if ($query->have_posts()) : ?>
                     ?>
         
                     <div class="item">
-                        <img src="<?php echo $slider_galerias_desktop['url'];?>" alt="<?php echo $slider_galerias_desktop['alt'];?>">
-                        <p class="pl-4"><?php echo $etiqueta_imagen;?></p>
+                        <a href="<?php echo esc_url($slider_galerias_desktop['url']); ?>" data-fancybox="edificio-<?php echo $counter2;?>">
+                            <img src="<?php echo $slider_galerias_desktop['url'];?>" alt="<?php echo $slider_galerias_desktop['alt'];?>">
+                        </a>
+                        <p class=" m-0 pl-4"><b><?php echo $etiqueta_imagen;?></b></p>
                     </div>
 
                     <?php endwhile; ?>
@@ -393,7 +405,7 @@ if ($query->have_posts()) : ?>
         <div class="container">
             <div class="row" id="masterPlan">
                 <div class="col-12">
-                    <div class="flex-wrapper d-flex justify-content-between alig-items-center">
+                    <div class="flex-wrapper d-md-flex justify-content-between alig-items-center">
                         <div class="wrapper-only">
                             <h3 class="text-uppercase section-title">
                                 <span class="primary-title">Master</span><br><span class="secondary-title">Plan</span>
@@ -404,7 +416,7 @@ if ($query->have_posts()) : ?>
                         // vars
                         $slider_master_plan_titulo = get_sub_field('slider_master_plan_titulo');
                         ?>
-                            <li class="tab-item mx-md-2">
+                            <li class="tab-item mr-2 mb-2 mx-md-2">
                                 <a class="btn btn-sm btn-secondary" id="plan-<?php echo $counter3; ?>-tab" data-toggle="tab" href="#plan-<?php echo $counter3; ?>" role="tab" aria-controls="plan-<?php echo $counter3; ?>" aria-selected="true"><?php echo $slider_master_plan_titulo;?></a>
                             </li>
 
@@ -422,20 +434,33 @@ if ($query->have_posts()) : ?>
     $counter4 = 1;
     $counter5 = 1;
 ?>
-<div class="container-fluid bg-medio-azul pt-3 pb-4 mb-5">
-    <div class="container tab-content mt-2">
+<div class="container-fluid bg-medio-azul px-0 pt-3 pb-4 mb-5">
+    <div class="container-md p-0 p-md-4 tab-content mt-2">
         <?php while (have_rows('slider_master_plan')) : the_row();
             // vars
             $slider_master_plan_desktop = get_sub_field('slider_master_plan_desktop');
             $slider_master_plan_detalle = get_sub_field('slider_master_plan_detalle');
             $slider_master_plan_titulo = get_sub_field('slider_master_plan_titulo');
+            $items = get_sub_field('items');
         ?>
         <div class="tab-pane fade" id="plan-<?php echo $counter4;?>" role="tabpanel" aria-labelledby="plan-<?php echo $counter4;?>-tab" style="position:relative;">
-            <div class="shadow bg-white p-5">
-                <h5 class="ml-auto py-4 color-primary text-uppercase font-weight-bold"><?php echo $slider_master_plan_titulo;?></h5>
+            <div class="shadow bg-white p-md-5">
+                <h5 class="ml-auto  p-2 py-md-4 color-primary text-uppercase font-weight-bold"><?php echo $slider_master_plan_titulo;?></h5>
                 <a href="<?php echo esc_url($slider_master_plan_detalle['url']); ?>" data-fancybox="gallery">
                     <img src="<?php echo $slider_master_plan_desktop['url'];?>" alt="<?php echo $slider_master_plan_desktop['alt'];?>" class="w-100">
                 </a>
+                <?php if ($items): ?>
+                <ul class="d-none d-md-flex flex-wrap flex-row justify-content-center mt-2">
+                    <?php 
+                    foreach( $items as $clave=>$valor ) {
+                        echo '<li class="align-items-center my-1" style="display: flex; 
+                        flex-basis: calc(20% - 14px);"><span class="mp-list-number mr-3 p-2 bg-primary-color text-white" style="display:table;">';
+                        echo ($clave + 1).'</span> '.$valor['item_title'];
+                        echo '</li>';
+                    }
+                    ?>
+                </ul>
+                <?php endif;?>
             </div>
         </div>
         <?php $counter4++; endwhile; ?>
@@ -471,7 +496,7 @@ if ($query->have_posts()) : ?>
                 </div>
             </div>
         </div>
-        <div class="col-lg-8 col-xl-6" style="height:670px">
+        <div class="col-lg-8 col-xl-6" class="map-column">
             <?php if ($mapa_de_ubicacion) : ?>
             <div class="mapImg mapItem mapActive">
                 <picture>

@@ -52,12 +52,26 @@ $(function () {
         if ($(this).scrollTop() >= 730) {
             $('.menu-nav-fixed').fadeIn();
             $('.follow-button-pay').fadeIn();
+            if(window.location.pathname.indexOf('proyectos') != 1) {
+                $('.main-menu').addClass('fixed-menu-primary')
+            }
         } else {
             $('.menu-nav-fixed').fadeOut();
             $('.follow-button-pay').fadeOut();
+            if(window.location.pathname.indexOf('proyectos') != 1) {
+                $('.main-menu').removeClass('fixed-menu-primary')
+            }
         }
 
     });
+
+    let locationPatName = window.location.pathname;
+    setPrimaryLink(locationPatName);
+
+    function setPrimaryLink(locationPatName ) {
+       let linkActive = locationPatName.replaceAll("/", "");
+       $('.main-menu').find(`.link-${linkActive}`).addClass('link-active')
+    }
     /* 
 	------------------------------------------------------------------
 		Galería
@@ -334,98 +348,35 @@ $(function () {
     $('.contactoModalBtn').on('click', function () {
         $('#contacto-form-modal').modal('show')
     });
-    /* 
-	------------------------------------------------------------------
-		Plantas
-	------------------------------------------------------------------
-    
-    var existenPlantas = $('.bk-planta-item').data();
-    if (existenPlantas) {
-        $(window).on('load', function () {
-            
-            //console.log((existenPlantas));
-            var plantaData = Object.entries(existenPlantas).reverse();
-            $.each(plantaData, function (k, v) {
-                //console.log(v[0]);
-
-                $('.bk-planta-data-wrap').append( //px-1 px-lg-2 py-lg-2
-                    '<li class="">\n\
-                        <a class="bk-planta-type text-white bk--btn bk--btn__primary text-uppercase" href="#" data-img="' + v[1] + '">' + ((v[0].charAt(0) == "1" || v[0].charAt(0) == "2") ? v[0].slice(0).charAt(0, ' ') + ' piso' : v[0]) + '\n\
-                        </a>\n\
-                    </li>'
-                )
-            });
-
-            $('.bk-planta-data-wrap li:first-child a').removeClass('bk--btn__primary').addClass('bk--btn__secondary');
-            var plantaActiva = $('.bk-planta-data-wrap li:first-child a').data('img');
-            $('.bk-planta-img--link').attr('href', plantaActiva);
-            $('.bk-planta-img--content').attr('src', plantaActiva)
-
-
-            $("#plantas").delegate('.bk-planta-item', 'click', function (e) {
-                e.preventDefault();
-                $('.bk-planta-data-wrap').empty();
-                var plantaData = $(this).data();
-                $.each(plantaData, function (k, v) {
-                    $('.bk-planta-data-wrap').append(
-                        '<li class="pl-1">\n\
-                            <a class="bk-planta-type text-white bk--btn bk--btn__primary text-uppercase" href="#" data-img="' + v + '">' + k + '\n\
-                            </a>\n\
-                        </li>'
-                    )
-                });
-                $('.bk-planta-data-wrap li:first-child a').removeClass('bk--btn__primary').addClass('bk--btn__secondary');
-                var plantaActiva = $('.bk-planta-data-wrap li:first-child a').data('img');
-                $('.bk-planta-img--link').attr('href', plantaActiva);
-                $('.bk-planta-img--content').attr('src', plantaActiva);
-            });
-
-            $("#plantas").delegate(".bk-planta-type", "click", function (e) {
-                e.preventDefault();
-                var plantaActiva = $(this).data('img');
-                $('.bk-planta-data-wrap').find('.bk--btn__secondary').addClass('bk--btn__primary').removeClass('bk--btn__secondary');
-                $(this).addClass('bk--btn__secondary');
-                $('.bk-planta-img--link').attr('href', plantaActiva);
-                $('.bk-planta-img--content').attr('src', plantaActiva);
-            });
-
-            var num_opt = $(".bk-planta-data-wrap").find("li").length;
-            var ancho_total = $(".bk-planta-data-wrap").width();
-            var ancho_elemento = ancho_total / num_opt;
-            $('.bk-planta-data-wrap li').each(function () {
-                $('.bk-planta-data-wrap li').css("width", ancho_elemento);
-            });
-
-        });
-    }
-    */
 
     /* 
 	------------------------------------------------------------------
 		Formularios
 	------------------------------------------------------------------
     */
-    var nombreProyecto = project_data.data[0].nombreProyecto,
-        logoProyecto = project_data.data[0].logoProyecto,
-        imagenPlanta = project_data.data[0].imagenPlanta,
-        comuna = project_data.data[0].comuna
-        superficieUtil = project_data.data[0].superficieUtil,
-        superficieTerraza = project_data.data[0].superficieTerraza,
-        superficieTotal = project_data.data[0].superficieTotal,
-        sbjMedio = sbjs.get.current.mdm,
-        sbjFuente = sbjs.get.current.src;
-
-    //console.log(nombreProyecto, textoProyecto, imagenDestacadaUno, imagenDestacadaDos,imagenDestacadaTres, direccionSv, comuna, telefonoSv, emailSv, sbjMedio, sbjFuente)
-
-    $('#nombreProyecto').val(nombreProyecto);
-    $('#logoProyecto').val(logoProyecto);
-    $('#imagenPlanta').val(imagenPlanta);
-    $('#comuna').val(comuna);
-    $('#superficieUtil').val(superficieUtil);
-    $('#superficieTerraza').val(superficieTerraza);
-    $('#superficieTotal').val(superficieTotal);
-    $('#fuenteSbj').val(sbjFuente);
-    $('#medioSbj').val(sbjMedio);
+   if (project_data.data !== ""){
+       var nombreProyecto = project_data.data[0].nombreProyecto,
+           logoProyecto = project_data.data[0].logoProyecto,
+           imagenPlanta = project_data.data[0].imagenPlanta,
+           comuna = project_data.data[0].comuna
+           superficieUtil = project_data.data[0].superficieUtil,
+           superficieTerraza = project_data.data[0].superficieTerraza,
+           superficieTotal = project_data.data[0].superficieTotal,
+           sbjMedio = sbjs.get.current.mdm,
+           sbjFuente = sbjs.get.current.src;
+   
+       //console.log(nombreProyecto, textoProyecto, imagenDestacadaUno, imagenDestacadaDos,imagenDestacadaTres, direccionSv, comuna, telefonoSv, emailSv, sbjMedio, sbjFuente)
+   
+       $('#nombreProyecto').val(nombreProyecto);
+       $('#logoProyecto').val(logoProyecto);
+       $('#imagenPlanta').val(imagenPlanta);
+       $('#comuna').val(comuna);
+       $('#superficieUtil').val(superficieUtil);
+       $('#superficieTerraza').val(superficieTerraza);
+       $('#superficieTotal').val(superficieTotal);
+       $('#fuenteSbj').val(sbjFuente);
+       $('#medioSbj').val(sbjMedio);
+   }
 
     /* 
 	------------------------------------------------------------------

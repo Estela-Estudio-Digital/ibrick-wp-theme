@@ -22,12 +22,15 @@
                   <?php if ($tiene_contenidos === 'si') :?>
                     <a href="<?php echo bloginfo('url');?>/proyectos/tarapaca" class="btn btn-secondary shadow"> Ver proyecto</a>
                   <?php endif; ?>
+                  <?php if ($url_landing) :?>
+                    <a href="<?php echo $url_landing;?>" class="btn btn-secondary shadow" target="_blank"> Ver proyecto</a>
+                  <?php endif; ?>
                   <?php if ($tag_del_ptroyecto['label'] != 'Normal') :?>
                       <span class="label-vendido shadow bg-primary-color text-white px-3 py-1"><?php echo $tag_del_ptroyecto['label']; ?></span>
                   <?php endif; ?>
               </div>
           </div>
-          <div class="col-md-7 <?php echo ( $count % 2 === 0 ) ? '' : 'order-md-1'; ?>">
+          <div class="col-md-7 mt-4 mt-lg-0 <?php echo ( $count % 2 === 0 ) ? '' : 'order-md-1'; ?>">
               <div class="shadow">
                     <?php if(has_post_thumbnail()):?>
                   <picture>
