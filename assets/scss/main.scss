@@ -579,3 +579,9 @@ $items: 1,2,3,4;
       min-height: 30px;
       text-align: center;
   }
+  .img-404{
+      width: 100%;
+      @include MQ(M){
+          width: auto !important;
+      }
+  }

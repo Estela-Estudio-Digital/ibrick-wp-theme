@@ -83,14 +83,15 @@
                 <div class="row align-items-stretch">
                   <div class="col-md-6 d-flex align-items-center">
               
-                    <div class="wpcf7" role="form" id="wpcf7-f9-o1" lang="es-ES" dir="ltr">
-                      <form method="post" class="wpcf7-form formulario_cotizar formulario-general" name="formulario_inicial" id="formulario_inicial">
+                    <div class="wpcf7" role="form" id="wpcf7-f523-o1" lang="es-ES" dir="ltr">
+                      <form  method="post" name="formulario_inicial" id="formulario_inicial" class="wpcf7-form init formulario_cotizar formulario-general" novalidate="novalidate">
                           <div style="display: none;">
-                              <input type="hidden" name="_wpcf7" value="9">
-                              <input type="hidden" name="_wpcf7_version" value="5.2.1">
-                              <input type="hidden" name="_wpcf7_locale" value="en_US">
-                              <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f9-o1">
-                              <input type="hidden" name="_wpcf7_container_post" value="0">
+                            <input type="hidden" name="_wpcf7" value="523">
+                            <input type="hidden" name="_wpcf7_version" value="5.2.1">
+                            <input type="hidden" name="_wpcf7_locale" value="es_ES">
+                            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f523-o1">
+                            <input type="hidden" name="_wpcf7_container_post" value="0">
+                            <input type="hidden" name="_wpcf7_posted_data_hash" value="">
                           </div>
                           
                           <div class="form-row text-left">

@@ -88,3 +88,15 @@ button:focus {
 .primary-logo{
     max-height: 50px;
 }
+
+#projectMenuBig a {
+    font-size: 1.5rem;
+}
+#ProyectosMenu{
+    .mobile100{
+        width: 100%;
+        @include MQ(M){
+            width: auto !important;
+        }
+    }
+}

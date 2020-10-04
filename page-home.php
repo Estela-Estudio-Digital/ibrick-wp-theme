@@ -51,10 +51,18 @@ bk_main_before();
                         <img src="<?php echo (sizeof($slider_proyecto) > 1) ? $slider_proyecto[1]["slider_proyecto_mobile"]["url"] : $slider_proyecto[0]["slider_proyecto_desktop"]["url"];?>" alt="<?php echo $logo_proyecto['alt'];?>" class="w-100">
                         <div class="container">
                             <div class="row">
-                                <div class="col-12">
+                                <div class="col-12 text-center  mt-4">
                                     <?php if ($tipologia_select && $tipologia_select['value'] != 'seleccionar') :?>
-                                    <p class="mb-0 mt-2 text-uppercase font-weight-bold"><u><?php echo the_title(); ?><br><?php echo $tipologia_select['label']; ?></u></p>
-                                    <h4><?php echo $titulo_sliders; ?></h4>
+                                        <p class="m-0">
+                                            <?php echo $tipologia_select['label']; ?>
+                                        </p>
+                                        <h4 class="mb-2 mt-2 text-uppercase font-weight-bold">
+                                            <?php echo the_title(); ?>
+                                        </h4>
+                                    <?php endif;?>
+                                    <p><?php echo $titulo_sliders; ?></p>
+                                    <?php if ($tiene_contenidos === 'si') :?>
+                                    <a href="<?php echo the_permalink();?>" class="btn btn-primary shadow"> Ver proyecto</a>
                                     <?php endif;?>
                                 </div>
                             </div>

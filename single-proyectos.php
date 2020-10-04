@@ -158,7 +158,7 @@ if (!empty($terms)) {
             </ul>
             <?php endif; ?>
             <?php if( $folleto ): ?>
-                <a href="<?php echo $folleto; ?>" class="btn btn-secondary btn-sm bk--btn__primary shadow py-2 my-3 text-capitalize">descargar folleto</a>
+                <a href="<?php echo $folleto; ?>" class="btn btn-secondary btn-sm bk--btn__primary shadow py-2 my-3 text-capitalize" target="_blank">descargar folleto</a>
             <?php endif; ?>
         </div>
         <?php if (have_rows('slider_arquitectura')) : ?>
@@ -250,7 +250,7 @@ if ($query->have_posts()) : ?>
         </div>
     </div>
 </section>
-<section id="plantas" class="container pb-5">
+<section class="container pb-5">
     <div class="row">
         <?php while ($query->have_posts()) : $query->the_post();
 

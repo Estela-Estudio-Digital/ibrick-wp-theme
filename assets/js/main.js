@@ -32,6 +32,11 @@ $(function () {
         $('.bk-primary-nav').toggleClass('loaded');
         $(this).toggleClass('is-active');
     });
+
+    $('#projectMenuBig a').on('click', function() {
+        $('.bk-primary-nav').toggleClass('loaded');
+        $('.slide-nav-button').toggleClass('is-active');
+    })
     /* 
 	------------------------------------------------------------------
 		Menú fixed

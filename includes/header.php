@@ -26,24 +26,24 @@ if(is_singular('proyectos')):
   $vincular_planta_a_proyecto = get_field('vincular_planta_a_proyecto');
   $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
   ?>
-<nav class="bg-white py-2 menu-nav-fixed">
+<nav class="bg-white py-2 menu-nav-fixed" id="ProyectosMenu">
   <div class="container">
     <div class="d-flex align-items-center">
-      <div class="d-flex align-items-center">
-        <button class="slide-nav-button hamburger hamburger--emphatic p-2 mr-4">
-          <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-          </span>
-        </button>
-        <a href="<?php bloginfo('url');?>">
+      <div class="d-flex align-items-center justify-content-between mobile100">
+        <a href="<?php bloginfo('url');?>" class="order-md-2">
           
             <img src="<?php bloginfo('template_directory');?>/assets/img/primary-logo.svg" alt="Inmobiliaria Brick" class="primary-logo">
           
         </a>
+        <button class="slide-nav-button hamburger hamburger--emphatic p-2 mr-4 order-md-1">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
       </div>
       <ul id="projectMenu" class="text-uppercase d-none d-md-flex align-items-center m-0 w-100 justify-content-end text-center text-md-left main-menu">
           <li class="mr-5 my-5 my-md-0"><a href="#proyecto">
-            <b>Proyectos</b></a>
+            <b>Proyecto</b></a>
           </li>
           <li class="mr-5 my-5 my-md-0"><a href="#plantas">
             <b>Plantas</b></a>
@@ -70,9 +70,9 @@ if(is_singular('proyectos')):
   $vincular_planta_a_proyecto = get_field('vincular_planta_a_proyecto');
   $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
 ?>
-  <nav class="bg-white py-3 ">
+<nav class="bg-white py-3 " id="plantasMenu">
   <div class="container">
-    <div class="d-flex align-items-center">
+    <div class="d-flex justify-content-between align-items-center">
       <a href="<?php bloginfo('url');?>">
           <img src="<?php bloginfo('template_directory');?>/assets/img/primary-logo.svg" alt="Inmobiliaria Brick" class="primary-logo">
       </a>
@@ -96,7 +96,7 @@ if(is_singular('proyectos')):
   </div>
 </nav >
 <?php else: ?>
-<nav class="navbar navbar-expand-lg bg-white py-3 main-menu">
+<nav class="navbar navbar-expand-lg bg-white py-3 main-menu" id="elseMenu">
   <div class="container d-flex justify-content-between">
     <a href="<?php bloginfo('url');?>">
       
@@ -130,7 +130,28 @@ if(is_singular('proyectos')):
   </div>
 </nav >
 <?php endif; ?>
-<nav class='container bk-primary-nav'>
+<nav class='container bk-primary-nav <?php echo (is_singular('proyectos')) ? "d-flex justify-content-center" : "" ?>' id="allMenu">
+  <?php if(is_singular('proyectos') && wp_is_mobile()): ?>
+    <ul id="projectMenuBig" class="text-uppercase text-center mt-5 align-self-center">
+          <li class="my-5 my-md-0"><a href="#proyecto">
+            <b>Proyecto</b></a>
+          </li>
+          <li class="my-5 my-md-0"><a href="#plantas">
+            <b>Plantas</b></a>
+          </li>
+          <li class="my-5 my-md-0"><a href="#galeria">
+            <b>Galería</b></a>
+          </li>
+          <li class="my-5 my-md-0"><a href="#masterPlan">
+            <b>Master Plan</b></a>
+          </li>
+          <li class="my-5 my-md-0"><a href="#ubicacion">
+            <b>Ubicación</b></a>
+          </li>
+      </ul>
+  
+  <?php else: ?>
+
   <ul class="bk-primary-nav__menu">
       <?php
         wp_nav_menu( array(
@@ -144,6 +165,8 @@ if(is_singular('proyectos')):
         ) );
       ?>
   </ul>
+
+  <?php endif; ?>
 </nav>
 <main id="main">
   <div class="cd-loader">
