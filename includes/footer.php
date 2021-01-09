@@ -62,7 +62,7 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="d-md-flex justify-content-between text-center text-md-left">
-          <p class="footer-legal-text"><small>&copy; <?php echo date('Y'); ?> <a href="<?php echo home_url('/'); ?>">Inmobiliaria Brick</a>. Todos los derechos reservados. </small></p>
+          <p class="footer-legal-text"><small>&copy; <?php echo date('Y'); ?> <a href="<?php echo home_url('/'); ?>">Brick Inmobiliaria</a>. Todos los derechos reservados. </small></p>
           <p class="footer-legal-text"><a href="https://www.zinker.cl/" target="_blank"><small>Desarrollado por <b>Zinker</b></small></a></p>
         </div>
       </div>
@@ -87,7 +87,10 @@
                       <form  method="post" name="formulario_inicial" id="formulario_inicial" class="wpcf7-form init formulario_cotizar formulario-general" novalidate="novalidate">
                           <div style="display: none;">
                             <input type="hidden" name="_wpcf7" value="523">
-                            <input type="hidden" name="_wpcf7_version" value="5.2.1">
+                            <?php 
+                              $plugin_data = get_plugin_data( ABSPATH . 'wp-content/plugins/contact-form-7/wp-contact-form-7.php' );
+                              echo '<input type="hidden" name="_wpcf7_version" value="'.$plugin_data['Version'].'">';
+                            ?>
                             <input type="hidden" name="_wpcf7_locale" value="es_ES">
                             <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f523-o1">
                             <input type="hidden" name="_wpcf7_container_post" value="0">
@@ -116,9 +119,10 @@
                                   <div class="text-center py-4">
                                       <button  
                                           type="submit" name="boton_enviar" value="enviar"
-                                          class="g-recaptcha btn btn-primary px-5 al-btn al-btn--white" 
+                                          class="g-recaptcha btn btn-primary px-5 al-btn al-btn--white " 
                                           id="boton_enviar" 
-                                          data-badge="inline">
+                                          data-badge="inline"
+                                          disabled>
                                           Enviar
                                       </button><br>
                                       <span class="ajax-loader"></span>

@@ -173,6 +173,7 @@ $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
                             <img src="<?php echo $esquicio['url']; ?>" alt="Planta" class="w-100">
                         </div>
                     <?php endif;?>
+                    
                 </div>
 
             </div>
@@ -181,21 +182,30 @@ $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
 
         <div class="col-lg-4 mt-5 pr-md-5">
             <h2 class="d-md-none pb-4"><span class="plantas-info-title">Solicitar Información</span></h2>
-            <div class="wpcf7" role="form" id="wpcf7-f116-o1" lang="es-ES" dir="ltr">
+            <div class="wpcf7" role="form" id="wpcf7-f560-o1" lang="es-ES" dir="ltr">
                 <form method="post" class="wpcf7-form formulario_cotizar formulario-general" style="max-width: 400px;" name="cotizar_proyecto" id="cotizar_proyecto"
                     role="form">
                     <div style="display: none;">
-                        <input type="hidden" name="_wpcf7" value="116">
-                        <input type="hidden" name="_wpcf7_version" value="5.2.1">
+                        <input type="hidden" name="_wpcf7" value="560">
+                        <?php 
+                            $plugin_data = get_plugin_data( ABSPATH . 'wp-content/plugins/contact-form-7/wp-contact-form-7.php' );
+                            echo '<input type="hidden" name="_wpcf7_version" value="'.$plugin_data['Version'].'">';
+                        ?>
                         <input type="hidden" name="_wpcf7_locale" value="en_US">
-                        <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f116-o1">
+                        <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f560-o1">
                         <input type="hidden" name="_wpcf7_container_post" value="0">
                         <input type="hidden" name="nombreProyecto" id="nombreProyecto">
                         <input type="hidden" name="logoProyecto" id="logoProyecto">
-                        <input type="hidden" name="comuna" id="comuna">
                         <input type="hidden" name="superficieUtil" id="superficieUtil">
                         <input type="hidden" name="superficieTerraza" id="superficieTerraza">
-                        <input type="hidden" name="superficieTotal" id="superficieTotal">
+                        <input type="hidden" name="superficieTotal" id="superficieTotal" >
+                        <input type="hidden" name="dormitorios" id="dormitorios" >
+                        <input type="hidden" name="imgPlanta" id="imgPlanta" >
+                        <input type="hidden" name="esquicio" id="esquicio" >
+                        <input type="hidden" name="unidades" id="unidades" >
+                        <input type="hidden" name="corresponde" id="corresponde" >
+                        <input type="hidden" name="urlProyecto" id="urlProyecto" value="<?php echo get_permalink($vincular_planta_a_proyecto->ID);?>">
+
                         <input type="hidden" name="fuenteSbj" id="fuenteSbj">
                         <input type="hidden" name="medioSbj" id="medioSbj">
                     </div>
@@ -223,19 +233,23 @@ $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
                                 <input class="custom-control-input" type="checkbox" id="inputCheckbox"
                                     name="inputCheckbox" checked>
                                 <label class="custom-control-label" for="inputCheckbox">
-                                    <small>Quiero que Inmobiliaria Brick me contacte</small> 
+                                    <small>Quiero que Brick Inmobiliaria me contacte</small> 
                                 </label>
                             </div>
                         </div>
                     </div>
-                    <div class=" ">
-                        <p class="pt-5">
-                            <input type="submit" name="enviar" id="boton_enviar" value="COTIZAR"
-                                class="btn btn-secondary" disabled>
-                        </p>
-                        <br>
-                        <span class="ajax-loader"></span>
-
+                    <div class="form-group w-100">
+                        <div class="text-center py-4">
+                            <button  
+                                type="submit" name="boton_enviar" value="enviar"
+                                class="g-recaptcha btn btn-primary px-5 al-btn al-btn--white " 
+                                id="boton_enviar" 
+                                data-badge="inline"
+                                disabled>
+                                Cotizar
+                            </button><br>
+                            <span class="ajax-loader"></span>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -247,7 +261,6 @@ $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
 <?php
     wp_reset_postdata();
 endif; ?>
-
 
 <?php
 bk_main_after();

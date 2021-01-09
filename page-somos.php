@@ -3,6 +3,12 @@ Template Name: Somos Brick
 */
 get_template_part('includes/header'); 
 bk_main_before();
+$bloque_1_texto = get_field('bloque_1_texto');
+$bloque_1_imagen = get_field('bloque_1_imagen');
+$bloque_2_texto = get_field('bloque_2_texto');
+$bloque_2_imagen = get_field('bloque_2_imagen');
+$bloque_3_texto = get_field('bloque_3_texto');
+$bloque_3_imagen = get_field('bloque_3_imagen');
 ?>
 <section class="primary-hero" style="position:relative;">
     <div class="blur-img" style="background:url('<?php echo the_post_thumbnail_url( );?>')">
@@ -35,19 +41,20 @@ bk_main_before();
                     <li class="py-1">
                         <img src="<?php bloginfo('template_directory');?>/assets/img/ubicaciones.svg" alt="">
                         <p>
-                        Buscamos la <b>innovación</b> continua en nuestra empresa y en cada proyecto que desarrollamos, generando valor en toda nuestra cadena, marcando una diferencia en como hacemos nuestro trabajo.
+                            <?php echo $bloque_1_texto; ?>
                         </p>
                     </li>
                     <li class="py-1">
                         <img src="<?php bloginfo('template_directory');?>/assets/img/arquitectura.svg" alt="">
                         <p>
-                            Nuestra <b>arquitectura</b> busca ser un aporte a la ciudad y a quienes viven nuestros proyectos, reflejando a través de ella la dedicación y profesionalismo que ponemos en cada trabajo que emprendemos
+                        <?php echo $bloque_2_texto; ?>
                         </p>    
                     </li>
                     <li class="py-1">
                     <img src="<?php bloginfo('template_directory');?>/assets/img/entornos.svg" alt="">
                         <p>
-                            Las <b>ubicaciones</b> de nuestros edificios son privilegiadas, buscando ser un aporte a la comunidad y a quienes habitan nuestros edificios, generando plusvalía en el tiempo                        </p>
+                        <?php echo $bloque_3_texto; ?>
+                        </p>
                     </li>
                 </ul>
         </div>
@@ -64,14 +71,14 @@ bk_main_before();
             <a href="<?php echo site_url('residencial');?>" class="btn btn-primary shadow"> Ver proyectos</a>
         </div>
         <div class="col-md-4 text-center text-md-left my-5 my-md-0">
-            <h4 class="text-uppercase section-title mb-3">
+            <h4 class="text-uppercase section-title section-title_verde mb-3">
                 <span class="primary-title">Proyectos</span><br>
                 <span class="secondary-title">COMERCIALES</span>
             </h4>
             <a href="<?php echo site_url('comercial');?>" class="btn btn-primary shadow"> Ver proyectos</a>
         </div>
         <div class="col-md-4 text-center text-md-left my-5 my-md-0">
-            <h4 class="text-uppercase section-title mb-3">
+            <h4 class="text-uppercase section-title section-title_naranjo mb-3">
                 <span class="primary-title">Proyectos</span><br>
                 <span class="secondary-title">Rentas</span>
             </h4>

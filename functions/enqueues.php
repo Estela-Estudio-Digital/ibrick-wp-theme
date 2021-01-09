@@ -2,13 +2,13 @@
 /*
  * Enqueues
  */
-$url = 'https://code.jquery.com/jquery-3.4.1.min.js';
+$url = 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js';
 $test_url = @fopen($url, 'r');
 if ($test_url !== false) {
 	function load_external_jQuery()
 	{
 		wp_deregister_script('jquery');
-		wp_register_script('jquery', 'https://code.jquery.com/jquery-3.4.1.min.js');
+		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js');
 		wp_enqueue_script('jquery');
 	}
 	add_action('wp_enqueue_scripts', 'load_external_jQuery');
@@ -173,29 +173,38 @@ if ( ! function_exists('bk_enqueues') ) {
 		if(is_singular('proyectos') || is_singular('plantas')){
 			$single_arr = array();
 			$postid = (is_singular('proyectos')) ? get_the_ID() : get_field('vincular_planta_a_proyecto')->ID;
-			$infoSv = get_field('sala_de_ventas', $postid);
 			$nombreProyecto = get_the_title($postid);
-			$imagenDestacada = get_field('slider', $postid );
-			$imagenDestacadaUno = $imagenDestacada[0]['proyecto_rp_mobile']['link'];
-			$imagenDestacadaDos = $imagenDestacada[1]['proyecto_rp_mobile']['link'];
-			$imagenDestacadaTres = $imagenDestacada[2]['proyecto_rp_mobile']['link'];
-			$direccionSv = $infoSv['ubicacion_sala_de_ventas'];
-			$comuna = wp_get_post_terms($postid, 'ubicaciones');
-			$telefonoSv = $infoSv['telefonos_sv'];
-			$emailSv = $infoSv['correos_sv'];
+			$logo_proyecto = get_field('logo_proyecto', get_field('vincular_planta_a_proyecto')->ID);
+			$superficie_total = get_field('superficie_total');
+			$cantidad_de_banos = get_field('cantidad_de_banos');
+			//$imagen_principal_plana = get_field('imagen_principal_plana');
+			$esquicio = get_field('esquicio');
+
+			$superficie_construida = get_field("superficie_construida");
+			$superficie_terraza = get_field("superficie_terraza");
+			$superficie_total = get_field("superficie_total");
+			$unidades = get_field("unidades");
+			$corresponde = get_field("corresponde");
+
+			$dormitorios_para_filtrar = get_field_object('dormitorios_para_filtrar');
+			$value = $dormitorios_para_filtrar['value'];
+			$label = $dormitorios_para_filtrar['choices'][$value];
 			
+			$img_repeater = get_field('repeater_fotografias');
 
 			array_push( 
 				$single_arr, array(
 					"nombreProyecto" => $nombreProyecto,
-					"textoProyecto" => get_field('grupo_de_datos', $postid)['bloque_descriptivo'],
-					"imagenDestacadaUno" => $imagenDestacadaUno ,
-					"imagenDestacadaDos" => $imagenDestacadaDos,
-					"imagenDestacadaTres" => $imagenDestacadaTres,
-					"direccionSv" => $direccionSv ,
-					"comuna" => $comuna[0]->name,
-					"telefonoSv" => $telefonoSv,
-					"emailSv" => $emailSv,
+					"logoProyecto" => $logo_proyecto['url'],
+					"superficieUtil" => $superficie_construida,
+					"superficieTerraza" => $superficie_terraza,
+					"superficieTotal" => $superficie_total,
+					"dormitorios" => $label,
+					"imgPlanta" => $img_repeater[0]['fotografia_planta']['url'],
+					"esquicio" => $esquicio['url'],
+					"corresponde" => $corresponde,
+					"unidades" => $unidades,
+
 				) 
 			);
 

@@ -69,7 +69,7 @@
                     <a href="<?php echo the_permalink();?>" class="btn btn-secondary shadow"> Ver proyecto</a>
                   <?php endif; ?>
                   <?php if( $tiene_contenidos === 'no' && $folleto ): ?>
-                      <a href="<?php echo $folleto; ?>" class="btn btn-secondary shadow mx-4 text-capitalize" target="_blank">descargar folleto</a>
+                      <a href="<?php echo $folleto; ?>" class="btn btn-secondary shadow text-capitalize" target="_blank">descargar folleto</a>
                   <?php endif; ?>
                   <?php if ($url_landing) :?>
                     <a href="<?php echo $url_landing;?>" class="btn btn-secondary shadow" target="_blank"> Ver proyecto</a>
@@ -85,10 +85,10 @@
                   <?php endif; ?>
                   <picture>
                       <source media="(min-width: 768px)" srcset="<?php echo $desktop[0]; ?>">
-                      <img src="<?php echo $mobile[0]; ?>" alt="Inmobiliaria Brick" class="w-100">
+                      <img src="<?php echo $mobile[0]; ?>" alt="Brick Inmobiliaria" class="w-100">
                   </picture>
                     <?php else:?><h3>
-                        <img src="<?php bloginfo('template_directory');?>/assets/img/imgNoDisponible.png" alt="Inmobiliaria Brick" class="w-100">
+                        <img src="<?php bloginfo('template_directory');?>/assets/img/imgNoDisponible.png" alt="Brick Inmobiliaria" class="w-100">
                     <?php endif;?>
               </div>
           </div>

@@ -35,10 +35,10 @@
                     <?php if(has_post_thumbnail()):?>
                   <picture>
                       <source media="(min-width: 768px)" srcset="<?php echo $desktop[0]; ?>">
-                      <img src="<?php echo $mobile[0]; ?>" alt="Inmobiliaria Brick">
+                      <img src="<?php echo $mobile[0]; ?>" alt="Brick Inmobiliaria">
                   </picture>
                     <?php else:?><h3>
-                        <img src="<?php bloginfo('template_directory');?>/assets/img/imgNoDisponible.png" alt="Inmobiliaria Brick">
+                        <img src="<?php bloginfo('template_directory');?>/assets/img/imgNoDisponible.png" alt="Brick Inmobiliaria">
                     <?php endif;?>
               </div>
           </div>

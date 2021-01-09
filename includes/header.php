@@ -26,42 +26,56 @@ if(is_singular('proyectos')):
   $vincular_planta_a_proyecto = get_field('vincular_planta_a_proyecto');
   $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
   ?>
-<nav class="bg-white py-2 menu-nav-fixed" id="ProyectosMenu">
-  <div class="container">
-    <div class="d-flex align-items-center">
-      <div class="d-flex align-items-center justify-content-between mobile100">
-        <a href="<?php bloginfo('url');?>" class="order-md-2">
-          
-            <img src="<?php bloginfo('template_directory');?>/assets/img/primary-logo.svg" alt="Inmobiliaria Brick" class="primary-logo">
-          
-        </a>
-        <button class="slide-nav-button hamburger hamburger--emphatic p-2 mr-4 order-md-1">
+
+<nav class="navbar navbar-expand-lg bg-white py-2 menu-nav-fixed" id="proyectosMenu">
+    <div class="container d-flex justify-content-between">
+        <button class="d-none d-md-block slide-nav-button hamburger hamburger--emphatic p-2 mr-4 ">
           <span class="hamburger-box">
             <span class="hamburger-inner"></span>
           </span>
         </button>
+      <a href="<?php bloginfo('url');?>">
+        
+          <img src="<?php bloginfo('template_directory');?>/assets/img/primary-logo.svg" alt="Inmobiliaria Brick" class="primary-logo">
+        
+      </a>
+      <button class="colapse-hamburger hamburger hamburger--emphatic navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav2" aria-controls="navbarNav2" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav2">
+        <ul id="projectMenu" class="text-uppercase m-0 text-center text-md-left d-md-flex justify-content-end align-items-center w-100">
+            <li class="mr-md-5 my-5 my-md-0">
+              <a href="#proyecto">
+                <b>Proyecto</b>
+              </a>
+            </li>
+            <li class="mr-md-5 my-5 my-md-0">
+              <a href="#plantas">
+                <b>Plantas</b>
+              </a>
+            </li>
+            <li class="mr-md-5 my-5 my-md-0">
+              <a href="#galeria">
+                <b>Galería</b>
+              </a>
+            </li>
+            <li class="mr-md-5 my-5 my-md-0">
+              <a href="#masterPlan">
+                <b>Master Plan</b>
+              </a>
+            </li>
+            <li class="mr-md-5 my-5 my-md-0">
+              <a href="#ubicacion">
+                <b>Ubicación</b>
+              </a>
+            </li>
+            <li class="mr-md-5 my-5 my-md-0">
+              <img src="<?php echo $logo_proyecto['url'];?>" alt="Inmobiliaria Brick" style="max-height:42px">
+            </li>
+        </ul>
       </div>
-      <ul id="projectMenu" class="text-uppercase d-none d-md-flex align-items-center m-0 w-100 justify-content-end text-center text-md-left main-menu">
-          <li class="mr-5 my-5 my-md-0"><a href="#proyecto">
-            <b>Proyecto</b></a>
-          </li>
-          <li class="mr-5 my-5 my-md-0"><a href="#plantas">
-            <b>Plantas</b></a>
-          </li>
-          <li class="mr-5 my-5 my-md-0"><a href="#galeria">
-            <b>Galería</b></a>
-          </li>
-          <li class="mr-5 my-5 my-md-0"><a href="#masterPlan">
-            <b>Master Plan</b></a>
-          </li>
-          <li class="mr-5 my-5 my-md-0"><a href="#ubicacion">
-            <b>Ubicación</b></a>
-          </li>
-          <li class="mr-5 my-5 my-md-0">
-            <img src="<?php echo $logo_proyecto['url'];?>" alt="Inmobiliaria Brick" style="max-height:42px">
-          </li>
-      </ul>
-    </div>
   </div>
 </nav >
 <?php endif; ?>
@@ -96,7 +110,7 @@ if(is_singular('proyectos')):
   </div>
 </nav >
 <?php else: ?>
-<nav class="navbar navbar-expand-lg bg-white py-3 main-menu" id="elseMenu">
+<nav class="navbar navbar-expand-lg bg-white py-3 main-menu d-block" id="elseMenu">
   <div class="container d-flex justify-content-between">
     <a href="<?php bloginfo('url');?>">
       
@@ -131,27 +145,6 @@ if(is_singular('proyectos')):
 </nav >
 <?php endif; ?>
 <nav class='container bk-primary-nav <?php echo (is_singular('proyectos')) ? "d-flex justify-content-center" : "" ?>' id="allMenu">
-  <?php if(is_singular('proyectos') && wp_is_mobile()): ?>
-    <ul id="projectMenuBig" class="text-uppercase text-center mt-5 align-self-center">
-          <li class="my-5 my-md-0"><a href="#proyecto">
-            <b>Proyecto</b></a>
-          </li>
-          <li class="my-5 my-md-0"><a href="#plantas">
-            <b>Plantas</b></a>
-          </li>
-          <li class="my-5 my-md-0"><a href="#galeria">
-            <b>Galería</b></a>
-          </li>
-          <li class="my-5 my-md-0"><a href="#masterPlan">
-            <b>Master Plan</b></a>
-          </li>
-          <li class="my-5 my-md-0"><a href="#ubicacion">
-            <b>Ubicación</b></a>
-          </li>
-      </ul>
-  
-  <?php else: ?>
-
   <ul class="bk-primary-nav__menu">
       <?php
         wp_nav_menu( array(
@@ -165,13 +158,12 @@ if(is_singular('proyectos')):
         ) );
       ?>
   </ul>
-
-  <?php endif; ?>
 </nav>
 <main id="main">
-  <div class="cd-loader">
+<!--   <div class="cd-loader">
     <div class="cd-loader__grid text-center">
-      <div class="spinner"></div>
+      <div class="spinner"><img src="<?php bloginfo('template_directory');?>/assets/img/bicon.png" alt="Inmobiliaria Brick" />
+    </div>
       <small>cargando...</small>
     </div>
-  </div>
+  </div> -->

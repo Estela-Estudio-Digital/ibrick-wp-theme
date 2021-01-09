@@ -12,13 +12,13 @@ $(function () {
 	------------------------------------------------------------------
 		PRELOAD
 	------------------------------------------------------------------
-	*/
+	
 
     $(window).on('load', function () {
         $('.cd-loader').fadeOut('slow', function () {
             $(this).remove();
         });
-    });
+    });*/
     /* 
 	------------------------------------------------------------------
 		Menú Hamburguer
@@ -36,6 +36,21 @@ $(function () {
     $('#projectMenuBig a').on('click', function() {
         $('.bk-primary-nav').toggleClass('loaded');
         $('.slide-nav-button').toggleClass('is-active');
+    })
+    $('#projectMenu a').on('click', function(e) {
+        e.preventDefault();
+
+        let navBarOpen = $('#navbarNav2').is('.show');
+        if(navBarOpen){
+            $('#navbarNav2').toggleClass('show');
+            $('#proyectosMenu .colapse-hamburger').toggleClass('is-active');
+        }
+
+        let navbarAnchor = $(this).attr('href'),
+        anchorElemente = ($(navbarAnchor).offset().top - 120)
+
+        console.log(navbarAnchor)
+        $('html,body').animate({scrollTop: anchorElemente},'fast');
     })
     /* 
 	------------------------------------------------------------------
@@ -116,75 +131,25 @@ $(function () {
         }
     });
     
-    /* 
+  /* 
 	------------------------------------------------------------------
-		MasterPlan
+		Video Background
 	------------------------------------------------------------------
-    
-   $('#masterPlanContent1').addClass('active');
-   $('#masterPlanContent .item').not('.active').fadeOut();
-   $('#masterPlanSlideNav a').click(function(e){
-       e.preventDefault();
-       $('#masterPlanContent .item.active').fadeOut();
-        $('#masterPlanContent .item').not('.active').fadeIn('fast');
-        $('#masterPlanContent .item').toggleClass('active')
-   })*/
-
-    /* 
-	------------------------------------------------------------------
-		Proyectos loop
-	------------------------------------------------------------------
-    
-    $.each(project_data.data, function (k, v) {
-
-        if (v.estado != 'proximo') {
-            $('.bk--proyectos__venta-menu').append(
-                '<li class="my-3">\n\
-                    <a class="bk-projectcart--link " href="' + v.url + '">\n\
-                        <h4 class="bk-projectcart--text__title">' + v.region + '</h4>\n\
-                        <p class="bk-projectcart--text__p">' + v.title + '</p>\n\
-                        <span class="bk-projectcart--text__span"></span>\n\
-                    </a>\n\
-                </li>');
-            var elements = '<article class="col-sm-4 col-md-6 col-lg-4 p-0">\n\
-            <a href="' + v.url + '">\n\
-            <div class="card" style="min-height:100%">\n\
-                <img src="' + v.detalles_img + '">\n\
-                <div class="card-header">\n\
-                    <h4 class="card-text card--title text-white text-uppercase">' + v.title + '<br><small><small>' + v.region + '</small></small></h4>\n\
-                </div>\n\
-                <div class="card-body">\n\
-                </div>'
-            if (v.tag_del_ptroyecto == undefined || v.tag_del_ptroyecto == null || v.tag_del_ptroyecto == "Normal") {
-                elements += '</div>\n\
-                </a>\n\
-            </article>';
-            } else {
-                var x = v.tag_color;
-                elements += '<div class="card-footer text-white text-center text-uppercase" style="background:' + ((!v.tag_color.indexOf("#") || v.tag_color == "transparent") ? v.tag_color : '#12233F') + '">' + v.tag_del_ptroyecto + '</div>\n\
-                </div>\n\
-                </a>\n\
-            </article>';
-            }
-            //Selector de proyecto
-            $('.bk--proyectos').append(elements);
-
-        }
-    });
-    //carousel
-    $.each(project_data.data, function (k, v) {
-        $('.bk--proyectos__carousel').append(
-            '<div class="item">\n\
-                <a class="bk-projectcart--link" href="' + v.url + '">\n\
-                    <picture>\n\
-                        <source media="(min-width: 768px)" srcset="' + v.thumbnail + '">\n\
-                        <img src="' + v.thumbnail + '" class="w-100">\n\
-                    </picture>\n\
-                </a>\n\
-            </div>');
-        return k < 3;
-    });
     */
+
+   var videoSrc = "";
+   $(".playvideo").click(function () {
+     videoSrc = $(this).data("src");
+   });
+ 
+   // when the modal is opened autoplay it
+   $("#homeVideo").on("shown.bs.modal", function (e) {
+     $("#video").attr("src", videoSrc);
+   });
+ 
+   $("#homeVideo").on("hide.bs.modal", function (e) {
+     $("#video").attr("src", videoSrc);
+   });
     /* 
 	------------------------------------------------------------------
 		Carousel de proyectos 
@@ -277,11 +242,6 @@ $(function () {
         }
     });
 
-    /* $('.miniPlantasowl').owlCarousel({
-        dots: true,
-        items: 1
-    }); */
-
     /* 
 	------------------------------------------------------------------
 		Filtro de proyectos
@@ -363,7 +323,12 @@ $(function () {
        var nombreProyecto = project_data.data[0].nombreProyecto,
            logoProyecto = project_data.data[0].logoProyecto,
            imagenPlanta = project_data.data[0].imagenPlanta,
-           comuna = project_data.data[0].comuna
+           dormitorios = project_data.data[0].dormitorios
+           imgPlanta = project_data.data[0].imgPlanta
+           esquicio = project_data.data[0].esquicio
+           corresponde = project_data.data[0].corresponde
+           unidades = project_data.data[0].unidades
+
            superficieUtil = project_data.data[0].superficieUtil,
            superficieTerraza = project_data.data[0].superficieTerraza,
            superficieTotal = project_data.data[0].superficieTotal,
@@ -375,7 +340,12 @@ $(function () {
        $('#nombreProyecto').val(nombreProyecto);
        $('#logoProyecto').val(logoProyecto);
        $('#imagenPlanta').val(imagenPlanta);
-       $('#comuna').val(comuna);
+       $('#dormitorios').val(dormitorios);
+       $('#imgPlanta').val(imgPlanta);
+       $('#esquicio').val(esquicio);
+       $('#corresponde').val(corresponde);
+       $('#unidades').val(unidades);
+
        $('#superficieUtil').val(superficieUtil);
        $('#superficieTerraza').val(superficieTerraza);
        $('#superficieTotal').val(superficieTotal);
@@ -383,13 +353,35 @@ $(function () {
        $('#medioSbj').val(sbjMedio);
    }
 
+   $('#agendarConCalenly').on('click', function(){
+       console.log('ga event Agendar')
+       dataLayer.push({
+        'event': 'calendlyOpen',
+        });
+       Calendly.initPopupWidget({url: 'https://calendly.com/ibrick/30min'});return false;
+   })
+
+   $('#whatsappButton').on('click', function(){
+        console.log('ga event Whatsapp')
+        dataLayer.push({
+            'event': 'whatsappOpen',
+        });
+    })
+
+   
     /* 
 	------------------------------------------------------------------
 		Validacion de Formularios
 	------------------------------------------------------------------
     */
     $(".wpcf7").on('wpcf7mailsent', function (event) {
-        console.log("send")
+        console.log("ga event Formulario")
+
+        dataLayer.push({
+            'event': 'formSubmit',
+        });
+
+
         Swal.fire({
             title: 'Mensaje enviado',
             text: '¡Gracias por cotizar en brick Inmobiliaria, pronto un ejecutivo te contactará!',
@@ -504,27 +496,6 @@ $(function () {
 		Active Menu items
 	------------------------------------------------------------------
     */
- /*   $('#projectMenu a').click(function(event){
-        
-          // Only prevent default if animation is actually gonna happen
-          event.preventDefault();
-          var target = $(this.hash);
-
-          $('html, body').animate({
-            scrollTop: target.offset().top
-          }, 200, function() {
-            // Callback after animation
-            // Must change focus!
-            var $target = $(target);
-            $target.focus();
-            if ($target.is(":focus")) { // Checking if the target was focused
-              return false;
-            } else {
-              $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-              $target.focus(); // Set focus again
-            };
-          });
-   }); */
 
     (function highlightNav() {
         var prev; //keep track of previous selected link
