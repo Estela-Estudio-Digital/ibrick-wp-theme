@@ -36,7 +36,7 @@
                   </a>
                 </li>
                 <li class="mr-2">
-                  <a href="https://www.facebook.com/InmobBrick" target="_blank" class=" text-white">
+                  <a href="https://www.facebook.com/BRICK-Inmobiliaria-100180791917908" target="_blank" class=" text-white">
                     <i class="fab fa-facebook-square"></i>
                   </a>
                 </li>
