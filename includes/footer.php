@@ -149,7 +149,7 @@
                             <a href="https://www.instagram.com/inmobiliariabrick/" target="_blank">
                               <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="https://www.facebook.com/InmobBrick" target="_blank">
+                            <a href="https://www.facebook.com/BRICK-Inmobiliaria-100180791917908" target="_blank">
                               <i class="fab fa-facebook-square"></i>
                             </a>
                             </h3>

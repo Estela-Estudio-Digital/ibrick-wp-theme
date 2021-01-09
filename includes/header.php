@@ -114,7 +114,7 @@ if(is_singular('proyectos')):
   <div class="container d-flex justify-content-between">
     <a href="<?php bloginfo('url');?>">
       
-        <img src="<?php bloginfo('template_directory');?>/assets/img/primary-logo.svg" alt="Inmobiliaria Brick" class="primary-logo">
+        <img src="<?php bloginfo('template_directory');?>/assets/img/primary-logo.svg" height="100" alt="Inmobiliaria Brick" class="primary-logo">
       
     </a>
     <button class="colapse-hamburger hamburger hamburger--emphatic navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
