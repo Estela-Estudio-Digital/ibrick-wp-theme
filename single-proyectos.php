@@ -42,6 +42,9 @@ $mapa_de_ubicacion_mobile = get_field('mapa_de_ubicacion_mobile');
 $gmaps = get_field('gmaps');
 $waze = get_field('waze');
 
+// CUSTOM FLIELDS 360º
+$url_360 = get_field('url_360');
+
 $terms = wp_get_post_terms($post->ID, 'ubicaciones');
 if (!empty($terms)) {
     foreach ($terms as $term) {
@@ -253,6 +256,22 @@ if (!empty($terms)) {
         </div>
     </div>
 </section>
+<?php endif; ?>
+
+<?php if ($url_360) : ?>
+    <div class="container mb-5 d-none d-md-block">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h3 class="py-3">Vista 360º</h3>                
+            </div>
+        </div> 
+        <div class="row">
+            <div class="col-12 text-center"> 
+                <iframe <?php echo (is_single(128)) ? 'scrolling="no" style="overflow:hidden;"' : '';?> width="100%" height="522"
+                src="<?php echo $url_360; ?>" frameborder="0" allowfullscreen=""></iframe>
+            </div>
+        </div>
+    </div>
 <?php endif; ?>
 
 <?php $query = new WP_Query(array(
