@@ -44,6 +44,7 @@ $waze = get_field('waze');
 
 // CUSTOM FLIELDS 360º
 $url_360 = get_field('url_360');
+$text_360 = get_field('text_360'); 
 
 $terms = wp_get_post_terms($post->ID, 'ubicaciones');
 if (!empty($terms)) {
@@ -54,7 +55,7 @@ if (!empty($terms)) {
 }
 ?>
 
-<ul class="follow-button-pay bg-white shadow justify-content-md-between  align-items-center">
+<ul class="follow-button-pay bg-white shadow align-items-center <?php echo ($whatsapp) ? 'justify-content-md-between' : 'justify-content-md-start' ?>" style="min-width:<?php echo ($whatsapp) ? '380px' : '' ?>;">
     <li class="">
         <a href="#" class="contactoModalBtn btn btn-secondary btn-sm bk--btn__primary shadow p-2">
             <div class="d-md-inline">
@@ -66,7 +67,7 @@ if (!empty($terms)) {
         </a>
     </li>
     <li class="">
-        <a href="#" id="agendarConCalenly" class="btn btn-secondary btn-sm bk--btn__primary shadow p-2">
+        <a href="#" id="agendarConCalenly" class="btn btn-secondary btn-sm bk--btn__primary shadow p-2 <?php echo ($whatsapp) ? 'mx-2' : 'mx-2' ?>">
             <div class="d-md-inline">
             <i class="far fa-calendar-alt"></i>
             </div>
@@ -262,7 +263,7 @@ if (!empty($terms)) {
     <div class="container mb-5 d-none d-md-block">
         <div class="row">
             <div class="col-12 text-center">
-                <h3 class="py-3">Vista 360º</h3>                
+                <h3 class="py-3"><?php echo $text_360; ?></h3>                
             </div>
         </div> 
         <div class="row">

@@ -12,7 +12,7 @@
           <ul class="d-md-flex align-items-center text-center text-md-left text-uppercase footer-menu">
             <li class=" pr-md-5">
               <a href="<?php echo site_url();?>">
-                <img src="<?php bloginfo('template_directory');?>/assets/img/footer-logo.svg" alt="Brick Inmobiliaria" class="primary-logo">
+                <img src="<?php bloginfo('template_directory');?>/assets/img/footer-logo.svg" height="100" alt="Brick Inmobiliaria" class="primary-logo">
               </a>
             </li>
             <li class="d-none d-md-block"><a href="<?php echo site_url();?>" class="text-white mr-5">Inicio</a></li>
