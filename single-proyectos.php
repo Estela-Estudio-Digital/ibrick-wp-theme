@@ -261,7 +261,7 @@ if (!empty($terms)) {
 <?php endif; ?>
 
 <?php if ($url_360) : ?>
-    <div class="container mb-5 d-none d-md-block">
+    <div class="container mb-5">
         <div class="row">
             <div class="col-12 text-center">
                 <h3 class="py-3"><?php echo $text_360; ?></h3>                
