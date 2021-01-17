@@ -54,37 +54,38 @@ if (!empty($terms)) {
     }
 }
 ?>
-
-<ul class="follow-button-pay bg-white shadow align-items-center <?php echo ($whatsapp) ? 'justify-content-md-between' : 'justify-content-md-start' ?>" style="min-width:<?php echo ($whatsapp) ? '380px' : '' ?>;">
-    <li class="">
-        <a href="#" class="contactoModalBtn btn btn-secondary btn-sm bk--btn__primary shadow p-2">
-            <div class="d-md-inline">
-            <i class="far fa-envelope"></i> 
-            </div>
-            <small>
-            Contáctanos
-            </small>
-        </a>
-    </li>
-    <li class="">
-        <a href="#" id="agendarConCalenly" class="btn btn-secondary btn-sm bk--btn__primary shadow p-2 <?php echo ($whatsapp) ? 'mx-2' : 'mx-2' ?>">
-            <div class="d-md-inline">
-            <i class="far fa-calendar-alt"></i>
-            </div>
-            <small>
-            Agendar
-            </small>
-        </a>
-    </li>
-    <?php if($whatsapp): ?>
-    <li class="text-center">
-        <a id="whatsappButton" href="https://api.whatsapp.com/send/?phone=<?php echo $whatsapp;?>&text=Me%20interesa%20el%20 %20proyecto%20<?php echo the_title();?>" target="_blank">
-            <img src="<?php bloginfo('template_directory');?>/assets/img/whatsappAmarillo.svg" alt="whatsapp" style="max-height:40px">
-        </a>
-    </li>
-    <?php endif; ?>
-    <li></li>
-</ul>
+<div class="d-none d-md-block">
+    <ul class="follow-button-pay bg-white shadow align-items-center <?php echo ($whatsapp) ? 'justify-content-md-between' : 'justify-content-md-start' ?>" style="min-width:<?php echo ($whatsapp) ? '380px' : '' ?>;">
+        <li class="">
+            <a href="#" class="contactoModalBtn btn btn-secondary btn-sm bk--btn__primary shadow p-2">
+                <div class="d-md-inline">
+                <i class="far fa-envelope"></i> 
+                </div>
+                <small>
+                Contáctanos
+                </small>
+            </a>
+        </li>
+        <li class="">
+            <a href="#" id="agendarConCalenly" class="btn btn-secondary btn-sm bk--btn__primary shadow p-2 <?php echo ($whatsapp) ? 'mx-2' : 'mx-2' ?>">
+                <div class="d-md-inline">
+                <i class="far fa-calendar-alt"></i>
+                </div>
+                <small>
+                Agendar
+                </small>
+            </a>
+        </li>
+        <?php if($whatsapp): ?>
+        <li class="text-center">
+            <a id="whatsappButton" href="https://api.whatsapp.com/send/?phone=<?php echo $whatsapp;?>&text=Me%20interesa%20el%20 %20proyecto%20<?php echo the_title();?>" target="_blank">
+                <img src="<?php bloginfo('template_directory');?>/assets/img/whatsappAmarillo.svg" alt="whatsapp" style="max-height:40px">
+            </a>
+        </li>
+        <?php endif; ?>
+        <li></li>
+    </ul>
+</div>
 <?php if (have_rows('slider_proyecto')) : ?>
 <section class="master-carousel owl-carousel primary-hero">
     <?php while (have_rows('slider_proyecto')) : the_row();
