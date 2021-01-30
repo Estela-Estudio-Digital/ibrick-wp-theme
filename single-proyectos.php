@@ -260,22 +260,6 @@ if (!empty($terms)) {
 </section>
 <?php endif; ?>
 
-<?php if ($url_360) : ?>
-    <div class="container mb-5">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h3 class="py-3"><?php echo $text_360; ?></h3>                
-            </div>
-        </div> 
-        <div class="row">
-            <div class="col-12 text-center"> 
-                <iframe <?php echo (is_single(128)) ? 'scrolling="no" style="overflow:hidden;"' : '';?> width="100%" height="522"
-                src="<?php echo $url_360; ?>" frameborder="0" allowfullscreen=""></iframe>
-            </div>
-        </div>
-    </div>
-<?php endif; ?>
-
 <?php $query = new WP_Query(array(
     'post_type'          => 'plantas',
     'posts_per_page'    => -1,
@@ -442,7 +426,19 @@ if ($query->have_posts()) : ?>
     $counter2 = 1; 
 ?>
 <div class="tab-content" id="galleryTabContent">
-    <?php while (have_rows('repeater_galerias')) : the_row(); ?>
+    <?php while (have_rows('repeater_galerias')) : the_row(); 
+    
+    $tipo_de_modulo = get_sub_field('tipo_de_modulo');
+    $url_360 = get_sub_field('url_360');
+    //echo $tipo_de_modulo ;
+    //print_r($tipo_de_modulo);
+    if ($tipo_de_modulo === '360'):
+    ?>
+    <div class="tab-pane fade" id="edificio-<?php echo $counter2;?>" role="tabpanel" aria-labelledby="edificio-<?php echo $counter2;?>-tab" style="position:relative;">
+        <iframe <?php echo (is_single(128)) ? 'scrolling="no" style="overflow:hidden;"' : '';?> width="100%" height="522"
+                src="<?php echo $url_360; ?>" frameborder="0" allowfullscreen=""></iframe>
+    </div>
+    <?php else: ?>
         <?php if (have_rows('slider_galerias')) : ?>
             <div class="tab-pane fade" id="edificio-<?php echo $counter2;?>" role="tabpanel" aria-labelledby="edificio-<?php echo $counter2;?>-tab" style="position:relative;">
                 <div class="owl-carousel owl-theme  gallery-caarousel">
@@ -451,7 +447,6 @@ if ($query->have_posts()) : ?>
                     $slider_galerias_desktop = get_sub_field('slider_galerias_desktop');
                     $etiqueta_imagen= get_sub_field('etiqueta_imagen');
                     ?>
-        
                     <div class="item">
                         <a href="<?php echo esc_url($slider_galerias_desktop['url']); ?>" data-fancybox="edificio-<?php echo $counter2;?>">
                             <img src="<?php echo $slider_galerias_desktop['url'];?>" alt="<?php echo $slider_galerias_desktop['alt'];?>">
@@ -464,7 +459,7 @@ if ($query->have_posts()) : ?>
                 <div class="gallery-overlay"></div>
             </div>
         <?php endif; ?>
-        <?php $counter2++; endwhile; ?>
+    <?php endif; $counter2++; endwhile; ?>
     </div>
 </div>
 <?php endif; ?>
