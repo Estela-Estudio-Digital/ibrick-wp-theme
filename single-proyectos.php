@@ -319,9 +319,10 @@ if ($query->have_posts()) : ?>
                     $fotografia_planta_mobile = $fotografia_planta[0]['fotografia_planta']['url'];
                 ?>
 
-            <div
-                class="col-sm-6 col-lg-4 planta <?php echo $value; ?> <?php echo ($estado == 'Normal') ? "active" : ""; if ( wp_is_mobile() ){echo ($estado == 'Normal') ? " " : "d-none";} ?>">
+            <div class="col-sm-6 col-lg-4 planta <?php echo $value; ?> <?php echo ($estado == 'Normal') ? "active" : ""; if ( wp_is_mobile() ){echo ($estado == 'Normal') ? " " : "d-none";} ?>">
+                <?php if ($estado == 'Normal') : ?>
                 <a href="<?php echo ($planok) ? "#": the_permalink(); ?>" <?php echo ($planok) ? 'data-toggle="modal" data-target="#planok-modal"' : '';?> >
+                <?php endif;?>
                     <div class="planta-item d-block text-center shadow ">
 
                         <h3 class="d-none p-3 text-uppercase mb-2 <?php echo ($estado == 'Normal') ? "bg-secondary text-white " : "bg-grey" ?>">
@@ -336,9 +337,14 @@ if ($query->have_posts()) : ?>
                             </p>
                             
                             <?php if ($fotografia_planta) : ?>
-                            <img class="m-auto pb-4 fotografia-planta <?php echo ($estado == 'Normal') ? "" : "img-overlay" ?>"
-                                src="<?php echo $fotografia_planta[0]['fotografia_planta']['sizes']['medium']; ?>"
-                                alt="<?php echo $row['fotografia_planta']['name']; ?>">
+                            <div style="overflow: hidden;position: relative;">
+                                <?php if ($estado == 'Agotado') : ?>
+                                <div class="img-overlay" style="filter: grayscale(1) opacity(50%); position:absolute; width:100%;height:100%;background:#fff"></div>
+                                <?php endif;?>
+                                <img class="m-auto pb-4 fotografia-planta <?php echo ($estado == 'Normal') ? "" : "img-overlay" ?>"
+                                    src="<?php echo $fotografia_planta[0]['fotografia_planta']['sizes']['medium']; ?>"
+                                    alt="<?php echo $row['fotografia_planta']['name']; ?>">
+                            </div>
                             <?php endif; ?>
 
                             <ul class="d-flex py-3 m-0 border-right-0 border-left-0" style="border-bottom:1px solid #D3D3D3;">
@@ -375,14 +381,16 @@ if ($query->have_posts()) : ?>
                                             <div class="btn btn-primary px-4 mr-3 text-uppercase">cotizar</div>
                                         <?php endif;?>
                                     <?php else : ?>
-                                    <p class="bg-grey ">AGOTADO</p>
+                                    <p class="btn btn-primary disabled bg-grey mr-3">Planta Agotada</p>
                                     <?php endif; ?>
                                 </li>
                             </ul>
 
                         </div>
                     </div>
+            <?php if ($estado == 'Normal') : ?>
                 </a>
+            <?php endif; ?>
             </div>
 
             <?php endwhile;
