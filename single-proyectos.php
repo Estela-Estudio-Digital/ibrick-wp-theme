@@ -381,7 +381,7 @@ if ($query->have_posts()) : ?>
                                             <div class="btn btn-primary px-4 mr-3 text-uppercase">cotizar</div>
                                         <?php endif;?>
                                     <?php else : ?>
-                                    <p class="btn btn-primary disabled bg-grey mr-3">Planta Agotada</p>
+                                    <p class="btn btn-primary disabled bg-grey mr-3 mb-0">Agotada</p>
                                     <?php endif; ?>
                                 </li>
                             </ul>
