@@ -319,7 +319,7 @@ if ($query->have_posts()) : ?>
                     $fotografia_planta_mobile = $fotografia_planta[0]['fotografia_planta']['url'];
                 ?>
 
-            <div class="col-sm-6 col-lg-4 planta <?php echo $value; ?> <?php echo ($estado == 'Normal') ? "active" : ""; if ( wp_is_mobile() ){echo ($estado == 'Normal') ? " " : "d-none";} ?>">
+            <div class="col-sm-6 col-lg-4 planta <?php echo $value; ?> <?php echo ($estado == 'Normal') ? "active" : "";?>">
                 <?php if ($estado == 'Normal') : ?>
                 <a href="<?php echo ($planok) ? "#": the_permalink(); ?>" <?php echo ($planok) ? 'data-toggle="modal" data-target="#planok-modal"' : '';?> >
                 <?php endif;?>
