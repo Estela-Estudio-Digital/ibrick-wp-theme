@@ -416,9 +416,13 @@ if ($query->have_posts()) : ?>
                     <?php while (have_rows('repeater_galerias')) : the_row();
                     // vars
                     $tipo_de_galeria = get_sub_field('tipo_de_galeria');
+                    $destacado = get_sub_field('destacado');
+                    $icono = get_sub_field('icono');
                     ?>
                         <li class="tab-item mr-2 mb-2 mx-md-2">
-                            <a class="btn btn-sm btn-secondary" id="edificio-<?php echo $counter; ?>-tab" data-toggle="tab" href="#edificio-<?php echo $counter; ?>" role="tab" aria-controls="edificio-<?php echo $counter; ?>" aria-selected="true"><?php echo $tipo_de_galeria;?></a>
+                            <a class="btn btn-sm btn-secondary" style="<?php echo $destacado ? 'background-color: tomato !important;' : ''; ?>" id="edificio-<?php echo $counter; ?>-tab" data-toggle="tab" href="#edificio-<?php echo $counter; ?>" role="tab" aria-controls="edificio-<?php echo $counter; ?>" aria-selected="true" >
+                                <?php echo $icono ? $icono.' ' : ''; ?><?php echo $tipo_de_galeria;?>
+                            </a>
                         </li>
 
                     <?php $counter++;
