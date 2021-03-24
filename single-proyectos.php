@@ -321,7 +321,7 @@ if ($query->have_posts()) : ?>
 
             <div class="col-sm-6 col-lg-4 planta <?php echo $value; ?> <?php echo ($estado == 'Normal') ? "active" : "";?>">
                 <?php if ($estado == 'Normal') : ?>
-                <a href="<?php echo ($planok) ? "#": the_permalink(); ?>" <?php echo ($planok) ? 'data-toggle="modal" data-target="#planok-modal"' : '';?> >
+                <a href="<?php echo ($planok) ? "#": the_permalink(); ?>" class="<?php echo ($planok) ? 'cotizacionHit' : '' ?>" <?php echo ($planok) ? 'data-toggle="modal" data-target="#planok-modal"' : '';?> >
                 <?php endif;?>
                     <div class="planta-item d-block text-center shadow ">
 

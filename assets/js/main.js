@@ -368,6 +368,15 @@ $(function () {
         });
     })
 
+    $('.cotizacionHit').on('click', function(){
+        console.log('ga event Intención de cotización');
+        fbq('track', 'Lead');
+        dataLayer.push({
+            'event': 'formClick',
+        });
+        console.log(dataLayer);
+    })
+
    
     /* 
 	------------------------------------------------------------------
