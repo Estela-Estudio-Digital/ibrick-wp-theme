@@ -82,54 +82,61 @@
               <div class="container">
                 <div class="row align-items-stretch">
                   <div class="col-md-6 d-flex align-items-center">
-              
-                    <div class="wpcf7" role="form" id="wpcf7-f523-o1" lang="es-ES" dir="ltr">
-                      <form  method="post" name="formulario_inicial" id="formulario_inicial" class="wpcf7-form init formulario_cotizar formulario-general" novalidate="novalidate">
-                          <div style="display: none;">
-                            <input type="hidden" name="_wpcf7" value="523">
-                            <?php 
-                              $plugin_data = get_plugin_data( ABSPATH . 'wp-content/plugins/contact-form-7/wp-contact-form-7.php' );
-                              echo '<input type="hidden" name="_wpcf7_version" value="'.$plugin_data['Version'].'">';
-                            ?>
-                            <input type="hidden" name="_wpcf7_locale" value="es_ES">
-                            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f523-o1">
-                            <input type="hidden" name="_wpcf7_container_post" value="0">
-                            <input type="hidden" name="_wpcf7_posted_data_hash" value="">
-                          </div>
-                          
-                          <div class="form-row text-left">
-                              <div class="form-group w-100 px-4">
-                                  <span class="bk-projectcart--text__span"></span>
-                                  <label class="label" for="inputName">Nombre y apellido</label>
-                                  <input type="text" class="form-control" id="inputName" name="inputName" required>
-                              </div>
-                              <div class="form-group w-100 px-4">
-                                  <label class="label" for="inputEmail">Email</label>
-                                  <input type="email" class="form-control" id="inputEmail" name="inputEmail" required>
-                              </div>
-                              <div class="form-group w-100 px-4">
-                                  <label class="label" for="inputTelefono">Teléfono</label>
-                                  <input type="text" class="form-control" id="inputTelefono" name="inputTelefono" required>
-                              </div>
-                              <div class="form-group w-100 px-4">
-                                  <label class="label" for="texAreaMensaje">Mensaje</label>
-                                  <input class="form-control" id="texAreaMensaje" name="texAreaMensaje"></input>
-                              </div>
-                              <div class="form-group w-100">
-                                  <div class="text-center py-4">
-                                      <button  
-                                          type="submit" name="boton_enviar" value="enviar"
-                                          class="g-recaptcha btn btn-primary px-5 al-btn al-btn--white " 
-                                          id="boton_enviar" 
-                                          data-badge="inline"
-                                          disabled>
-                                          Enviar
-                                      </button><br>
-                                      <span class="ajax-loader"></span>
-                                  </div>
-                              </div>
-                          </div>
-                      </form>
+
+                    <div class="wp-block-contact-form-7-contact-form-selector w-100">
+                      <div class="wpcf7 w-100" role="form" id="wpcf7-f523-o1" lang="es-ES" dir="ltr" class="w-100 wp">
+                        <div class="screen-reader-response">
+                            <p role="status" aria-live="polite" aria-atomic="true"></p>
+                            <ul></ul>
+                        </div>
+                        
+                        <form  method="post" name="formulario_inicial" id="formulario_inicial" class="wpcf7-form init formulario_cotizar formulario-general" novalidate="novalidate">
+                            <div style="display: none;">
+                              <input type="hidden" name="_wpcf7" value="523">
+                              <?php 
+                                $plugin_data = get_plugin_data( ABSPATH . 'wp-content/plugins/contact-form-7/wp-contact-form-7.php' );
+                                echo '<input type="hidden" name="_wpcf7_version" value="'.$plugin_data['Version'].'">';
+                              ?>
+                              <input type="hidden" name="_wpcf7_locale" value="es_ES">
+                              <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f523-o1">
+                              <input type="hidden" name="_wpcf7_container_post" value="0">
+                              <input type="hidden" name="_wpcf7_posted_data_hash" value="">
+                            </div>
+                            
+                            <div class="form-row text-left">
+                                <div class="form-group w-100 px-4">
+                                    <span class="bk-projectcart--text__span"></span>
+                                    <label class="label" for="inputName">Nombre y apellido</label>
+                                    <input type="text" class="form-control" id="inputName" name="inputName" required>
+                                </div>
+                                <div class="form-group w-100 px-4">
+                                    <label class="label" for="inputEmail">Email</label>
+                                    <input type="email" class="form-control" id="inputEmail" name="inputEmail" required>
+                                </div>
+                                <div class="form-group w-100 px-4">
+                                    <label class="label" for="inputTelefono">Teléfono</label>
+                                    <input type="text" class="form-control" id="inputTelefono" name="inputTelefono" required>
+                                </div>
+                                <div class="form-group w-100 px-4">
+                                    <label class="label" for="texAreaMensaje">Mensaje</label>
+                                    <input class="form-control" id="texAreaMensaje" name="texAreaMensaje"></input>
+                                </div>
+                                <div class="form-group w-100">
+                                    <div class="text-center py-4">
+                                        <button  
+                                            type="submit" name="boton_enviar" value="enviar"
+                                            class="g-recaptcha btn btn-primary px-5 al-btn al-btn--white " 
+                                            id="boton_enviar" 
+                                            data-badge="inline"
+                                            disabled>
+                                            Enviar
+                                        </button><br>
+                                        <span class="ajax-loader"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                      </div>
                     </div>
                   </div>
 
