@@ -593,12 +593,10 @@ if ($query->have_posts()) : ?>
             <?php endif; ?>
             <?php if ($waze) : ?>
             <div class="btns-map">
-                <?php if(wp_is_mobile()): ?>
-                <a href="<?php echo $waze;?>" class="btn btn-secondary mr-3" target="_blank">
+                <a href="<?php echo $waze;?>" class="btn btn-secondary mr-3 d-md-none" target="_blank">
                     <img src="<?php bloginfo('template_directory');?>/assets/img/waze.png" alt="Waze" class="mr-3" style="max-height:18px"> 
                     waze
                 </a>
-                <?php endif; ?>
                 <a href="#" class="btn btn-secondary ml-4 changeMapButton"><img
                         src="<?php bloginfo('template_directory');?>/assets/img/gmaps.png" alt="google maps"
                         class="mr-3" style="max-height:20px"><span class="changeMapButtonSpan">maps</span></a>
