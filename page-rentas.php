@@ -135,6 +135,13 @@ Template Name: Rentas
         </div>
     </div>
 </div>
+<div class="container mt-5 pt-5">
+    <div class="row">
+        <div class="col-12 my-5">
+            <h3 class="text-uppercase"><span class="secondary-title font-weight-bold">Proyectos</span> <span class="secondary-title color-primary font-weight-bold">Habitacionales</span></h3>
+        </div>
+    </div>
+</div>
 <?php 
 $taxonomy = 'tipo';
 $query = new WP_Query(array(
@@ -145,7 +152,30 @@ $query = new WP_Query(array(
         array(
             'taxonomy'      => $taxonomy,
             'field'          => 'slug',
-            'terms'         => 'renta'
+            'terms'         => 'residencial-renta'
+        ),
+    ),
+  ));
+  include( locate_template( './includes/templates/proyectos_destacados.php', false, false) ); ?>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 my-5">
+            <h3 class="text-uppercase"><span class="secondary-title font-weight-bold">Proyectos</span> <span class="secondary-title color-primary font-weight-bold">Comerciales</span></h3>
+        </div>
+    </div>
+</div>
+<?php 
+$taxonomy = 'tipo';
+$query = new WP_Query(array(
+    'post_type'      	=> 'proyectos',
+    'posts_per_page'	=> -1,
+    'post_status'		=> 'publish',
+    'tax_query'         => array (
+        array(
+            'taxonomy'      => $taxonomy,
+            'field'          => 'slug',
+            'terms'         => 'comercial-renta'
         ),
     ),
   ));

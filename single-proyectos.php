@@ -306,6 +306,7 @@ if ($query->have_posts()) : ?>
             <?php while ($query->have_posts()) : $query->the_post();
 
                     $estado = get_field('estado');
+                    $texto_titulo = get_field('texto_titulo');
 
                     $post_id = get_the_ID();
                     $superficie_total = get_field('superficie_total');
@@ -331,6 +332,7 @@ if ($query->have_posts()) : ?>
 
                         <div class="bk-info-wrap  mb-5 card rounded-0">
                             <p class="pl-5 pt-4 m-0 text-left" style="font-size:1rem;">
+                                <b><?php echo $texto_titulo; ?></b>
                                 <b><?php echo esc_html($label); ?> +</b>
                                 <b><?php echo $cantidad_de_banos; echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
                                 </b>
