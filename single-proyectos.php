@@ -406,9 +406,9 @@ if ($query->have_posts()) : ?>
 <?php if (have_rows('repeater_galerias')) : 
     $counter = 1; 
 ?>
-<div class="py-5">
+<div class="py-5" id="galeria">
     <div class="container mb-5">
-        <div class="row mt-5" id="galeria">
+        <div class="row mt-5" >
             <div class="col-sm-12">
                 <div class="flex-wrapper d-md-flex justify-content-between alig-items-center">
                     <div class="wrapper-only">
@@ -480,10 +480,10 @@ if ($query->have_posts()) : ?>
 
 <?php if (have_rows('slider_master_plan')) : 
     $counter3 = 1;?>
-<div class="pt-5">
+<div class="pt-5" id="masterPlan">
     <div class="container-fluid">
         <div class="container">
-            <div class="row" id="masterPlan">
+            <div class="row" >
                 <div class="col-12">
                     <div class="flex-wrapper d-md-flex justify-content-between alig-items-center">
                         <div class="wrapper-only">
