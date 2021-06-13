@@ -251,6 +251,14 @@
             background-size: contain;
         }
     }
+    .section-title_gris & {
+        color: #3C3C3C;
+        &::before{
+            content: "";
+            background: url('../img/title-img-gris.png') no-repeat;
+            background-size: contain;
+        }
+    }
 }
 .wrapper-only{
     position: relative;
