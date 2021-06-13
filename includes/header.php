@@ -128,7 +128,7 @@ if(is_singular('proyectos')):
             <b>Residencial</b></a>
           </li>
           <li class="mr-md-5 my-5 my-md-0 link-comercial"><a href="<?php echo site_url('comercial');?>">
-            <b>Comercial</b></a>
+            <b>Renta Comercial</b></a>
           </li>
           <li class="mr-md-5 my-5 my-md-0 link-rentas"><a href="<?php echo site_url('rentas');?>">
             <b>Rentas</b></a>

@@ -17,7 +17,7 @@
             </li>
             <li class="d-none d-md-block"><a href="<?php echo site_url();?>" class="text-white mr-5">Inicio</a></li>
             <li class="d-none d-md-block"><a href="<?php echo site_url('residencial');?>" class="text-white mr-5">Residencial</a></li>
-            <li class="d-none d-md-block"><a href="<?php echo site_url('comercial');?>" class="text-white mr-5">Comercial</a></li>
+            <li class="d-none d-md-block"><a href="<?php echo site_url('comercial');?>" class="text-white mr-5">Renta Comercial</a></li>
             <li class="d-none d-md-block"><a href="<?php echo site_url('rentas');?>" class="text-white mr-5">Rentas</a></li>
             <li class="d-none d-md-block"><a href="<?php echo site_url('industrial');?>" class="text-white mr-5">Industrial</a></li>
             <li class="d-none d-md-block"><a href="<?php echo site_url('somos-brick');?>" class="text-white mr-5">Somos Brick</a></li>
