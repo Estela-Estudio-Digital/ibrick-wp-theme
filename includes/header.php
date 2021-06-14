@@ -130,11 +130,11 @@ if(is_singular('proyectos')):
           <li class="mr-md-5 my-5 my-md-0 link-comercial"><a href="<?php echo site_url('comercial');?>">
             <b>Comercial</b></a>
           </li>
-          <li class="mr-md-5 my-5 my-md-0 link-rentas"><a href="<?php echo site_url('rentas');?>">
-            <b>Rentas</b></a>
-          </li>
           <li class="mr-md-5 my-5 my-md-0 link-industrial"><a href="<?php echo site_url('industrial');?>">
             <b>Industrial</b></a>
+          </li>
+          <li class="mr-md-5 my-5 my-md-0 link-rentas"><a href="<?php echo site_url('rentas');?>">
+            <b>Rentas</b></a>
           </li>
           <li class="mr-md-5 my-5 my-md-0 link-somos-brick"><a href="<?php echo site_url('somos-brick');?>">
             <b>Somos Brick</b></a>

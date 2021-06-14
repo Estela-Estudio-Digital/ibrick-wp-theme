@@ -78,7 +78,7 @@ $bloque_3_imagen = get_field('bloque_3_imagen');
             <a href="<?php echo site_url('comercial');?>" class="btn btn-primary shadow"> Ver proyectos</a>
         </div>
         <div class="col-md-3 text-center text-md-left my-5 my-md-0">
-            <h4 class="text-uppercase section-title section-gris mb-3">
+            <h4 class="text-uppercase section-title section-title_gris mb-3">
                 <span class="primary-title">Proyectos</span><br>
                 <span class="secondary-title">Industriales</span>
             </h4>
