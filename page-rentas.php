@@ -135,7 +135,7 @@ Template Name: Rentas
         </div>
     </div>
 </div>
-<div class="container mt-5 pt-5">
+<div class="container mt-5 pt-5 d-none">
     <div class="row">
         <div class="col-12 my-5">
             <h3 class="text-uppercase"><span class="secondary-title font-weight-bold">Proyectos</span> <span class="secondary-title color-primary font-weight-bold">Habitacionales</span></h3>
@@ -158,7 +158,7 @@ $query = new WP_Query(array(
   ));
   include( locate_template( './includes/templates/proyectos_destacados.php', false, false) ); ?>
 
-<div class="container">
+<div class="container d-none">
     <div class="row">
         <div class="col-12 my-5">
             <h3 class="text-uppercase"><span class="secondary-title font-weight-bold">Proyectos</span> <span class="secondary-title color-primary font-weight-bold">Comerciales</span></h3>
@@ -175,11 +175,11 @@ $query = new WP_Query(array(
         array(
             'taxonomy'      => $taxonomy,
             'field'          => 'slug',
-            'terms'         => 'comercial'
+            'terms'         => 'comercial-rentass'
         ),
     ),
   ));
-  include( locate_template( './includes/templates/proyectos_destacados.php', false, false) ); ?>
+  // include( locate_template( './includes/templates/proyectos_destacados.php', false, false) ); ?>
 
 <?php 
     bk_main_after();
