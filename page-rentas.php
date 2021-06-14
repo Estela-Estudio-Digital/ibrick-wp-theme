@@ -175,7 +175,7 @@ $query = new WP_Query(array(
         array(
             'taxonomy'      => $taxonomy,
             'field'          => 'slug',
-            'terms'         => 'comercial-renta'
+            'terms'         => 'comercial'
         ),
     ),
   ));
