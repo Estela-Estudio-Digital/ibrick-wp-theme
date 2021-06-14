@@ -686,6 +686,14 @@ button:focus {
   background: url("../img/title-img-verde.png") no-repeat;
   background-size: contain;
 }
+.section-title_gris .primary-title {
+  color: #3C3C3C;
+}
+.section-title_gris .primary-title::before {
+  content: "";
+  background: url("../img/title-img-gris.png") no-repeat;
+  background-size: contain;
+}
 
 .wrapper-only {
   position: relative;
