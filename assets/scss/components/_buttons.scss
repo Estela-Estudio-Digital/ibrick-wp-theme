@@ -40,6 +40,18 @@
             }
         }
     }
+    &-linear{
+        // background: $brand-secondary-color !important;
+        //border-radius: 5px;
+        border-radius: 0 !important;
+        border: 1px solid $brand-primary-color;
+        color: $brand-primary-color !important;
+        &:hover {
+            color: $dark-grey !important;
+            background: $ligth-grey !important;
+            border:none;
+        }
+    }
     &-emphasis{
         background: $brand-emphasis-color !important;
         border: 0;

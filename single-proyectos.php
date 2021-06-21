@@ -372,8 +372,8 @@ if ($query->have_posts()) : ?>
                             </ul>
 
                             <ul class="d-flex justify-content-between align-items-center py-3 m-0" style="background:#F6F8FA">
-                                <li class="pl-5 d-none">
-                                    Desde <b class="">UF 2300</b>
+                                <li class="pl-5">
+                                    <a href="<?php echo the_permalink(); ?>" class="btn btn-linear px-4 mr-3 text-uppercase">consultar</a>
                                 </li>
                                 <li class="ml-auto">
                                     <?php if ($estado == 'Normal') : ?>

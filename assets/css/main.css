@@ -412,6 +412,16 @@ button:focus {
   color: white !important;
   background: #2876A2 !important;
 }
+.btn-linear {
+  border-radius: 0 !important;
+  border: 1px solid #2876A2;
+  color: #2876A2 !important;
+}
+.btn-linear:hover {
+  color: #121212 !important;
+  background: #a1a1a1 !important;
+  border: none;
+}
 .btn-emphasis {
   background: #FFB221 !important;
   border: 0;
