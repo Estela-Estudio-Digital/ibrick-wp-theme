@@ -54,7 +54,7 @@ if (!empty($terms)) {
     }
 }
 ?>
-<div class="d-none d-md-block">
+<div class="d-none">
     <ul class="follow-button-pay bg-white shadow align-items-center <?php echo ($whatsapp) ? 'justify-content-md-between' : 'justify-content-md-start' ?>" style="min-width:<?php echo ($whatsapp) ? '380px' : '' ?>;">
         <li class="">
             <a href="#" class="contactoModalBtn btn btn-secondary btn-sm bk--btn__primary shadow p-2">
