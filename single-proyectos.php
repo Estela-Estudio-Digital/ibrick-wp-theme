@@ -639,7 +639,8 @@ if ($query->have_posts()) : ?>
         <?php endif; ?>
     </ul>
 </section>
-
+<h2>Funca</h2>
+<?php echo do_shortcode('[contact-form-7 id="988" title="formulario_cotizar_proyecto"]'); ?>
 <div class="form-modal bg-white">
     <div class="p-5">
         <div class="form-modal-header">
@@ -656,75 +657,82 @@ if ($query->have_posts()) : ?>
                 </li>
             </ul>
         </div>
-        <form method="post" class="wpcf7-form formulario_cotizar formulario_cotizar_proyecto formulario-general" style="max-width: 400px;" name="formulario_cotizar_proyecto" id="formulario_cotizar_proyecto" role="form">
-            <div style="display: none;">
-                <input type="hidden" name="_wpcf7" value="988">
-                <?php 
-                    $plugin_data = get_plugin_data( ABSPATH . 'wp-content/plugins/contact-form-7/wp-contact-form-7.php' );
-                    echo '<input type="hidden" name="_wpcf7_version" value="'.$plugin_data['Version'].'">';
-                ?>
-                <input type="hidden" name="_wpcf7_locale" value="en_US">
-                <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f988-o1">
-                <input type="hidden" name="_wpcf7_container_post" value="0">
-                <input type="hidden" name="nombreProyecto" id="nombreProyecto">
-                <input type="hidden" name="correosVentas" id="correosVentas" value="<?php echo $correos_ventas;?>">
-                <input type="hidden" name="logoProyecto" id="logoProyecto">
-                <input type="hidden" name="urlProyecto" id="urlProyecto" value="<?php echo get_permalink();?>">
-    
-                <input type="hidden" name="fuenteSbj" id="fuenteSbj">
-                <input type="hidden" name="medioSbj" id="medioSbj">
+
+        <div role="form" class="wpcf7" id="wpcf7-f988-o1" lang="es-ES" dir="ltr">
+            <div class="screen-reader-response">
+                <p role="status" aria-live="polite" aria-atomic="true"></p>
+                <ul></ul>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-12 ">
-                    <label class="label" for="inputName">Nombre y apellido</label>
-                    <input type="text" class="form-control" id="inputName" name="inputName" required>
+            <form method="post" class="wpcf7-form formulario_cotizar formulario_cotizar_proyecto formulario-general" style="max-width: 400px;" name="formulario_cotizar_proyecto" id="formulario_cotizar_proyecto" role="form">
+                <div style="display: none;">
+                    <input type="hidden" name="_wpcf7" value="988">
+                    <?php 
+                        $plugin_data = get_plugin_data( ABSPATH . 'wp-content/plugins/contact-form-7/wp-contact-form-7.php' );
+                        echo '<input type="hidden" name="_wpcf7_version" value="'.$plugin_data['Version'].'">';
+                    ?>
+                    <input type="hidden" name="_wpcf7_locale" value="en_US">
+                    <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f988-o1">
+                    <input type="hidden" name="_wpcf7_container_post" value="0">
+                    <input type="hidden" name="nombreProyecto" id="nombreProyecto">
+                    <input type="hidden" name="correosVentas" id="correosVentas" value="<?php echo $correos_ventas;?>">
+                    <input type="hidden" name="logoProyecto" id="logoProyecto">
+                    <input type="hidden" name="urlProyecto" id="urlProyecto" value="<?php echo get_permalink();?>">
+        
+                    <input type="hidden" name="fuenteSbj" id="fuenteSbj">
+                    <input type="hidden" name="medioSbj" id="medioSbj">
                 </div>
-                <div class="form-group col-md-12">
-                    <label class="label" for="inputName">Email</label>
-                    <input type="email" class="form-control" id="inputEmail" name="inputEmail" required>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-12 ">
-                    <label class="label" for="inputName">Rut</label>
-                    <input type="text" class="form-control Rut" id="inputRut" name="inputRut">
-                </div>
-                <div class="form-group col-md-12">
-                    <label class="label" for="inputTelefono">Télefono</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">+56</span></div>
-                            <input type="text" class="form-control" id="inputTelefono" name="inputTelefono" required>
-                        </div>
-                </div>
-                <div class="form-group w-100">
-                    <label class="label" for="texAreaMensaje">Consulta</label>
-                    <textarea class="form-control" id="texAreaMensaje" name="texAreaMensaje" cols="40" rows="4"></textarea>
-                </div>
-                <div class="form-group col-md-12 ">
-                    <div class="custom-control custom-checkbox">
-                        <input class="custom-control-input" type="checkbox" id="inputCheckbox"
-                            name="inputCheckbox" checked>
-                        <label class="custom-control-label" for="inputCheckbox">
-                            <small>Quiero que Brick Inmobiliaria me contacte</small> 
-                        </label>
+                <div class="form-row">
+                    <div class="form-group col-md-12 ">
+                        <label class="label" for="inputName">Nombre y apellido</label>
+                        <input type="text" class="form-control" id="inputName" name="inputName" required>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="label" for="inputName">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" name="inputEmail" required>
                     </div>
                 </div>
-            </div>
-            <div class="form-group w-100">
-                <div class="text-center py-4">
-                    <button  
-                        type="submit" name="boton_enviar" value="enviar"
-                        class="g-recaptcha btn btn-primary px-5 al-btn al-btn--white " 
-                        id="boton_enviar" 
-                        data-badge="inline"
-                        disabled>
-                        Cotizar
-                    </button><br>
-                    <span class="ajax-loader"></span>
+                <div class="form-row">
+                    <div class="form-group col-md-12 ">
+                        <label class="label" for="inputName">Rut</label>
+                        <input type="text" class="form-control Rut" id="inputRut" name="inputRut">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="label" for="inputTelefono">Télefono</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">+56</span></div>
+                                <input type="text" class="form-control" id="inputTelefono" name="inputTelefono" required>
+                            </div>
+                    </div>
+                    <div class="form-group w-100">
+                        <label class="label" for="texAreaMensaje">Consulta</label>
+                        <textarea class="form-control" id="texAreaMensaje" name="texAreaMensaje" cols="40" rows="4"></textarea>
+                    </div>
+                    <div class="form-group col-md-12 ">
+                        <div class="custom-control custom-checkbox">
+                            <input class="custom-control-input" type="checkbox" id="inputCheckbox"
+                                name="inputCheckbox" checked>
+                            <label class="custom-control-label" for="inputCheckbox">
+                                <small>Quiero que Brick Inmobiliaria me contacte</small> 
+                            </label>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </form>
+                <div class="form-group w-100">
+                    <div class="text-center py-4">
+                        <button  
+                            type="submit" name="boton_enviar" value="enviar"
+                            class="g-recaptcha btn btn-primary px-5 al-btn al-btn--white " 
+                            id="boton_enviar" 
+                            data-badge="inline"
+                            disabled>
+                            Cotizar
+                        </button><br>
+                        <span class="ajax-loader"></span>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 <?php endif;?>
