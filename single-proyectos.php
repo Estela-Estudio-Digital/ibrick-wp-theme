@@ -639,8 +639,6 @@ if ($query->have_posts()) : ?>
         <?php endif; ?>
     </ul>
 </section>
-<h2>Funca</h2>
-<?php echo do_shortcode('[contact-form-7 id="988" title="formulario_cotizar_proyecto"]'); ?>
 <div class="form-modal bg-white">
     <div class="p-5">
         <div class="form-modal-header">
