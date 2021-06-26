@@ -197,7 +197,7 @@ if ( ! function_exists('bk_enqueues') ) {
 			array_push( 
 				$single_arr, array(
 					"nombreProyecto" => $nombreProyecto,
-					"correoVentas" => $correos_ventas ,
+					"correosVentas" => $correos_ventas ,
 					"logoProyecto" => $logo_proyecto['url'],
 					"superficieUtil" => $superficie_construida,
 					"superficieTerraza" => $superficie_terraza,

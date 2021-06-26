@@ -352,25 +352,25 @@ $(function () {
     */
    if (project_data.data !== ""){
        var nombreProyecto = project_data.data[0].nombreProyecto,
-           correoVentas= project_data.data[0].correoVentas,
-           logoProyecto = project_data.data[0].logoProyecto,
-           imagenPlanta = project_data.data[0].imagenPlanta,
-           dormitorios = project_data.data[0].dormitorios
-           imgPlanta = project_data.data[0].imgPlanta
-           esquicio = project_data.data[0].esquicio
-           corresponde = project_data.data[0].corresponde
-           unidades = project_data.data[0].unidades
+        correosVentas= project_data.data[0].correosVentas,
+        logoProyecto = project_data.data[0].logoProyecto,
+        imagenPlanta = project_data.data[0].imagenPlanta,
+        dormitorios = project_data.data[0].dormitorios
+        imgPlanta = project_data.data[0].imgPlanta
+        esquicio = project_data.data[0].esquicio
+        corresponde = project_data.data[0].corresponde
+        unidades = project_data.data[0].unidades
 
-           superficieUtil = project_data.data[0].superficieUtil,
-           superficieTerraza = project_data.data[0].superficieTerraza,
-           superficieTotal = project_data.data[0].superficieTotal,
-           sbjMedio = sbjs.get.current.mdm,
-           sbjFuente = sbjs.get.current.src;
+        superficieUtil = project_data.data[0].superficieUtil,
+        superficieTerraza = project_data.data[0].superficieTerraza,
+        superficieTotal = project_data.data[0].superficieTotal,
+        sbjMedio = sbjs.get.current.mdm,
+        sbjFuente = sbjs.get.current.src;
    
        //console.log(nombreProyecto, textoProyecto, imagenDestacadaUno, imagenDestacadaDos,imagenDestacadaTres, direccionSv, comuna, telefonoSv, emailSv, sbjMedio, sbjFuente)
    
        $('#nombreProyecto').val(nombreProyecto);
-       $('#correosVentas').val(correoVentas);
+       $('#correosVentas').val(correosVentas);
        $('#logoProyecto').val(logoProyecto);
        $('#imagenPlanta').val(imagenPlanta);
        $('#dormitorios').val(dormitorios);
