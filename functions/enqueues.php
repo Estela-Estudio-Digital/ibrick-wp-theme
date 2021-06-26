@@ -174,6 +174,8 @@ if ( ! function_exists('bk_enqueues') ) {
 			$single_arr = array();
 			$postid = (is_singular('proyectos')) ? get_the_ID() : get_field('vincular_planta_a_proyecto')->ID;
 			$nombreProyecto = get_the_title($postid);
+			$grupo_de_datos = get_field('grupo_de_datos');
+			$correos_ventas = $grupo_de_datos['correos_ventas'];
 			$logo_proyecto = get_field('logo_proyecto', get_field('vincular_planta_a_proyecto')->ID);
 			$superficie_total = get_field('superficie_total');
 			$cantidad_de_banos = get_field('cantidad_de_banos');
@@ -195,6 +197,7 @@ if ( ! function_exists('bk_enqueues') ) {
 			array_push( 
 				$single_arr, array(
 					"nombreProyecto" => $nombreProyecto,
+					"correoVentas" => $correos_ventas ,
 					"logoProyecto" => $logo_proyecto['url'],
 					"superficieUtil" => $superficie_construida,
 					"superficieTerraza" => $superficie_terraza,

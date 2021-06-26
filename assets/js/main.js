@@ -352,6 +352,7 @@ $(function () {
     */
    if (project_data.data !== ""){
        var nombreProyecto = project_data.data[0].nombreProyecto,
+           correoVentas= project_data.data[0].correoVentas,
            logoProyecto = project_data.data[0].logoProyecto,
            imagenPlanta = project_data.data[0].imagenPlanta,
            dormitorios = project_data.data[0].dormitorios
@@ -369,6 +370,7 @@ $(function () {
        //console.log(nombreProyecto, textoProyecto, imagenDestacadaUno, imagenDestacadaDos,imagenDestacadaTres, direccionSv, comuna, telefonoSv, emailSv, sbjMedio, sbjFuente)
    
        $('#nombreProyecto').val(nombreProyecto);
+       $('#correosVentas').val(correoVentas);
        $('#logoProyecto').val(logoProyecto);
        $('#imagenPlanta').val(imagenPlanta);
        $('#dormitorios').val(dormitorios);
@@ -428,6 +430,7 @@ $(function () {
             icon: 'success',
             confirmButtonText: 'cerrar'
         })
+        $('.form-modal').removeClass('form-modal-open');
     });
 
     $(".wpcf7").on('wpcf7mailfailed', function (event) {
@@ -438,6 +441,7 @@ $(function () {
             icon: 'error',
             confirmButtonText: 'cerrar'
         })
+        $('.form-modal').removeClass('form-modal-open');
     });
 
     $(".wpcf7").on('wpcf7invalid', function () {
@@ -445,7 +449,7 @@ $(function () {
     });
 
     $(".wpcf7").on('wpcf7submit', function () {
-        console.log("wpcf7submit")
+        console.log("wpcf7submit");
     });
 
     /* 
@@ -501,7 +505,7 @@ $(function () {
         digits: "Por favor ingresa sólo números."
     });
     //Verificación de rut desde plugin, solo muestra datos en consola
-    $('#inputRut').Rut({
+    $('.Rut').Rut({
         on_error: function () {
             console.log('Rut invalido');
         },
@@ -515,9 +519,9 @@ $(function () {
 
     $('.formulario_cotizar').on('keyup keypress', function (e) {
         if ($(this).valid()) {
-            $('#boton_enviar').prop('disabled', false);
+            $(this).find('.boton_enviar').prop('disabled', false);
         } else {
-            $('#boton_enviar').prop('disabled', true);
+            $(this).find('.boton_enviar').prop('disabled', true);
         }
     });
     //Añade metodo RUT al validador

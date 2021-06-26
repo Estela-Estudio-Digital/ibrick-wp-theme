@@ -672,7 +672,7 @@ if ($query->have_posts()) : ?>
                     <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f988-o1">
                     <input type="hidden" name="_wpcf7_container_post" value="0">
                     <input type="hidden" name="nombreProyecto" id="nombreProyecto">
-                    <input type="hidden" name="correosVentas" id="correosVentas" value="<?php echo $correos_ventas;?>">
+                    <input type="hidden" name="correosVentas" id="correosVentas" >
                     <input type="hidden" name="logoProyecto" id="logoProyecto">
                     <input type="hidden" name="urlProyecto" id="urlProyecto" value="<?php echo get_permalink();?>">
         
@@ -682,33 +682,33 @@ if ($query->have_posts()) : ?>
                 <div class="form-row">
                     <div class="form-group col-md-12 ">
                         <label class="label" for="inputName">Nombre y apellido</label>
-                        <input type="text" class="form-control" id="inputName" name="inputName" required>
+                        <input type="text" class="form-control" id="inputNameCotizar" name="inputName" required>
                     </div>
                     <div class="form-group col-md-12">
                         <label class="label" for="inputName">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" name="inputEmail" required>
+                        <input type="email" class="form-control" id="inputEmailCotizar" name="inputEmail" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-12 ">
                         <label class="label" for="inputName">Rut</label>
-                        <input type="text" class="form-control Rut" id="inputRut" name="inputRut">
+                        <input type="text" class="form-control Rut" id="inputRutCotizar" name="inputRut">
                     </div>
                     <div class="form-group col-md-12">
                         <label class="label" for="inputTelefono">Télefono</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">+56</span></div>
-                                <input type="text" class="form-control" id="inputTelefono" name="inputTelefono" required>
+                                <input type="text" class="form-control" id="inputTelefonoCotizar" name="inputTelefono" required>
                             </div>
                     </div>
                     <div class="form-group w-100">
                         <label class="label" for="texAreaMensaje">Consulta</label>
-                        <textarea class="form-control" id="texAreaMensaje" name="texAreaMensaje" cols="40" rows="4"></textarea>
+                        <textarea class="form-control" id="texAreaMensajeCotizar" name="texAreaMensaje" cols="40" rows="4"></textarea>
                     </div>
                     <div class="form-group col-md-12 ">
                         <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="inputCheckbox"
+                            <input class="custom-control-input" type="checkbox" id="inputCheckboxCotizar"
                                 name="inputCheckbox" checked>
                             <label class="custom-control-label" for="inputCheckbox">
                                 <small>Quiero que Brick Inmobiliaria me contacte</small> 
@@ -720,8 +720,8 @@ if ($query->have_posts()) : ?>
                     <div class="text-center py-4">
                         <button  
                             type="submit" name="boton_enviar" value="enviar"
-                            class="g-recaptcha btn btn-primary px-5 al-btn al-btn--white " 
-                            id="boton_enviar" 
+                            class="g-recaptcha btn btn-primary px-5 al-btn al-btn--white boton_enviar" 
+                            id="boton_enviarCotizar" 
                             data-badge="inline"
                             disabled>
                             Cotizar

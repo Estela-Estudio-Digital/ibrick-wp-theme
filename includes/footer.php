@@ -110,7 +110,7 @@
                                     <label class="label" for="inputName">Nombre y apellido</label>
                                     <input type="text" class="form-control" id="inputName" name="inputName" required>
                                 </div>
-                                <div class="form-group col-md-12 ">
+                                <div class="form-group w-100 px-4">
                                     <label class="label" for="inputName">Rut</label>
                                     <input type="text" class="form-control Rut" id="inputRut" name="inputRut">
                                 </div>
@@ -130,7 +130,7 @@
                                     <div class="text-center py-4">
                                         <button  
                                             type="submit" name="boton_enviar" value="enviar"
-                                            class="g-recaptcha btn btn-primary px-5 al-btn al-btn--white " 
+                                            class="g-recaptcha btn btn-primary px-5 al-btn al-btn--white boton_enviar" 
                                             id="boton_enviar" 
                                             data-badge="inline"
                                             disabled>
