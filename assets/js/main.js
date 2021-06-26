@@ -133,8 +133,11 @@ $(function () {
    $('.buttons-next-prev-plantas .next a').text('›');
    $('.buttons-next-prev-plantas .prev a').text('‹');
 
+   $('.formulario-general .input-group-text').fadeOut();
+
    $('.formulario-general input').on('focus',function(){
-        $(this).parent('.form-group').find('.label').addClass('activelabel')
+        $(this).parents('.form-group').find('.label').addClass('activelabel');
+        $(this).parents('.form-group').find('.input-group-text').fadeIn();
     });
     $('.formulario-general textarea').on('focus',function(){
         $(this).parent('.form-group').find('.label').addClass('activelabel')
@@ -152,9 +155,10 @@ $(function () {
         let length = $(this).val();
         console.log(length.length)
         if(length.length > 0){
-            $(this).parent('.form-group').find('.label').addClass('activelabel')
+            $(this).parents('.form-group').find('.label').addClass('activelabel')
         } else {
-            $(this).parent('.form-group').find('.label').removeClass('activelabel')
+            $(this).parents('.form-group').find('.label').removeClass('activelabel');
+            $(this).parents('.form-group').find('.input-group-text').fadeOut('fast')
         }
     });
     
@@ -470,6 +474,9 @@ $(function () {
                 digits: true,
                 minlength: 9,
                 maxlength: 9,
+            },
+            texAreaMensaje: {
+                required: false,
             }
         },
         messages: {

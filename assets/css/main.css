@@ -484,6 +484,11 @@ button:focus {
   bottom: -2px;
 }
 
+.input-group-text {
+  background: none;
+  border: none;
+}
+
 .footer-icon-span {
   width: 20px;
   height: 30px;

@@ -656,7 +656,7 @@ if ($query->have_posts()) : ?>
                 </li>
             </ul>
         </div>
-        <form method="post" class="wpcf7-form formulario_cotizar_planta formulario-general" style="max-width: 400px;" name="cotizar_proyecto" id="cotizar_proyecto" role="form">
+        <form method="post" class="wpcf7-form formulario_cotizar formulario_cotizar_proyecto formulario-general" style="max-width: 400px;" name="cotizar_proyecto" id="cotizar_proyecto" role="form">
             <div style="display: none;">
                 <input type="hidden" name="_wpcf7" value="988">
                 <?php 
@@ -667,6 +667,7 @@ if ($query->have_posts()) : ?>
                 <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f988-o1">
                 <input type="hidden" name="_wpcf7_container_post" value="0">
                 <input type="hidden" name="nombreProyecto" id="nombreProyecto">
+                <input type="hidden" name="correosVentas" id="correosVentas" value="<?php echo $correos_ventas;?>">
                 <input type="hidden" name="logoProyecto" id="logoProyecto">
                 <input type="hidden" name="urlProyecto" id="urlProyecto" value="<?php echo get_permalink();?>">
     
@@ -690,7 +691,11 @@ if ($query->have_posts()) : ?>
                 </div>
                 <div class="form-group col-md-12">
                     <label class="label" for="inputTelefono">Télefono</label>
-                        <input type="text" class="form-control" id="inputTelefono" name="inputTelefono" required>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">+56</span></div>
+                            <input type="text" class="form-control" id="inputTelefono" name="inputTelefono" required>
+                        </div>
                 </div>
                 <div class="form-group w-100">
                     <label class="label" for="texAreaMensaje">Consulta</label>
