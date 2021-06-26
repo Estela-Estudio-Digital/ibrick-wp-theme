@@ -63,3 +63,57 @@
         }
     }
 }
+
+.contact-floating{
+    &-container {
+        position: fixed;
+        left: 0;
+        bottom: 15px;
+        z-index: 4;
+        // background: rgba($white, .5);
+        width: 100%;
+    }
+    &-list {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+    &-whatsapp {
+        &-button {
+            background: #00bfa5;
+            color: $white;
+            padding: 10px 20px;
+            border-radius: 50rem;
+            max-width: 170px;
+            box-shadow: 0 5px 5px -3px rgba(#015348, .2), 0 8px 10px 1px rgba(#015348, .2), 0 3px 14px 2px rgba(#015348, .2);
+            transition: .2s ease-in-out all;
+            &:hover {
+                background: #019682;
+            }
+        }
+    }
+    &-form {
+        background: #6dccf1;
+        padding: 15px;
+        border-radius: 50rem;
+        box-shadow: 0 5px 5px -3px rgba(#015348, .2), 0 8px 10px 1px rgba(#015348, .2), 0 3px 14px 2px rgba(#015348, .2);
+    }
+}
+
+.form-modal {
+    position: fixed;
+    bottom: -100%;
+    right: 0;
+    z-index: 4;
+    width: 100%;
+    height: calc(100vh - 90px);
+    transition: all .5s ease-in-out;
+    @include MQ(M) {
+        right: -2px;
+        border: 1px solid #c3c3c3;
+        width: auto;
+        height: auto;
+    }
+    &-open {
+        bottom: -2px;
+    }
+}

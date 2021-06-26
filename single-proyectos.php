@@ -11,6 +11,7 @@ $precio_desde = $grupo_de_datos['precio_desde'];
 $tipologia_select = $grupo_de_datos['tipologia_select'];
 $legal = $grupo_de_datos['legal'];
 $whatsapp = $grupo_de_datos['whatsapp'];
+$correos_ventas = $grupo_de_datos['correos_ventas'];
 $tag_del_ptroyecto = $grupo_de_datos['tag_del_ptroyecto'];
 $caracteristicas_proyecto = $grupo_de_datos['caracteristicas_proyecto'];
 $terminaciones_repeater = $grupo_de_datos['terminaciones_repeater'];
@@ -372,7 +373,7 @@ if ($query->have_posts()) : ?>
                             </ul>
 
                             <ul class="d-flex justify-content-between align-items-center py-3 m-0" style="background:#F6F8FA">
-                                <li class="pl-5">
+                                <li class="pl-5 d-none">
                                     <a href="<?php echo the_permalink(); ?>" class="btn btn-linear px-4 mr-3 text-uppercase">consultar</a>
                                 </li>
                                 <li class="ml-auto">
@@ -607,6 +608,120 @@ if ($query->have_posts()) : ?>
         </div>
     </div>
 </section>
+<?php endif; ?>
+<?php if($whatsapp || $correos_ventas): ?>
+<section class="contact-floating-container">
+    <ul class="contact-floating-list px-4 d-flex justify-content-between align-items-center">
+        <?php if($whatsapp): ?>
+        <li>
+            <a class="d-inline" id="whatsappButton" href="https://api.whatsapp.com/send/?phone=<?php echo $whatsapp;?>&text=Me%20interesa%20el%20 %20proyecto%20<?php echo the_title();?>" target="_blank">
+                <ul class="d-flex align-items-center contact-floating-whatsapp-button">
+                    <li class="mr-2">
+                        <img src="<?php bloginfo('template_directory');?>/assets/img/whatsapp-logo.svg" alt="whatsapp" style="max-height:25px" width="25">
+                    </li>
+                    <li>
+                        <span>Conversemos</span>
+                    </li>
+                </ul>
+            </a>
+        </li>
+        <?php endif; ?>
+        <?php if ($correos_ventas): ?>
+        <li>
+            <a href="#" id="contactFloatingForm">
+                <ul class="contact-floating-form">
+                    <li>
+                    <img src="<?php bloginfo('template_directory');?>/assets/img/email.svg" alt="whatsapp" style="max-height:35px" width="35">
+                    </li>
+                </ul>
+            </a>
+        </li>
+        <?php endif; ?>
+    </ul>
+</section>
+
+<div class="form-modal bg-white">
+    <div class="p-5">
+        <div class="form-modal-header">
+            <ul class="d-flex align-items-center w-100 justify-content-between">
+                <li>
+                    <h2>Consulta a ventas</h2>
+                </li>
+                <li>
+                    <a href="#" id="formModalClose">
+                        <h2>
+                            <span aria-hidden="true">&times;</span>
+                        </h2>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <form method="post" class="wpcf7-form formulario_cotizar_planta formulario-general" style="max-width: 400px;" name="cotizar_proyecto" id="cotizar_proyecto" role="form">
+            <div style="display: none;">
+                <input type="hidden" name="_wpcf7" value="988">
+                <?php 
+                    $plugin_data = get_plugin_data( ABSPATH . 'wp-content/plugins/contact-form-7/wp-contact-form-7.php' );
+                    echo '<input type="hidden" name="_wpcf7_version" value="'.$plugin_data['Version'].'">';
+                ?>
+                <input type="hidden" name="_wpcf7_locale" value="en_US">
+                <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f988-o1">
+                <input type="hidden" name="_wpcf7_container_post" value="0">
+                <input type="hidden" name="nombreProyecto" id="nombreProyecto">
+                <input type="hidden" name="logoProyecto" id="logoProyecto">
+                <input type="hidden" name="urlProyecto" id="urlProyecto" value="<?php echo get_permalink();?>">
+    
+                <input type="hidden" name="fuenteSbj" id="fuenteSbj">
+                <input type="hidden" name="medioSbj" id="medioSbj">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12 ">
+                    <label class="label" for="inputName">Nombre y apellido</label>
+                    <input type="text" class="form-control" id="inputName" name="inputName" required>
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="label" for="inputName">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" name="inputEmail" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12 ">
+                    <label class="label" for="inputName">Rut</label>
+                    <input type="text" class="form-control Rut" id="inputRut" name="inputRut">
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="label" for="inputTelefono">Télefono</label>
+                        <input type="text" class="form-control" id="inputTelefono" name="inputTelefono" required>
+                </div>
+                <div class="form-group w-100">
+                    <label class="label" for="texAreaMensaje">Consulta</label>
+                    <textarea class="form-control" id="texAreaMensaje" name="texAreaMensaje" minlength="50" maxlength="50" cols="40" rows="4"></textarea>
+                </div>
+                <div class="form-group col-md-12 ">
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" id="inputCheckbox"
+                            name="inputCheckbox" checked>
+                        <label class="custom-control-label" for="inputCheckbox">
+                            <small>Quiero que Brick Inmobiliaria me contacte</small> 
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group w-100">
+                <div class="text-center py-4">
+                    <button  
+                        type="submit" name="boton_enviar" value="enviar"
+                        class="g-recaptcha btn btn-primary px-5 al-btn al-btn--white " 
+                        id="boton_enviar" 
+                        data-badge="inline"
+                        disabled>
+                        Cotizar
+                    </button><br>
+                    <span class="ajax-loader"></span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 <?php endif;?>
 <?php if ($planok) : ?>
 <div class="modal fade" id="planok-modal" tabindex="-1" role="dialog" aria-labelledby="planok-modalLabel" aria-hidden="true">

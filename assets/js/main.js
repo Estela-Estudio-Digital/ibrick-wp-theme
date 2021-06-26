@@ -54,6 +54,21 @@ $(function () {
     })
     /* 
 	------------------------------------------------------------------
+		Menú Hamburguer
+	------------------------------------------------------------------
+	*/
+    $('#contactFloatingForm').on('click', function (e) {
+        e.preventDefault();
+        $('.form-modal').addClass('form-modal-open');
+
+    });
+    $('#formModalClose').on('click', function (e) {
+        e.preventDefault();
+        $('.form-modal').removeClass('form-modal-open');
+
+    });
+    /* 
+	------------------------------------------------------------------
 		Menú fixed
 	------------------------------------------------------------------
     */
@@ -120,6 +135,18 @@ $(function () {
 
    $('.formulario-general input').on('focus',function(){
         $(this).parent('.form-group').find('.label').addClass('activelabel')
+    });
+    $('.formulario-general textarea').on('focus',function(){
+        $(this).parent('.form-group').find('.label').addClass('activelabel')
+    });
+    $('.formulario-general textarea').on('blur',function(){
+        let length = $(this).val();
+        console.log(length.length)
+        if(length.length > 0){
+            $(this).parent('.form-group').find('.label').addClass('activelabel')
+        } else {
+            $(this).parent('.form-group').find('.label').removeClass('activelabel')
+        }
     });
     $('.formulario-general input').on('blur',function(){
         let length = $(this).val();

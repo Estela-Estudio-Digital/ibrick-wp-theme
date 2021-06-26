@@ -189,7 +189,7 @@ $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
                         <ul></ul>
                     </div>
                     
-                    <form method="post" class="wpcf7-form formulario_cotizar formulario-general" style="max-width: 400px;" name="cotizar_proyecto" id="cotizar_proyecto"
+                    <form method="post" class="wpcf7-form formulario_cotizar_planta formulario-general" style="max-width: 400px;" name="cotizar_proyecto" id="cotizar_proyecto"
                         role="form">
                         <div style="display: none;">
                             <input type="hidden" name="_wpcf7" value="560">
