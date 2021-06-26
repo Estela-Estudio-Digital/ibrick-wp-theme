@@ -704,7 +704,7 @@ if ($query->have_posts()) : ?>
                         </div>
                         <div class="form-group w-100">
                             <label class="label" for="texAreaMensaje">Consulta</label>
-                            <input class="form-control" id="texAreaMensaje" name="texAreaMensaje" cols="40" rows="4"></input>
+                            <input class="form-control" id="texAreaMensajeCotizar" name="texAreaMensaje"></input>
                         </div>
                         <div class="form-group col-md-12 ">
                             <div class="custom-control custom-checkbox">
