@@ -656,7 +656,7 @@ if ($query->have_posts()) : ?>
                 </li>
             </ul>
         </div>
-        <form method="post" class="wpcf7-form formulario_cotizar formulario_cotizar_proyecto formulario-general" style="max-width: 400px;" name="cotizar_proyecto" id="cotizar_proyecto" role="form">
+        <form method="post" class="wpcf7-form formulario_cotizar formulario_cotizar_proyecto formulario-general" style="max-width: 400px;" name="formulario_cotizar_proyecto" id="formulario_cotizar_proyecto" role="form">
             <div style="display: none;">
                 <input type="hidden" name="_wpcf7" value="988">
                 <?php 
