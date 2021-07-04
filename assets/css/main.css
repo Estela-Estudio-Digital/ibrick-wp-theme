@@ -115,31 +115,35 @@ label.error {
 }
 
 .bg-ultra-ligth-grey {
-  background-color: #E6E6E6;
+  background-color: #efece8;
 }
 
 .bg-ligth-grey {
-  background-color: #a1a1a1;
+  background-color: #efece8;
 }
 
 .bg-medium-grey {
-  background-color: #697789;
+  background-color: #efece8;
 }
 
 .bg-dark-grey {
-  background-color: #121212;
+  background-color: #efece8;
 }
 
 .bg-primary-color {
-  background-color: #2876A2;
+  background-color: #efece8;
 }
 
 .bg-secondary-color {
-  background-color: #3c3c3c;
+  background-color: #efece8;
 }
 
 .bg-emphasis-color {
-  background-color: #FFB221;
+  background-color: #efece8;
+}
+
+.bg-whatsapp-color {
+  background-color: #efece8;
 }
 
 .cd-loader {
@@ -463,28 +467,44 @@ button:focus {
   box-shadow: 0 5px 5px -3px rgba(1, 83, 72, 0.2), 0 8px 10px 1px rgba(1, 83, 72, 0.2), 0 3px 14px 2px rgba(1, 83, 72, 0.2);
 }
 
-.form-modal {
+.form-modal, .whatsapp-modal {
   position: fixed;
   bottom: -100%;
-  right: 0;
   z-index: 4;
   width: 100%;
   height: calc(100vh - 90px);
   transition: all 0.5s ease-in-out;
 }
 @media screen and (min-width: 768px) {
-  .form-modal {
-    right: -2px;
+  .form-modal, .whatsapp-modal {
     border: 1px solid #c3c3c3;
     width: auto;
     height: auto;
   }
 }
-.form-modal-open {
+.form-modal-open, .whatsapp-modal-open {
   bottom: -2px;
 }
 
-.input-group-text {
+.form-modal {
+  right: 0;
+}
+@media screen and (min-width: 768px) {
+  .form-modal {
+    right: -2px;
+  }
+}
+
+.whatsapp-modal {
+  left: 0;
+}
+@media screen and (min-width: 768px) {
+  .whatsapp-modal {
+    left: -2px;
+  }
+}
+
+.formulario-general .input-group-text {
   background: none;
   border: none;
 }

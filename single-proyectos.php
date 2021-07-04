@@ -55,38 +55,6 @@ if (!empty($terms)) {
     }
 }
 ?>
-<div class="d-none">
-    <ul class="follow-button-pay bg-white shadow align-items-center <?php echo ($whatsapp) ? 'justify-content-md-between' : 'justify-content-md-start' ?>" style="min-width:<?php echo ($whatsapp) ? '380px' : '' ?>;">
-        <li class="">
-            <a href="#" class="contactoModalBtn btn btn-secondary btn-sm bk--btn__primary shadow p-2">
-                <div class="d-md-inline">
-                <i class="far fa-envelope"></i> 
-                </div>
-                <small>
-                Contáctanos
-                </small>
-            </a>
-        </li>
-        <li class="">
-            <a href="#" id="agendarConCalenly" class="btn btn-secondary btn-sm bk--btn__primary shadow p-2 <?php echo ($whatsapp) ? 'mx-2' : 'mx-2' ?>">
-                <div class="d-md-inline">
-                <i class="far fa-calendar-alt"></i>
-                </div>
-                <small>
-                Agendar
-                </small>
-            </a>
-        </li>
-        <?php if($whatsapp): ?>
-        <li class="text-center">
-            <a id="whatsappButton" href="https://api.whatsapp.com/send/?phone=<?php echo $whatsapp;?>&text=Me%20interesa%20el%20 %20proyecto%20<?php echo the_title();?>" target="_blank">
-                <img src="<?php bloginfo('template_directory');?>/assets/img/whatsappAmarillo.svg" alt="whatsapp" style="max-height:40px">
-            </a>
-        </li>
-        <?php endif; ?>
-        <li></li>
-    </ul>
-</div>
 <?php if (have_rows('slider_proyecto')) : ?>
 <section class="master-carousel owl-carousel primary-hero">
     <?php while (have_rows('slider_proyecto')) : the_row();
@@ -614,7 +582,8 @@ if ($query->have_posts()) : ?>
     <ul class="contact-floating-list px-4 d-flex justify-content-between align-items-center">
         <?php if($whatsapp): ?>
         <li>
-            <a class="d-inline" id="whatsappButton" href="https://api.whatsapp.com/send/?phone=<?php echo $whatsapp;?>&text=Me%20interesa%20el%20 %20proyecto%20<?php echo the_title();?>" target="_blank">
+        <!-- <a class="d-inline" id="whatsappButton" href="https://api.whatsapp.com/send/?phone=<?php echo $whatsapp;?>&text=Me%20interesa%20el%20 %20proyecto%20<?php echo the_title();?>" target="_blank"> -->
+            <a class="d-inline" id="whatsappButton" href="#">
                 <ul class="d-flex align-items-center contact-floating-whatsapp-button">
                     <li class="mr-2">
                         <img src="<?php bloginfo('template_directory');?>/assets/img/whatsapp-logo.svg" alt="whatsapp" style="max-height:25px" width="25">
@@ -639,6 +608,107 @@ if ($query->have_posts()) : ?>
         <?php endif; ?>
     </ul>
 </section>
+<div class="whatsapp-modal bg-white">
+    <div class="p-5 bg-ultra-ligth-grey">
+        <div class="whatsapp-header">
+            <ul class="d-flex align-items-start w-100 justify-content-between">
+                <li>
+                    <h4 class="mb-1">
+                        <img src="<?php bloginfo('template_directory');?>/assets/img/whatsapp-logo.svg" alt="whatsapp" style="max-height:45px" width="45">
+                        WhatsApp
+                    </h4>
+                    <p class="mb-0">
+                        <small>Completa los datos e inicia la conversación con uno de nuestros ejecutivos</small>
+                    </p>
+                </li>
+                <li>
+                    <a href="#" id="whatsappModalClose">
+                        <h2>
+                            <span aria-hidden="true">&times;</span>
+                        </h2>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="wp-block-contact-form-7-contact-form-selector">
+            <div role="form" class="wpcf7 wpcf7Whatsapp" id="wpcf7-f1022-o1" lang="es-ES" dir="ltr">
+                <div class="screen-reader-response">
+                    <p role="status" aria-live="polite" aria-atomic="true"></p>
+                    <ul></ul>
+                </div>
+                <form 
+                    class="wpcf7-form formulario_cotizar formulario_whatsapp formulario-general"
+                    id="formulario_whatsapp"
+                    role="form"
+                    style="max-width: 400px;"
+                    method="post"
+                    name="formulario_whatsapp"
+                >
+                    <div style="display: none;">
+                        <input type="hidden" name="_wpcf7" value="1022">
+                        <?php 
+                            $plugin_data = get_plugin_data( ABSPATH . 'wp-content/plugins/contact-form-7/wp-contact-form-7.php' );
+                            echo '<input type="hidden" name="_wpcf7_version" value="'.$plugin_data['Version'].'">';
+                        ?>
+                        <input type="hidden" name="_wpcf7_locale" value="en_US">
+                        <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f1022-o1">
+                        <input type="hidden" name="_wpcf7_container_post" value="0">
+                        <input type="hidden" name="nombreProyecto" class="nombreProyecto">
+                        <input type="hidden" name="correosVentas" class="correosVentas" >
+                        <input type="hidden" name="logoProyecto" class="logoProyecto">
+                        <input type="hidden" name="whatsappProject" class="whatsappProject">
+                        <input type="hidden" name="urlProyecto" class="urlProyecto" value="<?php echo get_permalink();?>">
+            
+                        <input type="hidden" name="fuenteSbj" class="fuenteSbj">
+                        <input type="hidden" name="medioSbj" class="medioSbj">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12 ">
+                            <label class="label" for="inputNameWhatsapp">Nombre y apellido</label>
+                            <input type="text" class="form-control" id="inputNameWhatsapp" name="inputName" required>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="label" for="inputNameWhatsapp">Email</label>
+                            <input type="email" class="form-control" id="inputEmailWhatsapp" name="inputEmail" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label class="label" for="inputTelefonoWhatsapp">Télefono</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">+56</span></div>
+                                    <input type="text" class="form-control" id="inputTelefonoWhatsapp" name="inputTelefono" required>
+                                </div>
+                        </div>
+                        <div class="form-group col-md-12 ">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="inputCheckboxWhatsapp"
+                                    name="inputCheckbox" checked>
+                                <label class="custom-control-label" for="inputCheckbox">
+                                    <small>Quiero que Brick Inmobiliaria me contacte</small> 
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group w-100">
+                        <div class="text-center py-4">
+                            <button  
+                                type="submit" name="boton_enviar_whatsapp" value="enviar"
+                                class="g-recaptcha btn btn-secondary px-5 al-btn al-btn--white boton_enviar" 
+                                id="botonEnviarWhatsapp" 
+                                data-badge="inline"
+                                disabled>
+                                Iniciar conversación
+                            </button><br>
+                            <span class="ajax-loader"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="form-modal bg-white">
     <div class="p-5">
         <div class="form-modal-header">
@@ -656,12 +726,19 @@ if ($query->have_posts()) : ?>
             </ul>
         </div>
         <div class="wp-block-contact-form-7-contact-form-selector">
-            <div role="form" class="wpcf7" id="wpcf7-f988-o1" lang="es-ES" dir="ltr">
+            <div role="form" class="wpcf7 brickcf7" id="wpcf7-f988-o1" lang="es-ES" dir="ltr">
                 <div class="screen-reader-response">
                     <p role="status" aria-live="polite" aria-atomic="true"></p>
                     <ul></ul>
                 </div>
-                <form method="post" class="wpcf7-form formulario_cotizar formulario_cotizar_proyecto formulario-general" style="max-width: 400px;" name="formulario_cotizar_proyecto" id="formulario_cotizar_proyecto" role="form">
+                <form
+                    class="wpcf7-form formulario_cotizar formulario_cotizar_proyecto formulario-general"
+                    id="formulario_cotizar_proyecto"
+                    role="form"
+                    style="max-width: 400px;"
+                    method="post"
+                    name="formulario_cotizar_proyecto"
+                >
                     <div style="display: none;">
                         <input type="hidden" name="_wpcf7" value="988">
                         <?php 
@@ -671,46 +748,47 @@ if ($query->have_posts()) : ?>
                         <input type="hidden" name="_wpcf7_locale" value="en_US">
                         <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f988-o1">
                         <input type="hidden" name="_wpcf7_container_post" value="0">
-                        <input type="hidden" name="nombreProyecto" id="nombreProyecto">
-                        <input type="hidden" name="correosVentas" id="correosVentas" >
-                        <input type="hidden" name="logoProyecto" id="logoProyecto">
-                        <input type="hidden" name="urlProyecto" id="urlProyecto" value="<?php echo get_permalink();?>">
+                        <input type="hidden" name="nombreProyecto" class="nombreProyecto">
+                        <input type="hidden" name="correosVentas" class="correosVentas" >
+                        <input type="hidden" name="logoProyecto" class="logoProyecto">
+                        <input type="hidden" name="urlProyecto" class="urlProyecto" value="<?php echo get_permalink();?>">
             
-                        <input type="hidden" name="fuenteSbj" id="fuenteSbj">
-                        <input type="hidden" name="medioSbj" id="medioSbj">
+                        <input type="hidden" name="fuenteSbj" class="fuenteSbj">
+                        <input type="hidden" name="medioSbj" class="medioSbj">
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12 ">
-                            <label class="label" for="inputName">Nombre y apellido</label>
+                            <label class="label" for="inputNameCotizar">Nombre y apellido</label>
                             <input type="text" class="form-control" id="inputNameCotizar" name="inputName" required>
                         </div>
                         <div class="form-group col-md-12">
-                            <label class="label" for="inputName">Email</label>
+                            <label class="label" for="inputEmailCotizar">Email</label>
                             <input type="email" class="form-control" id="inputEmailCotizar" name="inputEmail" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12 ">
-                            <label class="label" for="inputName">Rut</label>
+                            <label class="label" for="inputRutCotizar">Rut</label>
                             <input type="text" class="form-control Rut" id="inputRutCotizar" name="inputRut">
                         </div>
                         <div class="form-group col-md-12">
-                            <label class="label" for="inputTelefono">Télefono</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">+56</span></div>
+                            <label class="label" for="inputTelefonoCotizar">Télefono</label>
+                            <div class="input-group w-100">
+                                <div class="input-group-prepend w-100">
+                                    <span class="input-group-text">+56</span>
                                     <input type="text" class="form-control" id="inputTelefonoCotizar" name="inputTelefono" required>
                                 </div>
+                            </div>
                         </div>
                         <div class="form-group w-100">
-                            <label class="label" for="texAreaMensaje">Consulta</label>
+                            <label class="label" for="texAreaMensajeCotizar">Consulta</label>
                             <input class="form-control" id="texAreaMensajeCotizar" name="texAreaMensaje"></input>
                         </div>
                         <div class="form-group col-md-12 ">
                             <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="inputCheckboxCotizar"
+                                <input class="custom-control-input" type="checkbox"
                                     name="inputCheckbox" checked>
-                                <label class="custom-control-label" for="inputCheckbox">
+                                <label class="custom-control-label" for="inputCheckboxCotizar">
                                     <small>Quiero que Brick Inmobiliaria me contacte</small> 
                                 </label>
                             </div>
@@ -719,9 +797,11 @@ if ($query->have_posts()) : ?>
                     <div class="form-group w-100">
                         <div class="text-center py-4">
                             <button  
-                                type="submit" name="boton_enviar" value="enviar"
                                 class="g-recaptcha btn btn-primary px-5 al-btn al-btn--white boton_enviar" 
-                                id="boton_enviarCotizar" 
+                                type="submit"
+                                name="boton_enviarCotizar"
+                                value="enviar"
+                                id="botonEnviarCotizar" 
                                 data-badge="inline"
                                 disabled>
                                 Cotizar

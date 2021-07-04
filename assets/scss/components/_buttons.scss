@@ -99,16 +99,14 @@
     }
 }
 
-.form-modal {
+.form-modal, .whatsapp-modal {
     position: fixed;
     bottom: -100%;
-    right: 0;
     z-index: 4;
     width: 100%;
     height: calc(100vh - 90px);
     transition: all .5s ease-in-out;
     @include MQ(M) {
-        right: -2px;
         border: 1px solid #c3c3c3;
         width: auto;
         height: auto;
@@ -118,7 +116,26 @@
     }
 }
 
-.input-group-text {
+.form-modal {
+    right: 0;
+    @include MQ(M) {
+        right: -2px;
+    }
+}
+
+.whatsapp-modal {
+    left: 0;
+    @include MQ(M) {
+        left: -2px;
+    }
+}
+
+.formulario-general .input-group-text {
     background: none;
     border: none;
 }
+
+// .input-group-prepend label.error {
+//     display: block;
+//     width: 100%;
+// }

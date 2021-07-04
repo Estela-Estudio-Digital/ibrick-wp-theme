@@ -183,7 +183,7 @@ $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
         <div class="col-lg-4 mt-5 pr-md-5">
             <h2 class="d-md-none pb-4"><span class="plantas-info-title">Solicitar Información</span></h2>
             <div class="wp-block-contact-form-7-contact-form-selector w-100">
-                <div class="wpcf7 w-100" role="form"  id="wpcf7-f560-o1" lang="es-ES" dir="ltr" class="w-100 wp">
+                <div class="wpcf7 brickcf7 w-100" role="form"  id="wpcf7-f560-o1" lang="es-ES" dir="ltr" class="w-100 wp">
                     <div class="screen-reader-response">
                         <p role="status" aria-live="polite" aria-atomic="true"></p>
                         <ul></ul>
@@ -200,20 +200,20 @@ $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
                             <input type="hidden" name="_wpcf7_locale" value="en_US">
                             <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f560-o1">
                             <input type="hidden" name="_wpcf7_container_post" value="0">
-                            <input type="hidden" name="nombreProyecto" id="nombreProyecto">
-                            <input type="hidden" name="logoProyecto" id="logoProyecto">
-                            <input type="hidden" name="superficieUtil" id="superficieUtil">
-                            <input type="hidden" name="superficieTerraza" id="superficieTerraza">
-                            <input type="hidden" name="superficieTotal" id="superficieTotal" >
-                            <input type="hidden" name="dormitorios" id="dormitorios" >
-                            <input type="hidden" name="imgPlanta" id="imgPlanta" >
-                            <input type="hidden" name="esquicio" id="esquicio" >
-                            <input type="hidden" name="unidades" id="unidades" >
-                            <input type="hidden" name="corresponde" id="corresponde" >
-                            <input type="hidden" name="urlProyecto" id="urlProyecto" value="<?php echo get_permalink($vincular_planta_a_proyecto->ID);?>">
+                            <input type="hidden" name="nombreProyecto" class="nombreProyecto">
+                            <input type="hidden" name="logoProyecto" class="logoProyecto">
+                            <input type="hidden" name="superficieUtil" class="superficieUtil">
+                            <input type="hidden" name="superficieTerraza" class="superficieTerraza">
+                            <input type="hidden" name="superficieTotal" class="superficieTotal" >
+                            <input type="hidden" name="dormitorios" class="dormitorios" >
+                            <input type="hidden" name="imgPlanta" class="imgPlanta" >
+                            <input type="hidden" name="esquicio" class="esquicio" >
+                            <input type="hidden" name="unidades" class="unidades" >
+                            <input type="hidden" name="corresponde" class="corresponde" >
+                            <input type="hidden" name="urlProyecto" class="urlProyecto" value="<?php echo get_permalink($vincular_planta_a_proyecto->ID);?>">
 
-                            <input type="hidden" name="fuenteSbj" id="fuenteSbj">
-                            <input type="hidden" name="medioSbj" id="medioSbj">
+                            <input type="hidden" name="fuenteSbj" class="fuenteSbj">
+                            <input type="hidden" name="medioSbj" class="medioSbj">
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-12 ">

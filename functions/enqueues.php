@@ -139,6 +139,7 @@ if ( ! function_exists('bk_enqueues') ) {
 						$detalles = get_field('detalles_txt');
 						$detalles_img = get_field('detalles_img');
 						$tag_del_ptroyecto = get_field('tag_del_ptroyecto');
+						$whatsapp = $grupo_de_datos['whatsapp'];
 						$terms = get_the_terms( $post->ID, 'estado' );
 						if (!empty($terms)) {
 							foreach($terms as $term) {
@@ -156,7 +157,8 @@ if ( ! function_exists('bk_enqueues') ) {
 									'thumbnail' => $thumbnail,
 									'detalles_img' => $detalles_img['url'],
 									'tag_del_ptroyecto' => $tag_del_ptroyecto['label'],
-									'tag_color' => $tag_del_ptroyecto['value'] 
+									'tag_color' => $tag_del_ptroyecto['value'],
+									'whatsapp' => $whatsapp,
 								) 
 							);
 							
@@ -181,6 +183,7 @@ if ( ! function_exists('bk_enqueues') ) {
 			$cantidad_de_banos = get_field('cantidad_de_banos');
 			//$imagen_principal_plana = get_field('imagen_principal_plana');
 			$esquicio = get_field('esquicio');
+			$whatsapp = $grupo_de_datos['whatsapp'];
 
 			$superficie_construida = get_field("superficie_construida");
 			$superficie_terraza = get_field("superficie_terraza");
@@ -207,7 +210,7 @@ if ( ! function_exists('bk_enqueues') ) {
 					"esquicio" => $esquicio['url'],
 					"corresponde" => $corresponde,
 					"unidades" => $unidades,
-
+					'whatsapp' => $whatsapp,
 				) 
 			);
 

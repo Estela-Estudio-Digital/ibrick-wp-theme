@@ -82,16 +82,23 @@
             <div class="modal-body">
               <div class="container">
                 <div class="row align-items-stretch">
+
                   <div class="col-md-6 d-flex align-items-center">
 
                     <div class="wp-block-contact-form-7-contact-form-selector w-100">
-                      <div class="wpcf7 w-100" role="form" id="wpcf7-f523-o1" lang="es-ES" dir="ltr" class="w-100 wp">
+                      <div class="wpcf7 brickcf7 w-100" role="form" id="wpcf7-f523-o1" lang="es-ES" dir="ltr" class="w-100 wp">
                         <div class="screen-reader-response">
                             <p role="status" aria-live="polite" aria-atomic="true"></p>
                             <ul></ul>
                         </div>
                         
-                        <form  method="post" name="formulario_inicial" id="formulario_inicial" class="wpcf7-form init formulario_cotizar formulario-general" novalidate="novalidate">
+                        <form
+                          class="wpcf7-form init formulario_contact formulario-general"
+                          id="formulario_inicial"
+                          role="form"
+                          method="post"
+                          name="formulario_inicial"
+                        >
                             <div style="display: none;">
                               <input type="hidden" name="_wpcf7" value="523">
                               <?php 
@@ -105,33 +112,45 @@
                             </div>
                             
                             <div class="form-row text-left">
+
                                 <div class="form-group w-100 px-4">
                                     <span class="bk-projectcart--text__span"></span>
                                     <label class="label" for="inputName">Nombre y apellido</label>
-                                    <input type="text" class="form-control" id="inputName" name="inputName" required>
+                                    <input type="text" class="form-control" id="inputNameContact" name="inputName" required>
                                 </div>
+
                                 <div class="form-group w-100 px-4">
                                     <label class="label" for="inputName">Rut</label>
-                                    <input type="text" class="form-control Rut" id="inputRut" name="inputRut">
+                                    <input type="text" class="form-control Rut" id="inputRutContact" name="inputRut">
                                 </div>
+
                                 <div class="form-group w-100 px-4">
                                     <label class="label" for="inputEmail">Email</label>
-                                    <input type="email" class="form-control" id="inputEmail" name="inputEmail" required>
+                                    <input type="email" class="form-control" id="inputEmailContact" name="inputEmail" required>
                                 </div>
+
                                 <div class="form-group w-100 px-4">
-                                    <label class="label" for="inputTelefono">Teléfono</label>
-                                    <input type="text" class="form-control" id="inputTelefono" name="inputTelefono" required>
+                                  <label class="label" for="inputTelefonoContact">Télefono</label>
+                                  <div class="input-group">
+                                      <div class="input-group-prepend">
+                                          <span class="input-group-text">+56</span>
+                                      </div>
+                                      <input type="text" class="form-control" id="inputTelefonoContact" name="inputTelefono" required>
+                                  </div>
                                 </div>
+
                                 <div class="form-group w-100 px-4">
                                     <label class="label" for="texAreaMensaje">Mensaje</label>
-                                    <input class="form-control" id="texAreaMensaje" name="texAreaMensaje"></input>
+                                    <input class="form-control" id="texAreaMensajeContact" name="texAreaMensaje"></input>
                                 </div>
                                 <div class="form-group w-100">
                                     <div class="text-center py-4">
                                         <button  
-                                            type="submit" name="boton_enviar" value="enviar"
+                                            type="submit"
+                                            name="boton_enviar"
+                                            value="enviar"
                                             class="g-recaptcha btn btn-primary px-5 al-btn al-btn--white boton_enviar" 
-                                            id="boton_enviar" 
+                                            id="botonEnviarContact" 
                                             data-badge="inline"
                                             disabled>
                                             Enviar

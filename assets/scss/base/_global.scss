@@ -71,6 +71,6 @@ label.error{
 
 @each $name, $color in $palette {
   .bg-#{$name} {
-      background-color: $color; 
+      background-color: #efece8; 
   }
 }
