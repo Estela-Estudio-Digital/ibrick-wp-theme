@@ -36,12 +36,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             alt="Thaks"
             class="w-100"
             src="<?php bloginfo('template_directory');?>/assets/img/cheque.png"
-            style="max-width:250px;"
+            style="max-width:150px;"
           >
         </div>
-        <h4 class="text-center">
-          Muchas gracias por cotizar en nuestro proyecto
-        </h4>
+        <?php if(have_posts()) : while(have_posts()) : the_post(); 
+
+        the_content();
+        
+        endwhile; endif;?>
       </div>
     </div>
 </section>
