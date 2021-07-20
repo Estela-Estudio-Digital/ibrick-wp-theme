@@ -36,7 +36,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             alt="Thaks"
             class="w-100"
             src="<?php bloginfo('template_directory');?>/assets/img/cheque.png"
-            style="max-width:150px;"
+            style="max-width:100px;"
           >
         </div>
         <?php if(have_posts()) : while(have_posts()) : the_post(); 
