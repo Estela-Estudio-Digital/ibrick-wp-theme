@@ -665,11 +665,11 @@ if ($query->have_posts()) : ?>
                     <div class="form-row">
                         <div class="form-group col-md-12 ">
                             <label class="label" for="inputNameWhatsapp">Nombre y apellido</label>
-                            <input type="text" class="form-control" id="inputNameWhatsapp" name="inputName" required>
+                            <input type="text" class="form-control" id="inputNameWhatsapp" name="inputNameWhatsapp" required>
                         </div>
                         <div class="form-group col-md-12">
-                            <label class="label" for="inputNameWhatsapp">Email</label>
-                            <input type="email" class="form-control" id="inputEmailWhatsapp" name="inputEmail" required>
+                            <label class="label" for="inputEmailWhatsapp">Email</label>
+                            <input type="email" class="form-control" id="inputEmailWhatsapp" name="inputEmailWhatsapp" required>
                         </div>
                     </div>
                     <div class="form-row">
@@ -678,14 +678,14 @@ if ($query->have_posts()) : ?>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">+56</span></div>
-                                    <input type="text" class="form-control" id="inputTelefonoWhatsapp" name="inputTelefono" required>
+                                    <input type="text" class="form-control" id="inputTelefonoWhatsapp" name="inputTelefonoWhatsapp" required>
                                 </div>
                         </div>
                         <div class="form-group col-md-12 ">
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input" type="checkbox" id="inputCheckboxWhatsapp"
-                                    name="inputCheckbox" checked>
-                                <label class="custom-control-label" for="inputCheckbox">
+                                    name="inputCheckboxWhatsapp" checked>
+                                <label class="custom-control-label" for="inputCheckboxWhatsapp">
                                     <small>Quiero que Brick Inmobiliaria me contacte</small> 
                                 </label>
                             </div>
@@ -763,31 +763,31 @@ if ($query->have_posts()) : ?>
                         </div>
                         <div class="form-group col-md-12">
                             <label class="label" for="inputEmailCotizar">Email</label>
-                            <input type="email" class="form-control" id="inputEmailCotizar" name="inputEmail" required>
+                            <input type="email" class="form-control" id="inputEmailCotizar" name="inputEmailCotizar" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12 ">
                             <label class="label" for="inputRutCotizar">Rut</label>
-                            <input type="text" class="form-control Rut" id="inputRutCotizar" name="inputRut">
+                            <input type="text" class="form-control Rut" id="inputRutCotizar" name="inputRutCotizar">
                         </div>
                         <div class="form-group col-md-12">
                             <label class="label" for="inputTelefonoCotizar">Télefono</label>
                             <div class="input-group w-100">
                                 <div class="input-group-prepend w-100">
                                     <span class="input-group-text">+56</span>
-                                    <input type="text" class="form-control" id="inputTelefonoCotizar" name="inputTelefono" required>
+                                    <input type="text" class="form-control" id="inputTelefonoCotizar" name="inputTelefonoCotizar" required>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group w-100">
                             <label class="label" for="texAreaMensajeCotizar">Consulta</label>
-                            <input class="form-control" id="texAreaMensajeCotizar" name="texAreaMensaje"></input>
+                            <input class="form-control" id="texAreaMensajeCotizar" name="texAreaMensajeCotizar"></input>
                         </div>
                         <div class="form-group col-md-12 ">
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input" type="checkbox"
-                                    name="inputCheckbox" checked>
+                                    name="inputCheckboxCotizar" checked>
                                 <label class="custom-control-label" for="inputCheckboxCotizar">
                                     <small>Quiero que Brick Inmobiliaria me contacte</small> 
                                 </label>
