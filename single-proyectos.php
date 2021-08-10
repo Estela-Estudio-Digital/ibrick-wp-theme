@@ -759,7 +759,7 @@ if ($query->have_posts()) : ?>
                     <div class="form-row">
                         <div class="form-group col-md-12 ">
                             <label class="label" for="inputNameCotizar">Nombre y apellido</label>
-                            <input type="text" class="form-control" id="inputNameCotizar" name="inputName" required>
+                            <input type="text" class="form-control" id="inputNameCotizar" name="inputNameCotizar" required>
                         </div>
                         <div class="form-group col-md-12">
                             <label class="label" for="inputEmailCotizar">Email</label>
