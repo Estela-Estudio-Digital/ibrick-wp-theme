@@ -117,18 +117,18 @@
 
                                 <div class="form-group w-100 px-4">
                                     <span class="bk-projectcart--text__span"></span>
-                                    <label class="label" for="inputName">Nombre y apellido</label>
-                                    <input type="text" class="form-control" id="inputNameContact" name="inputName" required>
+                                    <label class="label" for="inputNameContact">Nombre y apellido</label>
+                                    <input type="text" class="form-control" id="inputNameContact" name="inputNameContact" required>
                                 </div>
 
                                 <div class="form-group w-100 px-4">
-                                    <label class="label" for="inputName">Rut</label>
-                                    <input type="text" class="form-control Rut" id="inputRutContact" name="inputRut">
+                                    <label class="label" for="inputRutContact">Rut</label>
+                                    <input type="text" class="form-control Rut" id="inputRutContact" name="inputRutContact">
                                 </div>
 
                                 <div class="form-group w-100 px-4">
-                                    <label class="label" for="inputEmail">Email</label>
-                                    <input type="email" class="form-control" id="inputEmailContact" name="inputEmail" required>
+                                    <label class="label" for="inputEmailContact">Email</label>
+                                    <input type="email" class="form-control" id="inputEmailContact" name="inputEmailContact" required>
                                 </div>
 
                                 <div class="form-group w-100 px-4">
@@ -137,7 +137,7 @@
                                       <div class="input-group-prepend">
                                           <span class="input-group-text">+56</span>
                                       </div>
-                                      <input type="text" class="form-control" id="inputTelefonoContact" name="inputTelefono" required>
+                                      <input type="text" class="form-control" id="inputTelefonoContact" name="inputTelefonoContact" required>
                                   </div>
                                 </div>
 
