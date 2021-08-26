@@ -109,6 +109,8 @@
                               <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f523-o1">
                               <input type="hidden" name="_wpcf7_container_post" value="0">
                               <input type="hidden" name="_wpcf7_posted_data_hash" value="">
+                              <input type="hidden" name="fuenteSbj" class="fuenteSbj">
+                              <input type="hidden" name="medioSbj" class="medioSbj">
                             </div>
                             
                             <div class="form-row text-left">
@@ -140,8 +142,8 @@
                                 </div>
 
                                 <div class="form-group w-100 px-4">
-                                    <label class="label" for="texAreaMensaje">Mensaje</label>
-                                    <input class="form-control" id="texAreaMensajeContact" name="texAreaMensaje"></input>
+                                    <label class="label" for="texAreaMensajeContact">Mensaje</label>
+                                    <input class="form-control" id="texAreaMensajeContact" name="texAreaMensajeContact"></input>
                                 </div>
                                 <div class="form-group w-100">
                                     <div class="text-center py-4">
