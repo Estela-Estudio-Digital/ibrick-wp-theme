@@ -362,9 +362,7 @@ $(function () {
     (superficieUtil = project_data.data[0].superficieUtil),
     (superficieTerraza = project_data.data[0].superficieTerraza),
     (superficieTotal = project_data.data[0].superficieTotal),
-    (sbjMedio = sbjs.get.current.mdm),
-    (sbjFuente = sbjs.get.current.src);
-
+    
     $(".nombreProyecto").val(nombreProyecto);
     $(".correosVentas").val(correosVentas);
     $(".logoProyecto").val(logoProyecto);
@@ -375,13 +373,16 @@ $(function () {
     $(".corresponde").val(corresponde);
     $(".unidades").val(unidades);
     $(".whatsappProject").val(whatsapp);
-
+    
     $(".superficieUtil").val(superficieUtil);
     $(".superficieTerraza").val(superficieTerraza);
     $(".superficieTotal").val(superficieTotal);
-    $(".fuenteSbj").val(sbjFuente);
-    $(".medioSbj").val(sbjMedio);
   }
+  
+  (sbjMedio = sbjs.get.current.mdm),
+  (sbjFuente = sbjs.get.current.src);
+  $(".fuenteSbj").val(sbjFuente);
+  $(".medioSbj").val(sbjMedio);
 
   $("#agendarConCalenly").on("click", function () {
     console.log("ga event Agendar");
