@@ -479,15 +479,15 @@ $(function () {
   // Validador de Formulario de whatsapp
   $("#formulario_whatsapp").validate({
     rules: {
-      inputName: {
+      inputNameWhatsapp: {
         required: true,
         lettersonly: true,
       },
-      inputEmail: {
+      inputEmailWhatsapp: {
         required: true,
         email: true,
       },
-      inputTelefono: {
+      inputTelefonoWhatsapp: {
         required: true,
         digits: true,
         minlength: 9,
@@ -495,12 +495,12 @@ $(function () {
       },
     },
     messages: {
-      inputName: "Ingresa solo letras.",
-      inputEmail: {
+      inputNameWhatsapp: "Ingresa solo letras.",
+      inputEmailWhatsapp: {
         required: "Es necesario tu dirección de correo",
         email: "El formato de tu email debe ser similar a: name@domain.com",
       },
-      inputTelefono: {
+      inputTelefonoWhatsapp: {
         required: "Ingresa tu numero de telefono",
         minlength: jQuery.validator.format(
           "Introduce al menos {0} carácteres."
@@ -515,36 +515,36 @@ $(function () {
   // Validador de Formulario de contacto
   $("#formulario_inicial").validate({
     rules: {
-      inputName: {
+      inputNameContact: {
         required: true,
         lettersonly: true,
       },
-      inputRut: {
+      inputRutContact: {
         required: false,
         Rut: true,
       },
-      inputEmail: {
+      inputEmailContact: {
         required: true,
         email: true,
       },
-      inputTelefono: {
+      inputTelefonoContact: {
         required: true,
         digits: true,
         minlength: 9,
         maxlength: 9,
       },
-      texAreaMensaje: {
+      texAreaMensajeContact: {
         required: false,
       },
     },
     messages: {
-      inputName: "Ingresa solo letras.",
-      inputRut: "Ingresa un RUT valido.",
-      inputEmail: {
+      inputNameContact: "Ingresa solo letras.",
+      inputRutContact: "Ingresa un RUT valido.",
+      inputEmailContact: {
         required: "Es necesario tu dirección de correo",
         email: "El formato de tu email debe ser similar a: name@domain.com",
       },
-      inputTelefono: {
+      inputTelefonoContact: {
         required: "Ingresa tu numero de telefono",
         minlength: jQuery.validator.format(
           "Introduce al menos {0} carácteres."
@@ -559,36 +559,36 @@ $(function () {
   // Validador de Formulario de cotización
   $("#formulario_cotizar_proyecto").validate({
     rules: {
-      inputName: {
+      inputNameCotizar: {
         required: true,
         lettersonly: true,
       },
-      inputRut: {
+      inputRutCotizar: {
         required: false,
         Rut: true,
       },
-      inputEmail: {
+      inputEmailCotizar: {
         required: true,
         email: true,
       },
-      inputTelefono: {
+      inputTelefonoCotizar: {
         required: true,
         digits: true,
         minlength: 9,
         maxlength: 9,
       },
-      texAreaMensaje: {
+      texAreaMensajeCotizar: {
         required: false,
       },
     },
     messages: {
-      inputName: "Ingresa solo letras.",
-      inputRut: "Ingresa un RUT valido.",
-      inputEmail: {
+      inputNameCotizar: "Ingresa solo letras.",
+      inputRutCotizar: "Ingresa un RUT valido.",
+      inputEmailCotizar: {
         required: "Es necesario tu dirección de correo",
         email: "El formato de tu email debe ser similar a: name@domain.com",
       },
-      inputTelefono: {
+      inputTelefonoCotizar: {
         required: "Ingresa tu numero de telefono",
         minlength: jQuery.validator.format(
           "Introduce al menos {0} carácteres."
