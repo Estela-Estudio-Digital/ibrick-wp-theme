@@ -378,9 +378,10 @@ $(function () {
     $(".superficieTerraza").val(superficieTerraza);
     $(".superficieTotal").val(superficieTotal);
   }
-  
+
   (sbjMedio = sbjs.get.current.mdm),
   (sbjFuente = sbjs.get.current.src);
+  console.log
   $(".fuenteSbj").val(sbjFuente);
   $(".medioSbj").val(sbjMedio);
 
