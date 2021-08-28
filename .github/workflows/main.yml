@@ -27,3 +27,5 @@ jobs:
           - .git*/**
           -  **/.git*/**
           - .DS_Store
+          - /node_modules/**
+          - prepros.config
