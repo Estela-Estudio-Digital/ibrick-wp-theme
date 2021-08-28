@@ -435,7 +435,32 @@ $(function () {
   $(".wpcf7Whatsapp").on("wpcf7mailfailed", function (event) {
     console.log("failed", event);
   });
+  $(".wpcf7Floatante").on("wpcf7mailsent", function (event) {
+    console.log("ga event Formulario");
 
+    dataLayer.push({
+      event: "formSubmit",
+    });
+
+    Swal.fire({
+      title: "Mensaje enviado",
+      text: "¡Gracias por cotizar en brick Inmobiliaria, pronto un ejecutivo te contactará!",
+      icon: "success",
+      confirmButtonText: "cerrar",
+    });
+    $(".form-modal").removeClass("form-modal-open");
+  });
+
+  $(".wpcf7Floatante").on("wpcf7mailfailed", function (event) {
+    console.log("failed");
+    Swal.fire({
+      title: "¡Error!",
+      text: "¡Ha ocurrido un error, por favor intentalo de nuevo más tarde!",
+      icon: "error",
+      confirmButtonText: "cerrar",
+    });
+    $(".form-modal").removeClass("form-modal-open");
+  });
   $(".brickcf7").on("wpcf7mailsent", function (event) {
     console.log("ga event Formulario");
 
@@ -476,6 +501,42 @@ $(function () {
 		Validacion de Formularios
 	------------------------------------------------------------------
     */
+     // Validador de Formulario de whatsapp
+  $("#formulario_floatante").validate({
+    rules: {
+      inputNameFloatante: {
+        required: true,
+        lettersonly: true,
+      },
+      inputEmailFloatante: {
+        required: true,
+        email: true,
+      },
+      inputTelefonoFloatante: {
+        required: true,
+        digits: true,
+        minlength: 9,
+        maxlength: 9,
+      },
+    },
+    messages: {
+      inputNameFloatante: "Ingresa solo letras.",
+      inputEmailFloatante: {
+        required: "Es necesario tu dirección de correo",
+        email: "El formato de tu email debe ser similar a: name@domain.com",
+      },
+      inputTelefonoFloatante: {
+        required: "Ingresa tu numero de telefono",
+        minlength: jQuery.validator.format(
+          "Introduce al menos {0} carácteres."
+        ),
+      },
+    },
+    submitHandler: function (form) {},
+    errorPlacement: function (error, element) {
+      $(element).parents(".form-group").append(error);
+    },
+  });
   // Validador de Formulario de whatsapp
   $("#formulario_whatsapp").validate({
     rules: {

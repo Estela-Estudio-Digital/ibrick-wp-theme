@@ -957,7 +957,14 @@ button:focus {
   line-height: 1;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
+  .projec-wrapper-container {
+    z-index: 4;
+    position: relative;
+    margin-top: -10px;
+  }
+}
+@media screen and (min-width: 1400px) {
   .projec-wrapper-container {
     z-index: 4;
     position: relative;
@@ -1238,5 +1245,39 @@ button:focus {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@media screen and (min-width: 768px) {
+  .floating-form {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    max-width: 400px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .floating-form {
+    top: 20px;
+  }
+}
+.floating-form-bg {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 5px 10px 0 10px;
+}
+@media screen and (min-width: 1024px) {
+  .floating-form-bg {
+    padding: 5px 25px 0 25px;
+  }
+}
+@media screen and (min-width: xL) {
+  .floating-form-bg {
+    padding: 35px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .formulario_floatante {
+    max-width: 400px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

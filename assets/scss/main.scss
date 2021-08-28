@@ -441,7 +441,12 @@
 }
 .projec-wrapper{
     &-container{
-        @include MQ(M){
+        @include MQ(L){
+            z-index:4;
+            position: relative; 
+            margin-top:-10px;
+        }
+        @include MQ(XL){
             z-index:4;
             position: relative; 
             margin-top:-50px;
@@ -653,3 +658,30 @@ $items: 1,2,3,4;
       }
   }
   
+.floating-form {
+    @include MQ(M) {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        max-width: 400px;
+    }
+    @include MQ(L) {
+        top: 20px;
+    }
+    &-bg {
+        background: rgba($white, .9);
+        padding: 5px 10px 0 10px;
+        @include MQ(L) {
+            padding: 5px 25px 0 25px;
+        }
+        @include MQ(xL) {
+            padding: 35px;
+        }
+    }
+}
+
+.formulario_floatante {
+    @include MQ(L) {
+        max-width: 400px;
+    }
+}

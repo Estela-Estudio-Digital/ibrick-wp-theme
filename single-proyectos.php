@@ -62,8 +62,9 @@ if (!empty($terms)) {
         $slider_proyecto_desktop = get_sub_field('slider_proyecto_desktop');
         $slider_proyecto_mobile = get_sub_field('slider_proyecto_mobile');
     ?>
-    <div class="item project-hero">
+    <div class="item project-hero position-relative">
         <img src="<?php echo $slider_proyecto_desktop['url'];?>" alt="<?php echo $slider_proyecto_desktop['alt'];?>">
+        <?php include( locate_template( './includes/forms/floating-single-projects.php', false, false) ); ?>
     </div>
     <?php endwhile; ?>
 </section>
