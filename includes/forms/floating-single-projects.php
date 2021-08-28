@@ -1,7 +1,7 @@
 <div class="floating-form ">
   <div class="floating-form-bg">
       <div class="wp-block-contact-form-7-contact-form-selector">
-          <div role="form" class="wpcf7 wpcf7Floatante" id="wpcf7-f1022-o1" lang="es-ES" dir="ltr">
+          <div role="form" class="wpcf7 wpcf7Floatante" id="wpcf7-f1155-o1" lang="es-ES" dir="ltr">
               <div class="screen-reader-response">
                   <p role="status" aria-live="polite" aria-atomic="true"></p>
                   <ul></ul>
@@ -14,7 +14,7 @@
                   name="formulario_floatante"
               >
                   <div style="display: none;">
-                      <input type="hidden" name="_wpcf7" value="1022">
+                      <input type="hidden" name="_wpcf7" value="1155">
                       <?php 
                           $plugin_data = get_plugin_data( ABSPATH . 'wp-content/plugins/contact-form-7/wp-contact-form-7.php' );
                           echo '<input type="hidden" name="_wpcf7_version" value="'.$plugin_data['Version'].'">';
