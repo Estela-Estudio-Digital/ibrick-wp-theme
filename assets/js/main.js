@@ -83,11 +83,11 @@ $(function () {
   $(".follow-button-pay").fadeOut();
 
   $(window).scroll(function () {
-    if ($(this).scrollTop() >= 731) {
-      $(".follow-button-pay").removeClass("d-none").addClass("d-flex");
-    } else {
-      $(".follow-button-pay").removeClass("d-flex").addClass("d-none");
-    }
+    // if ($(this).scrollTop() >= 731) {
+    //   $(".follow-button-pay").removeClass("d-none").addClass("d-flex");
+    // } else {
+    //   $(".follow-button-pay").removeClass("d-flex").addClass("d-none");
+    // }
 
     if ($(this).scrollTop() >= 730) {
       $(".menu-nav-fixed").fadeIn();

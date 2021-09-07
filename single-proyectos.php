@@ -64,7 +64,11 @@ if (!empty($terms)) {
     ?>
     <div class="item project-hero position-relative">
         <img src="<?php echo $slider_proyecto_desktop['url'];?>" alt="<?php echo $slider_proyecto_desktop['alt'];?>">
-        <?php include( locate_template( './includes/forms/floating-single-projects.php', false, false) ); ?>
+        <?php
+            if ($correos_ventas) {
+                include( locate_template( './includes/forms/floating-single-projects.php', false, false) ); 
+            }
+        ?>
     </div>
     <?php endwhile; ?>
 </section>
@@ -292,7 +296,9 @@ if ($query->have_posts()) : ?>
 
             <div class="col-sm-6 col-lg-4 planta <?php echo $value; ?> <?php echo ($estado == 'Normal') ? "active" : "";?>">
                 <?php if ($estado == 'Normal') : ?>
-                <a href="<?php echo ($planok) ? "#": the_permalink(); ?>" class="<?php echo ($planok) ? 'cotizacionHit' : '' ?>" <?php echo ($planok) ? 'data-toggle="modal" data-target="#planok-modal"' : '';?> >
+                    <?php if ($planok) : ?>
+                    <a href="<?php echo ($planok) ? "#": the_permalink(); ?>" class="<?php echo ($planok) ? 'cotizacionHit' : '' ?>" <?php echo ($planok) ? 'data-toggle="modal" data-target="#planok-modal"' : '';?> >
+                    <?php endif;?>
                 <?php endif;?>
                     <div class="planta-item d-block text-center shadow ">
 
@@ -350,7 +356,7 @@ if ($query->have_posts()) : ?>
                                         <?php if ($planok) : ?>
                                             <a class="btn btn-primary px-4 mr-3 text-uppercase" data-toggle="modal" data-target="#planok-modal">Cotizar</a>
                                         <?php else:?>
-                                            <div class="btn btn-primary px-4 mr-3 text-uppercase">cotizar</div>
+                                            <!-- <div class="btn btn-primary px-4 mr-3 text-uppercase">cotizar</div> -->
                                         <?php endif;?>
                                     <?php else : ?>
                                     <p class="btn btn-primary disabled bg-grey mr-3 mb-0">Agotada</p>
@@ -361,7 +367,9 @@ if ($query->have_posts()) : ?>
                         </div>
                     </div>
             <?php if ($estado == 'Normal') : ?>
+                <?php if ($planok) : ?>
                 </a>
+                <?php endif; ?>
             <?php endif; ?>
             </div>
 
@@ -579,7 +587,7 @@ if ($query->have_posts()) : ?>
 </section>
 <?php endif; ?>
 <?php if($whatsapp || $correos_ventas): ?>
-<section class="contact-floating-container">
+<section class="contact-floating-container follow-button-pay">
     <ul class="contact-floating-list px-4 d-flex justify-content-between align-items-center">
         <?php if($whatsapp): ?>
         <li>
