@@ -49,6 +49,12 @@
                           <input type="email" class="form-control" id="inputEmailFloatante" name="inputEmailFloatante" required>
                       </div>
                   </div>
+                  <div class="form-row ">
+                    <div class="form-group col-md-12">
+                        <label class="label" for="inputRutFloatante">Rut</label>
+                        <input type="text" class="form-control Rut" id="inputRutFloatante" name="inputRutFloatante">
+                    </div>
+                  </div>
                   <div class="form-row">
                       <div class="form-group col-md-12">
                           <label class="label" for="inputTelefonoFloatante">Télefono</label>

@@ -683,6 +683,12 @@ if ($query->have_posts()) : ?>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
+                            <label class="label" for="inputRutWhatsapp">Rut</label>
+                            <input type="text" class="form-control Rut" id="inputRutWhatsapp" name="inputRutWhatsapp">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
                             <label class="label" for="inputTelefonoWhatsapp">Télefono</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">

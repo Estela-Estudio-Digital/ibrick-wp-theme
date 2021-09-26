@@ -512,6 +512,10 @@ $(function () {
         required: true,
         email: true,
       },
+      inputRutFloatante: {
+        required: true,
+        Rut: true,
+      },
       inputTelefonoFloatante: {
         required: true,
         digits: true,
@@ -525,6 +529,7 @@ $(function () {
         required: "Es necesario tu dirección de correo",
         email: "El formato de tu email debe ser similar a: name@domain.com",
       },
+      inputRutCotizar: "Ingresa un RUT valido.",
       inputTelefonoFloatante: {
         required: "Ingresa tu numero de telefono",
         minlength: jQuery.validator.format(
@@ -548,6 +553,10 @@ $(function () {
         required: true,
         email: true,
       },
+      inputRutWhatsapp: {
+        required: true,
+        Rut: true,
+      },
       inputTelefonoWhatsapp: {
         required: true,
         digits: true,
@@ -561,6 +570,7 @@ $(function () {
         required: "Es necesario tu dirección de correo",
         email: "El formato de tu email debe ser similar a: name@domain.com",
       },
+      inputRutWhatsapp: "Ingresa un RUT valido.",
       inputTelefonoWhatsapp: {
         required: "Ingresa tu numero de telefono",
         minlength: jQuery.validator.format(
