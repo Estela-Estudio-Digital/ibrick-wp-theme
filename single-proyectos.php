@@ -106,7 +106,7 @@ if (!empty($terms)) {
                 </li>
                 <hr class="d-md-none">
                 <?php endif; ?>
-                <?php if ($tipologia_select && $tipologia_select != 'seleccionar') :?>
+                <?php if ($tipologia_select && $tipologia_select != 'Seleccionar') :?>
                 <li class="projec-wrapper-content-tipo d-flex align-items-center justify-content-center">
                     <div>
                         <img style="min-height: 50px; width:100%; max-width: 150px;" class="px-4" src="<?php echo bloginfo('template_directory').'/assets/img/'. $tipologia_select['value'] .'.svg'; ?>" alt="<?php echo $tipologia_select['label']; ?>">
