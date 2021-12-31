@@ -80,9 +80,9 @@ $bloque_3_imagen = get_field('bloque_3_imagen');
         <div class="col-md-3 text-center text-md-left my-5 my-md-0">
             <h4 class="text-uppercase section-title section-title_gris mb-3">
                 <span class="primary-title">Proyectos</span><br>
-                <span class="secondary-title">Industriales</span>
+                <span class="secondary-title">Bodegas</span>
             </h4>
-            <a href="<?php echo site_url('industrial');?>" class="btn btn-primary shadow"> Ver proyectos</a>
+            <a href="<?php echo site_url('bodegas');?>" class="btn btn-primary shadow"> Ver proyectos</a>
         </div>
         <div class="col-md-3 text-center text-md-left my-5 my-md-0">
             <h4 class="text-uppercase section-title section-title_naranjo mb-3">
