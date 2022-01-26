@@ -171,8 +171,9 @@ if (!empty($terms)) {
             </ul>
             <?php endif; ?>
             <?php if( $folleto ): ?>
-                <a href="<?php echo $folleto; ?>" class="btn btn-secondary btn-sm bk--btn__primary shadow py-2 my-3 text-capitalize" target="_blank">descargar folleto</a>
+                <a href="<?php echo $folleto; ?>" class="btn btn-secondary btn-sm bk--btn__primary shadow py-2 my-3 mr-4 text-capitalize" target="_blank">descargar folleto</a>
             <?php endif; ?>
+            <a href="<?php echo site_url('/pasos-a-seguir') ?>" class="btn btn-primary btn-sm bk--btn__primary shadow py-2 my-3" target="_blank">Conocer Proceso de Compra</a>
         </div>
         <?php if ( $video ) : ?>
             <div class="col-md-6 d-none d-md-block">
@@ -585,6 +586,30 @@ if ($query->have_posts()) : ?>
         </div>
     </div>
 </section>
+
+<section class="container">
+    <div class="row">
+        <div class="col-12 py-5">
+            <a href="<?php echo site_url('/pasos-a-seguir'); ?>">
+                <div class="pasos-wrapper py-4 px-md-5 my-4">
+                    <ul class="d-flex justify-content-between align-items-center">
+                        <li>
+                            <h3 class="mb-0 text-white mb-xl-2">Pasos a seguir...</h3>
+                            <ul class="d-flex align-items-center">
+                                <li><img src="<?php bloginfo('template_directory');?>/assets/img/tocar.png" alt="play" width="45"></li>
+                                <li class="px-4"><p class="text-white mt-4" style="font-size: 1.2rem;">Te guiamos para que la compra de tu depto sea sencilla e informada</p></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <img class="w-100" alt="proceso de compra" src="<?php bloginfo('template_directory');?>/assets/img/ejecutivo-ventas.png">
+                        </li>
+                    </ul>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
 <?php endif; ?>
 <?php if($whatsapp || $correos_ventas): ?>
 <section class="contact-floating-container follow-button-pay">

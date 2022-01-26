@@ -1244,4 +1244,9 @@ button:focus {
     max-width: 400px;
   }
 }
+
+.pasos-wrapper {
+  background: #2876A2;
+  background: linear-gradient(to bottom, #2876A2, #1e5879);
+}
 /*# sourceMappingURL=main.css.map */

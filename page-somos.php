@@ -61,6 +61,28 @@ $bloque_3_imagen = get_field('bloque_3_imagen');
     </div>
     <hr>
 </div>
+<section class="container">
+    <div class="row">
+        <div class="col-12 py-5">
+            <a href="<?php echo site_url('/pasos-a-seguir'); ?>">
+                <div class="pasos-wrapper py-4 px-md-5 mb-4">
+                    <ul class="d-flex justify-content-between align-items-center">
+                        <li>
+                            <h3 class="mb-0 text-white mb-xl-2">Pasos a seguir...</h3>
+                            <ul class="d-flex align-items-center">
+                                <li><img src="<?php bloginfo('template_directory');?>/assets/img/tocar.png" alt="play" width="45"></li>
+                                <li class="px-4"><p class="text-white mt-4" style="font-size: 1.2rem;">Te guiamos para que la compra de tu depto sea sencilla e informada</p></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <img class="w-100" alt="proceso de compra" src="<?php bloginfo('template_directory');?>/assets/img/ejecutivo-ventas.png">
+                        </li>
+                    </ul>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
 <div class="container py-5">
     <div class="row">
         <div class="col-md-3 text-center text-md-left my-5 my-md-0">

@@ -685,3 +685,8 @@ $items: 1,2,3,4;
         max-width: 400px;
     }
 }
+
+.pasos-wrapper {
+    background: $brand-primary-color;
+    background: linear-gradient(to bottom, $brand-primary-color, darken($brand-primary-color, 10%));
+}
