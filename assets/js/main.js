@@ -346,7 +346,14 @@ $(function () {
 	------------------------------------------------------------------
 		Formularios
 	------------------------------------------------------------------
-    */
+  */
+  if ($('body').is('.page-bodegas')) {
+    $('.contactoModalBtn').on('click', function () {
+      project = $(this).data("project");
+      $(".nombreProyecto").val('Bodegas - '+project);
+    });
+    
+  }
   if (project_data.data !== "") {
     var nombreProyecto = project_data.data[0].nombreProyecto,
     correosVentas = project_data.data[0].correosVentas,

@@ -35,7 +35,7 @@
                     <span style="width: 100px; height:4px; background: #2876A2; display: inline-block;" class="my-3"></span>
                     <p style="font-size:1.2rem;" class="mb-2"><?php echo $area; ?></p>
                     <?php if ($cotizar) : ?>
-                    <a href="#" class="btn btn-primary contactoModalBtn" id="cotizarBodega">Consultar</a>
+                    <a href="#" class="btn btn-primary contactoModalBtn" id="cotizarBodega" data-project="<?php echo the_title(); ?>">Consultar</a>
                     <?php endif;?>
                 </li>
             </ul>
