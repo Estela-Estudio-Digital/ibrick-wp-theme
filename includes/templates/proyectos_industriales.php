@@ -29,11 +29,11 @@
                   </p>
                 </li>
               <?php endif;?>
-                <li class="card-body text-center">
-                    <h1 style="font-size:1.4rem;" class="mt-3"><?php echo the_title(); ?></h1>
+                <li class="card-body text-center d-flex flex-column align-items-center justify-content-center">
+                    <h1 style="font-size:1.4rem;"><?php echo the_title(); ?></h1>
                     <p><?php echo $ubicacion; ?></p>
                     <span style="width: 100px; height:4px; background: #2876A2; display: inline-block;" class="my-3"></span>
-                    <p style="font-size:1.2rem;" class="mb-3"><?php echo $area; ?></p>
+                    <p style="font-size:1.2rem;" class="mb-2"><?php echo $area; ?></p>
                     <?php if ($cotizar) : ?>
                     <a href="#" class="btn btn-primary contactoModalBtn" id="cotizarBodega">Consultar</a>
                     <?php endif;?>
