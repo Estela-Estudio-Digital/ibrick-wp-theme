@@ -1066,6 +1066,10 @@ button:focus {
   color: #2876A2;
 }
 
+.color-emphasis {
+  color: #FFB221;
+}
+
 .rentas-sub-title {
   font-size: 1.2rem;
 }

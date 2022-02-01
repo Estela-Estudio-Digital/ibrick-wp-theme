@@ -111,6 +111,7 @@
                               <input type="hidden" name="_wpcf7_posted_data_hash" value="">
                               <input type="hidden" name="fuenteSbj" class="fuenteSbj">
                               <input type="hidden" name="medioSbj" class="medioSbj">
+                              <input type="hidden" name="nombreProyecto" class="nombreProyecto">
                             </div>
                             
                             <div class="form-row text-left">
