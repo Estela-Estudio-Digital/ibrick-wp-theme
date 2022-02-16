@@ -21,7 +21,10 @@ $query = new WP_Query(array(
     ),
   ));
   
-  include( locate_template( './includes/templates/proyectos_destacados.php', false, false) ); ?>
+  include( locate_template( './includes/templates/proyectos_destacados.php', false, false) ); 
+  include( locate_template( './includes/templates/banner-pasos.php', false, false) ); 
+  
+  ?>
 
 
 <?php 

@@ -62,7 +62,7 @@ $bloque_3_imagen = get_field('bloque_3_imagen');
     <hr>
 </div>
 <?php
-include( locate_template( './includes/templates/banner-pasos.php', false, false) ); 
+// include( locate_template( './includes/templates/banner-pasos.php', false, false) ); 
 ?>
 <div class="container py-5">
     <div class="row">
