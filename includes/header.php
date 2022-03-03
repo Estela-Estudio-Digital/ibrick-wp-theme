@@ -36,7 +36,7 @@ if(is_singular('proyectos')):
         </button>
       <a href="<?php bloginfo('url');?>">
         
-          <img src="<?php bloginfo('template_directory');?>/assets/img/primary-logo.svg" height="100" alt="Inmobiliaria Brick" class="primary-logo">
+          <img src="<?php bloginfo('template_directory');?>/assets/img/primary-logo.svg" width="150" height="100" alt="Inmobiliaria Brick" class="primary-logo">
         
       </a>
       <button class="colapse-hamburger hamburger hamburger--emphatic navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav2" aria-controls="navbarNav2" aria-expanded="false" aria-label="Toggle navigation">
