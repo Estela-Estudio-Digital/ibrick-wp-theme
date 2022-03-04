@@ -35,7 +35,6 @@ if(is_singular('proyectos')):
           </span>
         </button>
       <a href="<?php bloginfo('url');?>">
-          <p>ibrick</p>
           <img src="<?php bloginfo('template_directory');?>/assets/img/primary-logo.svg" width="150" height="100" alt="Inmobiliaria Brick" class="primary-logo">
         
       </a>
