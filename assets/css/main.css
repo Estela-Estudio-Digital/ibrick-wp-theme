@@ -360,6 +360,7 @@ button:focus {
 
 .primary-logo {
   max-height: 50px;
+  min-width: 150px;
 }
 
 #projectMenuBig a {

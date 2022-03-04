@@ -36,7 +36,6 @@ if(is_singular('proyectos')):
         </button>
       <a href="<?php bloginfo('url');?>">
           <img src="<?php bloginfo('template_directory');?>/assets/img/primary-logo.svg" width="150" height="100" alt="Inmobiliaria Brick" class="primary-logo">
-        
       </a>
       <button class="colapse-hamburger hamburger hamburger--emphatic navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav2" aria-controls="navbarNav2" aria-expanded="false" aria-label="Toggle navigation">
           <span class="hamburger-box">
@@ -87,7 +86,7 @@ if(is_singular('proyectos')):
   <div class="container">
     <div class="d-flex justify-content-between align-items-center">
       <a href="<?php bloginfo('url');?>">
-          <img src="<?php bloginfo('template_directory');?>/assets/img/primary-logo.svg" alt="Inmobiliaria Brick" class="primary-logo">
+          <img src="<?php bloginfo('template_directory');?>/assets/img/primary-logo.svg" alt="Inmobiliaria Brick" width="150" class="primary-logo">
       </a>
       <ul class="text-uppercase d-md-flex align-items-center m-0 w-100 justify-content-end text-center text-md-left main-menu">
           <li class="mr-md-5  d-none d-md-block">
@@ -113,7 +112,7 @@ if(is_singular('proyectos')):
   <div class="container d-flex justify-content-between">
     <a href="<?php bloginfo('url');?>">
       
-        <img src="<?php bloginfo('template_directory');?>/assets/img/primary-logo.svg" height="100" alt="Inmobiliaria Brick" class="primary-logo">
+        <img src="<?php bloginfo('template_directory');?>/assets/img/primary-logo.svg" height="100" alt="Inmobiliaria Brick" width="150" class="primary-logo">
       
     </a>
     <button class="colapse-hamburger hamburger hamburger--emphatic navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
