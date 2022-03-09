@@ -607,12 +607,7 @@ $items: 1,2,3,4;
       font-size: .9rem;
   }
   .project-icons{
-      width: 50%;
-      float: left;
-      @include MQ(M){
-          width: auto;
-          float: none;
-      }
+    min-width: 84px;
   }
   .fixed-menu-primary{
       position: fixed;

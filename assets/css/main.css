@@ -1152,14 +1152,7 @@ button:focus {
 }
 
 .project-icons {
-  width: 50%;
-  float: left;
-}
-@media screen and (min-width: 768px) {
-  .project-icons {
-    width: auto;
-    float: none;
-  }
+  min-width: 84px;
 }
 
 .fixed-menu-primary {
