@@ -244,6 +244,25 @@ $(function () {
     //smartSpeed: 500
   });
 
+  $('.beneficios-carousel').owlCarousel({
+    dots: true,
+    margin: 10,
+    loop: true,
+    items: 4,
+    // stagePadding: 100,
+    responsive: {
+      0: {
+        items: 2,
+      },
+      768: {
+        items: 3,
+      },
+      991: {
+        items: 4,
+      },
+    },
+  });
+
   setTimeout(function () {
     var totalItems = $(".ppp-carousel .owl-item.active").length;
     if (totalItems > 3) {
@@ -269,6 +288,10 @@ $(function () {
         items: 1,
       },
     },
+  });
+
+  $('.flip').hover(function(){
+    $(this).find('.fcard').toggleClass('flipped');
   });
 
   /* 

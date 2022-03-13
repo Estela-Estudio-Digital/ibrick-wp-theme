@@ -118,32 +118,64 @@ label.error {
   background-color: #E6E6E6;
 }
 
+.text-ultra-ligth-grey {
+  color: #E6E6E6;
+}
+
 .bg-ligth-grey {
   background-color: #a1a1a1;
+}
+
+.text-ligth-grey {
+  color: #a1a1a1;
 }
 
 .bg-medium-grey {
   background-color: #697789;
 }
 
+.text-medium-grey {
+  color: #697789;
+}
+
 .bg-dark-grey {
   background-color: #121212;
+}
+
+.text-dark-grey {
+  color: #121212;
 }
 
 .bg-primary-color {
   background-color: #2876A2;
 }
 
+.text-primary-color {
+  color: #2876A2;
+}
+
 .bg-secondary-color {
   background-color: #3c3c3c;
+}
+
+.text-secondary-color {
+  color: #3c3c3c;
 }
 
 .bg-emphasis-color {
   background-color: #FFB221;
 }
 
+.text-emphasis-color {
+  color: #FFB221;
+}
+
 .bg-whatsapp-color {
   background-color: #00bfa5;
+}
+
+.text-whatsapp-color {
+  color: #00bfa5;
 }
 
 .cd-loader {
@@ -583,7 +615,8 @@ button:focus {
   right: 20px;
 }
 
-.formulario-general input, .formulario-general textarea {
+.formulario-general input,
+.formulario-general textarea {
   background: none;
   border: none;
   border-bottom: 1px solid #3c3c3c;
@@ -721,7 +754,8 @@ button:focus {
   .gallery-caarousel .owl-nav .owl-next span {
     padding: 10px 20px !important;
   }
-  .gallery-caarousel .owl-dots.disabled, .gallery-caarousel .owl-nav.disabled {
+  .gallery-caarousel .owl-dots.disabled,
+.gallery-caarousel .owl-nav.disabled {
     display: block;
   }
 }
@@ -894,7 +928,8 @@ button:focus {
 .project-carousel .owl-stage {
   align-self: stretch;
 }
-.project-carousel .owl-item, .project-carousel .owl-stage {
+.project-carousel .owl-item,
+.project-carousel .owl-stage {
   display: flex;
   height: 100%;
 }
@@ -962,11 +997,13 @@ button:focus {
   }
 }
 
-.arquitectura-carousel, .video-portada {
+.arquitectura-carousel,
+.video-portada {
   position: relative;
   z-index: 2;
 }
-.arquitectura-carousel::after, .video-portada::after {
+.arquitectura-carousel::after,
+.video-portada::after {
   content: "";
   display: block;
   height: 70%;
@@ -1246,5 +1283,40 @@ button:focus {
 .pasos-wrapper {
   background: #2876A2;
   background: linear-gradient(to bottom, #2876A2, #1e5879);
+}
+
+.flip {
+  text-align: center;
+}
+.flip .fcard {
+  min-height: 140px;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  padding: 10px;
+}
+.flip .fcard .face {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  z-index: 2;
+}
+.flip .fcard .front {
+  padding-top: 10px;
+  position: absolute;
+  z-index: 1;
+}
+.flip .fcard .back {
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  transform: rotatey(-180deg);
+  position: absolute;
+  background: #3c3c3c;
+  color: white;
+}
+.flip .fcard img {
+  height: 50px;
+}
+.flip .fcard.flipped {
+  transform: rotatey(-180deg);
 }
 /*# sourceMappingURL=main.css.map */

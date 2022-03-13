@@ -5,7 +5,51 @@
 Template Name: Residencial
 */
 ?>
-
+<?php if (have_rows('beneficios')) : ?>
+    <section class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-primary-color text-center">
+                    <span><b>Aprovecha estos beneficios</b></span>
+                    <span>en la compra de tu nuevo Hogar</span>
+                </h2>
+                <p class="text-center">
+                    <small class="text-uppercase">Consulta condiciones comerciales</small>
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <div class="beneficios-carousel owl-carousel owl-theme">
+            <?php while (have_rows('beneficios')) : the_row();
+                // vars
+                $icono = get_sub_field('icono');
+                $titulo = get_sub_field('titulo');
+                $texto = get_sub_field('texto');
+            ?>
+            <div class="item">
+                <div class="flip">
+                    <div class="fcard"> 
+                        <div class="face front"> 
+                            <div class="inner">
+                                <div class="text-center">
+                                    <img class="img" src="<?php echo $icono['url'];?>" alt="<?php echo $icono['alt'];?>">
+                                </div> 
+                                <p class="text-uppercase text-primary-color fs-2"><b><?php echo $titulo; ?><b></p>
+                            </div>
+                        </div> 
+                        <div class="face back"> 
+                            <div class="inner text-center"> 
+                                <p><?php echo $texto; ?></p>
+                            </div>
+                        </div>
+                    </div>	 
+                </div>
+            </div>
+            <?php endwhile; ?>
+        </div>
+    </section>
+<?php endif; ?>
 <?php 
 $taxonomy = 'tipo';
 $query = new WP_Query(array(

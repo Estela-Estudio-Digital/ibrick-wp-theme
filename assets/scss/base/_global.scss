@@ -73,4 +73,7 @@ label.error{
   .bg-#{$name} {
       background-color: $color;
   }
+  .text-#{$name} {
+    color: $color;
+}
 }
