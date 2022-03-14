@@ -35,10 +35,11 @@ Template Name: Residencial
                                 <div class="text-center">
                                     <img class="img" src="<?php echo $icono['url'];?>" alt="<?php echo $icono['alt'];?>">
                                 </div> 
-                                <p class="text-uppercase text-primary-color fs-2"><b><?php echo $titulo; ?><b></p>
+                                <p class="text-uppercase text-primary-color fs-2 px-4 mb-2"><b><?php echo $titulo; ?><b></p>
+                                <div class="text-center"><span class="more-info">+ Info</span></div>
                             </div>
                         </div> 
-                        <div class="face back"> 
+                        <div class="face back d-flex align-items-center"> 
                             <div class="inner text-center"> 
                                 <p><?php echo $texto; ?></p>
                             </div>

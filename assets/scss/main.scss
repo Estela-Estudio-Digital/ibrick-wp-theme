@@ -800,7 +800,7 @@ $items: 1,
 .flip {
     text-align: center;
     .fcard {
-        min-height: 140px;
+        min-height: 190px;
         transform-style: preserve-3d;
         transition: 0.5s;
         padding: 10px;
@@ -815,13 +815,13 @@ $items: 1,
             z-index: 1;
         }
         .back {
-            padding-top: 10px;
             padding-left: 20px;
             padding-right: 20px;
             transform: rotatey(-180deg);
             position: absolute;
             background: $brand-secondary-color;
             color: $white;
+            height: 100%;
         }
         img {
             height: 50px;
@@ -829,6 +829,11 @@ $items: 1,
     }
     .fcard.flipped {
         transform: rotatey(-180deg);
+    }
+    .more-info {
+        background: $ligth-grey;
+        border-radius: 50rem;
+        padding: 2px 12px;
     }
 }
 

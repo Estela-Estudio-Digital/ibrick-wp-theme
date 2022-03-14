@@ -1289,7 +1289,7 @@ button:focus {
   text-align: center;
 }
 .flip .fcard {
-  min-height: 140px;
+  min-height: 190px;
   transform-style: preserve-3d;
   transition: 0.5s;
   padding: 10px;
@@ -1305,18 +1305,23 @@ button:focus {
   z-index: 1;
 }
 .flip .fcard .back {
-  padding-top: 10px;
   padding-left: 20px;
   padding-right: 20px;
   transform: rotatey(-180deg);
   position: absolute;
   background: #3c3c3c;
   color: white;
+  height: 100%;
 }
 .flip .fcard img {
   height: 50px;
 }
 .flip .fcard.flipped {
   transform: rotatey(-180deg);
+}
+.flip .more-info {
+  background: #a1a1a1;
+  border-radius: 50rem;
+  padding: 2px 12px;
 }
 /*# sourceMappingURL=main.css.map */
