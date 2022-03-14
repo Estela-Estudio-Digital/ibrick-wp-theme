@@ -9,9 +9,9 @@ Template Name: Residencial
     <section class="container mt-5 pt-5">
         <div class="row">
             <div class="col-12">
-                <h2 class="text-primary-color text-center">
+                <h2 class="text-center text-uppercase fs-3">
                     <span><b>Aprovecha estos beneficios</b></span>
-                    <span>en la compra de tu nuevo Hogar</span>
+                    <span class="text-primary-color">en la compra de tu nuevo Hogar</span>
                 </h2>
                 <p class="text-center">
                     <small class="text-uppercase">Consulta condiciones comerciales</small>

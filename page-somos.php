@@ -25,7 +25,7 @@ $bloque_3_imagen = get_field('bloque_3_imagen');
 <div class="container py-5">
     <div class="row align-items-stretch">
         <div class="col-12">
-            <h1 class="py-2 "><?php echo the_title();?></h1>
+            <h1 class="py-2 text-uppercase"><?php echo the_title();?></h1>
         </div>
         
                     <?php echo the_content()?>
