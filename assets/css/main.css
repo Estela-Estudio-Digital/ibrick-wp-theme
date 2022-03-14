@@ -1314,7 +1314,7 @@ button:focus {
   height: 100%;
 }
 .flip .fcard img {
-  height: 50px;
+  height: 70px;
 }
 .flip .fcard.flipped {
   transform: rotatey(-180deg);

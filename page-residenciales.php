@@ -35,7 +35,7 @@ Template Name: Residencial
                                 <div class="text-center">
                                     <img class="img" src="<?php echo $icono['url'];?>" alt="<?php echo $icono['alt'];?>">
                                 </div> 
-                                <p class="text-uppercase text-primary-color fs-2 px-4 mb-2"><b><?php echo $titulo; ?></b></p>
+                                <p class="text-uppercase text-primary-color fs-2 px-4 my-2"><b><?php echo $titulo; ?></b></p>
                                 <div class="text-center"><span class="more-info">+ Info</span></div>
                             </div>
                         </div> 
