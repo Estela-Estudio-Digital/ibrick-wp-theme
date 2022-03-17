@@ -799,21 +799,24 @@ $items: 1,
 
 .flip {
     text-align: center;
+
     .fcard {
         min-height: 190px;
         transform-style: preserve-3d;
         transition: 0.5s;
         padding: 10px;
+
         .face {
             backface-visibility: hidden;
             z-index: 2;
         }
-        
+
         .front {
             padding-top: 10px;
             position: absolute;
             z-index: 1;
         }
+
         .back {
             padding-left: 20px;
             padding-right: 20px;
@@ -823,13 +826,16 @@ $items: 1,
             color: $white;
             height: 100%;
         }
+
         img {
             height: 70px;
         }
     }
+
     .fcard.flipped {
         transform: rotatey(-180deg);
     }
+
     .more-info {
         background: $ligth-grey;
         border-radius: 50rem;
@@ -837,5 +843,34 @@ $items: 1,
     }
 }
 
+.beneficios-carousel.owl-theme {
+    .owl-nav {
+        position: absolute;
+        top: 20%;
+        left: 0;
+        right: 0;
 
+        .owl-prev,
+        .owl-next {
+            position: absolute;
+            height: 100px;
+            color: inherit;
+            background: none;
+            border: none;
+            z-index: 100;
 
+            i {
+                font-size: 2.5rem;
+                color: #cecece;
+            }
+        }
+
+        .owl-prev {
+            left: 0;
+        }
+
+        .owl-next {
+            right: 0;
+        }
+    }
+}

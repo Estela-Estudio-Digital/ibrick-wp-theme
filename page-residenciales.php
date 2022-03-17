@@ -19,7 +19,7 @@ Template Name: Residencial
             </div>
         </div>
     </section>
-    <section class="container">
+    <section class="container position-relative">
         <div class="beneficios-carousel owl-carousel owl-theme">
             <?php while (have_rows('beneficios')) : the_row();
                 // vars
