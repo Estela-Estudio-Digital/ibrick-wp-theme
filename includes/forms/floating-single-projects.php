@@ -40,23 +40,23 @@
                           </small>
                         </p>
                       </div>
-                      <div class="form-group col-md-12 ">
+                      <div class="form-group col-md-12  mb-0">
                           <label class="label" for="inputNameFloatante">Nombre y apellido</label>
                           <input type="text" class="form-control" id="inputNameFloatante" name="inputNameFloatante" required>
                       </div>
-                      <div class="form-group col-md-12">
+                      <div class="form-group col-md-12 mb-0">
                           <label class="label" for="inputEmailFloatante">Email</label>
                           <input type="email" class="form-control" id="inputEmailFloatante" name="inputEmailFloatante" required>
                       </div>
                   </div>
                   <div class="form-row ">
-                    <div class="form-group col-md-12">
+                    <div class="form-group col-md-12 mb-0">
                         <label class="label" for="inputRutFloatante">Rut</label>
                         <input type="text" class="form-control Rut" id="inputRutFloatante" name="inputRutFloatante">
                     </div>
                   </div>
                   <div class="form-row">
-                      <div class="form-group col-md-12">
+                      <div class="form-group col-md-12 mb-0">
                           <label class="label" for="inputTelefonoFloatante">Télefono</label>
                           <div class="input-group">
                               <div class="input-group-prepend">
@@ -64,7 +64,7 @@
                                   <input type="text" class="form-control" id="inputTelefonoFloatante" name="inputTelefonoFloatante" required>
                               </div>
                       </div>
-                      <div class="form-group col-md-12 ">
+                      <div class="form-group col-md-12  mb-0">
                           <div class="custom-control custom-checkbox">
                               <input class="custom-control-input" type="checkbox" id="inputCheckboxFloatante"
                                   name="inputCheckboxFloatante" checked>
