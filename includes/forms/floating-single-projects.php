@@ -34,7 +34,7 @@
                   <div class="form-row">
                       <div class="col-12 d-none d-lg-block">
                         <h5 class="m-0 pt-2">¿Necesitas más información?</h5>
-                        <p class="">
+                        <p class="mb-0">
                           <small>
                             Déjanos tus dats y te contactaremos
                           </small>
