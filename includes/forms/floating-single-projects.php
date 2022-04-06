@@ -74,7 +74,7 @@
                           </div>
                       </div>
                   </div>
-                  <div class="form-group w-100">
+                  <div class="form-group w-100 py-4">
                       <div class="text-center">
                           <button  
                               type="submit" name="boton_enviar_floatante" value="enviar"
