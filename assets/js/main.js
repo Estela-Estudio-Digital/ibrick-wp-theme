@@ -244,7 +244,16 @@ $(function () {
     //smartSpeed: 500
   });
 
-  $('.beneficios-carousel').owlCarousel({
+  var carousel = $('.beneficios-carousel');
+  carousel.find('.item').hide();
+  carousel.on({
+
+      'initialized.owl.carousel': function () {
+          carousel.find('.item').show();
+          carousel.find('.loading-placeholder').hide();
+      }
+
+  }).owlCarousel({
     dots: true,
     margin: 10,
     loop: true,
@@ -267,6 +276,7 @@ $(function () {
       },
     },
   });
+
 
   setTimeout(function () {
     var totalItems = $(".ppp-carousel .owl-item.active").length;

@@ -1351,4 +1351,12 @@ button:focus {
 .beneficios-carousel.owl-theme .owl-nav .owl-next {
   right: 0;
 }
+
+.beneficios-carousel {
+  display: none;
+}
+
+.beneficios-carousel.owl-loaded {
+  display: block;
+}
 /*# sourceMappingURL=main.css.map */

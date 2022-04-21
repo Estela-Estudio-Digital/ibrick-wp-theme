@@ -874,3 +874,10 @@ $items: 1,
         }
     }
 }
+
+.beneficios-carousel{
+    display: none; 
+}
+.beneficios-carousel.owl-loaded {
+    display: block;
+}
