@@ -1360,7 +1360,7 @@ button:focus {
   display: block;
 }
 
-#navbarNav .menu-item a {
+#navbarNav a {
   font-weight: 700;
 }
 
