@@ -887,7 +887,7 @@ $items: 1,
 .menu-item-has-children .drop-menu {
     display: none;
     position: absolute;
-    z-index: 9;
+    z-index: 10;
     background: rgba($white, .8);
     padding: 15px;
     min-width: 180px;
