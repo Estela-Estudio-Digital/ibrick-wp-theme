@@ -1359,4 +1359,20 @@ button:focus {
 .beneficios-carousel.owl-loaded {
   display: block;
 }
+
+#navbarNav .menu-item a {
+  font-weight: 700;
+}
+
+.menu-item-has-children .drop-menu {
+  display: none;
+  position: absolute;
+  z-index: 9;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  min-width: 180px;
+}
+.menu-item-has-children .drop-menu .menu-item {
+  margin-bottom: 10px;
+}
 /*# sourceMappingURL=main.css.map */

@@ -121,26 +121,18 @@ if(is_singular('proyectos')):
         </span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="text-uppercase d-md-flex align-items-center m-0 w-100 justify-content-end text-center text-md-left">
-          <li class="mr-md-5 my-5 my-md-0 link-residencial"><a href="<?php echo site_url('residencial');?>">
-            <b>Residencial</b></a>
-          </li>
-          <li class="mr-md-5 my-5 my-md-0 link-comercial"><a href="<?php echo site_url('comercial');?>">
-            <b>Comercial</b></a>
-          </li>
-          <li class="mr-md-5 my-5 my-md-0 link-bodegas"><a href="<?php echo site_url('bodegas');?>">
-            <b>Bodegas</b></a>
-          </li>
-          <li class="mr-md-5 my-5 my-md-0 link-rentas"><a href="<?php echo site_url('rentas');?>">
-            <b>Rentas</b></a>
-          </li>
-          <li class="mr-md-5 my-5 my-md-0 link-somos-brick"><a href="<?php echo site_url('somos-brick');?>">
-            <b>Somos Brick</b></a>
-          </li>
-          <li class="mr-md-5 my-5 my-md-0"><a href="#" class="btn btn-secondary btn-sm bk--btn__primary shadow contactoModalBtn"><i class="far fa-envelope"></i> 
-            Contáctanos</a>
-          </li>
-      </ul>
+       
+      <?php
+        wp_nav_menu( array(
+          'theme_location'  => 'primary',
+          'container'       => false,
+          'menu_class'      => '',
+          'fallback_cb'     => '__return_false',
+          'items_wrap'      => '<ul class="text-uppercase d-md-flex align-items-center m-0 w-100 justify-content-end text-center text-md-left">%3$s</ul>',
+          'depth'           => 2,
+          'walker'          => new bk_walker_nav_menu()
+        ) );
+      ?>
     </div>
   </div>
 </nav >

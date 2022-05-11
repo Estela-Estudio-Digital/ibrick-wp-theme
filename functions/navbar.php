@@ -60,3 +60,4 @@ Register Navbar
 */
 
 register_nav_menu('navbar', __('Navbar', 'bk'));
+register_nav_menu('primary', __('Primary', 'bk'));

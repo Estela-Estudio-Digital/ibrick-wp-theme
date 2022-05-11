@@ -309,6 +309,12 @@ $(function () {
     $(this).find('.fcard').toggleClass('flipped');
   });
 
+  $('.link-residencial').mouseenter(function(){
+    $(this).find('.drop-menu').show();
+  })
+  $('.link-residencial').mouseleave(function(){
+    $(this).find('.drop-menu').hide();
+  })
   /* 
 	------------------------------------------------------------------
 		Filtro de proyectos
