@@ -6,7 +6,6 @@ $(function () {
 	*/
   function logSource(sbData) {
     console.log("Cookies are set! Your source is: ${sbData.current.src}");
-    z;
   }
   sbjs.init();
   /* 
@@ -309,12 +308,16 @@ $(function () {
     $(this).find('.fcard').toggleClass('flipped');
   });
 
-  $('.link-residencial').mouseenter(function(){
-    $(this).find('.drop-menu').show();
-  })
-  $('.link-residencial').mouseleave(function(){
-    $(this).find('.drop-menu').hide();
-  })
+
+  if (window.innerWidth >= 768) {
+    $('.link-residencial').mouseenter(function(){
+      $(this).find('.drop-menu').show();
+    })
+    $('.link-residencial').mouseleave(function(){
+      $(this).find('.drop-menu').hide();
+    })
+  }
+
   /* 
 	------------------------------------------------------------------
 		Filtro de proyectos

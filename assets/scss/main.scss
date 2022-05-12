@@ -885,13 +885,24 @@ $items: 1,
     font-weight: 700;
 }
 .menu-item-has-children .drop-menu {
-    display: none;
-    position: absolute;
-    z-index: 10;
-    background: rgba($white, .8);
-    padding: 15px;
-    min-width: 180px;
+    @include MQ(M) {
+        position: absolute;
+        z-index: 10;
+        background: rgba($white, .8);
+        padding: 15px;
+        min-width: 180px;
+        display: none;
+    }
     .menu-item {
         margin-bottom: 10px;
+        @include MQ(M) {
+            border-bottom: 1px solid $medium-grey;
+        }
+    }
+    .drop-item {
+        font-size: 10px;
+        @include MQ(M) {
+            font-size: 12.8px;
+        }
     }
 }

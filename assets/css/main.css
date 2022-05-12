@@ -1364,15 +1364,30 @@ button:focus {
   font-weight: 700;
 }
 
-.menu-item-has-children .drop-menu {
-  display: none;
-  position: absolute;
-  z-index: 10;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 15px;
-  min-width: 180px;
+@media screen and (min-width: 768px) {
+  .menu-item-has-children .drop-menu {
+    position: absolute;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    min-width: 180px;
+    display: none;
+  }
 }
 .menu-item-has-children .drop-menu .menu-item {
   margin-bottom: 10px;
+}
+@media screen and (min-width: 768px) {
+  .menu-item-has-children .drop-menu .menu-item {
+    border-bottom: 1px solid #697789;
+  }
+}
+.menu-item-has-children .drop-menu .drop-item {
+  font-size: 10px;
+}
+@media screen and (min-width: 768px) {
+  .menu-item-has-children .drop-menu .drop-item {
+    font-size: 12.8px;
+  }
 }
 /*# sourceMappingURL=main.css.map */
