@@ -131,18 +131,15 @@ $query = new WP_Query(array(
 
 include( locate_template( './includes/templates/proyectos_destacados.php', false, false) ); ?>
 
-<section class="section shadow">
-    <div class="long-content">
-        <video id="myVideo" loop autoplay muted class="active muted" style="max-width:100% !important;">
-            <source src="<?php bloginfo('template_directory');?>/assets/img/home.mp4" type="video/mp4">
-        </video>
-        <div class="video-overlay"></div>
-        <div class="container video-text">
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="text-white"><span class="font-weight-light">Proyectos Inmobiliarios innovadores,</span> <br>
-                    <span>eficientes y de alta plusvalía</span></h1>
-                </div>
+<section class="section container-fluid" style="background: #d5d4d4">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 py-5">
+                <img src="<?php bloginfo('template_directory');?>/assets/img/eco_brick_mobile.svg" alt="echo Brick" class="w-100 d-md-none" width="540">
+                <img src="<?php bloginfo('template_directory');?>/assets/img/eco_brick.svg" alt="echo Brick" class="w-100 d-none d-md-block" width="540">
+            </div>
+            <div class="d-none d-md-block col-md-6">
+                <img src="<?php bloginfo('template_directory');?>/assets/img/huellas.jpg" alt="Proyectos sustentables" class="w-100">
             </div>
         </div>
     </div>
