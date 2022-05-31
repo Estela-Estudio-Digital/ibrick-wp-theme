@@ -61,8 +61,11 @@
 }
 
 .main-menu a {
-    font-size: .8rem;
+    font-size: 1.1rem;
     padding: .5rem;
+    @include MQ(M) {
+        font-size: .8rem;
+    }
 }
 
 .project-info-wrapp {
