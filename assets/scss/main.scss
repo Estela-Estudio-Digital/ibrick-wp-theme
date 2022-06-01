@@ -904,7 +904,7 @@ $items: 1,
         }
     }
     .drop-item {
-        font-size: 10px;
+        font-size: 1rem;
         @include MQ(M) {
             font-size: 12.8px;
         }

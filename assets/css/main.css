@@ -1389,7 +1389,7 @@ button:focus {
   }
 }
 .menu-item-has-children .drop-menu .drop-item {
-  font-size: 10px;
+  font-size: 1rem;
 }
 @media screen and (min-width: 768px) {
   .menu-item-has-children .drop-menu .drop-item {
