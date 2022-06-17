@@ -144,6 +144,19 @@ include( locate_template( './includes/templates/proyectos_destacados.php', false
         </div>
     </div>
 </section>
+
+<section class="section container-fluid" style="background: #2a2b37">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="<?php bloginfo('template_directory');?>/assets/img/suculentastxt.svg" alt="echo Brick" class="w-100" width="540" style="max-width:370px">
+            </div>
+            <div class="d-none d-md-block col-md-6">
+                <img src="<?php bloginfo('template_directory');?>/assets/img/suculentas.jpg" alt="Suculentas" class="w-100">
+            </div>
+        </div>
+    </div>
+</section>
 <?php 
 bk_main_after();
 get_template_part('includes/footer'); 
