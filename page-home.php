@@ -148,7 +148,7 @@ include( locate_template( './includes/templates/proyectos_destacados.php', false
 <section class="section container-fluid" style="background: #2a2b37">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-6">
+            <div class="col-md-6 py-5 py-md-0">
                 <img src="<?php bloginfo('template_directory');?>/assets/img/suculentastxt.svg" alt="echo Brick" class="w-100" width="540" style="max-width:370px">
             </div>
             <div class="d-none d-md-block col-md-6">
@@ -156,6 +156,9 @@ include( locate_template( './includes/templates/proyectos_destacados.php', false
             </div>
         </div>
     </div>
+</section>
+<section class="section-mobile-suculenta d-md-none">
+    <img src="<?php bloginfo('template_directory');?>/assets/img/suculentas.jpg" alt="Suculentas" class="w-100">
 </section>
 <?php 
 bk_main_after();
