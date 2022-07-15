@@ -712,6 +712,10 @@ $items: 1,
 
 .project-icons {
     min-width: 84px;
+    width: 50%;
+    @include MQ(M) {
+        width: auto;
+    }
 }
 
 .fixed-menu-primary {

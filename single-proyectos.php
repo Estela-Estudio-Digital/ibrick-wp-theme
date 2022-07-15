@@ -210,7 +210,7 @@ if (!empty($terms)) {
             <div class="col-12 text-white">
                 <h4 class="text-white text-uppercase text-center py-5">Los espacios que necesitas para <strong>la vida
                         de hoy</strong> </h4>
-                <ul class="d-md-flex justify-content-around ">
+                <ul class="d-flex flex-wrap flex-lg-nowrap justify-content-around ">
                     <?php foreach ($caracteristicas_proyecto as $caracteristicas_proyect) : ?>
                         <li class="mx-md-4 text-center d-flex flex-column justify-content-between project-icons">
                             <div>
