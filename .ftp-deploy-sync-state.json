@@ -1,0 +1,1685 @@
+{
+    "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
+    "version": "1.0.0",
+    "generatedTime": 1657917438559,
+    "data": [
+        {
+            "type": "file",
+            "name": "404.php",
+            "size": 611,
+            "hash": "57196725fb0e834e42b844dbad4af7c2037b40fc39305a5ef3ecc8680229621d"
+        },
+        {
+            "type": "file",
+            "name": "archive-proyectos.php",
+            "size": 768,
+            "hash": "892986a7e747168e6ace50a919819427e08f8ecbd6b623a2ecd87fa93af44070"
+        },
+        {
+            "type": "file",
+            "name": "archive.php",
+            "size": 612,
+            "hash": "f02133cc47096b50728c15b6536c061298ff4788f85d8f89c4b90a4d349f2a28"
+        },
+        {
+            "type": "folder",
+            "name": "assets"
+        },
+        {
+            "type": "file",
+            "name": "author.php",
+            "size": 1216,
+            "hash": "148d8dfabdf0bfd1513f3a8e0da35a1b251a580b6676d55465475fff7b8cf0b7"
+        },
+        {
+            "type": "file",
+            "name": "category.php",
+            "size": 612,
+            "hash": "f02133cc47096b50728c15b6536c061298ff4788f85d8f89c4b90a4d349f2a28"
+        },
+        {
+            "type": "folder",
+            "name": "functions"
+        },
+        {
+            "type": "file",
+            "name": "functions.php",
+            "size": 820,
+            "hash": "c644d92c8bdba34d07d4730d355d3333c00cdda5314f30cc8f7d98f4b0ef881d"
+        },
+        {
+            "type": "file",
+            "name": "home.php",
+            "size": 452,
+            "hash": "c253c2270ccb363edf6691796b409174923e6889dc3b1a492b1096cb1896368f"
+        },
+        {
+            "type": "folder",
+            "name": "includes"
+        },
+        {
+            "type": "file",
+            "name": "index.php",
+            "size": 450,
+            "hash": "2b5ab87bf9ba484a8b1c03c06d25393c0856534b1f6b4faeb074e8fcd8bc0c58"
+        },
+        {
+            "type": "file",
+            "name": "page-bodegas.php",
+            "size": 2796,
+            "hash": "05aab32a909aac9cf14ee5e7379ccc635429d7611013a6ce1bae2ab4bde25416"
+        },
+        {
+            "type": "file",
+            "name": "page-comerciales.php",
+            "size": 632,
+            "hash": "7be696dd5a61190adc4807311b69e01670e21093ee1d31fe085ef1d09dda02eb"
+        },
+        {
+            "type": "file",
+            "name": "page-home.php",
+            "size": 7819,
+            "hash": "c2067b8e933a98a55fc09526e70a5f27071426f7a0d3fce7cc0def2db77481e3"
+        },
+        {
+            "type": "file",
+            "name": "page-pasos.php",
+            "size": 1429,
+            "hash": "07fd9cfe790911ff8f5d1ccfa1c43a52b70c8c12a1a48384305eaa6a950fe50a"
+        },
+        {
+            "type": "file",
+            "name": "page-rentas.php",
+            "size": 8520,
+            "hash": "a9131bc9c86c2808a34a60e3eed0485f05dce76d4ba0148bbf65b8352f58af4e"
+        },
+        {
+            "type": "file",
+            "name": "page-residenciales.php",
+            "size": 2823,
+            "hash": "406d6aafca4584a72b82dbde64e75506982ed7f57a9c605af6283b539ca288fd"
+        },
+        {
+            "type": "file",
+            "name": "page-somos.php",
+            "size": 4957,
+            "hash": "70ea9e3827cc9f6482acacad7c6c0d23c64dc145cb4cfe193c1f0c72ad2d4f46"
+        },
+        {
+            "type": "file",
+            "name": "page-thaks.php",
+            "size": 1772,
+            "hash": "1b7a9e6a1636fa5538959f72d120e7c2e3d495d499cb5cd0ce12679f9c40bf4b"
+        },
+        {
+            "type": "file",
+            "name": "page.php",
+            "size": 257,
+            "hash": "43e313656d1f4239c0e4e442d48c45accc7fb39d053a2456a6606ed848a1ebcc"
+        },
+        {
+            "type": "file",
+            "name": "screenshot.png",
+            "size": 18463,
+            "hash": "e55a18536883cb1f8618632d7e29ee6f1841d7b233b57bcc7d76bfd0b3d86458"
+        },
+        {
+            "type": "file",
+            "name": "search.php",
+            "size": 642,
+            "hash": "c29ccab23280cae3143aa43c241373e075b0a0ee2751d0e68d2e84333a6c11fb"
+        },
+        {
+            "type": "file",
+            "name": "sidebar.php",
+            "size": 592,
+            "hash": "4f1c853b163305e977e8ac521e6d209215e3c7ed95867f1ddc942a47ed31f423"
+        },
+        {
+            "type": "file",
+            "name": "single-plantas.php",
+            "size": 15344,
+            "hash": "39fc9065c201eb3d79dc86e7f290de333dd22fe31b555824db6374e0d6f59006"
+        },
+        {
+            "type": "file",
+            "name": "single-proyectos.php",
+            "size": 45746,
+            "hash": "03f51259ea1e870f054325700107d24740755bd6027b77d9e317358ce097cf9d"
+        },
+        {
+            "type": "file",
+            "name": "single.php",
+            "size": 466,
+            "hash": "e2718205ddf1fa2cf6bc9336b0db93fd0b85930511edf1046b7f60c7ab3d2949"
+        },
+        {
+            "type": "file",
+            "name": "style.css",
+            "size": 364,
+            "hash": "020a0b005b24b31525ca3ab5a55c1556634cfa3ccc4f3576d722236f59a39768"
+        },
+        {
+            "type": "folder",
+            "name": "assets/css"
+        },
+        {
+            "type": "folder",
+            "name": "assets/fonts"
+        },
+        {
+            "type": "folder",
+            "name": "assets/img"
+        },
+        {
+            "type": "folder",
+            "name": "assets/js"
+        },
+        {
+            "type": "folder",
+            "name": "assets/scss"
+        },
+        {
+            "type": "file",
+            "name": "functions/author-bio.php",
+            "size": 1929,
+            "hash": "d1f14d5875244614d2798c18065229e3aba0cc0c0d2706ec8cb1818e283062b4"
+        },
+        {
+            "type": "file",
+            "name": "functions/cleanup.php",
+            "size": 1703,
+            "hash": "cb0b03a62508aa1b97da25102a2b5cda8212cac3f314f0f308c70bd8939f85de"
+        },
+        {
+            "type": "file",
+            "name": "functions/cpt.php",
+            "size": 11793,
+            "hash": "2d8570c229d22def4d3f6281352d5ef502dc6e172a145b50e415ff56a665ea02"
+        },
+        {
+            "type": "file",
+            "name": "functions/develop.php",
+            "size": 2803,
+            "hash": "8af75f88043cae0160c159a9b3f0c5e1e923007bd1f1c07e638bcb1523624867"
+        },
+        {
+            "type": "file",
+            "name": "functions/enqueues.php",
+            "size": 9212,
+            "hash": "051ec9cb2ee5e3fa4999982733cba0999f836b7974a39254a465fdfc03702f6b"
+        },
+        {
+            "type": "file",
+            "name": "functions/hooks.php",
+            "size": 1796,
+            "hash": "d52cdd1e0af18afe16363b38f49da6e37c54d28217ad25aae4607449c72dfb7c"
+        },
+        {
+            "type": "file",
+            "name": "functions/index-pagination.php",
+            "size": 1511,
+            "hash": "7fb8d06a120e8ed2fbbb3f2a7a5450050596efdd6a7f9418beb5e5ab03a6fb05"
+        },
+        {
+            "type": "file",
+            "name": "functions/navbar.php",
+            "size": 2344,
+            "hash": "0bdff6f864852adbb1383e7f180f416874dd58024a0f01dede55f0fcc8d9047f"
+        },
+        {
+            "type": "file",
+            "name": "functions/search-widget.php",
+            "size": 640,
+            "hash": "ed1ec7b7275a7f00dcc2d391c641859131394b458206eced7a908b87cdd17aea"
+        },
+        {
+            "type": "file",
+            "name": "functions/setup.php",
+            "size": 2318,
+            "hash": "a3f68d9221a8f772b04349eec60569d0f4016edd5dca9ecea75c2da2f6492fe9"
+        },
+        {
+            "type": "file",
+            "name": "functions/single-split-pagination.php",
+            "size": 3134,
+            "hash": "3ae51a2e641a4b342b82ee29a6302fc84d84a590328c4e3e3586260f561ec23b"
+        },
+        {
+            "type": "file",
+            "name": "functions/widgets.php",
+            "size": 1256,
+            "hash": "f0c1fe63ac7e760381624b01b13d89460f341c2edd43bca68d567f88fb0f9573"
+        },
+        {
+            "type": "file",
+            "name": "includes/footer.php",
+            "size": 11094,
+            "hash": "87463a860473722145f2c1480b3960493294afb79ffde430f8f587e8e8a9cebf"
+        },
+        {
+            "type": "folder",
+            "name": "includes/forms"
+        },
+        {
+            "type": "file",
+            "name": "includes/header.php",
+            "size": 6991,
+            "hash": "7d7871bfd2e9a476c21dc0797832edb488782501c9f2ad5dd467646ebcb47e8e"
+        },
+        {
+            "type": "folder",
+            "name": "includes/loops"
+        },
+        {
+            "type": "folder",
+            "name": "includes/templates"
+        },
+        {
+            "type": "file",
+            "name": "assets/css/bk.css",
+            "size": 1452,
+            "hash": "f0dbd04808d1e7199fee39ce061692557530d58e6366339981901697577b2f2e"
+        },
+        {
+            "type": "file",
+            "name": "assets/css/blocks.css",
+            "size": 2160,
+            "hash": "d74815bf82f22ff146edba74fc57815dd3d1d54932e4044baab0a4e4f13aa2af"
+        },
+        {
+            "type": "file",
+            "name": "assets/css/editor.css",
+            "size": 4621,
+            "hash": "93398f2a1afe0c648261e63c0bc8f459cb075dcd2fce61f77ccb431b0106a872"
+        },
+        {
+            "type": "file",
+            "name": "assets/css/main-dist.css",
+            "size": 20549,
+            "hash": "db9292831f3569afd7f5c755d1fd7894b5d1129f68146cc63cf48e3350f9d01f"
+        },
+        {
+            "type": "file",
+            "name": "assets/css/main-dist.css.map",
+            "size": 8346,
+            "hash": "98dc203603786add5034a0f19e85a79c06f2a1e995c60f438dc66a987a39a265"
+        },
+        {
+            "type": "file",
+            "name": "assets/css/main-dist.min.css",
+            "size": 20553,
+            "hash": "da367e32b5e9341c5565ff7a17b924f9e9af9452b86f1a7e592f497864358a29"
+        },
+        {
+            "type": "file",
+            "name": "assets/css/main-dist.min.css.map",
+            "size": 5956,
+            "hash": "4684a8edf616e4935dd6694a5c32a5cb91fe883c823406a2aa1863c608f746c5"
+        },
+        {
+            "type": "file",
+            "name": "assets/css/main.css",
+            "size": 25197,
+            "hash": "c33ef4d2ee332a14d5745b5f71b678d591e07b3d641107b28e993a39456debfe"
+        },
+        {
+            "type": "file",
+            "name": "assets/css/main.css.map",
+            "size": 11491,
+            "hash": "0a50fb96103281a2bed529ef14e92d3b6db890279755c301a37ce987c28ca1e8"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/metropolis-regular-webfont.eot",
+            "size": 36766,
+            "hash": "417be13094ef40f80841aea90c5efa8254dc26891f798bbd065b7f34732ea588"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/metropolis-regular-webfont.svg",
+            "size": 55119,
+            "hash": "7ed394529630e097e8b8368cffe746de1066796953971f9cf1179eb2e21f3857"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/metropolis-regular-webfont.ttf",
+            "size": 36564,
+            "hash": "62ef4857e12dd09ab7b3da0c7b2bee8102c746861a600d67791d02508d577f81"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/metropolis-regular-webfont.woff",
+            "size": 19704,
+            "hash": "58268488fad4b32d4e5ec52c71d682ce2d12b18147a43ca7115950a09b1b3a2b"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/metropolis-regular-webfont.woff2",
+            "size": 14544,
+            "hash": "140d6cc1fb2c28302f79ad3b07e5a81b13aad79d8cb6b9a12221f5ef4d4a41d4"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/002-videollamada.png",
+            "size": 1735,
+            "hash": "33fc3e9fbf1b41d9ff978410a01e4753f72b7ca993cf616f75f69ecbf16083dd"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/003-bicycle.png",
+            "size": 3209,
+            "hash": "57405e5279a055c0858d84a1dc97cf460c8908936a4732b762b36ea671531286"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/003-bicycle.svg",
+            "size": 1195,
+            "hash": "9ba4493d7268897c8907f9ed62b8f4858c68b44692a1c6818524a017ebc0919b"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/003-disco.png",
+            "size": 2943,
+            "hash": "6d6b58e73f56c65ef9cf722308cbef0ae8151ba6fbfd00ce401cd29fee86ca93"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/004-parrilla.png",
+            "size": 1564,
+            "hash": "bbb4578345da2b78a28fbf0ef4c6987e8a9bdef037c475c2d01ca05bca0cd912"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/008-patio-de-recreo.png",
+            "size": 2379,
+            "hash": "637b9860fc814bb1782ad1ed1e78781a966ec51fb11145b311d157c0a8a286ad"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/12.svg",
+            "size": 6216,
+            "hash": "33eb65eb778c5cd09da9c0584642efcc1964b3e96c6ef7057bca5aaad44dd9a7"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/123.svg",
+            "size": 10012,
+            "hash": "dbddc27059a2aa9969e657a4cac76b14906e9530655029dc3eaa8fc63470bace"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/404.png",
+            "size": 25278,
+            "hash": "044ae92da39d3a278f8047a9c3e5c1df5759613b2c2391a439ce69e5b442e9f4"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/Group 287.svg",
+            "size": 1468,
+            "hash": "65c361603efe4bc2bc6e5921eb4b7982b39ff0f0633b1afdc89dff6d4c134926"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/areaIcon.png",
+            "size": 485,
+            "hash": "dedf8d16efaf293f084ef457c9b298fa8f05d71584825884dca16e4726fd2cb3"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/arquitectura.svg",
+            "size": 3531,
+            "hash": "3255dc09acee11a6214908771e556b769484935f8e1ffba3371f01860be97327"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/batIcon.png",
+            "size": 1497,
+            "hash": "fc2b8d9ff34601676fe39ef58e7d8fbb0f4a6a481db71447b97b830f1a4a0d69"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/bedIcon.png",
+            "size": 776,
+            "hash": "8a93a65803849ae9756f9312ba67e4074a1fa39248467948f74e0a709e0d7932"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/bg-azul-original.png",
+            "size": 134901,
+            "hash": "f38ee09aca9aaa32be14741dd3c1dc5bcdec5b7084f29b0ce72f0b86cd9a8f54"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/bg-azul.png",
+            "size": 68578,
+            "hash": "9db120ddaf1c31b61b1774bcbdba89d41b224e6eff642f5c930a22216abbfc30"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/bicicletero.svg",
+            "size": 1319,
+            "hash": "efb64561ba2944cbf247bc5efe6f7c9791a4239bfca83fc00f952d7830182013"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/bicon.png",
+            "size": 548,
+            "hash": "f03896eeaddff8bb220e7a4f0971250655c1bd27030cdbcb31708d64cd01b9bc"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/bodegas1Brick.jpg",
+            "size": 284967,
+            "hash": "7c6f9686765b29d736b7612c76e45c0c0d4c9fb3dfc0e771b0416e824592fe0d"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/carmen-logo.png",
+            "size": 9610,
+            "hash": "1e7c2e18af0801a723dc9134c302cf1db0e3e6200f8fc12dfcb087ec41e1030c"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/carousel1-original.png",
+            "size": 1395958,
+            "hash": "be2faf6bfa33fbacbf4fb1862acc2825bead9c56e8c0e416e5a0adcae5dde870"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/carousel1.png",
+            "size": 310530,
+            "hash": "b34a3e2b32431d943442117c783e16f27326464d45414d12720e977af176f5df"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/carousel2-original.png",
+            "size": 1612624,
+            "hash": "9a86eae82e2b1df861273cad25cac609283e77642938cf78ddb55a3ab04f025e"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/carousel2.png",
+            "size": 459634,
+            "hash": "7f516ee5cb1062a52608db096bb44516fc6711adcfbc894310d3d1038c809b36"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/carousel3-original.png",
+            "size": 1561314,
+            "hash": "7cc50c16877639a994ebe895b6f88ea463309d413d2a6f4526eac964369d8d7b"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/carousel3.png",
+            "size": 491125,
+            "hash": "5d9bd48a247809110bdd445ecc19ccdbb6efac5b9b3a99d911351e6757945159"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/carousel4-original.png",
+            "size": 1622540,
+            "hash": "a27624fa8e8642d93234fddc19c73b74eca4c7dda56cce97a48e2cc4532a1717"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/carousel4.png",
+            "size": 451853,
+            "hash": "c9c70155b88d451ad11206817bea9e70c0e5f150ceaf362a6a6247df705b51ca"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/carousel5-original.png",
+            "size": 1599538,
+            "hash": "7702b2b4970e64f09b87f6e16b7799762949938db4473070c892ab054b2ed9d6"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/carousel5.png",
+            "size": 456676,
+            "hash": "32f1accd08f6ab7465fd2673236094868d2d94a10e1354671f56901fec876dc5"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/check.svg",
+            "size": 1140,
+            "hash": "680ad62b6dde9ba6a971624bcc77a670729ba53810598e85f90e64e2bfe0afa5"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/cheque.png",
+            "size": 8771,
+            "hash": "de68b1d6b405f55afa09a24f243a886879f6095a5986a7e4007033fae7671fb8"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/coWork.svg",
+            "size": 1456,
+            "hash": "81c747ffb3dcb4093924aab73884ff0ec8d9403d7afc257855e3ef67cbd1e912"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/dormitorioTarapacaRender-original.png",
+            "size": 1899706,
+            "hash": "d37f5cb65c447949bc74bd893ff32de61c1dc57eef014b375348af6ac1e818c1"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/dormitorioTarapacaRender.png",
+            "size": 508182,
+            "hash": "b0bfaa86b3dad250a541bc488b26bdc2f2cd22f2e11a2134fe60dd49a9481cee"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/dummy-img.jpg",
+            "size": 6633,
+            "hash": "6b18c1e6ade8ebc432afebf5fe2efa5ce3628693123a8b2048e4a16d0b18daf2"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/eco_brick.svg",
+            "size": 104769,
+            "hash": "a4d733a7294d501439dadf5cf0d10f2c6ff548a94f8a4cacb5f1408ae27e214c"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/eco_brick_mobile.svg",
+            "size": 103344,
+            "hash": "45355490bf95d21c702c8acfabd3dbd88e23f7072f932f72f519ff57e4a96c92"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/ecommerce.svg",
+            "size": 2579,
+            "hash": "32604887ccd12c5b019ad99a82f5d32d66281a5b239443ec035bd56f1a0099fa"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/edicifio1-original.png",
+            "size": 1441120,
+            "hash": "cf412317073e4085f313972925430c50f0db20ed47a3f9a6972731e6366c704f"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/edicifio1.png",
+            "size": 487724,
+            "hash": "480267bdd97ee20ec1a36db75da663824ea6eddea98370f581d6993d5166f88f"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/edicifio4-original.png",
+            "size": 1532701,
+            "hash": "49ea705dd29c80b2a5960424692addbcbc14f7b442f24d653f750921ddeef606"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/edicifio4.png",
+            "size": 514233,
+            "hash": "2480b8d0a677de5d3e5dca476c935d8fd3547782cca6ee103cd10a28c9bf5fe4"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/edificio2-original.png",
+            "size": 1616805,
+            "hash": "308586bc31b78000f09c0b3f28c9271452b975433032d827d0723d317e94af7f"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/edificio2.png",
+            "size": 494396,
+            "hash": "5b26abb791d7895feda5eafb1193e6857aa62f3fb58db72591c64996e2aba51b"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/edificio3-original.png",
+            "size": 1644921,
+            "hash": "e70949f00e91b32b8b26cdeb3d779612756a30d1af4c93cb835560f3b71f82fc"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/edificio3.png",
+            "size": 495394,
+            "hash": "f339b1ff05e6b2bcc6ed09a7f4c23a57551e5b39c327f0967518da372f1b1d0f"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/ejecutivo-ventas.png",
+            "size": 39499,
+            "hash": "61f3b7fd36a397f8ea0d02293efb092159ef7fdf95169803e1f9effdb8534602"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/email.svg",
+            "size": 2193,
+            "hash": "d244c8399572b2612a5e40e201e84300eb4eb0d841383cd33371f1bcea857e9e"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/entorno1-original.png",
+            "size": 1532701,
+            "hash": "49ea705dd29c80b2a5960424692addbcbc14f7b442f24d653f750921ddeef606"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/entorno1.png",
+            "size": 514233,
+            "hash": "2480b8d0a677de5d3e5dca476c935d8fd3547782cca6ee103cd10a28c9bf5fe4"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/entorno2-original.png",
+            "size": 1946329,
+            "hash": "c92452180bbf1c315de35832e735cb475d1d7c9be7ddad05a4d435013a6836c7"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/entorno2.png",
+            "size": 566765,
+            "hash": "bd6c2f93da089a4d96b89c80d9ab42e6ef106940ff54bfe8b74ecbf31fed2e15"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/entorno3-original.png",
+            "size": 1993330,
+            "hash": "d5e8ae189f93184b0fd8d15d4b9611d25cdf5b734e3c992cfc094c0cc515b6d6"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/entorno3.png",
+            "size": 556949,
+            "hash": "606cbe0015848d20f90e9101d5036599ad0b90c43b148583fb13501e985dba87"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/entornos.png",
+            "size": 3272,
+            "hash": "a78c31d779185a436be4cc98599f17d8b8d5fcd45884560e2d90fd88df580885"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/entornos.svg",
+            "size": 3964,
+            "hash": "5e08332ebd114760631791fab590f32c616e316783d9d9eb023a110591b97515"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/espacios-original.png",
+            "size": 194274,
+            "hash": "5614269b74d7c959c3f5fc6174367eb7e504c4bc8b83892c5d6d77f9ed697392"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/espacios.png",
+            "size": 95062,
+            "hash": "aa3d977ae7e454909890590bf2225bd872b9a55c48177e456f57fa916b25a49d"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/estudio12-01.svg",
+            "size": 9141,
+            "hash": "277cc468a63a6eb16a8b2c781756a72f0cc74a87f2dddbf9866b7bc67379e75d"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/estudio12.svg",
+            "size": 9141,
+            "hash": "277cc468a63a6eb16a8b2c781756a72f0cc74a87f2dddbf9866b7bc67379e75d"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/estudio123.svg",
+            "size": 10032,
+            "hash": "264584ee9fe4755a4be43de59452ba8607a015e32063c82df90117ebd8c5ec97"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/facebook-brands.png",
+            "size": 681,
+            "hash": "f573c4f5b55972942575a4ee9d2d3c24f203f2b15106d56440c15c3a512f45fb"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/facebook-brands.svg",
+            "size": 445,
+            "hash": "b488301869ec9b0f3707ea02b63bd1e400156e4ed7e7a2be80b4744648f34c7a"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/favicon.png",
+            "size": 968,
+            "hash": "2b443c01d34bffdd7a2555b6b010e0be181dfdd278440b037ff159e87fe5d1a8"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/footer-logo.png",
+            "size": 2716,
+            "hash": "d8a491354bddd03dab2ba5fb2434aa941d316a57e9d65659d8047f6ef8c147c8"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/footer-logo.svg",
+            "size": 16577,
+            "hash": "87ed04f735002481e1cde468732e834afe822004a081a8da76136c8889d03c27"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/footerIcon.png",
+            "size": 560,
+            "hash": "4aacbd7d391362d3c0ee872aa083a0a27a3e1bcd42884b03da1732fa88f4bc0e"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/gmaps.png",
+            "size": 861,
+            "hash": "a1248c2c46f91bbf59819cb4f4e7faafbf64236b1c65c51c7c7223c5bff6f5f2"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/gym.png",
+            "size": 3890,
+            "hash": "e940065a4aabf1b2258e6acc7e1ec80c65e06897969fe5c3534c9183b5b6b069"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/gym.svg",
+            "size": 2828,
+            "hash": "440b22123e33fcb4c2daaed66e64de15039d5275d129f7812e9ea405bf42c2c2"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/gymroof.svg",
+            "size": 2828,
+            "hash": "440b22123e33fcb4c2daaed66e64de15039d5275d129f7812e9ea405bf42c2c2"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/heroTarapaca-original.png",
+            "size": 3538289,
+            "hash": "75060ba11e60127dfa1b9576bff7d79341037f500d06b11c10858a1842a64810"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/heroTarapaca.jpg",
+            "size": 443452,
+            "hash": "ea424efa294cb9a0db8a43a6fbe3e58ed9fad2088a4241b4dff247d3179f0739"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/heroTarapaca.png",
+            "size": 1017797,
+            "hash": "52be18382d345531f8b2561e5c15cde633987fc361c6a99dbcc4cc59cbed0a43"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/home-hero-aguasanta.jpg",
+            "size": 485839,
+            "hash": "409312d405775aec7258bebf6f97f23e423600976f91c661c6db2c20d74ee7ae"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/home-hero-carmen339.jpg",
+            "size": 509887,
+            "hash": "99b00029d2bf4ce7d8ece86f9b44bc0c3db98af377459002ab6c123cbef018f2"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/home-hero-pereira.jpg",
+            "size": 472299,
+            "hash": "0cc3b581d78d75aba32ffdf8bf52e1b55dcf57471f59781f177c69338ec9e7bb"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/home-hero-tarapaca.jpg",
+            "size": 294612,
+            "hash": "78ef20c41a355af8e0d55494388d5de4927c3f41905c49027cbb451d94040e59"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/home.mp4",
+            "size": 6991811,
+            "hash": "241d8447e846dfddd8ab8ebe4469d18c8796a5a158dc76e10da0dad51f033bda"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/homeCarmen-original.png",
+            "size": 4043286,
+            "hash": "df553abf7f92e218e91a04da259b35531f8e4fb90a73d33fba5589829c1afaea"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/homeCarmen.jpg",
+            "size": 463789,
+            "hash": "4ce8c326c6e216e319afe49945e08ef206931375bd26f05b446e144eac4d6447"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/homeCarmen.png",
+            "size": 1163142,
+            "hash": "5126466a719efb9c1f1b44cecdb593f4fb00dfbf27fffa4fbc807c751331afdb"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/homeCarmenMobile-original.png",
+            "size": 926841,
+            "hash": "842e1237856dfb7dd1ae868c7a9c52ece2cda69a9272503ac18bc76a47c47034"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/homeCarmenMobile.png",
+            "size": 263559,
+            "hash": "c9102f29d0e244e3ef45facac9c663a07981c9177f587f13eafc1cf48d0ebd0d"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/homeCentro-original.png",
+            "size": 2664940,
+            "hash": "7ef6bdf45423ff05c1ffdfa6badf48e30ffa2520b29f6cb9790e017622d79c63"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/homeCentro.jpg",
+            "size": 277196,
+            "hash": "6b36234b1a6e55c26cbd7e646945512333d9bbb15f4e3b72301965dc3474aebf"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/homeCentro.png",
+            "size": 697942,
+            "hash": "34cc6b5413cdceb19025142074b5bb5b6c900c563e44f0477944090933b7bd23"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/homeCentroMobile-original.png",
+            "size": 648633,
+            "hash": "f778f755348390a4e484d3e4d8c4b3f90a8274657d0af2fe8555c26050bd0d06"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/homeCentroMobile.png",
+            "size": 170143,
+            "hash": "044c2c4eda328d4db5e8e41fc321196b36f281e9d6c4baf4b2110aeda3a3c7e0"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/homeTarapaca-original.png",
+            "size": 2671306,
+            "hash": "a645ebbe38d062ef246b677df9d86fcc5532182c65e550018d50f8ef49873d99"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/homeTarapaca.jpg",
+            "size": 220540,
+            "hash": "4f11be3dcfc4dfd36cc2cd00c1e8eeca5e01bf543db75afce794db0e191cee53"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/homeTarapaca.png",
+            "size": 599609,
+            "hash": "49b4722e36def1d5c496b5d77bd1ee8477f176650094f807cf31a5946d7b0d01"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/homeTarapacaMobile-original.png",
+            "size": 913686,
+            "hash": "25f0bc6ef32e71983345e2d4569f8b154534fe271f4c5f5301136b4191e93b66"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/homeTarapacaMobile.png",
+            "size": 257680,
+            "hash": "8ece89eacae0c0a2f304df656a512c0b0651db3f3496878e2f9a932d9b88e93d"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/huellas.jpg",
+            "size": 167280,
+            "hash": "3e810d189557b174ee8de26e2a07d8e203282bdad3861dc02e4d5c27139a0ad0"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/huellas.png",
+            "size": 929137,
+            "hash": "8d26ce321ab0510641cb021b0d55d2c33d01681761b5956c4fdeba4d1e057fac"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/imgNoDisponible.png",
+            "size": 24971,
+            "hash": "a573b8ae0bfdad23613fbc8fc068c0409806dfb5522f9ccec92a373ce78b99ea"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/instagram-brands-original.png",
+            "size": 911,
+            "hash": "f5c1b0a2a840b8a6d375b42735be37f64f21e4db18c305ce6680fa8c3af55e0a"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/instagram-brands.png",
+            "size": 484,
+            "hash": "4dcebd45273bf8ab5f32d814dd1c321c73834d514d24717d8a97ce7fc2f080da"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/instagram-brands.svg",
+            "size": 1153,
+            "hash": "e41ea278999c09ec5dab7a183d3cfb922d0fc53ed5db34695d53deee969f5ce4"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/lavanderia.png",
+            "size": 2521,
+            "hash": "a6802348737341f1bd6a58e8acb7e4840ab0ca959b459cb9686be4eef3f3e870"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/legal.svg",
+            "size": 4049,
+            "hash": "571d28f2f0382aa11e5f86efd851a1c8b4fc848219644a34432da817e353ed2a"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/livingTarapacaRender-original.png",
+            "size": 2076712,
+            "hash": "a47e9c9d26aaac6aa8ce6f555c2dccda6e5eecacf46d210e969a24fd8c5f74ea"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/lavanderia.svg",
+            "size": 1837,
+            "hash": "b94311bc4e415bcc95d885e8efcaa9e4375599259dd8510598f01ea3ec9f2004"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/livingTarapacaRender.png",
+            "size": 645254,
+            "hash": "44caa05743c7e26eeb7a3433f4e5835e2f210a62191173341dd0e79a1402d859"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/locales.svg",
+            "size": 5265,
+            "hash": "c65ab88ee0b7b371cf58b2c186affcd5cdf4041f8e655b71c9236274db344d65"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/logo3090.ai",
+            "size": 244648,
+            "hash": "b4739ac596949e6f8e334ab2613dc6382535012f9967ec4126616bd92f3a1dbe"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/logoBrickRentas.png",
+            "size": 8605,
+            "hash": "691d56b446dbab12293d1ebd8de4bb8d73aa712bcdffe85721570be4b3763d31"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/logoCarmen120.png",
+            "size": 9447,
+            "hash": "41c2eb5b54b03ca96c91c9cfa0c137a28cf02279fd763f96a6e54a74eb1801eb"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/logoTarapaca.png",
+            "size": 7383,
+            "hash": "c050c0119826893a02bba5b108fc7e4142270210dd7b1f8899394151e8261d3a"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/logoTarapacaBlanco.jpg",
+            "size": 1255,
+            "hash": "4a9b686abd8cb81c2e9cb8df80a0fe03929d9ab0e1a203cff0fb9d0ea8da6bf0"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/logoTarapacaBlanco.png",
+            "size": 4541,
+            "hash": "4ff7d5d7c961831da32c9345430f270cab30689119f18fa71dc4bcb9c98ac12f"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/mapTarapaca-original.png",
+            "size": 280936,
+            "hash": "49ac6223f32f4b801e6895d690ab2f87202a12fdc782b9fddd0729eba7452f8a"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/mapTarapaca.png",
+            "size": 72298,
+            "hash": "64e586aee0b0f66b89f53f4cbd3b653229652ada8890c0b3458b35c96a8e031b"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/mapTarapacaMobile-original.png",
+            "size": 156384,
+            "hash": "c49032e85d800a9e4203838266094747c1e747d7c8e761f7580067909fd58a06"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/mapTarapacaMobile.png",
+            "size": 47356,
+            "hash": "47f09708c24d8b4e6d1ad373aadd6542001fb6d09bcfc00bc67376423d04baaa"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/markerIcon.svg",
+            "size": 439,
+            "hash": "0f5b099d8463c1033c9525a63a5f81f99a775e14e4601813fdfaed449a08f70a"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/masterFloor-original.png",
+            "size": 933006,
+            "hash": "dbd62e8b5ccbc0732415ca80998ddb34fce18505785e2bcccc2f7fcfcf3b7b9e"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/masterFloor.png",
+            "size": 254843,
+            "hash": "d7e65809e59c6ddeffb537e799cdcb29a07f994e011534445b858d80a162db07"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/masterRoof-original.png",
+            "size": 1369798,
+            "hash": "d4265bc7252714ffedc4e40917b3e23182af2fc06f0f61aa8d97243124ec7205"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/masterRoof.png",
+            "size": 362381,
+            "hash": "d62249a31aaef76e78a65069563d09c15141b514b3591927de9d2318cb80926a"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/menu-logo.png",
+            "size": 9986,
+            "hash": "7519efbc0fd502dd3595f51807ee674a0bd6b316478908bb8b9fff41bf733447"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/metro-color.svg",
+            "size": 1181,
+            "hash": "24d1ca29724e413d3afbc62e89cdc533302a497f7750e89828e34910b9525baf"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/metro-sin-color.svg",
+            "size": 1160,
+            "hash": "20580f2d691a7fa28f83c1b981d97e91e5fcd1688354c8dabde459638b3e8ec4"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/metro.svg",
+            "size": 2322,
+            "hash": "220a9418398d5f11cf803ab1fbb2b4979374ada881651c40051f826006448f6b"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/money.svg",
+            "size": 10177,
+            "hash": "88869668db50710ad4a492fcb4fa543e7cba6e205f9e0bd529a7d7055b58e7f8"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/multiuso.svg",
+            "size": 4610,
+            "hash": "b0881ffa2877d315a495f25a15f35a9d7e0e568a14b28e9d9d77616f63db53b2"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/patiosInteriores.svg",
+            "size": 6004,
+            "hash": "4813a0bbcf4be912d999af8ced8d73a05d4bfe3f43dc2fd3efe5817466b46557"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/pereiraLogo.png",
+            "size": 3981,
+            "hash": "977ccfb99a9d5c1a1a5ac12975d6b0ac0dc6cbb7ef309aa2bda4f5801086144f"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/petGarden.svg",
+            "size": 3181,
+            "hash": "a0e7d798f7c468d99da1bfb8fd789388e9294c6d19d86cd5c361ec2e32170883"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/pets.png",
+            "size": 3169,
+            "hash": "ad418a91ada5ea1d9ac592e9765abc9094f04a87372fe2b9175866ad1ac37912"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/pie-cuotas-01.svg",
+            "size": 12511,
+            "hash": "88faf6316ef4d712e8277a496a1c61ffd254bde58741296bd41a609dd0da213a"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/place.svg",
+            "size": 10089,
+            "hash": "543c240c909152811c45eb64f2af70cb89015dfbe63553c3911efe9fd0324187"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/play-video.png",
+            "size": 6015,
+            "hash": "6731d0f9c5394982f1e8ad5ead9e6fbfc01a8bba634be20a5e435be326b89cdb"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/portadaCarmen-original.png",
+            "size": 685667,
+            "hash": "1c159ad496bc81deb305abc4e6d3e4f8c855276e5f52582fc9b52d9624f16619"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/portadaCarmen.png",
+            "size": 685667,
+            "hash": "1c159ad496bc81deb305abc4e6d3e4f8c855276e5f52582fc9b52d9624f16619"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/portadaCarmen120-original.png",
+            "size": 710384,
+            "hash": "33cc550a9b14fb01f2ff71532f803d7da4cde22e7ca41a82d5949dd2232b597c"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/portadaCarmen120.png",
+            "size": 193781,
+            "hash": "030761a54fd1fb3f81436e784e30c2e9703c76089408aef3ade46537014d3290"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/portadaPereira-original.png",
+            "size": 610971,
+            "hash": "a46748930a1507886378759926c1fe743482373a4f694377e1ae2a7a7c97c850"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/portadaPereira.png",
+            "size": 194834,
+            "hash": "614114a37d74cd5b084e7d36811ba73ff3da77e906434f557e991ca6ede542ed"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/portadaTarapaca-original.png",
+            "size": 674046,
+            "hash": "9da66fa0f7e2ed73f92eed33a84f68d6ba64a999419ca6feb990b0005ed7e5db"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/portadaTarapaca.png",
+            "size": 187087,
+            "hash": "f0e22083344fc1f1eb27a20849f8d45601e4aa9b8044c7001d77b1a28f3a4205"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/primary-logo copy.svg",
+            "size": 16915,
+            "hash": "32301f71b3db149352dc4dd2e416ca949d1384e633fbed1bad9a88e6f6188ba4"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/primary-logo.png",
+            "size": 8920,
+            "hash": "dee5a7095a777ae64711af5f9c3652954d320a92a40ac19f7da9e90439f0939e"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/primary-logo.svg",
+            "size": 4677,
+            "hash": "659ecd8f1a38a55c297cbd6665c64f4133f3c8c9705d64a69661cf1553fb8db9"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/proceso-compra.png",
+            "size": 152855,
+            "hash": "b106f3e2b9a29c994a5976b551ceaadbf68050687716ec180c6973332417c21d"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/profit.svg",
+            "size": 6450,
+            "hash": "8e7bf04d996b6b4aa3bb610f9d12c4c59206ad999cdc9a641a3191ec063260fa"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/quinchos.svg",
+            "size": 1988,
+            "hash": "83afb3408ac3c962e9468c1a2976e16927e1060b9f575d4f8d0f054547c61c51"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/rentas1Brick.jpg",
+            "size": 153142,
+            "hash": "2351d3cbe2ca17cc940f5a6ba077b8e74f503c263c0a1ff0ecb58147e01a69a7"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/rentas1Brick.png",
+            "size": 1445022,
+            "hash": "336e86c1b7de41489cab16f267d16bf514727a370030da6f2719355a98c0dcd3"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/salaMultiuso.svg",
+            "size": 4610,
+            "hash": "b0881ffa2877d315a495f25a15f35a9d7e0e568a14b28e9d9d77616f63db53b2"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/storage-logo.svg",
+            "size": 5585,
+            "hash": "d48e7a8ae726aeb03b4c68ff4fa1f72e285d1425a3e67de7161c9200ae13a0ea"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/suculentas.jpg",
+            "size": 75476,
+            "hash": "466675ba4e569d25dd48ef564b804149e4bb419bd8b896880ba5a2ba494c919e"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/suculentastxt.svg",
+            "size": 42371,
+            "hash": "8eb708526f2e77a68233bf6297517bb1c05c44d54299823c815f0d8828959be9"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/teamBrick.jpg",
+            "size": 597381,
+            "hash": "690e4f946b6f61fe7a9e74ac979ebec52eea5afec70e32b20d2fe53a924a2b74"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/teamBrick2.jpg",
+            "size": 235785,
+            "hash": "b8cc45700537075bf24b552d08cf076c4d8d5ce56f8e167d8d76a082ffb496ae"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/tipoTarapaca.png",
+            "size": 3960,
+            "hash": "fab47a3e389aaf78d3a9b464f49ead5783a0ad6c9cb16d752328a146f5fc9c63"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/tipoTarapaca.svg",
+            "size": 764,
+            "hash": "c586ba516ef0be194778cf61c7a4d8b015a1e4adf60cbd022736c95f8f21e04a"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/title-img-gris.png",
+            "size": 1048,
+            "hash": "1ccb3c2fb58045f7d3788cedad1f099cea6e6bf6d3302bed644379612f644c40"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/title-img-naranjo.png",
+            "size": 1039,
+            "hash": "5a217acefb08edf535a9f663004e0d9123ddef9e11db4ef5a8f6dd4473eb0984"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/title-img-verde.png",
+            "size": 1039,
+            "hash": "3cc5604933a68e56efe15ec43a61d80de7b11e35d21df5b142ac93b35541c1c4"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/title-img.png",
+            "size": 412,
+            "hash": "797ab257f906691fb0411fd76867b8bbf9add6f6e551a1f3b5a3a6a1d23cb7c1"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/tocar.png",
+            "size": 12738,
+            "hash": "f02182eabbe39bb404a810ec08a8808a3fda115c06c96fd5e5615799dcb9d10f"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/tools.svg",
+            "size": 5072,
+            "hash": "aa6a8134f9d2bd63bfc278f73dda266c35a67a8ea4e7f71a5afe71997d8d49e7"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/ubicaciones.svg",
+            "size": 4741,
+            "hash": "ebf981b7ed6e89eaae98455a7d41d2e346cdbafccf97bca0b2fda4fa22737bf6"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/video-mobile.jpg",
+            "size": 91616,
+            "hash": "9f5b4b268c863b0038a0020b8d2a448694a023f8b7f28fcb737f214980f6802b"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/videoTarapaca-original.png",
+            "size": 782306,
+            "hash": "e1e677dc65d6b10b0c46b8502646e13a28827aee7c43dfa76c9cf59f8d5923d4"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/videoTarapaca.png",
+            "size": 215751,
+            "hash": "ce944abb2ac3db2bb1c72f13e2f2f65236946cb720ebec11b9bd01c32d569d53"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/waze.png",
+            "size": 863,
+            "hash": "673dc6ab5b18c11efcc2051666369d905c6569a356502028261659c508ba0580"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/whatsapp-logo.svg",
+            "size": 4104,
+            "hash": "bc9b84acfe3e6b050e10618e297f59c96877e3f508653e7e95a85a8ffdfa1f3d"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/whatsappAmarillo.png",
+            "size": 1850,
+            "hash": "00e65bbcf35e53d760ac358dc9d8ea65b11935f314dcebf40e702d66e4cd90c4"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/whatsappAmarillo.svg",
+            "size": 1468,
+            "hash": "65c361603efe4bc2bc6e5921eb4b7982b39ff0f0633b1afdc89dff6d4c134926"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/winchaMobile.png",
+            "size": 29119,
+            "hash": "95c24570c63b4d30b8f8c64832385d4d6341904b48ce248c31bbf6f725df1140"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/wp-logo.png",
+            "size": 5767,
+            "hash": "42297cad60f8aec71844d5ffd20d9945debae189e536c8325bcbfb0c5b58b317"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/youtube-brands.png",
+            "size": 573,
+            "hash": "fbbf89803aa7ef1f7918fc3bbc335b5d9d2c6e4a650dd55d6ecd7ae74c7056a0"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/youtube-brands.svg",
+            "size": 591,
+            "hash": "8595aa6480032f7f0380ed45ff09ba818ada58dae3f8620be090d044e5d94ce4"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/zoom.png",
+            "size": 1573,
+            "hash": "c317190c2dc5bc7df5aac93ae09efac1b0827cc375ae69739d2c6ce6f951dd84"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/zoom.svg",
+            "size": 3806,
+            "hash": "bf379c8bc4f64cdc6556b25bcb391b72e681b08b59f5d0c5177991c4a1f9fd05"
+        },
+        {
+            "type": "file",
+            "name": "assets/js/additional-methods.min.js",
+            "size": 22660,
+            "hash": "bdbfba54e6e25086a846e4aeb1d2d15ad5ecfdec2ecfad8b8155e0d9fd595c6a"
+        },
+        {
+            "type": "file",
+            "name": "assets/js/bk.js",
+            "size": 551,
+            "hash": "609349593a08f66b5724e4b02eef1e0efb7481eed62ac4b89924c4596cb33010"
+        },
+        {
+            "type": "folder",
+            "name": "assets/js/components"
+        },
+        {
+            "type": "file",
+            "name": "assets/js/jquery-3.4.1.min.js",
+            "size": 88145,
+            "hash": "0925e8ad7bd971391a8b1e98be8e87a6971919eb5b60c196485941c3c1df089a"
+        },
+        {
+            "type": "file",
+            "name": "assets/js/jquery.validate.min.js",
+            "size": 24376,
+            "hash": "b0f074179d185032b4a2d0e7b1f3476b0626039334a638d47f84ef44990616b2"
+        },
+        {
+            "type": "file",
+            "name": "assets/js/main-dist.js",
+            "size": 13838,
+            "hash": "1735d64b500989c4595b650a01e0d4f6731fb913d95a8665df2484d155cd1c14"
+        },
+        {
+            "type": "file",
+            "name": "assets/js/main-dist.js.map",
+            "size": 8712,
+            "hash": "7dcbfb073875f90bad1b0ed3d51fef7e443902591e9acaf655b9e684ee043435"
+        },
+        {
+            "type": "file",
+            "name": "assets/js/main.js",
+            "size": 23317,
+            "hash": "4ba51b6ec3468bebdd3036f02b67ba20759630bc965448251626243d3ce968e4"
+        },
+        {
+            "type": "file",
+            "name": "assets/js/rut.js",
+            "size": 6297,
+            "hash": "2c32e080b052fa82a45f07318c58d91453ffc5310334dac0c87508dc48ff8953"
+        },
+        {
+            "type": "file",
+            "name": "assets/js/sourcebuster.min.js",
+            "size": 14457,
+            "hash": "4101ef8c113c49ccf1fe62e77f5f08dbddb9ab70cd3acde4af21b90d8ee1bdc9"
+        },
+        {
+            "type": "folder",
+            "name": "assets/scss/base"
+        },
+        {
+            "type": "folder",
+            "name": "assets/scss/components"
+        },
+        {
+            "type": "folder",
+            "name": "assets/scss/layout"
+        },
+        {
+            "type": "file",
+            "name": "assets/scss/main.scss",
+            "size": 16658,
+            "hash": "fbfe9bc9a2e5e1cf975811a9cbe30f61d26b4a224a8badb7ad7838e04f4d45e5"
+        },
+        {
+            "type": "folder",
+            "name": "assets/scss/utils"
+        },
+        {
+            "type": "file",
+            "name": "includes/forms/floating-single-projects.php",
+            "size": 5432,
+            "hash": "baeab0923c8ef4b58bdb9e46084d0dff4d47e9cc217ae0eb1760c702089db394"
+        },
+        {
+            "type": "file",
+            "name": "includes/loops/404.php",
+            "size": 323,
+            "hash": "b7089ce39ac828affeb8dea87f7eb3cfec6231c165fb0b095f0b1e3fe5bf39cc"
+        },
+        {
+            "type": "file",
+            "name": "includes/loops/index-loop.php",
+            "size": 927,
+            "hash": "a8e02d15841a07939c1312170cf10347be0af7d7327a9694120ebdda7427d1da"
+        },
+        {
+            "type": "file",
+            "name": "includes/loops/index-post-none.php",
+            "size": 108,
+            "hash": "eb7774718ed2789d65f6f6a813d03a957405d7db21e9bd007186c4034fc38c40"
+        },
+        {
+            "type": "file",
+            "name": "includes/loops/index-post.php",
+            "size": 1083,
+            "hash": "617cec1229fbaa622fb4b3652da506b1f351de31fdd1c614f63e8ab58124a3b2"
+        },
+        {
+            "type": "file",
+            "name": "includes/loops/page-content.php",
+            "size": 454,
+            "hash": "95f5a14341be8e647a4066df2fcfc6c260c9f3e71c3da19ec016af239298580c"
+        },
+        {
+            "type": "file",
+            "name": "includes/loops/search-results.php",
+            "size": 556,
+            "hash": "49ffe769d4085bdcb1a1af72de3b874869aaec2eb18c43fc161e509abe8dba1a"
+        },
+        {
+            "type": "file",
+            "name": "includes/loops/single-post-comments.php",
+            "size": 6424,
+            "hash": "1b9b155aa87199131d5c8d6fee5f1f5cd1302505f973dcf5b747f8ce4f1439a9"
+        },
+        {
+            "type": "file",
+            "name": "includes/loops/single-post.php",
+            "size": 2109,
+            "hash": "6cd73a77847af2bba2111b6db8f2daa4502bdd663ba7a59bc302365132ff4bb3"
+        },
+        {
+            "type": "file",
+            "name": "includes/templates/banner-pasos.php",
+            "size": 1373,
+            "hash": "4823a93550804c553214229d31c25363d77ada03464e46df9183faa0c9b505ff"
+        },
+        {
+            "type": "file",
+            "name": "includes/templates/proyectos_destacados.php",
+            "size": 5207,
+            "hash": "cd9bdc93add224ff17ab79144e373741384a001f928d5ac529f07722fb75e1d0"
+        },
+        {
+            "type": "file",
+            "name": "includes/templates/proyectos_industriales.php",
+            "size": 2230,
+            "hash": "e67c54158611dd1f09244ff6fb9c9a4a2ae31123f44e1c8d5180d003e1f9cbd7"
+        },
+        {
+            "type": "file",
+            "name": "includes/templates/zigzag_layout.php",
+            "size": 2602,
+            "hash": "43558bc6fa1f98e3418d8c60e902e419f1fabdd0864788c89eaaf0b9960485a1"
+        },
+        {
+            "type": "file",
+            "name": "assets/js/components/preload.js",
+            "size": 338,
+            "hash": "55f07500549576035d04dc8dd7f8996047b6cf1946320946e7b6d1677b9a56a3"
+        },
+        {
+            "type": "file",
+            "name": "assets/js/components/sbjs.js",
+            "size": 324,
+            "hash": "b86a137d7b94e6f6e485b5c05be6b2a60d1cd5de78ee3cd2a06149fa580a57c2"
+        },
+        {
+            "type": "file",
+            "name": "assets/scss/base/_global.scss",
+            "size": 1109,
+            "hash": "c072029422b63bde954d55363138f8748a6684ebda351aa057d93577b6d84f4e"
+        },
+        {
+            "type": "file",
+            "name": "assets/scss/base/_reset.scss",
+            "size": 351,
+            "hash": "92928d9b41992a64a6491068f0cef99d0f1fde263b03fd31f1393c2ecf11d363"
+        },
+        {
+            "type": "file",
+            "name": "assets/scss/base/_typography.scss",
+            "size": 92,
+            "hash": "8743d379d277070ade892ec614eea37fac611a0a80ff9b4c4131d851980b4f43"
+        },
+        {
+            "type": "file",
+            "name": "assets/scss/components/_buttons.scss",
+            "size": 3407,
+            "hash": "5aecd9d042485dfaa9c3a0afd648d8d1102a9f869336f3a3434649f83d55b8df"
+        },
+        {
+            "type": "file",
+            "name": "assets/scss/components/_hamburguer.scss",
+            "size": 4158,
+            "hash": "71af15877c1204975b4d2de9f983115d75df6491f164b50fb57d23ed0c289a13"
+        },
+        {
+            "type": "file",
+            "name": "assets/scss/components/_loader.scss",
+            "size": 1493,
+            "hash": "2947bc58752b6291d7c2a2d8f79889c0bb58082c326d44f38ccab23fa056d4fb"
+        },
+        {
+            "type": "file",
+            "name": "assets/scss/components/_navbar.scss",
+            "size": 1899,
+            "hash": "118edd702dbea6399e914cbd263deb2019863ef5a0958ac7bc779a9937c98983"
+        },
+        {
+            "type": "file",
+            "name": "assets/scss/layout/_footer.scss",
+            "size": 218,
+            "hash": "a4b314530fe014f539d80a592ab154cda16b4f39d346a428f0b1818eef509035"
+        },
+        {
+            "type": "file",
+            "name": "assets/scss/utils/_functions.scss",
+            "size": 74,
+            "hash": "d5db0b9ebc4c595231125252c856bc903ab66eb0fb9925cfec25be6ba32e32e0"
+        },
+        {
+            "type": "file",
+            "name": "assets/scss/utils/_media.scss",
+            "size": 334,
+            "hash": "b72eebc425f4051bb811b77dc2c3800dde75148cd8b5891c2afdeb48a630019d"
+        },
+        {
+            "type": "file",
+            "name": "assets/scss/utils/_mixins.scss",
+            "size": 1147,
+            "hash": "b96b6ab8f43ea5b4d16c8453b58907e8b05bd5e682a4519711d1c6b9047120a4"
+        },
+        {
+            "type": "file",
+            "name": "assets/scss/utils/_placeholders.scss",
+            "size": 472,
+            "hash": "f6360768bf4640145975693f9f576e5b5aa52b1eed12f939ed71812718867394"
+        },
+        {
+            "type": "file",
+            "name": "assets/scss/utils/_variables.scss",
+            "size": 956,
+            "hash": "06e033297d09ae7fc4d060763d9ba7978c105475ba09566319a755087a7b1436"
+        }
+    ]
+}

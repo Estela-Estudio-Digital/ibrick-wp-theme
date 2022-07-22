@@ -1402,4 +1402,8 @@ button:focus {
     font-size: 12.8px;
   }
 }
+
+.tab-pane.active a[data-fancybox=gallery] {
+  display: block !important;
+}
 /*# sourceMappingURL=main.css.map */
