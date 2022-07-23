@@ -1224,12 +1224,36 @@ button:focus {
   }
 }
 
-.mp-list-number {
-  font-size: 14px;
+.mp-list-bg {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: #2876A2;
+  display: block;
   min-width: 30px;
-  min-height: 30px;
-  text-align: center;
-  font-weight: bolder;
+  margin-right: 10px;
+}
+
+.mp-list-number {
+  color: white;
+  position: relative;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.master-plan-bullets {
+  width: 50%;
+  margin-bottom: 40px;
+  position: relative;
+  padding-right: 10px;
+}
+@media screen and (min-width: 1024px) {
+  .master-plan-bullets {
+    width: 25%;
+  }
 }
 
 .img-404 {
