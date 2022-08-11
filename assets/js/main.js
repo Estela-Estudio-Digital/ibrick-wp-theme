@@ -816,7 +816,7 @@ $(function () {
   </div>
 </div>`;
 
-  $(".brickcf7").on("wpcf7mailsent", function (event) {
+  $(".brickcf7").on("wpcf7mailsent", async function (event) {
     console.log("ga event Formulario");
 
     dataLayer.push({
@@ -825,7 +825,7 @@ $(function () {
 
     let contactName = event.detail.inputs[3].value;
 
-    Swal.fire({
+    await Swal.fire({
       title: `¡ Gracias ${contactName} !`,
       html: htmlAdd,
       icon: "success",
