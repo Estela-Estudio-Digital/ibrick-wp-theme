@@ -816,7 +816,7 @@ $(function () {
   </div>
 </div>`;
 
-  $(".brickcf7").on("wpcf7mailsent", async function (event) {
+  $(".brickcf7").on("wpcf7mailsent", function (event) {
     console.log("ga event Formulario");
 
     dataLayer.push({
@@ -825,7 +825,7 @@ $(function () {
 
     let contactName = event.detail.inputs[3].value;
 
-    await Swal.fire({
+    Swal.fire({
       title: `¡ Gracias ${contactName} !`,
       html: htmlAdd,
       icon: "success",
@@ -835,5 +835,12 @@ $(function () {
     $(".form-modal").removeClass("form-modal-open");
   });
 
-  $('#addtoAnyTest').html(htmlAdd)
+  (function addToAnyFc() {
+    Swal.fire({
+      title: `¡ Gracias test !`,
+      html: htmlAdd,
+      icon: "success",
+      confirmButtonText: "cerrar",
+    });
+  })();
 });

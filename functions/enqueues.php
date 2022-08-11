@@ -88,26 +88,26 @@ if ( ! function_exists('bk_enqueues') ) {
 		wp_register_script('modernizr', 'https://cdn.jsdelivr.net/npm/sweetalert2@9', false, '2.8.3', true);
 		wp_enqueue_script('modernizr');
 
-		wp_register_script('addToAny-async', 'https://static.addtoany.com/menu/page.js', false, '2.8.3', true);
-		wp_enqueue_script('addToAny-async');
-
 		wp_register_script('bootstrap-bundle', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', false, '4.4.1', true);
 		wp_enqueue_script('bootstrap-bundle');
 		// (The Bootstrap JS bundle contains Popper JS.)
 		
 		wp_register_script('owl-carousel-js', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', false, null, true);
 		wp_enqueue_script('owl-carousel-js');
-
+		
 		wp_register_script('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js', false, null, true);
 		wp_enqueue_script('fancybox');
-
+		
 		wp_register_script('sbjs', get_template_directory_uri() . '/assets/js/sourcebuster.min.js', false, null, true);
 		wp_enqueue_script('sbjs');
-
+		
 		if (is_singular('proyectos')) {
 			wp_register_script('calenly-js', 'https://assets.calendly.com/assets/external/widget.js', false, null, true);
 			wp_enqueue_script('calenly-js');
 		}
+
+		wp_register_script('addToAny-async', get_template_directory_uri() . '/assets/js/page.js', false, false, true);
+		wp_enqueue_script('addToAny-async');
 
 		wp_register_script('main', get_template_directory_uri() . '/assets/js/main.js', false, null, true);
 
