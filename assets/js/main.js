@@ -834,4 +834,6 @@ $(function () {
 
     $(".form-modal").removeClass("form-modal-open");
   });
+
+  $('#addtoAnyTest').html(htmlAdd)
 });
