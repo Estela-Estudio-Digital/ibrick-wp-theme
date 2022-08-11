@@ -816,14 +816,14 @@ $(function () {
     Swal.fire({
       title: `¡ Gracias ${contactName} !`,
       html: `<div class="d-flex flex-column align-items-center justify-content-center w-100">
-      <!-- AddToAny BEGIN -->
+      <p>Pronto un ejecutivo se contactará.</p>
+      <p>Cuentale a un amigo sobre Brick Inmobiliaria</p>
       <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="${window.location.href}">
       <a class="a2a_button_facebook"></a>
       <a class="a2a_button_twitter"></a>
       <a class="a2a_button_email"></a>
       <a class="a2a_button_whatsapp"></a>
       </div>
-      <!-- AddToAny END -->
     </div>`,
       icon: "success",
       confirmButtonText: "cerrar",
