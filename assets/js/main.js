@@ -494,7 +494,7 @@ $(function () {
 
     Swal.fire({
       title: `¡ Gracias ${contactName} !`,
-      iconHtml: '<img src="https://picsum.photos/100/100">',
+      iconHtml: '<img src="https://ibrick.cl/wp-content/uploads/2022/08/happy.png" width="90">',
       customClass: {
         icon: 'no-border'
       },
@@ -509,7 +509,7 @@ $(function () {
       </div>
     </div>`,
       icon: "success",
-      confirmButtonText: "cerrar",
+      confirmButtonText: "Cerrar",
     });
     $(".form-modal").removeClass("form-modal-open");
   });
@@ -520,7 +520,7 @@ $(function () {
       title: "¡Error!",
       text: "¡Ha ocurrido un error, por favor intentalo de nuevo más tarde!",
       icon: "error",
-      confirmButtonText: "cerrar",
+      confirmButtonText: "Cerrar",
     });
     $(".form-modal").removeClass("form-modal-open");
   });
@@ -543,7 +543,7 @@ $(function () {
       </div>
       `,
       icon: "error",
-      confirmButtonText: "cerrar",
+      confirmButtonText: "Cerrar",
     });
     $(".form-modal").removeClass("form-modal-open");
   });
@@ -829,6 +829,10 @@ $(function () {
 
     Swal.fire({
       title: `¡ Gracias ${contactName} !`,
+      iconHtml: '<img src="https://ibrick.cl/wp-content/uploads/2022/08/happy.png" width="90">',
+      customClass: {
+        icon: 'no-border'
+      },
       html: `<div class="d-flex flex-column align-items-center justify-content-center w-100">
       <p>Pronto un ejecutivo se contactará.</p>
       <p>Cuentale a un amigo sobre Brick Inmobiliaria</p>
@@ -840,29 +844,9 @@ $(function () {
       </div>
     </div>`,
       icon: "success",
-      confirmButtonText: "cerrar",
+      confirmButtonText: "Cerrar",
     });
 
     $(".form-modal").removeClass("form-modal-open");
-  });
-
-  Swal.fire({
-    title: `¡ Gracias !`,
-    iconHtml: '<img src="https://ibrick.cl/wp-content/uploads/2022/08/happy.png" width="90">',
-    customClass: {
-      icon: 'no-border'
-    },
-    html: `<div class="d-flex flex-column align-items-center justify-content-center w-100">
-    <p>Pronto un ejecutivo se contactará.</p>
-    <p>Cuentale a un amigo sobre Brick Inmobiliaria</p>
-    <div>
-      <a href="https://www.addtoany.com/add_to/facebook?linkurl=${window.location.href}" target="_blank"><img src="https://static.addtoany.com/buttons/facebook.svg" width="32" height="32" style="background-color:royalblue"></a>
-      <a href="https://www.addtoany.com/add_to/twitter?linkurl=${window.location.href}" target="_blank"><img src="https://static.addtoany.com/buttons/twitter.svg" width="32" height="32" style="background-color:rgb(29, 155, 240)"></a>
-      <a href="https://www.addtoany.com/add_to/email?linkurl=${window.location.href}" target="_blank"><img src="https://static.addtoany.com/buttons/email.svg" width="32" height="32" style="background-color:royalblue"></a>
-      <a href="https://www.addtoany.com/add_to/whatsapp?linkurl=${window.location.href};linkname=${document.title}" target="_blank"><img src="https://static.addtoany.com/buttons/whatsapp.svg" width="32" height="32" style="background-color:rgb(18, 175, 10)"></a>
-    </div>
-  </div>`,
-    icon: "success",
-    confirmButtonText: "cerrar",
   });
 });
