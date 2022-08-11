@@ -17,3 +17,16 @@ require get_template_directory() . '/functions/widgets.php';
 //require get_template_directory() . '/functions/search-widget.php';
 //require get_template_directory() . '/functions/index-pagination.php';
 //require get_template_directory() . '/functions/single-split-pagination.php';
+
+function mg_add_async_defer_attributes( $tag, $handle ) {
+	// Busco el valor "async"
+	if( strpos( $handle, "async" ) ):
+		$tag = str_replace(' src', ' async="async" src', $tag);
+	endif;
+	// Busco el valor "defer"
+	if( strpos( $handle, "defer" ) ):
+		$tag = str_replace(' src', ' defer="defer" src', $tag);
+	endif;
+	return $tag;
+}
+add_filter('script_loader_tag', 'mg_add_async_defer_attributes', 10, 2);

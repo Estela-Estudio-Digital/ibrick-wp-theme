@@ -243,39 +243,38 @@ $(function () {
     //smartSpeed: 500
   });
 
-  var carousel = $('.beneficios-carousel');
-  carousel.find('.item').hide();
-  carousel.on({
-
-      'initialized.owl.carousel': function () {
-          carousel.find('.item').show();
-          carousel.find('.loading-placeholder').hide();
-      }
-
-  }).owlCarousel({
-    dots: true,
-    margin: 10,
-    loop: true,
-    items: 4,
-    // stagePadding: 100,
-    nav: true,
-    navText: [
+  var carousel = $(".beneficios-carousel");
+  carousel.find(".item").hide();
+  carousel
+    .on({
+      "initialized.owl.carousel": function () {
+        carousel.find(".item").show();
+        carousel.find(".loading-placeholder").hide();
+      },
+    })
+    .owlCarousel({
+      dots: true,
+      margin: 10,
+      loop: true,
+      items: 4,
+      // stagePadding: 100,
+      nav: true,
+      navText: [
         '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-        '<i class="fa fa-angle-right" aria-hidden="true"></i>'
-    ],
-    responsive: {
-      0: {
-        items: 2,
+        '<i class="fa fa-angle-right" aria-hidden="true"></i>',
+      ],
+      responsive: {
+        0: {
+          items: 2,
+        },
+        768: {
+          items: 3,
+        },
+        991: {
+          items: 4,
+        },
       },
-      768: {
-        items: 3,
-      },
-      991: {
-        items: 4,
-      },
-    },
-  });
-
+    });
 
   setTimeout(function () {
     var totalItems = $(".ppp-carousel .owl-item.active").length;
@@ -304,18 +303,17 @@ $(function () {
     },
   });
 
-  $('.flip').hover(function(){
-    $(this).find('.fcard').toggleClass('flipped');
+  $(".flip").hover(function () {
+    $(this).find(".fcard").toggleClass("flipped");
   });
 
-
   if (window.innerWidth >= 768) {
-    $('.link-residencial').mouseenter(function(){
-      $(this).find('.drop-menu').show();
-    })
-    $('.link-residencial').mouseleave(function(){
-      $(this).find('.drop-menu').hide();
-    })
+    $(".link-residencial").mouseenter(function () {
+      $(this).find(".drop-menu").show();
+    });
+    $(".link-residencial").mouseleave(function () {
+      $(this).find(".drop-menu").hide();
+    });
   }
 
   /* 
@@ -394,30 +392,28 @@ $(function () {
 		Formularios
 	------------------------------------------------------------------
   */
-  if ($('body').is('.page-bodegas')) {
-    $('.contactoModalBtn').on('click', function () {
+  if ($("body").is(".page-bodegas")) {
+    $(".contactoModalBtn").on("click", function () {
       project = $(this).data("project");
-      $(".nombreProyecto").val('Bodegas - '+project);
+      $(".nombreProyecto").val("Bodegas - " + project);
     });
-    
   }
   if (project_data.data !== "") {
     var nombreProyecto = project_data.data[0].nombreProyecto,
-    correosVentas = project_data.data[0].correosVentas,
-    logoProyecto = project_data.data[0].logoProyecto,
-    imagenPlanta = project_data.data[0].imagenPlanta,
-    dormitorios = project_data.data[0].dormitorios,
-    imgPlanta = project_data.data[0].imgPlanta,
-    esquicio = project_data.data[0].esquicio,
-    corresponde = project_data.data[0].corresponde,
-    unidades = project_data.data[0].unidades,
-    whatsapp = project_data.data[0].whatsapp;
+      correosVentas = project_data.data[0].correosVentas,
+      logoProyecto = project_data.data[0].logoProyecto,
+      imagenPlanta = project_data.data[0].imagenPlanta,
+      dormitorios = project_data.data[0].dormitorios,
+      imgPlanta = project_data.data[0].imgPlanta,
+      esquicio = project_data.data[0].esquicio,
+      corresponde = project_data.data[0].corresponde,
+      unidades = project_data.data[0].unidades,
+      whatsapp = project_data.data[0].whatsapp;
 
     (superficieUtil = project_data.data[0].superficieUtil),
-    (superficieTerraza = project_data.data[0].superficieTerraza),
-    (superficieTotal = project_data.data[0].superficieTotal),
-    
-    $(".nombreProyecto").val(nombreProyecto);
+      (superficieTerraza = project_data.data[0].superficieTerraza),
+      (superficieTotal = project_data.data[0].superficieTotal),
+      $(".nombreProyecto").val(nombreProyecto);
     $(".correosVentas").val(correosVentas);
     $(".logoProyecto").val(logoProyecto);
     $(".imagenPlanta").val(imagenPlanta);
@@ -427,15 +423,14 @@ $(function () {
     $(".corresponde").val(corresponde);
     $(".unidades").val(unidades);
     $(".whatsappProject").val(whatsapp);
-    
+
     $(".superficieUtil").val(superficieUtil);
     $(".superficieTerraza").val(superficieTerraza);
     $(".superficieTotal").val(superficieTotal);
   }
 
-  (sbjMedio = sbjs.get.current.mdm),
-  (sbjFuente = sbjs.get.current.src);
-  
+  (sbjMedio = sbjs.get.current.mdm), (sbjFuente = sbjs.get.current.src);
+
   $(".fuenteSbj").val(sbjFuente);
   $(".medioSbj").val(sbjMedio);
 
@@ -479,12 +474,12 @@ $(function () {
     */
   $(".wpcf7Whatsapp").on("wpcf7mailsent", function (event) {
     //   console.log(event.detail.inputs);
-      const telefonoProyectoWhatsapp = event.detail.inputs[3].value,
+    const telefonoProyectoWhatsapp = event.detail.inputs[3].value,
       nombreProyectoWhatsapp = event.detail.inputs[0].value,
-      nombreClienteWhatsapp = event.detail.inputs[7].value
-      url = `https://api.whatsapp.com/send/?phone=${telefonoProyectoWhatsapp}&text=Mi%20nombre%20es%20${nombreClienteWhatsapp}%20Me%20interesa%20el%20%20proyecto%20${nombreProyectoWhatsapp}`;
-      $(".whatsapp-modal").removeClass("whatsapp-modal-open");
-      window.open(url, '_blank');
+      nombreClienteWhatsapp = event.detail.inputs[7].value;
+    url = `https://api.whatsapp.com/send/?phone=${telefonoProyectoWhatsapp}&text=Mi%20nombre%20es%20${nombreClienteWhatsapp}%20Me%20interesa%20el%20%20proyecto%20${nombreProyectoWhatsapp}`;
+    $(".whatsapp-modal").removeClass("whatsapp-modal-open");
+    window.open(url, "_blank");
   });
   $(".wpcf7Whatsapp").on("wpcf7mailfailed", function (event) {
     console.log("failed", event);
@@ -515,7 +510,6 @@ $(function () {
     });
     $(".form-modal").removeClass("form-modal-open");
   });
-
 
   $(".brickcf7").on("wpcf7mailfailed", function (event) {
     console.log("failed");
@@ -553,7 +547,7 @@ $(function () {
 		Validacion de Formularios
 	------------------------------------------------------------------
     */
-     // Validador de Formulario de whatsapp
+  // Validador de Formulario de whatsapp
   $("#formulario_floatante").validate({
     rules: {
       inputNameFloatante: {
@@ -809,6 +803,19 @@ $(function () {
     //trigger the scroll handler to highlight on page load
     $(window).scroll();
   })();
+
+  var htmlAdd = `<div class="d-flex flex-column align-items-center justify-content-center w-100">
+  <p>Pronto un ejecutivo se contactará.</p>
+  <p>Cuentale a un amigo sobre Brick Inmobiliaria</p>
+  <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_email"></a>
+    <a class="a2a_button_whatsapp"></a>
+  </div>
+</div>`;
+
   $(".brickcf7").on("wpcf7mailsent", function (event) {
     console.log("ga event Formulario");
 
@@ -816,24 +823,11 @@ $(function () {
       event: "formSubmit",
     });
 
-    
     let contactName = event.detail.inputs[3].value;
 
     Swal.fire({
       title: `¡ Gracias ${contactName} !`,
-      html: `
-      <div class="d-flex flex-column align-items-center justify-content-center w-100">
-        <p>Pronto un ejecutivo se contactará.</p>
-        <p>Cuentale a un amigo sobre Brick Inmobiliaria</p>
-        <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-          <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-          <a class="a2a_button_facebook"></a>
-          <a class="a2a_button_twitter"></a>
-          <a class="a2a_button_email"></a>
-          <a class="a2a_button_whatsapp"></a>
-        </div>
-      </div>
-      `,
+      html: htmlAdd,
       icon: "success",
       confirmButtonText: "cerrar",
     });
