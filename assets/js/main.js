@@ -834,13 +834,4 @@ $(function () {
 
     $(".form-modal").removeClass("form-modal-open");
   });
-
-  (function addToAnyFc() {
-    Swal.fire({
-      title: `¡ Gracias test !`,
-      html: htmlAdd,
-      icon: "success",
-      confirmButtonText: "cerrar",
-    });
-  })();
 });
