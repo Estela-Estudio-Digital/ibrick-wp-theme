@@ -1430,4 +1430,8 @@ button:focus {
 .tab-pane.active a[data-fancybox=gallery] {
   display: block !important;
 }
+
+.no-border {
+  border: none !important;
+}
 /*# sourceMappingURL=main.css.map */
