@@ -88,9 +88,6 @@ if ( ! function_exists('bk_enqueues') ) {
 		wp_register_script('modernizr', 'https://cdn.jsdelivr.net/npm/sweetalert2@9', false, '2.8.3', true);
 		wp_enqueue_script('modernizr');
 
-		wp_register_script('addToAny', 'https://static.addtoany.com/menu/page.js', false, '2.8.3', true);
-		wp_enqueue_script('addToAny');
-
 		wp_register_script('bootstrap-bundle', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', false, '4.4.1', true);
 		wp_enqueue_script('bootstrap-bundle');
 		// (The Bootstrap JS bundle contains Popper JS.)
@@ -246,6 +243,9 @@ if ( ! function_exists('bk_enqueues') ) {
 		);
 
 		wp_enqueue_script('main');
+
+		wp_register_script('addToAny', 'https://static.addtoany.com/menu/page.js', false, null, true);
+		wp_enqueue_script('addToAny');
 
 
 		if (is_singular() && comments_open() && get_option('thread_comments')) {

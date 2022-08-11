@@ -523,8 +523,7 @@ $(function () {
     });
 
     
-    let contactName = '';
-    console.log(event.detail)
+    let contactName = event.detail.inputs[3].value;
 
     Swal.fire({
       title: `¡ Gracias ${contactName} !`,
@@ -552,7 +551,19 @@ $(function () {
     console.log("failed");
     Swal.fire({
       title: "¡Error!",
-      text: "¡Ha ocurrido un error, por favor intentalo de nuevo más tarde!",
+      html: `
+      <div class="d-flex flex-column align-items-center justify-content-center w-100">
+        <p>Pronto un ejecutivo se contactará.</p>
+        <p>Cuentale a un amigo sobre Brick Inmobiliaria</p>
+        <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+          <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+          <a class="a2a_button_facebook"></a>
+          <a class="a2a_button_twitter"></a>
+          <a class="a2a_button_email"></a>
+          <a class="a2a_button_whatsapp"></a>
+        </div>
+      </div>
+      `,
       icon: "error",
       confirmButtonText: "cerrar",
     });
@@ -827,5 +838,24 @@ $(function () {
 
     //trigger the scroll handler to highlight on page load
     $(window).scroll();
+
+    Swal.fire({
+      title: "¡Error!",
+      html: `
+      <div class="d-flex flex-column align-items-center justify-content-center w-100">
+        <p>Pronto un ejecutivo se contactará.</p>
+        <p>Cuentale a un amigo sobre Brick Inmobiliaria</p>
+        <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+          <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+          <a class="a2a_button_facebook"></a>
+          <a class="a2a_button_twitter"></a>
+          <a class="a2a_button_email"></a>
+          <a class="a2a_button_whatsapp"></a>
+        </div>
+      </div>
+      `,
+      icon: "error",
+      confirmButtonText: "cerrar",
+    });
   })();
 });
