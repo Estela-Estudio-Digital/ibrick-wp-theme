@@ -829,11 +829,12 @@ $(function () {
       html: `<div class="d-flex flex-column align-items-center justify-content-center w-100">
       <p>Pronto un ejecutivo se contactará.</p>
       <p>Cuentale a un amigo sobre Brick Inmobiliaria</p>
-      <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="${window.location.href}">
-      <a class="a2a_button_facebook"></a>
-      <a class="a2a_button_twitter"></a>
-      <a class="a2a_button_email"></a>
-      <a class="a2a_button_whatsapp"></a>
+      <div>
+        <a href="https://www.addtoany.com/share#url=${window.location.href}" target="_blank"><img src="https://static.addtoany.com/buttons/a2a.svg" width="32" height="32" style="background-color:royalblue"></a>
+        <a href="https://www.addtoany.com/add_to/facebook?linkurl=${window.location.href}" target="_blank"><img src="https://static.addtoany.com/buttons/facebook.svg" width="32" height="32" style="background-color:royalblue"></a>
+        <a href="https://www.addtoany.com/add_to/twitter?linkurl=${window.location.href}" target="_blank"><img src="https://static.addtoany.com/buttons/twitter.svg" width="32" height="32" style="background-color:royalblue"></a>
+        <a href="https://www.addtoany.com/add_to/email?linkurl=${window.location.href}" target="_blank"><img src="https://static.addtoany.com/buttons/email.svg" width="32" height="32" style="background-color:royalblue"></a>
+        <a href="https://www.addtoany.com/add_to/whatsapp?linkurl=${window.location.href};linkname=${document.title}" target="_blank"><img src="https://static.addtoany.com/buttons/whatsapp.svg" width="32" height="32" style="background-color:royalblue"></a>
       </div>
     </div>`,
       icon: "success",
