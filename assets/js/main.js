@@ -490,8 +490,7 @@ $(function () {
     dataLayer.push({
       event: "formSubmit",
     });
-    console.log(event.detail)
-    let contactName = event.detail.inputs[3].value;
+    let contactName = event.detail.inputs[7].value;
 
     Swal.fire({
       title: `¡ Gracias ${contactName} !`,
