@@ -499,8 +499,8 @@ $(function () {
         icon: 'no-border'
       },
       html: `<div class="d-flex flex-column align-items-center justify-content-center w-100">
-      <p>Pronto un ejecutivo se contactará.</p>
-      <p>Cuentale a un amigo sobre Brick Inmobiliaria</p>
+      <p>Pronto un ejecutivo te contactará.</p>
+      <p>Cuéntale a un amigo sobre Brick Inmobiliaria</p>
       <div>
         <a href="https://www.addtoany.com/add_to/facebook?linkurl=${window.location.href}" target="_blank"><img src="https://static.addtoany.com/buttons/facebook.svg" width="32" height="32" style="background-color:royalblue"></a>
         <a href="https://www.addtoany.com/add_to/twitter?linkurl=${window.location.href}" target="_blank"><img src="https://static.addtoany.com/buttons/twitter.svg" width="32" height="32" style="background-color:rgb(29, 155, 240)"></a>
@@ -529,19 +529,7 @@ $(function () {
     console.log("failed");
     Swal.fire({
       title: "¡Error!",
-      html: `
-      <div class="d-flex flex-column align-items-center justify-content-center w-100">
-        <p>Pronto un ejecutivo se contactará.</p>
-        <p>Cuentale a un amigo sobre Brick Inmobiliaria</p>
-        <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-          <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-          <a class="a2a_button_facebook"></a>
-          <a class="a2a_button_twitter"></a>
-          <a class="a2a_button_email"></a>
-          <a class="a2a_button_whatsapp"></a>
-        </div>
-      </div>
-      `,
+      text: "¡Ha ocurrido un error, por favor intentalo de nuevo más tarde!",
       icon: "error",
       confirmButtonText: "Cerrar",
     });
@@ -834,8 +822,8 @@ $(function () {
         icon: 'no-border'
       },
       html: `<div class="d-flex flex-column align-items-center justify-content-center w-100">
-      <p>Pronto un ejecutivo se contactará.</p>
-      <p>Cuentale a un amigo sobre Brick Inmobiliaria</p>
+      <p>Pronto un ejecutivo te contactará.</p>
+      <p>Cuéntale a un amigo sobre Brick Inmobiliaria</p>
       <div>
         <a href="https://www.addtoany.com/add_to/facebook?linkurl=${window.location.href}" target="_blank"><img src="https://static.addtoany.com/buttons/facebook.svg" width="32" height="32" style="background-color:royalblue"></a>
         <a href="https://www.addtoany.com/add_to/twitter?linkurl=${window.location.href}" target="_blank"><img src="https://static.addtoany.com/buttons/twitter.svg" width="32" height="32" style="background-color:rgb(29, 155, 240)"></a>
