@@ -1267,6 +1267,9 @@ button:focus {
 
 .playvideo {
   position: relative;
+  z-index: 999999;
+  align-self: center;
+  justify-self: center;
 }
 .playvideo::after {
   content: "";
@@ -1280,6 +1283,24 @@ button:focus {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+.play-button-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100vh;
+  width: 100%;
+  background: rgba(40, 118, 162, 0.5);
+  z-index: 998;
 }
 
 @media screen and (min-width: 768px) {
@@ -1433,5 +1454,38 @@ button:focus {
 
 .no-border {
   border: none !important;
+}
+
+.container-yb {
+  position: relative;
+  width: 97.5vw;
+  min-height: 770px;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .container-yb {
+    width: 100vw;
+  }
+}
+
+.video-yb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-yb {
+    height: 56.25vw;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-yb {
+    width: 177.78vh;
+  }
 }
 /*# sourceMappingURL=main.css.map */

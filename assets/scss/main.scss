@@ -772,6 +772,9 @@ $items: 1,
 
 .playvideo {
     position: relative;
+    z-index: 999999;
+    align-self: center;
+    justify-self: center;
 
     &::after {
         content: "";
@@ -782,6 +785,18 @@ $items: 1,
         background-size: contain;
         position: absolute;
         @include centerer();
+    }
+}
+
+.play-button {
+    @include centerer();
+    z-index: 999;
+    &-overlay {
+        @include centerer();
+        height: 100vh;
+        width: 100%;
+        background: rgba($brand-primary-color, .5);
+        z-index: 998;
     }
 }
 
@@ -939,3 +954,33 @@ $items: 1,
 .no-border {
     border: none !important;
 }
+
+.container-yb {
+    position: relative;
+    width: 97.5vw;
+    min-height: 770px;
+    overflow: hidden;
+    @include MQ(M) {
+        width: 100vw;
+    }
+}
+.video-yb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .video-yb {
+      height: 56.25vw;
+    }
+  }
+  @media (max-aspect-ratio: 16/9) {
+    .video-yb {
+      width: 177.78vh;
+    }
+  }

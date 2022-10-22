@@ -63,7 +63,17 @@ if (!empty($terms)) {
         $slider_proyecto_mobile = get_sub_field('slider_proyecto_mobile');
     ?>
     <div class="item project-hero position-relative">
-        <img src="<?php echo $slider_proyecto_desktop['url'];?>" alt="<?php echo $slider_proyecto_desktop['alt'];?>">
+        <?php if ($slider_proyecto_mobile): ?>
+            <img
+                alt="<?php echo $slider_proyecto_desktop['alt'];?>"
+                src="<?php echo $slider_proyecto_mobile['url'];?>"
+                srcset="<?php echo $slider_proyecto_mobile['url'];?> 550w, <?php echo $slider_proyecto_desktop['url'];?> 1440w"
+                sizes="(min-width: 768px) 1440px, 550px"
+                loading="lazy"
+            >
+        <?php else: ?>
+            <img loading="lazy" src="<?php echo $slider_proyecto_desktop['url'];?>" alt="<?php echo $slider_proyecto_desktop['alt'];?>">
+        <?php endif; ?>
         <?php
             if ($correos_ventas) {
                 include( locate_template( './includes/forms/floating-single-projects.php', false, false) ); 
