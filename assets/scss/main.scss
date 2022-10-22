@@ -966,7 +966,7 @@ $items: 1,
     overflow: hidden;
     @include MQ(M) {
         width: 100vw;
-        height: 100vh;
+        height:  calc(95vh - 80px);
     }
 }
 .video-yb {
@@ -974,7 +974,7 @@ $items: 1,
     top: 50%;
     left: 50%;
     width: 100vw;
-    height: 100vh;
+    height:  calc(95vh - 80px);
     @include centerer();
     pointer-events: none;
 }
