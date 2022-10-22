@@ -955,13 +955,18 @@ $items: 1,
     border: none !important;
 }
 
+.video-content-yb {
+    overflow: hidden;
+}
+
 .container-yb {
     position: relative;
-    width: 97.5vw;
+    width: 100vw;
     min-height: 770px;
     overflow: hidden;
     @include MQ(M) {
         width: 100vw;
+        height: 100vh;
     }
 }
 .video-yb {

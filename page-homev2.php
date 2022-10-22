@@ -28,7 +28,7 @@ bk_main_before();
     <section class="primary-hero">
         <div class="pm3-carousel owl-carousel owl-theme d-md-none">
 
-        <div class="video-content position-relative">
+        <div class="video-content-yb position-relative">
               <div class="play-button">
                   <div class="flex-column justify-content-center align-items-stretch">
                       <div class="text-center">
@@ -110,7 +110,7 @@ bk_main_before();
         </div>
         <div class="pm3-carousel owl-carousel owl-theme d-none d-md-block ">
 
-          <div class="video-content position-relative">
+          <div class="video-content-yb position-relative">
               <div class="play-button">
                   <div class="flex-column justify-content-center align-items-stretch">
                       <div class="text-center">

@@ -1456,15 +1456,20 @@ button:focus {
   border: none !important;
 }
 
+.video-content-yb {
+  overflow: hidden;
+}
+
 .container-yb {
   position: relative;
-  width: 97.5vw;
+  width: 100vw;
   min-height: 770px;
   overflow: hidden;
 }
 @media screen and (min-width: 768px) {
   .container-yb {
     width: 100vw;
+    height: 100vh;
   }
 }
 
