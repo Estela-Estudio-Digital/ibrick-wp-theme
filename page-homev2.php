@@ -207,7 +207,7 @@ include( locate_template( './includes/templates/proyectos_destacados.php', false
     </div>
 </section>
 
-<section class="section container-fluid" style="background: #d5d4d4">
+<section class="section container-fluid pb-4" style="background: #d5d4d4">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6 py-3 py-md-0 px-0">
