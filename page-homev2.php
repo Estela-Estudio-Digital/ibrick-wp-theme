@@ -210,11 +210,11 @@ include( locate_template( './includes/templates/proyectos_destacados.php', false
 <section class="section container-fluid" style="background: #2a2b37">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-6 py-3 py-md-0">
+            <div class="col-md-6 py-3 py-md-0 px-0">
                 <img src="<?php bloginfo('template_directory');?>/assets/img/reforestemos.jpg" alt="echo Brick" class="w-100">
             </div>
-            <div class="col-md-6">
-                <img src="<?php bloginfo('template_directory');?>/assets/img/suculentas.jpg" alt="Suculentas" class="w-100">
+            <div class="col-md-6 px-0">
+                <img src="<?php bloginfo('template_directory');?>/assets/img/muevete.jpg" alt="Muevete" class="w-100">
             </div>
         </div>
     </div>
