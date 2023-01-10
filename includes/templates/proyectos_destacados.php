@@ -24,6 +24,7 @@
     $slider_proyecto = get_field('slider_proyecto');
     $logo_proyecto = get_field('logo_proyecto');
     $url_landing = get_field('url_landing');
+    $txt_landing = get_field('txt_landing');
 
     // Setup this post for WP functions (variable must be named $post).
     setup_postdata($post); 
@@ -41,7 +42,7 @@
                       <p><b><?php echo $tipologia_txt;?></b></p>
                       <?php endif; ?>
                       <?php if ($ubicacion):?>
-                      <p><?php echo $ubicacion;?></p>
+                      <p class="project-info-text-title"><?php echo $ubicacion;?></p>
                       <?php endif; ?>
                       <?php if ($metro_cercano):?>
                       <p>
@@ -72,7 +73,7 @@
                       <a href="<?php echo $folleto; ?>" class="btn btn-secondary shadow text-capitalize" target="_blank">descargar folleto</a>
                   <?php endif; ?>
                   <?php if ($url_landing) :?>
-                    <a href="<?php echo $url_landing;?>" class="btn btn-secondary shadow" target="_blank"> Ver proyecto</a>
+                    <a href="<?php echo $url_landing;?>" class="btn btn-secondary shadow" target="_blank"><?php echo $txt_landing ? $txt_landing : ' Ver proyecto'; ?></a>
                   <?php endif; ?>
                   
               </div>
