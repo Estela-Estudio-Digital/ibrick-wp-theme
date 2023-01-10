@@ -211,17 +211,17 @@ include( locate_template( './includes/templates/proyectos_destacados.php', false
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6 py-3 py-md-0">
-                <img src="<?php bloginfo('template_directory');?>/assets/img/suculentastxt.svg" alt="echo Brick" class="w-100" width="540" style="max-width:370px">
+                <img src="<?php bloginfo('template_directory');?>/assets/img/reforestemos.jpg" alt="echo Brick" class="w-100">
             </div>
-            <div class="d-none d-md-block col-md-6">
+            <div class="col-md-6">
                 <img src="<?php bloginfo('template_directory');?>/assets/img/suculentas.jpg" alt="Suculentas" class="w-100">
             </div>
         </div>
     </div>
 </section>
 
-<section class="section-mobile-suculenta d-md-none">
-    <img src="<?php bloginfo('template_directory');?>/assets/img/suculentas.jpg" alt="Suculentas" class="w-100">
+<section class="section-mobile-suculenta d-none">
+    <img src="<?php bloginfo('template_directory');?>/assets/img/muevete.jpg" alt="Muevete" class="w-100">
 </section>
 
 <!-- Home Video Modal -->
