@@ -128,7 +128,7 @@ if(is_singular('proyectos')):
           'container'       => false,
           'menu_class'      => '',
           'fallback_cb'     => '__return_false',
-          'items_wrap'      => '<ul class="primary-menu-list text-uppercase d-md-flex m-0 w-100 justify-content-end text-center text-md-left">%3$s</ul>',
+          'items_wrap'      => '<ul class="primary-menu-list text-uppercase d-md-flex m-0 w-100 align-items-center justify-content-end text-center text-md-left">%3$s</ul>',
           'depth'           => 2,
           'walker'          => new bk_walker_nav_menu()
         ) );

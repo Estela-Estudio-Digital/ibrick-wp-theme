@@ -998,5 +998,9 @@ $items: 1,
   .primary-menu-list {
     li {
         flex: 1 !important;
+
+        .nav-link {
+            font-size: 11px;
+        }
     }
   }
