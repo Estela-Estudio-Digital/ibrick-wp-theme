@@ -1503,8 +1503,9 @@ button:focus {
 
 .primary-menu-list li {
   flex: 1 !important;
+  text-align: center;
 }
 .primary-menu-list li .nav-link {
-  font-size: 11px;
+  font-size: 12px;
 }
 /*# sourceMappingURL=main-dist.css.map */
