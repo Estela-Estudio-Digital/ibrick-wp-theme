@@ -1505,4 +1505,7 @@ button:focus {
   flex: 1 !important;
   text-align: center;
 }
+.primary-menu-list li .nav-link {
+  font-size: 13px;
+}
 /*# sourceMappingURL=main.css.map */
