@@ -994,3 +994,9 @@ $items: 1,
     color: $brand-primary-color;
     font-weight: 700;
   }
+
+  .primary-menu-list {
+    li {
+        flex: 1 !important;
+    }
+  }
