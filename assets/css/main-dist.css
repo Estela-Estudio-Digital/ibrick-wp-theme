@@ -1508,4 +1508,8 @@ button:focus {
 .primary-menu-list li .nav-link {
   font-size: 14px;
 }
+
+.footer-menu li {
+  flex: 1;
+}
 /*# sourceMappingURL=main-dist.css.map */

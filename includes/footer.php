@@ -9,20 +9,20 @@
   <div class="container">
     <div class="row align-items-center">
         <div class="col-sm-12">
-          <ul class="d-md-flex align-items-center text-center text-md-left text-uppercase footer-menu">
+          <ul class="d-md-flex align-items-center justify-content-between text-center text-md-left text-uppercase footer-menu w-100">
             <li class=" pr-md-5">
               <a href="<?php echo site_url();?>">
                 <img src="<?php bloginfo('template_directory');?>/assets/img/footer-logo.svg" height="100" width="150" alt="Brick Inmobiliaria" class="primary-logo">
               </a>
             </li>
-            <li class="d-none d-md-block"><a href="<?php echo site_url();?>" class="text-white mr-5">Inicio</a></li>
-            <li class="d-none d-md-block"><a href="<?php echo site_url('residencial');?>" class="text-white mr-5">Residencial</a></li>
-            <li class="d-none d-md-block"><a href="<?php echo site_url('comercial');?>" class="text-white mr-5">Comercial</a></li>
-            <li class="d-none d-md-block"><a href="<?php echo site_url('bodegas');?>" class="text-white mr-5">Bodegas</a></li>
-            <li class="d-none d-md-block"><a href="<?php echo site_url('rentas');?>" class="text-white mr-5">Rentas</a></li>
-            <li class="d-none d-md-block"><a href="<?php echo site_url('somos-brick');?>" class="text-white mr-5">Somos Brick</a></li>
-            <li class="d-none d-md-block"><a href="<?php echo site_url('usa');?>" class="text-white mr-5">USA</a></li>
-            <li class="d-none d-md-block"><a href="#" class="text-white contactoModalBtn mr-5">Contáctanos</a></li>
+            <li class="d-none d-md-block"><a href="<?php echo site_url();?>" class="text-white">Inicio</a></li>
+            <li class="d-none d-md-block"><a href="<?php echo site_url('residencial');?>" class="text-white">Residencial</a></li>
+            <li class="d-none d-md-block"><a href="<?php echo site_url('comercial');?>" class="text-white">Comercial</a></li>
+            <li class="d-none d-md-block"><a href="<?php echo site_url('bodegas');?>" class="text-white">Bodegas</a></li>
+            <li class="d-none d-md-block"><a href="<?php echo site_url('rentas');?>" class="text-white">Rentas</a></li>
+            <li class="d-none d-md-block"><a href="<?php echo site_url('somos-brick');?>" class="text-white">Somos Brick</a></li>
+            <li class="d-none d-md-block"><a href="<?php echo site_url('usa');?>" class="text-white">USA</a></li>
+            <li class="d-none d-md-block"><a href="#" class="text-white contactoModalBtn">Contáctanos</a></li>
           </ul>
         </div>
     </div>
