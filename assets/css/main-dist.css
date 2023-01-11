@@ -1511,5 +1511,6 @@ button:focus {
 
 .footer-menu li {
   flex: 1;
+  text-align: center;
 }
 /*# sourceMappingURL=main-dist.css.map */
