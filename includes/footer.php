@@ -21,6 +21,7 @@
             <li class="d-none d-md-block"><a href="<?php echo site_url('bodegas');?>" class="text-white mr-5">Bodegas</a></li>
             <li class="d-none d-md-block"><a href="<?php echo site_url('rentas');?>" class="text-white mr-5">Rentas</a></li>
             <li class="d-none d-md-block"><a href="<?php echo site_url('somos-brick');?>" class="text-white mr-5">Somos Brick</a></li>
+            <li class="d-none d-md-block"><a href="<?php echo site_url('usa');?>" class="text-white mr-5">USA</a></li>
             <li class="d-none d-md-block"><a href="#" class="text-white contactoModalBtn mr-5">Contáctanos</a></li>
           </ul>
         </div>
