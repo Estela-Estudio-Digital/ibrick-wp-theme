@@ -34,7 +34,7 @@ $bloque_3_imagen = get_field('bloque_3_imagen');
     <hr>
     <div class="row align-items-stretch">
         <div class="col-md-6 d-flex align-items-center">
-            <img class="w-100" src="<?php bloginfo('template_directory');?>/assets/img/teamBrick2.jpg" alt="Somos">
+            <img class="w-100" src="<?php bloginfo('template_directory');?>/assets/img/teamBrick3.jpg" alt="Somos">
         </div>
         <div class="col-md-6 d-flex align-items-center mt-5 mt-md-0">
                 <ul class="pl-md-5">
