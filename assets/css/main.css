@@ -1502,8 +1502,11 @@ button:focus {
 }
 
 .primary-menu-list li {
-  flex: 1 !important;
   text-align: center;
+  margin-right: 20px;
+}
+.primary-menu-list li:last-child {
+  margin-right: 0;
 }
 .primary-menu-list li .nav-link {
   font-size: 14px;

@@ -997,8 +997,13 @@ $items: 1,
 
   .primary-menu-list {
     li {
-        flex: 1 !important;
+        // flex: 1 !important;
         text-align: center;
+        margin-right: 20px;
+
+        &:last-child {
+            margin-right: 0;
+        }
 
         .nav-link {
             font-size: 14px;
