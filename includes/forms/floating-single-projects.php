@@ -36,7 +36,7 @@
                         <h5 class="m-0 pt-2">¿Necesitas más información?</h5>
                         <p class="mb-0">
                           <small>
-                            Déjanos tus dats y te contactaremos
+                            Déjanos tus datos y te contactaremos
                           </small>
                         </p>
                       </div>
