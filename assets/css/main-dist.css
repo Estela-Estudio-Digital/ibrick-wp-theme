@@ -1516,4 +1516,49 @@ button:focus {
   flex: 1;
   text-align: center;
 }
+
+.rentas-section__title {
+  background: #e07e0c;
+  color: white;
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  min-height: 50px;
+  position: relative;
+}
+.rentas-section__title:hover {
+  color: white;
+}
+.rentas-section__title-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.rentas-section__image {
+  background: url("../img/rentas-section-image.jpg") no-repeat;
+  background-size: cover;
+  color: white;
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  min-height: 50px;
+  position: relative;
+}
+.rentas-section__image:hover {
+  color: white;
+}
+.rentas-section__image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.rentas-section__image-text::after {
+  content: "]";
+}
+.rentas-section__image-text::before {
+  content: "[";
+}
 /*# sourceMappingURL=main-dist.css.map */

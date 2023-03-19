@@ -1019,3 +1019,44 @@ $items: 1,
     }
 
   }
+
+  .rentas-section {
+      &__title {
+        background: #e07e0c;
+        color: white;
+        text-transform: uppercase;
+        display: block;
+        text-align: center;
+        min-height: 50px;
+        position: relative;
+        &:hover {
+            color: white;
+        }
+        &-text {
+            @include centerer();
+            width: 100%;
+        }
+    }
+    &__image {
+        background: url('../img/rentas-section-image.jpg') no-repeat;
+        background-size: cover;
+        color: white;
+        text-transform: uppercase;
+        display: block;
+        text-align: center;
+        min-height: 50px;
+        position: relative;
+        &:hover {
+            color: white;
+        }
+        &-text {
+            @include centerer();
+            &::after {
+                content: ']';
+            }
+            &::before {
+                content: '[';
+            }
+        }
+    }
+  }

@@ -66,7 +66,29 @@ $query = new WP_Query(array(
     ),
   ));
   
-  include( locate_template( './includes/templates/proyectos_destacados.php', false, false) ); 
+  include( locate_template( './includes/templates/proyectos_destacados.php', false, false) );
+
+ 
+  ?>
+  <section class="rentas-section container">
+    <div class="row">
+        <div class="col-md-6 pr-md-0">
+            <a href="<?php echo site_url('rentas');?>" class="rentas-section__title">
+                <span class="rentas-section__title-text">
+                    Brick administra tu propiedad
+                </span>
+            </a>
+        </div>
+        <div class="col-md-6 pl-md-0">
+            <a href="<?php echo site_url('rentas');?>" class="rentas-section__image">
+                <span class="rentas-section__image-text">
+                    Consultar
+                </span>
+            </a>
+        </div>
+    </div>
+  </section>
+  <?php
   include( locate_template( './includes/templates/banner-pasos.php', false, false) ); 
   
   ?>
