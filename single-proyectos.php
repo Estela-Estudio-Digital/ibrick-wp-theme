@@ -17,6 +17,7 @@ $caracteristicas_proyecto = $grupo_de_datos['caracteristicas_proyecto'];
 $terminaciones_repeater = $grupo_de_datos['terminaciones_repeater'];
 $folleto = $grupo_de_datos['folleto'];
 $caracteristica_personalizada = $grupo_de_datos['caracteristicas_personalizadas'];
+$caracteristicas_complemento = $grupo_de_datos['caracteristicas_complemento'];
 $planok = get_field( 'plan_ok' );
 $pie_en_30_cuotas = get_field( 'pie_en_30_cuotas' );
 $video = get_field( 'video' );
@@ -63,20 +64,19 @@ if (!empty($terms)) {
         $slider_proyecto_mobile = get_sub_field('slider_proyecto_mobile');
     ?>
     <div class="item project-hero position-relative">
-        <?php if ($slider_proyecto_mobile): ?>
-            <img
-                alt="<?php echo $slider_proyecto_desktop['alt'];?>"
-                src="<?php echo $slider_proyecto_mobile['url'];?>"
-                srcset="<?php echo $slider_proyecto_mobile['url'];?> 550w, <?php echo $slider_proyecto_desktop['url'];?> 1440w"
-                sizes="(min-width: 768px) 1440px, 550px"
-                loading="lazy"
+        <picture>
+            <source
+            media="(max-width: 768px)"
+            srcset="<?php echo $slider_proyecto_mobile['url'];?>">
+            <img 
+            alt="<?php echo $slider_proyecto_desktop['alt'];?>"
+            src="<?php echo $slider_proyecto_desktop['url'];?>"
+            loading="lazy"
             >
-        <?php else: ?>
-            <img loading="lazy" src="<?php echo $slider_proyecto_desktop['url'];?>" alt="<?php echo $slider_proyecto_desktop['alt'];?>">
-        <?php endif; ?>
+        </picture>
         <?php
             if ($correos_ventas) {
-                include( locate_template( './includes/forms/floating-single-projects.php', false, false) ); 
+                // include( locate_template( './includes/forms/floating-single-projects.php', false, false) ); 
             }
         ?>
     </div>
@@ -86,7 +86,7 @@ if (!empty($terms)) {
 
 <div class="container projec-wrapper-container">
     <div class="row align-items-stretch mb-4">
-        <div class="<?php echo ($caracteristicas_proyecto) ? "col-md-8" : "col-md-12";?> bg-white shadow mb-3">
+        <div class="<?php echo ($caracteristicas_complemento) ? "col-md-8" : "col-md-12";?> bg-white shadow mb-3">
             <ul class="projec-wrapper-content d-md-flex justify-content-around align-items-stretch m-0 mb-2 pt-3">
                 <?php if ($logo_proyecto):?>
                 <li class="projec-wrapper-content-img d-flex align-items-center justify-content-center ml-4">
@@ -135,27 +135,9 @@ if (!empty($terms)) {
                 <?php endif; ?>
             </ul>
         </div>
-        <?php if ($caracteristicas_proyecto) : ?>
-        <div class="col-md-4 mb-3 d-flex">
-            <ul class="owl-carousel project-carousel d-none d-md-flex justify-content-around m-0">
-                <?php foreach ($caracteristicas_proyecto as $caracteristicas_proyect) : ?>
-                    <li class="project-carousel--item mx-3 align-items-center d-flex flex-column justify-content-between">
-                        <div class="pt-3">
-                            <img src="<?php bloginfo('template_directory');?>/assets/img/<?php echo $caracteristicas_proyect['value']; ?>.svg" alt="<?php echo $caracteristicas_proyect['label']; ?>">
-                        </div>
-                        <p class="m-0 pb-2"><?php echo $caracteristicas_proyect['label']; ?></p>
-                    </li>
-                <?php endforeach; ?>
-                <?php if($caracteristica_personalizada):
-                    foreach ($caracteristica_personalizada as $item) : ?>
-                    <li class="project-carousel--item mx-3 align-items-center d-flex flex-column justify-content-between">
-                        <div class="pt-3">
-                            <img src="<?php echo $item['caracteristica_personalizada_imagen']['url']; ?>" alt="icono personalizado">
-                        </div>
-                        <p class="m-0 pb-2"><?php echo $item['caracteristica_personalizada_texto']; ?></p>
-                    </li>
-                <?php endforeach; endif;?>
-            </ul>
+        <?php if ($caracteristicas_complemento) : ?>
+        <div class="col-md-4 mb-3 d-flex w-100">
+            <div class="px-3 w-100" style="background: url(<?php echo $caracteristicas_complemento['url'];?>) no-repeat center center; background-size: cover;"></div>
         </div>
         <?php endif; ?>
     </div>
