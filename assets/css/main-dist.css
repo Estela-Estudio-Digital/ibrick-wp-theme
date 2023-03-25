@@ -472,10 +472,11 @@ button:focus {
 
 .contact-floating-container {
   position: fixed;
-  left: 0;
-  bottom: 15px;
+  right: 0;
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
   z-index: 4;
-  width: 100%;
 }
 .contact-floating-list {
   max-width: 1600px;
@@ -484,11 +485,11 @@ button:focus {
 .contact-floating-whatsapp-button {
   background: #00bfa5;
   color: white;
-  padding: 10px 20px;
+  padding: 15px;
   border-radius: 50rem;
-  max-width: 170px;
   box-shadow: 0 5px 5px -3px rgba(1, 83, 72, 0.2), 0 8px 10px 1px rgba(1, 83, 72, 0.2), 0 3px 14px 2px rgba(1, 83, 72, 0.2);
   transition: 0.2s ease-in-out all;
+  margin-bottom: 20px;
 }
 .contact-floating-whatsapp-button:hover {
   background: #019682;

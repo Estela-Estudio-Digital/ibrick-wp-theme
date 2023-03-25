@@ -137,7 +137,9 @@ if (!empty($terms)) {
         </div>
         <?php if ($caracteristicas_complemento) : ?>
         <div class="col-md-4 mb-3 d-flex w-100">
-            <div class="px-3 w-100" style="background: url(<?php echo $caracteristicas_complemento['url'];?>) no-repeat center center; background-size: cover;"></div>
+            <div class="px-3 w-100">
+                <img src="<?php echo $caracteristicas_complemento['url'];?>" alt="<?php echo $caracteristicas_complemento['alt'];?>" class="w-100">
+            </div>
         </div>
         <?php endif; ?>
     </div>
@@ -585,19 +587,19 @@ include( locate_template( './includes/templates/banner-pasos.php', false, false)
 
 <?php endif; ?>
 <?php if($whatsapp || $correos_ventas): ?>
-<section class="contact-floating-container follow-button-pay">
-    <ul class="contact-floating-list px-4 d-flex justify-content-between align-items-center">
+<section class="contact-floating-container follow-button-play">
+    <ul class="contact-floating-list px-2 d-flex flex-column justify-content-between align-items-center">
         <?php if($whatsapp): ?>
         <li>
         <!-- <a class="d-inline" id="whatsappButton" href="https://api.whatsapp.com/send/?phone=<?php echo $whatsapp;?>&text=Me%20interesa%20el%20 %20proyecto%20<?php echo the_title();?>" target="_blank"> -->
             <a class="d-inline" id="whatsappButton" href="#">
                 <ul class="d-flex align-items-center contact-floating-whatsapp-button">
-                    <li class="mr-2">
-                        <img src="<?php bloginfo('template_directory');?>/assets/img/whatsapp-logo.svg" alt="whatsapp" style="max-height:25px" width="25">
+                    <li class="">
+                        <img src="<?php bloginfo('template_directory');?>/assets/img/whatsapp-logo.svg" alt="whatsapp" style="max-height:35px" width="35">
                     </li>
-                    <li>
+                    <!-- <li>
                         <span>Conversemos</span>
-                    </li>
+                    </li> -->
                 </ul>
             </a>
         </li>
