@@ -1562,4 +1562,19 @@ button:focus {
 .rentas-section__image-text::before {
   content: "[";
 }
+
+@media screen and (min-width: 1024px) {
+  .complement-ads {
+    max-height: 110px;
+    overflow: hidden;
+  }
+}
+.complement-ads img {
+  object-fit: cover;
+}
+@media screen and (min-width: 1024px) {
+  .complement-ads img {
+    max-height: 110px;
+  }
+}
 /*# sourceMappingURL=main-dist.css.map */

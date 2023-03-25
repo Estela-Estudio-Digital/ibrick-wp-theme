@@ -18,6 +18,7 @@ $terminaciones_repeater = $grupo_de_datos['terminaciones_repeater'];
 $folleto = $grupo_de_datos['folleto'];
 $caracteristica_personalizada = $grupo_de_datos['caracteristicas_personalizadas'];
 $caracteristicas_complemento = $grupo_de_datos['caracteristicas_complemento'];
+$caracteristicas_complemento_url = $grupo_de_datos['caracteristicas_complemento_url'];
 $planok = get_field( 'plan_ok' );
 $pie_en_30_cuotas = get_field( 'pie_en_30_cuotas' );
 $video = get_field( 'video' );
@@ -85,7 +86,7 @@ if (!empty($terms)) {
 <?php endif; ?>
 
 <div class="container projec-wrapper-container">
-    <div class="row align-items-stretch mb-4">
+    <div class="row align-items-center mb-4">
         <div class="<?php echo ($caracteristicas_complemento) ? "col-md-8" : "col-md-12";?> bg-white shadow mb-3">
             <ul class="projec-wrapper-content d-md-flex justify-content-around align-items-stretch m-0 mb-2 pt-3">
                 <?php if ($logo_proyecto):?>
@@ -136,10 +137,10 @@ if (!empty($terms)) {
             </ul>
         </div>
         <?php if ($caracteristicas_complemento) : ?>
-        <div class="col-md-4 mb-3 d-flex w-100">
-            <div class="px-3 w-100">
+        <div class="col-md-4 mb-3 d-flex w-100 p-0 p-md-3">
+            <a href="<?php echo $caracteristicas_complemento_url; ?>" class="w-100 shadow complement-ads">
                 <img src="<?php echo $caracteristicas_complemento['url'];?>" alt="<?php echo $caracteristicas_complemento['alt'];?>" class="w-100">
-            </div>
+            </a>
         </div>
         <?php endif; ?>
     </div>
