@@ -67,13 +67,13 @@
                         <?php endif; ?>
                   </div>
                   <?php if ($tiene_contenidos === 'si') :?>
-                    <a href="<?php echo the_permalink();?>" class="btn btn-secondary shadow"> Ver proyecto</a>
+                    <a href="<?php echo the_permalink();?>" class="btn btn-primary px-md-5 shadow"> Ver proyecto</a>
                   <?php endif; ?>
                   <?php if( $tiene_contenidos === 'no' && $folleto ): ?>
                       <a href="<?php echo $folleto; ?>" class="btn btn-secondary shadow text-capitalize" target="_blank">descargar folleto</a>
                   <?php endif; ?>
                   <?php if ($url_landing) :?>
-                    <a href="<?php echo $url_landing;?>" class="btn btn-secondary shadow" target="_blank"><?php echo $txt_landing ? $txt_landing : ' Ver proyecto'; ?></a>
+                    <a href="<?php echo $url_landing;?>" class="btn btn-primary px-md-5 shadow" target="_blank"><?php echo $txt_landing ? $txt_landing : ' Ver proyecto'; ?></a>
                   <?php endif; ?>
                   
               </div>

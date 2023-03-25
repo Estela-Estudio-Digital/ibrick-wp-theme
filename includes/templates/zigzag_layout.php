@@ -20,10 +20,10 @@
                       <?php endif; ?>
                   </div>
                   <?php if ($tiene_contenidos === 'si') :?>
-                    <a href="<?php echo bloginfo('url');?>/proyectos/tarapaca" class="btn btn-secondary shadow"> Ver proyecto</a>
+                    <a href="<?php echo bloginfo('url');?>/proyectos/tarapaca" class="btn btn-primary px-5 shadow"> Ver proyecto</a>
                   <?php endif; ?>
                   <?php if ($url_landing) :?>
-                    <a href="<?php echo $url_landing;?>" class="btn btn-secondary shadow" target="_blank"> Ver proyecto</a>
+                    <a href="<?php echo $url_landing;?>" class="btn btn-primary px-5 shadow" target="_blank"> Ver proyecto</a>
                   <?php endif; ?>
                   <?php if ($tag_del_ptroyecto['label'] != 'Normal') :?>
                       <span class="label-vendido shadow bg-primary-color text-white px-3 py-1"><?php echo $tag_del_ptroyecto['label']; ?></span>
