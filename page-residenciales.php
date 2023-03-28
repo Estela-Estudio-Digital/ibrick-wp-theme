@@ -74,16 +74,12 @@ $query = new WP_Query(array(
     <div class="row">
         <div class="col-md-6 pr-md-0">
             <a href="<?php echo site_url('rentas');?>" class="rentas-section__title">
-                <span class="rentas-section__title-text">
-                    Brick administra tu propiedad
-                </span>
+                <img class="w-100" src="<?php bloginfo('template_directory');?>/assets/img/brick-rentas1.jpg" alt="Rentas Brick">
             </a>
         </div>
         <div class="col-md-6 pl-md-0">
             <a href="<?php echo site_url('rentas');?>" class="rentas-section__image">
-                <span class="rentas-section__image-text">
-                    Consultar
-                </span>
+                <img class="w-100" src="<?php bloginfo('template_directory');?>/assets/img/brick-rentas2.jpg" alt="Rentas Brick">
             </a>
         </div>
     </div>
