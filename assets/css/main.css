@@ -1589,4 +1589,8 @@ button:focus {
     max-height: 110px;
   }
 }
+
+.link-residencial .nav-item {
+  margin-right: 0;
+}
 /*# sourceMappingURL=main.css.map */
