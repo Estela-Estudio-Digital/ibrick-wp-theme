@@ -6,7 +6,7 @@ Template Name: Residencial
 */
 ?>
 <?php if (have_rows('beneficios')) : ?>
-    <section class="container mt-5 pt-5">
+    <section class="container mt-5 pt-5 d-none">
         <div class="row">
             <div class="col-12">
                 <h2 class="text-center text-uppercase fs-3">
@@ -19,7 +19,7 @@ Template Name: Residencial
             </div>
         </div>
     </section>
-    <section class="container position-relative">
+    <section class="container position-relative d-none">
         <div class="beneficios-carousel owl-carousel owl-theme">
             <?php while (have_rows('beneficios')) : the_row();
                 // vars

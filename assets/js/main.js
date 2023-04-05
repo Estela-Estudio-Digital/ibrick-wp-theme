@@ -107,8 +107,9 @@ $(function () {
   setPrimaryLink(locationPatName);
 
   function setPrimaryLink(locationPatName) {
-    let linkActive = locationPatName.replaceAll("/", "");
-    $(".main-menu").find(`.link-${linkActive}`).addClass("link-active");
+    const parts = locationPatName.split("/");
+    const lastPart = parts[parts.length - 2];
+    $(".main-menu").find(`.link-${lastPart}`).addClass("link-active");
   }
   /* 
 	------------------------------------------------------------------
@@ -314,6 +315,8 @@ $(function () {
     $(".link-residencial").mouseleave(function () {
       $(this).find(".drop-menu").hide();
     });
+  } else {
+    $(".drop-menu").show();
   }
 
   /* 
