@@ -504,12 +504,12 @@ $(function () {
     */
   $(".wpcf7Whatsapp").on("wpcf7mailsent", function (event) {
     console.log(event.detail.inputs);
-    const telefonoProyectoWhatsapp = event.detail.inputs[3].value,
-      nombreProyectoWhatsapp = event.detail.inputs[0].value,
-      nombreClienteWhatsapp = event.detail.inputs[7].value;
-    url = `https://api.whatsapp.com/send/?phone=${telefonoProyectoWhatsapp}&text=Mi%20nombre%20es%20${nombreClienteWhatsapp}%20Me%20interesa%20el%20%20proyecto%20${nombreProyectoWhatsapp}`;
-    $(".whatsapp-modal").removeClass("whatsapp-modal-open");
-    window.open(url, "_blank");
+    // const telefonoProyectoWhatsapp = event.detail.inputs[3].value,
+    //   nombreProyectoWhatsapp = event.detail.inputs[0].value,
+    //   nombreClienteWhatsapp = event.detail.inputs[7].value;
+    // url = `https://api.whatsapp.com/send/?phone=${telefonoProyectoWhatsapp}&text=Mi%20nombre%20es%20${nombreClienteWhatsapp}%20Me%20interesa%20el%20%20proyecto%20${nombreProyectoWhatsapp}`;
+    // $(".whatsapp-modal").removeClass("whatsapp-modal-open");
+    // window.open(url, "_blank");
   });
   $(".wpcf7Whatsapp").on("wpcf7mailfailed", function (event) {
     console.log("failed", event);
