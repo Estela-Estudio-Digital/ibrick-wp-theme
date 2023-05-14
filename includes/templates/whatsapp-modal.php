@@ -48,6 +48,7 @@
                         class="whatsappProjectSelector"
                         data-name="<?php echo get_the_title();?>"
                         data-whatsapp="<?php echo $grupo_de_datos["whatsapp"];?>"
+                        data-correo="<?php echo $grupo_de_datos["correos_ventas"];?>"
                     >
                     <ul class="d-flex ws-item ">
                         <li class="align-items-center">

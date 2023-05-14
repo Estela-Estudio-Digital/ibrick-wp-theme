@@ -118,6 +118,7 @@ $(function () {
       const newData = {
         nombreProyecto: $(this).data("name"),
         whatsapp: $(this).data("whatsapp"),
+        correosVentas: $(this).data("correo"),
       }
       project_data.data.push(newData);
       setDataToSend();
