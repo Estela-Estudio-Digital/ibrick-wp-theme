@@ -24,6 +24,40 @@ $(function () {
 		Menú Hamburguer
 	------------------------------------------------------------------
 	*/
+  const setDataToSend = () => {
+    try {
+      var nombreProyecto = project_data.data[0].nombreProyecto,
+        correosVentas = project_data.data[0].correosVentas,
+        logoProyecto = project_data.data[0].logoProyecto,
+        imagenPlanta = project_data.data[0].imagenPlanta,
+        dormitorios = project_data.data[0].dormitorios,
+        imgPlanta = project_data.data[0].imgPlanta,
+        esquicio = project_data.data[0].esquicio,
+        corresponde = project_data.data[0].corresponde,
+        unidades = project_data.data[0].unidades,
+        whatsapp = project_data.data[0].whatsapp;
+        superficieUtil = project_data.data[0].superficieUtil,
+        superficieTerraza = project_data.data[0].superficieTerraza,
+        superficieTotal = project_data.data[0].superficieTotal,
+        $(".nombreProyecto").val(nombreProyecto);
+        $(".correosVentas").val(correosVentas);
+        $(".logoProyecto").val(logoProyecto);
+        $(".imagenPlanta").val(imagenPlanta);
+        $(".dormitorios").val(dormitorios);
+        $(".imgPlanta").val(imgPlanta);
+        $(".esquicio").val(esquicio);
+        $(".corresponde").val(corresponde);
+        $(".unidades").val(unidades);
+        $(".whatsappProject").val(whatsapp);
+  
+        $(".superficieUtil").val(superficieUtil);
+        $(".superficieTerraza").val(superficieTerraza);
+        $(".superficieTotal").val(superficieTotal);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   $(".colapse-hamburger").on("click", function () {
     $(this).toggleClass("is-active");
   });
@@ -69,9 +103,28 @@ $(function () {
     e.preventDefault();
     $(".whatsapp-modal").addClass("whatsapp-modal-open");
   });
-  $("#whatsappModalClose").on("click", function (e) {
+  $(".whatsappModalClose").on("click", function (e) {
     e.preventDefault();
+    const isHome = $(".ws-project");
+    if (isHome) {
+      $(".ws-project").show();
+      $(".ws-form").addClass("d-none");
+    }
     $(".whatsapp-modal").removeClass("whatsapp-modal-open");
+  });
+  $(".whatsappProjectSelector").on("click", function (e) {
+    e.preventDefault();
+    if (project_data?.data) {
+      const newData = {
+        nombreProyecto: $(this).data("name"),
+        whatsapp: $(this).data("whatsapp"),
+      }
+      project_data.data.push(newData);
+      setDataToSend();
+    }
+
+    $(".ws-project").hide();
+    $(".ws-form").removeClass("d-none");
   });
   /* 
 	------------------------------------------------------------------
@@ -401,35 +454,9 @@ $(function () {
       $(".nombreProyecto").val("Bodegas - " + project);
     });
   }
-  if (project_data.data !== "") {
-    var nombreProyecto = project_data.data[0].nombreProyecto,
-      correosVentas = project_data.data[0].correosVentas,
-      logoProyecto = project_data.data[0].logoProyecto,
-      imagenPlanta = project_data.data[0].imagenPlanta,
-      dormitorios = project_data.data[0].dormitorios,
-      imgPlanta = project_data.data[0].imgPlanta,
-      esquicio = project_data.data[0].esquicio,
-      corresponde = project_data.data[0].corresponde,
-      unidades = project_data.data[0].unidades,
-      whatsapp = project_data.data[0].whatsapp;
 
-    (superficieUtil = project_data.data[0].superficieUtil),
-      (superficieTerraza = project_data.data[0].superficieTerraza),
-      (superficieTotal = project_data.data[0].superficieTotal),
-      $(".nombreProyecto").val(nombreProyecto);
-    $(".correosVentas").val(correosVentas);
-    $(".logoProyecto").val(logoProyecto);
-    $(".imagenPlanta").val(imagenPlanta);
-    $(".dormitorios").val(dormitorios);
-    $(".imgPlanta").val(imgPlanta);
-    $(".esquicio").val(esquicio);
-    $(".corresponde").val(corresponde);
-    $(".unidades").val(unidades);
-    $(".whatsappProject").val(whatsapp);
-
-    $(".superficieUtil").val(superficieUtil);
-    $(".superficieTerraza").val(superficieTerraza);
-    $(".superficieTotal").val(superficieTotal);
+  if (project_data.data.length > 0) {
+    setDataToSend();
   }
 
   (sbjMedio = sbjs.get.current.mdm), (sbjFuente = sbjs.get.current.src);
@@ -476,7 +503,7 @@ $(function () {
     https://api.whatsapp.com/send/?phone=<?php echo $whatsapp;?>&text=Me%20interesa%20el%20 %20proyecto%20<?php echo the_title();?>
     */
   $(".wpcf7Whatsapp").on("wpcf7mailsent", function (event) {
-    //   console.log(event.detail.inputs);
+    console.log(event.detail.inputs);
     const telefonoProyectoWhatsapp = event.detail.inputs[3].value,
       nombreProyectoWhatsapp = event.detail.inputs[0].value,
       nombreClienteWhatsapp = event.detail.inputs[7].value;

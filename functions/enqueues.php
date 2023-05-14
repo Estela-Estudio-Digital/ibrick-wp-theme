@@ -120,6 +120,13 @@ if ( ! function_exists('bk_enqueues') ) {
 			'data' => ""
 		);
 
+		if (is_front_page()) {
+			$projects_arr = array();
+			$script_link = array(
+				'data' => $projects_arr
+			);
+		}
+
 		if(is_archive('proyectos')){
 			$taxonomy = 'ubicaciones';
 			$terms_args = array(

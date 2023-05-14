@@ -65,6 +65,12 @@
 }
 
 .contact-floating{
+    &-container-home {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 4;
+    }
     &-container {
         position: fixed;
         right: 0;
@@ -124,9 +130,25 @@
 }
 
 .whatsapp-modal {
+    min-height: 660px;
+    min-width: 500px;
     left: 0;
     @include MQ(M) {
         left: -2px;
+    }
+}
+
+.ws-item {
+    padding: 10px;
+    &--img {
+        max-width: 30px;
+        margin-right: 10px;
+        border-radius: 50% !important;
+        border: solid 2px #03cc0b;
+    }
+    &--txt {
+        padding-top: 2px;
+        font-size: 18px;
     }
 }
 

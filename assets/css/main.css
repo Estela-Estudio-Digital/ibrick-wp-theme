@@ -470,6 +470,12 @@ button:focus {
   background: #a1a1a1 !important;
 }
 
+.contact-floating-container-home {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+}
 .contact-floating-container {
   position: fixed;
   right: 0;
@@ -530,12 +536,28 @@ button:focus {
 }
 
 .whatsapp-modal {
+  min-height: 660px;
+  min-width: 500px;
   left: 0;
 }
 @media screen and (min-width: 768px) {
   .whatsapp-modal {
     left: -2px;
   }
+}
+
+.ws-item {
+  padding: 10px;
+}
+.ws-item--img {
+  max-width: 30px;
+  margin-right: 10px;
+  border-radius: 50% !important;
+  border: solid 2px #03cc0b;
+}
+.ws-item--txt {
+  padding-top: 2px;
+  font-size: 18px;
 }
 
 .formulario-general .input-group-text {

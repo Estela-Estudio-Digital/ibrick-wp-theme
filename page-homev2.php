@@ -224,6 +224,24 @@ include( locate_template( './includes/templates/proyectos_destacados.php', false
     <img src="<?php bloginfo('template_directory');?>/assets/img/muevete.jpg" alt="Muevete" class="w-100">
 </section>
 
+<section class="contact-floating-container-home follow-button-play">
+    <ul class="contact-floating-list px-2 d-flex flex-column justify-content-between align-items-center">
+        <li>
+            <a class="d-inline" id="whatsappButton" href="#">
+                <ul class="d-flex align-items-center contact-floating-whatsapp-button">
+                    <li class="">
+                        <img src="<?php bloginfo('template_directory');?>/assets/img/whatsapp-logo.svg" alt="whatsapp" style="max-height:35px" width="35">
+                    </li>
+                </ul>
+            </a>
+        </li>
+    </ul>
+</section>
+
+<?php 
+include( locate_template( './includes/templates/whatsapp-modal.php', false, false) );
+?>
+
 <!-- Home Video Modal -->
 <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
