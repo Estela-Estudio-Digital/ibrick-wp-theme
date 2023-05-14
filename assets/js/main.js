@@ -504,13 +504,19 @@ $(function () {
     https://api.whatsapp.com/send/?phone=<?php echo $whatsapp;?>&text=Me%20interesa%20el%20 %20proyecto%20<?php echo the_title();?>
     */
   $(".wpcf7Whatsapp").on("wpcf7mailsent", function (event) {
-    console.log(event.detail.inputs);
     const telefonoProyectoWhatsapp = event.detail.inputs[3].value,
       nombreProyectoWhatsapp = event.detail.inputs[0].value,
       nombreClienteWhatsapp = event.detail.inputs[7].value;
     url = `https://api.whatsapp.com/send/?phone=${telefonoProyectoWhatsapp}&text=Mi%20nombre%20es%20${nombreClienteWhatsapp}%20Me%20interesa%20el%20%20proyecto%20${nombreProyectoWhatsapp}`;
     $(".whatsapp-modal").removeClass("whatsapp-modal-open");
     window.open(url, "_blank");
+    const isHome = $(".ws-project");
+    if (isHome) {
+      $(".ws-project").show();
+      $(".ws-form").addClass("d-none");
+      $(".whatsapp-modal").removeClass("whatsapp-modal-open");
+      $(".wpcf7Whatsapp")[0].reset();
+    }
   });
   $(".wpcf7Whatsapp").on("wpcf7mailfailed", function (event) {
     console.log("failed", event);
