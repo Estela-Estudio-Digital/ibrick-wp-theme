@@ -130,11 +130,11 @@
 }
 
 .whatsapp-modal {
-    min-height: 660px;
-    min-width: 500px;
     left: 0;
     z-index: 11;
     @include MQ(M) {
+        min-height: 660px;
+        min-width: 500px;
         left: -2px;
     }
 }
