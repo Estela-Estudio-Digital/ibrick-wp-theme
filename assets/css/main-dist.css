@@ -319,7 +319,7 @@ label.error {
 .hamburger {
   position: relative;
   left: 0;
-  z-index: 999;
+  z-index: 10;
 }
 
 .bk-primary-nav {
@@ -536,6 +536,7 @@ button:focus {
 }
 
 .whatsapp-modal {
+  min-height: 100%;
   left: 0;
   z-index: 11;
 }
