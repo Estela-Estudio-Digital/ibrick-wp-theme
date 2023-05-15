@@ -68,7 +68,7 @@
     &-container-home {
         position: fixed;
         bottom: 0;
-        left: 0;
+        left: 12px;
         z-index: 4;
     }
     &-container {
@@ -133,6 +133,7 @@
     min-height: 660px;
     min-width: 500px;
     left: 0;
+    z-index: 11;
     @include MQ(M) {
         left: -2px;
     }

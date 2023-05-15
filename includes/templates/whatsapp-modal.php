@@ -41,6 +41,8 @@
             <?php while ( $query->have_posts() ) : $query->the_post();
                 $grupo_de_datos = get_field('grupo_de_datos');
                 setup_postdata($post);
+
+                if ($grupo_de_datos["whatsapp"]) :
             ?>
                 <li>
                     <a
@@ -64,6 +66,7 @@
                     </ul>
                     </a>
                 </li>
+            <?php endif;?>
             <?php endwhile; wp_reset_postdata(); ?>
             </ul>
             <?php endif;?>
