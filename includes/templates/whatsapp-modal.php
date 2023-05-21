@@ -8,8 +8,8 @@
                         <img src="<?php bloginfo('template_directory');?>/assets/img/whatsapp-logo.svg" alt="whatsapp" style="max-height:45px" width="45">
                         WhatsApp
                     </h4>
-                    <h4 class="mb-0">
-                        <small>Selecciona el proyecto a consultar</small>
+                    <h4 class="mb-0 pt-md-2">
+                        <small>Selecciona el edificio a consultar en Santiago Centro</small>
                     </h4>
                 </li>
                 <li>
@@ -37,14 +37,14 @@
               ));
               if ( $query->have_posts() ) :
             ?>
-            <ul>
+            <ul class="pt-4">
             <?php while ( $query->have_posts() ) : $query->the_post();
                 $grupo_de_datos = get_field('grupo_de_datos');
                 setup_postdata($post);
 
                 if ($grupo_de_datos["whatsapp"]) :
             ?>
-                <li>
+                <li class="my-md-4">
                     <a
                         href="!#" 
                         class="whatsappProjectSelector"
