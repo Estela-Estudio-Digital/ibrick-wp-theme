@@ -233,7 +233,7 @@ include( locate_template( './includes/templates/proyectos_destacados.php', false
                         <img src="<?php bloginfo('template_directory');?>/assets/img/whatsapp-logo.svg" alt="whatsapp" style="max-height:35px" width="35">
                     </li>
                 </ul>
-                <span id="whatsappButtonAd">💬 ¿Necesitas ayuda?</span>
+                <span id="whatsappButtonAd">¿Necesitas ayuda?</span>
             </a>
         </li>
     </ul>
