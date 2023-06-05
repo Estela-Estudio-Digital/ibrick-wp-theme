@@ -377,15 +377,7 @@ $(function () {
 
   setTimeout(function() {
     $('#whatsappButtonAd').fadeIn();
-  }, 5000);
-
-  setTimeout(function() {
-    $('#whatsappButtonAd').fadeOut();
-  }, 10000);
-
-  setTimeout(function() {
-    $('#whatsappButtonAd').fadeIn();
-  }, 15000);
+  }, 6000);
 
   /* 
 	------------------------------------------------------------------
