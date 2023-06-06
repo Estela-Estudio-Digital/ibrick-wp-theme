@@ -523,6 +523,9 @@ $(function () {
       $(".whatsapp-modal").removeClass("whatsapp-modal-open");
       $(".wpcf7Whatsapp")[0].reset();
     }
+    dataLayer.push({
+      event: "wspsubmit",
+    });
   });
   $(".wpcf7Whatsapp").on("wpcf7mailfailed", function (event) {
     console.log("failed", event);
