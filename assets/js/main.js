@@ -521,7 +521,6 @@ $(function () {
       $(".ws-project").show();
       $(".ws-form").addClass("d-none");
       $(".whatsapp-modal").removeClass("whatsapp-modal-open");
-      $(".wpcf7Whatsapp")[0].reset();
     }
     dataLayer.push({
       event: "wspsubmit",
