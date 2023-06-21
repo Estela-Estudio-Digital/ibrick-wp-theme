@@ -21,6 +21,15 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
+<?php if (is_front_page() || is_page('residencial') || is_page('1785')): ?>
+  <script SameSite="None; Secure" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.js"></script>
+  <script>
+    var myLandbot = new Landbot.Livechat({
+      configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-1538205-MXKA3G62PL96V0HN/index.json',
+    });
+  </script>
+<?php endif; ?>
+
 <?php bk_navbar_before();
 if(is_singular('proyectos')): 
   $vincular_planta_a_proyecto = get_field('vincular_planta_a_proyecto');
