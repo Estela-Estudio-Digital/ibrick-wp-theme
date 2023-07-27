@@ -101,7 +101,7 @@ $correos_ventas = $grupo_de_datos['correos_ventas'];
 
                 $img_repeater = get_field('repeater_fotografias');
             ?>
-            <div class="buttons-next-prev-plantas">
+            <div class="buttons-next-prev-plantas d-none">
                 <span class="prev"><?php previous_post_link() ?></span>
                 <span class="next"><?php next_post_link() ?></span>
             </div>
@@ -201,7 +201,7 @@ $correos_ventas = $grupo_de_datos['correos_ventas'];
                         class="wpcf7-form formulario_cotizar_planta formulario-general"
                         style="max-width: 400px;"
                         name="cotizar_proyecto"
-                        id="cotizar_proyecto"
+                        id="formulario_cotizar_proyecto"
                         role="form">
                         <div style="display: none;">
                             <input type="hidden" name="_wpcf7" value="560">
@@ -230,28 +230,33 @@ $correos_ventas = $grupo_de_datos['correos_ventas'];
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-12 ">
-                                <label class="label" for="inputName">Nombre y apellido</label>
-                                <input type="text" class="form-control" id="inputName" name="inputName" required>
+                                <label class="label" for="inputNameCotizar">Nombre y apellido</label>
+                                <input type="text" class="form-control" id="inputNameCotizar" name="inputNameCotizar" required>
                             </div>
                             <div class="form-group col-md-12">
-                                <label class="label" for="inputName">Email</label>
-                                <input type="email" class="form-control" id="inputEmail" name="inputEmail" required>
+                                <label class="label" for="inputEmailCotizar">Email</label>
+                                <input type="email" class="form-control" id="inputEmailCotizar" name="inputEmailCotizar" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-12 ">
-                                <label class="label" for="inputRut">Rut</label>
-                                <input type="text" class="form-control Rut" id="inputRut" name="inputRut">
+                                <label class="label" for="inputRutCotizar">Rut</label>
+                                <input type="text" class="form-control Rut" id="inputRutCotizar" name="inputRutCotizar">
                             </div>
                             <div class="form-group col-md-12">
-                                <label class="label" for="inputTelefono">Télefono</label>
-                                    <input type="text" class="form-control" id="inputTelefono" name="inputTelefono" required>
+                                <label class="label" for="inputTelefonoCotizar">Télefono</label>
+                                <div class="input-group w-100">
+                                    <div class="input-group-prepend w-100">
+                                        <span class="input-group-text">+56</span>
+                                        <input type="text" class="form-control" id="inputTelefonoCotizar" name="inputTelefonoCotizar" required>
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group col-md-12 ">
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" id="inputCheckbox"
-                                        name="inputCheckbox" checked>
-                                    <label class="custom-control-label" for="inputCheckbox">
+                                    <input class="custom-control-input" type="checkbox"
+                                        name="inputCheckboxCotizar" checked>
+                                    <label class="custom-control-label" for="inputCheckboxCotizar">
                                         <small>Quiero que Brick Inmobiliaria me contacte</small> 
                                     </label>
                                 </div>
@@ -260,9 +265,11 @@ $correos_ventas = $grupo_de_datos['correos_ventas'];
                         <div class="form-group w-100">
                             <div class="text-center py-4">
                                 <button  
-                                    type="submit" name="boton_enviar" value="enviar"
                                     class="g-recaptcha btn btn-primary px-5 al-btn al-btn--white boton_enviar" 
-                                    id="boton_enviar" 
+                                    type="submit"
+                                    name="boton_enviarCotizar"
+                                    value="enviar"
+                                    id="botonEnviarCotizar" 
                                     data-badge="inline"
                                     disabled>
                                     Cotizar
