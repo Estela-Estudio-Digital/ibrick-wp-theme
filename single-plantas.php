@@ -3,6 +3,8 @@ get_template_part('includes/header');
 bk_main_before();
 $vincular_planta_a_proyecto = get_field('vincular_planta_a_proyecto');
 $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
+$grupo_de_datos = get_field('grupo_de_datos', $vincular_planta_a_proyecto->ID);
+$correos_ventas = $grupo_de_datos['correos_ventas'];
 ?>
 <?php if(!wp_is_mobile()): ?>
 <div class="collapse" id="navbarToggleExternalContent" style="position:relative">
@@ -79,6 +81,7 @@ $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
                 $cantidad_de_banos = get_field('cantidad_de_banos');
                 //$imagen_principal_plana = get_field('imagen_principal_plana');
                 $esquicio = get_field('esquicio');
+                $ficha_planta = get_field('ficha_planta');
 
                 $superficie_construida = get_field("superficie_construida");
                 $superficie_terraza = get_field("superficie_terraza");
@@ -173,7 +176,11 @@ $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
                             <img src="<?php echo $esquicio['url']; ?>" alt="Planta" class="w-100">
                         </div>
                     <?php endif;?>
-                    
+                    <?php if ($ficha_planta) : ?>
+                        <div class="pt-4">
+                            <a class="btn btn-primary px-4 mr-3 text-uppercase" href="<?php echo $ficha_planta; ?>" download>Descarga ficha de planta</a>
+                        </div>
+                    <?php endif;?>
                 </div>
 
             </div>
@@ -211,6 +218,7 @@ $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
                             <input type="hidden" name="unidades" class="unidades" >
                             <input type="hidden" name="corresponde" class="corresponde" >
                             <input type="hidden" name="urlProyecto" class="urlProyecto" value="<?php echo get_permalink($vincular_planta_a_proyecto->ID);?>">
+                            <input type="hidden" name="correo_ventas" class="correo_ventas" value="<?php echo $correos_ventas;?>">
 
                             <input type="hidden" name="fuenteSbj" class="fuenteSbj">
                             <input type="hidden" name="medioSbj" class="medioSbj">
@@ -227,7 +235,7 @@ $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-12 ">
-                                <label class="label" for="inputName">Rut</label>
+                                <label class="label" for="inputRut">Rut</label>
                                 <input type="text" class="form-control Rut" id="inputRut" name="inputRut">
                             </div>
                             <div class="form-group col-md-12">

@@ -28,9 +28,7 @@ Template Name: Rentas
                 <span class="secondary-title color-primary font-weight-bold" >INVERTIR EN PROPIEDADES?</span>
             </h3>
         </div>
-        <div class="col-md-6">
-            <img src="<?php bloginfo('template_directory');?>/assets/img/logoBrickRentas.png" alt="Rentas Brick" style="width:200px">
-        </div>
+
     </div>
     <div class="row border-bottom">
         <div class="col-lg-6">

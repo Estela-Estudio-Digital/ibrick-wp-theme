@@ -786,7 +786,7 @@ button:focus {
     padding: 10px 20px !important;
   }
   .gallery-caarousel .owl-dots.disabled,
-.gallery-caarousel .owl-nav.disabled {
+  .gallery-caarousel .owl-nav.disabled {
     display: block;
   }
 }

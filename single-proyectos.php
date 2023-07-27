@@ -292,81 +292,74 @@ if ($query->have_posts()) : ?>
 
             <div class="col-sm-6 col-lg-4 planta <?php echo $value; ?> <?php echo ($estado == 'Normal') ? "active" : "";?>">
                 <?php if ($estado == 'Normal') : ?>
-                    <?php if ($planok) : ?>
+
                     <a href="<?php echo ($planok) ? "#": the_permalink(); ?>" class="<?php echo ($planok) ? 'cotizacionHit' : '' ?>" <?php echo ($planok) ? 'data-toggle="modal" data-target="#planok-modal"' : '';?> >
-                    <?php endif;?>
-                <?php endif;?>
-                    <div class="planta-item d-block text-center shadow ">
 
-                        <h3 class="d-none p-3 text-uppercase mb-2 <?php echo ($estado == 'Normal') ? "bg-secondary text-white " : "bg-grey" ?>">
-                            <?php echo the_title(); ?>
-                        </h3>
+                        <div class="planta-item d-block text-center shadow ">
 
-                        <div class="bk-info-wrap  mb-5 card rounded-0">
-                            <p class="pl-5 pt-4 m-0 text-left" style="font-size:1rem;">
-                                <b><?php echo $texto_titulo; ?></b>
-                                <b><?php echo esc_html($label); ?> +</b>
-                                <b><?php echo $cantidad_de_banos; echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
-                                </b>
-                            </p>
-                            
-                            <?php if ($fotografia_planta) : ?>
-                            <div style="overflow: hidden;position: relative;">
-                                <?php if ($estado == 'Agotado') : ?>
-                                <div class="img-overlay" style="filter: grayscale(1) opacity(50%); position:absolute; width:100%;height:100%;background:#fff"></div>
-                                <?php endif;?>
-                                <img class="m-auto pb-4 fotografia-planta <?php echo ($estado == 'Normal') ? "" : "img-overlay" ?>"
-                                    src="<?php echo $fotografia_planta[0]['fotografia_planta']['sizes']['medium']; ?>"
-                                    alt="<?php echo $row['fotografia_planta']['name']; ?>">
-                            </div>
-                            <?php endif; ?>
+                            <h3 class="d-none p-3 text-uppercase mb-2 <?php echo ($estado == 'Normal') ? "bg-secondary text-white " : "bg-grey" ?>">
+                                <?php echo the_title(); ?>
+                            </h3>
 
-                            <ul class="d-flex py-3 m-0 border-right-0 border-left-0" style="border-bottom:1px solid #D3D3D3;">
-                                <li class="d-none">
-                                    <img src="<?php bloginfo('template_directory');?>/assets/img/bedIcon.png" alt="Dormitorios"
-                                        style="max-width:26px">
-                                    <small><?php echo esc_html($label); ?></small>
-                                </li>
-                                <li class="d-none">
-                                    <img src="<?php bloginfo('template_directory');?>/assets/img/batIcon.png" alt="Baños"
-                                        style="max-width:24px">
-                                    <small><?php echo $cantidad_de_banos;
-                                                echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
-                                    </small>
-                                </li>
-                                <li class="pl-5">
-                                    <p style="font-size:1rem"><img
-                                            src="<?php bloginfo('template_directory');?>/assets/img/areaIcon.png" alt="Area"
-                                            style="max-width:22px">
-                                        <span class="pl-2">Sup. Total</span> <b><?php echo $superficie_total; ?>m<sup>2</sup></b> apróx.
-                                    </p>
-                                </li>
-                            </ul>
-
-                            <ul class="d-flex justify-content-between align-items-center py-3 m-0" style="background:#F6F8FA">
-                                <li class="pl-5 d-none">
-                                    <a href="<?php echo the_permalink(); ?>" class="btn btn-linear px-4 mr-3 text-uppercase">consultar</a>
-                                </li>
-                                <li class="ml-auto">
-                                    <?php if ($estado == 'Normal') : ?>
-                                        <?php if ($planok) : ?>
-                                            <a class="btn btn-primary px-4 mr-3 text-uppercase" data-toggle="modal" data-target="#planok-modal">Cotizar</a>
-                                        <?php else:?>
-                                            <!-- <div class="btn btn-primary px-4 mr-3 text-uppercase">cotizar</div> -->
+                            <div class="bk-info-wrap  mb-5 card rounded-0">
+                                <p class="pl-5 pt-4 m-0 text-left" style="font-size:1rem;">
+                                    <b><?php echo $texto_titulo; ?></b>
+                                    <b><?php echo esc_html($label); ?> +</b>
+                                    <b><?php echo $cantidad_de_banos; echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
+                                    </b>
+                                </p>
+                                
+                                <?php if ($fotografia_planta) : ?>
+                                    <div style="overflow: hidden;position: relative;">
+                                        <?php if ($estado == 'Agotado') : ?>
+                                        <div class="img-overlay" style="filter: grayscale(1) opacity(50%); position:absolute; width:100%;height:100%;background:#fff"></div>
                                         <?php endif;?>
-                                    <?php else : ?>
-                                    <p class="btn btn-primary disabled bg-grey mr-3 mb-0">Agotada</p>
-                                    <?php endif; ?>
-                                </li>
-                            </ul>
+                                        <img class="m-auto pb-4 fotografia-planta <?php echo ($estado == 'Normal') ? "" : "img-overlay" ?>"
+                                            src="<?php echo $fotografia_planta[0]['fotografia_planta']['sizes']['medium']; ?>"
+                                            alt="<?php echo $row['fotografia_planta']['name']; ?>">
+                                    </div>
+                                <?php endif; ?>
 
+                                <ul class="d-flex py-3 m-0 border-right-0 border-left-0" style="border-bottom:1px solid #D3D3D3;">
+                                    <li class="d-none">
+                                        <img src="<?php bloginfo('template_directory');?>/assets/img/bedIcon.png" alt="Dormitorios"
+                                            style="max-width:26px">
+                                        <small><?php echo esc_html($label); ?></small>
+                                    </li>
+                                    <li class="d-none">
+                                        <img src="<?php bloginfo('template_directory');?>/assets/img/batIcon.png" alt="Baños"
+                                            style="max-width:24px">
+                                        <small><?php echo $cantidad_de_banos;
+                                                    echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
+                                        </small>
+                                    </li>
+                                    <li class="pl-5">
+                                        <p style="font-size:1rem"><img
+                                                src="<?php bloginfo('template_directory');?>/assets/img/areaIcon.png" alt="Area"
+                                                style="max-width:22px">
+                                            <span class="pl-2">Sup. Total</span> <b><?php echo $superficie_total; ?>m<sup>2</sup></b> apróx.
+                                        </p>
+                                    </li>
+                                </ul>
+
+                                <ul class="d-flex justify-content-between align-items-center py-3 m-0" style="background:#F6F8FA">
+                                    <li class="ml-auto">
+                                        <?php if ($estado == 'Normal') : ?>
+                                            <?php if ($planok) : ?>
+                                                <a class="btn btn-primary px-4 mr-3 text-uppercase" data-toggle="modal" data-target="#planok-modal">Cotizar</a>
+                                            <?php else:?>
+                                                <a href="<?php echo the_permalink(); ?>" class="btn btn-primary px-4 mr-3 text-uppercase">consultar</a>
+                                            <?php endif;?>
+                                        <?php else : ?>
+                                            <p class="btn btn-primary disabled bg-grey mr-3 mb-0">Agotada</p>
+                                        <?php endif; ?>
+                                    </li>
+                                </ul>
+
+                            </div>
                         </div>
-                    </div>
-            <?php if ($estado == 'Normal') : ?>
-                <?php if ($planok) : ?>
-                </a>
+                    </a>
                 <?php endif; ?>
-            <?php endif; ?>
             </div>
 
             <?php endwhile;
