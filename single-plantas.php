@@ -196,7 +196,12 @@ $correos_ventas = $grupo_de_datos['correos_ventas'];
                         <ul></ul>
                     </div>
                     
-                    <form method="post" class="wpcf7-form formulario_cotizar_planta formulario-general" style="max-width: 400px;" name="cotizar_proyecto" id="cotizar_proyecto"
+                    <form
+                        method="post"
+                        class="wpcf7-form formulario_cotizar_planta formulario-general"
+                        style="max-width: 400px;"
+                        name="cotizar_proyecto"
+                        id="cotizar_proyecto"
                         role="form">
                         <div style="display: none;">
                             <input type="hidden" name="_wpcf7" value="560">
@@ -256,7 +261,7 @@ $correos_ventas = $grupo_de_datos['correos_ventas'];
                             <div class="text-center py-4">
                                 <button  
                                     type="submit" name="boton_enviar" value="enviar"
-                                    class="g-recaptcha btn btn-primary px-5 al-btn al-btn--white " 
+                                    class="g-recaptcha btn btn-primary px-5 al-btn al-btn--white boton_enviar" 
                                     id="boton_enviar" 
                                     data-badge="inline"
                                     disabled>
