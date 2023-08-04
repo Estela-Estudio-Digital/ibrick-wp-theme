@@ -186,7 +186,7 @@ bk_main_before();
 $ids_2 = get_field('proyectos_destacados', 5, false);
 $query = new WP_Query(array(
     'post_type'      	=> 'proyectos',
-    'posts_per_page'	=> 4,
+    'posts_per_page'	=> 8,
     'post_status'		=> 'publish',
     'post__in'			=> $ids_2,
 ));
