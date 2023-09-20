@@ -538,7 +538,7 @@ $(function () {
     let contactName = event.detail.inputs[7].value;
 
     Swal.fire({
-      title: `¡ Gracias ${contactName} !`,
+      title: `¡Gracias por contactarnos!`,
       iconHtml: '<img src="https://ibrick.cl/wp-content/uploads/2022/08/happy.png" width="90">',
       customClass: {
         icon: 'no-border'
