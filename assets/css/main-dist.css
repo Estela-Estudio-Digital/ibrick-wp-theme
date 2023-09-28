@@ -580,12 +580,16 @@ button:focus {
   color: rgb(158, 158, 158);
 }
 
+#myVideo {
+  height: 300px;
+}
 @media screen and (min-width: 768px) {
   #myVideo {
     min-width: 100%;
     object-fit: contain;
     object-position: top;
     max-width: 100% !important;
+    height: 522px;
   }
 }
 
@@ -786,7 +790,7 @@ button:focus {
     padding: 10px 20px !important;
   }
   .gallery-caarousel .owl-dots.disabled,
-.gallery-caarousel .owl-nav.disabled {
+  .gallery-caarousel .owl-nav.disabled {
     display: block;
   }
 }
