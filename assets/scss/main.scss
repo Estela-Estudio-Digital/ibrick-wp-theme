@@ -18,11 +18,13 @@
 
 
 #myVideo {
+    height: 300px;
     @include MQ(M) {
         min-width: 100%;
         object-fit: contain;
         object-position: top;
         max-width: 100% !important;
+        height: 522px;
     }
 }
 

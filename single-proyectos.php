@@ -422,7 +422,7 @@ if ($query->have_posts()) : ?>
     <?php endif; ?>
     <?php if ($tipo_de_modulo === 'youtube'): ?>
         <div class="tab-pane fade" id="edificio-<?php echo $counter2;?>" role="tabpanel" aria-labelledby="edificio-<?php echo $counter2;?>-tab" style="position:relative;">
-            <div id="video-<?php echo get_row_index(). '-' . the_title();?>" class="video-wrapper">
+            <div id="video-<?php echo get_row_index(). '-' . the_title();?>" class="video-wrapper container">
                 <figure
                     class="wp-block-embed-youtube wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio m-0">
                     <div class="wp-block-embed__wrapper">
