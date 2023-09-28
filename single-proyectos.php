@@ -406,7 +406,7 @@ if ($query->have_posts()) : ?>
 <?php if (have_rows('repeater_galerias')) : 
     $counter2 = 1; 
 ?>
-<div class="tab-content" id="galleryTabContent">
+<div class="tab-content" id="galleryTabContent" >
     <?php while (have_rows('repeater_galerias')) : the_row(); 
     
     $tipo_de_modulo = get_sub_field('tipo_de_modulo');
@@ -419,7 +419,30 @@ if ($query->have_posts()) : ?>
         <iframe <?php echo (is_single(128)) ? 'scrolling="no" style="overflow:hidden;"' : '';?> width="100%" height="522"
                 src="<?php echo $url_360; ?>" frameborder="0" allowfullscreen=""></iframe>
     </div>
-    <?php else: ?>
+    <?php endif; ?>
+    <?php if ($tipo_de_modulo === 'youtube'): ?>
+        <div class="tab-pane fade" id="edificio-<?php echo $counter2;?>" role="tabpanel" aria-labelledby="edificio-<?php echo $counter2;?>-tab" style="position:relative;">
+            <div id="video-<?php echo get_row_index(). '-' . the_title();?>" class="video-wrapper">
+                <figure
+                    class="wp-block-embed-youtube wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio m-0">
+                    <div class="wp-block-embed__wrapper">
+                        <iframe
+                            id="myVideo"
+                            class="<?php echo (is_numeric($video)) ? 'vimeo' : 'youtube' ;?> w-100 "
+                            title="Embed video Flora"
+                            width="500"
+                            height="522"
+                            src="<?php echo (is_numeric($video)) ? 'https://player.vimeo.com/video/'.$video.'?title=&portrait=0autoplay=1' : 'https://www.youtube.com/embed/'.$video.'?feature=oembed&enablejsapi=1&enablejsapi=1' ;?>"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen="">
+                        </iframe>
+                    </div>
+                </figure>
+            </div>
+        </div>
+    <?php endif; ?>
+    <?php if ($tipo_de_modulo === 'slider'): ?>
         <?php if (have_rows('slider_galerias')) : ?>
             <div class="tab-pane fade" id="edificio-<?php echo $counter2;?>" role="tabpanel" aria-labelledby="edificio-<?php echo $counter2;?>-tab" style="position:relative;">
                 <div class="owl-carousel owl-theme  gallery-caarousel">
@@ -440,7 +463,8 @@ if ($query->have_posts()) : ?>
                 <div class="gallery-overlay"></div>
             </div>
         <?php endif; ?>
-    <?php endif; $counter2++; endwhile; ?>
+    <?php endif; ?>
+    <?php $counter2++; endwhile; ?>
     </div>
 </div>
 <?php endif; ?>
