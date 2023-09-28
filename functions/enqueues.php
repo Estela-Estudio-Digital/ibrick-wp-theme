@@ -102,6 +102,9 @@ if ( ! function_exists('bk_enqueues') ) {
 		wp_enqueue_script('sbjs');
 		
 		if (is_singular('proyectos')) {
+			wp_register_script('youtube-js', 'https:///www.youtube.com/player_api', false, null, true);
+			wp_enqueue_script('youtube-js');
+			
 			wp_register_script('calenly-js', 'https://assets.calendly.com/assets/external/widget.js', false, null, true);
 			wp_enqueue_script('calenly-js');
 		}
