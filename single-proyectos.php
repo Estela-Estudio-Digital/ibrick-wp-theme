@@ -411,6 +411,7 @@ if ($query->have_posts()) : ?>
     
     $tipo_de_modulo = get_sub_field('tipo_de_modulo');
     $url_360 = get_sub_field('url_360');
+    $youtube_video_id = get_sub_field('youtube_video_id');
     //echo $tipo_de_modulo ;
     //print_r($tipo_de_modulo);
     if ($tipo_de_modulo === '360'):
@@ -428,11 +429,11 @@ if ($query->have_posts()) : ?>
                     <div class="wp-block-embed__wrapper">
                         <iframe
                             id="myVideo"
-                            class="<?php echo (is_numeric($video)) ? 'vimeo' : 'youtube' ;?> w-100 "
+                            class="<?php echo (is_numeric($youtube_video_id)) ? 'vimeo' : 'youtube' ;?> w-100 "
                             title="Embed video Flora"
                             width="500"
                             height="522"
-                            src="<?php echo (is_numeric($video)) ? 'https://player.vimeo.com/video/'.$video.'?title=&portrait=0autoplay=1' : 'https://www.youtube.com/embed/'.$video.'?feature=oembed&enablejsapi=1&enablejsapi=1' ;?>"
+                            src="<?php echo (is_numeric($youtube_video_id)) ? 'https://player.vimeo.com/video/'.$youtube_video_id.'?title=&portrait=0autoplay=1' : 'https://www.youtube.com/embed/'.$youtube_video_id.'?feature=oembed&enablejsapi=1&enablejsapi=1' ;?>"
                             frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen="">
