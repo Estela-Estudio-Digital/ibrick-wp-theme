@@ -97,6 +97,7 @@ $correos_ventas = $grupo_de_datos['correos_ventas'];
                 $dormitorios_para_filtrar = get_field_object('dormitorios_para_filtrar');
                 $value = $dormitorios_para_filtrar['value'];
                 $label = $dormitorios_para_filtrar['choices'][$value];
+                $texto_titulo = get_field('texto_titulo');
 
 
                 $img_repeater = get_field('repeater_fotografias');
