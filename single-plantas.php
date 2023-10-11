@@ -37,13 +37,13 @@ $correos_ventas = $grupo_de_datos['correos_ventas'];
                     $dormitorios_para_filtrar = get_field_object('dormitorios_para_filtrar');
                     $value = $dormitorios_para_filtrar['value'];
                     $label = $dormitorios_para_filtrar['choices'][$value];
+                    $texto_titulo = get_field('texto_titulo');
             ?>
                 <?php if (have_rows('repeater_fotografias')) : ?>
                 <div class="m-3 card rounded-0">
                     <p class="pt-4 pl-3  m-0 text-left" style="font-size:1rem;">
-                        <b><?php echo esc_html($label); ?> +</b>
-                        <b><?php echo $cantidad_de_banos;
-                        echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
+                        <b>
+                            <?php echo $texto_titulo; ?> <?php echo esc_html($label); ?> + <?php echo $cantidad_de_banos; echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
                         </b>
                     </p>
                     <?php
