@@ -585,8 +585,7 @@ $(function () {
     console.log("invalid");
   });
 
-  $(".wpcf7").on("wpcf7submit", function (e) {
-    console.log({e})
+  $(".wpcf7").on("wpcf7submit", function () {
     console.log("wpcf7submit");
   });
 
