@@ -585,7 +585,8 @@ $(function () {
     console.log("invalid");
   });
 
-  $(".wpcf7").on("wpcf7submit", function () {
+  $(".wpcf7").on("wpcf7submit", function (e) {
+    console.log({e})
     console.log("wpcf7submit");
   });
 
@@ -857,6 +858,8 @@ $(function () {
     dataLayer.push({
       event: "formSubmit",
     });
+
+    console.log(event)
 
     let contactName = event.detail.inputs[3].value;
 
