@@ -535,10 +535,10 @@ $(function () {
     dataLayer.push({
       event: "formSubmit",
     });
-    let contactName = event.detail.inputs[7].value;
+    let contactName = event.target["inputNameFloatante"]?.value || '';
 
     Swal.fire({
-      title: `¡Gracias por contactarnos!`,
+      title: `¡Gracias ${contactName} por contactarnos!`,
       iconHtml: '<img src="https://ibrick.cl/wp-content/uploads/2022/08/happy.png" width="90">',
       customClass: {
         icon: 'no-border'
@@ -585,7 +585,7 @@ $(function () {
     console.log("invalid");
   });
 
-  $(".wpcf7").on("wpcf7submit", function () {
+  $(".wpcf7").on("wpcf7submit", function (event) {
     console.log("wpcf7submit");
   });
 
@@ -860,7 +860,7 @@ $(function () {
 
     console.log(event)
 
-    let contactName = event.detail.inputs[3].value;
+    let contactName = event.target["inputNameContact"]?.value || event.target["inputNameCotizar"]?.value || '';
 
     Swal.fire({
       title: `¡ Gracias ${contactName} !`,
