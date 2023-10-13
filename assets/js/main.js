@@ -82,8 +82,6 @@ $(function () {
 
     let navbarAnchor = $(this).attr("href"),
       anchorElemente = $(navbarAnchor).offset().top - 120;
-
-    console.log(navbarAnchor);
     $("html,body").animate({ scrollTop: anchorElemente }, "fast");
   });
   /* 
@@ -176,7 +174,6 @@ $(function () {
 
   $("#galeria .tab-item .btn").click(function () {
     let control = $(this).attr("aria-controls");
-    console.log(control);
     $(".gallery-overlay").fadeIn();
     setTimeout(function () {
       $(`#${control}`).find(".gallery-overlay").fadeOut("slow");
@@ -202,7 +199,6 @@ $(function () {
   });
   $(".formulario-general textarea").on("blur", function () {
     let length = $(this).val();
-    console.log(length.length);
     if (length.length > 0) {
       $(this).parent(".form-group").find(".label").addClass("activelabel");
     } else {
@@ -211,7 +207,6 @@ $(function () {
   });
   $(".formulario-general input").on("blur", function () {
     let length = $(this).val();
-    console.log(length.length);
     if (length.length > 0) {
       $(this).parents(".form-group").find(".label").addClass("activelabel");
     } else {
@@ -500,7 +495,6 @@ $(function () {
     dataLayer.push({
       event: "formClick",
     });
-    console.log(dataLayer);
   });
 
   /* 
@@ -857,8 +851,6 @@ $(function () {
     dataLayer.push({
       event: "formSubmit",
     });
-
-    console.log(event)
 
     let contactName = event.target["inputNameContact"]?.value || event.target["inputNameCotizar"]?.value || '';
 
