@@ -163,7 +163,7 @@ if (!empty($terms)) {
                             <img src="<?php echo $imagen_de_promocion_desktop['url'];?>" alt="<?php echo $imagen_de_promocion_desktop['alt'];?>" class="w-100">
                         </a>
                     <?php endif; ?>
-                    <?php if ($imagen_de_promocion_desktop) : ?>
+                    <?php if ($caracteristicas_complemento_url) : ?>
                         <a href="<?php echo $caracteristicas_complemento_url; ?>" class="w-100 shadow complement-ads-bottom">
                             <img src="<?php echo $caracteristicas_complemento['url'];?>" alt="<?php echo $caracteristicas_complemento['alt'];?>" class="w-100">
                         </a>
