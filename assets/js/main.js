@@ -1,29 +1,7 @@
 $(function () {
-  /* 
-	------------------------------------------------------------------
-		SBJS
-	------------------------------------------------------------------
-	*/
-  function logSource(sbData) {
-    console.log("Cookies are set! Your source is: ${sbData.current.src}");
-  }
+  // SBJS
   sbjs.init();
-  /* 
-	------------------------------------------------------------------
-		PRELOAD
-	------------------------------------------------------------------
-	
-
-    $(window).on('load', function () {
-        $('.cd-loader').fadeOut('slow', function () {
-            $(this).remove();
-        });
-    });*/
-  /* 
-	------------------------------------------------------------------
-		Menú Hamburguer
-	------------------------------------------------------------------
-	*/
+  // Menú Hamburguer
   const setDataToSend = () => {
     try {
       var nombreProyecto = project_data.data[0].nombreProyecto,
@@ -36,102 +14,96 @@ $(function () {
         corresponde = project_data.data[0].corresponde,
         unidades = project_data.data[0].unidades,
         whatsapp = project_data.data[0].whatsapp;
-        superficieUtil = project_data.data[0].superficieUtil,
-        superficieTerraza = project_data.data[0].superficieTerraza,
-        superficieTotal = project_data.data[0].superficieTotal,
-        $(".nombreProyecto").val(nombreProyecto);
-        $(".correosVentas").val(correosVentas);
-        $(".logoProyecto").val(logoProyecto);
-        $(".imagenPlanta").val(imagenPlanta);
-        $(".dormitorios").val(dormitorios);
-        $(".imgPlanta").val(imgPlanta);
-        $(".esquicio").val(esquicio);
-        $(".corresponde").val(corresponde);
-        $(".unidades").val(unidades);
-        $(".whatsappProject").val(whatsapp);
-  
-        $(".superficieUtil").val(superficieUtil);
-        $(".superficieTerraza").val(superficieTerraza);
-        $(".superficieTotal").val(superficieTotal);
+      (superficieUtil = project_data.data[0].superficieUtil),
+        (superficieTerraza = project_data.data[0].superficieTerraza),
+        (superficieTotal = project_data.data[0].superficieTotal),
+        $('.nombreProyecto').val(nombreProyecto);
+      $('.correosVentas').val(correosVentas);
+      $('.logoProyecto').val(logoProyecto);
+      $('.imagenPlanta').val(imagenPlanta);
+      $('.dormitorios').val(dormitorios);
+      $('.imgPlanta').val(imgPlanta);
+      $('.esquicio').val(esquicio);
+      $('.corresponde').val(corresponde);
+      $('.unidades').val(unidades);
+      $('.whatsappProject').val(whatsapp);
+
+      $('.superficieUtil').val(superficieUtil);
+      $('.superficieTerraza').val(superficieTerraza);
+      $('.superficieTotal').val(superficieTotal);
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
-  $(".colapse-hamburger").on("click", function () {
-    $(this).toggleClass("is-active");
+  $('.colapse-hamburger').on('click', function () {
+    $(this).toggleClass('is-active');
   });
 
-  $(".slide-nav-button").on("click", function () {
-    $(".bk-primary-nav").toggleClass("loaded");
-    $(this).toggleClass("is-active");
+  $('.slide-nav-button').on('click', function () {
+    $('.bk-primary-nav').toggleClass('loaded');
+    $(this).toggleClass('is-active');
   });
 
-  $("#projectMenuBig a").on("click", function () {
-    $(".bk-primary-nav").toggleClass("loaded");
-    $(".slide-nav-button").toggleClass("is-active");
+  $('#projectMenuBig a').on('click', function () {
+    $('.bk-primary-nav').toggleClass('loaded');
+    $('.slide-nav-button').toggleClass('is-active');
   });
-  $("#projectMenu a").on("click", function (e) {
+  $('#projectMenu a').on('click', function (e) {
     e.preventDefault();
 
-    let navBarOpen = $("#navbarNav2").is(".show");
+    let navBarOpen = $('#navbarNav2').is('.show');
     if (navBarOpen) {
-      $("#navbarNav2").toggleClass("show");
-      $("#proyectosMenu .colapse-hamburger").toggleClass("is-active");
+      $('#navbarNav2').toggleClass('show');
+      $('#proyectosMenu .colapse-hamburger').toggleClass('is-active');
     }
 
-    let navbarAnchor = $(this).attr("href"),
+    let navbarAnchor = $(this).attr('href'),
       anchorElemente = $(navbarAnchor).offset().top - 120;
-    $("html,body").animate({ scrollTop: anchorElemente }, "fast");
+    $('html,body').animate({ scrollTop: anchorElemente }, 'fast');
   });
-  /* 
-	------------------------------------------------------------------
-		Contextuales
-	------------------------------------------------------------------
-	*/
-  $("#contactFloatingForm").on("click", function (e) {
+
+  // Contextuales
+  $('#contactFloatingForm').on('click', function (e) {
     e.preventDefault();
-    $(".form-modal").addClass("form-modal-open");
+    $('.form-modal').addClass('form-modal-open');
   });
-  $("#formModalClose").on("click", function (e) {
+  $('#formModalClose').on('click', function (e) {
     e.preventDefault();
-    $(".form-modal").removeClass("form-modal-open");
+    $('.form-modal').removeClass('form-modal-open');
   });
-  $("#whatsappButton").on("click", function (e) {
+  $('#whatsappButton').on('click', function (e) {
     e.preventDefault();
-    $(".whatsapp-modal").addClass("whatsapp-modal-open");
+    $('.whatsapp-modal').addClass('whatsapp-modal-open');
   });
-  $(".whatsappModalClose").on("click", function (e) {
+  $('.whatsappModalClose').on('click', function (e) {
     e.preventDefault();
-    const isHome = $(".ws-project");
+    const isHome = $('.ws-project');
     if (isHome) {
-      $(".ws-project").show();
-      $(".ws-form").addClass("d-none");
+      $('.ws-project').show();
+      $('.ws-form').addClass('d-none');
     }
-    $(".whatsapp-modal").removeClass("whatsapp-modal-open");
+    $('.whatsapp-modal').removeClass('whatsapp-modal-open');
   });
-  $(".whatsappProjectSelector").on("click", function (e) {
+  $('.whatsappProjectSelector').on('click', function (e) {
     e.preventDefault();
     if (project_data?.data) {
       const newData = {
-        nombreProyecto: $(this).data("name"),
-        whatsapp: $(this).data("whatsapp"),
-        correosVentas: $(this).data("correo"),
-      }
+        nombreProyecto: $(this).data('name'),
+        whatsapp: $(this).data('whatsapp'),
+        correosVentas: $(this).data('correo'),
+      };
       project_data.data.push(newData);
       setDataToSend();
     }
 
-    $(".ws-project").hide();
-    $(".ws-form").removeClass("d-none");
+    $('.ws-project').hide();
+    $('.ws-form').removeClass('d-none');
   });
-  /* 
-	------------------------------------------------------------------
-		Menú fixed
-	------------------------------------------------------------------
-    */
-  $(".menu-nav-fixed").fadeOut();
-  $(".follow-button-pay").fadeOut();
+
+  // Menú fixed
+  $('.menu-nav-fixed').fadeOut();
+  $('.follow-button-pay').fadeOut();
 
   $(window).scroll(function () {
     // if ($(this).scrollTop() >= 731) {
@@ -141,16 +113,16 @@ $(function () {
     // }
 
     if ($(this).scrollTop() >= 730) {
-      $(".menu-nav-fixed").fadeIn();
-      $(".follow-button-pay").fadeIn();
-      if (window.location.pathname.indexOf("proyectos") != 1) {
-        $(".main-menu").addClass("fixed-menu-primary");
+      $('.menu-nav-fixed').fadeIn();
+      $('.follow-button-pay').fadeIn();
+      if (window.location.pathname.indexOf('proyectos') != 1) {
+        $('.main-menu').addClass('fixed-menu-primary');
       }
     } else {
-      $(".menu-nav-fixed").fadeOut();
-      $(".follow-button-pay").fadeOut();
-      if (window.location.pathname.indexOf("proyectos") != 1) {
-        $(".main-menu").removeClass("fixed-menu-primary");
+      $('.menu-nav-fixed').fadeOut();
+      $('.follow-button-pay').fadeOut();
+      if (window.location.pathname.indexOf('proyectos') != 1) {
+        $('.main-menu').removeClass('fixed-menu-primary');
       }
     }
   });
@@ -159,95 +131,83 @@ $(function () {
   setPrimaryLink(locationPatName);
 
   function setPrimaryLink(locationPatName) {
-    const parts = locationPatName.split("/");
+    const parts = locationPatName.split('/');
     const lastPart = parts[parts.length - 2];
-    $(".main-menu").find(`.link-${lastPart}`).addClass("link-active");
+    $('.main-menu').find(`.link-${lastPart}`).addClass('link-active');
   }
-  /* 
-	------------------------------------------------------------------
-		Galería
-	------------------------------------------------------------------
-    */
+
+  // Galería
   setTimeout(function () {
-    $("#galleryTabContent").find(".active").find(".gallery-overlay").fadeOut();
+    $('#galleryTabContent').find('.active').find('.gallery-overlay').fadeOut();
   }, 1000);
 
-  $("#galeria .tab-item .btn").click(function () {
-    let control = $(this).attr("aria-controls");
-    $(".gallery-overlay").fadeIn();
+  $('#galeria .tab-item .btn').click(function () {
+    let control = $(this).attr('aria-controls');
+    $('.gallery-overlay').fadeIn();
     setTimeout(function () {
-      $(`#${control}`).find(".gallery-overlay").fadeOut("slow");
+      $(`#${control}`).find('.gallery-overlay').fadeOut('slow');
     }, 500);
   });
 
-  $("#verMasModelos").click(function () {
+  $('#verMasModelos').click(function () {
     setTimeout(function () {
-      $(".gallery-overlay").fadeOut("slow");
+      $('.gallery-overlay').fadeOut('slow');
     }, 500);
   });
-  $(".buttons-next-prev-plantas .next a").text("›");
-  $(".buttons-next-prev-plantas .prev a").text("‹");
+  $('.buttons-next-prev-plantas .next a').text('›');
+  $('.buttons-next-prev-plantas .prev a').text('‹');
 
-  $(".formulario-general .input-group-text").fadeOut();
+  $('.formulario-general .input-group-text').fadeOut();
 
-  $(".formulario-general input").on("focus", function () {
-    $(this).parents(".form-group").find(".label").addClass("activelabel");
-    $(this).parents(".form-group").find(".input-group-text").fadeIn();
+  $('.formulario-general input').on('focus', function () {
+    $(this).parents('.form-group').find('.label').addClass('activelabel');
+    $(this).parents('.form-group').find('.input-group-text').fadeIn();
   });
-  $(".formulario-general textarea").on("focus", function () {
-    $(this).parent(".form-group").find(".label").addClass("activelabel");
+  $('.formulario-general textarea').on('focus', function () {
+    $(this).parent('.form-group').find('.label').addClass('activelabel');
   });
-  $(".formulario-general textarea").on("blur", function () {
+  $('.formulario-general textarea').on('blur', function () {
     let length = $(this).val();
     if (length.length > 0) {
-      $(this).parent(".form-group").find(".label").addClass("activelabel");
+      $(this).parent('.form-group').find('.label').addClass('activelabel');
     } else {
-      $(this).parent(".form-group").find(".label").removeClass("activelabel");
+      $(this).parent('.form-group').find('.label').removeClass('activelabel');
     }
   });
-  $(".formulario-general input").on("blur", function () {
+  $('.formulario-general input').on('blur', function () {
     let length = $(this).val();
     if (length.length > 0) {
-      $(this).parents(".form-group").find(".label").addClass("activelabel");
+      $(this).parents('.form-group').find('.label').addClass('activelabel');
     } else {
-      $(this).parents(".form-group").find(".label").removeClass("activelabel");
-      $(this).parents(".form-group").find(".input-group-text").fadeOut("fast");
+      $(this).parents('.form-group').find('.label').removeClass('activelabel');
+      $(this).parents('.form-group').find('.input-group-text').fadeOut('fast');
     }
   });
 
-  /* 
-	------------------------------------------------------------------
-		Video Background
-	------------------------------------------------------------------
-    */
-
-  var videoSrc = "";
-  $(".playvideo").click(function () {
-    videoSrc = $(this).data("src");
+  // Video Background
+  var videoSrc = '';
+  $('.playvideo').click(function () {
+    videoSrc = $(this).data('src');
   });
 
   // when the modal is opened autoplay it
-  $("#homeVideo").on("shown.bs.modal", function (e) {
-    $("#video").attr("src", videoSrc);
+  $('#homeVideo').on('shown.bs.modal', function (e) {
+    $('#video').attr('src', videoSrc);
   });
 
-  $("#homeVideo").on("hide.bs.modal", function (e) {
-    $("#video").attr("src", "");
+  $('#homeVideo').on('hide.bs.modal', function (e) {
+    $('#video').attr('src', '');
   });
-  /* 
-	------------------------------------------------------------------
-		Carousel de proyectos 
-	------------------------------------------------------------------
-    */
 
-  $("#edificio-1-tab").addClass("active");
-  $("#edificio-1").addClass("active show");
-  $("#plan-1-tab").addClass("active");
-  $("#plan-1").addClass("active show");
-  $("#planB-1-tab").addClass("active");
+  // Carousel de proyectos
+  $('#edificio-1-tab').addClass('active');
+  $('#edificio-1').addClass('active show');
+  $('#plan-1-tab').addClass('active');
+  $('#plan-1').addClass('active show');
+  $('#planB-1-tab').addClass('active');
   //$('#planB-2-tab').addClass('general-slide-nav')
 
-  $(".project-carousel").owlCarousel({
+  $('.project-carousel').owlCarousel({
     loop: true,
     autoplay: true,
     items: 2,
@@ -255,7 +215,7 @@ $(function () {
     autoplayTimeout: 4000,
   });
 
-  $(".pm3-carousel").owlCarousel({
+  $('.pm3-carousel').owlCarousel({
     //loop: true,
     //nav:true,
     items: 1,
@@ -263,20 +223,20 @@ $(function () {
     autoplayTimeout: 7000,
   });
 
-  $(".arquitectura-carousel").owlCarousel({
+  $('.arquitectura-carousel').owlCarousel({
     items: 1,
     loop: true,
     autoplay: true,
     singleItem: true,
-    animateIn: "fadeIn", // add this
-    animateOut: "fadeOut", // and this
+    animateIn: 'fadeIn', // add this
+    animateOut: 'fadeOut', // and this
   });
 
-  $(".master-carousel").owlCarousel({
+  $('.master-carousel').owlCarousel({
     items: 1,
   });
 
-  $(".gallery-caarousel").owlCarousel({
+  $('.gallery-caarousel').owlCarousel({
     responsive: {
       0: {
         items: 1,
@@ -293,13 +253,13 @@ $(function () {
     //smartSpeed: 500
   });
 
-  var carousel = $(".beneficios-carousel");
-  carousel.find(".item").hide();
+  var carousel = $('.beneficios-carousel');
+  carousel.find('.item').hide();
   carousel
     .on({
-      "initialized.owl.carousel": function () {
-        carousel.find(".item").show();
-        carousel.find(".loading-placeholder").hide();
+      'initialized.owl.carousel': function () {
+        carousel.find('.item').show();
+        carousel.find('.loading-placeholder').hide();
       },
     })
     .owlCarousel({
@@ -327,19 +287,19 @@ $(function () {
     });
 
   setTimeout(function () {
-    var totalItems = $(".ppp-carousel .owl-item.active").length;
+    var totalItems = $('.ppp-carousel .owl-item.active').length;
     if (totalItems > 3) {
-      $(".ppp-carousel").owlCarousel({
+      $('.ppp-carousel').owlCarousel({
         loop: false,
       });
     } else {
-      $(".ppp-carousel").owlCarousel({
+      $('.ppp-carousel').owlCarousel({
         loop: true,
       });
     }
   }, 0);
 
-  $(".generalowl").owlCarousel({
+  $('.generalowl').owlCarousel({
     loop: true,
     autoplay: true,
     dots: true,
@@ -353,107 +313,95 @@ $(function () {
     },
   });
 
-  $(".flip").hover(function () {
-    $(this).find(".fcard").toggleClass("flipped");
+  $('.flip').hover(function () {
+    $(this).find('.fcard').toggleClass('flipped');
   });
 
   if (window.innerWidth >= 768) {
-    $(".link-residencial").mouseenter(function () {
-      $(this).find(".drop-menu").show();
+    $('.link-residencial').mouseenter(function () {
+      $(this).find('.drop-menu').show();
     });
-    $(".link-residencial").mouseleave(function () {
-      $(this).find(".drop-menu").hide();
+    $('.link-residencial').mouseleave(function () {
+      $(this).find('.drop-menu').hide();
     });
   } else {
-    $(".drop-menu").show();
+    $('.drop-menu').show();
   }
 
   $('#whatsappButtonAd').hide();
 
-  setTimeout(function() {
+  setTimeout(function () {
     $('#whatsappButtonAd').fadeIn();
   }, 6000);
 
-  /* 
-	------------------------------------------------------------------
-		Filtro de proyectos
-	------------------------------------------------------------------
-    */
-  var d1 = $("#plantas").find(".planta.active.1dorm").length;
-  var d2 = $("#plantas").find(".planta.active.2dorm").length;
-  var d3 = $("#plantas").find(".planta.active.3dorm").length;
-  var d4 = $("#plantas").find(".planta.active.4dorm").length;
+  // Filtro de proyectos
+  var d1 = $('#plantas').find('.planta.active.1dorm').length;
+  var d2 = $('#plantas').find('.planta.active.2dorm').length;
+  var d3 = $('#plantas').find('.planta.active.3dorm').length;
+  var d4 = $('#plantas').find('.planta.active.4dorm').length;
   if (!d1) {
-    $("#1dorm").parent().remove();
+    $('#1dorm').parent().remove();
   }
   if (!d2) {
-    $("#2dorm").parent().remove();
+    $('#2dorm').parent().remove();
   }
   if (!d3) {
-    $("#3dorm").parent().remove();
+    $('#3dorm').parent().remove();
   }
   if (!d4) {
-    $("#4dorm").parent().remove();
+    $('#4dorm').parent().remove();
   }
 
-  var num_opt = $(".filter_list").find("li").length;
-  var ancho_total = $(".filter_list").width();
+  var num_opt = $('.filter_list').find('li').length;
+  var ancho_total = $('.filter_list').width();
   var ancho_elemento = ancho_total / num_opt;
 
-  $(".filter_list_item").each(function () {
-    $(".filter_list_item").css("width", ancho_elemento);
+  $('.filter_list_item').each(function () {
+    $('.filter_list_item').css('width', ancho_elemento);
   });
 
-  $(".filter_list_item").on("click", function () {
-    var product_id = $(this).attr("id");
-    $("#plantas").find(".planta").fadeOut("fast");
-    $(".planta." + product_id).fadeIn("slow");
-    $(".filter_list_item").removeClass("active");
-    $(this).addClass("active");
+  $('.filter_list_item').on('click', function () {
+    var product_id = $(this).attr('id');
+    $('#plantas').find('.planta').fadeOut('fast');
+    $('.planta.' + product_id).fadeIn('slow');
+    $('.filter_list_item').removeClass('active');
+    $(this).addClass('active');
   });
 
-  $("#todo").on("click", function () {
-    $("#plantas").find(".planta").fadeIn();
+  $('#todo').on('click', function () {
+    $('#plantas').find('.planta').fadeIn();
   });
-  /* 
-	------------------------------------------------------------------
-		Mapa
-	------------------------------------------------------------------
-    */
 
-  $(".changeMapButton").click(function (e) {
+  // Mapa
+  $('.changeMapButton').click(function (e) {
     e.preventDefault();
-    let x = $(".changeMapButtonSpan").text(),
-      y = $(".mapImg").height();
+    let x = $('.changeMapButtonSpan').text(),
+      y = $('.mapImg').height();
 
-    $(".projectMap iframe").height(y);
+    $('.projectMap iframe').height(y);
 
-    if (x === "maps") {
-      $(".changeMapButtonSpan").text("volver");
+    if (x === 'maps') {
+      $('.changeMapButtonSpan').text('volver');
     } else {
-      $(".changeMapButtonSpan").text("maps");
+      $('.changeMapButtonSpan').text('maps');
     }
 
-    $(".mapImg").toggleClass("mapActive");
-    $(".projectMap").toggleClass("mapActive");
+    $('.mapImg').toggleClass('mapActive');
+    $('.projectMap').toggleClass('mapActive');
   });
 
-  var igAbsoluteHeight = $(".img-absolute").height();
+  var igAbsoluteHeight = $('.img-absolute').height();
 
-  $(".bg-img").height(igAbsoluteHeight);
-  $(".contactoModalBtn").on("click", function () {
-    $("#contacto-form-modal").modal("show");
+  $('.bg-img').height(igAbsoluteHeight);
+  $('.contactoModalBtn').on('click', function () {
+    $('#contacto-form-modal').modal('show');
   });
 
-  /* 
-	------------------------------------------------------------------
-		Formularios
-	------------------------------------------------------------------
-  */
-  if ($("body").is(".page-bodegas")) {
-    $(".contactoModalBtn").on("click", function () {
-      project = $(this).data("project");
-      $(".nombreProyecto").val("Bodegas - " + project);
+  // Formularios
+  if ($('body').is('.page-bodegas')) {
+    $('.contactoModalBtn').on('click', function () {
+      project = $(this).data('project');
+      $('.nombreProyecto').val('Bodegas - ' + project);
     });
   }
 
@@ -463,79 +411,52 @@ $(function () {
 
   (sbjMedio = sbjs.get.current.mdm), (sbjFuente = sbjs.get.current.src);
 
-  $(".fuenteSbj").val(sbjFuente);
-  $(".medioSbj").val(sbjMedio);
+  $('.fuenteSbj').val(sbjFuente);
+  $('.medioSbj').val(sbjMedio);
 
-  $("#agendarConCalenly").on("click", function () {
-    console.log("ga event Agendar");
-    dataLayer.push({
-      event: "calendlyOpen",
-    });
-    Calendly.initPopupWidget({ url: "https://calendly.com/ibrick/30min" });
+  $('#agendarConCalenly').on('click', function () {
+    Calendly.initPopupWidget({ url: 'https://calendly.com/ibrick/30min' });
     return false;
   });
 
-  $("#whatsappButton").on("click", function () {
-    console.log("ga event Whatsapp form");
-    dataLayer.push({
-      event: "whatsappOpen",
-    });
-  });
+  $('#whatsappButton').on('click', function () {});
 
-  $(".boton_enviar_whatsapp").on("click", function () {
-    console.log("ga event Whatsapp chat");
-    dataLayer.push({
-      event: "whatsappChatOpen",
-    });
-  });
+  $('.boton_enviar_whatsapp').on('click', function () {});
 
-  $(".cotizacionHit").on("click", function () {
-    console.log("ga event Intención de cotización");
-    fbq("track", "Lead");
-    dataLayer.push({
-      event: "formClick",
-    });
-  });
+  $('.cotizacionHit').on('click', function () {});
 
-  /* 
-	------------------------------------------------------------------
-		Validacion de Formularios
-	------------------------------------------------------------------
-    https://api.whatsapp.com/send/?phone=<?php echo $whatsapp;?>&text=Me%20interesa%20el%20 %20proyecto%20<?php echo the_title();?>
-    */
-  $(".wpcf7Whatsapp").on("wpcf7mailsent", function (event) {
+  // Validacion de Formularios
+  $('.wpcf7Whatsapp').on('wpcf7mailsent', function (event) {
+    const leadEmail = event.detail.inputs[7].value;
+    const leadPhone = event.detail.inputs[10].value;
+    dataLayer.push({
+      event: 'wspLeadConversion',
+      leadEmail,
+      leadPhone,
+      wspProjectTitle: event.detail.inputs[0].value,
+    });
     const telefonoProyectoWhatsapp = event.detail.inputs[3].value,
       nombreProyectoWhatsapp = event.detail.inputs[0].value,
       nombreClienteWhatsapp = event.detail.inputs[7].value;
     url = `https://api.whatsapp.com/send/?phone=${telefonoProyectoWhatsapp}&text=Mi%20nombre%20es%20${nombreClienteWhatsapp}%20Me%20interesa%20el%20%20proyecto%20${nombreProyectoWhatsapp}`;
-    $(".whatsapp-modal").removeClass("whatsapp-modal-open");
-    window.open(url, "_blank");
-    const isHome = $(".ws-project");
+    $('.whatsapp-modal').removeClass('whatsapp-modal-open');
+    window.open(url, '_blank');
+    const isHome = $('.ws-project');
     if (isHome) {
-      $(".ws-project").show();
-      $(".ws-form").addClass("d-none");
-      $(".whatsapp-modal").removeClass("whatsapp-modal-open");
+      $('.ws-project').show();
+      $('.ws-form').addClass('d-none');
+      $('.whatsapp-modal').removeClass('whatsapp-modal-open');
     }
-    dataLayer.push({
-      event: "wspsubmit",
-    });
   });
-  $(".wpcf7Whatsapp").on("wpcf7mailfailed", function (event) {
-    console.log("failed", event);
-  });
-  $(".wpcf7Floatante").on("wpcf7mailsent", function (event) {
-    console.log("ga event Formulario");
-
-    dataLayer.push({
-      event: "formSubmit",
-    });
-    let contactName = event.target["inputNameFloatante"]?.value || '';
+  $('.wpcf7Floatante').on('wpcf7mailsent', function (event) {
+    let contactName = event.target['inputNameFloatante']?.value || '';
 
     Swal.fire({
       title: `¡Gracias ${contactName} por contactarnos!`,
-      iconHtml: '<img src="https://ibrick.cl/wp-content/uploads/2022/08/happy.png" width="90">',
+      iconHtml:
+        '<img src="https://ibrick.cl/wp-content/uploads/2022/08/happy.png" width="90">',
       customClass: {
-        icon: 'no-border'
+        icon: 'no-border',
       },
       html: `<div class="d-flex flex-column align-items-center justify-content-center w-100">
       <p>Pronto un ejecutivo te contactará.</p>
@@ -547,49 +468,37 @@ $(function () {
         <a href="https://www.addtoany.com/add_to/whatsapp?linkurl=${window.location.href};linkname=${document.title}" target="_blank"><img src="https://static.addtoany.com/buttons/whatsapp.svg" width="32" height="32" style="background-color:rgb(18, 175, 10)"></a>
       </div>
     </div>`,
-      icon: "success",
-      confirmButtonText: "Cerrar",
+      icon: 'success',
+      confirmButtonText: 'Cerrar',
     });
-    $(".form-modal").removeClass("form-modal-open");
+    $('.form-modal').removeClass('form-modal-open');
   });
 
-  $(".wpcf7Floatante").on("wpcf7mailfailed", function (event) {
-    console.log("failed");
+  $('.wpcf7Floatante').on('wpcf7mailfailed', function (event) {
+    console.log('failed');
     Swal.fire({
-      title: "¡Error!",
-      text: "¡Ha ocurrido un error, por favor intentalo de nuevo más tarde!",
-      icon: "error",
-      confirmButtonText: "Cerrar",
+      title: '¡Error!',
+      text: '¡Ha ocurrido un error, por favor intentalo de nuevo más tarde!',
+      icon: 'error',
+      confirmButtonText: 'Cerrar',
     });
-    $(".form-modal").removeClass("form-modal-open");
+    $('.form-modal').removeClass('form-modal-open');
   });
 
-  $(".brickcf7").on("wpcf7mailfailed", function (event) {
-    console.log("failed");
+  $('.brickcf7').on('wpcf7mailfailed', function (event) {
+    console.log('failed');
     Swal.fire({
-      title: "¡Error!",
-      text: "¡Ha ocurrido un error, por favor intentalo de nuevo más tarde!",
-      icon: "error",
-      confirmButtonText: "Cerrar",
+      title: '¡Error!',
+      text: '¡Ha ocurrido un error, por favor intentalo de nuevo más tarde!',
+      icon: 'error',
+      confirmButtonText: 'Cerrar',
     });
-    $(".form-modal").removeClass("form-modal-open");
+    $('.form-modal').removeClass('form-modal-open');
   });
 
-  $(".wpcf7").on("wpcf7invalid", function () {
-    console.log("invalid");
-  });
-
-  $(".wpcf7").on("wpcf7submit", function (event) {
-    console.log("wpcf7submit");
-  });
-
-  /* 
-	------------------------------------------------------------------
-		Validacion de Formularios
-	------------------------------------------------------------------
-    */
+  // Validacion de Formularios
   // Validador de Formulario de whatsapp
-  $("#formulario_floatante").validate({
+  $('#formulario_floatante').validate({
     rules: {
       inputNameFloatante: {
         required: true,
@@ -611,26 +520,26 @@ $(function () {
       },
     },
     messages: {
-      inputNameFloatante: "Ingresa solo letras.",
+      inputNameFloatante: 'Ingresa solo letras.',
       inputEmailFloatante: {
-        required: "Es necesario tu dirección de correo",
-        email: "El formato de tu email debe ser similar a: name@domain.com",
+        required: 'Es necesario tu dirección de correo',
+        email: 'El formato de tu email debe ser similar a: name@domain.com',
       },
-      inputRutCotizar: "Ingresa un RUT valido.",
+      inputRutCotizar: 'Ingresa un RUT valido.',
       inputTelefonoFloatante: {
-        required: "Ingresa tu numero de telefono",
+        required: 'Ingresa tu numero de telefono',
         minlength: jQuery.validator.format(
-          "Introduce al menos {0} carácteres."
+          'Introduce al menos {0} carácteres.'
         ),
       },
     },
     submitHandler: function (form) {},
     errorPlacement: function (error, element) {
-      $(element).parents(".form-group").append(error);
+      $(element).parents('.form-group').append(error);
     },
   });
   // Validador de Formulario de whatsapp
-  $("#formulario_whatsapp").validate({
+  $('#formulario_whatsapp').validate({
     rules: {
       inputNameWhatsapp: {
         required: true,
@@ -652,26 +561,26 @@ $(function () {
       },
     },
     messages: {
-      inputNameWhatsapp: "Ingresa solo letras.",
+      inputNameWhatsapp: 'Ingresa solo letras.',
       inputEmailWhatsapp: {
-        required: "Es necesario tu dirección de correo",
-        email: "El formato de tu email debe ser similar a: name@domain.com",
+        required: 'Es necesario tu dirección de correo',
+        email: 'El formato de tu email debe ser similar a: name@domain.com',
       },
-      inputRutWhatsapp: "Ingresa un RUT valido.",
+      inputRutWhatsapp: 'Ingresa un RUT valido.',
       inputTelefonoWhatsapp: {
-        required: "Ingresa tu numero de telefono",
+        required: 'Ingresa tu numero de telefono',
         minlength: jQuery.validator.format(
-          "Introduce al menos {0} carácteres."
+          'Introduce al menos {0} carácteres.'
         ),
       },
     },
     submitHandler: function (form) {},
     errorPlacement: function (error, element) {
-      $(element).parents(".form-group").append(error);
+      $(element).parents('.form-group').append(error);
     },
   });
   // Validador de Formulario de contacto
-  $("#formulario_inicial").validate({
+  $('#formulario_inicial').validate({
     rules: {
       inputNameContact: {
         required: true,
@@ -695,26 +604,26 @@ $(function () {
       },
     },
     messages: {
-      inputNameContact: "Ingresa solo letras.",
-      inputRutContact: "Ingresa un RUT valido.",
+      inputNameContact: 'Ingresa solo letras.',
+      inputRutContact: 'Ingresa un RUT valido.',
       inputEmailContact: {
-        required: "Es necesario tu dirección de correo",
-        email: "El formato de tu email debe ser similar a: name@domain.com",
+        required: 'Es necesario tu dirección de correo',
+        email: 'El formato de tu email debe ser similar a: name@domain.com',
       },
       inputTelefonoContact: {
-        required: "Ingresa tu numero de telefono",
+        required: 'Ingresa tu numero de telefono',
         minlength: jQuery.validator.format(
-          "Introduce al menos {0} carácteres."
+          'Introduce al menos {0} carácteres.'
         ),
       },
     },
     submitHandler: function (form) {},
     errorPlacement: function (error, element) {
-      $(element).parents(".form-group").append(error);
+      $(element).parents('.form-group').append(error);
     },
   });
   // Validador de Formulario de cotización
-  $("#formulario_cotizar_proyecto").validate({
+  $('#formulario_cotizar_proyecto').validate({
     rules: {
       inputNameCotizar: {
         required: true,
@@ -738,50 +647,50 @@ $(function () {
       },
     },
     messages: {
-      inputNameCotizar: "Ingresa solo letras.",
-      inputRutCotizar: "Ingresa un RUT valido.",
+      inputNameCotizar: 'Ingresa solo letras.',
+      inputRutCotizar: 'Ingresa un RUT valido.',
       inputEmailCotizar: {
-        required: "Es necesario tu dirección de correo",
-        email: "El formato de tu email debe ser similar a: name@domain.com",
+        required: 'Es necesario tu dirección de correo',
+        email: 'El formato de tu email debe ser similar a: name@domain.com',
       },
       inputTelefonoCotizar: {
-        required: "Ingresa tu numero de telefono",
+        required: 'Ingresa tu numero de telefono',
         minlength: jQuery.validator.format(
-          "Introduce al menos {0} carácteres."
+          'Introduce al menos {0} carácteres.'
         ),
       },
     },
     submitHandler: function (form) {},
     errorPlacement: function (error, element) {
-      $(element).parents(".form-group").append(error);
+      $(element).parents('.form-group').append(error);
     },
   });
   //Mensajes Personalizados
   jQuery.extend(jQuery.validator.messages, {
-    digits: "Por favor ingresa sólo números.",
+    digits: 'Por favor ingresa sólo números.',
   });
   //Verificación de rut desde plugin, solo muestra datos en consola
-  $(".Rut").Rut({
+  $('.Rut').Rut({
     on_error: function () {
-      console.log("Rut invalido");
+      console.log('Rut invalido');
     },
     on_success: function () {
-      console.log("RUT válido");
+      console.log('RUT válido');
     },
-    format_on: "keyup",
+    format_on: 'keyup',
     //digito_verificador: "#digito-verificador",
     //format: false,
   });
-  $(".formulario-general").on("keyup keypress", function (e) {
+  $('.formulario-general').on('keyup keypress', function (e) {
     if ($(this).valid()) {
-      $(this).find(".boton_enviar").prop("disabled", false);
+      $(this).find('.boton_enviar').prop('disabled', false);
     } else {
-      $(this).find(".boton_enviar").prop("disabled", true);
+      $(this).find('.boton_enviar').prop('disabled', true);
     }
   });
   //Añade metodo RUT al validador
   $.validator.addMethod(
-    "Rut",
+    'Rut',
     function (value, element) {
       if ($.Rut.validar(value)) {
         return true;
@@ -789,24 +698,19 @@ $(function () {
         return false;
       }
     },
-    "Debe ser un rut valido."
+    'Debe ser un rut valido.'
   );
 
   // Validación de sólo letras y espacio
   $.validator.addMethod(
-    "lettersonly",
+    'lettersonly',
     function (value, element) {
       return this.optional(element) || /^[a-z\s]+$/i.test(value);
     },
-    "Por favor ingresa sólo letras."
+    'Por favor ingresa sólo letras.'
   );
 
-  /* 
-	------------------------------------------------------------------
-		Active Menu items
-	------------------------------------------------------------------
-    */
-
+  // Active Menu items
   (function highlightNav() {
     var prev; //keep track of previous selected link
     var isVisible = function (el) {
@@ -825,13 +729,13 @@ $(function () {
     };
 
     $(window).scroll(function () {
-      $("#projectMenu a").each(function (index, el) {
+      $('#projectMenu a').each(function (index, el) {
         el = $(el);
-        if (isVisible(el.attr("href"))) {
+        if (isVisible(el.attr('href'))) {
           if (prev) {
-            prev.removeClass("active");
+            prev.removeClass('active');
           }
-          el.addClass("active");
+          el.addClass('active');
           prev = el;
 
           //break early to keep highlight on the first/highest visible element
@@ -845,20 +749,26 @@ $(function () {
     $(window).scroll();
   })();
 
-  $(".brickcf7").on("wpcf7mailsent", function (event) {
-    console.log("ga event Formulario");
-
+  $('.brickcf7').on('wpcf7mailsent', function (event) {
+    const leadEmail = event.detail.inputs[7].value;
+    const leadPhone = event.detail.inputs[9].value;
     dataLayer.push({
-      event: "formSubmit",
+      event: 'leadConversion',
+      leadEmail,
+      leadPhone,
     });
 
-    let contactName = event.target["inputNameContact"]?.value || event.target["inputNameCotizar"]?.value || '';
+    let contactName =
+      event.target['inputNameContact']?.value ||
+      event.target['inputNameCotizar']?.value ||
+      '';
 
     Swal.fire({
       title: `¡ Gracias ${contactName} !`,
-      iconHtml: '<img src="https://ibrick.cl/wp-content/uploads/2022/08/happy.png" width="90">',
+      iconHtml:
+        '<img src="https://ibrick.cl/wp-content/uploads/2022/08/happy.png" width="90">',
       customClass: {
-        icon: 'no-border'
+        icon: 'no-border',
       },
       html: `<div class="d-flex flex-column align-items-center justify-content-center w-100">
       <p>Pronto un ejecutivo te contactará.</p>
@@ -870,10 +780,40 @@ $(function () {
         <a href="https://www.addtoany.com/add_to/whatsapp?linkurl=${window.location.href};linkname=${document.title}" target="_blank"><img src="https://static.addtoany.com/buttons/whatsapp.svg" width="32" height="32" style="background-color:rgb(18, 175, 10)"></a>
       </div>
     </div>`,
-      icon: "success",
-      confirmButtonText: "Cerrar",
+      icon: 'success',
+      confirmButtonText: 'Cerrar',
     });
 
-    $(".form-modal").removeClass("form-modal-open");
+    $('.form-modal').removeClass('form-modal-open');
   });
+});
+
+addEventListener('message', function (message) {
+  try {
+    if (
+      message.data &&
+      typeof message.data === 'string' &&
+      message.data.includes('planOkLead')
+    ) {
+      const dataObj = JSON.parse(message.data);
+      dataLayer.push(dataObj);
+    }
+
+    if (
+      message.data &&
+      typeof message.data === 'string' &&
+      message.data.includes('chatbotLead')
+    ) {
+      const dataObj = JSON.parse(message.data);
+      dataLayer.push({
+        ...dataObj,
+        event: dataObj.event,
+        leadEmail: dataObj.clientEmail,
+        leadPhone: dataObj.clientPhone,
+        projectTitle: dataObj.project,
+      });
+    }
+  } catch (e) {
+    console.log(e);
+  }
 });

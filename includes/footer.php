@@ -15,11 +15,12 @@
                 <img src="<?php bloginfo('template_directory');?>/assets/img/footer-logo.svg" height="100" width="150" alt="Brick Inmobiliaria" class="primary-logo">
               </a>
             </li>
-            <li class="d-none d-md-block"><a href="<?php echo site_url();?>" class="text-white">Inicio</a></li>
+        
             <li class="d-none d-md-block"><a href="<?php echo site_url('residencial');?>" class="text-white">Residencial</a></li>
             <li class="d-none d-md-block"><a href="<?php echo site_url('comercial');?>" class="text-white">Comercial</a></li>
             <li class="d-none d-md-block"><a href="<?php echo site_url('bodegas');?>" class="text-white">Bodegas</a></li>
             <li class="d-none d-md-block"><a href="<?php echo site_url('usa');?>" class="text-white">USA</a></li>
+			<li class="d-none d-md-block"><a href="<?php echo site_url('pasa-el-dato-y-gana');?>" class="text-white">Referidos</a></li>
             <li class="d-none d-md-block"><a href="<?php echo site_url('somos-brick');?>" class="text-white">Somos Brick</a></li>
             <li class="d-none d-md-block"><a href="#" class="text-white contactoModalBtn">Contáctanos</a></li>
           </ul>

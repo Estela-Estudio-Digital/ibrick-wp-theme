@@ -1,3 +1,11 @@
+<script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        event: 'viewProject',
+        projectTitle: '<?php echo the_title(); ?>'
+    })
+</script>
+
 <?php
 get_template_part('includes/header');
 bk_main_before();
@@ -6,6 +14,7 @@ $tiene_contenidos = get_field('tiene_contenidos');
 
 // CUSTOM FLIELDS Descripciones
 $grupo_de_datos = get_field('grupo_de_datos');
+$banner_promocion = get_field('banner_promocion');
 $ubicacion = $grupo_de_datos['ubicacion'];
 $precio_desde = $grupo_de_datos['precio_desde'];
 $tipologia_select = $grupo_de_datos['tipologia_select'];
@@ -19,6 +28,9 @@ $folleto = $grupo_de_datos['folleto'];
 $caracteristica_personalizada = $grupo_de_datos['caracteristicas_personalizadas'];
 $caracteristicas_complemento = $grupo_de_datos['caracteristicas_complemento'];
 $caracteristicas_complemento_url = $grupo_de_datos['caracteristicas_complemento_url'];
+$imagen_de_promocion_desktop = $banner_promocion['imagen_de_promocion_desktop'];
+$imagen_de_promocion_mobile = $banner_promocion['imagen_de_promocion_mobile'];
+$url_de_promocion = $banner_promocion['url_de_promocion'];
 $planok = get_field( 'plan_ok' );
 $pie_en_30_cuotas = get_field( 'pie_en_30_cuotas' );
 $video = get_field( 'video' );
@@ -80,69 +92,80 @@ if (!empty($terms)) {
                 // include( locate_template( './includes/forms/floating-single-projects.php', false, false) ); 
             }
         ?>
+        <div class="position-absolute d-md-none" style="bottom:0">
+            <a href="<?php echo $imagen_de_promocion_url; ?>" class="w-100">
+                <img src="<?php echo $imagen_de_promocion_mobile['url'];?>" alt="<?php echo $imagen_de_promocion_mobile['alt'];?>" class="w-100">
+            </a>
+        </div>
     </div>
     <?php endwhile; ?>
 </section>
 <?php endif; ?>
 
-<div class="container projec-wrapper-container">
-    <div class="row align-items-center mb-4">
-        <div class="<?php echo ($caracteristicas_complemento) ? "col-md-8" : "col-md-12";?> bg-white shadow mb-3">
-            <ul class="projec-wrapper-content d-md-flex justify-content-around align-items-stretch m-0 mb-2 pt-3">
-                <?php if ($logo_proyecto):?>
-                <li class="projec-wrapper-content-img d-flex align-items-center justify-content-center ml-4">
-                    <div class="wrapper-img-project">
-                    <h1>
-                        <img src="<?php echo $logo_proyecto['url'];?>" alt="<?php echo $logo_proyecto['alt'];?>" class="pr-4" >
-                        <div class="sr-only"><?php echo the_title(); ?></div>
-                    </h1>
-                    </div>
-                </li>
-                <hr class="d-md-none">
-                <?php endif; ?>
-                <?php if ($ubicacion && ! $pie_en_30_cuotas):?>
-                <li class="projec-wrapper-content-ubicacion d-flex align-items-center justify-content-center">
-                    <div class="text-center">
-                        <i class="fas fa-map-marker-alt"></i> <br>
-                        <p class="px-3"><?php echo $ubicacion;?></p>
-                    </div>
-                </li>
-                <hr class="d-md-none">
-                <?php endif; ?>
-                <?php if ($pie_en_30_cuotas):?>
-                <li class="projec-wrapper-content-ubicacion d-flex align-items-center justify-content-center">
-                    <div class="text-center">
-                        <img style="min-height: 50px; width:100%; max-width: 150px;" class="px-1" src="<?php echo $pie_en_30_cuotas['url'];?>" alt="Promoción">
-                    </div>
-                </li>
-                <hr class="d-md-none">
-                <?php endif; ?>
-                <?php if ($tipologia_select && $tipologia_select != 'Seleccionar') :?>
-                <li class="projec-wrapper-content-tipo d-flex align-items-center justify-content-center">
-                    <div>
-                        <img style="min-height: 50px; width:100%; max-width: 150px;" class="px-4" src="<?php echo bloginfo('template_directory').'/assets/img/'. $tipologia_select['value'] .'.svg'; ?>" alt="<?php echo $tipologia_select['label']; ?>">
-                    </div>
-                </li>
-                <hr class="d-md-none">
-                <?php endif; ?>
-                <?php if ($precio_desde):?>
-                <li class="projec-wrapper-content-precio d-flex align-items-center justify-content-center">
-                    <div>
-                        <p class="m-0">Precio desde</p>
-                        <h4 class="m-0"><b>UF <?php echo $precio_desde;?></b></h4>
-                        <p class="m-0" style="line-height:.8;color:#c3c3c3;"><small ><?php echo $legal; ?></small></p>
-                    </div>
-                </li>
-                <?php endif; ?>
-            </ul>
+    <div class="container projec-wrapper-container">
+        <div class="row align-items-center mb-4">
+            <div class="<?php echo ($caracteristicas_complemento) ? "col-md-8" : "col-md-12";?> bg-white shadow mb-3">
+                <ul class="projec-wrapper-content d-md-flex justify-content-around align-items-stretch m-0 mb-2 pt-3">
+                    <?php if ($logo_proyecto):?>
+                    <li class="projec-wrapper-content-img d-flex align-items-center justify-content-center ml-4">
+                        <div class="wrapper-img-project">
+                        <h1>
+                            <img src="<?php echo $logo_proyecto['url'];?>" alt="<?php echo $logo_proyecto['alt'];?>" class="pr-4" >
+                            <div class="sr-only"><?php echo the_title(); ?></div>
+                        </h1>
+                        </div>
+                    </li>
+                    <hr class="d-md-none">
+                    <?php endif; ?>
+                    <?php if ($ubicacion && ! $pie_en_30_cuotas):?>
+                    <li class="projec-wrapper-content-ubicacion d-flex align-items-center justify-content-center">
+                        <div class="text-center">
+                            <i class="fas fa-map-marker-alt"></i> <br>
+                            <p class="px-3"><?php echo $ubicacion;?></p>
+                        </div>
+                    </li>
+                    <hr class="d-md-none">
+                    <?php endif; ?>
+                    <?php if ($pie_en_30_cuotas):?>
+                    <li class="projec-wrapper-content-ubicacion d-flex align-items-center justify-content-center">
+                        <div class="text-center">
+                            <img style="min-height: 50px; width:100%; max-width: 150px;" class="px-1" src="<?php echo $pie_en_30_cuotas['url'];?>" alt="Promoción">
+                        </div>
+                    </li>
+                    <hr class="d-md-none">
+                    <?php endif; ?>
+                    <?php if ($tipologia_select && $tipologia_select != 'Seleccionar') :?>
+                    <li class="projec-wrapper-content-tipo d-flex align-items-center justify-content-center">
+                        <div>
+                            <img style="min-height: 50px; width:100%; max-width: 150px;" class="px-4" src="<?php echo bloginfo('template_directory').'/assets/img/'. $tipologia_select['value'] .'.svg'; ?>" alt="<?php echo $tipologia_select['label']; ?>">
+                        </div>
+                    </li>
+                    <hr class="d-md-none">
+                    <?php endif; ?>
+                    <?php if ($precio_desde):?>
+                    <li class="projec-wrapper-content-precio d-flex align-items-center justify-content-center">
+                        <div>
+                            <p class="m-0">Precio desde</p>
+                            <h4 class="m-0"><b>UF <?php echo $precio_desde;?></b></h4>
+                            <p class="m-0" style="line-height:.8;color:#c3c3c3;"><small ><?php echo $legal; ?></small></p>
+                        </div>
+                    </li>
+                    <?php endif; ?>
+                </ul>
+            </div>
+            <?php if ($caracteristicas_complemento || $imagen_de_promocion_desktop) : ?>
+            <div class="col-md-4 mb-3 w-100 p-0 p-md-3">
+                <div class="complement-ads-container">
+                    <a href="<?php echo $imagen_de_promocion_url; ?>" class="w-100 complement-ads-top d-none d-md-block">
+                        <img src="<?php echo $imagen_de_promocion_desktop['url'];?>" alt="<?php echo $imagen_de_promocion_desktop['alt'];?>" class="w-100">
+                    </a>
+                    <a href="<?php echo $caracteristicas_complemento_url; ?>" class="w-100 shadow complement-ads-bottom">
+                        <img src="<?php echo $caracteristicas_complemento['url'];?>" alt="<?php echo $caracteristicas_complemento['alt'];?>" class="w-100">
+                    </a>
+                </div>
+            </div>
+            <?php endif; ?>
         </div>
-        <?php if ($caracteristicas_complemento) : ?>
-        <div class="col-md-4 mb-3 d-flex w-100 p-0 p-md-3">
-            <a href="<?php echo $caracteristicas_complemento_url; ?>" class="w-100 shadow complement-ads">
-                <img src="<?php echo $caracteristicas_complemento['url'];?>" alt="<?php echo $caracteristicas_complemento['alt'];?>" class="w-100">
-            </a>
-        </div>
-        <?php endif; ?>
     </div>
 </div>
 

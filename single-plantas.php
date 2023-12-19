@@ -1,4 +1,18 @@
 <?php
+    $projectModelLink = get_field('vincular_planta_a_proyecto');
+    $proyect_title = get_the_title($projectModelLink->ID);
+?>
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        event: 'viewModel',
+        projectTitle: '<?php echo $proyect_title; ?>',
+        modelTitle: '<?php echo the_title(); ?>'
+    })
+</script>
+
+<?php
 get_template_part('includes/header');
 bk_main_before();
 $vincular_planta_a_proyecto = get_field('vincular_planta_a_proyecto');

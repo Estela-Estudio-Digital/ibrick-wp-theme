@@ -1072,14 +1072,30 @@ $items: 1,
   }
 
   .complement-ads {
-    @include MQ(L) {
-        max-height: 110px;
-        overflow: hidden;
+    &-container {
+        position: relative;
     }
-    & img {
-        object-fit: cover;
+    &-top {
+        position: absolute;
+        z-index: 1000;
+        bottom: 80px;
+        @include MQ(1000px) {
+            bottom: 100px;
+        }
+        @include MQ(1200px) {
+            bottom: 110px;
+        }
+    }
+    &-bottom {
         @include MQ(L) {
             max-height: 110px;
+            overflow: hidden;
+        }
+        & img {
+            object-fit: cover;
+            @include MQ(L) {
+                max-height: 110px;
+            }
         }
     }
   }

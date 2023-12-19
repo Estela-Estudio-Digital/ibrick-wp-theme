@@ -1603,17 +1603,35 @@ button:focus {
   content: "[";
 }
 
+.complement-ads-container {
+  position: relative;
+}
+.complement-ads-top {
+  position: absolute;
+  z-index: 1000;
+  bottom: 80px;
+}
+@media screen and (min-width: 1000px) {
+  .complement-ads-top {
+    bottom: 100px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .complement-ads-top {
+    bottom: 110px;
+  }
+}
 @media screen and (min-width: 1024px) {
-  .complement-ads {
+  .complement-ads-bottom {
     max-height: 110px;
     overflow: hidden;
   }
 }
-.complement-ads img {
+.complement-ads-bottom img {
   object-fit: cover;
 }
 @media screen and (min-width: 1024px) {
-  .complement-ads img {
+  .complement-ads-bottom img {
     max-height: 110px;
   }
 }
