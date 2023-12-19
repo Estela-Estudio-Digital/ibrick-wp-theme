@@ -92,11 +92,13 @@ if (!empty($terms)) {
                 // include( locate_template( './includes/forms/floating-single-projects.php', false, false) ); 
             }
         ?>
-        <div class="position-absolute d-md-none" style="bottom:0">
-            <a href="<?php echo $imagen_de_promocion_url; ?>" class="w-100">
-                <img src="<?php echo $imagen_de_promocion_mobile['url'];?>" alt="<?php echo $imagen_de_promocion_mobile['alt'];?>" class="w-100">
-            </a>
-        </div>
+        <?php if ($imagen_de_promocion_mobile) : ?>
+            <div class="position-absolute d-md-none" style="bottom:0">
+                <a href="<?php echo $imagen_de_promocion_url; ?>" class="w-100">
+                    <img src="<?php echo $imagen_de_promocion_mobile['url'];?>" alt="<?php echo $imagen_de_promocion_mobile['alt'];?>" class="w-100">
+                </a>
+            </div>
+        <?php endif; ?>
     </div>
     <?php endwhile; ?>
 </section>
@@ -156,12 +158,16 @@ if (!empty($terms)) {
             <?php if ($caracteristicas_complemento || $imagen_de_promocion_desktop) : ?>
             <div class="col-md-4 mb-3 w-100 p-0 p-md-3">
                 <div class="complement-ads-container">
-                    <a href="<?php echo $imagen_de_promocion_url; ?>" class="w-100 complement-ads-top d-none d-md-block">
-                        <img src="<?php echo $imagen_de_promocion_desktop['url'];?>" alt="<?php echo $imagen_de_promocion_desktop['alt'];?>" class="w-100">
-                    </a>
-                    <a href="<?php echo $caracteristicas_complemento_url; ?>" class="w-100 shadow complement-ads-bottom">
-                        <img src="<?php echo $caracteristicas_complemento['url'];?>" alt="<?php echo $caracteristicas_complemento['alt'];?>" class="w-100">
-                    </a>
+                    <?php if ($imagen_de_promocion_desktop) : ?>
+                        <a href="<?php echo $imagen_de_promocion_url; ?>" class="w-100 complement-ads-top d-none d-md-block">
+                            <img src="<?php echo $imagen_de_promocion_desktop['url'];?>" alt="<?php echo $imagen_de_promocion_desktop['alt'];?>" class="w-100">
+                        </a>
+                    <?php endif; ?>
+                    <?php if ($imagen_de_promocion_desktop) : ?>
+                        <a href="<?php echo $caracteristicas_complemento_url; ?>" class="w-100 shadow complement-ads-bottom">
+                            <img src="<?php echo $caracteristicas_complemento['url'];?>" alt="<?php echo $caracteristicas_complemento['alt'];?>" class="w-100">
+                        </a>
+                    <?php endif; ?>
                 </div>
             </div>
             <?php endif; ?>
