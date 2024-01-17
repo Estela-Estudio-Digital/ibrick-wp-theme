@@ -28,7 +28,10 @@
                     <?php echo $encabezado; ?>
                   </p>
                 </li>
-              <?php endif;?>
+                <?php endif;?>
+                <li>
+                  <img class="w-100" src="<?php echo $desktop[0]; ?>" alt="<?php echo the_title(); ?>">
+                </li>
                 <li class="card-body text-center d-flex flex-column align-items-center justify-content-center">
                     <h1 style="font-size:1.4rem;"><?php echo the_title(); ?></h1>
                     <p><?php echo $ubicacion; ?></p>
