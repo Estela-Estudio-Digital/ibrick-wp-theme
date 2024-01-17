@@ -48,7 +48,7 @@ $query = new WP_Query(array(
 <div class="container">
     <div class="row laign-items-stretch">
         <div class="col-12 my-5">
-            <h3 class="text-uppercase"><span class="secondary-title font-weight-bold">Centro de</span> <span class="secondary-title color-emphasis font-weight-bold">distribución</span></h3>
+            <h3 class="text-uppercase"><span class="secondary-title font-weight-bold">Centros de</span> <span class="secondary-title color-emphasis font-weight-bold">distribución</span></h3>
         </div>
     </div>
 </div>
