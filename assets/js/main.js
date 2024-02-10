@@ -13,11 +13,11 @@ $(function () {
         esquicio = project_data.data[0].esquicio,
         corresponde = project_data.data[0].corresponde,
         unidades = project_data.data[0].unidades,
-        whatsapp = project_data.data[0].whatsapp;
-      (superficieUtil = project_data.data[0].superficieUtil),
-        (superficieTerraza = project_data.data[0].superficieTerraza),
-        (superficieTotal = project_data.data[0].superficieTotal),
-        $('.nombreProyecto').val(nombreProyecto);
+        whatsapp = project_data.data[0].whatsapp,
+        superficieUtil = project_data.data[0].superficieUtil,
+        superficieTerraza = project_data.data[0].superficieTerraza,
+        superficieTotal = project_data.data[0].superficieTotal;
+      $('.nombreProyecto').val(nombreProyecto);
       $('.correosVentas').val(correosVentas);
       $('.logoProyecto').val(logoProyecto);
       $('.imagenPlanta').val(imagenPlanta);
