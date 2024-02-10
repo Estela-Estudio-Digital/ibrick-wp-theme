@@ -211,7 +211,7 @@ if ( ! function_exists('bk_enqueues') ) {
 		if(is_singular('proyectos') || is_singular('plantas')){
 			$single_arr = array();
 			$postid = (is_singular('proyectos')) ? get_the_ID() : get_field('vincular_planta_a_proyecto')->ID;
-			$nombreProyecto = get_field('nombre_planok') || get_the_title($postid);
+			$nombreProyecto = get_field('nombre_planok');
 			$grupo_de_datos = get_field('grupo_de_datos');
 			$correos_ventas = $grupo_de_datos['correos_ventas'];
 			$logo_proyecto = get_field('logo_proyecto', get_field('vincular_planta_a_proyecto')->ID);
