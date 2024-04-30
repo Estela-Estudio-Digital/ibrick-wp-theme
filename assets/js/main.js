@@ -98,6 +98,10 @@ $(function () {
       setDataToSend();
     }
 
+    $('.formulario_whatsapp').find('.nombreProyecto').val($(this).data('name'));
+    $('.formulario_whatsapp').find('.whatsappProject').val($(this).data('whatsapp'));
+    $('.formulario_whatsapp').find('.correosVentas').val($(this).data('correo'));
+
     $('.ws-project').hide();
     $('.ws-form').removeClass('d-none');
   });
