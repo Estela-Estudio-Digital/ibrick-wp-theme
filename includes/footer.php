@@ -7,58 +7,57 @@
 
 <footer class="container-fluid py-5 bg-secondary-color text-white">
   <div class="container">
-    <div class="row align-items-center">
-        <div class="col-sm-12">
-          <ul class="d-md-flex align-items-center justify-content-between text-center text-md-left text-uppercase footer-menu w-100">
-            <li class=" pr-md-5">
-              <a href="<?php echo site_url();?>">
-                <img src="<?php bloginfo('template_directory');?>/assets/img/footer-logo.svg" height="100" width="150" alt="Brick Inmobiliaria" class="primary-logo">
+    <div class="row align-items-end">
+        <div class="col-lg-4">
+          <ul class="d-flex">
+            <li class="mr-3">
+              <a href="https://www.instagram.com/inmobiliariabrick/" target="_blank" class=" text-white">
+                <i class="fab fa-instagram" style="font-size:2rem;"></i>
               </a>
             </li>
-        
-            <li class="d-none d-md-block"><a href="<?php echo site_url('residencial');?>" class="text-white">Residencial</a></li>
-            <li class="d-none d-md-block"><a href="<?php echo site_url('comercial');?>" class="text-white">Comercial</a></li>
-            <li class="d-none d-md-block"><a href="<?php echo site_url('bodegas');?>" class="text-white">Bodegas</a></li>
-            <li class="d-none d-md-block"><a href="<?php echo site_url('usa');?>" class="text-white">USA</a></li>
-			<li class="d-none d-md-block"><a href="<?php echo site_url('pasa-el-dato-y-gana');?>" class="text-white">Referidos</a></li>
-            <li class="d-none d-md-block"><a href="<?php echo site_url('somos-brick');?>" class="text-white">Somos Brick</a></li>
-            <li class="d-none d-md-block"><a href="#" class="text-white contactoModalBtn">Contáctanos</a></li>
+            <li class="mr-3">
+              <a href="https://www.facebook.com/BRICK-Inmobiliaria-100180791917908" target="_blank" class=" text-white">
+                <i class="fab fa-facebook-square" style="font-size:2rem;"></i>
+              </a>
+            </li>
+            <li class="mr-3">
+              <a href="https://www.youtube.com/channel/UCnUmucW8Jm1T--NaiDIw_DQ" target="_blank" class=" text-white">
+                <i class="fab fa-youtube-square" style="font-size:2rem;"></i>
+              </a>
+            </li>
           </ul>
+          <a href="<?php echo site_url();?>">
+            <img src="<?php bloginfo('template_directory');?>/assets/img/footer-logo.svg" height="100" width="150" alt="Brick Inmobiliaria" class="footer-logo">
+          </a>
         </div>
-    </div>
-    <hr>
-    <div class="row align-items-center text-center">
-        <div class="col-sm-12 pt-2">
-          <ul class="d-md-flex w-100 m-0 justify-content-between">
+        <div class="col-lg-4">
+          <ul class="w-100 m-0 justify-content-between">
             <li>
-              <ul class="d-flex justify-content-center">
-                <li class="mr-2">
-                  <a href="https://www.instagram.com/inmobiliariabrick/" target="_blank" class=" text-white">
-                    <i class="fab fa-instagram"></i>
-                  </a>
-                </li>
-                <li class="mr-2">
-                  <a href="https://www.facebook.com/BRICK-Inmobiliaria-100180791917908" target="_blank" class=" text-white">
-                    <i class="fab fa-facebook-square"></i>
-                  </a>
-                </li>
-                <li>
-                  <span>Síguenos</span>
-                </li>
-              </ul>
+              <p><a class="text-white" href="https://goo.gl/maps/W5hF3kUTZL2CTce3A">Américo Vespucio Norte 1090 of. 403, <br> Vitacura, Santiago </a></p>
             </li>
             <li>
-              <p><a class="text-white" href="tel:+56233234100"><i class="fas fa-mobile-alt"></i> +562 3323 4100</a></p>
+              <p class="mb-0"><a class="text-white" href="tel:+56233234100"><i class="fas fa-mobile-alt"></i> +562 3323 4100</a></p>
             </li>
             <li>
               <p><a class="text-white" href="mailto:contacto@ibrick.cl"><i class="far fa-envelope"></i> contacto@ibrick.cl</a></p>
             </li>
-            <li>
-              <p><a class="text-white" href="https://goo.gl/maps/W5hF3kUTZL2CTce3A"><img src="<?php bloginfo('template_directory');?>/assets/img/markerIcon.svg" alt="Ubicación" style="max-height:20px;"> Américo Vespucio Norte 1090 of. 403, Vitacura, Santiago </a></p>
-            </li>
           </ul>
         </div>
+        <div class="col-lg-4">
+          <ul class="d-flex footer-menu w-100 text-uppercase">
+            <li class="d-md-block mr-2 pl-2" style="border: 1px solid white; border-top:0; border-bottom:0">
+              <a href="<?php echo site_url('residencial');?>" class="text-white d-block mb-2">Residencial</a>
+              <a href="<?php echo site_url('comercial');?>" class="text-white d-block mb-2">Comercial</a>
+              <a href="<?php echo site_url('pasa-el-dato-y-gana');?>" class="text-white d-block">Referidos</a>
+            </li>
+            <li class="d-md-block">
+              <a href="<?php echo site_url('somos-brick');?>" class="text-white d-block mb-2">Somos Brick</a>
+              <a href="https://pvi.cl/propietarios/brick/propietarios/login" target="_blank" class="text-white d-block mb-2 contactoModalBtn">Postventa</a>
+              <a href="#" class="text-white contactoModalBtn">Contáctanos</a>
+            </li>
+          </ul>
 
+        </div>
     </div>
     <hr>
     <div class="row">

@@ -1,6 +1,7 @@
 $(function () {
   // SBJS
   sbjs.init();
+  $('[data-toggle="tooltip"]').tooltip();
   // Menú Hamburguer
   const setDataToSend = () => {
     try {
@@ -64,7 +65,7 @@ $(function () {
   });
 
   // Contextuales
-  $('#contactFloatingForm').on('click', function (e) {
+  $('.contactFloatingForm').on('click', function (e) {
     e.preventDefault();
     $('.form-modal').addClass('form-modal-open');
   });
@@ -72,7 +73,7 @@ $(function () {
     e.preventDefault();
     $('.form-modal').removeClass('form-modal-open');
   });
-  $('#whatsappButton').on('click', function (e) {
+  $('.whatsappButton').on('click', function (e) {
     e.preventDefault();
     $('.whatsapp-modal').addClass('whatsapp-modal-open');
   });
@@ -419,7 +420,7 @@ $(function () {
     return false;
   });
 
-  $('#whatsappButton').on('click', function () {});
+  $('.whatsappButton').on('click', function () {});
 
   $('.boton_enviar_whatsapp').on('click', function () {});
 
@@ -665,6 +666,52 @@ $(function () {
       $(element).parents('.form-group').append(error);
     },
   });
+  $('#formulario_cotizar_planta').validate({
+    rules: {
+      inputNameCotizar: {
+        required: true,
+      },
+      inputLastNameCotizar: {
+        required: true,
+      },
+      inputRutCotizar: {
+        required: false,
+        Rut: true,
+      },
+      inputEmailCotizar: {
+        required: true,
+        email: true,
+      },
+      inputTelefonoCotizar: {
+        required: true,
+        digits: true,
+        minlength: 9,
+        maxlength: 9,
+      },
+      texAreaMensajeCotizar: {
+        required: false,
+      },
+    },
+    messages: {
+      inputNameCotizar: 'Ingresa solo letras.',
+      inputLastNameCotizar: 'Ingresa solo letras.',
+      inputRutCotizar: 'Ingresa un RUT valido.',
+      inputEmailCotizar: {
+        required: 'Es necesario tu dirección de correo',
+        email: 'El formato de tu email debe ser similar a: name@domain.com',
+      },
+      inputTelefonoCotizar: {
+        required: 'Ingresa tu numero de telefono',
+        minlength: jQuery.validator.format(
+          'Introduce al menos {0} carácteres.'
+        ),
+      },
+    },
+    submitHandler: function (form) {},
+    errorPlacement: function (error, element) {
+      $(element).parents('.form-group').append(error);
+    },
+  });
   //Mensajes Personalizados
   jQuery.extend(jQuery.validator.messages, {
     digits: 'Por favor ingresa sólo números.',
@@ -771,8 +818,8 @@ $(function () {
         icon: 'no-border',
       },
       html: `<div class="d-flex flex-column align-items-center justify-content-center w-100">
-      <p>Pronto un ejecutivo te contactará.</p>
-      <p>Cuéntale a un amigo sobre Brick Inmobiliaria</p>
+      <p>Recibirás la cotización en tu email</p>
+      <p>Muchas gracias por cotizar con Brick.</p>
       <div>
         <a href="https://www.addtoany.com/add_to/facebook?linkurl=${window.location.href}" target="_blank"><img src="https://static.addtoany.com/buttons/facebook.svg" width="32" height="32" style="background-color:royalblue"></a>
         <a href="https://www.addtoany.com/add_to/twitter?linkurl=${window.location.href}" target="_blank"><img src="https://static.addtoany.com/buttons/twitter.svg" width="32" height="32" style="background-color:rgb(29, 155, 240)"></a>
