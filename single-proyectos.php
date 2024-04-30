@@ -371,12 +371,12 @@ if ($query->have_posts()) : ?>
                                     <li class="m-auto">
                                         <?php if ($estado == 'Normal') : ?>
                                             <?php if ($planok) : ?>
-                                                <a class="btn btn-primary px-4 mr-3 text-uppercase" data-toggle="modal" data-target="#planok-modal">Cotizar</a>
+                                                <a class="btn btn-primary px-4 text-uppercase" data-toggle="modal" data-target="#planok-modal">Cotizar</a>
                                             <?php else:?>
-                                                <a href="<?php echo the_permalink(); ?>" class="btn btn-primary px-4 mr-3 text-uppercase">consultar</a>
+                                                <a href="<?php echo the_permalink(); ?>" class="btn btn-primary px-4 text-uppercase">Cotizar</a>
                                             <?php endif;?>
                                         <?php else : ?>
-                                            <p class="btn btn-primary disabled bg-grey mr-3 mb-0">Agotada</p>
+                                            <p class="btn btn-primary disabled bg-grey mb-0">Agotada</p>
                                         <?php endif; ?>
                                     </li>
                                 </ul>
