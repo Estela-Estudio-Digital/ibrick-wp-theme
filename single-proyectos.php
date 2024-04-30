@@ -363,7 +363,7 @@ if ($query->have_posts()) : ?>
                                         <p style="font-size:1rem"><img
                                                 src="<?php bloginfo('template_directory');?>/assets/img/areaIcon.png" alt="Area"
                                                 style="max-width:22px">
-                                            <span class="pl-2">Sup. Total</span> <b><?php echo $superficie_total; ?>m<sup>2</sup></b> apróx.
+                                            <span class="pl-2">Sup. Total</span> <b><?php echo $superficie_total; ?> m<sup>2</sup></b> apróx.
                                         </p>
                                     </li>
                                 </ul>

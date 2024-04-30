@@ -1731,7 +1731,7 @@ button:focus {
   top: 50%;
   bottom: auto;
   transform: translateY(-50%);
-  left: 75px;
+  left: 45px;
   padding: 5px 10px;
   background: white;
   border-radius: 50rem;
