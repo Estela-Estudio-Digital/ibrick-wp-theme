@@ -328,8 +328,7 @@ if ($query->have_posts()) : ?>
                             </h3>
 
                             <div class="bk-info-wrap  mb-5 card rounded-0">
-                                <p class="pl-5 pt-4 m-0 text-left" style="font-size:1rem;">
-                                    <b><?php echo $texto_titulo; ?></b>
+                                <p class="pt-4 m-0 text-center" style="font-size:1rem;">
                                     <b><?php echo esc_html($label); ?> +</b>
                                     <b><?php echo $cantidad_de_banos; echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
                                     </b>
@@ -346,7 +345,7 @@ if ($query->have_posts()) : ?>
                                     </div>
                                 <?php endif; ?>
 
-                                <ul class="d-flex py-3 m-0 border-right-0 border-left-0" style="border-bottom:1px solid #D3D3D3;">
+                                <ul class="d-flex py-3 m-0 border-right-0 border-left-0 align-items-center justify-content-center" style="border-bottom:1px solid #D3D3D3;">
                                     <li class="d-none">
                                         <img src="<?php bloginfo('template_directory');?>/assets/img/bedIcon.png" alt="Dormitorios"
                                             style="max-width:26px">
@@ -359,7 +358,7 @@ if ($query->have_posts()) : ?>
                                                     echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
                                         </small>
                                     </li>
-                                    <li class="pl-5">
+                                    <li class="">
                                         <p style="font-size:1rem"><img
                                                 src="<?php bloginfo('template_directory');?>/assets/img/areaIcon.png" alt="Area"
                                                 style="max-width:22px">
@@ -369,7 +368,7 @@ if ($query->have_posts()) : ?>
                                 </ul>
 
                                 <ul class="d-flex justify-content-between align-items-center py-3 m-0" style="background:#F6F8FA">
-                                    <li class="ml-auto">
+                                    <li class="m-auto">
                                         <?php if ($estado == 'Normal') : ?>
                                             <?php if ($planok) : ?>
                                                 <a class="btn btn-primary px-4 mr-3 text-uppercase" data-toggle="modal" data-target="#planok-modal">Cotizar</a>
@@ -805,7 +804,7 @@ include( locate_template( './includes/templates/whatsapp-modal.php', false, fals
                     <div class="col-lg-4 plantasContent">
                         <div class="mx-lg-4">
                             <div class="mb-4">
-                                <h3 class="d-none"><span class="plantas-info-title">Tipo <span id="plantaModalPlanOkTipo"></span></span></h3>
+                                <h3 class="d-none"><span id="plantaModalPlanOkTipo"></span></span></h3>
                                 <h2 class="pb-5"><b id="plantaModalPlanOkPrograma" class="plantas-info-title"></b></h2>
                             </div>
 
