@@ -9,31 +9,31 @@
   <div class="container">
     <div class="row align-items-end">
         <div class="col-lg-4">
-          <ul class="d-flex">
-            <li class="mr-3">
-              <a href="https://www.instagram.com/inmobiliariabrick/" target="_blank" class=" text-white">
-                <i class="fab fa-instagram" style="font-size:2rem;"></i>
-              </a>
-            </li>
-            <li class="mr-3">
-              <a href="https://www.facebook.com/BRICK-Inmobiliaria-100180791917908" target="_blank" class=" text-white">
-                <i class="fab fa-facebook-square" style="font-size:2rem;"></i>
-              </a>
-            </li>
-            <li class="mr-3">
-              <a href="https://www.youtube.com/channel/UCnUmucW8Jm1T--NaiDIw_DQ" target="_blank" class=" text-white">
-                <i class="fab fa-youtube-square" style="font-size:2rem;"></i>
-              </a>
-            </li>
-          </ul>
           <a href="<?php echo site_url();?>">
-            <img src="<?php bloginfo('template_directory');?>/assets/img/footer-logo.svg" height="100" width="150" alt="Brick Inmobiliaria" class="footer-logo">
+            <img src="<?php bloginfo('template_directory');?>/assets/img/footer-logo.svg" width="200" alt="Brick Inmobiliaria" class="footer-logo">
           </a>
         </div>
         <div class="col-lg-4">
           <ul class="w-100 m-0 justify-content-between">
             <li>
-              <p><a class="text-white" href="https://goo.gl/maps/W5hF3kUTZL2CTce3A">Américo Vespucio Norte 1090 of. 403, <br> Vitacura, Santiago </a></p>
+              <p class="d-none"><a class="text-white" href="https://goo.gl/maps/W5hF3kUTZL2CTce3A">Américo Vespucio Norte 1090 of. 403, <br> Vitacura, Santiago </a></p>
+              <ul class="d-flex mb-3">
+                <li class="mr-3">
+                  <a href="https://www.instagram.com/inmobiliariabrick/" target="_blank" class=" text-white">
+                    <i class="fab fa-instagram" style="font-size:2rem;"></i>
+                  </a>
+                </li>
+                <li class="mr-3">
+                  <a href="https://www.facebook.com/BRICK-Inmobiliaria-100180791917908" target="_blank" class=" text-white">
+                    <i class="fab fa-facebook-square" style="font-size:2rem;"></i>
+                  </a>
+                </li>
+                <li class="mr-3">
+                  <a href="https://www.youtube.com/channel/UCnUmucW8Jm1T--NaiDIw_DQ" target="_blank" class=" text-white">
+                    <i class="fab fa-youtube-square" style="font-size:2rem;"></i>
+                  </a>
+                </li>
+              </ul>
             </li>
             <li>
               <p class="mb-0"><a class="text-white" href="tel:+56233234100"><i class="fas fa-mobile-alt"></i> +562 3323 4100</a></p>
