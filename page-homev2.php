@@ -228,9 +228,9 @@ include( locate_template( './includes/templates/proyectos_destacados.php', false
     <ul class="contact-floating-list px-2 d-flex flex-column justify-content-between align-items-center">
         <li>
             <a class="d-inline whatsappButton" id="whatsappButton" href="#">
-                <ul class="d-flex align-items-center contact-floating-whatsapp-button">
-                    <li class="">
-                        <img src="<?php bloginfo('template_directory');?>/assets/img/whatsapp-logo.svg" alt="whatsapp" style="max-height:35px" width="35">
+                <ul class="d-flex align-items-center contact-floating-whatsapp">
+                    <li class="contact-floating-link whatsappButton" style="zoom: 1.2">
+                        <i class="fab fa-whatsapp"></i>
                     </li>
                 </ul>
                 <span id="whatsappButtonAd">¿Necesitas ayuda?</span>

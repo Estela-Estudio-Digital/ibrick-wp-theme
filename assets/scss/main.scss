@@ -360,6 +360,24 @@
 
 .project {
     &-hero {
+        &-left-overlay {
+            @include MQ(M) {
+                position: absolute;
+                width: 40%;
+                height: 100%;
+                background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+                left: 0;
+            }
+        }
+        &-right-overlay {
+            @include MQ(M) {
+                position: absolute;
+                width: 40%;
+                height: 100%;
+                background: linear-gradient(270deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+                right: 0;
+            }
+        }
         img {
             max-height: calc(90vh - 80px);
             object-fit: cover;
@@ -1078,6 +1096,10 @@ $items: 1,
     &-container {
         background: #40A8F5;
         height: 100%;
+        width: 70%;
+        @include MQ(L) {
+            width: 100%;
+        }
     }
     &-top {
         position: absolute;
@@ -1108,12 +1130,12 @@ $items: 1,
     margin-right: 0;
   }
 
-  .home #whatsappButton {
+#whatsappButton {
     position: relative;
     #whatsappButtonAd {
         position: absolute;
         @include center(y);
-        left: 45px;
+        left: 65px;
         padding: 5px 10px;
         background: $white;
         border-radius: 50rem;

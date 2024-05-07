@@ -65,6 +65,11 @@
 }
 
 .contact-floating{
+    &-list {
+        @include MQ(L) {
+            padding-right: 40px !important;
+        }
+    }
     &-container-home {
         position: fixed;
         bottom: 0;
