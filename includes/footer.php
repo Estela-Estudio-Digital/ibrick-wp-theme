@@ -7,7 +7,7 @@
 
 <footer class="container-fluid py-5 bg-secondary-color text-white">
   <div class="container">
-    <div class="row align-items-end">
+    <div class="row">
         <div class="col-lg-4">
           <a href="<?php echo site_url();?>">
             <img src="<?php bloginfo('template_directory');?>/assets/img/footer-logo.svg" width="200" alt="Brick Inmobiliaria" class="footer-logo">
