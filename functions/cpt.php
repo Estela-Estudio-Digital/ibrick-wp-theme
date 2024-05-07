@@ -277,5 +277,112 @@ if( function_exists('acf_add_local_field_group') ):
     
 endif;
 
+function create_planta_cpt_api() {
 
+	$labels = array(
+		'name' => _x( 'Plantas API ', 'Post Type General Name', 'brick' ),
+		'singular_name' => _x( 'Planta', 'Post Type Singular Name', 'brick' ),
+		'menu_name' => _x( 'Plantas API', 'Admin Menu text', 'brick' ),
+		'name_admin_bar' => _x( 'Planta', 'Add New on Toolbar', 'brick' ),
+		'archives' => __( 'Archivos Planta', 'brick' ),
+		'attributes' => __( 'Atributos Planta', 'brick' ),
+		'parent_item_colon' => __( 'Padres Planta:', 'brick' ),
+		'all_items' => __( 'Plantas API', 'brick' ),
+		'add_new_item' => __( 'Añadir nueva Planta', 'brick' ),
+		'add_new' => __( 'Añadir nueva', 'brick' ),
+		'new_item' => __( 'Nueva Planta', 'brick' ),
+		'edit_item' => __( 'Editar Planta', 'brick' ),
+		'update_item' => __( 'Actualizar Planta', 'brick' ),
+		'view_item' => __( 'Ver Planta', 'brick' ),
+		'view_items' => __( 'Ver Plantas API', 'brick' ),
+		'search_items' => __( 'Buscar Planta', 'brick' ),
+		'not_found' => __( 'No se encontraron Plantas API.', 'brick' ),
+		'not_found_in_trash' => __( 'Ningún Planta encontrado en la papelera.', 'brick' ),
+		'featured_image' => __( 'Imagen destacada', 'brick' ),
+		'set_featured_image' => __( 'Establecer imagen destacada', 'brick' ),
+		'remove_featured_image' => __( 'Borrar imagen destacada', 'brick' ),
+		'use_featured_image' => __( 'Usar como imagen destacada', 'brick' ),
+		'insert_into_item' => __( 'Insertar en la Planta', 'brick' ),
+		'uploaded_to_this_item' => __( 'Subido a esta Planta', 'brick' ),
+		'items_list' => __( 'Lista de Plantas API', 'brick' ),
+		'items_list_navigation' => __( 'Navegación por el listado de Plantas API', 'brick' ),
+		'filter_items_list' => __( 'Lista de Plantas API filtradas', 'brick' ),
+	);
+	$args = array(
+		'label' => __( 'Planta Api', 'brick' ),
+		'description' => __( '', 'brick' ),
+		'labels' => $labels,
+		'menu_icon' => 'dashicons-admin-home',
+		'supports' => array(),
+		'taxonomies' => array(),
+		'public' => true,
+		'show_ui' => true,
+		'show_in_menu' => 'edit.php?post_type=proyectos',
+		'menu_position' => 5,
+		'show_in_admin_bar' => true,
+		'show_in_nav_menus' => true,
+		'can_export' => true,
+		'has_archive' => true,
+		'hierarchical' => true,
+		'exclude_from_search' => false,
+		'show_in_rest' => true,
+		'publicly_queryable' => true,
+		'capability_type' => 'post'
+	);
+	register_post_type( 'plantas_api', $args );
+
+}
+add_action( 'init', 'create_planta_cpt_api', 0 );
+
+// if( function_exists('acf_add_local_field_plantas_api') ):
+
+// 	acf_add_local_field_plantas_api(array(
+// 			'key' => 'group_5d3b6c62b0984',
+// 			'title' => 'Vincular Planta a Proyecto',
+// 			'fields' => array(
+// 					array(
+// 							'key' => 'field_5d3b6c6f1eb65',
+// 							'label' => 'Vincular Planta a Proyecto',
+// 							'name' => 'vincular_planta_a_proyecto',
+// 							'type' => 'post_object',
+// 							'instructions' => '',
+// 							'required' => 1,
+// 							'conditional_logic' => 0,
+// 							'wrapper' => array(
+// 									'width' => '',
+// 									'class' => '',
+// 									'id' => '',
+// 							),
+// 							'post_type' => array(
+// 									0 => 'proyectos',
+// 							),
+// 							'taxonomy' => '',
+// 							'allow_null' => 0,
+// 							'multiple' => 0,
+// 							'return_format' => 'object',
+// 							'ui' => 1,
+// 					),
+// 			),
+// 			'location' => array(
+// 					array(
+// 							array(
+// 									'param' => 'post_type',
+// 									'operator' => '===',
+// 									'value' => 'plantas_api',
+// 							),
+// 					),
+// 			),
+// 			'menu_order' => 0,
+// 			'position' => 'side',
+// 			'style' => 'default',
+// 			'label_placement' => 'top',
+// 			'instruction_placement' => 'label',
+// 			'hide_on_screen' => array(
+// 					0 => 'page_attributes',
+// 			),
+// 			'active' => true,
+// 			'description' => '',
+// 	));
+	
+// endif;
 ?>

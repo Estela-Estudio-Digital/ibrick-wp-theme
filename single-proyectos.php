@@ -31,6 +31,7 @@ $caracteristicas_complemento_url = $grupo_de_datos['caracteristicas_complemento_
 $imagen_de_promocion_desktop = $banner_promocion['imagen_de_promocion_desktop'];
 $imagen_de_promocion_mobile = $banner_promocion['imagen_de_promocion_mobile'];
 $url_de_promocion = $banner_promocion['url_de_promocion'];
+$id_planok = get_field( 'id_planok' );
 $planok = get_field( 'plan_ok' );
 $pie_en_30_cuotas = get_field( 'pie_en_30_cuotas' );
 $video = get_field( 'video' );
@@ -257,21 +258,21 @@ if (!empty($terms)) {
 <?php endif; ?>
 
 <?php $query = new WP_Query(array(
-    'post_type'          => 'plantas',
+    'post_type'          => 'plantas_api',
     'posts_per_page'    => -1,
     'post_status'        => 'publish',
-    'meta_query' => array(
-        array(
-            'key' => 'vincular_planta_a_proyecto',
-            'value' => '' . get_the_ID() . '',
-            'compare' => '='
-        )
-    ),
-    'meta_key'        => 'estado',
-    'orderby' => array(
-        'estado' => 'DESC',
-        'title' => 'ASC',
-    )
+    // 'meta_query' => array(
+    //     array(
+    //         'key' => 'vincular_planta_a_proyecto',
+    //         'value' => '' . get_the_ID() . '',
+    //         'compare' => '='
+    //     )
+    // ),
+    // 'meta_key'        => 'estado',
+    // 'orderby' => array(
+    //     'estado' => 'DESC',
+    //     'title' => 'ASC',
+    // )
 ));
 if ($query->have_posts()) : ?>
 <section class="container-fluid my-5 pt-5" id="plantas">
@@ -317,9 +318,9 @@ if ($query->have_posts()) : ?>
                 ?>
 
             <div class="col-sm-6 col-lg-4 planta <?php echo $value; ?> <?php echo ($estado == 'Normal') ? "active" : "";?>">
-                <?php if ($estado == 'Normal') : ?>
+                <?php //if ($estado == 'Normal') : ?>
 
-                    <a href="<?php echo ($planok) ? "#": the_permalink(); ?>" class="<?php echo ($planok) ? 'cotizacionHit' : '' ?>" <?php echo ($planok) ? 'data-toggle="modal" data-target="#planok-modal"' : '';?> >
+                    <a href="<?php echo (!$planok) ? "#": the_permalink(); ?>" class="<?php echo (!$planok) ? 'cotizacionHit' : '' ?>" <?php echo (!$planok) ? 'data-toggle="modal" data-target="#planok-modal"' : '';?> >
 
                         <div class="planta-item d-block text-center shadow ">
 
@@ -332,6 +333,7 @@ if ($query->have_posts()) : ?>
                                     <b><?php echo esc_html($label); ?> +</b>
                                     <b><?php echo $cantidad_de_banos; echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
                                     </b>
+                                    <?php echo $post_id; ?>
                                 </p>
                                 
                                 <?php if ($fotografia_planta) : ?>
@@ -384,7 +386,7 @@ if ($query->have_posts()) : ?>
                             </div>
                         </div>
                     </a>
-                <?php endif; ?>
+                <?php //endif; ?>
             </div>
 
             <?php endwhile;
