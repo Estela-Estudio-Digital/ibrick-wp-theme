@@ -135,11 +135,15 @@ function my_add_rewrite_rules() {
     add_rewrite_tag('%plantas%', '([^/]+)', 'plantas=');
     add_permastruct('plantas', '/proyectos/%proyectos%/plantas/%plantas%', true);
     add_rewrite_rule('^proyectos/([^/]+)/plantas/([^/]+)/?','index.php?plantas=$matches[2]','top');
-
-
 }
 add_action( 'init', 'my_add_rewrite_rules' );
 
+function plantas_api_rewrite_rules() {
+	add_rewrite_tag('%plantas_api%', '([^/]+)', 'plantas_api=');
+	add_permastruct('plantas_api', '/proyectos/%proyectos%/plantas/%plantas_api%', true);
+	add_rewrite_rule('^proyectos/([^/]+)/plantas_api/([^/]+)/?','index.php?plantas_api=$matches[2]','top');
+}
+add_action( 'init', 'my_add_rewrite_rules' );
 
 function ubicaciones() {
 
@@ -313,7 +317,7 @@ function create_planta_cpt_api() {
 		'description' => __( '', 'brick' ),
 		'labels' => $labels,
 		'menu_icon' => 'dashicons-admin-home',
-		'supports' => array(),
+		'supports' => array('title', 'editor', 'revisions', 'thumbnail', 'custom-fields', 'excerpt'),
 		'taxonomies' => array(),
 		'public' => true,
 		'show_ui' => true,

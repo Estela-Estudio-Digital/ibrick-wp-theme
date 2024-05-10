@@ -257,23 +257,46 @@ if (!empty($terms)) {
 </section>
 <?php endif; ?>
 
-<?php $query = new WP_Query(array(
-    'post_type'          => 'plantas_api',
-    'posts_per_page'    => -1,
-    'post_status'        => 'publish',
-    // 'meta_query' => array(
-    //     array(
-    //         'key' => 'vincular_planta_a_proyecto',
-    //         'value' => '' . get_the_ID() . '',
-    //         'compare' => '='
-    //     )
-    // ),
-    // 'meta_key'        => 'estado',
-    // 'orderby' => array(
-    //     'estado' => 'DESC',
-    //     'title' => 'ASC',
-    // )
-));
+
+<?php
+    $localArgs = array(
+        'post_type'          => 'plantas',
+        'posts_per_page'    => -1,
+        'post_status'        => 'publish',
+        'meta_query' => array(
+            array(
+                'key' => 'vincular_planta_a_proyecto',
+                'value' => '' . get_the_ID() . '',
+                'compare' => '='
+            )
+        ),
+        'meta_key'        => 'estado',
+        'orderby' => array(
+            'estado' => 'DESC',
+            'title' => 'ASC',
+        )
+    );
+
+    $apiArgs = array(
+        'post_type'          => 'plantas_api',
+        'posts_per_page'    => -1,
+        'post_status'        => 'publish',
+        'meta_query' => array(
+            array(
+                'key' => 'id_proyecto',
+                'value' => '' . $id_planok . '',
+                'compare' => '='
+            )
+        ),
+        'orderby' => array(
+            'estado' => 'DESC',
+            'title' => 'ASC',
+        )
+    );
+
+    $localQuery = $id_planok ? $apiArgs : $localArgs;
+
+    $query = new WP_Query($localQuery);
 if ($query->have_posts()) : ?>
 <section class="container-fluid my-5 pt-5" id="plantas">
     <div class="container mt-5">
@@ -317,7 +340,7 @@ if ($query->have_posts()) : ?>
                     $fotografia_planta_mobile = $fotografia_planta[0]['fotografia_planta']['url'];
                 ?>
 
-            <div class="col-sm-6 col-lg-4 planta <?php echo $value; ?> <?php echo ($estado == 'Normal') ? "active" : "";?>">
+            <div class="col-sm-6 col-lg-4 planta <?php echo $value; ?> <?php // echo ($estado == 'Normal') ? "active" : "";?> active">
                 <?php //if ($estado == 'Normal') : ?>
 
                     <a href="<?php echo (!$planok) ? "#": the_permalink(); ?>" class="<?php echo (!$planok) ? 'cotizacionHit' : '' ?>" <?php echo (!$planok) ? 'data-toggle="modal" data-target="#planok-modal"' : '';?> >
@@ -333,7 +356,7 @@ if ($query->have_posts()) : ?>
                                     <b><?php echo esc_html($label); ?> +</b>
                                     <b><?php echo $cantidad_de_banos; echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
                                     </b>
-                                    <?php echo $post_id; ?>
+                                    <?php // echo $post_id; ?>
                                 </p>
                                 
                                 <?php if ($fotografia_planta) : ?>
@@ -344,6 +367,13 @@ if ($query->have_posts()) : ?>
                                         <img class="m-auto pb-4 fotografia-planta <?php echo ($estado == 'Normal') ? "" : "img-overlay" ?>"
                                             src="<?php echo $fotografia_planta[0]['fotografia_planta']['sizes']['medium']; ?>"
                                             alt="<?php echo $row['fotografia_planta']['name']; ?>">
+                                    </div>
+                                <?php else :
+                                    $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+                                 ?>
+                                    <div style="overflow: hidden;position: relative;">
+                                        <img class="m-auto pb-4 fotografia-planta"
+                                            src="<?php echo $thumb['0'];?>">
                                     </div>
                                 <?php endif; ?>
 
@@ -378,7 +408,7 @@ if ($query->have_posts()) : ?>
                                                 <a href="<?php echo the_permalink(); ?>" class="btn btn-primary px-4 text-uppercase">Cotizar</a>
                                             <?php endif;?>
                                         <?php else : ?>
-                                            <p class="btn btn-primary disabled bg-grey mb-0">Agotada</p>
+                                            <a href="<?php echo the_permalink(); ?>" class="btn btn-primary px-4 text-uppercase">Cotizar</a>
                                         <?php endif; ?>
                                     </li>
                                 </ul>
