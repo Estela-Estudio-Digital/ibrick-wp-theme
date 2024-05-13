@@ -33,7 +33,6 @@ $imagen_de_promocion_mobile = $banner_promocion['imagen_de_promocion_mobile'];
 $url_de_promocion = $banner_promocion['url_de_promocion'];
 $id_planok = get_field( 'id_planok' );
 $planok = get_field( 'plan_ok' );
-$pie_en_30_cuotas = get_field( 'pie_en_30_cuotas' );
 $video = get_field( 'video' );
 $imagen_video_portada = get_field( 'imagen_video_portada' );
 
@@ -78,6 +77,8 @@ if (!empty($terms)) {
         $slider_proyecto_mobile = get_sub_field('slider_proyecto_mobile');
     ?>
     <div class="item project-hero position-relative">
+        <div class="project-hero-left-overlay"></div>
+        <div class="project-hero-right-overlay"></div>
         <picture>
             <source
             media="(max-width: 768px)"
@@ -132,10 +133,10 @@ if (!empty($terms)) {
                 </li>
                 <hr class="d-md-none">
                 <?php endif; ?>
-                <?php if ($pie_en_30_cuotas):?>
+                <?php if ($imagen_de_promocion_mobile):?>
                     <li class="projec-wrapper-content-item d-md-none d-flex align-items-center justify-content-center">
                         <div class="text-center">
-                            <img style="min-height: 50px; width:100%; max-width: 200px;" class="px-1" src="<?php echo $pie_en_30_cuotas['url'];?>" alt="Promoción">
+                            <img style="min-height: 50px; width:100%;" class="px-1" src="<?php echo $imagen_de_promocion_mobile['url'];?>" alt="Promoción">
                         </div>
                     </li>
                     <hr class="d-md-none">
@@ -160,10 +161,10 @@ if (!empty($terms)) {
             </ul>
         </div>
         <?php if ($caracteristicas_complemento || $imagen_de_promocion_desktop) : ?>
-        <div class="col-md-4 w-100 pt-5 pt-md-0">
+        <div class="col-md-4 w-100 pt-5 pt-md-0 d-flex justify-content-center">
             <div class="complement-ads-container shadow">
                 <?php if ($caracteristicas_complemento_url) : ?>
-                    <a href="<?php echo $caracteristicas_complemento_url; ?>" class="w-100 complement-ads-bottom">
+                    <a href="<?php echo $caracteristicas_complemento_url; ?>" class="complement-ads-bottom">
                         <img src="<?php echo $caracteristicas_complemento['url'];?>" alt="<?php echo $caracteristicas_complemento['alt'];?>" class="w-100">
                     </a>
                 <?php endif; ?>

@@ -478,6 +478,11 @@ button:focus {
   background: #a1a1a1 !important;
 }
 
+@media screen and (min-width: 1024px) {
+  .contact-floating-list {
+    padding-right: 40px !important;
+  }
+}
 .contact-floating-container-home {
   position: fixed;
   bottom: 0;
@@ -968,6 +973,24 @@ button:focus {
   object-fit: contain;
 }
 
+@media screen and (min-width: 768px) {
+  .project-hero-left-overlay {
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    left: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .project-hero-right-overlay {
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    right: 0;
+  }
+}
 .project-hero img {
   max-height: calc(90vh - 80px);
   object-fit: cover;
@@ -1688,6 +1711,12 @@ button:focus {
 .complement-ads-container {
   background: #40A8F5;
   height: 100%;
+  width: 70%;
+}
+@media screen and (min-width: 1024px) {
+  .complement-ads-container {
+    width: 100%;
+  }
 }
 .complement-ads-top {
   position: absolute;
@@ -1723,22 +1752,22 @@ button:focus {
   margin-right: 0;
 }
 
-.home #whatsappButton {
+#whatsappButton {
   position: relative;
 }
-.home #whatsappButton #whatsappButtonAd {
+#whatsappButton #whatsappButtonAd {
   position: absolute;
   top: 50%;
   bottom: auto;
   transform: translateY(-50%);
-  left: 45px;
+  left: 65px;
   padding: 5px 10px;
   background: white;
   border-radius: 50rem;
   width: 160px;
   text-align: center;
 }
-.home #whatsappButton #whatsappButtonAd::before {
+#whatsappButton #whatsappButtonAd::before {
   content: "";
   display: block;
   width: 0;
