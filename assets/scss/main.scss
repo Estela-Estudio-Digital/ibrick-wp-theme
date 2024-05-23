@@ -130,11 +130,15 @@
 
 .content-table ul {
     @include MQ(M) {
-        max-width: 300px;
+        max-width: 320px;
     }
 
-    border-top: 1px solid $brand-secondary-color;
+
     padding: 5px 0;
+
+    &:last-child {
+        border-top: 1px solid $brand-secondary-color;
+    }
 }
 
 .esquicio {
@@ -145,7 +149,12 @@
 
 .fotografia-planta {
     width: 100%;
-    max-width: 280px;
+    height: 300px;
+    object-fit: contain;
+    &-single {
+        max-height: 500px;
+        object-fit: contain;
+    }
 }
 
 .menu-nav-fixed {

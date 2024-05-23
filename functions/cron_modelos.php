@@ -85,7 +85,7 @@ function trigger_model_update() {
   esc_html_e( 'Update Test - '. time() . ' - ' . $success, 'textdomain' );	
 }
 
-add_action('admin_menu', 'register_model_update_link');
+// add_action('admin_menu', 'register_model_update_link');
 
 function register_model_update_link() {
   add_menu_page(

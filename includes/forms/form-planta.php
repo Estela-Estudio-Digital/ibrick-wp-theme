@@ -1,4 +1,9 @@
-<?php ?>
+<?php 
+$id_planta = get_field('id_planta');
+$vincular_planta_a_proyecto = get_field('vincular_planta_a_proyecto');
+$grupo_de_datos = get_field('grupo_de_datos', $vincular_planta_a_proyecto);
+$correos_ventas = $grupo_de_datos["correos_ventas"];
+?>
 
 <div class="wp-block-contact-form-7-contact-form-selector w-100">
   <div class="wpcf7 brickcf7 w-100" role="form"  id="wpcf7-f560-o1" lang="es-ES" dir="ltr" class="w-100 wp">
@@ -23,8 +28,8 @@
               <input type="hidden" name="_wpcf7_locale" value="en_US">
               <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f560-o1">
               <input type="hidden" name="_wpcf7_container_post" value="0">
-              <input type="hidden" name="nombreProyecto" class="nombreProyecto">
-              <input type="hidden" name="producto" class="inputProducto" value="<?php echo $texto_titulo; ?> <?php echo esc_html($label); ?> + <?php echo $cantidad_de_banos; echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>">
+              <input type="hidden" name="nombreProyecto" class="nombreProyecto" value="<?php echo $vincular_planta_a_proyecto->post_title; ?>">
+              <input type="hidden" name="producto" class="inputProducto" value="<?php echo the_title(); ?>">
               <input type="hidden" name="logoProyecto" class="logoProyecto">
               <input type="hidden" name="superficieUtil" class="superficieUtil">
               <input type="hidden" name="superficieTerraza" class="superficieTerraza">
@@ -37,8 +42,7 @@
               <input type="hidden" name="urlProyecto" class="urlProyecto" value="<?php echo get_permalink($vincular_planta_a_proyecto->ID);?>">
               <input type="hidden" name="correo_ventas" class="correo_ventas" value="<?php echo $correos_ventas;?>">
 
-              <input type="hidden" name="idProducto" class="inputIdProducto">
-              <input type="hidden" name="token" class="tokenplanok">
+              <input type="hidden" name="idProducto" class="inputIdProducto" value="<?php echo $id_planta ?>">
               <input type="hidden" name="fuenteSbj" class="fuenteSbj">
               <input type="hidden" name="medioSbj" class="medioSbj">
           </div>
@@ -89,7 +93,12 @@
                       value="enviar"
                       data-badge="inline"
                       disabled>
-                      Cotizar
+                        <div class="spinner-border btn-spinner" role="status" style="font-size: 1.5rem; zoom: 0.5;">
+                        <span class="sr-only">Loading... </span>
+                        </div>
+                        <span class="pl-2">
+                            Cotizar
+                        </span>
                   </button><br>
                   <span class="ajax-loader"></span>
               </div>

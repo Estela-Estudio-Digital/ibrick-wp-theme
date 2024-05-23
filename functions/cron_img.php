@@ -54,8 +54,8 @@ function update_images_data() {
 
   // 3-. Recorrer los proyectos.
   foreach ( $proyectos as $post ) {
-    $currentImage = get_field( 'imagen_principal_url', $post->ID );
-    $ficha =  get_field( 'ficha_url', $post->ID );
+    $ficha = get_field( 'imagen_principal_url', $post->ID );
+    $currentImage =  get_field( 'ficha_url', $post->ID );
 
     if ($currentImage !== null) {
       $imageResponse  = wp_remote_get( str_replace('http', 'https', $currentImage), array(
@@ -70,14 +70,14 @@ function update_images_data() {
     }
 
     if ($ficha !== null) {
-        $fichaResponse = wp_remote_get( $ficha, array(
+        $fichaResponse = wp_remote_get( str_replace('http', 'https', $ficha), array(
             'headers' => array(
                 'accept' => 'application/json',
                 'Content-Type' => 'application/json',
                 "Authorization" => $access_token
             )
         ))['body'];
-        $fichaId = upload_base64_image(base64_encode($imageResponse));
+        $fichaId = upload_base64_image(base64_encode($fichaResponse));
         update_field( 'ficha', $fichaId, $post->ID );
     }
   }
@@ -120,7 +120,7 @@ function trigger_images_update() {
   esc_html_e( 'Update Test - '. time() . ' - ' . $success, 'textdomain' );	
 }
 
-add_action('admin_menu', 'register_images_update_link');
+// add_action('admin_menu', 'register_images_update_link');
 
 function register_images_update_link() {
   add_menu_page(

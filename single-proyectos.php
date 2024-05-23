@@ -339,12 +339,17 @@ if ($query->have_posts()) : ?>
 
                     $fotografia_planta = get_field('repeater_fotografias');
                     $fotografia_planta_mobile = $fotografia_planta[0]['fotografia_planta']['url'];
+                    $ficha_planta = get_field('ficha');
                 ?>
 
             <div class="col-sm-6 col-lg-4 planta <?php echo $value; ?> <?php // echo ($estado == 'Normal') ? "active" : "";?> active">
                 <?php //if ($estado == 'Normal') : ?>
 
-                    <a href="<?php echo (!$planok) ? "#": the_permalink(); ?>" class="<?php echo (!$planok) ? 'cotizacionHit' : '' ?>" <?php echo (!$planok) ? 'data-toggle="modal" data-target="#planok-modal"' : '';?> >
+                    <a
+                        href="<?php echo ($planok && !$id_planok) ? "#": the_permalink(); ?>"
+                        class="<?php echo ($planok && !$id_planok) ? 'cotizacionHit' : '' ?>"
+                        <?php echo ($planok && !$id_planok) ? 'data-toggle="modal" data-target="#planok-modal"' : '';?>
+                    >
 
                         <div class="planta-item d-block text-center shadow ">
 
@@ -370,11 +375,13 @@ if ($query->have_posts()) : ?>
                                             alt="<?php echo $row['fotografia_planta']['name']; ?>">
                                     </div>
                                 <?php else :
-                                    $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+                                    $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
                                  ?>
                                     <div style="overflow: hidden;position: relative;">
                                         <img class="m-auto pb-4 fotografia-planta"
-                                            src="<?php echo $thumb['0'];?>">
+                                            src="<?php echo $thumb ? $thumb[0] : bloginfo('template_directory') . '/assets/img/no-image.jpg';?>"
+                                            data-test="<?php echo json_encode($thumb);?>"
+                                        >
                                     </div>
                                 <?php endif; ?>
 

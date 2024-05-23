@@ -340,10 +340,14 @@ $(function () {
   }, 6000);
 
   // Filtro de proyectos
+  var estudio = $('#plantas').find('.planta.active.estudio').length;
   var d1 = $('#plantas').find('.planta.active.1dorm').length;
   var d2 = $('#plantas').find('.planta.active.2dorm').length;
   var d3 = $('#plantas').find('.planta.active.3dorm').length;
   var d4 = $('#plantas').find('.planta.active.4dorm').length;
+  if(!estudio) {
+    $('#estudio').parent().remove();
+  }
   if (!d1) {
     $('#1dorm').parent().remove();
   }
@@ -739,6 +743,10 @@ $(function () {
       $(this).find('.boton_enviar').prop('disabled', true);
     }
   });
+  $('.btn-spinner').hide();
+  $('.botonEnviarCotizarPlanta').on('click', function (e) {
+    $('.btn-spinner').show();
+  })
   //Añade metodo RUT al validador
   $.validator.addMethod(
     'Rut',
@@ -801,6 +809,9 @@ $(function () {
   })();
 
   $('.brickcf7').on('wpcf7mailsent', function (event) {
+    const pdfUrl = event.detail.apiResponse.pdf_api_response_url;
+    const token = event.detail.apiResponse.pdf_api_client_token;
+    const cotId = event.detail.apiResponse.pdf_api_cot_id;
     const leadEmail = event.detail.inputs[7].value;
     const leadPhone = event.detail.inputs[9].value;
     dataLayer.push({
@@ -834,6 +845,26 @@ $(function () {
       icon: 'success',
       confirmButtonText: 'Cerrar',
     });
+
+    if (!pdfUrl?.error_data && token && cotId) {
+      console.log({ pdfUrl, token, cotId });
+      const myHeaders = new Headers();
+      myHeaders.append("accept", "application/json");
+      myHeaders.append("Authorization", token);
+
+      const requestOptions = {
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow"
+      };
+
+      fetch("https://api-gci-rest.integracionplanok.io/api/cotizaciones/" + cotId[0].id_cotizacion + "/pdf?tipoDescarga=0", requestOptions)
+        .then((response) => response.json())
+        .then((result) => window.open(result.url, '_blank'))
+        .catch((error) => console.error(error));
+      
+        $('.btn-spinner').hide();
+    }
 
     $('.form-modal').removeClass('form-modal-open');
   });

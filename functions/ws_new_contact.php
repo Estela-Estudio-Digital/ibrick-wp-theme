@@ -15,12 +15,13 @@ function action_wpcf7_mail_sent($contact_form){
             'headers' => array(
                 'accept' => 'application/json',
                 'Content-Type' => 'application/json',
-                "Authorization" => "Bearer " . $access_token
+                "Authorization" => $access_token
             )
         ));
     
         $regularClientData = wp_remote_retrieve_body($regularClient);
         $decoded_regular_client_data = json_decode($regularClientData, true);
+        $submission->add_result_props( array( 'pdf_api_client_token' => $access_token ) );
     
         $clientId = $decoded_regular_client_data['id'];
     
@@ -31,7 +32,7 @@ function action_wpcf7_mail_sent($contact_form){
                 'headers' => array(
                     'accept' => 'application/json',
                     'Content-Type' => 'application/json',
-                    "Authorization" => "Bearer " . $access_token
+                    "Authorization" => $access_token
                 ),
                 'body' => json_encode(array(
                     'identificadorPersonal' => intval(strstr(str_replace('.', '', $posted_data['inputRutCotizar']), '-', true)),
@@ -49,7 +50,10 @@ function action_wpcf7_mail_sent($contact_form){
     
             $clientId = $decoded_new_client_data['id'];
         }
+        $submission->add_result_props( array( 'pdf_api_client_id' => $clientId ) );
         // 3-. Agregar cotización
+
+        $dt = new DateTime();
     
         $cotBody = json_encode(array(array(
             'productoPrincipal' => array(
@@ -63,13 +67,13 @@ function action_wpcf7_mail_sent($contact_form){
             'productosAdicionales' => array(),
             'idCliente' => $clientId,
             'idTipoIVA' => intval('1'),
-            'fecha' => '2024-03-22T16:02:37.558Z',
+            'fecha' => date('Y-m-d\TH:i:s.u\Z'),
             'idMedioLlegada' => intval('205'),
             'telefonoValidado' => true,
             'evaluacion' => array(
                 'idExpectativa' => intval('1'),
                 'idRazonDeCompra' => intval('1'),
-                'fechaRecontacto' => "2025-03-25",
+                'fechaRecontacto' => "2025-05-25",
                 'comentario' => $posted_data['fuenteSbj'],
                 'idCanalADistancia' => intval('1'),
             ),
@@ -80,7 +84,7 @@ function action_wpcf7_mail_sent($contact_form){
             'headers' => array(
                 'accept' => 'application/json',
                 'Content-Type' => 'application/json',
-                "Authorization" => "Bearer " . $posted_data['token']
+                "Authorization" => $access_token
             ),
             'body' => $cotBody
         ));
@@ -89,23 +93,29 @@ function action_wpcf7_mail_sent($contact_form){
         $decoded_cotizacion_data = json_decode($cotizacionData, true);
     
         $idCotizacion = $decoded_cotizacion_data[0]['id_cotizacion'];
+        $submission->add_result_props( array( 'pdf_api_cot_id' => $decoded_cotizacion_data ) );
+
     
         // 4-. Solicitar PDF
-        if ($idCotizacion) {
-            $pdf = wp_remote_get( $BASE_URL . '/cotizaciones/' . $idCotizacion . '/pdf?tipoDescarga=0', array(
-                'headers' => array(
-                    'accept' => 'application/json',
-                    'Content-Type' => 'application/json',
-                    "Authorization" => "Bearer " . $posted_data['token']
-                )
-            ));
-            $pdfData = wp_remote_retrieve_body($pdf);
-            $decoded_pdf_data = json_decode($pdfData, true);
+        // if ($idCotizacion) {
+        //     $pdf = wp_remote_get( $BASE_URL . '/cotizaciones/' . $idCotizacion . '/pdf?tipoDescarga=0', array(
+        //         'headers' => array(
+        //             'accept' => 'application/json',
+        //             'Content-Type' => 'application/json',
+        //             "Authorization" => $access_token
+        //         )
+        //     ));
+        //     $pdfData = wp_remote_retrieve_body($pdf);
+        //     $decoded_pdf_data = json_decode($pdfData, true);
+
+        //     $submission->add_result_props( array( 'pdf_api_response' => $pdf ) );
     
-            if ($decoded_pdf_data['url']) {
-                $submission->add_result_props( array( 'pdf_api_response' => $decoded_pdf_data['url'] ) );
-            }
-        }
+        //     if ($decoded_pdf_data['url']) {
+        //         $submission->add_result_props( array( 'pdf_api_response_url' => $decoded_pdf_data['url'] ) );
+        //     }
+        // } else {
+        //     $submission->add_result_props( array( 'pdf_api_status' => 'fail' ) );
+        // }
     }
 
 }

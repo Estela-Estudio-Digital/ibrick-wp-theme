@@ -771,13 +771,15 @@ button:focus {
 }
 
 .content-table ul {
-  border-top: 1px solid #3c3c3c;
   padding: 5px 0;
 }
 @media screen and (min-width: 768px) {
   .content-table ul {
-    max-width: 300px;
+    max-width: 320px;
   }
+}
+.content-table ul:last-child {
+  border-top: 1px solid #3c3c3c;
 }
 
 @media screen and (min-width: 768px) {
@@ -788,7 +790,12 @@ button:focus {
 
 .fotografia-planta {
   width: 100%;
-  max-width: 280px;
+  height: 300px;
+  object-fit: contain;
+}
+.fotografia-planta-single {
+  max-height: 500px;
+  object-fit: contain;
 }
 
 .menu-nav-fixed {
