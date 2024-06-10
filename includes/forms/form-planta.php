@@ -1,6 +1,7 @@
 <?php 
-$id_planta = get_field('id_planta');
+$id_planta = get_field('corresponde');
 $vincular_planta_a_proyecto = get_field('vincular_planta_a_proyecto');
+$medio_llegada = get_field('medio_de_llegada_id_planok', $vincular_planta_a_proyecto);
 $grupo_de_datos = get_field('grupo_de_datos', $vincular_planta_a_proyecto);
 $correos_ventas = $grupo_de_datos["correos_ventas"];
 ?>
@@ -29,6 +30,7 @@ $correos_ventas = $grupo_de_datos["correos_ventas"];
               <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f560-o1">
               <input type="hidden" name="_wpcf7_container_post" value="0">
               <input type="hidden" name="nombreProyecto" class="nombreProyecto" value="<?php echo $vincular_planta_a_proyecto->post_title; ?>">
+              <input type="hidden" name="idMedioLlegada" class="idMedioLlegada" value="<?php echo $medio_llegada; ?>">
               <input type="hidden" name="producto" class="inputProducto" value="<?php echo the_title(); ?>">
               <input type="hidden" name="logoProyecto" class="logoProyecto">
               <input type="hidden" name="superficieUtil" class="superficieUtil">
@@ -105,4 +107,34 @@ $correos_ventas = $grupo_de_datos["correos_ventas"];
           </div>
       </form>
   </div>
+</div>
+
+<div class="wp-block-contact-form-7-contact-form-selector w-100">
+  <div class="wpcf7 brickcf7 w-100" role="form"  id="wpcf7-f3444-o1" lang="es-ES" dir="ltr" class="w-100 wp">
+        <div class="screen-reader-response">
+            <p role="status" aria-live="polite" aria-atomic="true"></p>
+            <ul></ul>
+        </div>
+
+        <form
+            method="post"
+            class="wpcf7-form formulario_cotizar_ok d-none"
+            id="formulario_cotizar_ok"
+        >
+                <input type="hidden" name="_wpcf7" value="3444">
+                <?php 
+                    $plugin_data = get_plugin_data( ABSPATH . 'wp-content/plugins/contact-form-7/wp-contact-form-7.php' );
+                    echo '<input type="hidden" name="_wpcf7_version" value="'.$plugin_data['Version'].'">';
+                ?>
+                <input type="hidden" name="_wpcf7_locale" value="en_US">
+                <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f3444-o1">
+                <input type="hidden" name="_wpcf7_container_post" value="0">
+                <input type="hidden" name="nombreProyecto" id="nombreProyectoPok" value="<?php echo $vincular_planta_a_proyecto->post_title; ?>">
+                <input type="hidden" id="inputNamePok" name="inputNamePok">
+                <input type="hidden" id="inputLastNamePok" name="inputLastNamePok">
+                <input type="hidden" id="inputEmailPok" name="inputEmailPok">
+                <input type="hidden" id="inputUrlPok" name="inputUrlPok">
+                <input type="submit" value="Enviar">
+        </form>
+    </div>
 </div>

@@ -179,9 +179,6 @@ $id_planok = get_field( 'id_planok' );
                             <li><span class=""><b class="pr-2">m<sup>2</sup></b></span></li>
                         </ul>
                     </div>
-                    <?php if($corresponde): ?>
-                            <p><small><?php echo $corresponde; ?></small></p>
-                            <?php endif;?>
                     <?php if($esquicio): ?>
                         <div class="esquicio pt-4">
                             <img src="<?php echo $esquicio['url']; ?>" alt="Planta" class="w-100">

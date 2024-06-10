@@ -32,6 +32,9 @@ function upload_base64_image($base64_string) {
   return $attach_id;
 }
 
+add_action( 'wp_ajax_nopriv_update_images_data', 'update_images_data' );
+add_action( 'wp_ajax_update_images_data', 'update_images_data' );
+
 function update_images_data() {
   // 1-. Setup de API.
   $BASE_URL = 'https://api-gci-rest.integracionplanok.io/api';
@@ -49,13 +52,16 @@ function update_images_data() {
     'post_status'       => 'publish',
   );
 
-  $proyectos = get_posts( $args );
-  // plan_ok_img_log( 'proyectos: ' . json_encode( $proyectos ) );
+  $planta = get_posts( $args );
+  $current = ( ! empty( $_POST['current'] ) ) ? (float)$_POST['current'] : 0;
 
-  // 3-. Recorrer los proyectos.
-  foreach ( $proyectos as $post ) {
-    $ficha = get_field( 'imagen_principal_url', $post->ID );
-    $currentImage =  get_field( 'ficha_url', $post->ID );
+  if ( count($planta) == $current ) {
+    plan_ok_models_log( 'No hay planta' );
+    return false;
+  }
+  
+    $ficha = get_field( 'imagen_principal_url', $planta[$current]->ID );
+    $currentImage =  get_field( 'ficha_url', $planta[$current]->ID );
 
     if ($currentImage !== null) {
       $imageResponse  = wp_remote_get( str_replace('http', 'https', $currentImage), array(
@@ -66,7 +72,7 @@ function update_images_data() {
           )
       ))['body'];
       $id = upload_base64_image(base64_encode($imageResponse));
-      set_post_thumbnail( $post->ID, $id );
+      set_post_thumbnail( $planta[$current]->ID, $id );
     }
 
     if ($ficha !== null) {
@@ -78,23 +84,18 @@ function update_images_data() {
             )
         ))['body'];
         $fichaId = upload_base64_image(base64_encode($fichaResponse));
-        update_field( 'ficha', $fichaId, $post->ID );
+        update_field( 'ficha', $fichaId, $planta[$current]->ID );
     }
-  }
 
-  return json_encode( $proyectos, JSON_PRETTY_PRINT );
+  $current = $current + 1;
+  wp_remote_post( admin_url('admin-ajax.php?action=update_images_data'), [
+    'blocking' => false,
+    'sslverify' => false, // we are sending this to ourselves, so trust it.
+    'body' => [
+      'current' => $current
+    ]
+  ] );
 }
-
-// Agregar la acción al cron
-// add_action( 'wp_cron_daily', 'update_images_data' );
-
-// // Programar el cron
-// if ( ! wp_next_scheduled( 'wp_cron_daily' ) ) {
-//   wp_schedule_event( strtotime( '4:00am' ), 'daily', 'wp_cron_daily' );
-// do it every year
-//   // wp_schedule_event( strtotime( '4:00am' ), 'yearly', 'wp_cron_daily' );
-//   // wp_schedule_event(time(), 'daily', 'wp_cron_daily');
-// }
 
 // Log de eventos fallidos
 if ( ! function_exists( 'plan_ok_img_log' ) ) {
@@ -120,7 +121,7 @@ function trigger_images_update() {
   esc_html_e( 'Update Test - '. time() . ' - ' . $success, 'textdomain' );	
 }
 
-// add_action('admin_menu', 'register_images_update_link');
+add_action('admin_menu', 'register_images_update_link');
 
 function register_images_update_link() {
   add_menu_page(

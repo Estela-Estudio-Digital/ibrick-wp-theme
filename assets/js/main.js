@@ -821,9 +821,7 @@ $(function () {
     });
 
     let contactName =
-      event.target['inputNameContact']?.value ||
-      event.target['inputNameCotizar']?.value ||
-      '';
+      event.target['inputNameContact']?.value || '';
 
     Swal.fire({
       title: `¡ Gracias ${contactName} !`,
@@ -833,8 +831,15 @@ $(function () {
         icon: 'no-border',
       },
       html: `<div class="d-flex flex-column align-items-center justify-content-center w-100">
-      <p>Recibirás la cotización en tu email</p>
+      <p class="d-none">Recibirás la cotización en tu email</p>
+      <div class="d-flex flex-column align-items-center justify-content-center w-100 btn-pok-spinner">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading... </span>
+        </div>
+        <p>Generando cotización...</p>
+      </div>
       <p>Muchas gracias por cotizar con Brick.</p>
+      <a class="btn btn-primary d-none btn-pok-cot mb-5" target="_blank">Descargar cotización</a>
       <div>
         <a href="https://www.addtoany.com/add_to/facebook?linkurl=${window.location.href}" target="_blank"><img src="https://static.addtoany.com/buttons/facebook.svg" width="32" height="32" style="background-color:royalblue"></a>
         <a href="https://www.addtoany.com/add_to/twitter?linkurl=${window.location.href}" target="_blank"><img src="https://static.addtoany.com/buttons/twitter.svg" width="32" height="32" style="background-color:rgb(29, 155, 240)"></a>
@@ -846,25 +851,58 @@ $(function () {
       confirmButtonText: 'Cerrar',
     });
 
+    $('.swal2-confirm').removeClass('swal2-styled');
+    $('.swal2-confirm').addClass('btn btn-secondary cotizar-btn d-none');
+
     if (!pdfUrl?.error_data && token && cotId) {
       console.log({ pdfUrl, token, cotId });
-      const myHeaders = new Headers();
-      myHeaders.append("accept", "application/json");
-      myHeaders.append("Authorization", token);
+      const hasError = cotId[0]?.hasError;
 
-      const requestOptions = {
-        method: "GET",
-        headers: myHeaders,
-        redirect: "follow"
-      };
+      if (!hasError && !cotId?.message) {
+        $('.btn-pok-spinner').show();
+        const myHeaders = new Headers();
+        myHeaders.append("accept", "application/json");
+        myHeaders.append("Authorization", token);
+  
+        const requestOptions = {
+          method: "GET",
+          headers: myHeaders,
+          redirect: "follow"
+        };
+  
+        fetch("https://api-gci-rest.integracionplanok.io/api/cotizaciones/" + cotId[0].id_cotizacion + "/pdf?tipoDescarga=0", requestOptions)
+          .then((response) => response.json())
+          .then((result) => {
+            if (result?.url) {
+              $('.btn-pok-cot').attr('href', result.url);
+              $('.btn-pok-spinner').removeClass('d-flex').addClass('d-none');
+              $('.btn-pok-cot').removeClass('d-none');
 
-      fetch("https://api-gci-rest.integracionplanok.io/api/cotizaciones/" + cotId[0].id_cotizacion + "/pdf?tipoDescarga=0", requestOptions)
-        .then((response) => response.json())
-        .then((result) => window.open(result.url, '_blank'))
-        .catch((error) => console.error(error));
-      
-        $('.btn-spinner').hide();
+              $('#inputNamePok').val(event.target.inputNameCotizar.value);
+              $('#inputLastNamePok').val(event.target.inputLastNameCotizar.value);
+              $('#inputEmailPok').val(event.target.inputEmailCotizar.value);
+              $('#inputUrlPok').val(result.url);
+
+
+            }
+          })
+          .catch((error) => {
+            console.error(error);
+            $('.btn-pok-spinner').hide();
+            $('.swal2-confirm').removeClass('cotizar-btn');
+
+          })
+          .finally(() => {
+            $('.swal2-confirm.cotizar-btn').removeClass('d-none');
+          });
+      }
+            $('.btn-spinner').hide();
     }
+
+    $('.swal2-confirm.cotizar-btn').on('click', function () {
+      alert('hola');
+      $('#formulario_cotizar_ok').submit();
+    });
 
     $('.form-modal').removeClass('form-modal-open');
   });

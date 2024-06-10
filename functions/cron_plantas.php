@@ -32,18 +32,22 @@ function login_api() {
 
   return "Bearer " . $decoded_data['token'];
 }
+if ( ! wp_next_scheduled( 'update_plants_list' ) ) {
+  wp_schedule_event( time(), 'daily', 'update_plants_list' );
+}
+add_action( 'update_plants_list', 'update_plants_data' );
+add_action( 'wp_ajax_nopriv_update_plants_data', 'update_plants_data' );
+add_action( 'wp_ajax_update_plants_data', 'update_plants_data' );
 
 function update_plants_data() {
-  // 1-. Setup de API.
   $BASE_URL = 'https://api-gci-rest.integracionplanok.io/api';
   $access_token = login_api();
 
   if (!$access_token) {
-    // Handle failed login or missing access token
     plan_ok_plants_log( 'Failed login or missing access token: ' . $access_token );
     return;
   }
-  // 2-. Seleccionar Proyectos con ID de plan Ok.
+
   $args = array(
     'post_type'         => 'proyectos',
     'posts_per_page'    => -1,
@@ -55,49 +59,51 @@ function update_plants_data() {
       )
   ));
 
-
   $proyectos = get_posts( $args );
-  // plan_ok_plants_log( 'proyectos: ' . json_encode( $proyectos ) );
+  $current_project = ( ! empty( $_POST['current_project'] ) ) ? (float)$_POST['current_project'] : 0;
+  plan_ok_plants_log( 'current_project: ' . $current_project );
 
-  $all_plants = array();
-  // 3-. Recorrer los proyectos.
-  foreach ( $proyectos as $post ) {
-    $plan_ok_id = get_field( 'id_planok', $post->ID );
-    $project = $post->post_title;
-    $project_id = $post->ID;
-    
-    // plan_ok_plants_log( 'posts: ' . $plan_ok_id . '' );
-    // 4-. Si tiene Id de planOk llamar al API modelos.
-    $body = wp_remote_get( $BASE_URL . '/proyectos/' . $plan_ok_id .'/modelos', array(
-      'headers' => array(
-          'accept' => 'application/json',
-          'Content-Type' => 'application/json',
-          "Authorization" => $access_token
-      )
-    ))['body'];
-
-    foreach (json_decode($body, true) as $model) {
-      $all_plants[] = [
-        'id' => $model['id'],
-        'nombre' => $project . ' - ' . $model['nombre'],
-        'dormitorios' => $model['dormitorios'],
-        'banos' => $model['banos'],
-        'imagenes' => $model['imagenes'],
-        'proyecto' => $project,
-        'project_id' => $plan_ok_id,
-        'project_id_wp' => $project_id,
-        'tipo' => $model['nombre'] === 'ESTUDIO' ? 'estudio' : $model['dormitorios'] . 'dorm',
-      ];
-    }
+  if ( count($proyectos) == $current_project ) {
+    return false;
   }
 
-  plan_ok_plants_log( 'Plantas: ' . json_encode( $all_plants ) );
-  // 5-. Crear o actualizar planta.
+  $plan_ok_id = get_field( 'id_planok', $proyectos[$current_project]->ID );
+  $project = $proyectos[$current_project]->post_title;
+  $project_id = $proyectos[$current_project]->ID;
+
+  $body = wp_remote_get( $BASE_URL . '/proyectos/' . $plan_ok_id .'/modelos', array(
+    'headers' => array(
+        'accept' => 'application/json',
+        'Content-Type' => 'application/json',
+        "Authorization" => $access_token
+    )
+  ))['body'];
+
+  $results = json_decode($body, true) ;
+
+  if( !is_array( $results ) || empty( $results ) ){
+    return false;
+  }
+
+  $all_plants = array();
+
+  foreach ($results as $model) {
+    $all_plants[] = [
+      'id' => $model['id'],
+      'nombre' => $project . ' - ' . $model['nombre'],
+      'dormitorios' => $model['dormitorios'],
+      'banos' => $model['banos'],
+      'imagenes' => $model['imagenes'],
+      'proyecto' => $project,
+      'project_id' => $plan_ok_id,
+      'project_id_wp' => $project_id,
+      'tipo' => $model['nombre'] === 'ESTUDIO' ? 'estudio' : $model['dormitorios'] . 'dorm',
+    ];
+  }
 
   foreach ($all_plants as $plant) {
     $plant_id = $plant['nombre'];
 
-    // $existing_plant = get_post($plant_id, 'plantas_api');
     $existing_plant = get_page_by_title( $plant_id, OBJECT, 'plantas_api' ); // Plantas Local
 
     if ($plant_id === $existing_plant->post_title) {
@@ -109,7 +115,6 @@ function update_plants_data() {
       delete_field('vincular_planta_a_proyecto', $existing_plant->ID);
       $value = get_field('vincular_planta_a_proyecto', $existing_plant->ID, false);
       $value[] = $plant['project_id_wp'];
-      plan_ok_plants_log( 'Vinculo: ' . json_encode($value) );
 
       update_field( 'dormitorios_para_filtrar', $plant['tipo'], $existing_plant->ID );
       update_field( 'cantidad_de_banos', $plant['banos'], $existing_plant->ID );
@@ -119,8 +124,6 @@ function update_plants_data() {
       update_field( 'ficha_url', $plant['imagenes'][1], $existing_plant->ID );
       update_field( 'vincular_planta_a_proyecto', $value, $existing_plant->ID );
     } else {
-      //   plan_ok_plants_log( 'Nombre local: ' . json_encode($existing_plant->post_title) );
-      plan_ok_plants_log( 'Nombre API2: ' . json_encode($plant_id) );
       $post_id = wp_insert_post(array(
         'post_type' => 'plantas_api',
         'post_title' => $plant_id,
@@ -131,21 +134,27 @@ function update_plants_data() {
       $value = get_field('vincular_planta_a_proyecto', $post_id, false);
       $value[] = $post->ID;
       update_field( 'dormitorios_para_filtrar', $plant['tipo'], $post_id );
-      update_field( 'id_proyecto', $plant['proyecto'], $post_id );
+      update_field( 'cantidad_de_banos', $plant['banos'], $post_id);
+      update_field( 'id_proyecto', $plant['project_id'], $post_id );
+      update_field( 'id_planta', $plant['id'], $post_id );
+      update_field( 'imagen_principal_url', $plant['imagenes'][0], $post_id );
+      update_field( 'ficha_url', $plant['imagenes'][1], $post_id );
       update_field( 'vincular_planta_a_proyecto', $value, $post_id );
     }
   }
-  return json_encode( $all_plants, JSON_PRETTY_PRINT );
+
+  plan_ok_plants_log( 'url: ' . admin_url('admin-ajax.php?action=update_plants_data'));
+
+  $current_project = $current_project + 1;
+  plan_ok_plants_log( 'current_project: ' . $current_project );
+  wp_remote_post( admin_url('admin-ajax.php?action=update_plants_data'), [
+    'blocking' => false,
+    'sslverify' => false, // we are sending this to ourselves, so trust it.
+    'body' => [
+      'current_project' => $current_project
+    ]
+  ]);
 }
-
-// Agregar la acción al cron
-// add_action( 'wp_cron_daily', 'update_plants_data' );
-
-// Programar el cron
-// if ( ! wp_next_scheduled( 'wp_cron_daily' ) ) {
-//   wp_schedule_event( strtotime( '2:00am' ), 'daily', 'wp_cron_daily' );
-// wp_schedule_event(time(), 'daily', 'wp_cron_daily');
-// }
 
 // Log de eventos fallidos
 if ( ! function_exists( 'plan_ok_plants_log' ) ) {
@@ -168,10 +177,10 @@ if ( ! function_exists( 'plan_ok_plants_log' ) ) {
 
 function trigger_plant_update() {
   $success = update_plants_data(); // Replace with your actual cron function name
-  esc_html_e( 'Update Test - '. time() . ' - ' . $success, 'textdomain' );	
+  esc_html_e( 'Update Test - '. date("h:i:sa") . ' - ' . $success, 'textdomain' );	
 }
 
-// add_action('admin_menu', 'register_plant_update_link');
+add_action('admin_menu', 'register_plant_update_link');
 
 function register_plant_update_link() {
   add_menu_page(

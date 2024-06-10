@@ -1,64 +1,74 @@
 <?php
+if ( ! wp_next_scheduled( 'update_model_list' ) ) {
+  wp_schedule_event( time(), 'daily', 'update_model_list' );
+}
+add_action( 'update_model_list', 'update_models_data' );
+add_action( 'wp_ajax_nopriv_update_models_data', 'update_models_data' );
+add_action( 'wp_ajax_update_models_data', 'update_models_data' );
 
 function update_models_data() {
-  // 1-. Setup de API.
   $BASE_URL = 'https://api-gci-rest.integracionplanok.io/api';
   $access_token = login_api();
 
   if (!$access_token) {
-    // Handle failed login or missing access token
     plan_ok_models_log( 'Failed login or missing access token: ' . $access_token );
     return;
   }
-  // 2-. Seleccionar Proyectos con ID de plan Ok.
   $args = array(
     'post_type'         => 'plantas_api',
     'posts_per_page'    => -1,
     'post_status'       => 'publish',
   );
 
-  $proyectos = get_posts( $args );
-  // plan_ok_models_log( 'proyectos: ' . json_encode( $proyectos ) );
+  $planta = get_posts( $args );
+  $current_plant = ( ! empty( $_POST['current_plant'] ) ) ? (float)$_POST['current_plant'] : 0;
+  plan_ok_models_log( 'current_plant: ' . $current_plant );
 
-  // 3-. Recorrer los proyectos.
-  foreach ( $proyectos as $post ) {
-    $plant_id  = get_field( 'id_planta', $post->ID );
-    
-    // plan_ok_models_log( 'posts: ' . $plant_id . '' );
-    // 4-. Si tiene Id de planOk llamar al API modelos.
-    $body = wp_remote_get( $BASE_URL . '/modelos/' . $plant_id . '/productos-principales', array(
-      'headers' => array(
-          'accept' => 'application/json',
-          'Content-Type' => 'application/json',
-          "Authorization" => $access_token
-      )
-    ))['body'];
-
-    $firstPlanta = null;
-    foreach (json_decode($body, true) as $item) {
-        if ($item['disponibleWeb'] && $item['estado'] === 'Disponible') {
-            $firstPlanta = $item;
-            break; // Break out of the loop once the first item is found
-        }
-    }
-
-    update_field( 'superficie_total', number_format($firstPlanta['superficies']['total'], 0, ',', '.'), $post->ID );
-    update_field( 'superficie_construida', number_format($firstPlanta['superficies']['util'], 0, ',', '.'), $post->ID );
-    update_field( 'superficie_terraza', number_format($firstPlanta['superficies']['terraza'], 0, ',', '.'), $post->ID );
-    update_field( 'unidades', $firstPlanta['nombre'], $post->ID );
-    update_field( 'valor', $firstPlanta['precio'], $post->ID );
+  if ( count($planta) == $current_plant ) {
+    plan_ok_models_log( 'No hay planta' );
+    return false;
   }
 
-  return json_encode( $firstPlanta, JSON_PRETTY_PRINT );
-}
+  $plant_id  = get_field( 'id_planta', $planta[$current_plant]->ID);
 
-// Agregar la acción al cron
-add_action( 'wp_cron_daily', 'update_models_data' );
+  $body = wp_remote_get( $BASE_URL . '/modelos/' . $plant_id . '/productos-principales', array(
+    'headers' => array(
+        'accept' => 'application/json',
+        'Content-Type' => 'application/json',
+        "Authorization" => $access_token
+    )
+  ))['body'];
 
-// Programar el cron
-if ( ! wp_next_scheduled( 'wp_cron_daily' ) ) {
-  wp_schedule_event( strtotime( '3:00am' ), 'daily', 'wp_cron_daily' );
-  // wp_schedule_event(time(), 'daily', 'wp_cron_daily');
+  $results = json_decode($body, true) ;
+
+  if( !is_array( $results ) || empty( $results ) ){
+    plan_ok_models_log( 'if: ' . json_encode( $results) . ' - ' . json_encode( $current_plant ) . ' - ' . json_encode( count($planta) ) );
+    return false;
+  }
+
+  foreach ($results as $item) {
+    if ($item['disponibleWeb'] && $item['estado'] === 'Disponible') {
+        $firstPlanta = $item;
+        break; // Break out of the loop once the first item is found
+    }
+  }
+  plan_ok_models_log( 'First: ' . json_encode($firstPlanta) );
+
+  update_field( 'superficie_total', number_format($firstPlanta['superficies']['total'], 0, ',', '.'),$planta[$current_plant]->ID );
+  update_field( 'superficie_construida', number_format($firstPlanta['superficies']['util'], 0, ',', '.'),$planta[$current_plant]->ID );
+  update_field( 'superficie_terraza', number_format($firstPlanta['superficies']['terraza'], 0, ',', '.'),$planta[$current_plant]->ID );
+  update_field( 'unidades', $firstPlanta['nombre'],$planta[$current_plant]->ID );
+  update_field( 'valor', $firstPlanta['precio'],$planta[$current_plant]->ID );
+  update_field( 'corresponde', $firstPlanta['id'],$planta[$current_plant]->ID );
+
+  $current_plant = $current_plant + 1;
+  wp_remote_post( admin_url('admin-ajax.php?action=update_models_data'), [
+    'blocking' => false,
+    'sslverify' => false, // we are sending this to ourselves, so trust it.
+    'body' => [
+      'current_plant' => $current_plant
+    ]
+  ] );
 }
 
 // Log de eventos fallidos
@@ -85,7 +95,7 @@ function trigger_model_update() {
   esc_html_e( 'Update Test - '. time() . ' - ' . $success, 'textdomain' );	
 }
 
-// add_action('admin_menu', 'register_model_update_link');
+add_action('admin_menu', 'register_model_update_link');
 
 function register_model_update_link() {
   add_menu_page(
