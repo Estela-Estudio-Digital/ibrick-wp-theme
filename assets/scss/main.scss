@@ -238,6 +238,9 @@
             .owl-prev {
                 border-radius: 0;
                 background: rgba($brand-primary-color, .9) !important;
+                .dark & {
+                    background: $theme-dark-primary-color !important;
+                }
 
                 span {
                     padding: 10px 20px !important;
@@ -247,6 +250,9 @@
             .owl-next {
                 border-radius: 0;
                 background: rgba($brand-secondary-color, .9) !important;
+                .dark & {
+                    background: $theme-dark-secondary-color !important;
+                }
 
                 span {
                     padding: 10px 20px !important;
@@ -281,6 +287,11 @@
     color: $brand-primary-color;
     font-weight: $font-bold;
 
+    .dark & {
+        color: $white;
+        font-weight: 400;
+    }
+
     &::before {
         content: "";
         background: url('../img/title-img.png') no-repeat;
@@ -290,6 +301,9 @@
         top: -35px;
         width: 120px;
         height: 34px;
+        .dark & {
+            display: none;
+        }
     }
 
     .section-title_naranjo & {
@@ -465,41 +479,6 @@
     background: linear-gradient(90deg, #e6e6e6 0%, #e6e6e6 50%, #d6d5d5 50%, #d6d5d5 100%);
 }
 
-// .follow-button-pay {
-//     background-color: rgba($white, .5) !important;
-//     position: fixed;
-//     bottom: -20px;
-//     z-index: 3;
-//     width: 100%;
-//     padding: 1rem;
-
-//     li{
-//         width: 33%;
-//         @include MQ(M){
-//             width: auto;
-//             &:last-child{
-//                display: none;
-//             }
-//         }
-//         a{
-//             width: 100%;
-//             min-width: 95px;
-//             small{
-//                 @include MQ(M){
-//                     font-size: 100%;
-//                 }
-//             }
-//         }
-//     }
-
-//     @include MQ(M){
-//         padding: 1rem 1.5rem;
-//         width: auto;
-//         //min-width: 380px;
-//         right: 10%;
-//     }
-// }
-
 #caracteristicas img {
     //max-width: 60px;
     max-height: 60px;
@@ -547,7 +526,15 @@
     }
 }
 
-.projec-wrapper {
+.project-wrapper {
+    &-section {
+        @include MQ(M) {
+            position: absolute !important;
+            @include center(x);
+            bottom: -24px;
+            z-index: 999;
+        }
+    }
     &-container {
         @include MQ(768px) {
             z-index: 4;
@@ -563,6 +550,11 @@
     }
 
     &-content {
+        .dark & {
+            @include MQ(M) {
+                background: rgba(0,0,0,.5);
+            }
+        }
         @include MQ(M) {
             background: $white;
             box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
@@ -912,7 +904,7 @@ $items: 1,
     }
 
     .more-info {
-        background: $ligth-grey;
+        background: $light-grey;
         border-radius: 50rem;
         padding: 2px 12px;
     }
@@ -1109,6 +1101,9 @@ $items: 1,
         @include MQ(L) {
             width: 100%;
         }
+        .dark & {
+            background: #C99D67;
+        }
     }
     &-top {
         position: absolute;
@@ -1196,6 +1191,9 @@ $items: 1,
 .precio-block {
     color: #CD3868;
     font-weight: 900;
+    .dark & {
+        color: $white;
+    }
     &-title {
         font-size: 3.5rem;
         font-weight: 900;
@@ -1244,4 +1242,5 @@ $items: 1,
     text-transform: uppercase;
     font-size: 1.2rem;
     margin: 0 20px;
+    text-align: center;
 }

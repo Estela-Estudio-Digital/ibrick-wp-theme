@@ -6,23 +6,30 @@ $font-extra-bold: 900;
 
 // Colores
 $palette: (
-    ultra-ligth-grey: #F2F2F2,
-    ligth-grey: #a1a1a1,
+    ultra-light-grey: #F2F2F2,
+    light-grey: #a1a1a1,
     medium-grey: #697789,
-    dark-grey: #121212,
+    dark-grey: #1D2124,
     primary-color: #2876A2, //#0a2240,
     secondary-color: #3c3c3c,
     emphasis-color: #FFB221,
     whatsapp-color: #00bfa5,
+    theme-dark-primary-color: #C99D67,
+    theme-dark-secondary-color: #999999,
+    theme-dark-emphasis-color: #978B83,
 );
 
-$ultra-ligth-grey: map-get($palette,ultra-ligth-grey);
-$ligth-grey: map-get($palette,ligth-grey);
+$ultra-light-grey: map-get($palette,ultra-light-grey);
+$light-grey: map-get($palette,light-grey);
 $medium-grey: map-get($palette,medium-grey);
 $dark-grey: map-get($palette,dark-grey);
 $brand-primary-color: map-get($palette,primary-color);
 $brand-secondary-color: map-get($palette,secondary-color);
 $brand-emphasis-color: map-get($palette,emphasis-color);
+
+$theme-dark-primary-color: map-get($palette,theme-dark-primary-color);
+$theme-dark-secondary-color: map-get($palette,theme-dark-secondary-color);
+$theme-dark-emphasis-color: map-get($palette,theme-dark-emphasis-color);
 
 $white:white;
 $black: black;

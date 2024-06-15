@@ -14,7 +14,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<?php if(is_singular('proyectos')): 
+  $vincular_planta_a_proyecto = get_field('vincular_planta_a_proyecto');
+  $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
+  $theme = get_field('esquema_de_colores');
+?>
+
+<body <?php body_class($theme); ?>>
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5HN7JSH"
@@ -30,11 +36,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
 <?php endif; ?>
 
-<?php bk_navbar_before();
-if(is_singular('proyectos')): 
-  $vincular_planta_a_proyecto = get_field('vincular_planta_a_proyecto');
-  $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
-  ?>
+<?php bk_navbar_before(); ?>
 
 <nav class="navbar navbar-expand-lg bg-white py-2 menu-nav-fixed" id="proyectosMenu">
     <div class="container d-flex justify-content-between">

@@ -9,6 +9,10 @@ body {
   color: $brand-secondary-color;
   background: #E6E6E6;
   font-size: .9rem;
+  &.dark {
+    background: #323E48;
+    color: #fff;
+  }
 }
 
 h2 {
