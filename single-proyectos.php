@@ -41,6 +41,7 @@ $imagen_video_portada = get_field( 'imagen_video_portada' );
 // CUSTOM FLIELDS Imágenes Generales
 $slider_proyecto = get_field('slider_proyecto');
 $logo_proyecto = get_field('logo_proyecto');
+$logo_proyecto_blanco = get_field('logo_proyecto_blanco');
 
 // CUSTOM FLIELDS Arquitectura e Interiorismo
 $arquitectura_interiorismo = get_field('arquitectura_interiorismo');
@@ -116,7 +117,7 @@ if (!empty($terms)) {
         <div class="col-md-6">
             <?php if ($theme === 'dark'): ?>
             <h1 class="mb-5">
-                <img src="<?php echo $logo_proyecto['url'];?>" alt="<?php echo $logo_proyecto['alt'];?>" class="pr-4" style="max-height:100px">
+                <img src="<?php echo $logo_proyecto_blanco['url'];?>" alt="<?php echo $logo_proyecto_blanco['alt'];?>" class="pr-4" style="max-height:100px">
                 <div class="sr-only"><?php echo the_title(); ?></div>
             </h1>
             <?php endif; ?>
