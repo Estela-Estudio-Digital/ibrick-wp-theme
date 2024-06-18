@@ -1246,6 +1246,9 @@ button:focus {
   z-index: 2;
   background: #e6e6e6;
 }
+.dark .gallery-overlay {
+  background: #323E48;
+}
 
 .home-hero-container .overlay {
   position: absolute;
