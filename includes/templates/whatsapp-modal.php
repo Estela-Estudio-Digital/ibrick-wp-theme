@@ -1,4 +1,4 @@
-<div class="whatsapp-modal bg-ultra-ligth-grey">
+<div class="whatsapp-modal bg-ultra-light-grey">
     <?php if(is_front_page()) : ?>
     <div class="p-5 ws-project">
         <div class="whatsapp-header">

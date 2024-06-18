@@ -10,6 +10,8 @@
 get_template_part('includes/header');
 bk_main_before();
 
+// CUSTOM FLIELD THEME
+$theme = get_field('esquema_de_colores');
 $tiene_contenidos = get_field('tiene_contenidos');
 
 // CUSTOM FLIELDS Descripciones
@@ -26,11 +28,15 @@ $caracteristicas_proyecto = $grupo_de_datos['caracteristicas_proyecto'];
 $terminaciones_repeater = $grupo_de_datos['terminaciones_repeater'];
 $folleto = $grupo_de_datos['folleto'];
 $caracteristica_personalizada = $grupo_de_datos['caracteristicas_personalizadas'];
+$titulo_seccion_caracteristicas = $grupo_de_datos['titulo_seccion_caracteristicas'];
+$icono_titulo_seccion_caracteristicas = $grupo_de_datos['icono_titulo_seccion_caracteristicas'];
+$bloque_caracteristicas = $grupo_de_datos['bloque_caracteristicas'];
 $caracteristicas_complemento = $grupo_de_datos['caracteristicas_complemento'];
 $caracteristicas_complemento_url = $grupo_de_datos['caracteristicas_complemento_url'];
 $imagen_de_promocion_desktop = $banner_promocion['imagen_de_promocion_desktop'];
 $imagen_de_promocion_mobile = $banner_promocion['imagen_de_promocion_mobile'];
 $url_de_promocion = $banner_promocion['url_de_promocion'];
+$id_planok = get_field( 'id_planok' );
 $planok = get_field( 'plan_ok' );
 $video = get_field( 'video' );
 $imagen_video_portada = get_field( 'imagen_video_portada' );
@@ -38,6 +44,7 @@ $imagen_video_portada = get_field( 'imagen_video_portada' );
 // CUSTOM FLIELDS Imágenes Generales
 $slider_proyecto = get_field('slider_proyecto');
 $logo_proyecto = get_field('logo_proyecto');
+$logo_proyecto_blanco = get_field('logo_proyecto_blanco');
 
 // CUSTOM FLIELDS Arquitectura e Interiorismo
 $arquitectura_interiorismo = get_field('arquitectura_interiorismo');
@@ -69,116 +76,58 @@ if (!empty($terms)) {
 }
 ?>
 <?php if (have_rows('slider_proyecto')) : ?>
-<section class="master-carousel owl-carousel primary-hero">
-    <?php while (have_rows('slider_proyecto')) : the_row();
-        // vars
-        $slider_proyecto_desktop = get_sub_field('slider_proyecto_desktop');
-        $slider_proyecto_mobile = get_sub_field('slider_proyecto_mobile');
-    ?>
-    <div class="item project-hero position-relative">
-        <div class="project-hero-left-overlay"></div>
-        <div class="project-hero-right-overlay"></div>
-        <picture>
-            <source
-            media="(max-width: 768px)"
-            srcset="<?php echo $slider_proyecto_mobile['url'];?>">
-            <img 
-            alt="<?php echo $slider_proyecto_desktop['alt'];?>"
-            src="<?php echo $slider_proyecto_desktop['url'];?>"
-            loading="lazy"
-            >
-        </picture>
-        <?php if ($imagen_de_promocion_desktop) : ?>
-            <div class="d-none d-md-block entrega-inmediata-container">
-                <a href="<?php echo $imagen_de_promocion_url; ?>" class="">
-                    <img src="<?php echo $imagen_de_promocion_desktop['url'];?>" alt="<?php echo $imagen_de_promocion_desktop['alt'];?>" class="">
-                </a>
-            </div>
-        <?php endif; ?>
+<section class="position-relative">
+    <div class="master-carousel owl-carousel primary-hero">
+        <?php while (have_rows('slider_proyecto')) : the_row();
+            // vars
+            $slider_proyecto_desktop = get_sub_field('slider_proyecto_desktop');
+            $slider_proyecto_mobile = get_sub_field('slider_proyecto_mobile');
+        ?>
+        <div class="item project-hero position-relative">
+            <!-- <div class="project-hero-left-overlay"></div> -->
+            <div class="project-hero-right-overlay"></div>
+            <picture>
+                <source
+                media="(max-width: 768px)"
+                srcset="<?php echo $slider_proyecto_mobile['url'];?>">
+                <img 
+                alt="<?php echo $slider_proyecto_desktop['alt'];?>"
+                src="<?php echo $slider_proyecto_desktop['url'];?>"
+                loading="lazy"
+                >
+            </picture>
+            <?php if ($imagen_de_promocion_desktop) : ?>
+                <div class="d-none entrega-inmediata-container <?php echo ($theme === 'dark') ? '' : 'd-md-block';?>">
+                    <a href="<?php echo $imagen_de_promocion_url; ?>" class="">
+                        <img src="<?php echo $imagen_de_promocion_desktop['url'];?>" alt="<?php echo $imagen_de_promocion_desktop['alt'];?>" class="">
+                    </a>
+                </div>
+            <?php endif; ?>
+        </div>
+        <?php endwhile; ?>
     </div>
-    <?php endwhile; ?>
+    <?php if ($theme === 'dark'): ?>
+        <?php include( locate_template( './includes/templates/banner-proyecto-dark.php', false, false) ); ?>
+    <?php else: ?>
+        <?php include( locate_template( './includes/templates/banner-proyecto-light.php', false, false) ); ?>
+    <?php endif; ?>
 </section>
 <?php endif; ?>
-
-<section class="container projec-wrapper-container">
-    <div class="row align-items-stretch mb-4">
-        <?php if ($logo_proyecto):?>
-        <div class="col-12 d-md-none bg-white">
-            <div class="p-4 text-center">
-                <h1 class="m-0">
-                    <img src="<?php echo $logo_proyecto['url'];?>" alt="<?php echo $logo_proyecto['alt'];?>" class="pr-4" >
-                    <div class="sr-only"><?php echo the_title(); ?></div>
-                </h1>
-            </div>
-        </div>
-        <?php endif; ?>
-        <div class="<?php echo ($caracteristicas_complemento) ? "col-md-8" : "col-md-12";?> projec-wrapper-content">
-            <ul class="d-md-flex justify-content-around align-items-stretch m-0 mb-2 pt-3">
-                <?php if ($logo_proyecto):?>
-                <li class="projec-wrapper-content-item projec-wrapper-content-img d-none d-md-flex align-items-center justify-content-center ml-4">
-                    <div class="wrapper-img-project">
-                        <h1 class="m-0">
-                            <img src="<?php echo $logo_proyecto['url'];?>" alt="<?php echo $logo_proyecto['alt'];?>" class="pr-4" >
-                            <div class="sr-only"><?php echo the_title(); ?></div>
-                        </h1>
-                    </div>
-                </li>
-                <?php endif; ?>
-                <?php if ($tipologia_select && $tipologia_select != 'Seleccionar') :?>
-                <li class="py-4 py-md-0projec-wrapper-content-item projec-wrapper-content-ubicacion projec-wrapper-content-tipo d-flex align-items-center justify-content-center">
-                    <h2 class="tipologia-label">
-                        <?php echo $tipologia_select['label']; ?>
-                    </h2>
-                </li>
-                <hr class="d-md-none">
-                <?php endif; ?>
-                <?php if ($imagen_de_promocion_mobile):?>
-                    <li class="projec-wrapper-content-item d-md-none d-flex align-items-center justify-content-center">
-                        <div class="text-center">
-                            <img style="min-height: 50px; width:100%;" class="px-1" src="<?php echo $imagen_de_promocion_mobile['url'];?>" alt="Promoción">
-                        </div>
-                    </li>
-                    <hr class="d-md-none">
-                <?php endif; ?>
-                <?php if ($precio_desde):?>
-                <li class="projec-wrapper-content-item d-flex align-items-center">
-                    <div class="w-100" data-toggle="tooltip" data-placement="bottom" title="<?php echo $legal; ?>">
-                        <ul class="d-flex align-items-center justify-content-center w-100 precio-block">
-                            <li class="mr-1 precio-block-item">
-                                <ul class="precio-block-span">
-                                    <li class="precio-block-desde">DESDE</li>
-                                    <li class="precio-block-uf">UF</li>
-                                </ul>
-                            </li>
-                            <li class="precio-block-item">
-                                <h4 class="m-0"><span class="precio-block-title"><?php echo $precio_desde;?></span></h4>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <?php endif; ?>
-            </ul>
-        </div>
-        <?php if ($caracteristicas_complemento || $imagen_de_promocion_desktop) : ?>
-        <div class="col-md-4 w-100 pt-5 pt-md-0 d-flex justify-content-center">
-            <div class="complement-ads-container shadow">
-                <?php if ($caracteristicas_complemento_url) : ?>
-                    <a href="<?php echo $caracteristicas_complemento_url; ?>" class="complement-ads-bottom">
-                        <img src="<?php echo $caracteristicas_complemento['url'];?>" alt="<?php echo $caracteristicas_complemento['alt'];?>" class="w-100">
-                    </a>
-                <?php endif; ?>
-            </div>
-        </div>
-        <?php endif; ?>
-    </div>
-</section>
 
 <?php if ($arquitectura_interiorismo) : ?>
 <section class="container py-md-5">
     <div class="row py-5 align-items-center" id="proyecto">
         <div class="col-md-6">
-            <h3 class="text-uppercase section-title"><span class="primary-title">Arquitectura</span><br><span
-                    class="secondary-title">& Interiorismo</span></h3>
+            <?php if ($theme === 'dark'): ?>
+            <h1 class="mb-5">
+                <img src="<?php echo $logo_proyecto_blanco['url'];?>" alt="<?php echo $logo_proyecto_blanco['alt'];?>" class="pr-4" style="max-height:100px">
+                <div class="sr-only"><?php echo the_title(); ?></div>
+            </h1>
+            <?php endif; ?>
+            <h3 class="text-uppercase section-title">
+                <span class="primary-title">Arquitectura</span>
+                <span class="secondary-title">& Interiorismo</span>
+            </h3>
             <p class="pr-5" >
                 <?php echo $arquitectura_interiorismo; ?>
             </p>
@@ -193,9 +142,9 @@ if (!empty($terms)) {
             </ul>
             <?php endif; ?>
             <?php if( $folleto ): ?>
-                <a href="<?php echo $folleto; ?>" class="btn btn-secondary btn-sm bk--btn__primary shadow py-2 my-3 mr-4 text-capitalize" target="_blank">descargar folleto</a>
+                <a href="<?php echo $folleto; ?>" class="btn <?php echo $theme === 'dark' ? 'btn-primary' : 'btn-secondary'; ?>  btn-sm shadow py-2 my-3 mr-4 text-capitalize" target="_blank">descargar folleto</a>
             <?php endif; ?>
-            <a href="<?php echo site_url('/pasos-a-seguir') ?>" class="btn btn-primary btn-sm bk--btn__primary shadow py-2 my-3" target="_blank">Conocer Proceso de Compra</a>
+            <a href="<?php echo site_url('/pasos-a-seguir') ?>" class="btn btn-sm  <?php echo $theme === 'dark' ? 'btn-secondary' : 'btn-primary'; ?> shadow py-2 my-3" target="_blank">Conocer Proceso de Compra</a>
         </div>
         <?php if ( $video ) : ?>
             <div class="col-md-6 d-none d-md-block">
@@ -226,24 +175,34 @@ if (!empty($terms)) {
 <?php endif; ?>
 
 <?php if ($caracteristicas_proyecto) : ?>
-<section class="container-fluid bg-azul mb-5" style="background-image: url('<?php echo $slider_proyecto_desktop['url'];?>');">
+<section
+    class="container-fluid mb-5 <?php if ($theme !== 'dark'): ?> bg-azul <?php else: ?> bg-theme-dark-emphasis-color <?php endif; ?>"
+    style="<?php if ($theme !== 'dark'): ?>  background-image: url('<?php echo $slider_proyecto_desktop['url'];?>');<?php endif; ?>">
     <div class="container ">
         <div class="row py-5" id="caracteristicas">
             <div class="col-12 text-white">
-                <h4 class="text-white text-uppercase text-center py-5">Los espacios que necesitas para <strong>la vida
-                        de hoy</strong> </h4>
+                <?php if ($titulo_seccion_caracteristicas): ?>
+                    <h4 class="text-white text-uppercase text-center py-5">
+                        <?php if ($icono_titulo_seccion_caracteristicas): ?>
+                            <img src="<?php echo $icono_titulo_seccion_caracteristicas['url']; ?>" alt="<?php echo $icono_titulo_seccion_caracteristicas['alt']; ?>" class="pr-2" style="max-height:80px">
+                        <?php endif; ?>
+                        <?php echo $titulo_seccion_caracteristicas; ?>
+                    </h4>
+                <?php else: ?>
+                    <h4 class="text-white text-uppercase text-center py-5">Los espacios que necesitas para <strong>la vida de hoy</strong> </h4>
+                <?php endif; ?>
                 <ul class="d-flex flex-wrap justify-content-center ">
                     <?php foreach ($caracteristicas_proyecto as $caracteristicas_proyect) : ?>
-                        <li class="mx-md-4 text-center d-flex flex-column justify-content-between project-icons">
+                        <li class="mx-md-4 text-center d-flex flex-column project-icons">
                             <div>
                                 <img src="<?php bloginfo('template_directory');?>/assets/img/<?php echo $caracteristicas_proyect['value']; ?>.svg" alt="<?php echo $caracteristicas_proyect['label']; ?>">
                             </div>
-                            <p class="py-2"><?php echo $caracteristicas_proyect['label']; ?></p>
+                            <p class="py-2" style="max-width:150px"><?php echo $caracteristicas_proyect['label']; ?></p>
                         </li>
                     <?php endforeach; ?>
                     <?php if($caracteristica_personalizada):
                         foreach ($caracteristica_personalizada as $item) : ?>
-                        <li class="mx-md-4 text-center d-flex flex-column justify-content-between project-icons">
+                        <li class="mx-md-4 text-center d-flex flex-column project-icons">
                             <div class="">
                                 <img src="<?php echo $item['caracteristica_personalizada_imagen']['url']; ?>" alt="icono personalizado">
                             </div>
@@ -257,23 +216,56 @@ if (!empty($terms)) {
 </section>
 <?php endif; ?>
 
-<?php $query = new WP_Query(array(
-    'post_type'          => 'plantas',
-    'posts_per_page'    => -1,
-    'post_status'        => 'publish',
-    'meta_query' => array(
-        array(
-            'key' => 'vincular_planta_a_proyecto',
-            'value' => '' . get_the_ID() . '',
-            'compare' => '='
+<?php if ($bloque_caracteristicas): ?>
+<section class="container my-5">
+    <div class="row py-5" id="caracteristicas">
+        <div class="col-12 text-white">
+            <?php echo $bloque_caracteristicas; ?>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
+
+<?php
+    $localArgs = array(
+        'post_type'          => 'plantas',
+        'posts_per_page'    => -1,
+        'post_status'        => 'publish',
+        'meta_query' => array(
+            array(
+                'key' => 'vincular_planta_a_proyecto',
+                'value' => '' . get_the_ID() . '',
+                'compare' => '='
+            )
+        ),
+        'meta_key'        => 'estado',
+        'orderby' => array(
+            'estado' => 'DESC',
+            'title' => 'ASC',
         )
-    ),
-    'meta_key'        => 'estado',
-    'orderby' => array(
-        'estado' => 'DESC',
-        'title' => 'ASC',
-    )
-));
+    );
+
+    $apiArgs = array(
+        'post_type'          => 'plantas_api',
+        'posts_per_page'    => -1,
+        'post_status'        => 'publish',
+        'meta_query' => array(
+            array(
+                'key' => 'id_proyecto',
+                'value' => '' . $id_planok . '',
+                'compare' => '='
+            )
+        ),
+        'orderby' => array(
+            'estado' => 'DESC',
+            'title' => 'ASC',
+        )
+    );
+
+    $localQuery = $id_planok ? $apiArgs : $localArgs;
+
+    $query = new WP_Query($localQuery);
 if ($query->have_posts()) : ?>
 <section class="container-fluid my-5 pt-5" id="plantas">
     <div class="container mt-5">
@@ -315,12 +307,17 @@ if ($query->have_posts()) : ?>
 
                     $fotografia_planta = get_field('repeater_fotografias');
                     $fotografia_planta_mobile = $fotografia_planta[0]['fotografia_planta']['url'];
+                    $ficha_planta = get_field('ficha');
                 ?>
 
-            <div class="col-sm-6 col-lg-4 planta <?php echo $value; ?> <?php echo ($estado == 'Normal') ? "active" : "";?>">
-                <?php if ($estado == 'Normal') : ?>
+            <div class="col-sm-6 col-lg-4 planta <?php echo $value; ?> <?php // echo ($estado == 'Normal') ? "active" : "";?> active">
+                <?php //if ($estado == 'Normal') : ?>
 
-                    <a href="<?php echo ($planok) ? "#": the_permalink(); ?>" class="<?php echo ($planok) ? 'cotizacionHit' : '' ?>" <?php echo ($planok) ? 'data-toggle="modal" data-target="#planok-modal"' : '';?> >
+                    <a
+                        href="<?php echo ($planok && !$id_planok) ? "#": the_permalink(); ?>"
+                        class="<?php echo ($planok && !$id_planok) ? 'cotizacionHit' : '' ?>"
+                        <?php echo ($planok && !$id_planok) ? 'data-toggle="modal" data-target="#planok-modal"' : '';?>
+                    >
 
                         <div class="planta-item d-block text-center shadow ">
 
@@ -333,6 +330,7 @@ if ($query->have_posts()) : ?>
                                     <b><?php echo esc_html($label); ?> +</b>
                                     <b><?php echo $cantidad_de_banos; echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
                                     </b>
+                                    <?php // echo $post_id; ?>
                                 </p>
                                 
                                 <?php if ($fotografia_planta) : ?>
@@ -343,6 +341,15 @@ if ($query->have_posts()) : ?>
                                         <img class="m-auto pb-4 fotografia-planta <?php echo ($estado == 'Normal') ? "" : "img-overlay" ?>"
                                             src="<?php echo $fotografia_planta[0]['fotografia_planta']['sizes']['medium']; ?>"
                                             alt="<?php echo $row['fotografia_planta']['name']; ?>">
+                                    </div>
+                                <?php else :
+                                    $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+                                 ?>
+                                    <div style="overflow: hidden;position: relative;">
+                                        <img class="m-auto pb-4 fotografia-planta"
+                                            src="<?php echo $thumb ? $thumb[0] : bloginfo('template_directory') . '/assets/img/no-image.jpg';?>"
+                                            data-test="<?php echo json_encode($thumb);?>"
+                                        >
                                     </div>
                                 <?php endif; ?>
 
@@ -377,7 +384,7 @@ if ($query->have_posts()) : ?>
                                                 <a href="<?php echo the_permalink(); ?>" class="btn btn-primary px-4 text-uppercase">Cotizar</a>
                                             <?php endif;?>
                                         <?php else : ?>
-                                            <p class="btn btn-primary disabled bg-grey mb-0">Agotada</p>
+                                            <a href="<?php echo the_permalink(); ?>" class="btn btn-primary px-4 text-uppercase">Cotizar</a>
                                         <?php endif; ?>
                                     </li>
                                 </ul>
@@ -385,7 +392,7 @@ if ($query->have_posts()) : ?>
                             </div>
                         </div>
                     </a>
-                <?php endif; ?>
+                <?php //endif; ?>
             </div>
 
             <?php endwhile;
@@ -581,7 +588,7 @@ if ($query->have_posts()) : ?>
 
 
 <?php if ( ($descripcion_de_entorno and $gmaps) || ($descripcion_de_entorno and $mapa_de_ubicacion) ) : ?>
-<section class="container-fluid bg-white">
+<section class="container-fluid <?php if ($theme !== 'dark'): ?>bg-white<?php else:?>bg-dark-grey<?php endif;?>">
     <div class="row align-items-stretch shadow" id="ubicacion">
         <div class="col-lg-4 offset-xl-2 py-5 d-md-flex align-items-center">
             <div class="mt-xl-5 max-w-480">
