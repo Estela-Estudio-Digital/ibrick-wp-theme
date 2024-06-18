@@ -218,7 +218,7 @@ if (!empty($terms)) {
 
 <?php if ($bloque_caracteristicas): ?>
 <section class="container my-5">
-    <div class="row py-5" id="caracteristicas">
+    <div class="row pt-3" id="caracteristicas">
         <div class="col-12 text-white">
             <?php echo $bloque_caracteristicas; ?>
         </div>
@@ -267,7 +267,7 @@ if (!empty($terms)) {
 
     $query = new WP_Query($localQuery);
 if ($query->have_posts()) : ?>
-<section class="container-fluid my-5 pt-5" id="plantas">
+<section class="container-fluid pt-5" id="plantas">
     <div class="container mt-5">
         <div class="row mt-5">
             <div class="col-sm-12">

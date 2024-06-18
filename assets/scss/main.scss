@@ -615,6 +615,9 @@
     right: 0;
     z-index: 2;
     background: #e6e6e6;
+    .dark & {
+        background: #323E48;
+    }
 }
 
 .home-hero-container .overlay {
