@@ -28,6 +28,9 @@ $caracteristicas_proyecto = $grupo_de_datos['caracteristicas_proyecto'];
 $terminaciones_repeater = $grupo_de_datos['terminaciones_repeater'];
 $folleto = $grupo_de_datos['folleto'];
 $caracteristica_personalizada = $grupo_de_datos['caracteristicas_personalizadas'];
+$titulo_seccion_caracteristicas = $grupo_de_datos['titulo_seccion_caracteristicas'];
+$icono_titulo_seccion_caracteristicas = $grupo_de_datos['icono_titulo_seccion_caracteristicas'];
+$bloque_caracteristicas = $grupo_de_datos['bloque_caracteristicas'];
 $caracteristicas_complemento = $grupo_de_datos['caracteristicas_complemento'];
 $caracteristicas_complemento_url = $grupo_de_datos['caracteristicas_complemento_url'];
 $imagen_de_promocion_desktop = $banner_promocion['imagen_de_promocion_desktop'];
@@ -139,9 +142,9 @@ if (!empty($terms)) {
             </ul>
             <?php endif; ?>
             <?php if( $folleto ): ?>
-                <a href="<?php echo $folleto; ?>" class="btn btn-secondary btn-sm bk--btn__primary shadow py-2 my-3 mr-4 text-capitalize" target="_blank">descargar folleto</a>
+                <a href="<?php echo $folleto; ?>" class="btn <?php echo $theme === 'dark' ? 'btn-primary' : 'btn-secondary'; ?>  btn-sm shadow py-2 my-3 mr-4 text-capitalize" target="_blank">descargar folleto</a>
             <?php endif; ?>
-            <a href="<?php echo site_url('/pasos-a-seguir') ?>" class="btn btn-primary btn-sm bk--btn__primary shadow py-2 my-3" target="_blank">Conocer Proceso de Compra</a>
+            <a href="<?php echo site_url('/pasos-a-seguir') ?>" class="btn btn-sm  <?php echo $theme === 'dark' ? 'btn-secondary' : 'btn-primary'; ?> shadow py-2 my-3" target="_blank">Conocer Proceso de Compra</a>
         </div>
         <?php if ( $video ) : ?>
             <div class="col-md-6 d-none d-md-block">
@@ -178,20 +181,28 @@ if (!empty($terms)) {
     <div class="container ">
         <div class="row py-5" id="caracteristicas">
             <div class="col-12 text-white">
-                <h4 class="text-white text-uppercase text-center py-5">Los espacios que necesitas para <strong>la vida
-                        de hoy</strong> </h4>
+                <?php if ($titulo_seccion_caracteristicas): ?>
+                    <h4 class="text-white text-uppercase text-center py-5">
+                        <?php if ($icono_titulo_seccion_caracteristicas): ?>
+                            <img src="<?php echo $icono_titulo_seccion_caracteristicas['url']; ?>" alt="<?php echo $icono_titulo_seccion_caracteristicas['alt']; ?>" class="pr-2" style="max-height:80px">
+                        <?php endif; ?>
+                        <?php echo $titulo_seccion_caracteristicas; ?>
+                    </h4>
+                <?php else: ?>
+                    <h4 class="text-white text-uppercase text-center py-5">Los espacios que necesitas para <strong>la vida de hoy</strong> </h4>
+                <?php endif; ?>
                 <ul class="d-flex flex-wrap justify-content-center ">
                     <?php foreach ($caracteristicas_proyecto as $caracteristicas_proyect) : ?>
-                        <li class="mx-md-4 text-center d-flex flex-column justify-content-between project-icons">
+                        <li class="mx-md-4 text-center d-flex flex-column project-icons">
                             <div>
                                 <img src="<?php bloginfo('template_directory');?>/assets/img/<?php echo $caracteristicas_proyect['value']; ?>.svg" alt="<?php echo $caracteristicas_proyect['label']; ?>">
                             </div>
-                            <p class="py-2"><?php echo $caracteristicas_proyect['label']; ?></p>
+                            <p class="py-2" style="max-width:150px"><?php echo $caracteristicas_proyect['label']; ?></p>
                         </li>
                     <?php endforeach; ?>
                     <?php if($caracteristica_personalizada):
                         foreach ($caracteristica_personalizada as $item) : ?>
-                        <li class="mx-md-4 text-center d-flex flex-column justify-content-between project-icons">
+                        <li class="mx-md-4 text-center d-flex flex-column project-icons">
                             <div class="">
                                 <img src="<?php echo $item['caracteristica_personalizada_imagen']['url']; ?>" alt="icono personalizado">
                             </div>
@@ -200,6 +211,16 @@ if (!empty($terms)) {
                         <?php  endforeach; endif;?>
                 </ul>
             </div>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
+<?php if ($bloque_caracteristicas): ?>
+<section class="container my-5">
+    <div class="row py-5" id="caracteristicas">
+        <div class="col-12 text-white">
+            <?php echo $bloque_caracteristicas; ?>
         </div>
     </div>
 </section>
