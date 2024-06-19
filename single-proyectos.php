@@ -184,7 +184,9 @@ if (!empty($terms)) {
                 <?php if ($titulo_seccion_caracteristicas): ?>
                     <h4 class="text-white text-uppercase text-center py-5">
                         <?php if ($icono_titulo_seccion_caracteristicas): ?>
-                            <img src="<?php echo $icono_titulo_seccion_caracteristicas['url']; ?>" alt="<?php echo $icono_titulo_seccion_caracteristicas['alt']; ?>" class="pr-2" style="max-height:80px">
+                            <span class="d-block d-md-inline">
+                                <img src="<?php echo $icono_titulo_seccion_caracteristicas['url']; ?>" alt="<?php echo $icono_titulo_seccion_caracteristicas['alt']; ?>" class="pr-2" style="max-height:80px">
+                            </span>
                         <?php endif; ?>
                         <?php echo $titulo_seccion_caracteristicas; ?>
                     </h4>
