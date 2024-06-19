@@ -193,6 +193,7 @@
 
 .form-modal {
     right: 0;
+    color: $brand-secondary-color;
     @include MQ(M) {
         right: -2px;
     }
@@ -200,6 +201,7 @@
 
 .whatsapp-modal {
     min-height: 100%;
+    color: $brand-secondary-color;
     left: 0;
     z-index: 11;
     @include MQ(M) {

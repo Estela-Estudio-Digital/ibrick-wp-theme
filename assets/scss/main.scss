@@ -532,7 +532,7 @@
             position: absolute !important;
             @include center(x);
             bottom: -24px;
-            z-index: 999;
+            z-index: 1;
         }
     }
     &-container {
