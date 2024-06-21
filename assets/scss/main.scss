@@ -744,6 +744,11 @@ $items: 1,
     @include MQ(M) {
         width: auto;
     }
+    &-title {
+        @include MQ(M) {
+            max-width: 150px;
+        }
+    }
 }
 
 .fixed-menu-primary {

@@ -199,7 +199,7 @@ if (!empty($terms)) {
                             <div>
                                 <img src="<?php bloginfo('template_directory');?>/assets/img/<?php echo $caracteristicas_proyect['value']; ?>.svg" alt="<?php echo $caracteristicas_proyect['label']; ?>">
                             </div>
-                            <p class="py-2" style="max-width:150px"><?php echo $caracteristicas_proyect['label']; ?></p>
+                            <p class="py-2 px-4 px-md-0 project-icons-title"><?php echo $caracteristicas_proyect['label']; ?></p>
                         </li>
                     <?php endforeach; ?>
                     <?php if($caracteristica_personalizada):
@@ -208,7 +208,7 @@ if (!empty($terms)) {
                             <div class="">
                                 <img src="<?php echo $item['caracteristica_personalizada_imagen']['url']; ?>" alt="icono personalizado">
                             </div>
-                            <p class="py-2"><?php echo $item['caracteristica_personalizada_texto']; ?></p>
+                            <p class="py-2 px-4 px-md-0 project-icons-title"><?php echo $item['caracteristica_personalizada_texto']; ?></p>
                         </li>
                         <?php  endforeach; endif;?>
                 </ul>
