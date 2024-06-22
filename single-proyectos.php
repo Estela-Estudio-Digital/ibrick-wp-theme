@@ -699,6 +699,11 @@ include( locate_template( './includes/templates/whatsapp-modal.php', false, fals
                     <i class="fab fa-youtube"></i>
                 </a>
             </li>
+            <li class="social-fixed-item">
+                <a target="_blank" href="https://www.linkedin.com/company/brick-inmobiliaria/posts/?feedView=all" class="social-fixed-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </li>
         </ul>
 </section>
 <section class="contact-mobile d-lg-none">

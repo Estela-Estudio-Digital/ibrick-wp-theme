@@ -33,6 +33,11 @@
                     <i class="fab fa-youtube-square" style="font-size:2rem;"></i>
                   </a>
                 </li>
+                <li class="mr-3">
+                  <a href="https://www.linkedin.com/company/brick-inmobiliaria/posts/?feedView=all" target="_blank" class=" text-white">
+                    <i class="fab fa-linkedin" style="font-size:2rem;"></i>
+                  </a>
+                </li>
               </ul>
             </li>
             <li>
@@ -180,12 +185,18 @@
                       </li>
                       <li>
                             <h3>
-                            <a href="https://www.instagram.com/inmobiliariabrick/" target="_blank">
-                              <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://www.facebook.com/BRICK-Inmobiliaria-100180791917908" target="_blank">
-                              <i class="fab fa-facebook-square"></i>
-                            </a>
+                              <a href="https://www.instagram.com/inmobiliariabrick/" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                              </a>
+                              <a href="https://www.facebook.com/BRICK-Inmobiliaria-100180791917908" target="_blank">
+                                <i class="fab fa-facebook-square"></i>
+                              </a>
+                              <a target="_blank" href="https://www.youtube.com/channel/UCnUmucW8Jm1T--NaiDIw_DQ" >
+                                  <i class="fab fa-youtube"></i>
+                              </a>
+                              <a target="_blank" href="https://www.linkedin.com/company/brick-inmobiliaria/posts/?feedView=all" >
+                                  <i class="fab fa-linkedin"></i>
+                              </a>
                             </h3>
                       </li>
                       <li id="addtoAnyTest"></li>
