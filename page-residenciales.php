@@ -84,6 +84,26 @@ $query = new WP_Query(array(
         </div>
     </div>
   </section>
+
+  <section class="contact-floating-container-home follow-button-play">
+    <ul class="contact-floating-list px-2 d-flex flex-column justify-content-between align-items-center">
+        <li>
+            <a class="d-inline whatsappButton" id="whatsappButton" href="#">
+                <ul class="d-flex align-items-center contact-floating-whatsapp">
+                    <li class="contact-floating-link whatsappButton" style="zoom: 1.2">
+                        <i class="fab fa-whatsapp"></i>
+                    </li>
+                </ul>
+                <span id="whatsappButtonAd">¿Necesitas ayuda?</span>
+            </a>
+        </li>
+    </ul>
+</section>
+
+<?php 
+include( locate_template( './includes/templates/whatsapp-modal.php', false, false) );
+?>
+
   <?php
   include( locate_template( './includes/templates/banner-pasos.php', false, false) ); 
   

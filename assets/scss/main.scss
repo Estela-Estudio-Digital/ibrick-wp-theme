@@ -1,4 +1,5 @@
 @charset 'UTF-8';
+@import "base/typography";
 @import "utils/variables";
 @import "utils/functions";
 @import "utils/media";
@@ -6,7 +7,6 @@
 @import "utils/placeholders";
 
 @import "base/reset";
-@import "base/typography";
 @import "base/global";
 
 @import "components/loader";
@@ -15,7 +15,6 @@
 @import "components/buttons";
 
 @import "layout/footer";
-
 
 #myVideo {
     height: 300px;
@@ -130,11 +129,15 @@
 
 .content-table ul {
     @include MQ(M) {
-        max-width: 300px;
+        max-width: 320px;
     }
 
-    border-top: 1px solid $brand-secondary-color;
+
     padding: 5px 0;
+
+    &:last-child {
+        border-top: 1px solid $brand-secondary-color;
+    }
 }
 
 .esquicio {
@@ -145,7 +148,12 @@
 
 .fotografia-planta {
     width: 100%;
-    max-width: 280px;
+    height: 300px;
+    object-fit: contain;
+    &-single {
+        max-height: 500px;
+        object-fit: contain;
+    }
 }
 
 .menu-nav-fixed {
@@ -229,6 +237,9 @@
             .owl-prev {
                 border-radius: 0;
                 background: rgba($brand-primary-color, .9) !important;
+                .dark & {
+                    background: $theme-dark-primary-color !important;
+                }
 
                 span {
                     padding: 10px 20px !important;
@@ -238,6 +249,9 @@
             .owl-next {
                 border-radius: 0;
                 background: rgba($brand-secondary-color, .9) !important;
+                .dark & {
+                    background: $theme-dark-secondary-color !important;
+                }
 
                 span {
                     padding: 10px 20px !important;
@@ -272,6 +286,11 @@
     color: $brand-primary-color;
     font-weight: $font-bold;
 
+    .dark & {
+        color: $white;
+        font-weight: 400;
+    }
+
     &::before {
         content: "";
         background: url('../img/title-img.png') no-repeat;
@@ -281,6 +300,9 @@
         top: -35px;
         width: 120px;
         height: 34px;
+        .dark & {
+            display: none;
+        }
     }
 
     .section-title_naranjo & {
@@ -360,6 +382,24 @@
 
 .project {
     &-hero {
+        &-left-overlay {
+            @include MQ(M) {
+                position: absolute;
+                width: 40%;
+                height: 100%;
+                background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+                left: 0;
+            }
+        }
+        &-right-overlay {
+            @include MQ(M) {
+                position: absolute;
+                width: 40%;
+                height: 100%;
+                background: linear-gradient(270deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+                right: 0;
+            }
+        }
         img {
             max-height: calc(90vh - 80px);
             object-fit: cover;
@@ -438,41 +478,6 @@
     background: linear-gradient(90deg, #e6e6e6 0%, #e6e6e6 50%, #d6d5d5 50%, #d6d5d5 100%);
 }
 
-// .follow-button-pay {
-//     background-color: rgba($white, .5) !important;
-//     position: fixed;
-//     bottom: -20px;
-//     z-index: 3;
-//     width: 100%;
-//     padding: 1rem;
-
-//     li{
-//         width: 33%;
-//         @include MQ(M){
-//             width: auto;
-//             &:last-child{
-//                display: none;
-//             }
-//         }
-//         a{
-//             width: 100%;
-//             min-width: 95px;
-//             small{
-//                 @include MQ(M){
-//                     font-size: 100%;
-//                 }
-//             }
-//         }
-//     }
-
-//     @include MQ(M){
-//         padding: 1rem 1.5rem;
-//         width: auto;
-//         //min-width: 380px;
-//         right: 10%;
-//     }
-// }
-
 #caracteristicas img {
     //max-width: 60px;
     max-height: 60px;
@@ -520,12 +525,20 @@
     }
 }
 
-.projec-wrapper {
+.project-wrapper {
+    &-section {
+        @include MQ(M) {
+            position: absolute !important;
+            @include center(x);
+            bottom: -24px;
+            z-index: 1;
+        }
+    }
     &-container {
-        @include MQ(L) {
+        @include MQ(768px) {
             z-index: 4;
             position: relative;
-            margin-top: -10px;
+            margin-top: -50px;
         }
 
         @include MQ(XL) {
@@ -536,11 +549,20 @@
     }
 
     &-content {
-        li {
+        .dark & {
+            @include MQ(M) {
+                background: rgba(0,0,0,.5);
+            }
+        }
+        @include MQ(M) {
+            background: $white;
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+        }
+        &-item {
             text-align: center;
 
             @include MQ(M) {
-                width: 25%;
+                width: 33%;
             }
         }
 
@@ -592,6 +614,9 @@
     right: 0;
     z-index: 2;
     background: #e6e6e6;
+    .dark & {
+        background: #323E48;
+    }
 }
 
 .home-hero-container .overlay {
@@ -717,6 +742,11 @@ $items: 1,
     width: 50%;
     @include MQ(M) {
         width: auto;
+    }
+    &-title {
+        @include MQ(M) {
+            max-width: 150px;
+        }
     }
 }
 
@@ -881,7 +911,7 @@ $items: 1,
     }
 
     .more-info {
-        background: $ligth-grey;
+        background: $light-grey;
         border-radius: 50rem;
         padding: 2px 12px;
     }
@@ -1025,7 +1055,6 @@ $items: 1,
 
     li {
         flex: 1;
-        text-align: center;
     }
 
   }
@@ -1072,14 +1101,38 @@ $items: 1,
   }
 
   .complement-ads {
-    @include MQ(L) {
-        max-height: 110px;
-        overflow: hidden;
+    &-container {
+        background: #40A8F5;
+        height: 100%;
+        width: 70%;
+        @include MQ(L) {
+            width: 100%;
+        }
+        .dark & {
+            background: #C99D67;
+        }
     }
-    & img {
-        object-fit: cover;
+    &-top {
+        position: absolute;
+        z-index: 1000;
+        bottom: 80px;
+        @include MQ(1000px) {
+            bottom: 100px;
+        }
+        @include MQ(1200px) {
+            bottom: 110px;
+        }
+    }
+    &-bottom {
         @include MQ(L) {
             max-height: 110px;
+            overflow: hidden;
+        }
+        & img {
+            object-fit: cover;
+            @include MQ(L) {
+                max-height: 110px;
+            }
         }
     }
   }
@@ -1088,12 +1141,12 @@ $items: 1,
     margin-right: 0;
   }
 
-  .home #whatsappButton {
+#whatsappButton {
     position: relative;
     #whatsappButtonAd {
         position: absolute;
         @include center(y);
-        left: 75px;
+        left: 65px;
         padding: 5px 10px;
         background: $white;
         border-radius: 50rem;
@@ -1113,3 +1166,89 @@ $items: 1,
         }
     }
   }
+
+.loader {
+    width: 50px;
+    padding: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: $brand-secondary-color;
+    --_m: 
+      conic-gradient(#0000 10%,#000),
+      linear-gradient(#000 0 0) content-box;
+    -webkit-mask: var(--_m);
+            mask: var(--_m);
+    -webkit-mask-composite: source-out;
+            mask-composite: subtract;
+    animation: l3 1s infinite linear;
+  }
+  @keyframes l3 {to{transform: rotate(1turn)}
+}
+
+.modal-fullscreen {
+    width: 100vw;
+    max-width: none;
+    margin: 0 !important;
+    &-content {
+        min-height: 100vh;
+        background:#dadada;
+    }
+}
+
+.precio-block {
+    color: #CD3868;
+    font-weight: 900;
+    .dark & {
+        color: $white;
+    }
+    &-title {
+        font-size: 3.5rem;
+        font-weight: 900;
+        @include MQ(768px) {
+            font-size: 2.5rem;
+        }
+    }
+    &-span {
+        padding-top: 6px;
+    }
+    &-desde {
+        font-size: .85rem;
+        @include MQ(768px) {
+            font-size: .6rem;
+        }
+        position: relative;
+        top: 5px;
+    }
+    &-uf {
+        font-size: 2rem;
+        @include MQ(768px) {
+            font-size: 1.5rem;
+        }
+        position: relative;
+        top: -5px;
+    }
+}
+
+.contact-mobile {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: $white;
+    padding-top: 10px;
+    z-index: 1;
+}
+
+.entrega-inmediata-container {
+    max-width: 300px;
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+}
+
+.tipologia-label {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin: 0 20px;
+    text-align: center;
+}

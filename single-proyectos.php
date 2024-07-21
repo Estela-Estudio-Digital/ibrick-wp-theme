@@ -1,11 +1,22 @@
+<script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        event: 'viewProject',
+        projectTitle: '<?php echo the_title(); ?>'
+    })
+</script>
+
 <?php
 get_template_part('includes/header');
 bk_main_before();
 
+// CUSTOM FLIELD THEME
+$theme = get_field('esquema_de_colores');
 $tiene_contenidos = get_field('tiene_contenidos');
 
 // CUSTOM FLIELDS Descripciones
 $grupo_de_datos = get_field('grupo_de_datos');
+$banner_promocion = get_field('banner_promocion');
 $ubicacion = $grupo_de_datos['ubicacion'];
 $precio_desde = $grupo_de_datos['precio_desde'];
 $tipologia_select = $grupo_de_datos['tipologia_select'];
@@ -17,20 +28,28 @@ $caracteristicas_proyecto = $grupo_de_datos['caracteristicas_proyecto'];
 $terminaciones_repeater = $grupo_de_datos['terminaciones_repeater'];
 $folleto = $grupo_de_datos['folleto'];
 $caracteristica_personalizada = $grupo_de_datos['caracteristicas_personalizadas'];
+$titulo_seccion_caracteristicas = $grupo_de_datos['titulo_seccion_caracteristicas'];
+$icono_titulo_seccion_caracteristicas = $grupo_de_datos['icono_titulo_seccion_caracteristicas'];
+$bloque_caracteristicas = $grupo_de_datos['bloque_caracteristicas'];
 $caracteristicas_complemento = $grupo_de_datos['caracteristicas_complemento'];
 $caracteristicas_complemento_url = $grupo_de_datos['caracteristicas_complemento_url'];
+$imagen_de_promocion_desktop = $banner_promocion['imagen_de_promocion_desktop'];
+$imagen_de_promocion_mobile = $banner_promocion['imagen_de_promocion_mobile'];
+$url_de_promocion = $banner_promocion['url_de_promocion'];
+$id_planok = get_field( 'id_planok' );
 $planok = get_field( 'plan_ok' );
-$pie_en_30_cuotas = get_field( 'pie_en_30_cuotas' );
 $video = get_field( 'video' );
 $imagen_video_portada = get_field( 'imagen_video_portada' );
 
 // CUSTOM FLIELDS Imágenes Generales
 $slider_proyecto = get_field('slider_proyecto');
 $logo_proyecto = get_field('logo_proyecto');
+$logo_proyecto_blanco = get_field('logo_proyecto_blanco');
 
 // CUSTOM FLIELDS Arquitectura e Interiorismo
 $arquitectura_interiorismo = get_field('arquitectura_interiorismo');
 $slider_arquitectura = get_field('slider_arquitectura');
+$banner_opcionales_repeater = get_field('banner_opcionales_repeater');
 
 // CUSTOM FLIELDS Galerías
 $repeater_galerias = get_field('repeater_galerias');
@@ -58,100 +77,58 @@ if (!empty($terms)) {
 }
 ?>
 <?php if (have_rows('slider_proyecto')) : ?>
-<section class="master-carousel owl-carousel primary-hero">
-    <?php while (have_rows('slider_proyecto')) : the_row();
-        // vars
-        $slider_proyecto_desktop = get_sub_field('slider_proyecto_desktop');
-        $slider_proyecto_mobile = get_sub_field('slider_proyecto_mobile');
-    ?>
-    <div class="item project-hero position-relative">
-        <picture>
-            <source
-            media="(max-width: 768px)"
-            srcset="<?php echo $slider_proyecto_mobile['url'];?>">
-            <img 
-            alt="<?php echo $slider_proyecto_desktop['alt'];?>"
-            src="<?php echo $slider_proyecto_desktop['url'];?>"
-            loading="lazy"
-            >
-        </picture>
-        <?php
-            if ($correos_ventas) {
-                // include( locate_template( './includes/forms/floating-single-projects.php', false, false) ); 
-            }
+<section class="position-relative">
+    <div class="master-carousel owl-carousel primary-hero">
+        <?php while (have_rows('slider_proyecto')) : the_row();
+            // vars
+            $slider_proyecto_desktop = get_sub_field('slider_proyecto_desktop');
+            $slider_proyecto_mobile = get_sub_field('slider_proyecto_mobile');
         ?>
+        <div class="item project-hero position-relative">
+            <!-- <div class="project-hero-left-overlay"></div> -->
+            <div class="project-hero-right-overlay"></div>
+            <picture>
+                <source
+                media="(max-width: 768px)"
+                srcset="<?php echo $slider_proyecto_mobile['url'];?>">
+                <img 
+                alt="<?php echo $slider_proyecto_desktop['alt'];?>"
+                src="<?php echo $slider_proyecto_desktop['url'];?>"
+                loading="lazy"
+                >
+            </picture>
+            <?php if ($imagen_de_promocion_desktop) : ?>
+                <div class="d-none entrega-inmediata-container <?php echo ($theme === 'dark') ? '' : 'd-md-block';?>">
+                    <a href="<?php echo $imagen_de_promocion_url; ?>" class="">
+                        <img src="<?php echo $imagen_de_promocion_desktop['url'];?>" alt="<?php echo $imagen_de_promocion_desktop['alt'];?>" class="">
+                    </a>
+                </div>
+            <?php endif; ?>
+        </div>
+        <?php endwhile; ?>
     </div>
-    <?php endwhile; ?>
+    <?php if ($theme === 'dark'): ?>
+        <?php include( locate_template( './includes/templates/banner-proyecto-dark.php', false, false) ); ?>
+    <?php else: ?>
+        <?php include( locate_template( './includes/templates/banner-proyecto-light.php', false, false) ); ?>
+    <?php endif; ?>
 </section>
 <?php endif; ?>
-
-<div class="container projec-wrapper-container">
-    <div class="row align-items-center mb-4">
-        <div class="<?php echo ($caracteristicas_complemento) ? "col-md-8" : "col-md-12";?> bg-white shadow mb-3">
-            <ul class="projec-wrapper-content d-md-flex justify-content-around align-items-stretch m-0 mb-2 pt-3">
-                <?php if ($logo_proyecto):?>
-                <li class="projec-wrapper-content-img d-flex align-items-center justify-content-center ml-4">
-                    <div class="wrapper-img-project">
-                    <h1>
-                        <img src="<?php echo $logo_proyecto['url'];?>" alt="<?php echo $logo_proyecto['alt'];?>" class="pr-4" >
-                        <div class="sr-only"><?php echo the_title(); ?></div>
-                    </h1>
-                    </div>
-                </li>
-                <hr class="d-md-none">
-                <?php endif; ?>
-                <?php if ($ubicacion && ! $pie_en_30_cuotas):?>
-                <li class="projec-wrapper-content-ubicacion d-flex align-items-center justify-content-center">
-                    <div class="text-center">
-                        <i class="fas fa-map-marker-alt"></i> <br>
-                        <p class="px-3"><?php echo $ubicacion;?></p>
-                    </div>
-                </li>
-                <hr class="d-md-none">
-                <?php endif; ?>
-                <?php if ($pie_en_30_cuotas):?>
-                <li class="projec-wrapper-content-ubicacion d-flex align-items-center justify-content-center">
-                    <div class="text-center">
-                        <img style="min-height: 50px; width:100%; max-width: 150px;" class="px-1" src="<?php echo $pie_en_30_cuotas['url'];?>" alt="Promoción">
-                    </div>
-                </li>
-                <hr class="d-md-none">
-                <?php endif; ?>
-                <?php if ($tipologia_select && $tipologia_select != 'Seleccionar') :?>
-                <li class="projec-wrapper-content-tipo d-flex align-items-center justify-content-center">
-                    <div>
-                        <img style="min-height: 50px; width:100%; max-width: 150px;" class="px-4" src="<?php echo bloginfo('template_directory').'/assets/img/'. $tipologia_select['value'] .'.svg'; ?>" alt="<?php echo $tipologia_select['label']; ?>">
-                    </div>
-                </li>
-                <hr class="d-md-none">
-                <?php endif; ?>
-                <?php if ($precio_desde):?>
-                <li class="projec-wrapper-content-precio d-flex align-items-center justify-content-center">
-                    <div>
-                        <p class="m-0">Precio desde</p>
-                        <h4 class="m-0"><b>UF <?php echo $precio_desde;?></b></h4>
-                        <p class="m-0" style="line-height:.8;color:#c3c3c3;"><small ><?php echo $legal; ?></small></p>
-                    </div>
-                </li>
-                <?php endif; ?>
-            </ul>
-        </div>
-        <?php if ($caracteristicas_complemento) : ?>
-        <div class="col-md-4 mb-3 d-flex w-100 p-0 p-md-3">
-            <a href="<?php echo $caracteristicas_complemento_url; ?>" class="w-100 shadow complement-ads">
-                <img src="<?php echo $caracteristicas_complemento['url'];?>" alt="<?php echo $caracteristicas_complemento['alt'];?>" class="w-100">
-            </a>
-        </div>
-        <?php endif; ?>
-    </div>
-</div>
 
 <?php if ($arquitectura_interiorismo) : ?>
 <section class="container py-md-5">
     <div class="row py-5 align-items-center" id="proyecto">
         <div class="col-md-6">
-            <h3 class="text-uppercase section-title"><span class="primary-title">Arquitectura</span><br><span
-                    class="secondary-title">& Interiorismo</span></h3>
+            <?php if ($theme === 'dark'): ?>
+            <h1 class="mb-5">
+                <img src="<?php echo $logo_proyecto_blanco['url'];?>" alt="<?php echo $logo_proyecto_blanco['alt'];?>" class="pr-4" style="max-height:100px">
+                <div class="sr-only"><?php echo the_title(); ?></div>
+            </h1>
+            <?php endif; ?>
+            <h3 class="text-uppercase section-title">
+                <span class="primary-title">Arquitectura</span>
+                <span class="secondary-title">& Interiorismo</span>
+            </h3>
             <p class="pr-5" >
                 <?php echo $arquitectura_interiorismo; ?>
             </p>
@@ -166,9 +143,9 @@ if (!empty($terms)) {
             </ul>
             <?php endif; ?>
             <?php if( $folleto ): ?>
-                <a href="<?php echo $folleto; ?>" class="btn btn-secondary btn-sm bk--btn__primary shadow py-2 my-3 mr-4 text-capitalize" target="_blank">descargar folleto</a>
+                <a href="<?php echo $folleto; ?>" class="btn <?php echo $theme === 'dark' ? 'btn-primary' : 'btn-secondary'; ?>  btn-sm shadow py-2 my-3 mr-4 text-capitalize" target="_blank">descargar folleto</a>
             <?php endif; ?>
-            <a href="<?php echo site_url('/pasos-a-seguir') ?>" class="btn btn-primary btn-sm bk--btn__primary shadow py-2 my-3" target="_blank">Conocer Proceso de Compra</a>
+            <a href="<?php echo site_url('/pasos-a-seguir') ?>" class="btn btn-sm  <?php echo $theme === 'dark' ? 'btn-secondary' : 'btn-primary'; ?> shadow py-2 my-3" target="_blank">Conocer Proceso de Compra</a>
         </div>
         <?php if ( $video ) : ?>
             <div class="col-md-6 d-none d-md-block">
@@ -198,29 +175,60 @@ if (!empty($terms)) {
 </section>
 <?php endif; ?>
 
+<?php if (have_rows('banners_opcionales')) : ?>
+<section class="container pb-5">
+    <div class="row">
+        <?php while (have_rows('banners_opcionales')) : the_row();
+        // vars
+        $imagen = get_sub_field('banner_image');
+        $enlace = get_sub_field('enlace_imagen');
+        ?>
+            <div class="col-md-6">
+                <a href="<?php echo $enlace; ?>">
+                    <img src="<?php echo $imagen['url'];?>" alt="<?php echo $imagen['alt'];?>" class="w-100">
+                </a>
+            </div>
+
+        <?php endwhile; ?>
+    </div>
+</section>
+<?php endif; ?>
+
 <?php if ($caracteristicas_proyecto) : ?>
-<section class="container-fluid bg-azul mb-5" style="background-image: url('<?php echo $slider_proyecto_desktop['url'];?>');">
+<section
+    class="container-fluid mb-5 <?php if ($theme !== 'dark'): ?> bg-azul <?php else: ?> bg-theme-dark-emphasis-color <?php endif; ?>"
+    style="<?php if ($theme !== 'dark'): ?>  background-image: url('<?php echo $slider_proyecto_desktop['url'];?>');<?php endif; ?>">
     <div class="container ">
         <div class="row py-5" id="caracteristicas">
             <div class="col-12 text-white">
-                <h4 class="text-white text-uppercase text-center py-5">Los espacios que necesitas para <strong>la vida
-                        de hoy</strong> </h4>
-                <ul class="d-flex flex-wrap flex-lg-nowrap justify-content-around ">
+                <?php if ($titulo_seccion_caracteristicas): ?>
+                    <h4 class="text-white text-uppercase text-center py-5">
+                        <?php if ($icono_titulo_seccion_caracteristicas): ?>
+                            <span class="d-block d-md-inline">
+                                <img src="<?php echo $icono_titulo_seccion_caracteristicas['url']; ?>" alt="<?php echo $icono_titulo_seccion_caracteristicas['alt']; ?>" class="pr-2" style="max-height:80px">
+                            </span>
+                        <?php endif; ?>
+                        <?php echo $titulo_seccion_caracteristicas; ?>
+                    </h4>
+                <?php else: ?>
+                    <h4 class="text-white text-uppercase text-center py-5">Los espacios que necesitas para <strong>la vida de hoy</strong> </h4>
+                <?php endif; ?>
+                <ul class="d-flex flex-wrap justify-content-center ">
                     <?php foreach ($caracteristicas_proyecto as $caracteristicas_proyect) : ?>
-                        <li class="mx-md-4 text-center d-flex flex-column justify-content-between project-icons">
+                        <li class="mx-md-4 text-center d-flex flex-column project-icons">
                             <div>
                                 <img src="<?php bloginfo('template_directory');?>/assets/img/<?php echo $caracteristicas_proyect['value']; ?>.svg" alt="<?php echo $caracteristicas_proyect['label']; ?>">
                             </div>
-                            <p class="py-2"><?php echo $caracteristicas_proyect['label']; ?></p>
+                            <p class="py-2 px-4 px-md-0 project-icons-title"><?php echo $caracteristicas_proyect['label']; ?></p>
                         </li>
                     <?php endforeach; ?>
                     <?php if($caracteristica_personalizada):
                         foreach ($caracteristica_personalizada as $item) : ?>
-                        <li class="mx-md-4 text-center d-flex flex-column justify-content-between project-icons">
+                        <li class="mx-md-4 text-center d-flex flex-column project-icons">
                             <div class="">
                                 <img src="<?php echo $item['caracteristica_personalizada_imagen']['url']; ?>" alt="icono personalizado">
                             </div>
-                            <p class="py-2"><?php echo $item['caracteristica_personalizada_texto']; ?></p>
+                            <p class="py-2 px-4 px-md-0 project-icons-title"><?php echo $item['caracteristica_personalizada_texto']; ?></p>
                         </li>
                         <?php  endforeach; endif;?>
                 </ul>
@@ -230,25 +238,58 @@ if (!empty($terms)) {
 </section>
 <?php endif; ?>
 
-<?php $query = new WP_Query(array(
-    'post_type'          => 'plantas',
-    'posts_per_page'    => -1,
-    'post_status'        => 'publish',
-    'meta_query' => array(
-        array(
-            'key' => 'vincular_planta_a_proyecto',
-            'value' => '' . get_the_ID() . '',
-            'compare' => '='
+<?php if ($bloque_caracteristicas): ?>
+<section class="container my-5">
+    <div class="row pt-3" id="caracteristicas">
+        <div class="col-12 text-white">
+            <?php echo $bloque_caracteristicas; ?>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
+
+<?php
+    $localArgs = array(
+        'post_type'          => 'plantas',
+        'posts_per_page'    => -1,
+        'post_status'        => 'publish',
+        'meta_query' => array(
+            array(
+                'key' => 'vincular_planta_a_proyecto',
+                'value' => '' . get_the_ID() . '',
+                'compare' => '='
+            )
+        ),
+        'meta_key'        => 'estado',
+        'orderby' => array(
+            'estado' => 'DESC',
+            'title' => 'ASC',
         )
-    ),
-    'meta_key'        => 'estado',
-    'orderby' => array(
-        'estado' => 'DESC',
-        'title' => 'ASC',
-    )
-));
+    );
+
+    $apiArgs = array(
+        'post_type'          => 'plantas_api',
+        'posts_per_page'    => -1,
+        'post_status'        => 'publish',
+        'meta_query' => array(
+            array(
+                'key' => 'id_proyecto',
+                'value' => '' . $id_planok . '',
+                'compare' => '='
+            )
+        ),
+        'orderby' => array(
+            'estado' => 'DESC',
+            'title' => 'ASC',
+        )
+    );
+
+    $localQuery = $id_planok ? $apiArgs : $localArgs;
+
+    $query = new WP_Query($localQuery);
 if ($query->have_posts()) : ?>
-<section class="container-fluid my-5 pt-5" id="plantas">
+<section class="container-fluid pt-5" id="plantas">
     <div class="container mt-5">
         <div class="row mt-5">
             <div class="col-sm-12">
@@ -288,12 +329,17 @@ if ($query->have_posts()) : ?>
 
                     $fotografia_planta = get_field('repeater_fotografias');
                     $fotografia_planta_mobile = $fotografia_planta[0]['fotografia_planta']['url'];
+                    $ficha_planta = get_field('ficha');
                 ?>
 
-            <div class="col-sm-6 col-lg-4 planta <?php echo $value; ?> <?php echo ($estado == 'Normal') ? "active" : "";?>">
-                <?php if ($estado == 'Normal') : ?>
+            <div class="col-sm-6 col-lg-4 planta <?php echo $value; ?> <?php // echo ($estado == 'Normal') ? "active" : "";?> active">
+                <?php //if ($estado == 'Normal') : ?>
 
-                    <a href="<?php echo ($planok) ? "#": the_permalink(); ?>" class="<?php echo ($planok) ? 'cotizacionHit' : '' ?>" <?php echo ($planok) ? 'data-toggle="modal" data-target="#planok-modal"' : '';?> >
+                    <a
+                        href="<?php echo ($planok && !$id_planok) ? "#": the_permalink(); ?>"
+                        class="<?php echo ($planok && !$id_planok) ? 'cotizacionHit' : '' ?>"
+                        <?php echo ($planok && !$id_planok) ? 'data-toggle="modal" data-target="#planok-modal"' : '';?>
+                    >
 
                         <div class="planta-item d-block text-center shadow ">
 
@@ -302,11 +348,11 @@ if ($query->have_posts()) : ?>
                             </h3>
 
                             <div class="bk-info-wrap  mb-5 card rounded-0">
-                                <p class="pl-5 pt-4 m-0 text-left" style="font-size:1rem;">
-                                    <b><?php echo $texto_titulo; ?></b>
+                                <p class="pt-4 m-0 text-center" style="font-size:1rem;">
                                     <b><?php echo esc_html($label); ?> +</b>
                                     <b><?php echo $cantidad_de_banos; echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
                                     </b>
+                                    <?php // echo $post_id; ?>
                                 </p>
                                 
                                 <?php if ($fotografia_planta) : ?>
@@ -318,9 +364,18 @@ if ($query->have_posts()) : ?>
                                             src="<?php echo $fotografia_planta[0]['fotografia_planta']['sizes']['medium']; ?>"
                                             alt="<?php echo $row['fotografia_planta']['name']; ?>">
                                     </div>
+                                <?php else :
+                                    $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+                                 ?>
+                                    <div style="overflow: hidden;position: relative;">
+                                        <img class="m-auto pb-4 fotografia-planta"
+                                            src="<?php echo $thumb ? $thumb[0] : bloginfo('template_directory') . '/assets/img/no-image.jpg';?>"
+                                            data-test="<?php echo json_encode($thumb);?>"
+                                        >
+                                    </div>
                                 <?php endif; ?>
 
-                                <ul class="d-flex py-3 m-0 border-right-0 border-left-0" style="border-bottom:1px solid #D3D3D3;">
+                                <ul class="d-flex py-3 m-0 border-right-0 border-left-0 align-items-center justify-content-center" style="border-bottom:1px solid #D3D3D3;">
                                     <li class="d-none">
                                         <img src="<?php bloginfo('template_directory');?>/assets/img/bedIcon.png" alt="Dormitorios"
                                             style="max-width:26px">
@@ -333,25 +388,25 @@ if ($query->have_posts()) : ?>
                                                     echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
                                         </small>
                                     </li>
-                                    <li class="pl-5">
+                                    <li class="">
                                         <p style="font-size:1rem"><img
                                                 src="<?php bloginfo('template_directory');?>/assets/img/areaIcon.png" alt="Area"
                                                 style="max-width:22px">
-                                            <span class="pl-2">Sup. Total</span> <b><?php echo $superficie_total; ?>m<sup>2</sup></b> apróx.
+                                            <span class="pl-2">Sup. Total</span> <b><?php echo $superficie_total; ?> m<sup>2</sup></b> apróx.
                                         </p>
                                     </li>
                                 </ul>
 
                                 <ul class="d-flex justify-content-between align-items-center py-3 m-0" style="background:#F6F8FA">
-                                    <li class="ml-auto">
+                                    <li class="m-auto">
                                         <?php if ($estado == 'Normal') : ?>
                                             <?php if ($planok) : ?>
-                                                <a class="btn btn-primary px-4 mr-3 text-uppercase" data-toggle="modal" data-target="#planok-modal">Cotizar</a>
+                                                <a class="btn btn-primary px-4 text-uppercase" data-toggle="modal" data-target="#planok-modal">Cotizar</a>
                                             <?php else:?>
-                                                <a href="<?php echo the_permalink(); ?>" class="btn btn-primary px-4 mr-3 text-uppercase">consultar</a>
+                                                <a href="<?php echo the_permalink(); ?>" class="btn btn-primary px-4 text-uppercase">Cotizar</a>
                                             <?php endif;?>
                                         <?php else : ?>
-                                            <p class="btn btn-primary disabled bg-grey mr-3 mb-0">Agotada</p>
+                                            <a href="<?php echo the_permalink(); ?>" class="btn btn-primary px-4 text-uppercase">Cotizar</a>
                                         <?php endif; ?>
                                     </li>
                                 </ul>
@@ -359,7 +414,7 @@ if ($query->have_posts()) : ?>
                             </div>
                         </div>
                     </a>
-                <?php endif; ?>
+                <?php //endif; ?>
             </div>
 
             <?php endwhile;
@@ -411,6 +466,7 @@ if ($query->have_posts()) : ?>
     
     $tipo_de_modulo = get_sub_field('tipo_de_modulo');
     $url_360 = get_sub_field('url_360');
+    $youtube_video_id = get_sub_field('youtube_video_id');
     //echo $tipo_de_modulo ;
     //print_r($tipo_de_modulo);
     if ($tipo_de_modulo === '360'):
@@ -428,11 +484,11 @@ if ($query->have_posts()) : ?>
                     <div class="wp-block-embed__wrapper">
                         <iframe
                             id="myVideo"
-                            class="<?php echo (is_numeric($video)) ? 'vimeo' : 'youtube' ;?> w-100 "
+                            class="<?php echo (is_numeric($youtube_video_id)) ? 'vimeo' : 'youtube' ;?> w-100 "
                             title="Embed video Flora"
                             width="500"
                             height="522"
-                            src="<?php echo (is_numeric($video)) ? 'https://player.vimeo.com/video/'.$video.'?title=&portrait=0autoplay=1' : 'https://www.youtube.com/embed/'.$video.'?feature=oembed&enablejsapi=1&enablejsapi=1' ;?>"
+                            src="<?php echo (is_numeric($youtube_video_id)) ? 'https://player.vimeo.com/video/'.$youtube_video_id.'?title=&portrait=0autoplay=1' : 'https://www.youtube.com/embed/'.$youtube_video_id.'?feature=oembed&enablejsapi=1&enablejsapi=1' ;?>"
                             frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen="">
@@ -554,7 +610,7 @@ if ($query->have_posts()) : ?>
 
 
 <?php if ( ($descripcion_de_entorno and $gmaps) || ($descripcion_de_entorno and $mapa_de_ubicacion) ) : ?>
-<section class="container-fluid bg-white">
+<section class="container-fluid <?php if ($theme !== 'dark'): ?>bg-white<?php else:?>bg-dark-grey<?php endif;?>">
     <div class="row align-items-stretch shadow" id="ubicacion">
         <div class="col-lg-4 offset-xl-2 py-5 d-md-flex align-items-center">
             <div class="mt-xl-5 max-w-480">
@@ -605,33 +661,21 @@ include( locate_template( './includes/templates/banner-pasos.php', false, false)
 
 <?php endif; ?>
 <?php if($whatsapp || $correos_ventas): ?>
-<section class="contact-floating-container follow-button-play">
+<section class="d-none d-lg-block contact-floating-container">
     <ul class="contact-floating-list px-2 d-flex flex-column justify-content-between align-items-center">
         <?php if($whatsapp): ?>
-        <li>
-        <!-- <a class="d-inline" id="whatsappButton" href="https://api.whatsapp.com/send/?phone=<?php echo $whatsapp;?>&text=Me%20interesa%20el%20 %20proyecto%20<?php echo the_title();?>" target="_blank"> -->
-            <a class="d-inline" id="whatsappButton" href="#">
-                <ul class="d-flex align-items-center contact-floating-whatsapp-button">
-                    <li class="">
-                        <img src="<?php bloginfo('template_directory');?>/assets/img/whatsapp-logo.svg" alt="whatsapp" style="max-height:35px" width="35">
-                    </li>
-                    <!-- <li>
-                        <span>Conversemos</span>
-                    </li> -->
-                </ul>
-            </a>
-        </li>
+            <li class="contact-floating-whatsapp">
+                <a href="#" class="contact-floating-link whatsappButton">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </li>
         <?php endif; ?>
         <?php if ($correos_ventas): ?>
-        <li>
-            <a href="#" id="contactFloatingForm">
-                <ul class="contact-floating-form">
-                    <li>
-                    <img src="<?php bloginfo('template_directory');?>/assets/img/email.svg" alt="whatsapp" style="max-height:35px" width="35">
-                    </li>
-                </ul>
-            </a>
-        </li>
+            <li class="contact-floating-form">
+                <a href="#" class="contact-floating-link contactFloatingForm">
+                    <i class="far fa-envelope"></i>
+                </a>
+            </li>
         <?php endif; ?>
     </ul>
 </section>
@@ -654,110 +698,270 @@ include( locate_template( './includes/templates/whatsapp-modal.php', false, fals
                 </li>
             </ul>
         </div>
-        <div class="wp-block-contact-form-7-contact-form-selector">
-            <div role="form" class="wpcf7 brickcf7" id="wpcf7-f988-o1" lang="es-ES" dir="ltr">
-                <div class="screen-reader-response">
-                    <p role="status" aria-live="polite" aria-atomic="true"></p>
-                    <ul></ul>
-                </div>
-                <form
-                    class="wpcf7-form formulario_cotizar formulario_cotizar_proyecto formulario-general"
-                    id="formulario_cotizar_proyecto"
-                    role="form"
-                    style="max-width: 400px;"
-                    method="post"
-                    name="formulario_cotizar_proyecto"
-                >
-                    <div style="display: none;">
-                        <input type="hidden" name="_wpcf7" value="988">
-                        <?php 
-                            $plugin_data = get_plugin_data( ABSPATH . 'wp-content/plugins/contact-form-7/wp-contact-form-7.php' );
-                            echo '<input type="hidden" name="_wpcf7_version" value="'.$plugin_data['Version'].'">';
-                        ?>
-                        <input type="hidden" name="_wpcf7_locale" value="en_US">
-                        <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f988-o1">
-                        <input type="hidden" name="_wpcf7_container_post" value="0">
-                        <input type="hidden" name="nombreProyecto" class="nombreProyecto">
-                        <input type="hidden" name="correosVentas" class="correosVentas" >
-                        <input type="hidden" name="logoProyecto" class="logoProyecto">
-                        <input type="hidden" name="urlProyecto" class="urlProyecto" value="<?php echo get_permalink();?>">
-            
-                        <input type="hidden" name="fuenteSbj" class="fuenteSbj">
-                        <input type="hidden" name="medioSbj" class="medioSbj">
+        <?php get_template_part('includes/forms/form-proyecto'); ?>
+    </div>
+</div>
+<?php endif;?>
+<section class="d-none d-lg-block contact-floating-container social-fixed-container">
+        <ul class="social-fixed-list">
+            <li class="social-fixed-item">
+                <a target="_blank" href="https://www.instagram.com/inmobiliariabrick/" class="social-fixed-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+            <li class="social-fixed-item">
+                <a target="_blank" href="https://www.facebook.com/BRICK-Inmobiliaria-100180791917908" class="social-fixed-link">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </li>
+            <li class="social-fixed-item">
+                <a target="_blank" href="https://www.youtube.com/channel/UCnUmucW8Jm1T--NaiDIw_DQ" class="social-fixed-link">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </li>
+            <li class="social-fixed-item">
+                <a target="_blank" href="https://www.linkedin.com/company/brick-inmobiliaria/posts/?feedView=all" class="social-fixed-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </li>
+        </ul>
+</section>
+<section class="contact-mobile d-lg-none">
+    <ul class="contact-mobile-list  d-flex align-items-center justify-content-between px-5">
+        <li class="contact-mobile-item">
+            <a target="_blank" href="https://www.instagram.com/inmobiliariabrick/" class="contact-mobile-link social-fixed-link">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </li>
+        <li class="contact-mobile-item">
+            <a target="_blank" href="https://www.facebook.com/BRICK-Inmobiliaria-100180791917908" class="contact-mobile-link social-fixed-link">
+                <i class="fab fa-facebook"></i>
+            </a>
+        </li>
+        <li class="contact-mobile-item">
+            <a target="_blank" href="https://www.youtube.com/channel/UCnUmucW8Jm1T--NaiDIw_DQ" class="contact-mobile-link social-fixed-link">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </li>
+		<li class="contact-mobile-item">
+            <a target="_blank" href="https://www.linkedin.com/company/brick-inmobiliaria/posts/?feedView=all" class="social-fixed-link">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </li>
+        <?php if($whatsapp): ?>
+            <li class="contact-mobile-item contact-floating-whatsapp">
+                <a href="#" class="contact-mobile-link contact-floating-link whatsappButton">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </li>
+        <?php endif; ?>
+        <?php if ($correos_ventas): ?>
+            <li class="contact-mobile-item contact-floating-form">
+                <a href="#" class="contact-mobile-link contact-floating-link contactFloatingForm">
+                    <i class="far fa-envelope"></i>
+                </a>
+            </li>
+        <?php endif; ?>
+    </ul>
+</section>
+<?php if ($id_planOk || $planok) : ?>
+<div class="modal fade" id="planok-modal" tabindex="-1" role="dialog" aria-labelledby="planok-modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen" role="document">
+        <div class="modal-content <?php echo $id_planOk ? 'modal-fullscreen-content' : ''; ?>">
+        <?php if ($planok) : ?>
+            <div class="modal-header mb-4">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <iframe style="width:100%;height:660px" src="<?php echo $planok; ?>" frameborder="0"></iframe>
+        <?php else: ?>
+            <div class="modal-header mb-4 w-100 bg-white shadow py-0">
+                <div class="w-100">
+                    <nav class="bg-white py-3 " id="plantasMenu">
+                        <div class="container">
+                            <div class="d-flex justify-content-between align-items-center">
+                            <a href="<?php echo get_permalink($vincular_planta_a_proyecto); ?>#plantas" class="plantaModalPlanOkClose">
+                                <img src="<?php bloginfo('template_directory');?>/assets/img/logo-brick-2024.svg" alt="Inmobiliaria Brick" width="150" class="primary-logo">
+                            </a>
+                            <ul class="text-uppercase d-md-flex align-items-center m-0 w-100 justify-content-end text-center text-md-left main-menu">
+                                <li class="mr-md-5  d-none">
+                                    <a href="#" id="verMasModelos" class="plantaModalPlanOkClose btn btn-primary btn-sm bk--btn__primary shadow" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    Ver más modelos
+                                    </a>
+                                </li>
+                                <li class="mr-md-5 my-md-0">
+                                    <a href="<?php echo get_permalink($vincular_planta_a_proyecto); ?>#plantas" class="plantaModalPlanOkClose btn btn-secondary btn-sm bk--btn__primary shadow">
+                                    Volver
+                                    </a>
+                                </li>
+                                <li class="mr-md-5 d-none d-md-block">
+                                    <img src="<?php echo $logo_proyecto['url'];?>" alt="Inmobiliaria Brick" style="max-height:40px">
+                                </li>
+                            </ul>
+
+                    </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12 ">
                             <label class="label" for="inputNameCotizar">Nombre y apellido</label>
                             <input type="text" class="form-control" id="inputNameCotizar" name="inputNameCotizar" required>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label class="label" for="inputEmailCotizar">Email</label>
-                            <input type="email" class="form-control" id="inputEmailCotizar" name="inputEmailCotizar" required>
-                        </div>
-                    </div>
+                            </div>
                     <div class="form-row">
                         <div class="form-group col-md-12 ">
-                            <label class="label" for="inputRutCotizar">Rut</label>
-                            <input type="text" class="form-control Rut" id="inputRutCotizar" name="inputRutCotizar">
+                            <label class="label" for="inputNameCotizar">Nombre y apellido</label>
+                            <input type="text" class="form-control" id="inputNameCotizar" name="inputNameCotizar" required>
                         </div>
-                        <div class="form-group col-md-12">
-                            <label class="label" for="inputTelefonoCotizar">Télefono</label>
-                            <div class="input-group w-100">
-                                <div class="input-group-prepend w-100">
-                                    <span class="input-group-text">+56</span>
-                                    <input type="text" class="form-control" id="inputTelefonoCotizar" name="inputTelefonoCotizar" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group w-100">
-                            <label class="label" for="texAreaMensajeCotizar">Consulta</label>
-                            <input class="form-control" id="texAreaMensajeCotizar" name="texAreaMensajeCotizar"></input>
-                        </div>
-                        <div class="form-group col-md-12 ">
-                            <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox"
-                                    name="inputCheckboxCotizar" checked>
-                                <label class="custom-control-label" for="inputCheckboxCotizar">
-                                    <small>Quiero que Brick Inmobiliaria me contacte</small> 
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group w-100">
-                        <div class="text-center py-4">
-                            <button  
-                                class="g-recaptcha btn btn-primary px-5 al-btn al-btn--white boton_enviar" 
-                                type="submit"
-                                name="boton_enviarCotizar"
-                                value="enviar"
-                                id="botonEnviarCotizar" 
-                                data-badge="inline"
-                                disabled>
-                                Cotizar
-                            </button><br>
-                            <span class="ajax-loader"></span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<?php endif;?>
-<?php if ($planok) : ?>
-<div class="modal fade" id="planok-modal" tabindex="-1" role="dialog" aria-labelledby="planok-modalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="container">
-                <div class="row align-items-stretch">
-                    <iframe style="width:100%;height:660px" src="<?php echo $planok; ?>" frameborder="0"></iframe>
+                    </nav >
                 </div>
             </div>
+            <div class="container-fluid px-4 pb-4 mt-5">
+                <div class="row align-items-stretch">
+                    <div class="col-12" id="plantasLoader">
+                        <div class="p-5 m-5 d-flex justify-content-center align-items-center">
+                            <div class="loader"></div>
+                        </div>
+                    </div>
+                    <div class="col-12" id="plantasError">
+                        <div class="text-center">
+                            <img src="<?php echo bloginfo('template_directory');?>/assets/img/404.png" alt="Contenido no encontrado" class="img-404">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 p-0 plantasContent">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a id="plantaModalPlanOklink" class="gridItemH1" href="data:image/jpeg;base64,<?php echo $finalImage; ?>" data-fancybox="gallery">
+                                <img id="plantaModalPlanOkImg" class="w-100" src="data:image/jpeg;base64,<?php echo $finalImage; ?>" alt="Modelo Image">
+                            </a>
+                        </div>
+                        <p class="pt-5 text-center">
+                            <img src="<?php bloginfo('template_directory');?>/assets/img/zoom.png" alt="zoom" style="max-height:20px" />
+                            <small>Haz click en la imagen para ampliar</small>
+                        </p>
+                        <p>
+                            <small>Las imágenes, textos y contenidos en este sitio fueron elaborados con fines ilustrativos y no constituyen necesariamente una representación exacta de la realidad. Su objetivo es mostrar una caracterización general del proyecto y no cada uno de sus detalles. Verifique las especificaciones de su departamento al momento de comprar. Esto se informa en virtud de lo señalado en la Ley N°19.496 y según la Ley N°21.014, y DDU 361 de fecha 16 de junio de 2017.</small>
+                        </p>
+                    </div>
+                    <div class="col-lg-4 plantasContent">
+                        <div class="mx-lg-4">
+                            <div class="mb-4">
+                                <h3 class="d-none"><span id="plantaModalPlanOkTipo"></span></span></h3>
+                                <h2 class="pb-5"><b id="plantaModalPlanOkPrograma" class="plantas-info-title"></b></h2>
+                            </div>
+
+                            <p class="mb-4">
+                                <img src="<?php bloginfo('template_directory'); ?>/assets/img/bedIcon.png" alt="Dormitorios" style="max-width:24px"> 
+                                <span class="px-2"><b id="plantaModalRoom"></b></span>
+                            </p>
+                            <p class="mb-4">
+                                <img src="<?php bloginfo('template_directory'); ?>/assets/img/batIcon.png" alt="Baños" style="max-width:24px">
+                                <span class="px-2"><b id="plantaModalBatRoom"></b></span>
+                            </p>
+
+                            <p class="pt-4"><b style="font-size:1rem">Superficies:</b></p>
+
+                            <div class="content-table">
+                                <ul class="d-flex justify-content-between w-100 " style="font-size:1rem">
+                                    <li>Útil:</li>
+                                    <li class="ml-auto"><span id="plantaModalPlanOkUtil"></span></li>
+                                    <li class="pl-1"><span class="mr-2">m<sup>2</sup></span></li>
+                                </ul>
+                                <ul class="d-flex justify-content-between w-100 " style="font-size:1rem">
+                                    <li>Terraza:</li>
+                                    <li class="ml-auto"><span id="plantaModalPlanOkTerraza"></span></li>
+                                    <li class="pl-1"><span class="pr-2">m<sup>2</sup></span></li>
+                                </ul>
+                                <ul class="d-flex justify-content-between w-100 " style="font-size:1rem;border-top:1px solid grey">
+                                    <li><b>Total:</b></li>
+                                    <li class="ml-auto"><span><b id="plantaModalPlanOkTotal"></b></span></li>
+                                    <li class="pl-1"><span class=""><b class="pr-2">m<sup>2</sup></b></span></li>
+                                </ul>
+                            </div>
+
+                            <div class="mt-5">
+                                <a href="#" id="plantaModalPlanOkDownload" class="btn btn-primary text-uppercase">Descargar Ficha de Planta</a>
+                            </div>
+                            <div class="mt-md-4 d-none">
+                                <span><small>Corresponde a </small><small id="plantaModalPlanOkUnidad"></small></span>
+                    </div>
+                    </div>
+                </form>
+                            </div>
+                </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 plantasContent">
+                        <h3 class="pb-2"><span class="plantas-info-title">Escríbenos y recibirás tu cotización por email</span></h3>
+                        <?php get_template_part('includes/forms/form-planta'); ?>
+                    </div>
+                </div>
+            </div>
+            <footer class="container-fluid py-5 bg-secondary-color text-white">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-sm-12">
+                            <ul class="d-md-flex align-items-center justify-content-between text-center text-md-left text-uppercase footer-menu w-100">
+                                <li class=" pr-md-5">
+                                    <a href="<?php echo site_url();?>">
+                                        <img src="<?php bloginfo('template_directory');?>/assets/img/footer-logo.svg" height="100" width="150" alt="Brick Inmobiliaria" class="primary-logo">
+                                    </a>
+                                </li>
+                                
+                                <li class="d-none d-md-block"><a href="<?php echo site_url('residencial');?>" class="text-white">Residencial</a></li>
+                                <li class="d-none d-md-block"><a href="<?php echo site_url('comercial');?>" class="text-white">Comercial</a></li>
+                                <li class="d-none d-md-block"><a href="<?php echo site_url('bodegas');?>" class="text-white">Bodegas</a></li>
+                                <li class="d-none d-md-block"><a href="<?php echo site_url('usa');?>" class="text-white">USA</a></li>
+                                <li class="d-none d-md-block"><a href="<?php echo site_url('pasa-el-dato-y-gana');?>" class="text-white">Referidos</a></li>
+                                <li class="d-none d-md-block"><a href="<?php echo site_url('somos-brick');?>" class="text-white">Somos Brick</a></li>
+                                <li class="d-none d-md-block"><a href="#" class="text-white contactoModalBtn">Contáctanos</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row align-items-center text-center">
+                        <div class="col-sm-12 pt-2">
+                            <ul class="d-md-flex w-100 m-0 justify-content-between">
+                                <li>
+                                    <ul class="d-flex justify-content-center">
+                                        <li class="mr-2">
+                                            <a href="https://www.instagram.com/inmobiliariabrick/" target="_blank" class=" text-white">
+                                                <i class="fab fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li class="mr-2">
+                                            <a href="https://www.facebook.com/BRICK-Inmobiliaria-100180791917908" target="_blank" class=" text-white">
+                                                <i class="fab fa-facebook-square"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <span>Síguenos</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <p><a class="text-white" href="tel:+56233234100"><i class="fas fa-mobile-alt"></i> +562 3323 4100</a></p>
+                                </li>
+                                <li>
+                                    <p><a class="text-white" href="mailto:contacto@ibrick.cl"><i class="far fa-envelope"></i> contacto@ibrick.cl</a></p>
+                                </li>
+                                <li>
+                                    <p><a class="text-white" href="https://goo.gl/maps/W5hF3kUTZL2CTce3A"><img src="<?php bloginfo('template_directory');?>/assets/img/markerIcon.svg" alt="Ubicación" style="max-height:20px;"> Américo Vespucio Norte 1090 of. 403, Vitacura, Santiago </a></p>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="d-md-flex justify-content-between text-center text-md-left">
+                                <p class="footer-legal-text"><small>&copy; <?php echo date('Y'); ?> <a href="<?php echo home_url('/'); ?>">Brick Inmobiliaria</a>. Todos los derechos reservados. </small></p>
+                                <p class="footer-legal-text"><a href="https://www.zinker.cl/" target="_blank"><small>Desarrollado por <b>Zinker</b></small></a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        <?php endif;?>
         </div>
     </div>
 </div>

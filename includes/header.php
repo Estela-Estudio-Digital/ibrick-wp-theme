@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html class="no-js" <?php language_attributes(); ?>>
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K5HN7JSH');</script>
+<!-- End Google Tag Manager -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-5N8TJPD');</script>
-  <!-- End Google Tag Manager -->
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<?php if(is_singular('proyectos')): 
+  $vincular_planta_a_proyecto = get_field('vincular_planta_a_proyecto');
+  $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
+  $theme = get_field('esquema_de_colores');
+?>
+
+<body <?php body_class($theme); ?>>
 
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5N8TJPD"
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5HN7JSH"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
@@ -30,11 +36,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
 <?php endif; ?>
 
-<?php bk_navbar_before();
-if(is_singular('proyectos')): 
-  $vincular_planta_a_proyecto = get_field('vincular_planta_a_proyecto');
-  $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
-  ?>
+<?php bk_navbar_before(); ?>
 
 <nav class="navbar navbar-expand-lg bg-white py-2 menu-nav-fixed" id="proyectosMenu">
     <div class="container d-flex justify-content-between">
@@ -44,7 +46,7 @@ if(is_singular('proyectos')):
           </span>
         </button>
       <a href="<?php bloginfo('url');?>">
-          <img src="<?php bloginfo('template_directory');?>/assets/img/primary-logo.svg" width="150" height="100" alt="Inmobiliaria Brick" class="primary-logo">
+          <img src="<?php bloginfo('template_directory');?>/assets/img/logo-brick-2024.svg" width="150" height="100" alt="Inmobiliaria Brick" class="primary-logo">
       </a>
       <button class="colapse-hamburger hamburger hamburger--emphatic navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav2" aria-controls="navbarNav2" aria-expanded="false" aria-label="Toggle navigation">
           <span class="hamburger-box">
@@ -87,41 +89,49 @@ if(is_singular('proyectos')):
 </nav >
 <?php endif; ?>
 
-<?php if (is_singular('plantas')): 
+<?php if (is_singular('plantas') || is_singular('plantas_api')): 
   $vincular_planta_a_proyecto = get_field('vincular_planta_a_proyecto');
-  $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
+	$id_proyecto = $vincular_planta_a_proyecto->ID > 1 ? $vincular_planta_a_proyecto->ID : 1090;
+  $logo_proyecto = get_field('logo_proyecto', $id_proyecto);
 ?>
 <nav class="bg-white py-3 " id="plantasMenu">
   <div class="container">
     <div class="d-flex justify-content-between align-items-center">
       <a href="<?php bloginfo('url');?>">
-          <img src="<?php bloginfo('template_directory');?>/assets/img/primary-logo.svg" alt="Inmobiliaria Brick" width="150" class="primary-logo">
+          <img src="<?php bloginfo('template_directory');?>/assets/img/logo-brick-2024.svg" alt="Inmobiliaria Brick" width="150" class="primary-logo">
       </a>
       <ul class="text-uppercase d-md-flex align-items-center m-0 w-100 justify-content-end text-center text-md-left main-menu">
+        <?php if (!is_singular('plantas_api')) : ?>
           <li class="mr-md-5  d-none d-md-block">
             <a href="#" id="verMasModelos" class="btn btn-primary btn-sm bk--btn__primary shadow" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
               Ver más modelos
             </a>
           </li>
+
+        <?php endif; ?>
           <li class="mr-md-5 my-md-0">
-            <a href="<?php echo get_permalink($vincular_planta_a_proyecto); ?>#plantas" class="btn btn-secondary btn-sm bk--btn__primary shadow">
+            <a href="<?php echo get_permalink($id_proyecto) ? get_permalink($id_proyecto) : site_url('residencial'); ?>#plantas" class="btn btn-secondary btn-sm bk--btn__primary shadow">
               Volver
             </a>
           </li>
+          <?php if ($logo_proyecto['url']) : ?>
           <li class="mr-md-5 d-none d-md-block">
-            <img src="<?php echo $logo_proyecto['url'];?>" alt="Inmobiliaria Brick" style="max-height:40px">
+            <a href="<?php echo get_permalink($vincular_planta_a_proyecto); ?>#plantas">
+              <img src="<?php echo $logo_proyecto['url'];?>" alt="Inmobiliaria Brick" style="max-height:40px">
+            </a>
           </li>
+          <?php endif; ?>
       </ul>
 
     </div>
   </div>
 </nav >
 <?php else: ?>
-<nav class="navbar navbar-expand-lg bg-white py-3 main-menu d-block" id="elseMenu">
+<nav class="navbar navbar-expand-lg bg-white main-menu d-block" id="elseMenu">
   <div class="container d-flex justify-content-between">
-    <a href="<?php bloginfo('url');?>">
+    <a href="<?php bloginfo('url');?>" class="p-0">
       
-        <img src="<?php bloginfo('template_directory');?>/assets/img/primary-logo.svg" height="100" alt="Inmobiliaria Brick" width="150" class="primary-logo">
+        <img src="<?php bloginfo('template_directory');?>/assets/img/logo-brick-2024.svg" height="100" alt="Inmobiliaria Brick" width="150" class="primary-logo">
       
     </a>
     <button class="colapse-hamburger hamburger hamburger--emphatic navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

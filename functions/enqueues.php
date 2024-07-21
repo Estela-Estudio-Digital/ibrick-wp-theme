@@ -88,6 +88,9 @@ if ( ! function_exists('bk_enqueues') ) {
 		wp_register_script('modernizr', 'https://cdn.jsdelivr.net/npm/sweetalert2@9', false, '2.8.3', true);
 		wp_enqueue_script('modernizr');
 
+		wp_register_script('bootstrap-popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js', false, '4.4.1', true);
+		wp_enqueue_script('bootstrap-popper');
+
 		wp_register_script('bootstrap-bundle', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', false, '4.4.1', true);
 		wp_enqueue_script('bootstrap-bundle');
 		// (The Bootstrap JS bundle contains Popper JS.)
@@ -112,10 +115,10 @@ if ( ! function_exists('bk_enqueues') ) {
 		wp_register_script('addToAny-async', get_template_directory_uri() . '/assets/js/page.js', false, false, true);
 		wp_enqueue_script('addToAny-async');
 
-		// if (is_front_page() || is_page('residencial') || is_page('1785')) {
-		// 	wp_register_script('chatbot-js', get_template_directory_uri() . '/assets/js/chatbot.js', false, false, true);
-		// 	wp_enqueue_script('chatbot-js');
-		// }
+		if (is_front_page() || is_page('residencial') || is_page('1785') || is_singular('proyectos')) {
+		 	wp_register_script('chatbot-js', get_template_directory_uri() . '/assets/js/chatbot.js', false, false, true);
+		 	wp_enqueue_script('chatbot-js');
+		}
 
 		wp_register_script('main', get_template_directory_uri() . '/assets/js/main.js', false, null, true);
 
@@ -211,7 +214,7 @@ if ( ! function_exists('bk_enqueues') ) {
 		if(is_singular('proyectos') || is_singular('plantas')){
 			$single_arr = array();
 			$postid = (is_singular('proyectos')) ? get_the_ID() : get_field('vincular_planta_a_proyecto')->ID;
-			$nombreProyecto = get_the_title($postid);
+			$nombreProyecto = get_field('nombre_planok') ? get_field('nombre_planok') : get_the_title($postid);
 			$grupo_de_datos = get_field('grupo_de_datos');
 			$correos_ventas = $grupo_de_datos['correos_ventas'];
 			$logo_proyecto = get_field('logo_proyecto', get_field('vincular_planta_a_proyecto')->ID);

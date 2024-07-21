@@ -1,4 +1,18 @@
 <?php
+    $projectModelLink = get_field('vincular_planta_a_proyecto');
+    $proyect_title = get_the_title($projectModelLink->ID);
+?>
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        event: 'viewModel',
+        projectTitle: '<?php echo $proyect_title; ?>',
+        modelTitle: '<?php echo the_title(); ?>'
+    })
+</script>
+
+<?php
 get_template_part('includes/header');
 bk_main_before();
 $vincular_planta_a_proyecto = get_field('vincular_planta_a_proyecto');
@@ -37,13 +51,13 @@ $correos_ventas = $grupo_de_datos['correos_ventas'];
                     $dormitorios_para_filtrar = get_field_object('dormitorios_para_filtrar');
                     $value = $dormitorios_para_filtrar['value'];
                     $label = $dormitorios_para_filtrar['choices'][$value];
+                    $texto_titulo = get_field('texto_titulo');
             ?>
                 <?php if (have_rows('repeater_fotografias')) : ?>
                 <div class="m-3 card rounded-0">
                     <p class="pt-4 pl-3  m-0 text-left" style="font-size:1rem;">
-                        <b><?php echo esc_html($label); ?> +</b>
-                        <b><?php echo $cantidad_de_banos;
-                        echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
+                        <b>
+                            <?php echo $texto_titulo; ?> <?php echo esc_html($label); ?> + <?php echo $cantidad_de_banos; echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
                         </b>
                     </p>
                     <?php
@@ -74,7 +88,7 @@ $correos_ventas = $grupo_de_datos['correos_ventas'];
 
 <?php if (have_posts()) : ?>
 <section id="plantas" class="container-fluid my-5">
-    <div class="row align-items-center">
+    <div class="row">
         <?php while (have_posts()) : the_post();
                 $post_id = get_the_ID();
                 $superficie_total = get_field('superficie_total');
@@ -97,6 +111,7 @@ $correos_ventas = $grupo_de_datos['correos_ventas'];
                 $dormitorios_para_filtrar = get_field_object('dormitorios_para_filtrar');
                 $value = $dormitorios_para_filtrar['value'];
                 $label = $dormitorios_para_filtrar['choices'][$value];
+                $texto_titulo = get_field('texto_titulo');
 
 
                 $img_repeater = get_field('repeater_fotografias');
@@ -114,10 +129,10 @@ $correos_ventas = $grupo_de_datos['correos_ventas'];
             </p>
         </div>
 
-        <div class="col-lg-4 mt-5 mt-md-0 mb-5">
+        <div class="col-lg-4 pt-5 mb-5">
             <div class="plantas-info-wrap px-md-5 d-flex flex-column align-items-center">
                 <div class="wrapper w-100">
-                    <h2 class=""><span class="plantas-info-title"><?php echo esc_html($label); ?></span></h2>
+                    <h2 class="pb-5"><span class="plantas-info-title"><?php echo $texto_titulo; ?> <?php echo esc_html($label); ?> + <?php echo $cantidad_de_banos; echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?></span></h2>
                     <?php if($unidades ): ?>
                         <p class="pb-4"><small><?php echo $unidades; ?></small></p>
                     <?php endif;?>
@@ -189,6 +204,7 @@ $correos_ventas = $grupo_de_datos['correos_ventas'];
 
         <div class="col-lg-4 mt-5 pr-md-5">
             <h2 class="d-md-none pb-4"><span class="plantas-info-title">Solicitar Información</span></h2>
+            <h2 class="pb-2"><span class="plantas-info-title">Déjanos tus datos y te contactará un asesor</span></h2>
             <div class="wp-block-contact-form-7-contact-form-selector w-100">
                 <div class="wpcf7 brickcf7 w-100" role="form"  id="wpcf7-f560-o1" lang="es-ES" dir="ltr" class="w-100 wp">
                     <div class="screen-reader-response">
@@ -213,6 +229,7 @@ $correos_ventas = $grupo_de_datos['correos_ventas'];
                             <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f560-o1">
                             <input type="hidden" name="_wpcf7_container_post" value="0">
                             <input type="hidden" name="nombreProyecto" class="nombreProyecto">
+                            <input type="hidden" name="producto" class="inputProducto" value="<?php echo $texto_titulo; ?> <?php echo esc_html($label); ?> + <?php echo $cantidad_de_banos; echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>">
                             <input type="hidden" name="logoProyecto" class="logoProyecto">
                             <input type="hidden" name="superficieUtil" class="superficieUtil">
                             <input type="hidden" name="superficieTerraza" class="superficieTerraza">
