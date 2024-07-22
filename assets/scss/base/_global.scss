@@ -9,6 +9,11 @@ body {
   color: $brand-secondary-color;
   background: #E6E6E6;
   font-size: .9rem;
+  &.dark {
+    background: #323E48;
+    color: #fff;
+    font-family: $gotham-book;
+  }
 }
 
 h2 {

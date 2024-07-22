@@ -33,6 +33,11 @@
                     <i class="fab fa-youtube-square" style="font-size:2rem;"></i>
                   </a>
                 </li>
+                <li class="mr-3">
+                  <a href="https://www.linkedin.com/company/brick-inmobiliaria/posts/?feedView=all" target="_blank" class=" text-white">
+                    <i class="fab fa-linkedin" style="font-size:2rem;"></i>
+                  </a>
+                </li>
               </ul>
             </li>
             <li>
@@ -59,9 +64,14 @@
 
         </div>
     </div>
-    <hr>
+    <div class="row justify-content-end">
+      <div class="col-lg-6 mb-2">
+        <img src="<?php bloginfo('template_directory');?>/assets/img/footer-logo-hall.svg" alt="Pertecenecmos a la Asociación de Desarrolladores Inmobiliarios" class="w-100">
+      </div>
+      <span style="height:2px; width: 100%; background-color: #f2f2f2;"></span>
+    </div>
     <div class="row">
-      <div class="col-sm-12">
+      <div class="col-sm-12 pt-2">
         <div class="d-md-flex justify-content-between text-center text-md-left">
           <p class="footer-legal-text"><small>&copy; <?php echo date('Y'); ?> <a href="<?php echo home_url('/'); ?>">Brick Inmobiliaria</a>. Todos los derechos reservados. </small></p>
           <p class="footer-legal-text"><a href="https://www.zinker.cl/" target="_blank"><small>Desarrollado por <b>Zinker</b></small></a></p>
@@ -71,7 +81,7 @@
   </div>
 </footer>
 <div class="modal fade" id="contacto-form-modal" tabindex="-1" role="dialog" aria-labelledby="kit-modalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-xl text-secondary-color" role="document">
         <div class="modal-content">
             <div class="modal-header">
             <h4 class="text-uppercase pl-5"><b>Contáctanos</b></h4>
@@ -180,12 +190,18 @@
                       </li>
                       <li>
                             <h3>
-                            <a href="https://www.instagram.com/inmobiliariabrick/" target="_blank">
-                              <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://www.facebook.com/BRICK-Inmobiliaria-100180791917908" target="_blank">
-                              <i class="fab fa-facebook-square"></i>
-                            </a>
+                              <a href="https://www.instagram.com/inmobiliariabrick/" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                              </a>
+                              <a href="https://www.facebook.com/BRICK-Inmobiliaria-100180791917908" target="_blank">
+                                <i class="fab fa-facebook-square"></i>
+                              </a>
+                              <a target="_blank" href="https://www.youtube.com/channel/UCnUmucW8Jm1T--NaiDIw_DQ" >
+                                  <i class="fab fa-youtube"></i>
+                              </a>
+                              <a target="_blank" href="https://www.linkedin.com/company/brick-inmobiliaria/posts/?feedView=all" >
+                                  <i class="fab fa-linkedin"></i>
+                              </a>
                             </h3>
                       </li>
                       <li id="addtoAnyTest"></li>

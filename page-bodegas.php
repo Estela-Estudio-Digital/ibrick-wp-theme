@@ -23,6 +23,31 @@ Template Name: Industrial
 <div class="container">
     <div class="row laign-items-stretch">
         <div class="col-12 my-5">
+            <h3 class="text-uppercase"><span class="secondary-title font-weight-bold">Centros de</span> <span class="secondary-title color-emphasis font-weight-bold">distribución</span></h3>
+        </div>
+    </div>
+</div>
+<?php 
+$taxonomy = 'tipo';
+$query = new WP_Query(array(
+    'post_type'      	=> 'proyectos',
+    'posts_per_page'	=> -1,
+    'post_status'		=> 'publish',
+    'tax_query'         => array (
+        array(
+            'taxonomy'      => $taxonomy,
+            'field'          => 'slug',
+            'terms'         => 'centro-de-distribucion'
+        ),
+    ),
+  ));
+  include( locate_template( './includes/templates/proyectos_industriales.php', false, false) ); 
+  
+  ?>
+
+<div class="container">
+    <div class="row laign-items-stretch">
+        <div class="col-12 my-5">
             <h3 class="text-uppercase"><span class="secondary-title font-weight-bold">Mini</span> <span class="secondary-title color-emphasis font-weight-bold">Bodegas</span></h3>
         </div>
     </div>
