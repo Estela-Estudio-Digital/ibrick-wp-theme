@@ -15,16 +15,9 @@
 <?php
 get_template_part('includes/header');
 bk_main_before();
-<<<<<<< HEAD
-$vincular_planta_a_proyecto = get_field('vincular_proyecto', get_the_ID());
-$id_proyecto = $vincular_planta_a_proyecto->ID > 1 ? $vincular_planta_a_proyecto->ID : 1090;
-$logo_proyecto = get_field('logo_proyecto', $id_proyecto);
-$grupo_de_datos = get_field('grupo_de_datos', $id_proyecto);
-=======
 $vincular_planta_a_proyecto = get_field('vincular_planta_a_proyecto');
 $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
 $grupo_de_datos = get_field('grupo_de_datos', $vincular_planta_a_proyecto->ID);
->>>>>>> 9661d9f09924ca7a8ef3fc2690ebde520031f0b4
 $correos_ventas = $grupo_de_datos['correos_ventas'];
 $id_planok = get_field( 'id_planok' );
 
@@ -37,13 +30,8 @@ $id_planok = get_field( 'id_planok' );
         'post_status'        => 'publish',
         'meta_query' => array(
             array(
-<<<<<<< HEAD
                 'key' => 'vincular_proyecto',
                 'value' => $id_proyecto,
-=======
-                'key' => 'vincular_planta_a_proyecto',
-                'value' => $vincular_planta_a_proyecto->ID,
->>>>>>> 9661d9f09924ca7a8ef3fc2690ebde520031f0b4
                 'compare' => '='
             )
         ),
@@ -105,11 +93,7 @@ $id_planok = get_field( 'id_planok' );
                 $corresponde = get_field("corresponde");
 
                 $legal = get_field("legal");
-<<<<<<< HEAD
                 $sala_de_estar = get_field('sala_de_estar', $id_proyecto);
-=======
-                $sala_de_estar = get_field('sala_de_estar', $vincular_planta_a_proyecto->ID);
->>>>>>> 9661d9f09924ca7a8ef3fc2690ebde520031f0b4
 
                 $dormitorios_para_filtrar = get_field_object('dormitorios_para_filtrar');
                 $value = $dormitorios_para_filtrar['value'];
