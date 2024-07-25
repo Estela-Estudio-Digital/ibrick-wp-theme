@@ -115,7 +115,7 @@ if ( ! function_exists('bk_enqueues') ) {
 		wp_register_script('addToAny-async', get_template_directory_uri() . '/assets/js/page.js', false, false, true);
 		wp_enqueue_script('addToAny-async');
 
-		if (is_front_page() || is_page('residencial') || is_page('1785') || is_singular('proyectos')) {
+		if (is_front_page() || is_page('residencial') || is_page('1785') || is_singular('proyectos') || is_page('entrega-inmediata')) {
 		 	wp_register_script('chatbot-js', get_template_directory_uri() . '/assets/js/chatbot.js', false, false, true);
 		 	wp_enqueue_script('chatbot-js');
 		}
