@@ -11,23 +11,30 @@ Template Name: Entrega inmediata
 $id_slider = get_field('id_slider');
 $mobile = get_field('mobile');
 $desktop = get_field('desktop');
+$enlace_imagen = get_field('enlace_imagen');
 ?>
 <section class="primary-hero">
 <?php if ($id_slider && !$mobile && !$desktop) : ?>
     <?php echo do_shortcode('[smartslider3 slider="'.$id_slider.'"]'); ?>
 <? endif; ?>
 <? if (!$id_slider && $mobile && $desktop) : ?>
-    <picture>
-        <source
-        media="(max-width: 768px)"
-        srcset="<?php echo $desktop;?>">
-        <img 
-        alt="Entrega Inmediata"
-        src="<?php echo $mobile;?>"
-        loading="lazy"
-        class="w-100"
-        >
-    </picture>
+    <?php if($enlace_imagen): ?>
+        <a href="<?php echo $enlace_imagen;?>">
+    <?php endif; ?>
+        <picture>
+            <source
+            media="(max-width: 768px)"
+            srcset="<?php echo $mobile;?>">
+            <img 
+            alt="Entrega Inmediata"
+            src="<?php echo $desktop;?>"
+            loading="lazy"
+            class="w-100"
+            >
+        </picture>
+    <?php if($enlace_imagen): ?>
+        </a>
+    <?php endif; ?>
 <?php endif; ?>
 </section>
 
