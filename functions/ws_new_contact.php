@@ -81,7 +81,7 @@ function action_wpcf7_mail_sent($contact_form){
             'gclid' => '',
         )));
     
-        $cotizacion = wp_remote_post( $BASE_URL . '/cotizaciones?secuencial=false&descuento_producto=false', array(
+        $cotizacion = wp_remote_post( $BASE_URL . '/cotizaciones?secuencial=true&descuento_producto=false', array(
             'headers' => array(
                 'accept' => 'application/json',
                 'Content-Type' => 'application/json',
