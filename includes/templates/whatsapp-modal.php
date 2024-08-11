@@ -8,9 +8,9 @@
                         <img src="<?php bloginfo('template_directory');?>/assets/img/whatsapp-logo.svg" alt="whatsapp" style="max-height:45px" width="45">
                         WhatsApp
                     </h4>
-                    <h4 class="mb-0 pt-md-2">
-                        <small>Selecciona el edificio a consultar en Santiago Centro</small>
-                    </h4>
+                    <h5 class="mb-0 pt-md-2">
+                        <small>Conversemos por WhatsApp</small>
+                    </h5>
                 </li>
                 <li>
                     <a href="#" class="whatsappModalClose">

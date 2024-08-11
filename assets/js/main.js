@@ -50,6 +50,7 @@ $(function () {
     $(".bk-primary-nav").toggleClass("loaded");
     $(".slide-nav-button").toggleClass("is-active");
   });
+
   $("#projectMenu a").on("click", function (e) {
     e.preventDefault();
 
@@ -77,6 +78,13 @@ $(function () {
     e.preventDefault();
     $(".whatsapp-modal").addClass("whatsapp-modal-open");
   });
+
+  if (window.innerWidth >= 768) {
+    setTimeout(function () {
+      $(".whatsapp-modal").addClass("whatsapp-modal-open");
+    }, 500);
+  }
+
   $(".whatsappModalClose").on("click", function (e) {
     e.preventDefault();
     const isHome = $(".ws-project");

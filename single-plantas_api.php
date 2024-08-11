@@ -1,13 +1,13 @@
 <?php
     $projectModelLink = get_field('id_proyecto');
-    $proyect_title = get_the_title($projectModelLink->ID);
+    $project_title = get_the_title($projectModelLink->ID);
 ?>
 
 <script>
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
         event: 'viewModel',
-        projectTitle: '<?php echo $proyect_title; ?>',
+        projectTitle: '<?php echo $project_title; ?>',
         modelTitle: '<?php echo the_title(); ?>'
     })
 </script>
@@ -25,17 +25,17 @@ $id_planok = get_field( 'id_planok' );
 <div class="collapse" id="navbarToggleExternalContent" style="position:relative">
     <?php 
         $query = new WP_Query(array(
-        'post_type'          => 'plantas_api',
-        'posts_per_page'    => -1,
-        'post_status'        => 'publish',
-        'meta_query' => array(
-            array(
-                'key' => 'vincular_proyecto',
-                'value' => $id_proyecto,
-                'compare' => '='
-            )
-        ),
-    ));
+            'post_type'          => 'plantas',
+            'posts_per_page'    => -1,
+            'post_status'        => 'publish',
+            'meta_query' => array(
+                array(
+                    'key' => 'vincular_planta_a_proyecto',
+                    'value' => '' . $vincular_planta_a_proyecto->ID . '',
+                    'compare' => '='
+                )
+            ),
+        ));
     if ($query->have_posts()) : ?>
         <section class="container ppp-carousel owl-carousel owl-theme plantasowl py-5">
             <?php while ($query->have_posts()) : $query->the_post();
@@ -93,7 +93,7 @@ $id_planok = get_field( 'id_planok' );
                 $corresponde = get_field("corresponde");
 
                 $legal = get_field("legal");
-                $sala_de_estar = get_field('sala_de_estar', $id_proyecto);
+                $sala_de_estar = get_field('sala_de_estar', $projectModelLink);
 
                 $dormitorios_para_filtrar = get_field_object('dormitorios_para_filtrar');
                 $value = $dormitorios_para_filtrar['value'];
@@ -132,11 +132,15 @@ $id_planok = get_field( 'id_planok' );
                         <p class="pb-4 d-none"><small><?php echo $unidades; ?></small></p>
                     <?php endif;?>
                     <p class="mb-4">
-                        <img src="<?php bloginfo('template_directory'); ?>/assets/img/bedIcon.png" alt="Dormitorios" style="max-width:24px"> 
+                        <div class="icon-box">
+                            <img src="<?php bloginfo('template_directory'); ?>/assets/img/bedIcon.png" alt="Dormitorios" style="max-width:24px"> 
+                        </div>
                         <span class="px-2"><b><?php echo esc_html($label); ?></b></span>
                     </p>
                     <p class="mb-4">
-                        <img src="<?php bloginfo('template_directory'); ?>/assets/img/batIcon.png" alt="Baños" style="max-width:24px">
+                        <div class="icon-box">
+                            <img src="<?php bloginfo('template_directory'); ?>/assets/img/batIcon.png" alt="Baños" style="max-width:24px">
+                        </div>
                         <span class="px-2"><b><?php echo $cantidad_de_banos; ?><?php echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?></b></span>
                     </p>
     
@@ -196,7 +200,7 @@ $id_planok = get_field( 'id_planok' );
         </div>
 
         <div class="col-lg-4 pr-md-5">
-            <h3 class="pb-2"><span class="plantas-info-title">Escríbenos y recibirás tu cotización por email</span></h3>
+            <h3 class="pb-2"><span class="plantas-info-title">Regístrate y recibirás tu cotización automáticamente </span></h3>
             <?php get_template_part('includes/forms/form-planta'); ?>
         </div>
         <?php endwhile; ?>

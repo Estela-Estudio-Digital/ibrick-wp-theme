@@ -890,7 +890,7 @@ include( locate_template( './includes/templates/whatsapp-modal.php', false, fals
                         </div>
                     </div>
                     <div class="col-lg-4 plantasContent">
-                        <h3 class="pb-2"><span class="plantas-info-title">Escríbenos y recibirás tu cotización por email</span></h3>
+                        <h3 class="pb-2"><span class="plantas-info-title">Regístrate y recibirás tu cotización automáticamente </span></h3>
                         <?php get_template_part('includes/forms/form-planta'); ?>
                     </div>
                 </div>

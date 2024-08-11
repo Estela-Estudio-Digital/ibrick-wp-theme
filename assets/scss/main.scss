@@ -1252,3 +1252,25 @@ $items: 1,
     margin: 0 20px;
     text-align: center;
 }
+
+.project-model {
+    background: #323E48;
+    color: white;
+    .icon-box {
+        background: white;
+        display: inline-block;
+        padding: 2px;
+    }
+    .formulario-general input, .formulario-general textarea, .content-table ul:last-child {
+        border-bottom: 1px solid white !important;
+    }
+    .formulario-general input, .formulario-general textarea {
+        color: white;
+        &:focus {
+            color: #000;
+        }
+    }
+    .input-group-text {
+        color: white;
+    }
+}

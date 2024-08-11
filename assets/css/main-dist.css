@@ -672,8 +672,7 @@ button:focus {
 }
 @media screen and (min-width: 768px) {
   .whatsapp-modal {
-    min-height: 660px;
-    min-width: 500px;
+    min-height: auto;
     left: -2px;
   }
 }
@@ -689,7 +688,7 @@ button:focus {
 }
 .ws-item--txt {
   padding-top: 2px;
-  font-size: 22px;
+  font-size: 1rem;
 }
 
 .formulario-general .input-group-text {
@@ -1965,5 +1964,27 @@ button:focus {
   font-size: 1.2rem;
   margin: 0 20px;
   text-align: center;
+}
+
+.project-model {
+  background: #323E48;
+  color: white;
+}
+.project-model .icon-box {
+  background: white;
+  display: inline-block;
+  padding: 2px;
+}
+.project-model .formulario-general input, .project-model .formulario-general textarea, .project-model .content-table ul:last-child {
+  border-bottom: 1px solid white !important;
+}
+.project-model .formulario-general input, .project-model .formulario-general textarea {
+  color: white;
+}
+.project-model .formulario-general input:focus, .project-model .formulario-general textarea:focus {
+  color: #000;
+}
+.project-model .input-group-text {
+  color: white;
 }
 /*# sourceMappingURL=main-dist.css.map */
