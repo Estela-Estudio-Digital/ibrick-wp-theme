@@ -39,6 +39,7 @@ $url_de_promocion = $banner_promocion['url_de_promocion'];
 $id_planok = get_field( 'id_planok' );
 $planok = get_field( 'plan_ok' );
 $video = get_field( 'video' );
+$custom_video = get_field( 'custom_video' );
 $imagen_video_portada = get_field( 'imagen_video_portada' );
 
 // CUSTOM FLIELDS Imágenes Generales
@@ -191,6 +192,15 @@ if (!empty($terms)) {
 
         <?php endwhile; ?>
     </div>
+    <?php if ($custom_video) : ?>
+    <div class="row">
+        <div class="col text-center">
+            <button type="button" class="btn btn-primary btn-sm shadow py-2 my-3" data-toggle="modal" data-target="#customVideo">
+                Ver Video
+            </button>
+        </div>
+    </div>
+    <?php endif; ?>
 </section>
 <?php endif; ?>
 
@@ -973,6 +983,18 @@ include( locate_template( './includes/templates/whatsapp-modal.php', false, fals
         <!-- <button type="button" class="btn btn-default pausevideo" data-dismiss="modal" >Cerrar X</button> -->
         <div class="embed-responsive embed-responsive-16by9 " id="content-video">
             <iframe class="embed-responsive-item content-video" src="" id="video"  allowscriptaccess="always" allow="autoplay" style="background: #E5EFF1"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif;?>
+<?php if ($custom_video) : ?>
+<div class="modal fade" id="customVideo" tabindex="-1" role="dialog" aria-labelledby="customVideoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+        <!-- <button type="button" class="btn btn-default pausevideo" data-dismiss="modal" >Cerrar X</button> -->
+        <div class="embed-responsive embed-responsive-16by9 " id="custom-video">
+            <iframe class="embed-responsive-item content-video" src="https://www.youtube.com/embed/<?php echo $custom_video; ?>?si=To5l-yOMczOheOnY" id="custom-video-iframe"  allowscriptaccess="always" allow="autoplay" style="background: #E5EFF1"></iframe>
             </div>
         </div>
     </div>
