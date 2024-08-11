@@ -1,6 +1,6 @@
-<div class="whatsapp-modal bg-ultra-light-grey">
+<div class="whatsapp-modal <?php echo is_front_page() ? 'home' : ''; ?> bg-ultra-light-grey">
     <?php if(is_front_page()) : ?>
-    <div class="p-5 ws-project">
+    <div class="p-4 ws-project">
         <div class="whatsapp-header">
             <ul class="d-flex align-items-start w-100 justify-content-between">
                 <li>
@@ -73,7 +73,7 @@
         </div>
     </div>
     <?php endif;?>
-    <div class="p-5 ws-form <?php echo is_front_page() ? 'd-none' : ''; ?>">
+    <div class="p-4 ws-form <?php echo is_front_page() ? 'd-none' : ''; ?>">
         <div class="whatsapp-header">
             <ul class="d-flex align-items-start w-100 justify-content-between">
                 <li>
