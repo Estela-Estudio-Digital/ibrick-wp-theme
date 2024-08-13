@@ -81,7 +81,7 @@ $(function () {
 
   if (window.innerWidth >= 768) {
     setTimeout(function () {
-      $(".whatsapp-modal.home").addClass("whatsapp-modal-open");
+      $(".whatsapp-modal").addClass("whatsapp-modal-open");
     }, 500);
   }
 

@@ -121,10 +121,10 @@ if (!empty($terms)) {
     <div class="row py-5 align-items-center" id="proyecto">
         <div class="col-md-6">
             <?php if ($theme === 'dark'): ?>
-            <h1 class="mb-5">
+            <h2 class="mb-5">
                 <img src="<?php echo $logo_proyecto_blanco['url'];?>" alt="<?php echo $logo_proyecto_blanco['alt'];?>" class="pr-4" style="max-height:100px">
                 <div class="sr-only"><?php echo the_title(); ?></div>
-            </h1>
+            </h2>
             <?php endif; ?>
             <h3 class="text-uppercase section-title">
                 <span class="primary-title">Arquitectura</span>

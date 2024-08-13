@@ -33,7 +33,7 @@
                   <img class="w-100" src="<?php echo $desktop[0]; ?>" alt="<?php echo the_title(); ?>">
                 </li>
                 <li class="card-body text-center d-flex flex-column align-items-center justify-content-center">
-                    <h1 style="font-size:1.4rem;"><?php echo the_title(); ?></h1>
+                    <h2 style="font-size:1.4rem;"><?php echo the_title(); ?></h2>
                     <p><?php echo $ubicacion; ?></p>
                     <span style="width: 100px; height:4px; background: #2876A2; display: inline-block;" class="my-3"></span>
                     <p style="font-size:1.2rem;" class="mb-2"><?php echo $area; ?></p>

@@ -5,10 +5,10 @@
     <?php if ($logo_proyecto):?>
     <div class="col-12 d-md-none bg-white">
         <div class="p-4 text-center">
-            <h1 class="m-0">
+            <h2 class="m-0">
                 <img src="<?php echo $logo_proyecto['url'];?>" alt="<?php echo $logo_proyecto['alt'];?>" class="pr-4" >
                 <div class="sr-only"><?php echo the_title(); ?></div>
-            </h1>
+            </h2>
         </div>
     </div>
     <?php endif; ?>
@@ -17,10 +17,10 @@
             <?php if ($logo_proyecto):?>
             <li class="project-wrapper-content-item project-wrapper-content-img d-none d-md-flex align-items-center justify-content-center ml-4">
                 <div class="wrapper-img-project">
-                    <h1 class="m-0">
+                    <h2 class="m-0">
                         <img src="<?php echo $logo_proyecto['url'];?>" alt="<?php echo $logo_proyecto['alt'];?>" class="pr-4" >
                         <div class="sr-only"><?php echo the_title(); ?></div>
-                    </h1>
+                    </h2>
                 </div>
             </li>
             <?php endif; ?>
