@@ -87,13 +87,9 @@ $(function () {
 
   $(".whatsappModalClose").on("click", function (e) {
     e.preventDefault();
-    const isHome = $(".ws-project");
-    if (isHome) {
-      $(".ws-project").show();
-      $(".ws-form").addClass("d-none");
-    }
-    $(".whatsapp-modal").removeClass("whatsapp-modal-open");
+    $(".whatsapp-modal").toggleClass("whatsapp-modal-open");
   });
+
   $(".whatsappProjectSelector").on("click", function (e) {
     e.preventDefault();
     if (project_data?.data) {
