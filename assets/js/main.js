@@ -88,6 +88,10 @@ $(function () {
   $(".whatsappModalClose").on("click", function (e) {
     e.preventDefault();
     $(".whatsapp-modal").toggleClass("whatsapp-modal-open");
+    setTimeout(function () {
+      $(".ws-project").show();
+      $(".ws-form").addClass("d-none");
+    }, 500);
   });
 
   $(".whatsappProjectSelector").on("click", function (e) {
