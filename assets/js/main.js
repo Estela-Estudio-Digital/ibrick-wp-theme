@@ -87,6 +87,13 @@ $(function () {
     }
   });
 
+  $("#selectProjectWhatsapp").on("click", function (e) {
+    e.preventDefault();
+    console.log("selectProjectWhatsapp");
+    $(".ws-project").show();
+    $(".ws-form").addClass("d-none");
+  })
+
   if (window.innerWidth >= 768) {
     setTimeout(function () {
       $(".whatsapp-modal").addClass("whatsapp-modal-open");

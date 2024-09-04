@@ -161,7 +161,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group w-100">
+                    <div class="form-group w-100 mb-0">
                         <div class="text-center py-4">
                             <button  
                                 type="submit" name="boton_enviar_whatsapp" value="enviar"
@@ -175,6 +175,22 @@
                         </div>
                     </div>
                 </form>
+                <?php if(is_front_page()) : ?>
+                    <div class="text-center">
+                        <button  
+                            type="button" name="select_project_whatsapp"
+                            class="btn px-5 mx-auto" 
+                            id="selectProjectWhatsapp"
+                            >
+                            <small>
+                                <span class="mr-2">
+                                    <i class="fa fa-arrow-left"></i>
+                                </span>
+                                Seleccionar otro proyecto
+                            </small>
+                        </button>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
