@@ -2,6 +2,8 @@ $(function () {
   // SBJS
   sbjs.init();
   $('[data-toggle="tooltip"]').tooltip();
+
+  const isHome = window.location.pathname === "/" || window.location.pathname === "/#";
   // Menú Hamburguer
   const setDataToSend = () => {
     try {
@@ -76,7 +78,13 @@ $(function () {
   });
   $(".whatsappButton").on("click", function (e) {
     e.preventDefault();
+    $(".ws-form").removeClass("d-none");
     $(".whatsapp-modal").addClass("whatsapp-modal-open");
+    if (isHome) {
+      console.log('esHome');
+      $(".ws-project").show();
+      $(".ws-form").addClass("d-none");
+    }
   });
 
   if (window.innerWidth >= 768) {
@@ -462,7 +470,6 @@ $(function () {
     url = `https://api.whatsapp.com/send/?phone=${telefonoProyectoWhatsapp}&text=Mi%20nombre%20es%20${nombreClienteWhatsapp}%20Me%20interesa%20el%20%20proyecto%20${nombreProyectoWhatsapp}`;
     $(".whatsapp-modal").removeClass("whatsapp-modal-open");
     window.open(url, "_blank");
-    const isHome = $(".ws-project");
     if (isHome) {
       $(".ws-project").show();
       $(".ws-form").addClass("d-none");
