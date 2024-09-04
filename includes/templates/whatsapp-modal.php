@@ -72,8 +72,8 @@
             <?php endif;?>
         </div>
     </div>
-    <?php else: ?>
-    <div class="p-4 ws-form">
+    <?php endif;?>
+    <div class="p-4 ws-form <?php echo is_front_page() ? 'd-none' : ''; ?>">
         <div class="whatsapp-header">
             <ul class="d-flex align-items-start w-100 justify-content-between">
                 <li>
@@ -178,5 +178,4 @@
             </div>
         </div>
     </div>
-    <?php endif; ?>
 </div>
