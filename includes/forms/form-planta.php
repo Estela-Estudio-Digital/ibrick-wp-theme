@@ -5,6 +5,7 @@ $id_proyecto = $vincular_planta_a_proyecto->ID > 1 ? $vincular_planta_a_proyecto
 $medio_llegada = get_field('medio_de_llegada_id_planok', $id_proyecto);
 $grupo_de_datos = get_field('grupo_de_datos', $id_proyecto);
 $correos_ventas = $grupo_de_datos["correos_ventas"];
+$nombre_pok = get_field('nombre_planok', $id_proyecto);
 ?>
 
 <div class="wp-block-contact-form-7-contact-form-selector w-100">
@@ -30,9 +31,9 @@ $correos_ventas = $grupo_de_datos["correos_ventas"];
               <input type="hidden" name="_wpcf7_locale" value="en_US">
               <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f560-o1">
               <input type="hidden" name="_wpcf7_container_post" value="0">
-              <input type="hidden" name="nombreProyecto" class="nombreProyecto" value="<?php echo $vincular_planta_a_proyecto->post_title; ?>">
+              <input type="hidden" name="nombreProyecto" class="nombreProyecto" value="<?php echo get_the_title($vincular_planta_a_proyecto->post_title); ?>">
               <input type="hidden" name="idMedioLlegada" class="idMedioLlegada" value="<?php echo $medio_llegada; ?>">
-              <input type="hidden" name="producto" class="inputProducto" value="<?php echo the_title(); ?>">
+              <input type="hidden" name="producto" class="inputProducto" value="<?php echo $nombre_pok; ?>">
               <input type="hidden" name="logoProyecto" class="logoProyecto">
               <input type="hidden" name="superficieUtil" class="superficieUtil">
               <input type="hidden" name="superficieTerraza" class="superficieTerraza">

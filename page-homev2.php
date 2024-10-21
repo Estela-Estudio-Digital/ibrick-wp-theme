@@ -17,12 +17,12 @@ bk_main_before();
     ));
     $count = 1;
     if ($depicter) : ?>
-        <div class="">
+        <h1 class="" aria-label="Brick">
             <?php if ($depicter) {
                 depicter($depicter);
                 } 
             ?>
-        </div>
+        </h1>
     <? else:
     if ( $query->have_posts() ) : ?>
     <section class="primary-hero">

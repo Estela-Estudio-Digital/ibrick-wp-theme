@@ -74,7 +74,9 @@ $query = new WP_Query(array(
     <div class="row">
         <div class="col-md-6 pr-md-0">
             <a href="<?php echo site_url('rentas');?>" class="rentas-section__title">
-                <img class="w-100" src="<?php bloginfo('template_directory');?>/assets/img/brick-rentas1.jpg" alt="Rentas Brick">
+				<h1>
+                	<img class="w-100" src="<?php bloginfo('template_directory');?>/assets/img/brick-rentas1.jpg" alt="Rentas Brick">
+				</h1>
             </a>
         </div>
         <div class="col-md-6 pl-md-0">

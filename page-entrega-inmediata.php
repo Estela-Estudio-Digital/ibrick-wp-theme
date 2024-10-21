@@ -21,6 +21,7 @@ $enlace_imagen = get_field('enlace_imagen');
     <?php if($enlace_imagen): ?>
         <a href="<?php echo $enlace_imagen;?>">
     <?php endif; ?>
+			<h1 aria-label="Entrega Inmediata">
         <picture>
             <source
             media="(max-width: 768px)"
@@ -32,6 +33,7 @@ $enlace_imagen = get_field('enlace_imagen');
             class="w-100"
             >
         </picture>
+			</h1>
     <?php if($enlace_imagen): ?>
         </a>
     <?php endif; ?>

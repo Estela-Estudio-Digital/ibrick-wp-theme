@@ -463,14 +463,7 @@ $(function () {
 
   // Validacion de Formularios
   $(".wpcf7Whatsapp").on("wpcf7mailsent", function (event) {
-    const leadEmail = event.detail.inputs[7].value;
-    const leadPhone = event.detail.inputs[10].value;
-    dataLayer.push({
-      event: "wspLeadConversion",
-      leadEmail,
-      leadPhone,
-      wspProjectTitle: event.detail.inputs[0].value,
-    });
+    sendFormEventToGTM(event);
     const telefonoProyectoWhatsapp = event.detail.inputs[3].value,
       nombreProyectoWhatsapp = event.detail.inputs[0].value,
       nombreClienteWhatsapp = event.detail.inputs[7].value;
