@@ -89,7 +89,7 @@ function update_models_data() {
   $firstPlanta = find_first_available_plant($results);
   
   if (!empty($firstPlanta)) {
-    update_plant_fields($firstPlanta, $planta[$current_plant]->ID);
+    update_plant_fields_from_model($firstPlanta, $planta[$current_plant]->ID);
     increment_stat('actualizadas');
   } else {
     increment_stat('errores');
@@ -148,7 +148,7 @@ function find_first_available_plant($results) {
   return null;
 }
 
-function update_plant_fields($plant_data, $post_id) {
+function update_plant_fields_from_model($plant_data, $post_id) {
   $fields = array(
     'superficie_total' => number_format($plant_data['superficies']['total'], 0, ',', '.'),
     'superficie_construida' => number_format($plant_data['superficies']['util'], 0, ',', '.'),

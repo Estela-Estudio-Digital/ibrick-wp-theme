@@ -40,120 +40,212 @@ add_action( 'wp_ajax_nopriv_update_plants_data', 'update_plants_data' );
 add_action( 'wp_ajax_update_plants_data', 'update_plants_data' );
 
 function update_plants_data() {
+  // Inicializar estadísticas
+  $stats = get_option('planok_plants_sync_stats', array(
+    'total_proyectos' => 0,
+    'plantas_actualizadas' => 0,
+    'plantas_creadas' => 0,
+    'errores' => 0,
+    'start_time' => time()
+  ));
+
   $BASE_URL = 'https://api-gci-rest.integracionplanok.io/api';
   $access_token = login_api();
 
   if (!$access_token) {
-    plan_ok_plants_log( 'Failed login or missing access token: ' . $access_token );
-    return;
+    increment_plant_stat('errores');
+    plan_ok_plants_log('Failed login or missing access token');
+    return false;
   }
 
   $args = array(
-    'post_type'         => 'proyectos',
-    'posts_per_page'    => -1,
-    'post_status'       => 'publish',
-    'meta_query' => array(
+    'post_type'      => 'proyectos',
+    'posts_per_page' => -1,
+    'post_status'    => 'publish',
+    'meta_query'     => array(
       array(
-          'key' => 'id_planok',
-          'compare' => 'EXISTS'
+        'key'     => 'id_planok',
+        'compare' => 'EXISTS'
       )
+    )
+  );
+
+  $proyectos = get_posts($args);
+  $current_project = !empty($_POST['current_project']) ? (int)$_POST['current_project'] : 0;
+
+  // Primera ejecución
+  if ($current_project === 0) {
+    $stats['total_proyectos'] = count($proyectos);
+    update_option('planok_plants_sync_stats', $stats);
+  }
+
+  if (empty($proyectos)) {
+    plan_ok_plants_log('No hay proyectos para procesar');
+    log_plants_summary();
+    return false;
+  }
+
+  if (count($proyectos) <= $current_project) {
+    plan_ok_plants_log('Proceso completado - No hay más proyectos para procesar');
+    log_plants_summary();
+    return false;
+  }
+
+  $proyecto = $proyectos[$current_project];
+  $plan_ok_id = get_field('id_planok', $proyecto->ID);
+  
+  // Validar ID de PlanOk
+  if (!$plan_ok_id) {
+    increment_plant_stat('errores');
+    plan_ok_plants_log("ID PlanOk no encontrado para proyecto: {$proyecto->post_title}");
+    process_next_project($current_project);
+    return false;
+  }
+
+  // Obtener modelos de la API
+  $response = wp_remote_get($BASE_URL . '/proyectos/' . $plan_ok_id . '/modelos', array(
+    'headers' => array(
+      'accept' => 'application/json',
+      'Content-Type' => 'application/json',
+      'Authorization' => $access_token
+    )
   ));
 
-  $proyectos = get_posts( $args );
-  $current_project = ( ! empty( $_POST['current_project'] ) ) ? (float)$_POST['current_project'] : 0;
-  plan_ok_plants_log( 'current_project: ' . $current_project );
-
-  if ( count($proyectos) == $current_project ) {
+  if (is_wp_error($response)) {
+    increment_plant_stat('errores');
+    plan_ok_plants_log('Error en la llamada API: ' . $response->get_error_message());
+    process_next_project($current_project);
     return false;
   }
 
-  $plan_ok_id = get_field( 'id_planok', $proyectos[$current_project]->ID );
-  $project = $proyectos[$current_project]->post_title;
-  $project_id = $proyectos[$current_project]->ID;
+  $results = json_decode(wp_remote_retrieve_body($response), true);
 
-  $body = wp_remote_get( $BASE_URL . '/proyectos/' . $plan_ok_id .'/modelos', array(
-    'headers' => array(
-        'accept' => 'application/json',
-        'Content-Type' => 'application/json',
-        "Authorization" => $access_token
-    )
-  ))['body'];
-
-  $results = json_decode($body, true) ;
-
-  if( !is_array( $results ) || empty( $results ) ){
+  if (!is_array($results) || empty($results)) {
+    increment_plant_stat('errores');
+    plan_ok_plants_log("No hay modelos para el proyecto: {$proyecto->post_title}");
+    process_next_project($current_project);
     return false;
   }
 
-  $all_plants = array();
-
-  foreach ($results as $model) {
-    $all_plants[] = [
-      'id' => $model['id'],
-      'nombre' => $project . ' - ' . $model['nombre'],
-      'dormitorios' => $model['dormitorios'],
-      'banos' => $model['banos'],
-      'imagenes' => $model['imagenes'],
-      'proyecto' => $project,
-      'project_id' => $plan_ok_id,
-      'project_id_wp' => $project_id,
-      'tipo' => $model['nombre'] === 'ESTUDIO' ? 'estudio' : $model['dormitorios'] . 'dorm',
-    ];
-  }
-
+  // Procesar modelos
+  $all_plants = prepare_plants_data($results, $proyecto);
+  
   foreach ($all_plants as $plant) {
     $plant_id = $plant['nombre'];
+    $existing_plant = get_page_by_title($plant_id, OBJECT, 'plantas_api');
 
-    $existing_plant = get_page_by_title( $plant_id, OBJECT, 'plantas_api' ); // Plantas Local
-
-    if ($plant_id === $existing_plant->post_title) {
-      plan_ok_plants_log( 'Nombre API1: ' . json_encode($plant_id) );
-      $post_id = wp_update_post($existing_plant->ID, array(
-        'post_title' => $plant_id,
-        'excerpt' => $plant['dormitorios'] . ' dormitorios, ' . $plant['banos'] . ' banos, ' . $plant['imagenes'] . ' imagenes.',
-      ));
-      delete_field('vincular_proyecto', $existing_plant->ID);
-      $value = get_field('vincular_proyecto', $existing_plant->ID, false);
-      $value[] = $plant['project_id_wp'];
-
-      update_field( 'dormitorios_para_filtrar', $plant['tipo'], $existing_plant->ID );
-      update_field( 'cantidad_de_banos', $plant['banos'], $existing_plant->ID );
-      update_field( 'id_proyecto', $plant['project_id'], $existing_plant->ID );
-      update_field( 'id_planta', $plant['id'], $existing_plant->ID );
-      update_field( 'imagen_principal_url', $plant['imagenes'][0], $existing_plant->ID );
-      update_field( 'ficha_url', $plant['imagenes'][1], $existing_plant->ID );
-      update_field( 'vincular_proyecto', $value, $existing_plant->ID );
+    if ($existing_plant && $plant_id === $existing_plant->post_title) {
+      update_existing_plant($existing_plant, $plant);
+      increment_plant_stat('plantas_actualizadas');
     } else {
-      $post_id = wp_insert_post(array(
-        'post_type' => 'plantas_api',
-        'post_title' => $plant_id,
-        'post_status' => 'publish',
-        'excerpt' => $plant['dormitorios'] . ' dormitorios, ' . $plant['banos'] . ' banos, ' . $plant['imagenes'] . ' imagenes.',
-      ));
-      // get current value
-      $value = get_field('vincular_proyecto', $post_id, false);
-      $value[] = $post->ID;
-      update_field( 'dormitorios_para_filtrar', $plant['tipo'], $post_id );
-      update_field( 'cantidad_de_banos', $plant['banos'], $post_id);
-      update_field( 'id_proyecto', $plant['project_id'], $post_id );
-      update_field( 'id_planta', $plant['id'], $post_id );
-      update_field( 'imagen_principal_url', $plant['imagenes'][0], $post_id );
-      update_field( 'ficha_url', $plant['imagenes'][1], $post_id );
-      update_field( 'vincular_proyecto', $value, $post_id );
+      create_new_plant($plant);
+      increment_plant_stat('plantas_creadas');
     }
   }
 
-  plan_ok_plants_log( 'url: ' . admin_url('admin-ajax.php?action=update_plants_data'));
+  process_next_project($current_project);
+}
 
-  $current_project = $current_project + 1;
-  plan_ok_plants_log( 'current_project: ' . $current_project );
-  wp_remote_post( admin_url('admin-ajax.php?action=update_plants_data'), [
+function prepare_plants_data($results, $proyecto) {
+  $all_plants = array();
+  foreach ($results as $model) {
+    $all_plants[] = [
+      'id' => $model['id'],
+      'nombre' => $proyecto->post_title . ' - ' . $model['nombre'],
+      'dormitorios' => $model['dormitorios'],
+      'banos' => $model['banos'],
+      'imagenes' => $model['imagenes'],
+      'proyecto' => $proyecto->post_title,
+      'project_id' => get_field('id_planok', $proyecto->ID),
+      'project_id_wp' => $proyecto->ID,
+      'tipo' => $model['nombre'] === 'ESTUDIO' ? 'estudio' : $model['dormitorios'] . 'dorm',
+    ];
+  }
+  return $all_plants;
+}
+
+function update_existing_plant($existing_plant, $plant) {
+  plan_ok_plants_log('Actualizando planta: ' . $plant['nombre']);
+  
+  // Actualizar post
+  wp_update_post(array(
+    'ID' => $existing_plant->ID,
+    'post_title' => $plant['nombre'],
+    'post_excerpt' => "{$plant['dormitorios']} dormitorios, {$plant['banos']} baños, " . count($plant['imagenes']) . " imágenes.",
+  ));
+
+  // Actualizar campos
+  update_plant_fields($existing_plant->ID, $plant);
+}
+
+function create_new_plant($plant) {
+  plan_ok_plants_log('Creando nueva planta: ' . $plant['nombre']);
+  
+  $post_id = wp_insert_post(array(
+    'post_type' => 'plantas_api',
+    'post_title' => $plant['nombre'],
+    'post_status' => 'publish',
+    'post_excerpt' => "{$plant['dormitorios']} dormitorios, {$plant['banos']} baños, " . count($plant['imagenes']) . " imágenes.",
+  ));
+
+  if ($post_id) {
+    update_plant_fields($post_id, $plant);
+  }
+}
+
+function update_plant_fields($post_id, $plant) {
+  $value = get_field('vincular_proyecto', $post_id, false) ?: array();
+  $value[] = $plant['project_id_wp'];
+  $value = array_unique($value); // Evitar duplicados
+
+  $fields = array(
+    'dormitorios_para_filtrar' => $plant['tipo'],
+    'cantidad_de_banos' => $plant['banos'],
+    'id_proyecto' => $plant['project_id'],
+    'id_planta' => $plant['id'],
+    'imagen_principal_url' => $plant['imagenes'][0] ?? '',
+    'ficha_url' => $plant['imagenes'][1] ?? '',
+    'vincular_proyecto' => $value,
+  );
+
+  foreach ($fields as $key => $value) {
+    update_field($key, $value, $post_id);
+  }
+}
+
+function process_next_project($current_project) {
+  $next_project = $current_project + 1;
+  wp_remote_post(admin_url('admin-ajax.php?action=update_plants_data'), [
     'blocking' => false,
-    'sslverify' => false, // we are sending this to ourselves, so trust it.
+    'sslverify' => false,
     'body' => [
-      'current_project' => $current_project
+      'current_project' => $next_project
     ]
   ]);
+}
+
+function increment_plant_stat($key) {
+  $stats = get_option('planok_plants_sync_stats');
+  $stats[$key]++;
+  update_option('planok_plants_sync_stats', $stats);
+}
+
+function log_plants_summary() {
+  $stats = get_option('planok_plants_sync_stats');
+  $tiempo_total = time() - $stats['start_time'];
+  $minutos = floor($tiempo_total / 60);
+  $segundos = $tiempo_total % 60;
+
+  $resumen = "\n=== RESUMEN DE SINCRONIZACIÓN DE PLANTAS ===\n";
+  $resumen .= "Total de proyectos procesados: {$stats['total_proyectos']}\n";
+  $resumen .= "Plantas actualizadas: {$stats['plantas_actualizadas']}\n";
+  $resumen .= "Plantas nuevas creadas: {$stats['plantas_creadas']}\n";
+  $resumen .= "Errores encontrados: {$stats['errores']}\n";
+  $resumen .= "Tiempo total de proceso: {$minutos}m {$segundos}s\n";
+  $resumen .= "==========================================\n";
+
+  plan_ok_plants_log($resumen);
+  delete_option('planok_plants_sync_stats');
 }
 
 // Log de eventos fallidos
