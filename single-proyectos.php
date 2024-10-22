@@ -340,6 +340,8 @@ if ($query->have_posts()) : ?>
                     $fotografia_planta = get_field('repeater_fotografias');
                     $fotografia_planta_mobile = $fotografia_planta[0]['fotografia_planta']['url'];
                     $ficha_planta = get_field('ficha');
+
+                    $nombre_comercial = get_field('nombre_comercial');
                 ?>
 
             <div class="col-sm-6 col-lg-4 planta <?php echo $value; ?> <?php // echo ($estado == 'Normal') ? "active" : "";?> active">
@@ -359,10 +361,14 @@ if ($query->have_posts()) : ?>
 
                             <div class="bk-info-wrap  mb-5 card rounded-0">
                                 <p class="pt-4 m-0 text-center" style="font-size:1rem;">
-                                    <b><?php echo esc_html($label); ?> +</b>
-                                    <b><?php echo $cantidad_de_banos; echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
-                                    </b>
-                                    <?php // echo $post_id; ?>
+                                    <?php if ($nombre_comercial) : ?>
+                                        <?php echo $nombre_comercial; ?>
+                                    <?php else : ?>
+                                        <b><?php echo esc_html($label); ?> +</b>
+                                        <b><?php echo $cantidad_de_banos; echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
+                                        </b>
+                                        <?php // echo $post_id; ?>
+                                    <?php endif; ?>
                                 </p>
                                 
                                 <?php if ($fotografia_planta) : ?>
