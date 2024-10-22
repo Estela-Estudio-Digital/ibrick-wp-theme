@@ -275,7 +275,8 @@ function trigger_plant_update() {
 add_action('admin_menu', 'register_plant_update_link');
 
 function register_plant_update_link() {
-  add_menu_page(
+  add_submenu_page(
+    'edit.php?post_type=proyectos',
 		__( 'Custom Menu Title', 'textdomain' ), // page_title
 		'Update Plants', // menu_title
 		'manage_options', // capability

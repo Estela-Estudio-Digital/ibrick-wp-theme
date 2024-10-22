@@ -204,7 +204,8 @@ function trigger_model_update() {
  add_action('admin_menu', 'register_model_update_link');
 
 function register_model_update_link() {
-  add_menu_page(
+  add_submenu_page(
+    'edit.php?post_type=proyectos',
 		__( 'Custom Menu Title', 'textdomain' ), // page_title
 		'Update Models', // menu_title
 		'manage_options', // capability
