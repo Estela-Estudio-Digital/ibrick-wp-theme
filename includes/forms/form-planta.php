@@ -6,6 +6,11 @@ $medio_llegada = get_field('medio_de_llegada_id_planok', $id_proyecto);
 $grupo_de_datos = get_field('grupo_de_datos', $id_proyecto);
 $correos_ventas = $grupo_de_datos["correos_ventas"];
 $nombre_pok = get_field('nombre_planok', $id_proyecto);
+$cantidad_de_banos = get_field('cantidad_de_banos');
+$dormitorios_para_filtrar = get_field_object('dormitorios_para_filtrar');
+$value = $dormitorios_para_filtrar['value'];
+$label = $dormitorios_para_filtrar['choices'][$value];
+$texto_titulo = get_field('texto_titulo', $id_proyecto);
 ?>
 
 <div class="wp-block-contact-form-7-contact-form-selector w-100">
@@ -31,9 +36,9 @@ $nombre_pok = get_field('nombre_planok', $id_proyecto);
               <input type="hidden" name="_wpcf7_locale" value="en_US">
               <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f560-o1">
               <input type="hidden" name="_wpcf7_container_post" value="0">
-              <input type="hidden" name="nombreProyecto" class="nombreProyecto" value="<?php echo get_the_title($vincular_planta_a_proyecto->post_title); ?>">
+              <input type="hidden" name="nombreProyecto" class="nombreProyecto" value="<?php echo get_field('nombre_planok', $id_proyecto); ?>">
               <input type="hidden" name="idMedioLlegada" class="idMedioLlegada" value="<?php echo $medio_llegada; ?>">
-              <input type="hidden" name="producto" class="inputProducto" value="<?php echo $nombre_pok; ?>">
+              <input type="hidden" name="producto" class="inputProducto" value="<?php echo $texto_titulo;?><?php echo esc_html($label);?> + <?php echo $cantidad_de_banos; echo ($cantidad_de_banos == "1") ? " Baño" : " Baños";?>">
               <input type="hidden" name="logoProyecto" class="logoProyecto">
               <input type="hidden" name="superficieUtil" class="superficieUtil">
               <input type="hidden" name="superficieTerraza" class="superficieTerraza">

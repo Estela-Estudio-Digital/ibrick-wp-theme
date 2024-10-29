@@ -1,13 +1,22 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
+<<<<<<< HEAD
     "generatedTime": 1725466686177,
+=======
+    "generatedTime": 1729551565587,
+>>>>>>> 46adf56ca8397a405dbeff02b532255d126f06ae
     "data": [
         {
             "type": "file",
             "name": ".ftp-deploy-sync-state.json",
+<<<<<<< HEAD
             "size": 68591,
             "hash": "02a04a8937c6e021f664fb2b28c87a5e3d17425969b4395e23153594efe5e8a5"
+=======
+            "size": 69226,
+            "hash": "9ac8d1b87c6064c21b53c9b443cab922c9877becc6898c2966f53d3ae8d0c34f"
+>>>>>>> 46adf56ca8397a405dbeff02b532255d126f06ae
         },
         {
             "type": "file",
@@ -107,6 +116,7 @@
         },
         {
             "type": "file",
+<<<<<<< HEAD
             "name": "page-pasos.php",
             "size": 1429,
             "hash": "393c00935e1ffe3bd715c4b61ce7fd75b0122d80e062afa4342e7b5d99c24a2a"
@@ -116,6 +126,23 @@
             "name": "page-homev2.php",
             "size": 12252,
             "hash": "a0c90b2743a88dddf89f247e3f1902e92ecab1839bc82203288b67dbba945892"
+=======
+            "name": "page-entrega-inmediata.php",
+            "size": 3105,
+            "hash": "c34bc1e0c679fc54221b1caa3f8426844b2e0a00b6b2e1ef6ab7dc804f267c12"
+        },
+        {
+            "type": "file",
+            "name": "page-pasos.php",
+            "size": 1429,
+            "hash": "393c00935e1ffe3bd715c4b61ce7fd75b0122d80e062afa4342e7b5d99c24a2a"
+        },
+        {
+            "type": "file",
+            "name": "page-homev2.php",
+            "size": 12269,
+            "hash": "ab33aa455c0bca784412efcbe9231d7abc39ec55d0a76eeaa0df3dfd8c48d803"
+>>>>>>> 46adf56ca8397a405dbeff02b532255d126f06ae
         },
         {
             "type": "file",
@@ -126,8 +153,8 @@
         {
             "type": "file",
             "name": "page-residenciales.php",
-            "size": 4278,
-            "hash": "d708cb34fdfccaabcfccbba0b8214021cc9db87d48619dd2566adea6164ca1d2"
+            "size": 4298,
+            "hash": "601fd7d580c29ee295f19703b59266c90d76a26aa1710c93cda4f2258bf41873"
         },
         {
             "type": "file",
@@ -274,18 +301,27 @@
             "name": "functions/enqueues.php",
             "size": 9908,
             "hash": "ce014ba5f6a0a84eadf4f78f629472b19800b6de996ec802feb296758048fbe4"
+<<<<<<< HEAD
         },
         {
             "type": "file",
             "name": "functions/hooks.php",
             "size": 1796,
             "hash": "d52cdd1e0af18afe16363b38f49da6e37c54d28217ad25aae4607449c72dfb7c"
+=======
+>>>>>>> 46adf56ca8397a405dbeff02b532255d126f06ae
         },
         {
             "type": "file",
             "name": "functions/index-pagination.php",
             "size": 1511,
             "hash": "7fb8d06a120e8ed2fbbb3f2a7a5450050596efdd6a7f9418beb5e5ab03a6fb05"
+        },
+        {
+            "type": "file",
+            "name": "functions/hooks.php",
+            "size": 1796,
+            "hash": "d52cdd1e0af18afe16363b38f49da6e37c54d28217ad25aae4607449c72dfb7c"
         },
         {
             "type": "file",
@@ -328,20 +364,27 @@
             "name": "functions/ws_new_contact.php",
             "size": 5756,
             "hash": "e86b1210bb52148827817736939b460b17f998a0cd40972f8a487a0f07264a69"
+<<<<<<< HEAD
         },
         {
             "type": "file",
             "name": "includes/footer.php",
             "size": 12158,
             "hash": "a8e9a65cd899c4e2237a244e0292b99434c49393e5ce93eb23c3fd4eab8ff5f5"
+=======
+>>>>>>> 46adf56ca8397a405dbeff02b532255d126f06ae
         },
         {
             "type": "folder",
             "name": "includes/forms"
         },
         {
-            "type": "folder",
-            "name": "includes/loops"
+<<<<<<< HEAD
+=======
+            "type": "file",
+            "name": "includes/footer.php",
+            "size": 12158,
+            "hash": "a8e9a65cd899c4e2237a244e0292b99434c49393e5ce93eb23c3fd4eab8ff5f5"
         },
         {
             "type": "file",
@@ -350,20 +393,34 @@
             "hash": "3938962002b721e53ab7c71cc3959f48c9c73c4240513be3461c58887d3d9bd8"
         },
         {
+>>>>>>> 46adf56ca8397a405dbeff02b532255d126f06ae
             "type": "folder",
-            "name": "includes/templates"
+            "name": "includes/loops"
         },
         {
+<<<<<<< HEAD
             "type": "file",
-            "name": "assets/css/bk.css",
-            "size": 1452,
-            "hash": "f0dbd04808d1e7199fee39ce061692557530d58e6366339981901697577b2f2e"
+            "name": "includes/header.php",
+            "size": 7935,
+            "hash": "3938962002b721e53ab7c71cc3959f48c9c73c4240513be3461c58887d3d9bd8"
+        },
+        {
+=======
+>>>>>>> 46adf56ca8397a405dbeff02b532255d126f06ae
+            "type": "folder",
+            "name": "includes/templates"
         },
         {
             "type": "file",
             "name": "assets/css/bk.min.css",
             "size": 1012,
             "hash": "09604d7bb863a603bf2d7cbf06ee78a9ccea9982ff3a3b7001e02e5c41f348c8"
+        },
+        {
+            "type": "file",
+            "name": "assets/css/bk.css",
+            "size": 1452,
+            "hash": "f0dbd04808d1e7199fee39ce061692557530d58e6366339981901697577b2f2e"
         },
         {
             "type": "file",
@@ -481,15 +538,15 @@
         },
         {
             "type": "file",
-            "name": "assets/js/additional-methods.min.js",
-            "size": 22660,
-            "hash": "bdbfba54e6e25086a846e4aeb1d2d15ad5ecfdec2ecfad8b8155e0d9fd595c6a"
-        },
-        {
-            "type": "file",
             "name": "assets/js/bk.js",
             "size": 551,
             "hash": "609349593a08f66b5724e4b02eef1e0efb7481eed62ac4b89924c4596cb33010"
+        },
+        {
+            "type": "file",
+            "name": "assets/js/additional-methods.min.js",
+            "size": 22660,
+            "hash": "bdbfba54e6e25086a846e4aeb1d2d15ad5ecfdec2ecfad8b8155e0d9fd595c6a"
         },
         {
             "type": "file",
@@ -515,12 +572,31 @@
         },
         {
             "type": "file",
+            "name": "assets/js/main-dist.js",
+            "size": 23919,
+            "hash": "928b883c9c9320aff802290e88df5708f08044e1b4cb386ae45083057a706d1b"
+        },
+        {
+            "type": "file",
+            "name": "assets/js/main-dist.js.map",
+            "size": 15137,
+            "hash": "33f9efaf234078fc70fb878a5f42c5c4ee9495e70f5ed7e4bc2f3056d2bc1081"
+        },
+        {
+            "type": "file",
+            "name": "assets/js/main.js",
+            "size": 37825,
+            "hash": "0879116cf295f55989b44a0b9d88a134603ee781fe225308d1ff9b0e1c5ffb32"
+        },
+        {
+            "type": "file",
             "name": "assets/js/jquery.validate.min.js",
             "size": 24376,
             "hash": "b0f074179d185032b4a2d0e7b1f3476b0626039334a638d47f84ef44990616b2"
         },
         {
             "type": "file",
+<<<<<<< HEAD
             "name": "assets/js/main-dist.js",
             "size": 23919,
             "hash": "928b883c9c9320aff802290e88df5708f08044e1b4cb386ae45083057a706d1b"
@@ -551,6 +627,20 @@
         },
         {
             "type": "file",
+=======
+            "name": "assets/js/page.js",
+            "size": 2750,
+            "hash": "84ab83a5ddc3b0d7f10f7d165e3e334de42ad254a1a84ab89b7cfba1e3b131b6"
+        },
+        {
+            "type": "file",
+            "name": "assets/js/rut.js",
+            "size": 6297,
+            "hash": "2c32e080b052fa82a45f07318c58d91453ffc5310334dac0c87508dc48ff8953"
+        },
+        {
+            "type": "file",
+>>>>>>> 46adf56ca8397a405dbeff02b532255d126f06ae
             "name": "assets/js/sourcebuster.min.js",
             "size": 14457,
             "hash": "4101ef8c113c49ccf1fe62e77f5f08dbddb9ab70cd3acde4af21b90d8ee1bdc9"
@@ -1529,15 +1619,15 @@
         },
         {
             "type": "file",
-            "name": "assets/img/rentas1Brick.jpg",
-            "size": 153142,
-            "hash": "2351d3cbe2ca17cc940f5a6ba077b8e74f503c263c0a1ff0ecb58147e01a69a7"
-        },
-        {
-            "type": "file",
             "name": "assets/img/rentas1Brick.png",
             "size": 1445022,
             "hash": "336e86c1b7de41489cab16f267d16bf514727a370030da6f2719355a98c0dcd3"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/rentas1Brick.jpg",
+            "size": 153142,
+            "hash": "2351d3cbe2ca17cc940f5a6ba077b8e74f503c263c0a1ff0ecb58147e01a69a7"
         },
         {
             "type": "file",
@@ -1774,8 +1864,13 @@
         {
             "type": "file",
             "name": "includes/forms/form-planta.php",
+<<<<<<< HEAD
             "size": 7856,
             "hash": "abd067e98bc7fd25cf2cbadbc5713e43eb306a38c73d4da80aa69b903f09c657"
+=======
+            "size": 7927,
+            "hash": "265b80336e6ce32a913f99ee42182d6b8657806f8052a10f4bce4c387ec81fd1"
+>>>>>>> 46adf56ca8397a405dbeff02b532255d126f06ae
         },
         {
             "type": "file",
@@ -1947,12 +2042,15 @@
         },
         {
             "type": "file",
+<<<<<<< HEAD
             "name": "assets/scss/utils/_media.scss",
             "size": 334,
             "hash": "b72eebc425f4051bb811b77dc2c3800dde75148cd8b5891c2afdeb48a630019d"
         },
         {
             "type": "file",
+=======
+>>>>>>> 46adf56ca8397a405dbeff02b532255d126f06ae
             "name": "assets/scss/utils/_placeholders.scss",
             "size": 472,
             "hash": "f6360768bf4640145975693f9f576e5b5aa52b1eed12f939ed71812718867394"

@@ -1,7 +1,7 @@
 <?php ?>
 
 <div class="wp-block-contact-form-7-contact-form-selector">
-  <div role="form" class="wpcf7 brickcf7" id="wpcf7-f988-o1" lang="es-ES" dir="ltr">
+  <div role="form" class="wpcf7 wpcf7Floatante" id="wpcf7-f988-o1" lang="es-ES" dir="ltr">
       <div class="screen-reader-response">
           <p role="status" aria-live="polite" aria-atomic="true"></p>
           <ul></ul>

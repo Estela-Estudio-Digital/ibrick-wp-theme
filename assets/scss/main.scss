@@ -476,6 +476,9 @@
 
 .bg-medio-azul {
     background: linear-gradient(90deg, #e6e6e6 0%, #e6e6e6 50%, #d6d5d5 50%, #d6d5d5 100%);
+    &.dark {
+        background: linear-gradient(90deg, #323E48 0%, #323E48 50%, #d6d5d5 50%, #d6d5d5 100%);
+    }
 }
 
 #caracteristicas img {
@@ -786,6 +789,7 @@ $items: 1,
     @include centerer();
 }
 .master-plan-bullets {
+    color: $brand-secondary-color;
     width: 50%;
     margin-bottom: 40px;
     position: relative;

@@ -1121,6 +1121,9 @@ button:focus {
 .bg-medio-azul {
   background: linear-gradient(90deg, #e6e6e6 0%, #e6e6e6 50%, #d6d5d5 50%, #d6d5d5 100%);
 }
+.bg-medio-azul.dark {
+  background: linear-gradient(90deg, #323E48 0%, #323E48 50%, #d6d5d5 50%, #d6d5d5 100%);
+}
 
 #caracteristicas img {
   max-height: 60px;
@@ -1472,6 +1475,7 @@ button:focus {
 }
 
 .master-plan-bullets {
+  color: #3c3c3c;
   width: 50%;
   margin-bottom: 40px;
   position: relative;
