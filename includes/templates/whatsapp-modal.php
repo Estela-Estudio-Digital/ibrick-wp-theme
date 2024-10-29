@@ -48,7 +48,7 @@
                     <a
                         href="!#" 
                         class="whatsappProjectSelector"
-                        data-name="<?php echo get_the_title();?>"
+                        data-name="<?php echo get_field('nombre_planok');?>"
                         data-whatsapp="<?php echo $grupo_de_datos["whatsapp"];?>"
                         data-correo="<?php echo $grupo_de_datos["correos_ventas"];?>"
                     >

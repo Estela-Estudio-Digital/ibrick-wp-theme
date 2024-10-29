@@ -571,7 +571,7 @@ if ($query->have_posts()) : ?>
     $counter4 = 1;
     $counter5 = 1;
 ?>
-<div class="container-fluid bg-medio-azul px-0 pt-3 pb-4 mb-5">
+<div class="container-fluid bg-medio-azul px-0 pt-3 pb-4 mb-5 <?php echo ($theme === 'dark') ? 'dark' : '';?>">
     <div class="container-md p-0 p-md-4 tab-content mt-2">
         <?php while (have_rows('slider_master_plan')) : the_row();
             // vars
