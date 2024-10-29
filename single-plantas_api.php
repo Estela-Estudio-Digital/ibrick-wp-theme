@@ -99,6 +99,7 @@ $id_planok = get_field( 'id_planok' );
                 $value = $dormitorios_para_filtrar['value'];
                 $label = $dormitorios_para_filtrar['choices'][$value];
                 $texto_titulo = get_field('texto_titulo');
+                $nombre_comercial = get_field('nombre_comercial');
 
 
                 $img_repeater = get_field('repeater_fotografias');
@@ -122,10 +123,14 @@ $id_planok = get_field( 'id_planok' );
                 <div class="wrapper w-100">
                     <h2 class="pb-5">
                         <span class="plantas-info-title">
-                            Tipo 
-                            <span id="plantaModalPlanOkTipo">
-                            <?php echo $texto_titulo; ?> <?php echo esc_html($label); ?> + <?php echo $cantidad_de_banos; echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
-                            </span>
+                            <?php if ($nombre_comercial) : ?>
+                                <?php echo $nombre_comercial; ?>
+                            <?php else : ?>
+                                Tipo 
+                                <span id="plantaModalPlanOkTipo">
+                                <?php echo $texto_titulo; ?> <?php echo esc_html($label); ?> + <?php echo $cantidad_de_banos; echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
+                                </span>
+                            <?php endif; ?>
                         </span>
                     </h2>
                     <?php if($unidades ): ?>
