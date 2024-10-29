@@ -9,58 +9,37 @@ Template Name: Entrega inmediata
 
 <?php
 $id_slider = get_field('id_slider');
-if ($id_slider) : ?>
+$mobile = get_field('mobile');
+$desktop = get_field('desktop');
+$enlace_imagen = get_field('enlace_imagen');
+?>
 <section class="primary-hero">
+<?php if ($id_slider && !$mobile && !$desktop) : ?>
     <?php echo do_shortcode('[smartslider3 slider="'.$id_slider.'"]'); ?>
+<? endif; ?>
+<? if (!$id_slider && $mobile && $desktop) : ?>
+    <?php if($enlace_imagen): ?>
+        <a href="<?php echo $enlace_imagen;?>">
+    <?php endif; ?>
+			<h1 aria-label="Entrega Inmediata">
+        <picture>
+            <source
+            media="(max-width: 768px)"
+            srcset="<?php echo $mobile;?>">
+            <img 
+            alt="Entrega Inmediata"
+            src="<?php echo $desktop;?>"
+            loading="lazy"
+            class="w-100"
+            >
+        </picture>
+			</h1>
+    <?php if($enlace_imagen): ?>
+        </a>
+    <?php endif; ?>
+<?php endif; ?>
 </section>
-<?php endif; ?>
 
-<?php if (have_rows('beneficios')) : ?>
-    <section class="container mt-5 pt-5 d-none">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="text-center text-uppercase fs-3">
-                    <span><b>Aprovecha estos beneficios</b></span>
-                    <span class="text-primary-color">en la compra de tu nuevo Hogar</span>
-                </h2>
-                <p class="text-center">
-                    <small class="text-uppercase">Consulta condiciones comerciales</small>
-                </p>
-            </div>
-        </div>
-    </section>
-    <section class="container position-relative d-none">
-        <div class="beneficios-carousel owl-carousel owl-theme">
-            <?php while (have_rows('beneficios')) : the_row();
-                // vars
-                $icono = get_sub_field('icono');
-                $titulo = get_sub_field('titulo');
-                $texto = get_sub_field('texto');
-            ?>
-            <div class="item">
-                <div class="flip">
-                    <div class="fcard"> 
-                        <div class="face front"> 
-                            <div class="inner">
-                                <div class="text-center">
-                                    <img class="img" src="<?php echo $icono['url'];?>" alt="<?php echo $icono['alt'];?>" height="70">
-                                </div> 
-                                <p class="text-uppercase text-primary-color fs-2 px-4 my-2"><b><?php echo $titulo; ?></b></p>
-                                <div class="text-center"><span class="more-info">+ Info</span></div>
-                            </div>
-                        </div> 
-                        <div class="face back d-flex align-items-center"> 
-                            <div class="inner text-center"> 
-                                <p><?php echo $texto; ?></p>
-                            </div>
-                        </div>
-                    </div>	 
-                </div>
-            </div>
-            <?php endwhile; ?>
-        </div>
-    </section>
-<?php endif; ?>
 <?php 
 $taxonomy = 'tipo';
 $query = new WP_Query(array(

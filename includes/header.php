@@ -171,7 +171,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       ?>
   </ul>
 </nav>
-<main id="main">
+<main id="main" class="<?php echo $vincular_planta_a_proyecto->ID === 227 ? 'project-model' : '';?>">
 <!--   <div class="cd-loader">
     <div class="cd-loader__grid text-center">
       <div class="spinner"><img src="<?php bloginfo('template_directory');?>/assets/img/bicon.png" alt="Inmobiliaria Brick" />

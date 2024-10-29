@@ -72,6 +72,30 @@ $query = new WP_Query(array(
 
 <div class="container">
     <div class="row laign-items-stretch">
+        <div class="col-12 my-5">
+            <h3 class="text-uppercase"><span class="secondary-title font-weight-bold">Centros de</span> <span class="secondary-title color-emphasis font-weight-bold">distribución</span></h3>
+        </div>
+    </div>
+</div>
+<?php 
+$taxonomy = 'tipo';
+$query = new WP_Query(array(
+    'post_type'      	=> 'proyectos',
+    'posts_per_page'	=> -1,
+    'post_status'		=> 'publish',
+    'tax_query'         => array (
+        array(
+            'taxonomy'      => $taxonomy,
+            'field'          => 'slug',
+            'terms'         => 'centro-de-distribucion'
+        ),
+    ),
+  ));
+  include( locate_template( './includes/templates/proyectos_industriales.php', false, false) ); 
+  
+  ?>
+<div class="container">
+    <div class="row laign-items-stretch">
         <div class="col-12 my-5 text-center pb-5ddrive">
             <img src="<?php bloginfo('template_directory');?>/assets/img/storage-logo.svg" alt="storage" width="300" height="163">
         </div>

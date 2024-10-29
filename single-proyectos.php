@@ -39,6 +39,7 @@ $url_de_promocion = $banner_promocion['url_de_promocion'];
 $id_planok = get_field( 'id_planok' );
 $planok = get_field( 'plan_ok' );
 $video = get_field( 'video' );
+$custom_video = get_field( 'custom_video' );
 $imagen_video_portada = get_field( 'imagen_video_portada' );
 
 // CUSTOM FLIELDS Imágenes Generales
@@ -120,10 +121,10 @@ if (!empty($terms)) {
     <div class="row py-5 align-items-center" id="proyecto">
         <div class="col-md-6">
             <?php if ($theme === 'dark'): ?>
-            <h1 class="mb-5">
+            <h2 class="mb-5">
                 <img src="<?php echo $logo_proyecto_blanco['url'];?>" alt="<?php echo $logo_proyecto_blanco['alt'];?>" class="pr-4" style="max-height:100px">
                 <div class="sr-only"><?php echo the_title(); ?></div>
-            </h1>
+            </h2>
             <?php endif; ?>
             <h3 class="text-uppercase section-title">
                 <span class="primary-title">Arquitectura</span>
@@ -191,6 +192,15 @@ if (!empty($terms)) {
 
         <?php endwhile; ?>
     </div>
+    <?php if ($custom_video) : ?>
+    <div class="row">
+        <div class="col text-center">
+            <button type="button" class="btn btn-primary btn-sm shadow py-2 my-3" data-toggle="modal" data-target="#customVideo">
+                Ver Video
+            </button>
+        </div>
+    </div>
+    <?php endif; ?>
 </section>
 <?php endif; ?>
 
@@ -561,7 +571,7 @@ if ($query->have_posts()) : ?>
     $counter4 = 1;
     $counter5 = 1;
 ?>
-<div class="container-fluid bg-medio-azul px-0 pt-3 pb-4 mb-5">
+<div class="container-fluid bg-medio-azul px-0 pt-3 pb-4 mb-5 <?php echo ($theme === 'dark') ? 'dark' : '';?>">
     <div class="container-md p-0 p-md-4 tab-content mt-2">
         <?php while (have_rows('slider_master_plan')) : the_row();
             // vars
@@ -890,7 +900,7 @@ include( locate_template( './includes/templates/whatsapp-modal.php', false, fals
                         </div>
                     </div>
                     <div class="col-lg-4 plantasContent">
-                        <h3 class="pb-2"><span class="plantas-info-title">Escríbenos y recibirás tu cotización por email</span></h3>
+                        <h3 class="pb-2"><span class="plantas-info-title">Regístrate y recibirás tu cotización automáticamente </span></h3>
                         <?php get_template_part('includes/forms/form-planta'); ?>
                     </div>
                 </div>
@@ -973,6 +983,18 @@ include( locate_template( './includes/templates/whatsapp-modal.php', false, fals
         <!-- <button type="button" class="btn btn-default pausevideo" data-dismiss="modal" >Cerrar X</button> -->
         <div class="embed-responsive embed-responsive-16by9 " id="content-video">
             <iframe class="embed-responsive-item content-video" src="" id="video"  allowscriptaccess="always" allow="autoplay" style="background: #E5EFF1"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif;?>
+<?php if ($custom_video) : ?>
+<div class="modal fade" id="customVideo" tabindex="-1" role="dialog" aria-labelledby="customVideoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+        <!-- <button type="button" class="btn btn-default pausevideo" data-dismiss="modal" >Cerrar X</button> -->
+        <div class="embed-responsive embed-responsive-16by9 " id="custom-video">
+            <iframe class="embed-responsive-item content-video" src="https://www.youtube.com/embed/<?php echo $custom_video; ?>?si=To5l-yOMczOheOnY" id="custom-video-iframe"  allowscriptaccess="always" allow="autoplay" style="background: #E5EFF1"></iframe>
             </div>
         </div>
     </div>

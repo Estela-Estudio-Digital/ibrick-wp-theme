@@ -476,6 +476,9 @@
 
 .bg-medio-azul {
     background: linear-gradient(90deg, #e6e6e6 0%, #e6e6e6 50%, #d6d5d5 50%, #d6d5d5 100%);
+    &.dark {
+        background: linear-gradient(90deg, #323E48 0%, #323E48 50%, #d6d5d5 50%, #d6d5d5 100%);
+    }
 }
 
 #caracteristicas img {
@@ -786,6 +789,7 @@ $items: 1,
     @include centerer();
 }
 .master-plan-bullets {
+    color: $brand-secondary-color;
     width: 50%;
     margin-bottom: 40px;
     position: relative;
@@ -1251,4 +1255,26 @@ $items: 1,
     font-size: 1.2rem;
     margin: 0 20px;
     text-align: center;
+}
+
+.project-model {
+    background: #323E48;
+    color: white;
+    .icon-box {
+        background: white;
+        display: inline-block;
+        padding: 2px;
+    }
+    .formulario-general input, .formulario-general textarea, .content-table ul:last-child {
+        border-bottom: 1px solid white !important;
+    }
+    .formulario-general input, .formulario-general textarea {
+        color: white;
+        &:focus {
+            color: #000;
+        }
+    }
+    .input-group-text {
+        color: white;
+    }
 }
