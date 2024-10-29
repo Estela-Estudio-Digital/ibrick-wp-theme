@@ -9,6 +9,10 @@
         box-shadow: none !important;
     }
 
+    .dark &-primary {
+        background: $theme-dark-primary-color !important;
+    }
+
     &-primary{
         background: $brand-primary-color !important;
         border: 0;
@@ -16,9 +20,14 @@
         color: $white !important;
         &:hover {
             color: $dark-grey !important;
-            background: $ligth-grey !important;
+            background: $light-grey !important;
         }
     }
+
+    .dark &-secondary {
+        background: $theme-dark-secondary-color !important;
+    }
+
     &-secondary{
         background: $brand-secondary-color !important;
         //border-radius: 5px;
@@ -27,7 +36,7 @@
         color: $white !important;
         &:hover {
             color: $dark-grey !important;
-            background: $ligth-grey !important;
+            background: $light-grey !important;
         }
         &.active{
             background: $brand-primary-color !important;
@@ -37,6 +46,9 @@
             &:hover {
                 color: $white !important;
                 background: $brand-primary-color !important;
+            }
+            .dark &{
+                background: $theme-dark-primary-color !important;
             }
         }
     }
@@ -48,7 +60,7 @@
         color: $brand-primary-color !important;
         &:hover {
             color: $dark-grey !important;
-            background: $ligth-grey !important;
+            background: $light-grey !important;
             border:none;
         }
     }
@@ -59,12 +71,17 @@
         color: $white !important;
         &:hover {
             color: $dark-grey !important;
-            background: $ligth-grey !important;
+            background: $light-grey !important;
         }
     }
 }
 
 .contact-floating{
+    &-list {
+        @include MQ(L) {
+            padding-right: 40px !important;
+        }
+    }
     &-container-home {
         position: fixed;
         bottom: 0;
@@ -79,32 +96,84 @@
         // background: rgba($white, .5);
         // width: 100%;
     }
-    &-list {
-        max-width: 1600px;
-        margin: 0 auto;
+    &-link {
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        padding: 22px;
+        & i {
+            position: relative;
+            @include center(xy);
+            font-size: 1.5rem;
+            color: $white;
+        }
     }
     &-whatsapp {
-        &-button {
-            background: #00bfa5;
-            color: $white;
-            padding: 15px;
-            border-radius: 50rem;
+        // background: #00bfa5;
+        background: #9DCE35;
+        border-radius: 50rem;
+        transition: .2s ease-in-out all;
+        @include MQ(L) {
             box-shadow: 0 5px 5px -3px rgba(#015348, .2), 0 8px 10px 1px rgba(#015348, .2), 0 3px 14px 2px rgba(#015348, .2);
-            transition: .2s ease-in-out all;
             margin-bottom: 20px;
-            &:hover {
-                background: #019682;
-            }
+        }
+        &:hover {
+            background: #019682;
+        
         }
     }
     &-form {
-        background: #6dccf1;
-        padding: 15px;
+        background: #2DAFE9;
         border-radius: 50rem;
-        box-shadow: 0 5px 5px -3px rgba(#015348, .2), 0 8px 10px 1px rgba(#015348, .2), 0 3px 14px 2px rgba(#015348, .2);
-    }
+        @include MQ(L) {
+            box-shadow: 0 5px 5px -3px rgba(#015348, .2), 0 8px 10px 1px rgba(#015348, .2), 0 3px 14px 2px rgba(#015348, .2);
+        }
+        &:hover {
+            background: $brand-primary-color;
+        }}
+
 }
 
+.social-fixed {
+    &-container {
+        position: fixed;
+        left: 0;
+        @include center(y);
+        z-index: 4;
+        max-width: 50px;
+    }
+    &-list {
+        padding: 10px;
+        @include MQ(L) {
+            padding: 40px;
+        }
+    }
+    &-item {
+        padding: 5px 0;
+    }
+    &-link {
+        display: block;
+        border-radius: 50rem;
+        width: 30px;
+        height: 30px;
+        padding: 22px;
+        position: relative;
+        color: $brand-primary-color;
+        background: $ultra-light-grey;
+        @include MQ(L) {
+            background: $white;
+        }
+        & i {
+            position: relative;
+            @include center(xy);
+            font-size: 1.5rem;
+        }
+        &:hover {
+            color: $brand-secondary-color;
+        }
+    }
+}
 .form-modal, .whatsapp-modal {
     position: fixed;
     bottom: -400%;
@@ -124,6 +193,7 @@
 
 .form-modal {
     right: 0;
+    color: $brand-secondary-color;
     @include MQ(M) {
         right: -2px;
     }
@@ -131,11 +201,11 @@
 
 .whatsapp-modal {
     min-height: 100%;
+    color: $brand-secondary-color;
     left: 0;
     z-index: 11;
     @include MQ(M) {
-        min-height: 660px;
-        min-width: 500px;
+        min-height: auto;
         left: -2px;
     }
 }
@@ -150,7 +220,7 @@
     }
     &--txt {
         padding-top: 2px;
-        font-size: 22px;
+        font-size: 1rem;
     }
 }
 
@@ -158,8 +228,3 @@
     background: none;
     border: none;
 }
-
-// .input-group-prepend label.error {
-//     display: block;
-//     width: 100%;
-// }

@@ -9,7 +9,7 @@ bk_main_before();
 
         <div class="row">
           <div class="col-12 mb-lg-5">
-            <h1>Pasos a seguir</h1>
+            <h2>Pasos a seguir</h2>
             <h4>Te guiamos para que la compra de tu depto sea sencilla e informada</h4>
           </div>
         </div>

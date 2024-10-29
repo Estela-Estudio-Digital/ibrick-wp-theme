@@ -1,6 +1,6 @@
-<div class="whatsapp-modal bg-ultra-ligth-grey">
+<div class="whatsapp-modal <?php echo is_front_page() ? 'home' : ''; ?> bg-ultra-light-grey">
     <?php if(is_front_page()) : ?>
-    <div class="p-5 ws-project">
+    <div class="p-4 ws-project">
         <div class="whatsapp-header">
             <ul class="d-flex align-items-start w-100 justify-content-between">
                 <li>
@@ -8,9 +8,9 @@
                         <img src="<?php bloginfo('template_directory');?>/assets/img/whatsapp-logo.svg" alt="whatsapp" style="max-height:45px" width="45">
                         WhatsApp
                     </h4>
-                    <h4 class="mb-0 pt-md-2">
-                        <small>Selecciona el edificio a consultar en Santiago Centro</small>
-                    </h4>
+                    <h5 class="mb-0 pt-md-2">
+                        <small>Conversemos por WhatsApp</small>
+                    </h5>
                 </li>
                 <li>
                     <a href="#" class="whatsappModalClose">
@@ -48,7 +48,7 @@
                     <a
                         href="!#" 
                         class="whatsappProjectSelector"
-                        data-name="<?php echo get_the_title();?>"
+                        data-name="<?php echo get_field('nombre_planok');?>"
                         data-whatsapp="<?php echo $grupo_de_datos["whatsapp"];?>"
                         data-correo="<?php echo $grupo_de_datos["correos_ventas"];?>"
                     >
@@ -73,7 +73,7 @@
         </div>
     </div>
     <?php endif;?>
-    <div class="p-5 ws-form <?php echo is_front_page() ? 'd-none' : ''; ?>">
+    <div class="p-4 ws-form <?php echo is_front_page() ? 'd-none' : ''; ?>">
         <div class="whatsapp-header">
             <ul class="d-flex align-items-start w-100 justify-content-between">
                 <li>
@@ -161,7 +161,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group w-100">
+                    <div class="form-group w-100 mb-0">
                         <div class="text-center py-4">
                             <button  
                                 type="submit" name="boton_enviar_whatsapp" value="enviar"
@@ -175,6 +175,22 @@
                         </div>
                     </div>
                 </form>
+                <?php if(is_front_page()) : ?>
+                    <div class="text-center">
+                        <button  
+                            type="button" name="select_project_whatsapp"
+                            class="btn px-5 mx-auto" 
+                            id="selectProjectWhatsapp"
+                            >
+                            <small>
+                                <span class="mr-2">
+                                    <i class="fa fa-arrow-left"></i>
+                                </span>
+                                Seleccionar otro proyecto
+                            </small>
+                        </button>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>

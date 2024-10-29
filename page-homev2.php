@@ -17,12 +17,12 @@ bk_main_before();
     ));
     $count = 1;
     if ($depicter) : ?>
-        <div class="">
+        <h1 class="" aria-label="Brick">
             <?php if ($depicter) {
                 depicter($depicter);
                 } 
             ?>
-        </div>
+        </h1>
     <? else:
     if ( $query->have_posts() ) : ?>
     <section class="primary-hero">
@@ -227,10 +227,10 @@ include( locate_template( './includes/templates/proyectos_destacados.php', false
 <section class="contact-floating-container-home follow-button-play">
     <ul class="contact-floating-list px-2 d-flex flex-column justify-content-between align-items-center">
         <li>
-            <a class="d-inline" id="whatsappButton" href="#">
-                <ul class="d-flex align-items-center contact-floating-whatsapp-button">
-                    <li class="">
-                        <img src="<?php bloginfo('template_directory');?>/assets/img/whatsapp-logo.svg" alt="whatsapp" style="max-height:35px" width="35">
+            <a class="d-inline whatsappButton" id="whatsappButton" href="#">
+                <ul class="d-flex align-items-center contact-floating-whatsapp">
+                    <li class="contact-floating-link whatsappButton" style="zoom: 1.2">
+                        <i class="fab fa-whatsapp"></i>
                     </li>
                 </ul>
                 <span id="whatsappButtonAd">¿Necesitas ayuda?</span>
