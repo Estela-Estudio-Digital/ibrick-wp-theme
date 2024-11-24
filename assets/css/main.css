@@ -1219,7 +1219,7 @@ button:focus {
 @media screen and (min-width: 768px) {
   .project-wrapper-content-img img {
     max-width: 100%;
-    max-height: 50px;
+    max-height: 80px;
   }
 }
 

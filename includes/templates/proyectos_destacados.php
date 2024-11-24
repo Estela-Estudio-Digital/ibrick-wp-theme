@@ -35,7 +35,7 @@
           <div class="col-md-4 <?php echo ( $count % 2 === 0 ) ? '' : 'order-md-2'; ?>">
               <div class="project-info-wrapper">
                   <div class="project-info-logo">
-                      <img src="<?php echo $logo_proyecto['url'];?>" alt="<?php echo $logo_proyecto['alt'];?>" style="max-height:100%">
+                      <img src="<?php echo $logo_proyecto['url'];?>" alt="<?php echo $logo_proyecto['alt'];?>" style="max-height:100% max-width: 250px;">
                   </div>
                   <div class="project-info-text my-5">
                       <?php if ($tipologia_txt):?>
