@@ -15,7 +15,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 
 <?php if(is_singular('proyectos')): 
-  $vincular_planta_a_proyecto = get_field('vincular_planta_a_proyecto');
+  $vincular_planta_a_proyecto = get_field('vincular_proyecto');
   $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
   $theme = get_field('esquema_de_colores');
 ?>
@@ -90,11 +90,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <?php endif; ?>
 
 <?php if (is_singular('plantas') || is_singular('plantas_api')): 
-  $vincular_planta_a_proyecto = get_field('vincular_planta_a_proyecto');
-	$id_proyecto = $vincular_planta_a_proyecto->ID > 1 ? $vincular_planta_a_proyecto->ID : 1090;
-  $logo_proyecto = get_field('logo_proyecto', $id_proyecto);
+  $vincular_planta_a_proyecto = get_field('vincular_proyecto');
+	$id_proyecto = $vincular_planta_a_proyecto[0]->ID > 1 ? $vincular_planta_a_proyecto[0]->ID : 0;
+  $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto[0]->ID );
 ?>
-<nav class="bg-white py-3 " id="plantasMenu">
+<nav class="bg-white py-3 " id="plantasMenu" data-id="<?php echo json_encode($id_proyecto);?>">
   <div class="container">
     <div class="d-flex justify-content-between align-items-center">
       <a href="<?php bloginfo('url');?>">
