@@ -1496,13 +1496,13 @@ button:focus {
   }
 }
 
-.playvideo {
+.playvideoImage {
   position: relative;
   z-index: 999999;
   align-self: center;
   justify-self: center;
 }
-.playvideo::after {
+.playvideoImage::after {
   content: "";
   display: block;
   width: 90px;

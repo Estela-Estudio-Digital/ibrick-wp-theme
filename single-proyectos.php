@@ -51,6 +51,8 @@ $logo_proyecto_blanco = get_field('logo_proyecto_blanco');
 $arquitectura_interiorismo = get_field('arquitectura_interiorismo');
 $slider_arquitectura = get_field('slider_arquitectura');
 $banner_opcionales_repeater = get_field('banner_opcionales_repeater');
+$video_personalizable = get_field('enlace_video_personalizable');
+$texto_boton_video_personalizable = get_field('texto_boton_video_personalizable');
 
 // CUSTOM FLIELDS Galerías
 $repeater_galerias = get_field('repeater_galerias');
@@ -146,12 +148,17 @@ if (!empty($terms)) {
             <?php if( $folleto ): ?>
                 <a href="<?php echo $folleto; ?>" class="btn <?php echo $theme === 'dark' ? 'btn-primary' : 'btn-secondary'; ?>  btn-sm shadow py-2 my-3 mr-4 text-capitalize" target="_blank">descargar folleto</a>
             <?php endif; ?>
+            <?php if ($video_personalizable): ?>
+                <a href="javascript:void();"  class="playvideo btn <?php echo $theme === 'dark' ? 'btn-primary' : 'btn-secondary'; ?>  btn-sm shadow py-2 my-3 mr-4 text-capitalize" data-src="https://www.youtube.com/embed/<?php echo $video_personalizable; ?>" data-toggle="modal" data-target="#homeVideo">
+                    <?php echo $texto_boton_video_personalizable ? $texto_boton_video_personalizable : 'Ver Vídeo'; ?>
+                </a>
+            <?php endif; ?>
             <a href="<?php echo site_url('/pasos-a-seguir') ?>" class="btn btn-sm  <?php echo $theme === 'dark' ? 'btn-secondary' : 'btn-primary'; ?> shadow py-2 my-3" target="_blank">Conocer Proceso de Compra</a>
         </div>
         <?php if ( $video ) : ?>
             <div class="col-md-6 d-none d-md-block">
                 <div class="video-portada">
-                    <a href="javascript:void();" class="item p-5 d-block playvideo" data-src="https://www.youtube.com/embed/<?php echo $video; ?>" data-toggle="modal" data-target="#homeVideo">
+                    <a href="javascript:void();" class="item p-5 d-block playvideo playvideoImage" data-src="https://www.youtube.com/embed/<?php echo $video; ?>" data-toggle="modal" data-target="#homeVideo">
                         <img src="<?php echo $imagen_video_portada['url'];?>" alt="<?php echo $imagen_video_portada['alt'];?>" class="w-100">
                     </a>
                 </div>
