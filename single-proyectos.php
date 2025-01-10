@@ -296,10 +296,9 @@ if (!empty($terms)) {
                 'compare' => '='
             )
         ),
-        'orderby' => array(
-            'estado' => 'DESC',
-            'title' => 'ASC',
-        )
+        'meta_key' => 'superficie_total',
+        'orderby' => 'meta_value_num',
+        'order' => 'ASC',
     );
 
     $localQuery = $id_planok ? $apiArgs : $localArgs;
