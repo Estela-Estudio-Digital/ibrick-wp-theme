@@ -1991,4 +1991,8 @@ button:focus {
 .project-model .input-group-text {
   color: white;
 }
+
+.LandbotLivechat {
+  bottom: 60px !important;
+}
 /*# sourceMappingURL=main.css.map */
