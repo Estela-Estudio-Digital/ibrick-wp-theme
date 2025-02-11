@@ -3,7 +3,8 @@ $(function () {
   sbjs.init();
   $('[data-toggle="tooltip"]').tooltip();
 
-  const isHome = window.location.pathname === "/" || window.location.pathname === "/#";
+  const isHome =
+    window.location.pathname === "/" || window.location.pathname === "/#";
   // Menú Hamburguer
   const setDataToSend = () => {
     try {
@@ -81,7 +82,6 @@ $(function () {
     $(".ws-form").removeClass("d-none");
     $(".whatsapp-modal").addClass("whatsapp-modal-open");
     if (isHome) {
-      console.log('esHome');
       $(".ws-project").show();
       $(".ws-form").addClass("d-none");
     }
@@ -92,13 +92,13 @@ $(function () {
     console.log("selectProjectWhatsapp");
     $(".ws-project").show();
     $(".ws-form").addClass("d-none");
-  })
+  });
 
-  if (window.innerWidth >= 768) {
-    setTimeout(function () {
-      $(".whatsapp-modal").addClass("whatsapp-modal-open");
-    }, 500);
-  }
+  // if (window.innerWidth >= 768) {
+  //   setTimeout(function () {
+  //     $(".whatsapp-modal").addClass("whatsapp-modal-open");
+  //   }, 500);
+  // }
 
   $(".whatsappModalClose").on("click", function (e) {
     e.preventDefault();
@@ -266,6 +266,8 @@ $(function () {
 
   $(".master-carousel").owlCarousel({
     items: 1,
+    autoplay: true,
+    dots: true,
   });
 
   $(".gallery-caarousel").owlCarousel({
