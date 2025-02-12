@@ -57,7 +57,7 @@
             </li>
             <li class="d-md-block">
               <a href="<?php echo site_url('somos-brick');?>" class="text-white d-block mb-2">Somos Brick</a>
-              <a href="https://ibrick.cl/postventa/" target="_blank" class="text-white d-block mb-2 ">Postventa</a>
+              <a href="https://ibrick.cl/postventa/" class="text-white d-block mb-2 ">Postventa</a>
               <a href="#" class="text-white contactoModalBtn">Contáctanos</a>
             </li>
           </ul>
