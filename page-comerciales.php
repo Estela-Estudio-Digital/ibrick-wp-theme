@@ -1,12 +1,27 @@
 <?php
     get_template_part('includes/header'); 
     bk_main_before();
-/*
-Template Name: Comercial
-*/
+      $taxonomy = 'tipo';
+      $terms_args = array(
+      'orderby' => 'title',
+      'hide_empty' => true,
+      'parent' => 4,
+    'orderby'         => 'slug',
+
+      );
+      
+      $cats = get_terms( $taxonomy, $terms_args );
+      foreach ($cats as $cat) :
 ?>
+<div class="container">
+    <div class="row laign-items-stretch">
+        <div class="col-12 mt-5">
+            <h3 class="text-uppercase"><span class="secondary-title font-weight-bold"><?php echo $cat->name; ?></span></h3>
+        </div>
+    </div>
+</div>
+
 <?php 
-$taxonomy = 'tipo';
 $query = new WP_Query(array(
     'post_type'      	=> 'proyectos',
     'posts_per_page'	=> -1,
@@ -15,13 +30,14 @@ $query = new WP_Query(array(
         array(
             'taxonomy'      => $taxonomy,
             'field'          => 'slug',
-            'terms'         => 'comercial'
+            'terms'         => $cat->slug,
+
         ),
     ),
   ));
   include( locate_template( './includes/templates/proyectos_destacados.php', false, false) ); ?>
 
-
+<?php endforeach; ?>
 <?php 
     bk_main_after();
     get_template_part('includes/footer'); 
