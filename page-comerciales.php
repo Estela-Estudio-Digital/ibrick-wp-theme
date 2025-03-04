@@ -5,7 +5,9 @@
       $terms_args = array(
       'orderby' => 'title',
       'hide_empty' => true,
-      'parent' => 4
+      'parent' => 4,
+    'orderby'         => 'slug',
+
       );
       
       $cats = get_terms( $taxonomy, $terms_args );
@@ -28,7 +30,8 @@ $query = new WP_Query(array(
         array(
             'taxonomy'      => $taxonomy,
             'field'          => 'slug',
-            'terms'         => $cat->slug
+            'terms'         => $cat->slug,
+
         ),
     ),
   ));
