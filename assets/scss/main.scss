@@ -1106,14 +1106,14 @@ $items: 1,
 
   .complement-ads {
     &-container {
-        background: #40A8F5;
         height: 100%;
         width: 70%;
         @include MQ(L) {
+            background: #f93271;
             width: 100%;
         }
         .dark & {
-            background: #C99D67;
+            background: none;
         }
     }
     &-top {
@@ -1128,6 +1128,7 @@ $items: 1,
         }
     }
     &-bottom {
+        display: block;
         @include MQ(L) {
             max-height: 110px;
             overflow: hidden;
@@ -1136,6 +1137,29 @@ $items: 1,
             object-fit: cover;
             @include MQ(L) {
                 max-height: 110px;
+            }
+        }
+        &.bottom-banner {
+            margin-top: 10px;
+            display: block;
+            @include MQ(L) {
+            position:absolute;
+            top: 130px;
+            width: 100%;
+            right: 0;
+            margin-top: 0;
+            }
+            .dark & {
+                padding: 0 15px;
+            }
+        }
+        .dark & {
+            background: #C99D67;
+            display: block;
+            margin-top: 10px;
+            @include MQ(L) {
+                top:100px;
+                margin-top: 0;
             }
         }
     }
