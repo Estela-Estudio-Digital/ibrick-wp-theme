@@ -416,8 +416,6 @@
     }
 }
 
-.master-plan-content {}
-
 .general-slide-nav {
     font-size: 40px;
     color: $white;
@@ -585,7 +583,7 @@
         &-img img {
             @include MQ(M) {
                 max-width: 100%;
-                max-height: 50px;
+                max-height: 80px;
             }
         }
     }
@@ -808,7 +806,7 @@ $items: 1,
     }
 }
 
-.playvideo {
+.playvideoImage {
     position: relative;
     z-index: 999999;
     align-self: center;
@@ -1277,4 +1275,7 @@ $items: 1,
     .input-group-text {
         color: white;
     }
+}
+.LandbotLivechat {
+    bottom: 60px !important;
 }
