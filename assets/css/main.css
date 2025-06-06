@@ -1803,17 +1803,17 @@ button:focus {
 }
 
 .complement-ads-container {
-  background: #40A8F5;
   height: 100%;
   width: 70%;
 }
 @media screen and (min-width: 1024px) {
   .complement-ads-container {
+    background: #f93271;
     width: 100%;
   }
 }
 .dark .complement-ads-container {
-  background: #C99D67;
+  background: none;
 }
 .complement-ads-top {
   position: absolute;
@@ -1830,6 +1830,9 @@ button:focus {
     bottom: 110px;
   }
 }
+.complement-ads-bottom {
+  display: block;
+}
 @media screen and (min-width: 1024px) {
   .complement-ads-bottom {
     max-height: 110px;
@@ -1842,6 +1845,33 @@ button:focus {
 @media screen and (min-width: 1024px) {
   .complement-ads-bottom img {
     max-height: 110px;
+  }
+}
+.complement-ads-bottom.bottom-banner {
+  margin-top: 10px;
+  display: block;
+}
+@media screen and (min-width: 1024px) {
+  .complement-ads-bottom.bottom-banner {
+    position: absolute;
+    top: 130px;
+    width: 100%;
+    right: 0;
+    margin-top: 0;
+  }
+}
+.dark .complement-ads-bottom.bottom-banner {
+  padding: 0 15px;
+}
+.dark .complement-ads-bottom {
+  background: #C99D67;
+  display: block;
+  margin-top: 10px;
+}
+@media screen and (min-width: 1024px) {
+  .dark .complement-ads-bottom {
+    top: 100px;
+    margin-top: 0;
   }
 }
 
