@@ -4,7 +4,7 @@ Template Name: pasos a seguir
 get_template_part('includes/header'); 
 bk_main_before();
 ?>
-   <section class="home-content my-md-5">
+   <section class="my-md-5">
    <div class="container">
                 <div class="row align-items-stretch">
 
