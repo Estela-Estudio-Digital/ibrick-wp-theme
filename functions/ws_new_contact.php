@@ -74,7 +74,7 @@ function action_wpcf7_mail_sent($contact_form){
             'evaluacion' => array(
                 'idExpectativa' => intval('1'),
                 'idRazonDeCompra' => intval('1'),
-                'fechaRecontacto' => "2025-05-25",
+                'fechaRecontacto' => date('Y-m-d', strtotime('+1 year')),
                 'comentario' => $posted_data['fuenteSbj'],
                 'idCanalADistancia' => intval('1'),
             ),
@@ -95,36 +95,6 @@ function action_wpcf7_mail_sent($contact_form){
     
         $idCotizacion = $decoded_cotizacion_data[0]['id_cotizacion'];
         $submission->add_result_props( array( 'pdf_api_cot_id' => $decoded_cotizacion_data ) );
-
-    
-    //     if ($idCotizacion) {
-    //         $pdf = wp_remote_get( $BASE_URL . '/cotizaciones/' . $idCotizacion . '/pdf?tipoDescarga=0', array(
-    //             'headers' => array(
-    //                 'accept' => 'application/json',
-    //                 'Content-Type' => 'application/json',
-    //                 "Authorization" => $access_token
-    //             )
-    //         ));
-    //         $pdfData = wp_remote_retrieve_body($pdf);
-    //         $decoded_pdf_data = json_decode($pdfData, true);
-
-    //         $submission->add_result_props( array( 'pdf_api_response' => $pdf ) );
-    //         $pdf_url = $contact_form->prop( 'pdf_url' );
-    
-    //         if ($decoded_pdf_data['url']) {
-    //             $submission->add_result_props( array( 'pdf_api_response_url' => $decoded_pdf_data['url'] ) );
-
-    //             $mailProp = $contact_form->get_properties('mail');
-    //             $mailProp['mail']['pdf_url'] = $decoded_pdf_data['url'];
-             
-    //             // update the form properties
-    //             $contact_form->set_properties(array('mail' => $mailProp['mail']));
-    //             $contact_form->set_properties( array( 'pdf_url' => $decoded_pdf_data['url'] ) );
-
-    //         }
-    //     } else {
-    //         $submission->add_result_props( array( 'pdf_api_status' => 'fail' ) );
-    //     }
     }
 
 }
