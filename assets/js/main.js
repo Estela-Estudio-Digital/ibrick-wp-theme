@@ -834,8 +834,8 @@ $(function () {
     const pdfUrl = event.detail.apiResponse.pdf_api_response_url;
     const token = event.detail.apiResponse.pdf_api_client_token;
     const cotId = event.detail.apiResponse.pdf_api_cot_id;
-    const leadEmail = event.detail.inputs[7].value;
-    const leadPhone = event.detail.inputs[9].value;
+    // const leadEmail = event.detail.inputs[7].value;
+    // const leadPhone = event.detail.inputs[9].value;
 
     let contactName = event.target["inputNameContact"]?.value || "";
 
