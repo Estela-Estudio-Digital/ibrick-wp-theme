@@ -5,6 +5,11 @@ get_template_part('includes/header');
 bk_main_before();
 ?>
    <section class="my-md-5">
+    <div class="container">
+      <div class="row">
+        <h1>Escríbenos y nos contactaremos</h1>
+      </div>
+    </div>
    <div class="container">
                 <div class="row align-items-stretch">
 
