@@ -18,7 +18,7 @@ bk_main_before();
                   <div class="col-md-6 d-flex align-items-center">
 
                     <div class="wp-block-contact-form-7-contact-form-selector w-100">
-                      <div class="wpcf7 brickcf7 w-100" role="form" id="wpcf7-f523-o1" lang="es-ES" dir="ltr" class="w-100 wp">
+                      <div class="wpcf7 wpcf7Floatante w-100" role="form" id="wpcf7-f523-o1" lang="es-ES" dir="ltr" class="w-100 wp">
                         <div class="screen-reader-response">
                             <p role="status" aria-live="polite" aria-atomic="true"></p>
                             <ul></ul>
