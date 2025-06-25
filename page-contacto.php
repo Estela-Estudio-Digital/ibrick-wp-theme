@@ -8,7 +8,7 @@ bk_main_before();
     <div class="container">
       <div class="row">
         <div class="col-12 mt-5">
-          <h1 class="text-uppercase"><span class="secondary-title font-weight-bold">Escríbenos y nos contactaremos</span></h1>
+          <h3 class="text-uppercase"><span class="secondary-title font-weight-bold">Escríbenos y nos contactaremos</span></h3>
         </div>
       </div>
     </div>
