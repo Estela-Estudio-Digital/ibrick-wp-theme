@@ -7,8 +7,8 @@ bk_main_before();
    <section class="my-md-5">
     <div class="container">
       <div class="row">
-        <div class="col-12">
-          <h1>Escríbenos y nos contactaremos</h1>
+        <div class="col-12 mt-5">
+          <h1 class="text-uppercase"><span class="secondary-title font-weight-bold">Escríbenos y nos contactaremos</span></h1>
         </div>
       </div>
     </div>
