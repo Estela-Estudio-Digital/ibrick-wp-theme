@@ -82,6 +82,7 @@
 .formulario-general {
 
     input,
+    select,
     textarea {
         background: none;
         border: none;
@@ -102,6 +103,10 @@
 
     .activelabel {
         transform: translateY(0);
+    }
+
+    select:focus {
+        background: none;
     }
 }
 
@@ -1287,10 +1292,10 @@ $items: 1,
         display: inline-block;
         padding: 2px;
     }
-    .formulario-general input, .formulario-general textarea, .content-table ul:last-child {
+    .formulario-general input, .formulario-general textarea, .formulario-general select, .content-table ul:last-child {
         border-bottom: 1px solid white !important;
     }
-    .formulario-general input, .formulario-general textarea {
+    .formulario-general input, .formulario-general textarea, .formulario-general select {
         color: white;
         &:focus {
             color: #000;

@@ -133,6 +133,14 @@ $(function () {
     $(".ws-form").removeClass("d-none");
   });
 
+  $(".formulario_page_contacto").find(".nombreProyecto").val(
+    $("#selectNombreProyecto").val()
+  );
+
+  $("#selectNombreProyecto").on("change", function () {
+    $(".formulario_page_contacto").find(".nombreProyecto").val($(this).val());
+  });
+
   // Menú fixed
   $(".menu-nav-fixed").fadeOut();
   $(".follow-button-pay").fadeOut();

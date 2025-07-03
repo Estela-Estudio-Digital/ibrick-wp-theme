@@ -780,6 +780,7 @@ button:focus {
 }
 
 .formulario-general input,
+.formulario-general select,
 .formulario-general textarea {
   background: none;
   border: none;
@@ -797,6 +798,9 @@ button:focus {
 }
 .formulario-general .activelabel {
   transform: translateY(0);
+}
+.formulario-general select:focus {
+  background: none;
 }
 
 .planta-item {
@@ -2009,13 +2013,13 @@ button:focus {
   display: inline-block;
   padding: 2px;
 }
-.project-model .formulario-general input, .project-model .formulario-general textarea, .project-model .content-table ul:last-child {
+.project-model .formulario-general input, .project-model .formulario-general textarea, .project-model .formulario-general select, .project-model .content-table ul:last-child {
   border-bottom: 1px solid white !important;
 }
-.project-model .formulario-general input, .project-model .formulario-general textarea {
+.project-model .formulario-general input, .project-model .formulario-general textarea, .project-model .formulario-general select {
   color: white;
 }
-.project-model .formulario-general input:focus, .project-model .formulario-general textarea:focus {
+.project-model .formulario-general input:focus, .project-model .formulario-general textarea:focus, .project-model .formulario-general select:focus {
   color: #000;
 }
 .project-model .input-group-text {

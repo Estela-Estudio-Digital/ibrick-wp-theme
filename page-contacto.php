@@ -25,7 +25,7 @@ bk_main_before();
                         </div>
                         
                         <form
-                          class="wpcf7-form init formulario_contact formulario-general"
+                          class="wpcf7-form init formulario_contact formulario-general formulario_page_contacto"
                           id="formulario_inicial"
                           role="form"
                           method="post"
@@ -72,6 +72,34 @@ bk_main_before();
                                       </div>
                                       <input type="text" class="form-control" id="inputTelefonoContact" name="inputTelefonoContact" required>
                                   </div>
+                                </div>
+                                <div class="form-group w-100 px-4">
+                                  <p class="label">Seleccionar proyecto</p>
+                                </div>
+                                <div class="form-group w-100 px-4">
+                                <?php 
+                                  $taxonomy = 'tipo';
+                                  $query = new WP_Query(array(
+                                      'post_type'      	=> 'proyectos',
+                                      'posts_per_page'	=> -1,
+                                      'post_status'		=> 'publish',
+                                      'tax_query'         => array (
+                                          array(
+                                              'taxonomy'      => $taxonomy,
+                                              'field'          => 'slug',
+                                              'terms'         => 'residencial'
+                                          ),
+                                      ),
+                                    ));
+                                ?>
+                                  <select class="form-control mt-2" name="selectNombreProyecto" id="selectNombreProyecto">
+                                    <?php while ( $query->have_posts() ) : $query->the_post();
+                                    $planok = get_field( 'nombre_planok' );
+                                    ?>
+                                      <option value="<?php echo $planok; ?>"><?php the_title(); ?></option>
+                                    <?php endwhile; ?>
+                                    <?php wp_reset_postdata(); ?>
+                                  </select>
                                 </div>
 
                                 <div class="form-group w-100 px-4">
