@@ -439,7 +439,8 @@ $(function () {
   var igAbsoluteHeight = $(".img-absolute").height();
 
   $(".bg-img").height(igAbsoluteHeight);
-  $(".contactoModalBtn").on("click", function () {
+  $(".contactoModalBtn").on("click", function (e) {
+    e.preventDefault();
     $("#contacto-form-modal").modal("show");
   });
 

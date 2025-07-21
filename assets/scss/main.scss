@@ -1305,6 +1305,12 @@ $items: 1,
         color: white;
     }
 }
+
+.home {
+    .LandbotLivechat {
+        bottom: 0 !important;
+    }
+}
 .LandbotLivechat {
     bottom: 60px !important;
 }

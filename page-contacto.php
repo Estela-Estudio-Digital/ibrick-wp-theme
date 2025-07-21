@@ -48,23 +48,23 @@ bk_main_before();
                             
                             <div class="form-row text-left">
 
-                                <div class="form-group w-100 px-4">
+                                <div class="form-group w-100">
                                     <span class="bk-projectcart--text__span"></span>
                                     <label class="label" for="inputNameContact">Nombre y apellido</label>
                                     <input type="text" class="form-control" id="inputNameContact" name="inputNameContact" required>
                                 </div>
 
-                                <div class="form-group w-100 px-4">
+                                <div class="form-group w-100">
                                     <label class="label" for="inputRutContact">Rut</label>
                                     <input type="text" class="form-control Rut" id="inputRutContact" name="inputRutContact">
                                 </div>
 
-                                <div class="form-group w-100 px-4">
+                                <div class="form-group w-100">
                                     <label class="label" for="inputEmailContact">Email</label>
                                     <input type="email" class="form-control" id="inputEmailContact" name="inputEmailContact" required>
                                 </div>
 
-                                <div class="form-group w-100 px-4">
+                                <div class="form-group w-100">
                                   <label class="label" for="inputTelefonoContact">Télefono</label>
                                   <div class="input-group">
                                       <div class="input-group-prepend">
@@ -73,10 +73,10 @@ bk_main_before();
                                       <input type="text" class="form-control" id="inputTelefonoContact" name="inputTelefonoContact" required>
                                   </div>
                                 </div>
-                                <div class="form-group w-100 px-4">
+                                <div class="form-group w-100">
                                   <p class="label">Seleccionar proyecto</p>
                                 </div>
-                                <div class="form-group w-100 px-4">
+                                <div class="form-group w-100">
                                 <?php 
                                   $taxonomy = 'tipo';
                                   $query = new WP_Query(array(
@@ -102,7 +102,7 @@ bk_main_before();
                                   </select>
                                 </div>
 
-                                <div class="form-group w-100 px-4">
+                                <div class="form-group w-100">
                                     <label class="label" for="texAreaMensajeContact">Mensaje</label>
                                     <input class="form-control" id="texAreaMensajeContact" name="texAreaMensajeContact"></input>
                                 </div>
