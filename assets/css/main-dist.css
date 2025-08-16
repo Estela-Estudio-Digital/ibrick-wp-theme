@@ -780,6 +780,7 @@ button:focus {
 }
 
 .formulario-general input,
+.formulario-general select,
 .formulario-general textarea {
   background: none;
   border: none;
@@ -797,6 +798,9 @@ button:focus {
 }
 .formulario-general .activelabel {
   transform: translateY(0);
+}
+.formulario-general select:focus {
+  background: none;
 }
 
 .planta-item {
@@ -1219,7 +1223,7 @@ button:focus {
 @media screen and (min-width: 768px) {
   .project-wrapper-content-img img {
     max-width: 100%;
-    max-height: 50px;
+    max-height: 80px;
   }
 }
 
@@ -1496,13 +1500,13 @@ button:focus {
   }
 }
 
-.playvideo {
+.playvideoImage {
   position: relative;
   z-index: 999999;
   align-self: center;
   justify-self: center;
 }
-.playvideo::after {
+.playvideoImage::after {
   content: "";
   display: block;
   width: 90px;
@@ -2009,16 +2013,24 @@ button:focus {
   display: inline-block;
   padding: 2px;
 }
-.project-model .formulario-general input, .project-model .formulario-general textarea, .project-model .content-table ul:last-child {
+.project-model .formulario-general input, .project-model .formulario-general textarea, .project-model .formulario-general select, .project-model .content-table ul:last-child {
   border-bottom: 1px solid white !important;
 }
-.project-model .formulario-general input, .project-model .formulario-general textarea {
+.project-model .formulario-general input, .project-model .formulario-general textarea, .project-model .formulario-general select {
   color: white;
 }
-.project-model .formulario-general input:focus, .project-model .formulario-general textarea:focus {
+.project-model .formulario-general input:focus, .project-model .formulario-general textarea:focus, .project-model .formulario-general select:focus {
   color: #000;
 }
 .project-model .input-group-text {
   color: white;
+}
+
+.home .LandbotLivechat {
+  bottom: 0 !important;
+}
+
+.LandbotLivechat {
+  bottom: 60px !important;
 }
 /*# sourceMappingURL=main-dist.css.map */

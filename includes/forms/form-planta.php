@@ -1,7 +1,7 @@
 <?php 
 $id_planta = get_field('corresponde');
-$vincular_planta_a_proyecto = get_field('vincular_planta_a_proyecto');
-$id_proyecto = $vincular_planta_a_proyecto->ID > 1 ? $vincular_planta_a_proyecto->ID : 1090;
+$vincular_planta_a_proyecto = get_field('vincular_proyecto');
+$id_proyecto = $vincular_planta_a_proyecto[0]->ID > 1 ? $vincular_planta_a_proyecto[0]->ID : 1090;
 $medio_llegada = get_field('medio_de_llegada_id_planok', $id_proyecto);
 $grupo_de_datos = get_field('grupo_de_datos', $id_proyecto);
 $correos_ventas = $grupo_de_datos["correos_ventas"];

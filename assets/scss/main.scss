@@ -82,6 +82,7 @@
 .formulario-general {
 
     input,
+    select,
     textarea {
         background: none;
         border: none;
@@ -102,6 +103,10 @@
 
     .activelabel {
         transform: translateY(0);
+    }
+
+    select:focus {
+        background: none;
     }
 }
 
@@ -416,8 +421,6 @@
     }
 }
 
-.master-plan-content {}
-
 .general-slide-nav {
     font-size: 40px;
     color: $white;
@@ -585,7 +588,7 @@
         &-img img {
             @include MQ(M) {
                 max-width: 100%;
-                max-height: 50px;
+                max-height: 80px;
             }
         }
     }
@@ -808,7 +811,7 @@ $items: 1,
     }
 }
 
-.playvideo {
+.playvideoImage {
     position: relative;
     z-index: 999999;
     align-self: center;
@@ -1289,10 +1292,10 @@ $items: 1,
         display: inline-block;
         padding: 2px;
     }
-    .formulario-general input, .formulario-general textarea, .content-table ul:last-child {
+    .formulario-general input, .formulario-general textarea, .formulario-general select, .content-table ul:last-child {
         border-bottom: 1px solid white !important;
     }
-    .formulario-general input, .formulario-general textarea {
+    .formulario-general input, .formulario-general textarea, .formulario-general select {
         color: white;
         &:focus {
             color: #000;
@@ -1301,4 +1304,13 @@ $items: 1,
     .input-group-text {
         color: white;
     }
+}
+
+.home {
+    .LandbotLivechat {
+        bottom: 0 !important;
+    }
+}
+.LandbotLivechat {
+    bottom: 60px !important;
 }

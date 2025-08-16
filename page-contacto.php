@@ -1,109 +1,31 @@
-</main>
-<?php bk_footer_before();?>
-
-  <?php //if(is_active_sidebar('footer-widget-area')): ?>
-    <?php //dynamic_sidebar('footer-widget-area'); ?>
-  <?php //endif; ?>
-
-<footer class="container-fluid py-5 bg-secondary-color text-white">
-  <div class="container">
-    <div class="row">
-        <div class="col-lg-4">
-          <a href="<?php echo site_url();?>">
-            <img src="<?php bloginfo('template_directory');?>/assets/img/footer-logo.svg" width="200" alt="Brick Inmobiliaria" class="footer-logo">
-          </a>
-        </div>
-        <div class="col-lg-4">
-          <ul class="w-100 m-0 justify-content-between">
-            <li>
-              <p class="d-none"><a class="text-white" href="https://goo.gl/maps/W5hF3kUTZL2CTce3A">Américo Vespucio Norte 1090 of. 403, <br> Vitacura, Santiago </a></p>
-              <ul class="d-flex mb-3">
-                <li class="mr-3">
-                  <a href="https://www.instagram.com/inmobiliariabrick/" target="_blank" class=" text-white">
-                    <i class="fab fa-instagram" style="font-size:2rem;"></i>
-                  </a>
-                </li>
-                <li class="mr-3">
-                  <a href="https://www.facebook.com/BRICK-Inmobiliaria-100180791917908" target="_blank" class=" text-white">
-                    <i class="fab fa-facebook-square" style="font-size:2rem;"></i>
-                  </a>
-                </li>
-                <li class="mr-3">
-                  <a href="https://www.youtube.com/channel/UCnUmucW8Jm1T--NaiDIw_DQ" target="_blank" class=" text-white">
-                    <i class="fab fa-youtube-square" style="font-size:2rem;"></i>
-                  </a>
-                </li>
-                <li class="mr-3">
-                  <a href="https://www.linkedin.com/company/brick-inmobiliaria/posts/?feedView=all" target="_blank" class=" text-white">
-                    <i class="fab fa-linkedin" style="font-size:2rem;"></i>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <p class="mb-0"><a class="text-white" href="tel:+56233234100"><i class="fas fa-mobile-alt"></i> +562 3323 4100</a></p>
-            </li>
-            <li>
-              <p><a class="text-white" href="mailto:contacto@ibrick.cl"><i class="far fa-envelope"></i> contacto@ibrick.cl</a></p>
-            </li>
-          </ul>
-        </div>
-        <div class="col-lg-4">
-          <ul class="d-flex footer-menu w-100 text-uppercase">
-            <li class="d-md-block mr-2 pl-2" style="border: 1px solid white; border-top:0; border-bottom:0">
-              <a href="<?php echo site_url('residencial');?>" class="text-white d-block mb-2">Residencial</a>
-              <a href="<?php echo site_url('comercial');?>" class="text-white d-block mb-2">Comercial</a>
-              <a href="<?php echo site_url('pasa-el-dato-y-gana');?>" class="text-white d-block">Referidos</a>
-            </li>
-            <li class="d-md-block">
-              <a href="<?php echo site_url('somos-brick');?>" class="text-white d-block mb-2">Somos Brick</a>
-              <a href="https://ibrick.cl/postventa/" class="text-white d-block mb-2 ">Postventa</a>
-              <a href="#" class="text-white contactoModalBtn">Contáctanos</a>
-            </li>
-          </ul>
-
-        </div>
-    </div>
-    <div class="row justify-content-end">
-      <div class="col-lg-6 mb-2">
-        <img src="<?php bloginfo('template_directory');?>/assets/img/footer-logo-hall.svg" alt="Pertecenecmos a la Asociación de Desarrolladores Inmobiliarios" class="w-100">
-      </div>
-      <span style="height:2px; width: 100%; background-color: #f2f2f2;"></span>
-    </div>
-    <div class="row">
-      <div class="col-sm-12 pt-2">
-        <div class="d-md-flex justify-content-between text-center text-md-left">
-          <p class="footer-legal-text"><small>&copy; <?php echo date('Y'); ?> <a href="<?php echo home_url('/'); ?>">Brick Inmobiliaria</a>. Todos los derechos reservados. </small></p>
-          <p class="footer-legal-text"><a href="https://www.zinker.cl/" target="_blank"><small>Desarrollado por <b>Zinker</b></small></a></p>
+<?php /*
+Template Name: pasos a seguir
+*/
+get_template_part('includes/header'); 
+bk_main_before();
+?>
+   <section class="my-md-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 mt-5">
+          <h3 class="text-uppercase"><span class="secondary-title font-weight-bold">Escríbenos y nos contactaremos</span></h3>
         </div>
       </div>
     </div>
-  </div>
-</footer>
-<div class="modal fade" id="contacto-form-modal" tabindex="-1" role="dialog" aria-labelledby="kit-modalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl text-secondary-color" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h4 class="text-uppercase pl-5"><b>Contáctanos</b></h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-              <div class="container">
+   <div class="container">
                 <div class="row align-items-stretch">
 
                   <div class="col-md-6 d-flex align-items-center">
 
                     <div class="wp-block-contact-form-7-contact-form-selector w-100">
-                      <div class="wpcf7 brickcf7 w-100" role="form" id="wpcf7-f523-o1" lang="es-ES" dir="ltr" class="w-100 wp">
+                      <div class="wpcf7 wpcf7Floatante w-100" role="form" id="wpcf7-f523-o1" lang="es-ES" dir="ltr" class="w-100 wp">
                         <div class="screen-reader-response">
                             <p role="status" aria-live="polite" aria-atomic="true"></p>
                             <ul></ul>
                         </div>
                         
                         <form
-                          class="wpcf7-form init formulario_contact formulario-general"
+                          class="wpcf7-form init formulario_contact formulario-general formulario_page_contacto"
                           id="formulario_inicial"
                           role="form"
                           method="post"
@@ -126,23 +48,23 @@
                             
                             <div class="form-row text-left">
 
-                                <div class="form-group w-100 px-4">
+                                <div class="form-group w-100">
                                     <span class="bk-projectcart--text__span"></span>
                                     <label class="label" for="inputNameContact">Nombre y apellido</label>
                                     <input type="text" class="form-control" id="inputNameContact" name="inputNameContact" required>
                                 </div>
 
-                                <div class="form-group w-100 px-4">
+                                <div class="form-group w-100">
                                     <label class="label" for="inputRutContact">Rut</label>
                                     <input type="text" class="form-control Rut" id="inputRutContact" name="inputRutContact">
                                 </div>
 
-                                <div class="form-group w-100 px-4">
+                                <div class="form-group w-100">
                                     <label class="label" for="inputEmailContact">Email</label>
                                     <input type="email" class="form-control" id="inputEmailContact" name="inputEmailContact" required>
                                 </div>
 
-                                <div class="form-group w-100 px-4">
+                                <div class="form-group w-100">
                                   <label class="label" for="inputTelefonoContact">Télefono</label>
                                   <div class="input-group">
                                       <div class="input-group-prepend">
@@ -151,8 +73,36 @@
                                       <input type="text" class="form-control" id="inputTelefonoContact" name="inputTelefonoContact" required>
                                   </div>
                                 </div>
+                                <div class="form-group w-100">
+                                  <p class="label">Seleccionar proyecto</p>
+                                </div>
+                                <div class="form-group w-100">
+                                <?php 
+                                  $taxonomy = 'tipo';
+                                  $query = new WP_Query(array(
+                                      'post_type'      	=> 'proyectos',
+                                      'posts_per_page'	=> -1,
+                                      'post_status'		=> 'publish',
+                                      'tax_query'         => array (
+                                          array(
+                                              'taxonomy'      => $taxonomy,
+                                              'field'          => 'slug',
+                                              'terms'         => 'residencial'
+                                          ),
+                                      ),
+                                    ));
+                                ?>
+                                  <select class="form-control mt-2" name="selectNombreProyecto" id="selectNombreProyecto">
+                                    <?php while ( $query->have_posts() ) : $query->the_post();
+                                    $planok = get_field( 'nombre_planok' );
+                                    ?>
+                                      <option value="<?php echo $planok; ?>"><?php the_title(); ?></option>
+                                    <?php endwhile; ?>
+                                    <?php wp_reset_postdata(); ?>
+                                  </select>
+                                </div>
 
-                                <div class="form-group w-100 px-4">
+                                <div class="form-group w-100">
                                     <label class="label" for="texAreaMensajeContact">Mensaje</label>
                                     <input class="form-control" id="texAreaMensajeContact" name="texAreaMensajeContact"></input>
                                 </div>
@@ -210,15 +160,9 @@
 
                 </div>
               </div>
-            </div>
-        </div>
-    </div>
-</div>
+    </section>
 
-<?php //bk_footer_after();?>
-
-<?php //bk_bottomline();?>
-
-<?php wp_footer(); ?>
-</body>
-</html>
+<?php 
+bk_main_after();
+get_template_part('includes/footer'); 
+?>

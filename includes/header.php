@@ -15,17 +15,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 
 <?php if(is_singular('proyectos')): 
-  $vincular_planta_a_proyecto = get_field('vincular_planta_a_proyecto');
+  $vincular_planta_a_proyecto = get_field('vincular_proyecto');
   $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
   $theme = get_field('esquema_de_colores');
 ?>
-
 <body <?php body_class($theme); ?>>
+<?php else: ?>
+<body <?php body_class(); ?>>
+<?php endif; ?>
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5HN7JSH"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
+
+<?php bk_navbar_before(); ?>
 
 <?php if (is_front_page() || is_page('residencial') || is_page('1785')): ?>
   <script SameSite="None; Secure" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.js"></script>
@@ -36,8 +41,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
 <?php endif; ?>
 
-<?php bk_navbar_before(); ?>
-
+<?php if(is_singular('proyectos')): ?>
 <nav class="navbar navbar-expand-lg bg-white py-2 menu-nav-fixed" id="proyectosMenu">
     <div class="container d-flex justify-content-between">
         <button class="d-none d-md-block slide-nav-button hamburger hamburger--emphatic p-2 mr-4 ">
@@ -90,11 +94,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <?php endif; ?>
 
 <?php if (is_singular('plantas') || is_singular('plantas_api')): 
-  $vincular_planta_a_proyecto = get_field('vincular_planta_a_proyecto');
-	$id_proyecto = $vincular_planta_a_proyecto->ID > 1 ? $vincular_planta_a_proyecto->ID : 1090;
-  $logo_proyecto = get_field('logo_proyecto', $id_proyecto);
+  $vincular_planta_a_proyecto = get_field('vincular_proyecto');
+	$id_proyecto = $vincular_planta_a_proyecto[0]->ID > 1 ? $vincular_planta_a_proyecto[0]->ID : 1090;
+  $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto[0]->ID );
 ?>
-<nav class="bg-white py-3 " id="plantasMenu">
+<nav class="bg-white py-3 " id="plantasMenu" data-id="<?php echo json_encode($id_proyecto);?>">
   <div class="container">
     <div class="d-flex justify-content-between align-items-center">
       <a href="<?php bloginfo('url');?>">

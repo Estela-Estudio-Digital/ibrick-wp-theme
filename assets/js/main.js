@@ -3,7 +3,8 @@ $(function () {
   sbjs.init();
   $('[data-toggle="tooltip"]').tooltip();
 
-  const isHome = window.location.pathname === "/" || window.location.pathname === "/#";
+  const isHome =
+    window.location.pathname === "/" || window.location.pathname === "/#";
   // Menú Hamburguer
   const setDataToSend = () => {
     try {
@@ -81,7 +82,6 @@ $(function () {
     $(".ws-form").removeClass("d-none");
     $(".whatsapp-modal").addClass("whatsapp-modal-open");
     if (isHome) {
-      console.log('esHome');
       $(".ws-project").show();
       $(".ws-form").addClass("d-none");
     }
@@ -92,13 +92,13 @@ $(function () {
     console.log("selectProjectWhatsapp");
     $(".ws-project").show();
     $(".ws-form").addClass("d-none");
-  })
+  });
 
-  if (window.innerWidth >= 768) {
-    setTimeout(function () {
-      $(".whatsapp-modal").addClass("whatsapp-modal-open");
-    }, 500);
-  }
+  // if (window.innerWidth >= 768) {
+  //   setTimeout(function () {
+  //     $(".whatsapp-modal").addClass("whatsapp-modal-open");
+  //   }, 500);
+  // }
 
   $(".whatsappModalClose").on("click", function (e) {
     e.preventDefault();
@@ -131,6 +131,14 @@ $(function () {
 
     $(".ws-project").hide();
     $(".ws-form").removeClass("d-none");
+  });
+
+  $(".formulario_page_contacto").find(".nombreProyecto").val(
+    $("#selectNombreProyecto").val()
+  );
+
+  $("#selectNombreProyecto").on("change", function () {
+    $(".formulario_page_contacto").find(".nombreProyecto").val($(this).val());
   });
 
   // Menú fixed
@@ -266,6 +274,8 @@ $(function () {
 
   $(".master-carousel").owlCarousel({
     items: 1,
+    autoplay: true,
+    dots: true,
   });
 
   $(".gallery-caarousel").owlCarousel({
@@ -429,7 +439,8 @@ $(function () {
   var igAbsoluteHeight = $(".img-absolute").height();
 
   $(".bg-img").height(igAbsoluteHeight);
-  $(".contactoModalBtn").on("click", function () {
+  $(".contactoModalBtn").on("click", function (e) {
+    e.preventDefault();
     $("#contacto-form-modal").modal("show");
   });
 
@@ -832,8 +843,8 @@ $(function () {
     const pdfUrl = event.detail.apiResponse.pdf_api_response_url;
     const token = event.detail.apiResponse.pdf_api_client_token;
     const cotId = event.detail.apiResponse.pdf_api_cot_id;
-    const leadEmail = event.detail.inputs[7].value;
-    const leadPhone = event.detail.inputs[9].value;
+    // const leadEmail = event.detail.inputs[7].value;
+    // const leadPhone = event.detail.inputs[9].value;
 
     let contactName = event.target["inputNameContact"]?.value || "";
 
