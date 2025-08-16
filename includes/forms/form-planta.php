@@ -51,6 +51,13 @@ $texto_titulo = get_field('texto_titulo', $id_proyecto);
               <input type="hidden" name="urlProyecto" class="urlProyecto" value="<?php echo get_permalink($vincular_planta_a_proyecto->ID);?>">
               <input type="hidden" name="correo_ventas" class="correo_ventas" value="<?php echo $correos_ventas;?>">
 
+              <input type="hidden" name="nombreAsesor" class="nombreAsesor" value="<?php echo get_field('nombre_asesor', $id_proyecto); ?>">
+              <input type="hidden" name="cargoAsesor" class="cargoAsesor" value="<?php echo get_field('cargo_asesor', $id_proyecto); ?>">
+              <input type="hidden" name="emailAsesor" class="emailAsesor" value="<?php echo get_field('email_asesor', $id_proyecto); ?>">
+              <input type="hidden" name="telefonoAsesor" class="telefonoAsesor" value="<?php echo get_field('telefono_asesor', $id_proyecto); ?>">
+              <input type="hidden" name="direccionSalaVentas" class="direccionSalaVentas" value="<?php echo get_field('direccion_sala_de_ventas', $id_proyecto); ?>">
+              <input type="hidden" name="horarioAtencion" class="horarioAtencion" value="<?php echo get_field('horario_de_atencion', $id_proyecto); ?>">
+
               <input type="hidden" name="idProducto" class="inputIdProducto" value="<?php echo $id_planta ?>">
               <input type="hidden" name="fuenteSbj" class="fuenteSbj">
               <input type="hidden" name="medioSbj" class="medioSbj">
