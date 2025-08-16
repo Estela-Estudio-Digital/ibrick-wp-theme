@@ -236,12 +236,12 @@ if ( ! function_exists('bk_enqueues') ) {
 			
 			$img_repeater = get_field('repeater_fotografias');
 
-			$nombre_asesor = $grupo_de_datos['nombre_asesor'];
-			$cargo_asesor = $grupo_de_datos['cargo_asesor'];
-			$email_asesor = $grupo_de_datos['email_asesor'];
-			$telefono_asesor = $grupo_de_datos['telefono_asesor'];
-			$direccion_sala_ventas = $grupo_de_datos['direccion_sala_de_ventas'];
-			$horario_atencion = $grupo_de_datos['horario_de_atencion'];
+			$nombre_asesor = get_field('nombre_asesor');
+			$cargo_asesor = get_field('cargo_asesor');
+			$email_asesor = get_field('email_asesor');
+			$telefono_asesor = get_field('telefono_asesor');
+			$direccion_sala_ventas = get_field('direccion_sala_de_ventas');
+			$horario_atencion = get_field('horario_de_atencion');
 
 			array_push( 
 				$single_arr, array(
