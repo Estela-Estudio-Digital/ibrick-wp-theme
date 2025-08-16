@@ -148,6 +148,12 @@ $texto_titulo = get_field('texto_titulo', $id_proyecto);
                 <input type="hidden" id="inputLastNamePok" name="inputLastNamePok">
                 <input type="hidden" id="inputEmailPok" name="inputEmailPok">
                 <input type="hidden" id="inputUrlPok" name="inputUrlPok">
+                <input type="hidden" name="nombreAsesor" class="nombreAsesor" value="<?php echo get_field('nombre_asesor', $id_proyecto); ?>">
+                <input type="hidden" name="cargoAsesor" class="cargoAsesor" value="<?php echo get_field('cargo_asesor', $id_proyecto); ?>">
+                <input type="hidden" name="emailAsesor" class="emailAsesor" value="<?php echo get_field('email_asesor', $id_proyecto); ?>">
+                <input type="hidden" name="telefonoAsesor" class="telefonoAsesor" value="<?php echo get_field('telefono_asesor', $id_proyecto); ?>">
+                <input type="hidden" name="direccionSalaVentas" class="direccionSalaVentas" value="<?php echo get_field('direccion_sala_de_ventas', $id_proyecto); ?>">
+                <input type="hidden" name="horarioAtencion" class="horarioAtencion" value="<?php echo get_field('horario_de_atencion', $id_proyecto); ?>">
                 <input type="submit" value="Enviar">
         </form>
     </div>
