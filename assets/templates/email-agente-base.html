@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tu cotización de iBrick está lista</title>
+    <style>
+      /* Estilos generales para el cuerpo del correo */
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      /* Contenedor principal para centrar el contenido */
+      .container {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-collapse: collapse;
+      }
+      /* Estilos de texto principal */
+      .text-main {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #333333;
+        padding: 0 40px;
+        text-align: center;
+      }
+      /* Botón de llamada a la acción (CTA) */
+      .cta-button {
+        display: inline-block;
+        background-color: #2b739f; /* Color azul solicitado */
+        color: #ffffff;
+        padding: 14px 28px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 16px;
+      }
+      /* --- FOOTER MODIFICADO --- */
+      .footer-container {
+        background-color: #383838;
+        color: #dddddd;
+        padding: 30px 20px;
+        font-size: 14px;
+        text-align: center;
+      }
+      .footer-container p {
+        margin: 0 0 10px 0;
+      }
+      .footer-container a {
+        color: #dddddd;
+        text-decoration: none;
+      }
+      .advisor-section {
+        margin: 20px 0;
+      }
+      .separator {
+        border-top: 1px solid #555555;
+        margin: 20px auto;
+        width: 80%;
+      }
+      .copyright {
+        font-size: 12px;
+        color: #aaaaaa;
+        padding-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Se usan tablas para máxima compatibilidad con clientes de email -->
+    <table
+      role="presentation"
+      class="container"
+      cellpadding="0"
+      cellspacing="0"
+    >
+      <!-- Fila del Logo -->
+      <tr>
+        <td align="center" style="padding: 40px 0">
+          <a href="https://ibrick.cl/" target="_blank">
+            <img
+              src="https://ibrick.cl/wp-content/uploads/2025/08/logo-brick.png"
+              alt="Logo iBrick"
+              width="180"
+              style="display: block"
+            />
+          </a>
+        </td>
+      </tr>
+
+      <!-- Fila del Título/Saludo -->
+      <tr>
+        <td class="text-main" style="padding-bottom: 10px">
+          <!-- Título actualizado con placeholders -->
+          <h1
+            style="color: #333333; margin: 0; font-size: 24px; line-height: 1.3"
+          >
+            ¡[inputNameCotizar], tu cotización en proyecto [nombreProyecto] está lista!
+          </h1>
+        </td>
+      </tr>
+
+      <!-- Fila de Texto Principal -->
+      <tr>
+        <td class="text-main" style="padding-top: 10px; padding-bottom: 10px">
+          <p>
+            Gracias por cotizar con <strong>Brick Inmobiliaria</strong>. Acá
+            podrás descargar la cotización personalizada con el detalle del
+            modelo que te interesa.
+          </p>
+        </td>
+      </tr>
+
+      <!-- Fila del Botón CTA -->
+      <tr>
+        <td align="center" style="padding: 30px 0">
+          <!-- El enlace '#' debe ser reemplazado por el link a la cotización -->
+          <a href="[inputUrlPok]" target="_blank" class="cta-button">
+            Descargar cotización
+          </a>
+        </td>
+      </tr>
+
+      <!-- Fila de Texto Adicional (MOVIDO) -->
+      <tr>
+        <td class="text-main" style="padding-top: 10px; padding-bottom: 20px">
+          <p>
+            Para más información, contacta a nuestros ejecutivos y recibe una
+            asesoría gratuita. Queremos ayudarte a tomar la mejor decisión y
+            encontrar el hogar que realmente se ajuste a ti.
+          </p>
+        </td>
+      </tr>
+
+      <!-- Fila del NUEVO FOOTER -->
+      <tr>
+        <td class="footer-container">
+          <p>Si tienes dudas o necesitas asesoría, no dudes en contactarnos.</p>
+
+          <!-- Sección para 1 Asesor -->
+          <div class="advisor-section">
+            <p style="font-weight: bold; font-size: 16px; margin-bottom: 5px">
+              [nombreAsesor]
+            </p>
+            <p style="margin-bottom: 5px">[cargoAsesor]</p>
+            <p style="margin-bottom: 5px">
+              <a href="mailto:[Email Asesor]">[emailAsesor]</a>
+            </p>
+            <p><a href="tel:[Teléfono Asesor]">[telefonoAsesor]</a></p>
+          </div>
+
+          <div class="separator"></div>
+
+          <p style="font-weight: bold">Sala de informaciones</p>
+          <p>[direccionSalaVentas]</p>
+
+          <div class="separator"></div>
+
+          <p style="font-weight: bold">Horario</p>
+          <p>[horarioAtencion]</p>
+
+          <p class="copyright">&copy; iBrick. Todos los derechos reservados.</p>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

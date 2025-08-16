@@ -21,6 +21,12 @@ $(function () {
         superficieUtil = project_data.data[0].superficieUtil,
         superficieTerraza = project_data.data[0].superficieTerraza,
         superficieTotal = project_data.data[0].superficieTotal;
+        nombreAsesor = project_data.data[0].nombreAsesor,
+        cargoAsesor = project_data.data[0].cargoAsesor,
+        emailAsesor = project_data.data[0].emailAsesor,
+        telefonoAsesor = project_data.data[0].telefonoAsesor,
+        direccionSalaVentas = project_data.data[0].direccionSalaVentas,
+        horarioAtencion = project_data.data[0].horarioAtencion;
       $(".nombreProyecto").val(nombreProyecto);
       $(".correosVentas").val(correosVentas);
       $(".logoProyecto").val(logoProyecto);
@@ -31,6 +37,13 @@ $(function () {
       $(".corresponde").val(corresponde);
       $(".unidades").val(unidades);
       $(".whatsappProject").val(whatsapp);
+
+      $(".nombreAsesor").val(nombreAsesor);
+      $(".cargoAsesor").val(cargoAsesor);
+      $(".emailAsesor").val(emailAsesor);
+      $(".telefonoAsesor").val(telefonoAsesor);
+      $(".direccionSalaVentas").val(direccionSalaVentas);
+      $(".horarioAtencion").val(horarioAtencion);
 
       $(".superficieUtil").val(superficieUtil);
       $(".superficieTerraza").val(superficieTerraza);
@@ -94,12 +107,6 @@ $(function () {
     $(".ws-form").addClass("d-none");
   });
 
-  // if (window.innerWidth >= 768) {
-  //   setTimeout(function () {
-  //     $(".whatsapp-modal").addClass("whatsapp-modal-open");
-  //   }, 500);
-  // }
-
   $(".whatsappModalClose").on("click", function (e) {
     e.preventDefault();
     $(".whatsapp-modal").toggleClass("whatsapp-modal-open");
@@ -146,12 +153,6 @@ $(function () {
   $(".follow-button-pay").fadeOut();
 
   $(window).scroll(function () {
-    // if ($(this).scrollTop() >= 731) {
-    //   $(".follow-button-pay").removeClass("d-none").addClass("d-flex");
-    // } else {
-    //   $(".follow-button-pay").removeClass("d-flex").addClass("d-none");
-    // }
-
     if ($(this).scrollTop() >= 730) {
       $(".menu-nav-fixed").fadeIn();
       $(".follow-button-pay").fadeIn();

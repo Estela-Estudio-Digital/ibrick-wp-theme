@@ -236,6 +236,13 @@ if ( ! function_exists('bk_enqueues') ) {
 			
 			$img_repeater = get_field('repeater_fotografias');
 
+			$nombre_asesor = $grupo_de_datos['nombre_asesor'];
+			$cargo_asesor
+			$email_asesor = $grupo_de_datos['email_asesor'];
+			$telefono_asesor = $grupo_de_datos['telefono_asesor'];
+			$direccion_sala_ventas = $grupo_de_datos['direccion_sala_de_ventas'];
+			$horario_atencion = $grupo_de_datos['horario_de_atencion'];
+
 			array_push( 
 				$single_arr, array(
 					"nombreProyecto" => $nombreProyecto,
@@ -250,6 +257,12 @@ if ( ! function_exists('bk_enqueues') ) {
 					"corresponde" => $corresponde,
 					"unidades" => $unidades,
 					'whatsapp' => $whatsapp,
+					"nombreAsesor" => $nombre_asesor,
+					"cargoAsesor" => $cargo_asesor,
+					"emailAsesor" => $email_asesor,
+					"telefonoAsesor" => $telefono_asesor,
+					"direccionSalaVentas" => $direccion_sala_ventas,
+					"horarioAtencion" => $horario_atencion,
 				) 
 			);
 
