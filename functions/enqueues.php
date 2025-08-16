@@ -237,7 +237,7 @@ if ( ! function_exists('bk_enqueues') ) {
 			$img_repeater = get_field('repeater_fotografias');
 
 			$nombre_asesor = $grupo_de_datos['nombre_asesor'];
-			$cargo_asesor
+			$cargo_asesor = $grupo_de_datos['cargo_asesor'];
 			$email_asesor = $grupo_de_datos['email_asesor'];
 			$telefono_asesor = $grupo_de_datos['telefono_asesor'];
 			$direccion_sala_ventas = $grupo_de_datos['direccion_sala_de_ventas'];
