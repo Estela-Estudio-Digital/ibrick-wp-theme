@@ -537,10 +537,8 @@ button:focus {
 }
 .contact-floating-container {
   position: fixed;
-  right: 0;
-  top: 50%;
-  bottom: auto;
-  transform: translateY(-50%);
+  left: 0;
+  bottom: 0;
   z-index: 4;
 }
 .contact-floating-link {
@@ -561,7 +559,8 @@ button:focus {
   color: white;
 }
 .contact-floating-whatsapp {
-  background: #9DCE35;
+  display: none;
+  background: #9dce35;
   border-radius: 50rem;
   transition: 0.2s ease-in-out all;
 }
@@ -575,7 +574,7 @@ button:focus {
   background: #019682;
 }
 .contact-floating-form {
-  background: #2DAFE9;
+  background: #2dafe9;
   border-radius: 50rem;
 }
 @media screen and (min-width: 1024px) {
@@ -597,6 +596,7 @@ button:focus {
   max-width: 50px;
 }
 .social-fixed-list {
+  display: none;
   padding: 10px;
 }
 @media screen and (min-width: 1024px) {
@@ -635,7 +635,8 @@ button:focus {
   color: #3c3c3c;
 }
 
-.form-modal, .whatsapp-modal {
+.form-modal,
+.whatsapp-modal {
   position: fixed;
   bottom: -400%;
   z-index: 4;
@@ -644,13 +645,15 @@ button:focus {
   transition: all 0.5s ease-in-out;
 }
 @media screen and (min-width: 768px) {
-  .form-modal, .whatsapp-modal {
+  .form-modal,
+  .whatsapp-modal {
     border: 1px solid #c3c3c3;
     width: auto;
     height: auto;
   }
 }
-.form-modal-open, .whatsapp-modal-open {
+.form-modal-open,
+.whatsapp-modal-open {
   bottom: -2px;
 }
 
@@ -996,7 +999,7 @@ button:focus {
   background-size: contain;
 }
 .section-title_gris .primary-title {
-  color: #3C3C3C;
+  color: #3c3c3c;
 }
 .section-title_gris .primary-title::before {
   content: "";
@@ -1126,7 +1129,7 @@ button:focus {
   background: linear-gradient(90deg, #e6e6e6 0%, #e6e6e6 50%, #d6d5d5 50%, #d6d5d5 100%);
 }
 .bg-medio-azul.dark {
-  background: linear-gradient(90deg, #323E48 0%, #323E48 50%, #d6d5d5 50%, #d6d5d5 100%);
+  background: linear-gradient(90deg, #323e48 0%, #323e48 50%, #d6d5d5 50%, #d6d5d5 100%);
 }
 
 #caracteristicas img {
@@ -1255,7 +1258,7 @@ button:focus {
   background: #e6e6e6;
 }
 .dark .gallery-overlay {
-  background: #323E48;
+  background: #323e48;
 }
 
 .home-hero-container .overlay {
@@ -1868,7 +1871,7 @@ button:focus {
   padding: 0 15px;
 }
 .dark .complement-ads-bottom {
-  background: #C99D67;
+  background: #c99d67;
   display: block;
   margin-top: 10px;
 }
@@ -1917,9 +1920,7 @@ button:focus {
   aspect-ratio: 1;
   border-radius: 50%;
   background: #3c3c3c;
-  --_m:
-    conic-gradient(#0000 10%,#000),
-    linear-gradient(#000 0 0) content-box;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
   mask: var(--_m);
   mask-composite: subtract;
   animation: l3 1s infinite linear;
@@ -1941,7 +1942,7 @@ button:focus {
 }
 
 .precio-block {
-  color: #CD3868;
+  color: #cd3868;
   font-weight: 900;
 }
 .dark .precio-block {
@@ -1981,6 +1982,7 @@ button:focus {
 }
 
 .contact-mobile {
+  display: none;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -2005,7 +2007,7 @@ button:focus {
 }
 
 .project-model {
-  background: #323E48;
+  background: #323e48;
   color: white;
 }
 .project-model .icon-box {
@@ -2013,13 +2015,20 @@ button:focus {
   display: inline-block;
   padding: 2px;
 }
-.project-model .formulario-general input, .project-model .formulario-general textarea, .project-model .formulario-general select, .project-model .content-table ul:last-child {
+.project-model .formulario-general input,
+.project-model .formulario-general textarea,
+.project-model .formulario-general select,
+.project-model .content-table ul:last-child {
   border-bottom: 1px solid white !important;
 }
-.project-model .formulario-general input, .project-model .formulario-general textarea, .project-model .formulario-general select {
+.project-model .formulario-general input,
+.project-model .formulario-general textarea,
+.project-model .formulario-general select {
   color: white;
 }
-.project-model .formulario-general input:focus, .project-model .formulario-general textarea:focus, .project-model .formulario-general select:focus {
+.project-model .formulario-general input:focus,
+.project-model .formulario-general textarea:focus,
+.project-model .formulario-general select:focus {
   color: #000;
 }
 .project-model .input-group-text {

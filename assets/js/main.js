@@ -21,12 +21,12 @@ $(function () {
         superficieUtil = project_data.data[0].superficieUtil,
         superficieTerraza = project_data.data[0].superficieTerraza,
         superficieTotal = project_data.data[0].superficieTotal;
-        nombreAsesor = project_data.data[0].nombreAsesor,
-        cargoAsesor = project_data.data[0].cargoAsesor,
-        emailAsesor = project_data.data[0].emailAsesor,
-        telefonoAsesor = project_data.data[0].telefonoAsesor,
-        direccionSalaVentas = project_data.data[0].direccionSalaVentas,
-        horarioAtencion = project_data.data[0].horarioAtencion;
+      ((nombreAsesor = project_data.data[0].nombreAsesor),
+        (cargoAsesor = project_data.data[0].cargoAsesor),
+        (emailAsesor = project_data.data[0].emailAsesor),
+        (telefonoAsesor = project_data.data[0].telefonoAsesor),
+        (direccionSalaVentas = project_data.data[0].direccionSalaVentas),
+        (horarioAtencion = project_data.data[0].horarioAtencion));
       $(".nombreProyecto").val(nombreProyecto);
       $(".correosVentas").val(correosVentas);
       $(".logoProyecto").val(logoProyecto);
@@ -140,9 +140,9 @@ $(function () {
     $(".ws-form").removeClass("d-none");
   });
 
-  $(".formulario_page_contacto").find(".nombreProyecto").val(
-    $("#selectNombreProyecto").val()
-  );
+  $(".formulario_page_contacto")
+    .find(".nombreProyecto")
+    .val($("#selectNombreProyecto").val());
 
   $("#selectNombreProyecto").on("change", function () {
     $(".formulario_page_contacto").find(".nombreProyecto").val($(this).val());
@@ -457,7 +457,7 @@ $(function () {
     setDataToSend();
   }
 
-  (sbjMedio = sbjs.get.current.mdm), (sbjFuente = sbjs.get.current.src);
+  ((sbjMedio = sbjs.get.current.mdm), (sbjFuente = sbjs.get.current.src));
 
   $(".fuenteSbj").val(sbjFuente);
   $(".medioSbj").val(sbjMedio);
@@ -569,7 +569,7 @@ $(function () {
       inputTelefonoFloatante: {
         required: "Ingresa tu numero de telefono",
         minlength: jQuery.validator.format(
-          "Introduce al menos {0} carácteres."
+          "Introduce al menos {0} carácteres.",
         ),
       },
     },
@@ -610,7 +610,7 @@ $(function () {
       inputTelefonoWhatsapp: {
         required: "Ingresa tu numero de telefono",
         minlength: jQuery.validator.format(
-          "Introduce al menos {0} carácteres."
+          "Introduce al menos {0} carácteres.",
         ),
       },
     },
@@ -653,7 +653,7 @@ $(function () {
       inputTelefonoContact: {
         required: "Ingresa tu numero de telefono",
         minlength: jQuery.validator.format(
-          "Introduce al menos {0} carácteres."
+          "Introduce al menos {0} carácteres.",
         ),
       },
     },
@@ -696,7 +696,7 @@ $(function () {
       inputTelefonoCotizar: {
         required: "Ingresa tu numero de telefono",
         minlength: jQuery.validator.format(
-          "Introduce al menos {0} carácteres."
+          "Introduce al menos {0} carácteres.",
         ),
       },
     },
@@ -742,7 +742,7 @@ $(function () {
       inputTelefonoCotizar: {
         required: "Ingresa tu numero de telefono",
         minlength: jQuery.validator.format(
-          "Introduce al menos {0} carácteres."
+          "Introduce al menos {0} carácteres.",
         ),
       },
     },
@@ -788,7 +788,7 @@ $(function () {
         return false;
       }
     },
-    "Debe ser un rut valido."
+    "Debe ser un rut valido.",
   );
 
   // Validación de sólo letras y espacio
@@ -797,7 +797,7 @@ $(function () {
     function (value, element) {
       return this.optional(element) || /^[a-z\s]+$/i.test(value);
     },
-    "Por favor ingresa sólo letras."
+    "Por favor ingresa sólo letras.",
   );
 
   // Active Menu items
@@ -891,23 +891,24 @@ $(function () {
       if (!hasError && !cotId?.message) {
         $(".btn-pok-spinner").show();
         const myHeaders = new Headers();
-        myHeaders.append("accept", "application/json");
-        myHeaders.append("Authorization", token);
+        myHeaders.append("Content-Type", "application/json");
+
+        const raw = JSON.stringify({
+          cotId: cotId[0].id_cotizacion,
+          token,
+        });
 
         const requestOptions = {
-          method: "GET",
+          method: "POST",
           headers: myHeaders,
+          body: raw,
           redirect: "follow",
         };
 
-        fetch(
-          "https://api-gci-rest.integracionplanok.io/api/cotizaciones/" +
-            cotId[0].id_cotizacion +
-            "/pdf?tipoDescarga=0",
-          requestOptions
-        )
+        fetch("http://localhost:4000/api/cotizacion", requestOptions)
           .then((response) => response.json())
           .then((result) => {
+            console.log({ result });
             if (result?.url) {
               $(".btn-pok-cot").attr("href", result.url);
               $(".btn-pok-spinner").removeClass("d-flex").addClass("d-none");
@@ -915,7 +916,7 @@ $(function () {
 
               $("#inputNamePok").val(event.target.inputNameCotizar.value);
               $("#inputLastNamePok").val(
-                event.target.inputLastNameCotizar.value
+                event.target.inputLastNameCotizar.value,
               );
               $("#inputEmailPok").val(event.target.inputEmailCotizar.value);
               $("#inputUrlPok").val(result.url);
@@ -993,7 +994,7 @@ function _object_spread(target) {
       ownKeys = ownKeys.concat(
         Object.getOwnPropertySymbols(source).filter(function (sym) {
           return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-        })
+        }),
       );
     }
     ownKeys.forEach(function (key) {
@@ -1024,7 +1025,7 @@ function _object_spread_props(target, source) {
       Object.defineProperty(
         target,
         key,
-        Object.getOwnPropertyDescriptor(source, key)
+        Object.getOwnPropertyDescriptor(source, key),
       );
     });
   }
@@ -1042,8 +1043,8 @@ function cleanText(text) {
     (doc === null || doc === void 0
       ? void 0
       : (_doc_body = doc.body) === null || _doc_body === void 0
-      ? void 0
-      : _doc_body.textContent) || text
+        ? void 0
+        : _doc_body.textContent) || text
   );
 }
 function sendModelEventToGTM(event) {
@@ -1060,32 +1061,32 @@ function sendModelEventToGTM(event) {
     (_event_detail = event.detail) === null || _event_detail === void 0
       ? void 0
       : (_event_detail_inputs_ = _event_detail.inputs[0]) === null ||
-        _event_detail_inputs_ === void 0
-      ? void 0
-      : _event_detail_inputs_.value
+          _event_detail_inputs_ === void 0
+        ? void 0
+        : _event_detail_inputs_.value,
   );
   var modelTitle = cleanText(
     (_event_detail1 = event.detail) === null || _event_detail1 === void 0
       ? void 0
       : (_event_detail_inputs_1 = _event_detail1.inputs[2]) === null ||
-        _event_detail_inputs_1 === void 0
-      ? void 0
-      : _event_detail_inputs_1.value
+          _event_detail_inputs_1 === void 0
+        ? void 0
+        : _event_detail_inputs_1.value,
   );
   var leadEmail =
     (_event_detail2 = event.detail) === null || _event_detail2 === void 0
       ? void 0
       : (_event_detail_inputs_2 = _event_detail2.inputs[19]) === null ||
-        _event_detail_inputs_2 === void 0
-      ? void 0
-      : _event_detail_inputs_2.value;
+          _event_detail_inputs_2 === void 0
+        ? void 0
+        : _event_detail_inputs_2.value;
   var leadPhone =
     (_event_detail3 = event.detail) === null || _event_detail3 === void 0
       ? void 0
       : (_event_detail_inputs_3 = _event_detail3.inputs[21]) === null ||
-        _event_detail_inputs_3 === void 0
-      ? void 0
-      : _event_detail_inputs_3.value;
+          _event_detail_inputs_3 === void 0
+        ? void 0
+        : _event_detail_inputs_3.value;
   dataLayer.push({
     event: BASE_EVENT_NAME,
     leadType: formName,
@@ -1107,23 +1108,23 @@ function sendGralEventToGTM(event) {
     (_event_detail = event.detail) === null || _event_detail === void 0
       ? void 0
       : (_event_detail_inputs_ = _event_detail.inputs[5]) === null ||
-        _event_detail_inputs_ === void 0
-      ? void 0
-      : _event_detail_inputs_.value;
+          _event_detail_inputs_ === void 0
+        ? void 0
+        : _event_detail_inputs_.value;
   var leadPhone =
     (_event_detail1 = event.detail) === null || _event_detail1 === void 0
       ? void 0
       : (_event_detail_inputs_1 = _event_detail1.inputs[6]) === null ||
-        _event_detail_inputs_1 === void 0
-      ? void 0
-      : _event_detail_inputs_1.value;
+          _event_detail_inputs_1 === void 0
+        ? void 0
+        : _event_detail_inputs_1.value;
   var projectTitle = cleanText(
     (_event_detail2 = event.detail) === null || _event_detail2 === void 0
       ? void 0
       : (_event_detail_inputs_2 = _event_detail2.inputs[2]) === null ||
-        _event_detail_inputs_2 === void 0
-      ? void 0
-      : _event_detail_inputs_2.value
+          _event_detail_inputs_2 === void 0
+        ? void 0
+        : _event_detail_inputs_2.value,
   );
   dataLayer.push(
     _object_spread(
@@ -1133,8 +1134,8 @@ function sendGralEventToGTM(event) {
         leadEmail: leadEmail,
         leadPhone: leadPhone,
       },
-      !!projectTitle && { projectTitle: projectTitle }
-    )
+      !!projectTitle && { projectTitle: projectTitle },
+    ),
   );
 }
 function sendProjectEventToGTM(event) {
@@ -1149,23 +1150,23 @@ function sendProjectEventToGTM(event) {
     (_event_detail = event.detail) === null || _event_detail === void 0
       ? void 0
       : (_event_detail_inputs_ = _event_detail.inputs[7]) === null ||
-        _event_detail_inputs_ === void 0
-      ? void 0
-      : _event_detail_inputs_.value;
+          _event_detail_inputs_ === void 0
+        ? void 0
+        : _event_detail_inputs_.value;
   var leadPhone =
     (_event_detail1 = event.detail) === null || _event_detail1 === void 0
       ? void 0
       : (_event_detail_inputs_1 = _event_detail1.inputs[9]) === null ||
-        _event_detail_inputs_1 === void 0
-      ? void 0
-      : _event_detail_inputs_1.value;
+          _event_detail_inputs_1 === void 0
+        ? void 0
+        : _event_detail_inputs_1.value;
   var projectTitle = cleanText(
     (_event_detail2 = event.detail) === null || _event_detail2 === void 0
       ? void 0
       : (_event_detail_inputs_2 = _event_detail2.inputs[0]) === null ||
-        _event_detail_inputs_2 === void 0
-      ? void 0
-      : _event_detail_inputs_2.value
+          _event_detail_inputs_2 === void 0
+        ? void 0
+        : _event_detail_inputs_2.value,
   );
   dataLayer.push({
     event: BASE_EVENT_NAME,
@@ -1187,23 +1188,23 @@ function sendWSPEventToGTM(event) {
     (_event_detail = event.detail) === null || _event_detail === void 0
       ? void 0
       : (_event_detail_inputs_ = _event_detail.inputs[8]) === null ||
-        _event_detail_inputs_ === void 0
-      ? void 0
-      : _event_detail_inputs_.value;
+          _event_detail_inputs_ === void 0
+        ? void 0
+        : _event_detail_inputs_.value;
   var leadPhone =
     (_event_detail1 = event.detail) === null || _event_detail1 === void 0
       ? void 0
       : (_event_detail_inputs_1 = _event_detail1.inputs[10]) === null ||
-        _event_detail_inputs_1 === void 0
-      ? void 0
-      : _event_detail_inputs_1.value;
+          _event_detail_inputs_1 === void 0
+        ? void 0
+        : _event_detail_inputs_1.value;
   var projectTitle = cleanText(
     (_event_detail2 = event.detail) === null || _event_detail2 === void 0
       ? void 0
       : (_event_detail_inputs_2 = _event_detail2.inputs[0]) === null ||
-        _event_detail_inputs_2 === void 0
-      ? void 0
-      : _event_detail_inputs_2.value
+          _event_detail_inputs_2 === void 0
+        ? void 0
+        : _event_detail_inputs_2.value,
   );
   dataLayer.push(
     _object_spread(
@@ -1213,8 +1214,8 @@ function sendWSPEventToGTM(event) {
         leadEmail: leadEmail,
         leadPhone: leadPhone,
       },
-      !!projectTitle && { projectTitle: projectTitle }
-    )
+      !!projectTitle && { projectTitle: projectTitle },
+    ),
   );
 }
 var formsIdFnMap = {
@@ -1247,7 +1248,7 @@ addEventListener("message", function (message) {
           leadPhone: dataObj.clientPhone,
           projectTitle: dataObj.project,
           leadType: "chatbot",
-        })
+        }),
       );
     }
   } catch (e) {
