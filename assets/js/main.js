@@ -84,7 +84,7 @@ $(function () {
   // Contextuales
   $(".contactFloatingForm").on("click", function (e) {
     e.preventDefault();
-    $(".form-modal").addClass("form-modal-open");
+    $(".form-modal").toggleClass("form-modal-open");
   });
   $("#formModalClose").on("click", function (e) {
     e.preventDefault();

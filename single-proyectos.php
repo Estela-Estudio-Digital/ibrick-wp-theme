@@ -695,7 +695,7 @@ include( locate_template( './includes/templates/banner-pasos.php', false, false)
         <?php if ($correos_ventas): ?>
             <li class="contact-floating-form">
                 <a href="#" class="contact-floating-link contactFloatingForm">
-                    <i class="far fa-envelope"></i>
+                    <img src="<?php bloginfo('template_directory');?>/assets/img/btn-form.svg" alt="contacto" width="60" height="60">
                 </a>
             </li>
         <?php endif; ?>

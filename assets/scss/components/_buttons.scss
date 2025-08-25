@@ -90,26 +90,26 @@
   }
   &-container {
     position: fixed;
-    left: 0;
-    bottom: 0;
+    right: 0;
+    bottom: 60px;
     // @include center(y);
-    z-index: 4;
+    z-index: 999999;
     // background: rgba($white, .5);
     // width: 100%;
   }
-  &-link {
-    display: block;
-    width: 30px;
-    height: 30px;
-    position: relative;
-    padding: 22px;
-    & i {
-      position: relative;
-      @include center(xy);
-      font-size: 1.5rem;
-      color: $white;
-    }
-  }
+  // &-link {
+  //   display: block;
+  //   width: 30px;
+  //   height: 30px;
+  //   position: relative;
+  //   padding: 22px;
+  //   & i {
+  //     position: relative;
+  //     @include center(xy);
+  //     font-size: 1.5rem;
+  //     color: $white;
+  //   }
+  // }
   &-whatsapp {
     display: none;
     // background: #00bfa5;
@@ -127,19 +127,19 @@
       background: #019682;
     }
   }
-  &-form {
-    background: #2dafe9;
-    border-radius: 50rem;
-    @include MQ(L) {
-      box-shadow:
-        0 5px 5px -3px rgba(#015348, 0.2),
-        0 8px 10px 1px rgba(#015348, 0.2),
-        0 3px 14px 2px rgba(#015348, 0.2);
-    }
-    &:hover {
-      background: $brand-primary-color;
-    }
-  }
+  // &-form {
+  //   background: #2dafe9;
+  //   border-radius: 50rem;
+  //   @include MQ(L) {
+  //     box-shadow:
+  //       0 5px 5px -3px rgba(#015348, 0.2),
+  //       0 8px 10px 1px rgba(#015348, 0.2),
+  //       0 3px 14px 2px rgba(#015348, 0.2);
+  //   }
+  //   &:hover {
+  //     background: $brand-primary-color;
+  //   }
+  // }
 }
 
 .social-fixed {
