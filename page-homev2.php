@@ -235,7 +235,7 @@ include(locate_template('./includes/templates/proyectos_destacados.php', false, 
                         <img class="w-100" src="<?php bloginfo('template_directory');?>/assets/img/btn-whataspp.svg" alt="contacto" width="120" height="50">
                     </li>
                 </ul>
-                <span id="whatsappButtonAd">¿Necesitas ayuda?</span>
+                <!-- <span id="whatsappButtonAd">¿Necesitas ayuda?</span> -->
             </a>
         </li>
     </ul>

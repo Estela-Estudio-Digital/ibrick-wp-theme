@@ -85,7 +85,8 @@
   &-container-home {
     position: fixed;
     bottom: 0;
-    left: 12px;
+    // left: 12px;
+    right: 0;
     z-index: 4;
   }
   &-container {

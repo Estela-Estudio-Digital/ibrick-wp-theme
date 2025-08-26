@@ -1,6 +1,6 @@
 <?php
-    get_template_part('includes/header'); 
-    bk_main_before();
+get_template_part('includes/header');
+bk_main_before();
 /*
 Template Name: Residencial
 */
@@ -26,7 +26,7 @@ Template Name: Residencial
                 $icono = get_sub_field('icono');
                 $titulo = get_sub_field('titulo');
                 $texto = get_sub_field('texto');
-            ?>
+                ?>
             <div class="item">
                 <div class="flip">
                     <div class="fcard"> 
@@ -51,13 +51,13 @@ Template Name: Residencial
         </div>
     </section>
 <?php endif; ?>
-<?php 
+<?php
 $taxonomy = 'tipo';
 $query = new WP_Query(array(
     'post_type'      	=> 'proyectos',
     'posts_per_page'	=> -1,
     'post_status'		=> 'publish',
-    'tax_query'         => array (
+    'tax_query'         => array(
         array(
             'taxonomy'      => $taxonomy,
             'field'          => 'slug',
@@ -65,11 +65,11 @@ $query = new WP_Query(array(
         ),
     ),
   ));
-  
-  include( locate_template( './includes/templates/proyectos_destacados.php', false, false) );
 
- 
-  ?>
+include(locate_template('./includes/templates/proyectos_destacados.php', false, false));
+
+
+?>
   <section class="rentas-section container d-none">
     <div class="row">
         <div class="col-md-6 pr-md-0">
@@ -93,26 +93,26 @@ $query = new WP_Query(array(
             <a class="d-inline whatsappButton" id="whatsappButton" href="#">
                 <ul class="d-flex align-items-center contact-floating-whatsapp">
                     <li class="contact-floating-link whatsappButton" style="zoom: 1.2">
-                        <i class="fab fa-whatsapp"></i>
+                        <img class="w-100" src="<?php bloginfo('template_directory');?>/assets/img/btn-whataspp.svg" alt="contacto" width="120" height="50">
                     </li>
                 </ul>
-                <span id="whatsappButtonAd">¿Necesitas ayuda?</span>
+                <!-- <span id="whatsappButtonAd">¿Necesitas ayuda?</span> -->
             </a>
         </li>
     </ul>
 </section>
 
-<?php 
-include( locate_template( './includes/templates/whatsapp-modal.php', false, false) );
+<?php
+include(locate_template('./includes/templates/whatsapp-modal.php', false, false));
 ?>
 
   <?php
-  include( locate_template( './includes/templates/banner-pasos.php', false, false) ); 
-  
-  ?>
+  include(locate_template('./includes/templates/banner-pasos.php', false, false));
+
+?>
 
 
-<?php 
-    bk_main_after();
-    get_template_part('includes/footer'); 
+<?php
+  bk_main_after();
+get_template_part('includes/footer');
 ?>
