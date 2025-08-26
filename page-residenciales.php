@@ -92,7 +92,7 @@ include(locate_template('./includes/templates/proyectos_destacados.php', false, 
         <li>
             <a class="d-inline whatsappButton" id="whatsappButton" href="#">
                 <ul class="d-flex align-items-center contact-floating-whatsapp">
-                    <li class="contact-floating-link whatsappButton" style="zoom: 1.2">
+                    <li class="contact-floating-link whatsappButton">
                         <img class="w-100" src="<?php bloginfo('template_directory');?>/assets/img/btn-whataspp.svg" alt="contacto" width="120" height="50">
                     </li>
                 </ul>

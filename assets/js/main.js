@@ -20,13 +20,13 @@ $(function () {
         whatsapp = project_data.data[0].whatsapp,
         superficieUtil = project_data.data[0].superficieUtil,
         superficieTerraza = project_data.data[0].superficieTerraza,
-        superficieTotal = project_data.data[0].superficieTotal;
-      (nombreAsesor = project_data.data[0].nombreAsesor),
-        (cargoAsesor = project_data.data[0].cargoAsesor),
-        (emailAsesor = project_data.data[0].emailAsesor),
-        (telefonoAsesor = project_data.data[0].telefonoAsesor),
-        (direccionSalaVentas = project_data.data[0].direccionSalaVentas),
-        (horarioAtencion = project_data.data[0].horarioAtencion);
+        superficieTotal = project_data.data[0].superficieTotal,
+        nombreAsesor = project_data.data[0].nombreAsesor,
+        cargoAsesor = project_data.data[0].cargoAsesor,
+        emailAsesor = project_data.data[0].emailAsesor,
+        telefonoAsesor = project_data.data[0].telefonoAsesor,
+        direccionSalaVentas = project_data.data[0].direccionSalaVentas,
+        horarioAtencion = project_data.data[0].horarioAtencion;
       $(".nombreProyecto").val(nombreProyecto);
       $(".correosVentas").val(correosVentas);
       $(".logoProyecto").val(logoProyecto);
@@ -90,8 +90,9 @@ $(function () {
     e.preventDefault();
     $(".form-modal").removeClass("form-modal-open");
   });
-  $(".whatsappButton").on("click", function (e) {
+  $("#whatsappButton").on("click", function (e) {
     e.preventDefault();
+    console.log("whatsappButton");
     $(".ws-form").removeClass("d-none");
     $(".whatsapp-modal").toggleClass("whatsapp-modal-open");
     if (isHome) {

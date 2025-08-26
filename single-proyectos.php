@@ -695,7 +695,7 @@ include(locate_template('./includes/templates/banner-pasos.php', false, false));
         <?php endif; ?>
         <?php if ($whatsapp) : ?>
             <li class="contact-floating-whatsapp">
-                <a href="#" class="contact-floating-link whatsappButton">
+                <a href="#" class="contact-floating-link whatsappButton" id="whatsappButton">
                     <img class="w-100" src="<?php bloginfo('template_directory');?>/assets/img/btn-whataspp.svg" alt="contacto" width="120" height="50">
                 </a>
             </li>
