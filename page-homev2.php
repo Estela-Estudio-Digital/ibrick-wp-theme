@@ -1,30 +1,30 @@
 <?php /*
 Template Name: homepagev2
 */
-get_template_part('includes/header'); 
+get_template_part('includes/header');
 bk_main_before();
 ?>
 
-<?php 
+<?php
     $ids_2 = get_field('slider_principal');
-    $depicter = get_field('id_slider_depicter');
-    
-    $query = new WP_Query(array(
-        'post_type'      	=> 'proyectos',
-        'posts_per_page'	=> 4,
-        'post_status'		=> 'publish',
-        'post__in'			=> $ids_2,
-    ));
-    $count = 1;
-    if ($depicter) : ?>
+$depicter = get_field('id_slider_depicter');
+
+$query = new WP_Query(array(
+    'post_type'      	=> 'proyectos',
+    'posts_per_page'	=> 4,
+    'post_status'		=> 'publish',
+    'post__in'			=> $ids_2,
+));
+$count = 1;
+if ($depicter) : ?>
         <h1 class="" aria-label="Brick">
             <?php if ($depicter) {
                 depicter($depicter);
-                } 
-            ?>
+            }
+    ?>
         </h1>
-    <? else:
-    if ( $query->have_posts() ) : ?>
+    <?php else:
+        if ($query->have_posts()) : ?>
     <section class="primary-hero">
         <div class="pm3-carousel owl-carousel owl-theme d-md-none">
 
@@ -50,30 +50,30 @@ bk_main_before();
               </div>
           </div>
 
-        <?php while ( $query->have_posts() ) : $query->the_post();
-        $count++;
+        <?php while ($query->have_posts()) : $query->the_post();
+            $count++;
 
-        $tiene_contenidos = get_field('tiene_contenidos');
+            $tiene_contenidos = get_field('tiene_contenidos');
 
-        // CUSTOM FLIELDS Descripciones
-        $grupo_de_datos = get_field('grupo_de_datos');
-        $ubicacion = $grupo_de_datos['ubicacion'];
-        $precio_desde = $grupo_de_datos['precio_desde'];
-        $tipologia_select = $grupo_de_datos['tipologia_select'];
-        $titulo_sliders = $grupo_de_datos['titulo_sliders'];
-        $tag_del_ptroyecto = $grupo_de_datos['tag_del_ptroyecto'];
-        
-        // CUSTOM FLIELDS Imágenes Generales
-        $slider_proyecto = get_field('slider_proyecto');
-        $logo_proyecto = get_field('logo_proyecto');
-        $logo_proyecto_blanco = get_field('logo_proyecto_blanco');
+            // CUSTOM FLIELDS Descripciones
+            $grupo_de_datos = get_field('grupo_de_datos');
+            $ubicacion = $grupo_de_datos['ubicacion'];
+            $precio_desde = $grupo_de_datos['precio_desde'];
+            $tipologia_select = $grupo_de_datos['tipologia_select'];
+            $titulo_sliders = $grupo_de_datos['titulo_sliders'];
+            $tag_del_ptroyecto = $grupo_de_datos['tag_del_ptroyecto'];
 
-        // Setup this post for WP functions (variable must be named $post).
-        setup_postdata($post); 
-        $desktop = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
-        $mobile = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
+            // CUSTOM FLIELDS Imágenes Generales
+            $slider_proyecto = get_field('slider_proyecto');
+            $logo_proyecto = get_field('logo_proyecto');
+            $logo_proyecto_blanco = get_field('logo_proyecto_blanco');
 
-    ?>
+            // Setup this post for WP functions (variable must be named $post).
+            setup_postdata($post);
+            $desktop = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large');
+            $mobile = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium');
+
+            ?>
             <div class="container-fluid p-0 d-md-none">
                 <div class="row">
                     <div class="col-12">
@@ -106,7 +106,8 @@ bk_main_before();
                     </div>
                 </div>
             </div>
-            <?php endwhile; wp_reset_postdata(); ?>
+            <?php endwhile;
+            wp_reset_postdata(); ?>
         </div>
         <div class="pm3-carousel owl-carousel owl-theme d-none d-md-block ">
 
@@ -131,7 +132,7 @@ bk_main_before();
                 </iframe>
               </div>
           </div>
-        <?php while ( $query->have_posts() ) : $query->the_post();
+        <?php while ($query->have_posts()) : $query->the_post();
             $count++;
 
             $tiene_contenidos = get_field('tiene_contenidos');
@@ -143,17 +144,17 @@ bk_main_before();
             $tipologia_select = $grupo_de_datos['tipologia_select'];
             $titulo_sliders = $grupo_de_datos['titulo_sliders'];
             $tag_del_ptroyecto = $grupo_de_datos['tag_del_ptroyecto'];
-            
+
             // CUSTOM FLIELDS Imágenes Generales
             $slider_proyecto = get_field('slider_proyecto');
             $logo_proyecto = get_field('logo_proyecto');
             $logo_proyecto_blanco = get_field('logo_proyecto_blanco');
 
             // Setup this post for WP functions (variable must be named $post).
-            setup_postdata($post); 
-            $desktop = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
-            $mobile = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
-        ?>
+            setup_postdata($post);
+            $desktop = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large');
+            $mobile = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium');
+            ?>
 
             <div class="item home-hero-container d-flex align-items-center" style="background-position:bottom !important;background:url('<?php echo (sizeof($slider_proyecto) > 1) ? $slider_proyecto[1]["slider_proyecto_desktop"]["url"] : $slider_proyecto[0]["slider_proyecto_desktop"]["url"];?>'); background-size: cover;">
                 <div class="container">
@@ -177,12 +178,13 @@ bk_main_before();
                 <div class="overlay"></div>
             </div>
 
-        <?php endwhile; wp_reset_postdata(); ?>
+        <?php endwhile;
+            wp_reset_postdata(); ?>
     </div>
 </section>
 <?php endif; endif;?>
 
-<?php 
+<?php
 $ids_2 = get_field('proyectos_destacados', 5, false);
 $query = new WP_Query(array(
     'post_type'      	=> 'proyectos',
@@ -191,7 +193,7 @@ $query = new WP_Query(array(
     'post__in'			=> $ids_2,
 ));
 
-include( locate_template( './includes/templates/proyectos_destacados.php', false, false) ); ?>
+include(locate_template('./includes/templates/proyectos_destacados.php', false, false)); ?>
 
 <section class="section container-fluid" style="background: #d5d4d4">
     <div class="container">
@@ -230,7 +232,7 @@ include( locate_template( './includes/templates/proyectos_destacados.php', false
             <a class="d-inline whatsappButton" id="whatsappButton" href="#">
                 <ul class="d-flex align-items-center contact-floating-whatsapp">
                     <li class="contact-floating-link whatsappButton" style="zoom: 1.2">
-                        <i class="fab fa-whatsapp"></i>
+                        <img class="w-100" src="<?php bloginfo('template_directory');?>/assets/img/btn-whataspp.svg" alt="contacto" width="120" height="50">
                     </li>
                 </ul>
                 <span id="whatsappButtonAd">¿Necesitas ayuda?</span>
@@ -239,8 +241,8 @@ include( locate_template( './includes/templates/proyectos_destacados.php', false
     </ul>
 </section>
 
-<?php 
-include( locate_template( './includes/templates/whatsapp-modal.php', false, false) );
+<?php
+include(locate_template('./includes/templates/whatsapp-modal.php', false, false));
 ?>
 
 <!-- Home Video Modal -->
@@ -255,7 +257,7 @@ include( locate_template( './includes/templates/whatsapp-modal.php', false, fals
     </div>
 </div>
 
-<?php 
+<?php
 bk_main_after();
-get_template_part('includes/footer'); 
+get_template_part('includes/footer');
 ?>
