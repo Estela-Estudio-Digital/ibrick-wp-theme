@@ -14,11 +14,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <?php wp_head(); ?>
 </head>
 
-<?php if(is_singular('proyectos')): 
-  $vincular_planta_a_proyecto = get_field('vincular_proyecto');
-  $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
-  $theme = get_field('esquema_de_colores');
-?>
+<?php if (is_singular('proyectos')) :
+    $vincular_planta_a_proyecto = get_field('vincular_proyecto');
+    $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto->ID);
+    $theme = get_field('esquema_de_colores');
+    ?>
 <body <?php body_class($theme); ?>>
 <?php else: ?>
 <body <?php body_class(); ?>>
@@ -32,16 +32,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <?php bk_navbar_before(); ?>
 
-<?php if (is_front_page() || is_page('residencial') || is_page('1785')): ?>
-  <script SameSite="None; Secure" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.js"></script>
-  <script>
-    var myLandbot = new Landbot.Livechat({
-      configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-1538205-MXKA3G62PL96V0HN/index.json',
-    });
-  </script>
-<?php endif; ?>
+<?php //** if (is_front_page() || is_page('residencial') || is_page('1785')):?>
+  <!-- <script SameSite="None; Secure" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.js"></script> -->
+  <!-- <script> -->
+  <!--   var myLandbot = new Landbot.Livechat({ -->
+  <!--     configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-1538205-MXKA3G62PL96V0HN/index.json', -->
+  <!--   }); -->
+  <!-- </script> -->
+<?php //* endif;?>
 
-<?php if(is_singular('proyectos')): ?>
+<?php if (is_singular('proyectos')) : ?>
 <nav class="navbar navbar-expand-lg bg-white py-2 menu-nav-fixed" id="proyectosMenu">
     <div class="container d-flex justify-content-between">
         <button class="d-none d-md-block slide-nav-button hamburger hamburger--emphatic p-2 mr-4 ">
@@ -93,11 +93,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </nav >
 <?php endif; ?>
 
-<?php if (is_singular('plantas') || is_singular('plantas_api')): 
-  $vincular_planta_a_proyecto = get_field('vincular_proyecto');
-	$id_proyecto = $vincular_planta_a_proyecto[0]->ID > 1 ? $vincular_planta_a_proyecto[0]->ID : 1090;
-  $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto[0]->ID );
-?>
+<?php if (is_singular('plantas') || is_singular('plantas_api')):
+    $vincular_planta_a_proyecto = get_field('vincular_proyecto');
+    $id_proyecto = $vincular_planta_a_proyecto[0]->ID > 1 ? $vincular_planta_a_proyecto[0]->ID : 1090;
+    $logo_proyecto = get_field('logo_proyecto', $vincular_planta_a_proyecto[0]->ID);
+    ?>
 <nav class="bg-white py-3 " id="plantasMenu" data-id="<?php echo json_encode($id_proyecto);?>">
   <div class="container">
     <div class="d-flex justify-content-between align-items-center">
@@ -146,16 +146,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="collapse navbar-collapse" id="navbarNav">
        
       <?php
-        wp_nav_menu( array(
-          'theme_location'  => 'primary',
-          'container'       => false,
-          'menu_class'      => '',
-          'fallback_cb'     => '__return_false',
-          'items_wrap'      => '<ul class="primary-menu-list text-uppercase d-md-flex m-0 w-100 align-items-center justify-content-end text-center text-md-left">%3$s</ul>',
-          'depth'           => 2,
-          'walker'          => new bk_walker_nav_menu()
-        ) );
-      ?>
+            wp_nav_menu(array(
+              'theme_location'  => 'primary',
+              'container'       => false,
+              'menu_class'      => '',
+              'fallback_cb'     => '__return_false',
+              'items_wrap'      => '<ul class="primary-menu-list text-uppercase d-md-flex m-0 w-100 align-items-center justify-content-end text-center text-md-left">%3$s</ul>',
+              'depth'           => 2,
+              'walker'          => new bk_walker_nav_menu()
+            ));
+    ?>
     </div>
   </div>
 </nav >
@@ -163,16 +163,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav class='container bk-primary-nav <?php echo (is_singular('proyectos')) ? "d-flex justify-content-center" : "" ?>' id="allMenu">
   <ul class="bk-primary-nav__menu">
       <?php
-        wp_nav_menu( array(
-          'theme_location'  => 'navbar',
-          'container'       => false,
-          'menu_class'      => '',
-          'fallback_cb'     => '__return_false',
-          'items_wrap'      => '<ul id="%1$s" class="navbar-nav mr-auto mt-2 mt-lg-0 %2$s">%3$s</ul>',
-          'depth'           => 2,
-          'walker'          => new bk_walker_nav_menu()
-        ) );
-      ?>
+      wp_nav_menu(array(
+        'theme_location'  => 'navbar',
+        'container'       => false,
+        'menu_class'      => '',
+        'fallback_cb'     => '__return_false',
+        'items_wrap'      => '<ul id="%1$s" class="navbar-nav mr-auto mt-2 mt-lg-0 %2$s">%3$s</ul>',
+        'depth'           => 2,
+        'walker'          => new bk_walker_nav_menu()
+      ));
+?>
   </ul>
 </nav>
 <main id="main" class="<?php echo $vincular_planta_a_proyecto->ID === 227 ? 'project-model' : '';?> relative">

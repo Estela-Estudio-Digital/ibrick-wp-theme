@@ -524,11 +524,6 @@ button:focus {
   background: #a1a1a1 !important;
 }
 
-@media screen and (min-width: 1024px) {
-  .contact-floating-list {
-    padding-right: 40px !important;
-  }
-}
 .contact-floating-container-home {
   position: fixed;
   bottom: 0;
@@ -538,23 +533,18 @@ button:focus {
 .contact-floating-container {
   position: fixed;
   right: 0;
-  bottom: 60px;
+  bottom: 0;
   z-index: 999999;
 }
 .contact-floating-whatsapp {
-  display: none;
-  background: #9dce35;
-  border-radius: 50rem;
+  width: 180px;
+  height: 50px;
   transition: 0.2s ease-in-out all;
 }
-@media screen and (min-width: 1024px) {
-  .contact-floating-whatsapp {
-    box-shadow: 0 5px 5px -3px rgba(1, 83, 72, 0.2), 0 8px 10px 1px rgba(1, 83, 72, 0.2), 0 3px 14px 2px rgba(1, 83, 72, 0.2);
-    margin-bottom: 20px;
-  }
-}
-.contact-floating-whatsapp:hover {
-  background: #019682;
+.contact-floating-form {
+  margin-bottom: 10px;
+  width: 50px;
+  height: 50px;
 }
 
 .social-fixed-container {

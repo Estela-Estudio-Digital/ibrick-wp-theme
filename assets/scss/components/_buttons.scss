@@ -77,11 +77,11 @@
 }
 
 .contact-floating {
-  &-list {
-    @include MQ(L) {
-      padding-right: 40px !important;
-    }
-  }
+  // &-list {
+  //   @include MQ(L) {
+  //     padding-right: 40px !important;
+  //   }
+  // }
   &-container-home {
     position: fixed;
     bottom: 0;
@@ -91,43 +91,43 @@
   &-container {
     position: fixed;
     right: 0;
-    bottom: 60px;
+    bottom: 0;
     // @include center(y);
     z-index: 999999;
     // background: rgba($white, .5);
     // width: 100%;
   }
-  // &-link {
-  //   display: block;
-  //   width: 30px;
-  //   height: 30px;
-  //   position: relative;
-  //   padding: 22px;
-  //   & i {
-  //     position: relative;
-  //     @include center(xy);
-  //     font-size: 1.5rem;
-  //     color: $white;
-  //   }
-  // }
+  &-link {
+    // display: block;
+    // width: 30px;
+    // height: 30px;
+    // position: relative;
+    // padding: 22px;
+  }
   &-whatsapp {
-    display: none;
+    width: 180px;
+    height: 50px;
+    // display: none;
     // background: #00bfa5;
-    background: #9dce35;
-    border-radius: 50rem;
+    // background: #9dce35;
+    // border-radius: 50rem;
     transition: 0.2s ease-in-out all;
     @include MQ(L) {
-      box-shadow:
-        0 5px 5px -3px rgba(#015348, 0.2),
-        0 8px 10px 1px rgba(#015348, 0.2),
-        0 3px 14px 2px rgba(#015348, 0.2);
-      margin-bottom: 20px;
+      // box-shadow:
+      //   0 5px 5px -3px rgba(#015348, 0.2),
+      //   0 8px 10px 1px rgba(#015348, 0.2),
+      //   0 3px 14px 2px rgba(#015348, 0.2);
+      // margin-bottom: 20px;
     }
     &:hover {
-      background: #019682;
+      // background: #019682;
     }
   }
-  // &-form {
+  &-form {
+    margin-bottom: 10px;
+    width: 50px;
+    height: 50px;
+  }
   //   background: #2dafe9;
   //   border-radius: 50rem;
   //   @include MQ(L) {
@@ -237,4 +237,3 @@
   background: none;
   border: none;
 }
-

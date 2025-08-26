@@ -52,5 +52,5 @@ Thumbs.db
 *.seed
 *.pid.lock
 .lock-wscript
-.cache/
+*.cache
 .parcel-cache/

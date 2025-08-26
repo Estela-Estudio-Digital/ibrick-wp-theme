@@ -21,12 +21,12 @@ $(function () {
         superficieUtil = project_data.data[0].superficieUtil,
         superficieTerraza = project_data.data[0].superficieTerraza,
         superficieTotal = project_data.data[0].superficieTotal;
-      ((nombreAsesor = project_data.data[0].nombreAsesor),
+      (nombreAsesor = project_data.data[0].nombreAsesor),
         (cargoAsesor = project_data.data[0].cargoAsesor),
         (emailAsesor = project_data.data[0].emailAsesor),
         (telefonoAsesor = project_data.data[0].telefonoAsesor),
         (direccionSalaVentas = project_data.data[0].direccionSalaVentas),
-        (horarioAtencion = project_data.data[0].horarioAtencion));
+        (horarioAtencion = project_data.data[0].horarioAtencion);
       $(".nombreProyecto").val(nombreProyecto);
       $(".correosVentas").val(correosVentas);
       $(".logoProyecto").val(logoProyecto);
@@ -93,7 +93,7 @@ $(function () {
   $(".whatsappButton").on("click", function (e) {
     e.preventDefault();
     $(".ws-form").removeClass("d-none");
-    $(".whatsapp-modal").addClass("whatsapp-modal-open");
+    $(".whatsapp-modal").toggleClass("whatsapp-modal-open");
     if (isHome) {
       $(".ws-project").show();
       $(".ws-form").addClass("d-none");
@@ -457,7 +457,7 @@ $(function () {
     setDataToSend();
   }
 
-  ((sbjMedio = sbjs.get.current.mdm), (sbjFuente = sbjs.get.current.src));
+  (sbjMedio = sbjs.get.current.mdm), (sbjFuente = sbjs.get.current.src);
 
   $(".fuenteSbj").val(sbjFuente);
   $(".medioSbj").val(sbjMedio);
@@ -1043,8 +1043,8 @@ function cleanText(text) {
     (doc === null || doc === void 0
       ? void 0
       : (_doc_body = doc.body) === null || _doc_body === void 0
-        ? void 0
-        : _doc_body.textContent) || text
+      ? void 0
+      : _doc_body.textContent) || text
   );
 }
 function sendModelEventToGTM(event) {
@@ -1061,32 +1061,32 @@ function sendModelEventToGTM(event) {
     (_event_detail = event.detail) === null || _event_detail === void 0
       ? void 0
       : (_event_detail_inputs_ = _event_detail.inputs[0]) === null ||
-          _event_detail_inputs_ === void 0
-        ? void 0
-        : _event_detail_inputs_.value,
+        _event_detail_inputs_ === void 0
+      ? void 0
+      : _event_detail_inputs_.value,
   );
   var modelTitle = cleanText(
     (_event_detail1 = event.detail) === null || _event_detail1 === void 0
       ? void 0
       : (_event_detail_inputs_1 = _event_detail1.inputs[2]) === null ||
-          _event_detail_inputs_1 === void 0
-        ? void 0
-        : _event_detail_inputs_1.value,
+        _event_detail_inputs_1 === void 0
+      ? void 0
+      : _event_detail_inputs_1.value,
   );
   var leadEmail =
     (_event_detail2 = event.detail) === null || _event_detail2 === void 0
       ? void 0
       : (_event_detail_inputs_2 = _event_detail2.inputs[19]) === null ||
-          _event_detail_inputs_2 === void 0
-        ? void 0
-        : _event_detail_inputs_2.value;
+        _event_detail_inputs_2 === void 0
+      ? void 0
+      : _event_detail_inputs_2.value;
   var leadPhone =
     (_event_detail3 = event.detail) === null || _event_detail3 === void 0
       ? void 0
       : (_event_detail_inputs_3 = _event_detail3.inputs[21]) === null ||
-          _event_detail_inputs_3 === void 0
-        ? void 0
-        : _event_detail_inputs_3.value;
+        _event_detail_inputs_3 === void 0
+      ? void 0
+      : _event_detail_inputs_3.value;
   dataLayer.push({
     event: BASE_EVENT_NAME,
     leadType: formName,
@@ -1108,23 +1108,23 @@ function sendGralEventToGTM(event) {
     (_event_detail = event.detail) === null || _event_detail === void 0
       ? void 0
       : (_event_detail_inputs_ = _event_detail.inputs[5]) === null ||
-          _event_detail_inputs_ === void 0
-        ? void 0
-        : _event_detail_inputs_.value;
+        _event_detail_inputs_ === void 0
+      ? void 0
+      : _event_detail_inputs_.value;
   var leadPhone =
     (_event_detail1 = event.detail) === null || _event_detail1 === void 0
       ? void 0
       : (_event_detail_inputs_1 = _event_detail1.inputs[6]) === null ||
-          _event_detail_inputs_1 === void 0
-        ? void 0
-        : _event_detail_inputs_1.value;
+        _event_detail_inputs_1 === void 0
+      ? void 0
+      : _event_detail_inputs_1.value;
   var projectTitle = cleanText(
     (_event_detail2 = event.detail) === null || _event_detail2 === void 0
       ? void 0
       : (_event_detail_inputs_2 = _event_detail2.inputs[2]) === null ||
-          _event_detail_inputs_2 === void 0
-        ? void 0
-        : _event_detail_inputs_2.value,
+        _event_detail_inputs_2 === void 0
+      ? void 0
+      : _event_detail_inputs_2.value,
   );
   dataLayer.push(
     _object_spread(
@@ -1150,23 +1150,23 @@ function sendProjectEventToGTM(event) {
     (_event_detail = event.detail) === null || _event_detail === void 0
       ? void 0
       : (_event_detail_inputs_ = _event_detail.inputs[7]) === null ||
-          _event_detail_inputs_ === void 0
-        ? void 0
-        : _event_detail_inputs_.value;
+        _event_detail_inputs_ === void 0
+      ? void 0
+      : _event_detail_inputs_.value;
   var leadPhone =
     (_event_detail1 = event.detail) === null || _event_detail1 === void 0
       ? void 0
       : (_event_detail_inputs_1 = _event_detail1.inputs[9]) === null ||
-          _event_detail_inputs_1 === void 0
-        ? void 0
-        : _event_detail_inputs_1.value;
+        _event_detail_inputs_1 === void 0
+      ? void 0
+      : _event_detail_inputs_1.value;
   var projectTitle = cleanText(
     (_event_detail2 = event.detail) === null || _event_detail2 === void 0
       ? void 0
       : (_event_detail_inputs_2 = _event_detail2.inputs[0]) === null ||
-          _event_detail_inputs_2 === void 0
-        ? void 0
-        : _event_detail_inputs_2.value,
+        _event_detail_inputs_2 === void 0
+      ? void 0
+      : _event_detail_inputs_2.value,
   );
   dataLayer.push({
     event: BASE_EVENT_NAME,
@@ -1188,23 +1188,23 @@ function sendWSPEventToGTM(event) {
     (_event_detail = event.detail) === null || _event_detail === void 0
       ? void 0
       : (_event_detail_inputs_ = _event_detail.inputs[8]) === null ||
-          _event_detail_inputs_ === void 0
-        ? void 0
-        : _event_detail_inputs_.value;
+        _event_detail_inputs_ === void 0
+      ? void 0
+      : _event_detail_inputs_.value;
   var leadPhone =
     (_event_detail1 = event.detail) === null || _event_detail1 === void 0
       ? void 0
       : (_event_detail_inputs_1 = _event_detail1.inputs[10]) === null ||
-          _event_detail_inputs_1 === void 0
-        ? void 0
-        : _event_detail_inputs_1.value;
+        _event_detail_inputs_1 === void 0
+      ? void 0
+      : _event_detail_inputs_1.value;
   var projectTitle = cleanText(
     (_event_detail2 = event.detail) === null || _event_detail2 === void 0
       ? void 0
       : (_event_detail_inputs_2 = _event_detail2.inputs[0]) === null ||
-          _event_detail_inputs_2 === void 0
-        ? void 0
-        : _event_detail_inputs_2.value,
+        _event_detail_inputs_2 === void 0
+      ? void 0
+      : _event_detail_inputs_2.value,
   );
   dataLayer.push(
     _object_spread(

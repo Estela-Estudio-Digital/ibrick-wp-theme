@@ -8,77 +8,77 @@
 
 <?php
 get_template_part('includes/header');
-bk_main_before();
+        bk_main_before();
 
-// CUSTOM FLIELD THEME
-$theme = get_field('esquema_de_colores');
-$tiene_contenidos = get_field('tiene_contenidos');
+        // CUSTOM FLIELD THEME
+        $theme = get_field('esquema_de_colores');
+        $tiene_contenidos = get_field('tiene_contenidos');
 
-// CUSTOM FLIELDS Descripciones
-$grupo_de_datos = get_field('grupo_de_datos');
-$banner_promocion = get_field('banner_promocion');
-$ubicacion = $grupo_de_datos['ubicacion'];
-$precio_desde = $grupo_de_datos['precio_desde'];
-$tipologia_select = $grupo_de_datos['tipologia_select'];
-$legal = $grupo_de_datos['legal'];
-$whatsapp = $grupo_de_datos['whatsapp'];
-$correos_ventas = $grupo_de_datos['correos_ventas'];
-$tag_del_ptroyecto = $grupo_de_datos['tag_del_ptroyecto'];
-$caracteristicas_proyecto = $grupo_de_datos['caracteristicas_proyecto'];
-$terminaciones_repeater = $grupo_de_datos['terminaciones_repeater'];
-$folleto = $grupo_de_datos['folleto'];
-$caracteristica_personalizada = $grupo_de_datos['caracteristicas_personalizadas'];
-$titulo_seccion_caracteristicas = $grupo_de_datos['titulo_seccion_caracteristicas'];
-$icono_titulo_seccion_caracteristicas = $grupo_de_datos['icono_titulo_seccion_caracteristicas'];
-$bloque_caracteristicas = $grupo_de_datos['bloque_caracteristicas'];
-$caracteristicas_complemento = $grupo_de_datos['caracteristicas_complemento'];
-$caracteristicas_complemento_url = $grupo_de_datos['caracteristicas_complemento_url'];
-$imagen_de_promocion_desktop = $banner_promocion['imagen_de_promocion_desktop'];
-$imagen_de_promocion_mobile = $banner_promocion['imagen_de_promocion_mobile'];
-$url_de_promocion = $banner_promocion['url_de_promocion'];
-$id_planok = get_field( 'id_planok' );
-$planok = get_field( 'plan_ok' );
-$video = get_field( 'video' );
-$custom_video = get_field( 'custom_video' );
-$imagen_video_portada = get_field( 'imagen_video_portada' );
+        // CUSTOM FLIELDS Descripciones
+        $grupo_de_datos = get_field('grupo_de_datos');
+        $banner_promocion = get_field('banner_promocion');
+        $ubicacion = $grupo_de_datos['ubicacion'];
+        $precio_desde = $grupo_de_datos['precio_desde'];
+        $tipologia_select = $grupo_de_datos['tipologia_select'];
+        $legal = $grupo_de_datos['legal'];
+        $whatsapp = $grupo_de_datos['whatsapp'];
+        $correos_ventas = $grupo_de_datos['correos_ventas'];
+        $tag_del_ptroyecto = $grupo_de_datos['tag_del_ptroyecto'];
+        $caracteristicas_proyecto = $grupo_de_datos['caracteristicas_proyecto'];
+        $terminaciones_repeater = $grupo_de_datos['terminaciones_repeater'];
+        $folleto = $grupo_de_datos['folleto'];
+        $caracteristica_personalizada = $grupo_de_datos['caracteristicas_personalizadas'];
+        $titulo_seccion_caracteristicas = $grupo_de_datos['titulo_seccion_caracteristicas'];
+        $icono_titulo_seccion_caracteristicas = $grupo_de_datos['icono_titulo_seccion_caracteristicas'];
+        $bloque_caracteristicas = $grupo_de_datos['bloque_caracteristicas'];
+        $caracteristicas_complemento = $grupo_de_datos['caracteristicas_complemento'];
+        $caracteristicas_complemento_url = $grupo_de_datos['caracteristicas_complemento_url'];
+        $imagen_de_promocion_desktop = $banner_promocion['imagen_de_promocion_desktop'];
+        $imagen_de_promocion_mobile = $banner_promocion['imagen_de_promocion_mobile'];
+        $url_de_promocion = $banner_promocion['url_de_promocion'];
+        $id_planok = get_field('id_planok');
+        $planok = get_field('plan_ok');
+        $video = get_field('video');
+        $custom_video = get_field('custom_video');
+        $imagen_video_portada = get_field('imagen_video_portada');
 
-// CUSTOM FLIELDS Imágenes Generales
-$slider_proyecto = get_field('slider_proyecto');
-$logo_proyecto = get_field('logo_proyecto');
-$logo_proyecto_blanco = get_field('logo_proyecto_blanco');
+        // CUSTOM FLIELDS Imágenes Generales
+        $slider_proyecto = get_field('slider_proyecto');
+        $logo_proyecto = get_field('logo_proyecto');
+        $logo_proyecto_blanco = get_field('logo_proyecto_blanco');
 
-// CUSTOM FLIELDS Arquitectura e Interiorismo
-$arquitectura_interiorismo = get_field('arquitectura_interiorismo');
-$slider_arquitectura = get_field('slider_arquitectura');
-$banner_opcionales_repeater = get_field('banner_opcionales_repeater');
-$video_personalizable = get_field('enlace_video_personalizable');
-$texto_boton_video_personalizable = get_field('texto_boton_video_personalizable');
+        // CUSTOM FLIELDS Arquitectura e Interiorismo
+        $arquitectura_interiorismo = get_field('arquitectura_interiorismo');
+        $slider_arquitectura = get_field('slider_arquitectura');
+        $banner_opcionales_repeater = get_field('banner_opcionales_repeater');
+        $video_personalizable = get_field('enlace_video_personalizable');
+        $texto_boton_video_personalizable = get_field('texto_boton_video_personalizable');
 
-// CUSTOM FLIELDS Galerías
-$repeater_galerias = get_field('repeater_galerias');
+        // CUSTOM FLIELDS Galerías
+        $repeater_galerias = get_field('repeater_galerias');
 
-// CUSTOM FLIELDS Master Plan
-$slider_master_plan = get_field('slider_master_plan');
+        // CUSTOM FLIELDS Master Plan
+        $slider_master_plan = get_field('slider_master_plan');
 
-// CUSTOM FLIELDS Ubicación y entorno
-$descripcion_de_entorno = get_field('descripcion_de_entorno');
-$mapa_de_ubicacion = get_field('mapa_de_ubicacion');
-$mapa_de_ubicacion_mobile = get_field('mapa_de_ubicacion_mobile');
-$gmaps = get_field('gmaps');
-$waze = get_field('waze');
+        // CUSTOM FLIELDS Ubicación y entorno
+        $descripcion_de_entorno = get_field('descripcion_de_entorno');
+        $mapa_de_ubicacion = get_field('mapa_de_ubicacion');
+        $mapa_de_ubicacion_mobile = get_field('mapa_de_ubicacion_mobile');
+        $gmaps = get_field('gmaps');
+        $waze = get_field('waze');
 
-// CUSTOM FLIELDS 360º
-$url_360 = get_field('url_360');
-$text_360 = get_field('text_360'); 
+        // CUSTOM FLIELDS 360º
+        $url_360 = get_field('url_360');
+        $text_360 = get_field('text_360');
 
-$terms = wp_get_post_terms($post->ID, 'ubicaciones');
-if (!empty($terms)) {
-    foreach ($terms as $term) {
-        $parent = $term->parent;
-        $lugar = $term->name;
-    }
-}
-?>
+        $terms = wp_get_post_terms($post->ID, 'ubicaciones');
+        if (!empty($terms)) {
+            foreach ($terms as $term) {
+                $parent = $term->parent;
+                $lugar = $term->name;
+            }
+        }
+        ?>
 <?php if (have_rows('slider_proyecto')) : ?>
 <section class="position-relative">
     <div class="master-carousel owl-carousel primary-hero">
@@ -86,7 +86,7 @@ if (!empty($terms)) {
             // vars
             $slider_proyecto_desktop = get_sub_field('slider_proyecto_desktop');
             $slider_proyecto_mobile = get_sub_field('slider_proyecto_mobile');
-        ?>
+            ?>
         <div class="item project-hero position-relative">
             <!-- <div class="project-hero-left-overlay"></div> -->
             <div class="project-hero-right-overlay"></div>
@@ -110,10 +110,10 @@ if (!empty($terms)) {
         </div>
         <?php endwhile; ?>
     </div>
-    <?php if ($theme === 'dark'): ?>
-        <?php include( locate_template( './includes/templates/banner-proyecto-dark.php', false, false) ); ?>
+    <?php if ($theme === 'dark') : ?>
+        <?php include(locate_template('./includes/templates/banner-proyecto-dark.php', false, false)); ?>
     <?php else: ?>
-        <?php include( locate_template( './includes/templates/banner-proyecto-light.php', false, false) ); ?>
+        <?php include(locate_template('./includes/templates/banner-proyecto-light.php', false, false)); ?>
     <?php endif; ?>
 </section>
 <?php endif; ?>
@@ -122,7 +122,7 @@ if (!empty($terms)) {
 <section class="container py-md-5">
     <div class="row py-5 align-items-center" id="proyecto">
         <div class="col-md-6">
-            <?php if ($theme === 'dark'): ?>
+            <?php if ($theme === 'dark') : ?>
             <h2 class="mb-5">
                 <img src="<?php echo $logo_proyecto_blanco['url'];?>" alt="<?php echo $logo_proyecto_blanco['alt'];?>" class="pr-4" style="max-height:100px">
                 <div class="sr-only"><?php echo the_title(); ?></div>
@@ -140,22 +140,22 @@ if (!empty($terms)) {
                 <b>Los espacios y terminaciones que hacen la diferencia:</b>
             </p>
             <ul class="pl-4" style="list-style-type: disc !important;">
-                <?php foreach ($terminaciones_repeater as $clave=>$terminaciones_item):?>
+                <?php foreach ($terminaciones_repeater as $clave => $terminaciones_item) :?>
                 <li><?php echo $terminaciones_item['terminaciones_item'];?></li>
                 <?php endforeach; ?>
             </ul>
             <?php endif; ?>
-            <?php if( $folleto ): ?>
+            <?php if ($folleto) : ?>
                 <a href="<?php echo $folleto; ?>" class="btn <?php echo $theme === 'dark' ? 'btn-primary' : 'btn-secondary'; ?>  btn-sm shadow py-2 my-3 mr-4 text-capitalize" target="_blank">descargar folleto</a>
             <?php endif; ?>
-            <?php if ($video_personalizable): ?>
+            <?php if ($video_personalizable) : ?>
                 <a href="javascript:void();"  class="playvideo btn <?php echo $theme === 'dark' ? 'btn-primary' : 'btn-secondary'; ?>  btn-sm shadow py-2 my-3 mr-4 text-capitalize" data-src="https://www.youtube.com/embed/<?php echo $video_personalizable; ?>" data-toggle="modal" data-target="#homeVideo">
                     <?php echo $texto_boton_video_personalizable ? $texto_boton_video_personalizable : 'Ver Vídeo'; ?>
                 </a>
             <?php endif; ?>
             <a href="<?php echo site_url('/pasos-a-seguir') ?>" class="btn btn-sm  <?php echo $theme === 'dark' ? 'btn-secondary' : 'btn-primary'; ?> shadow py-2 my-3" target="_blank">Conocer Proceso de Compra</a>
         </div>
-        <?php if ( $video ) : ?>
+        <?php if ($video) : ?>
             <div class="col-md-6 d-none d-md-block">
                 <div class="video-portada">
                     <a href="javascript:void();" class="item p-5 d-block playvideo playvideoImage" data-src="https://www.youtube.com/embed/<?php echo $video; ?>" data-toggle="modal" data-target="#homeVideo">
@@ -170,7 +170,7 @@ if (!empty($terms)) {
                     <?php while (have_rows('slider_arquitectura')) : the_row();
                         // vars
                         $slider_arquitectura_desktop = get_sub_field('slider_arquitectura_desktop');
-                    ?>
+                        ?>
                     <div class="item p-5">
                         <img src="<?php echo $slider_arquitectura_desktop['url'];?>" alt="<?php echo $slider_arquitectura_desktop['alt'];?>" class="w-100">
                     </div>
@@ -187,10 +187,10 @@ if (!empty($terms)) {
 <section class="container pb-5">
     <div class="row">
         <?php while (have_rows('banners_opcionales')) : the_row();
-        // vars
-        $imagen = get_sub_field('banner_image');
-        $enlace = get_sub_field('enlace_imagen');
-        ?>
+            // vars
+            $imagen = get_sub_field('banner_image');
+            $enlace = get_sub_field('enlace_imagen');
+            ?>
             <div class="col-md-6">
                 <a href="<?php echo $enlace; ?>">
                     <img src="<?php echo $imagen['url'];?>" alt="<?php echo $imagen['alt'];?>" class="w-100">
@@ -213,14 +213,14 @@ if (!empty($terms)) {
 
 <?php if ($caracteristicas_proyecto) : ?>
 <section
-    class="container-fluid mb-5 <?php if ($theme !== 'dark'): ?> bg-azul <?php else: ?> bg-theme-dark-emphasis-color <?php endif; ?>"
-    style="<?php if ($theme !== 'dark'): ?>  background-image: url('<?php echo $slider_proyecto_desktop['url'];?>');<?php endif; ?>">
+    class="container-fluid mb-5 <?php if ($theme !== 'dark') : ?> bg-azul <?php else: ?> bg-theme-dark-emphasis-color <?php endif; ?>"
+    style="<?php if ($theme !== 'dark') : ?>  background-image: url('<?php echo $slider_proyecto_desktop['url'];?>');<?php endif; ?>">
     <div class="container ">
         <div class="row py-5" id="caracteristicas">
             <div class="col-12 text-white">
-                <?php if ($titulo_seccion_caracteristicas): ?>
+                <?php if ($titulo_seccion_caracteristicas) : ?>
                     <h4 class="text-white text-uppercase text-center py-5">
-                        <?php if ($icono_titulo_seccion_caracteristicas): ?>
+                        <?php if ($icono_titulo_seccion_caracteristicas) : ?>
                             <span class="d-block d-md-inline">
                                 <img src="<?php echo $icono_titulo_seccion_caracteristicas['url']; ?>" alt="<?php echo $icono_titulo_seccion_caracteristicas['alt']; ?>" class="pr-2" style="max-height:80px">
                             </span>
@@ -239,7 +239,7 @@ if (!empty($terms)) {
                             <p class="py-2 px-4 px-md-0 project-icons-title"><?php echo $caracteristicas_proyect['label']; ?></p>
                         </li>
                     <?php endforeach; ?>
-                    <?php if($caracteristica_personalizada):
+                    <?php if ($caracteristica_personalizada) :
                         foreach ($caracteristica_personalizada as $item) : ?>
                         <li class="mx-md-4 text-center d-flex flex-column project-icons">
                             <div class="">
@@ -255,7 +255,7 @@ if (!empty($terms)) {
 </section>
 <?php endif; ?>
 
-<?php if ($bloque_caracteristicas): ?>
+<?php if ($bloque_caracteristicas) : ?>
 <section class="container my-5">
     <div class="row pt-3" id="caracteristicas">
         <div class="col-12 text-white">
@@ -285,26 +285,26 @@ if (!empty($terms)) {
         )
     );
 
-    $apiArgs = array(
-        'post_type'          => 'plantas_api',
-        'posts_per_page'    => -1,
-        'post_status'        => 'publish',
-        'meta_query' => array(
-            array(
-                'key' => 'id_proyecto',
-                'value' => '' . $id_planok . '',
-                'compare' => '='
-            )
-        ),
-        'meta_key' => 'superficie_total',
-        'orderby' => 'meta_value_num',
-        'order' => 'ASC',
-    );
+        $apiArgs = array(
+            'post_type'          => 'plantas_api',
+            'posts_per_page'    => -1,
+            'post_status'        => 'publish',
+            'meta_query' => array(
+                array(
+                    'key' => 'id_proyecto',
+                    'value' => '' . $id_planok . '',
+                    'compare' => '='
+                )
+            ),
+            'meta_key' => 'superficie_total',
+            'orderby' => 'meta_value_num',
+            'order' => 'ASC',
+        );
 
-    $localQuery = $id_planok ? $apiArgs : $localArgs;
+        $localQuery = $id_planok ? $apiArgs : $localArgs;
 
-    $query = new WP_Query($localQuery);
-if ($query->have_posts()) : ?>
+        $query = new WP_Query($localQuery);
+        if ($query->have_posts()) : ?>
 <section class="container-fluid pt-5" id="plantas">
     <div class="container mt-5">
         <div class="row mt-5">
@@ -332,29 +332,29 @@ if ($query->have_posts()) : ?>
         <div class="row">
             <?php while ($query->have_posts()) : $query->the_post();
 
-                    $estado = get_field('estado');
-                    $texto_titulo = get_field('texto_titulo');
+                $estado = get_field('estado');
+                $texto_titulo = get_field('texto_titulo');
 
-                    $post_id = get_the_ID();
-                    $superficie_total = get_field('superficie_total');
-                    $cantidad_de_banos = get_field('cantidad_de_banos');
+                $post_id = get_the_ID();
+                $superficie_total = get_field('superficie_total');
+                $cantidad_de_banos = get_field('cantidad_de_banos');
 
-                    $dormitorios_para_filtrar = get_field_object('dormitorios_para_filtrar');
-                    $value = $dormitorios_para_filtrar['value'];
-                    $label = $dormitorios_para_filtrar['choices'][$value];
+                $dormitorios_para_filtrar = get_field_object('dormitorios_para_filtrar');
+                $value = $dormitorios_para_filtrar['value'];
+                $label = $dormitorios_para_filtrar['choices'][$value];
 
-                    $fotografia_planta = get_field('repeater_fotografias');
-                    $fotografia_planta_mobile = $fotografia_planta[0]['fotografia_planta']['url'];
-                    $ficha_planta = get_field('ficha');
+                $fotografia_planta = get_field('repeater_fotografias');
+                $fotografia_planta_mobile = $fotografia_planta[0]['fotografia_planta']['url'];
+                $ficha_planta = get_field('ficha');
 
-                    $nombre_comercial = get_field('nombre_comercial');
+                $nombre_comercial = get_field('nombre_comercial');
                 ?>
 
             <div class="col-sm-6 col-lg-4 planta <?php echo $value; ?> <?php // echo ($estado == 'Normal') ? "active" : "";?> active">
-                <?php //if ($estado == 'Normal') : ?>
+                <?php //if ($estado == 'Normal') :?>
 
                     <a
-                        href="<?php echo ($planok && !$id_planok) ? "#": the_permalink(); ?>"
+                        href="<?php echo ($planok && !$id_planok) ? "#" : the_permalink(); ?>"
                         class="<?php echo ($planok && !$id_planok) ? 'cotizacionHit' : '' ?>"
                         <?php echo ($planok && !$id_planok) ? 'data-toggle="modal" data-target="#planok-modal"' : '';?>
                     >
@@ -371,12 +371,13 @@ if ($query->have_posts()) : ?>
                                         <?php echo $nombre_comercial; ?>
                                     <?php else : ?>
                                         <b><?php echo esc_html($label); ?> +</b>
-                                        <b><?php echo $cantidad_de_banos; echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
+                                        <b><?php echo $cantidad_de_banos;
+                                        echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
                                         </b>
-                                        <?php // echo $post_id; ?>
+                                        <?php // echo $post_id;?>
                                     <?php endif; ?>
                                 </p>
-                                
+
                                 <?php if ($fotografia_planta) : ?>
                                     <div style="overflow: hidden;position: relative;">
                                         <?php if ($estado == 'Agotado') : ?>
@@ -387,8 +388,8 @@ if ($query->have_posts()) : ?>
                                             alt="<?php echo $row['fotografia_planta']['name']; ?>">
                                     </div>
                                 <?php else :
-                                    $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
-                                 ?>
+                                    $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large');
+                                    ?>
                                     <div style="overflow: hidden;position: relative;">
                                         <img class="m-auto pb-4 fotografia-planta"
                                             src="<?php echo $thumb ? $thumb[0] : bloginfo('template_directory') . '/assets/img/no-image.jpg';?>"
@@ -407,7 +408,7 @@ if ($query->have_posts()) : ?>
                                         <img src="<?php bloginfo('template_directory');?>/assets/img/batIcon.png" alt="Baños"
                                             style="max-width:24px">
                                         <small><?php echo $cantidad_de_banos;
-                                                    echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
+                echo ($cantidad_de_banos == "1") ? " Baño" : " Baños"; ?>
                                         </small>
                                     </li>
                                     <li class="">
@@ -436,20 +437,20 @@ if ($query->have_posts()) : ?>
                             </div>
                         </div>
                     </a>
-                <?php //endif; ?>
+                <?php //endif;?>
             </div>
 
             <?php endwhile;
-                wp_reset_postdata(); ?>
+        wp_reset_postdata(); ?>
         </div>
     </div>
 </section>
 <?php endif; ?>
 
 
-<?php if (have_rows('repeater_galerias')) : 
-    $counter = 1; 
-?>
+<?php if (have_rows('repeater_galerias')) :
+    $counter = 1;
+    ?>
 <div class="py-5" id="galeria">
     <div class="container mb-5">
         <div class="row mt-5" >
@@ -460,11 +461,11 @@ if ($query->have_posts()) : ?>
                     </div>
                     <ul class="nav nav-tabs border-0 text-uppercase" id="galleryTab" role="tablist">
                     <?php while (have_rows('repeater_galerias')) : the_row();
-                    // vars
-                    $tipo_de_galeria = get_sub_field('tipo_de_galeria');
-                    $destacado = get_sub_field('destacado');
-                    $icono = get_sub_field('icono');
-                    ?>
+                        // vars
+                        $tipo_de_galeria = get_sub_field('tipo_de_galeria');
+                        $destacado = get_sub_field('destacado');
+                        $icono = get_sub_field('icono');
+                        ?>
                         <li class="tab-item mr-2 mb-2 mx-md-2">
                             <a class="btn btn-sm btn-secondary" style="<?php echo $destacado ? 'background-color: tomato !important;' : ''; ?>" id="edificio-<?php echo $counter; ?>-tab" data-toggle="tab" href="#edificio-<?php echo $counter; ?>" role="tab" aria-controls="edificio-<?php echo $counter; ?>" aria-selected="true" >
                                 <?php echo $icono ? $icono.' ' : ''; ?><?php echo $tipo_de_galeria;?>
@@ -480,25 +481,25 @@ if ($query->have_posts()) : ?>
     </div>
 <?php endif; ?>
 
-<?php if (have_rows('repeater_galerias')) : 
-    $counter2 = 1; 
-?>
-<div class="tab-content" id="galleryTabContent" >
-    <?php while (have_rows('repeater_galerias')) : the_row(); 
-    
-    $tipo_de_modulo = get_sub_field('tipo_de_modulo');
-    $url_360 = get_sub_field('url_360');
-    $youtube_video_id = get_sub_field('youtube_video_id');
-    //echo $tipo_de_modulo ;
-    //print_r($tipo_de_modulo);
-    if ($tipo_de_modulo === '360'):
+<?php if (have_rows('repeater_galerias')) :
+    $counter2 = 1;
     ?>
+<div class="tab-content" id="galleryTabContent" >
+    <?php while (have_rows('repeater_galerias')) : the_row();
+
+        $tipo_de_modulo = get_sub_field('tipo_de_modulo');
+        $url_360 = get_sub_field('url_360');
+        $youtube_video_id = get_sub_field('youtube_video_id');
+        //echo $tipo_de_modulo ;
+        //print_r($tipo_de_modulo);
+        if ($tipo_de_modulo === '360') :
+            ?>
     <div class="tab-pane fade" id="edificio-<?php echo $counter2;?>" role="tabpanel" aria-labelledby="edificio-<?php echo $counter2;?>-tab" style="position:relative;">
         <iframe <?php echo (is_single(128)) ? 'scrolling="no" style="overflow:hidden;"' : '';?> width="100%" height="522"
                 src="<?php echo $url_360; ?>" frameborder="0" allowfullscreen=""></iframe>
     </div>
     <?php endif; ?>
-    <?php if ($tipo_de_modulo === 'youtube'): ?>
+    <?php if ($tipo_de_modulo === 'youtube') : ?>
         <div class="tab-pane fade" id="edificio-<?php echo $counter2;?>" role="tabpanel" aria-labelledby="edificio-<?php echo $counter2;?>-tab" style="position:relative;">
             <div id="video-<?php echo get_row_index(). '-' . the_title();?>" class="video-wrapper container">
                 <figure
@@ -520,15 +521,15 @@ if ($query->have_posts()) : ?>
             </div>
         </div>
     <?php endif; ?>
-    <?php if ($tipo_de_modulo === 'slider'): ?>
+    <?php if ($tipo_de_modulo === 'slider') : ?>
         <?php if (have_rows('slider_galerias')) : ?>
             <div class="tab-pane fade" id="edificio-<?php echo $counter2;?>" role="tabpanel" aria-labelledby="edificio-<?php echo $counter2;?>-tab" style="position:relative;">
                 <div class="owl-carousel owl-theme  gallery-caarousel">
                     <?php while (have_rows('slider_galerias')) : the_row();
-                    // vars
-                    $slider_galerias_desktop = get_sub_field('slider_galerias_desktop');
-                    $etiqueta_imagen= get_sub_field('etiqueta_imagen');
-                    ?>
+                        // vars
+                        $slider_galerias_desktop = get_sub_field('slider_galerias_desktop');
+                        $etiqueta_imagen = get_sub_field('etiqueta_imagen');
+                        ?>
                     <div class="item">
                         <a href="<?php echo esc_url($slider_galerias_desktop['url']); ?>" data-fancybox="edificio-<?php echo $counter2;?>">
                             <img src="<?php echo $slider_galerias_desktop['url'];?>" alt="<?php echo $slider_galerias_desktop['alt'];?>">
@@ -547,7 +548,7 @@ if ($query->have_posts()) : ?>
 </div>
 <?php endif; ?>
 
-<?php if (have_rows('slider_master_plan')) : 
+<?php if (have_rows('slider_master_plan')) :
     $counter3 = 1;?>
 <div class="pt-5" id="masterPlan">
     <div class="container-fluid">
@@ -562,9 +563,9 @@ if ($query->have_posts()) : ?>
                         </div>
                         <ul class="nav nav-tabs border-0 text-uppercase" id="masterPlanTab" role="tablist">
                         <?php while (have_rows('slider_master_plan')) : the_row();
-                        // vars
-                        $slider_master_plan_titulo = get_sub_field('slider_master_plan_titulo');
-                        ?>
+                            // vars
+                            $slider_master_plan_titulo = get_sub_field('slider_master_plan_titulo');
+                            ?>
                             <li class="tab-item mr-2 mb-2 mx-md-2">
                                 <a class="btn btn-sm btn-secondary" id="plan-<?php echo $counter3; ?>-tab" data-toggle="tab" href="#plan-<?php echo $counter3; ?>" role="tab" aria-controls="plan-<?php echo $counter3; ?>" aria-selected="true"><?php echo $slider_master_plan_titulo;?></a>
                             </li>
@@ -579,10 +580,10 @@ if ($query->have_posts()) : ?>
 </div>
 <?php endif; ?>
 
-<?php if (have_rows('slider_master_plan')) : 
+<?php if (have_rows('slider_master_plan')) :
     $counter4 = 1;
     $counter5 = 1;
-?>
+    ?>
 <div class="container-fluid bg-medio-azul px-0 pt-3 pb-4 mb-5 <?php echo ($theme === 'dark') ? 'dark' : '';?>">
     <div class="container-md p-0 p-md-4 tab-content mt-2">
         <?php while (have_rows('slider_master_plan')) : the_row();
@@ -591,22 +592,22 @@ if ($query->have_posts()) : ?>
             $slider_master_plan_detalle = get_sub_field('slider_master_plan_detalle');
             $slider_master_plan_titulo = get_sub_field('slider_master_plan_titulo');
             $items = get_sub_field('items');
-        ?>
+            ?>
         <div class="tab-pane fade" id="plan-<?php echo $counter4;?>" role="tabpanel" aria-labelledby="plan-<?php echo $counter4;?>-tab" style="position:relative;">
             <div class="shadow bg-white p-md-5">
                 <h5 class="ml-auto  p-2 py-md-4 color-primary text-uppercase font-weight-bold"><?php echo $slider_master_plan_titulo;?></h5>
                 <a href="<?php echo esc_url($slider_master_plan_detalle['url']); ?>" data-fancybox="gallery">
                     <img src="<?php echo $slider_master_plan_desktop['url'];?>" alt="<?php echo $slider_master_plan_desktop['alt'];?>" class="w-100">
                 </a>
-                <?php if ($items): ?>
+                <?php if ($items) : ?>
                 <ul class="d-flex flex-wrap flex-row justify-content-center py-2 m-2">
-                    <?php 
-                    foreach( $items as $clave=>$valor ) {
-                        echo '<li class="d-flex align-items-center my-2 master-plan-bullets">';
-                        echo '<span class="mp-list-bg"> <span class="mp-list-number">'.($clave + 1).'</span></span>';
-                        echo '<span class="mp-list-text">'.$valor['item_title'].'</span>';
-                        echo '</li>';
-                    }
+                    <?php
+                        foreach ($items as $clave => $valor) {
+                            echo '<li class="d-flex align-items-center my-2 master-plan-bullets">';
+                            echo '<span class="mp-list-bg"> <span class="mp-list-number">'.($clave + 1).'</span></span>';
+                            echo '<span class="mp-list-text">'.$valor['item_title'].'</span>';
+                            echo '</li>';
+                        }
                     ?>
                 </ul>
                 <?php endif;?>
@@ -619,7 +620,7 @@ if ($query->have_posts()) : ?>
         <?php while (have_rows('slider_master_plan')) : the_row();?>
             <li class="tab-item mx-md-2">
                 <a class="p-2 planB-tab-item" id="planB-<?php echo $counter5; ?>-tab" data-toggle="tab" href="#plan-<?php echo $counter5; ?>" role="tab" aria-controls="plan-<?php echo $counter5; ?>" aria-selected="true">
-                <?php echo $counter5 === 1 ? '<span aria-label="Next">‹</span>': '<span aria-label="Next">›</span>';?>
+                <?php echo $counter5 === 1 ? '<span aria-label="Next">‹</span>' : '<span aria-label="Next">›</span>';?>
                 </a>
             </li>
 
@@ -631,8 +632,8 @@ if ($query->have_posts()) : ?>
 <?php endif; ?>
 
 
-<?php if ( ($descripcion_de_entorno and $gmaps) || ($descripcion_de_entorno and $mapa_de_ubicacion) ) : ?>
-<section class="container-fluid <?php if ($theme !== 'dark'): ?>bg-white<?php else:?>bg-dark-grey<?php endif;?>">
+<?php if (($descripcion_de_entorno and $gmaps) || ($descripcion_de_entorno and $mapa_de_ubicacion)) : ?>
+<section class="container-fluid <?php if ($theme !== 'dark') : ?>bg-white<?php else:?>bg-dark-grey<?php endif;?>">
     <div class="row align-items-stretch shadow" id="ubicacion">
         <div class="col-lg-4 offset-xl-2 py-5 d-md-flex align-items-center">
             <div class="mt-xl-5 max-w-480">
@@ -678,32 +679,32 @@ if ($query->have_posts()) : ?>
 </section>
 
 <?php
-include( locate_template( './includes/templates/banner-pasos.php', false, false) ); 
-?>
+include(locate_template('./includes/templates/banner-pasos.php', false, false));
+        ?>
 
 <?php endif; ?>
-<?php if($whatsapp || $correos_ventas): ?>
-<section class="d-none d-lg-block contact-floating-container">
-    <ul class="contact-floating-list px-2 d-flex flex-column justify-content-between align-items-center">
-        <?php if($whatsapp): ?>
-            <li class="contact-floating-whatsapp">
-                <a href="#" class="contact-floating-link whatsappButton">
-                    <i class="fab fa-whatsapp"></i>
+<?php if ($whatsapp || $correos_ventas) : ?>
+<section class="contact-floating-container">
+    <ul class="contact-floating-list px-2 d-flex flex-column justify-content-between align-items-end">
+        <?php if ($correos_ventas) : ?>
+            <li class="contact-floating-form">
+                <a href="#" class="contact-floating-link contactFloatingForm d-block">
+                    <img class="w-100" src="<?php bloginfo('template_directory');?>/assets/img/btn-form.svg" alt="contacto" width="50" height="50">
                 </a>
             </li>
         <?php endif; ?>
-        <?php if ($correos_ventas): ?>
-            <li class="contact-floating-form">
-                <a href="#" class="contact-floating-link contactFloatingForm">
-                    <img src="<?php bloginfo('template_directory');?>/assets/img/btn-form.svg" alt="contacto" width="60" height="60">
+        <?php if ($whatsapp) : ?>
+            <li class="contact-floating-whatsapp">
+                <a href="#" class="contact-floating-link whatsappButton">
+                    <img class="w-100" src="<?php bloginfo('template_directory');?>/assets/img/btn-whataspp.svg" alt="contacto" width="120" height="50">
                 </a>
             </li>
         <?php endif; ?>
     </ul>
 </section>
-<?php 
-include( locate_template( './includes/templates/whatsapp-modal.php', false, false) );
-?>
+    <?php
+      include locate_template('./includes/templates/whatsapp-modal.php', false, false);
+    ?>
 <div class="form-modal bg-white">
     <div class="p-5">
         <div class="form-modal-header">
@@ -770,14 +771,14 @@ include( locate_template( './includes/templates/whatsapp-modal.php', false, fals
                 <i class="fab fa-linkedin"></i>
             </a>
         </li>
-        <?php if($whatsapp): ?>
+        <?php if ($whatsapp) : ?>
             <li class="contact-mobile-item contact-floating-whatsapp">
                 <a href="#" class="contact-mobile-link contact-floating-link whatsappButton">
                     <i class="fab fa-whatsapp"></i>
                 </a>
             </li>
         <?php endif; ?>
-        <?php if ($correos_ventas): ?>
+        <?php if ($correos_ventas) : ?>
             <li class="contact-mobile-item contact-floating-form">
                 <a href="#" class="contact-mobile-link contact-floating-link contactFloatingForm">
                     <i class="far fa-envelope"></i>
@@ -1013,6 +1014,6 @@ include( locate_template( './includes/templates/whatsapp-modal.php', false, fals
 </div>
 <?php endif;?>
 <?php
-bk_main_after();
-get_template_part('includes/footer');
-?>
+        bk_main_after();
+        get_template_part('includes/footer');
+        ?>
