@@ -92,13 +92,13 @@ $(function () {
   });
   $("#whatsappButton").on("click", function (e) {
     e.preventDefault();
-    console.log("whatsappButton");
-    $(".ws-form").removeClass("d-none");
-    $(".whatsapp-modal").toggleClass("whatsapp-modal-open");
     if (isHome) {
-      $(".ws-project").show();
       $(".ws-form").addClass("d-none");
+      $(".ws-project").show();
+      $(".whatsapp-modal").toggleClass("whatsapp-modal-open");
+      return;
     }
+    // $(".ws-form").removeClass("d-none");
   });
 
   $("#selectProjectWhatsapp").on("click", function (e) {
@@ -467,12 +467,6 @@ $(function () {
     Calendly.initPopupWidget({ url: "https://calendly.com/ibrick/30min" });
     return false;
   });
-
-  $(".whatsappButton").on("click", function () {});
-
-  $(".boton_enviar_whatsapp").on("click", function () {});
-
-  $(".cotizacionHit").on("click", function () {});
 
   // Validacion de Formularios
   $(".wpcf7Whatsapp").on("wpcf7mailsent", function (event) {

@@ -106,7 +106,7 @@
     // padding: 22px;
   }
   &-whatsapp {
-    width: 180px;
+    width: 190px;
     height: 50px;
     // display: none;
     // background: #00bfa5;
@@ -126,8 +126,8 @@
   }
   &-form {
     margin-bottom: 10px;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
   }
   //   background: #2dafe9;
   //   border-radius: 50rem;
@@ -202,6 +202,7 @@
 }
 
 .form-modal {
+  z-index: 99999999999;
   right: 0;
   color: $brand-secondary-color;
   @include MQ(M) {

@@ -685,17 +685,17 @@ include(locate_template('./includes/templates/banner-pasos.php', false, false));
 <?php endif; ?>
 <?php if ($whatsapp || $correos_ventas) : ?>
 <section class="contact-floating-container">
-    <ul class="contact-floating-list px-2 d-flex flex-column justify-content-between align-items-end">
+    <ul class="contact-floating-list mb-4 mr-4 d-flex flex-column justify-content-between align-items-end">
         <?php if ($correos_ventas) : ?>
             <li class="contact-floating-form">
                 <a href="#" class="contact-floating-link contactFloatingForm d-block">
-                    <img class="w-100" src="<?php bloginfo('template_directory');?>/assets/img/btn-form.svg" alt="contacto" width="50" height="50">
+                    <img class="w-100" src="<?php bloginfo('template_directory');?>/assets/img/btn-form.svg" alt="contacto" width="60" height="60">
                 </a>
             </li>
         <?php endif; ?>
         <?php if ($whatsapp) : ?>
             <li class="contact-floating-whatsapp">
-                <a href="#" class="contact-floating-link whatsappButton" id="whatsappButton">
+      <a href="#" class="contact-floating-link whatsappButton" id="whatsappButton" data-message="<?php echo the_title(); ?>" data-number="<?php echo $whatsapp; ?>">
                     <img class="w-100" src="<?php bloginfo('template_directory');?>/assets/img/btn-whataspp.svg" alt="contacto" width="120" height="50">
                 </a>
             </li>

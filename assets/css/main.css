@@ -537,14 +537,14 @@ button:focus {
   z-index: 999999;
 }
 .contact-floating-whatsapp {
-  width: 180px;
+  width: 190px;
   height: 50px;
   transition: 0.2s ease-in-out all;
 }
 .contact-floating-form {
   margin-bottom: 10px;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
 }
 
 .social-fixed-container {
@@ -619,6 +619,7 @@ button:focus {
 }
 
 .form-modal {
+  z-index: 99999999999;
   right: 0;
   color: #3c3c3c;
 }
