@@ -22,6 +22,7 @@ get_template_part('includes/header');
         $tipologia_select = $grupo_de_datos['tipologia_select'];
         $legal = $grupo_de_datos['legal'];
         $whatsapp = $grupo_de_datos['whatsapp'];
+        $whatsappText = $grupo_de_datos['texto_whatsapp_personalizado'];
         $correos_ventas = $grupo_de_datos['correos_ventas'];
         $tag_del_ptroyecto = $grupo_de_datos['tag_del_ptroyecto'];
         $caracteristicas_proyecto = $grupo_de_datos['caracteristicas_proyecto'];
@@ -695,9 +696,9 @@ include(locate_template('./includes/templates/banner-pasos.php', false, false));
         <?php endif; ?>
         <?php if ($whatsapp) : ?>
             <li class="contact-floating-whatsapp">
-      <a href="#" class="contact-floating-link whatsappButton" id="whatsappButton" data-message="<?php echo the_title(); ?>" data-number="<?php echo $whatsapp; ?>">
-                    <img class="w-100" src="<?php bloginfo('template_directory');?>/assets/img/btn-whataspp.svg" alt="contacto" width="120" height="50">
-                </a>
+              <a href="<?php echo 'https://wa.me/' . $whatsapp . '/?text=' . urlencode($whatsappText); ?>" target="_blank" rel="noopener" aria-label="Contáctanos por WhatsApp" class="contact-floating-link whatsappButton" id="whatsappButton" data-message="<?php echo the_title(); ?>" data-number="<?php echo $whatsapp; ?>">
+                <img class="w-100" src="<?php bloginfo('template_directory');?>/assets/img/btn-whataspp.svg" alt="contacto" width="120" height="50">
+              </a>
             </li>
         <?php endif; ?>
     </ul>

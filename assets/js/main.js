@@ -90,16 +90,16 @@ $(function () {
     e.preventDefault();
     $(".form-modal").removeClass("form-modal-open");
   });
-  $("#whatsappButton").on("click", function (e) {
-    e.preventDefault();
-    if (isHome) {
-      $(".ws-form").addClass("d-none");
-      $(".ws-project").show();
-      $(".whatsapp-modal").toggleClass("whatsapp-modal-open");
-      return;
-    }
-    // $(".ws-form").removeClass("d-none");
-  });
+  // $("#whatsappButton").on("click", function (e) {
+  //   e.preventDefault();
+  //   if (isHome) {
+  //     $(".ws-form").addClass("d-none");
+  //     $(".ws-project").show();
+  //     $(".whatsapp-modal").toggleClass("whatsapp-modal-open");
+  //     return;
+  //   }
+  //   // $(".ws-form").removeClass("d-none");
+  // });
 
   $("#selectProjectWhatsapp").on("click", function (e) {
     e.preventDefault();
