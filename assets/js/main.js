@@ -927,7 +927,7 @@ $(function () {
           })
           .catch((error) => {
             console.error(error);
-            $(".btn-pok-spinner").hide();
+            $(".btn-pok-spinner").removeClass("d-flex").addClass("d-none");
             $(".swal2-confirm").removeClass("cotizar-btn");
           })
           .finally(() => {
