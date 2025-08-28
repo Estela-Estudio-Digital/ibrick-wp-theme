@@ -928,7 +928,6 @@ $(function () {
           .catch((error) => {
             console.error(error);
             $(".btn-pok-spinner").removeClass("d-flex").addClass("d-none");
-            $(".swal2-confirm").removeClass("cotizar-btn");
           })
           .finally(() => {
             $(".swal2-confirm.cotizar-btn").removeClass("d-none");
