@@ -900,7 +900,12 @@ $(function () {
           redirect: "follow",
         };
 
-        fetch("http://localhost:4000/api/cotizacion", requestOptions)
+        fetch(
+          "https://api-gci-rest.integracionplanok.io/api/cotizaciones/" +
+            cotId[0].id_cotizacion +
+            "/pdf?tipoDescarga=0",
+          requestOptions,
+        )
           .then((response) => response.json())
           .then((result) => {
             console.log({ result });
