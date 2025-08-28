@@ -921,6 +921,9 @@ $(function () {
               $("#inputEmailPok").val(event.target.inputEmailCotizar.value);
               $("#inputUrlPok").val(result.url);
             }
+            if (!result.url && result?.message) {
+              throw new Error(result.message);
+            }
           })
           .catch((error) => {
             console.error(error);
