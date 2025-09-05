@@ -1,4 +1,4 @@
-<?php 
+<?php
 $id_planta = get_field('corresponde');
 $vincular_planta_a_proyecto = get_field('vincular_proyecto');
 $id_proyecto = $vincular_planta_a_proyecto[0]->ID > 1 ? $vincular_planta_a_proyecto[0]->ID : 1090;
@@ -29,16 +29,17 @@ $texto_titulo = get_field('texto_titulo', $id_proyecto);
           role="form">
           <div style="display: none;">
               <input type="hidden" name="_wpcf7" value="560">
-              <?php 
-                  $plugin_data = get_plugin_data( ABSPATH . 'wp-content/plugins/contact-form-7/wp-contact-form-7.php' );
-                  echo '<input type="hidden" name="_wpcf7_version" value="'.$plugin_data['Version'].'">';
-              ?>
+              <?php
+                  $plugin_data = get_plugin_data(ABSPATH . 'wp-content/plugins/contact-form-7/wp-contact-form-7.php');
+echo '<input type="hidden" name="_wpcf7_version" value="'.$plugin_data['Version'].'">';
+?>
               <input type="hidden" name="_wpcf7_locale" value="en_US">
               <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f560-o1">
               <input type="hidden" name="_wpcf7_container_post" value="0">
               <input type="hidden" name="nombreProyecto" class="nombreProyecto" value="<?php echo get_field('nombre_planok', $id_proyecto); ?>">
               <input type="hidden" name="idMedioLlegada" class="idMedioLlegada" value="<?php echo $medio_llegada; ?>">
-              <input type="hidden" name="producto" class="inputProducto" value="<?php echo $texto_titulo;?><?php echo esc_html($label);?> + <?php echo $cantidad_de_banos; echo ($cantidad_de_banos == "1") ? " Baño" : " Baños";?>">
+              <input type="hidden" name="producto" class="inputProducto" value="<?php echo $texto_titulo;?><?php echo esc_html($label);?> + <?php echo $cantidad_de_banos;
+echo ($cantidad_de_banos == "1") ? " Baño" : " Baños";?>">
               <input type="hidden" name="logoProyecto" class="logoProyecto">
               <input type="hidden" name="superficieUtil" class="superficieUtil">
               <input type="hidden" name="superficieTerraza" class="superficieTerraza">
@@ -136,14 +137,14 @@ $texto_titulo = get_field('texto_titulo', $id_proyecto);
             id="formulario_cotizar_ok"
         >
                 <input type="hidden" name="_wpcf7" value="2997">
-                <?php 
-                    $plugin_data = get_plugin_data( ABSPATH . 'wp-content/plugins/contact-form-7/wp-contact-form-7.php' );
-                    echo '<input type="hidden" name="_wpcf7_version" value="'.$plugin_data['Version'].'">';
-                ?>
+                <?php
+      $plugin_data = get_plugin_data(ABSPATH . 'wp-content/plugins/contact-form-7/wp-contact-form-7.php');
+echo '<input type="hidden" name="_wpcf7_version" value="'.$plugin_data['Version'].'">';
+?>
                 <input type="hidden" name="_wpcf7_locale" value="en_US">
                 <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2997-o1">
                 <input type="hidden" name="_wpcf7_container_post" value="0">
-                <input type="hidden" name="nombreProyecto" id="nombreProyectoPok" value="<?php echo $vincular_planta_a_proyecto->post_title; ?>">
+                <input type="hidden" name="nombreProyecto" id="nombreProyectoPok" value="<?php echo get_field('nombre_planok', $id_proyecto); ?>">
                 <input type="hidden" id="inputNamePok" name="inputNamePok">
                 <input type="hidden" id="inputLastNamePok" name="inputLastNamePok">
                 <input type="hidden" id="inputEmailPok" name="inputEmailPok">
