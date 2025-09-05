@@ -886,12 +886,8 @@ $(function () {
       if (!hasError && !cotId?.message) {
         $(".btn-pok-spinner").show();
         const myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-
-        const raw = JSON.stringify({
-          cotId: cotId[0].id_cotizacion,
-          token,
-        });
+        myHeaders.append("accept", "application/json");
+        myHeaders.append("Authorization", token);
 
         const requestOptions = {
           method: "GET",
