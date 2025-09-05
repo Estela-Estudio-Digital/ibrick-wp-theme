@@ -894,9 +894,8 @@ $(function () {
         });
 
         const requestOptions = {
-          method: "POST",
+          method: "GET",
           headers: myHeaders,
-          body: raw,
           redirect: "follow",
         };
 
@@ -929,8 +928,9 @@ $(function () {
             console.error(error);
             $(".btn-pok-spinner").removeClass("d-flex").addClass("d-none");
           })
-          .finally(() => {
+          .finally((data) => {
             $(".swal2-confirm.cotizar-btn").removeClass("d-none");
+            console.log("finalized: ", data);
           });
       }
       $(".btn-spinner").hide();
