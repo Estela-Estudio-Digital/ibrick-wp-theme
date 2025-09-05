@@ -59,7 +59,7 @@ include(locate_template('./includes/templates/proyectos_destacados.php', false, 
 
 
 ?>
-  <section class="rentas-section container">
+  <section class="rentas-section container d-none">
     <div class="row">
         <div class="col-md-6 pr-md-0">
             <a href="<?php echo site_url('rentas');?>" class="rentas-section__title">
