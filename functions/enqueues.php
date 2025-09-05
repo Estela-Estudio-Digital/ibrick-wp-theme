@@ -115,10 +115,10 @@ if ( ! function_exists('bk_enqueues') ) {
 		wp_register_script('addToAny-async', get_template_directory_uri() . '/assets/js/page.js', false, false, true);
 		wp_enqueue_script('addToAny-async');
 
-		if (is_front_page() || is_page('residencial') || is_page('1785') || is_singular('proyectos') || is_page('departamentos-con-entrega-inmediata')) {
-		 	wp_register_script('chatbot-js', get_template_directory_uri() . '/assets/js/chatbot.js', false, false, true);
-		 	wp_enqueue_script('chatbot-js');
-		}
+		// if (is_front_page() || is_page('residencial') || is_page('1785') || is_singular('proyectos') || is_page('departamentos-con-entrega-inmediata')) {
+		//  	wp_register_script('chatbot-js', get_template_directory_uri() . '/assets/js/chatbot.js', false, false, true);
+		//  	wp_enqueue_script('chatbot-js');
+		// }
 
 		wp_register_script('main', get_template_directory_uri() . '/assets/js/main.js', false, null, true);
 
@@ -236,6 +236,13 @@ if ( ! function_exists('bk_enqueues') ) {
 			
 			$img_repeater = get_field('repeater_fotografias');
 
+			$nombre_asesor = get_field('nombre_asesor');
+			$cargo_asesor = get_field('cargo_asesor');
+			$email_asesor = get_field('email_asesor');
+			$telefono_asesor = get_field('telefono_asesor');
+			$direccion_sala_ventas = get_field('direccion_sala_de_ventas');
+			$horario_atencion = get_field('horario_de_atencion');
+
 			array_push( 
 				$single_arr, array(
 					"nombreProyecto" => $nombreProyecto,
@@ -250,6 +257,12 @@ if ( ! function_exists('bk_enqueues') ) {
 					"corresponde" => $corresponde,
 					"unidades" => $unidades,
 					'whatsapp' => $whatsapp,
+					"nombreAsesor" => $nombre_asesor,
+					"cargoAsesor" => $cargo_asesor,
+					"emailAsesor" => $email_asesor,
+					"telefonoAsesor" => $telefono_asesor,
+					"direccionSalaVentas" => $direccion_sala_ventas,
+					"horarioAtencion" => $horario_atencion,
 				) 
 			);
 

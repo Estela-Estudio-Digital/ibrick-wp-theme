@@ -20,7 +20,13 @@ $(function () {
         whatsapp = project_data.data[0].whatsapp,
         superficieUtil = project_data.data[0].superficieUtil,
         superficieTerraza = project_data.data[0].superficieTerraza,
-        superficieTotal = project_data.data[0].superficieTotal;
+        superficieTotal = project_data.data[0].superficieTotal,
+        nombreAsesor = project_data.data[0].nombreAsesor,
+        cargoAsesor = project_data.data[0].cargoAsesor,
+        emailAsesor = project_data.data[0].emailAsesor,
+        telefonoAsesor = project_data.data[0].telefonoAsesor,
+        direccionSalaVentas = project_data.data[0].direccionSalaVentas,
+        horarioAtencion = project_data.data[0].horarioAtencion;
       $(".nombreProyecto").val(nombreProyecto);
       $(".correosVentas").val(correosVentas);
       $(".logoProyecto").val(logoProyecto);
@@ -31,6 +37,13 @@ $(function () {
       $(".corresponde").val(corresponde);
       $(".unidades").val(unidades);
       $(".whatsappProject").val(whatsapp);
+
+      $(".nombreAsesor").val(nombreAsesor);
+      $(".cargoAsesor").val(cargoAsesor);
+      $(".emailAsesor").val(emailAsesor);
+      $(".telefonoAsesor").val(telefonoAsesor);
+      $(".direccionSalaVentas").val(direccionSalaVentas);
+      $(".horarioAtencion").val(horarioAtencion);
 
       $(".superficieUtil").val(superficieUtil);
       $(".superficieTerraza").val(superficieTerraza);
@@ -71,21 +84,22 @@ $(function () {
   // Contextuales
   $(".contactFloatingForm").on("click", function (e) {
     e.preventDefault();
-    $(".form-modal").addClass("form-modal-open");
+    $(".form-modal").toggleClass("form-modal-open");
   });
   $("#formModalClose").on("click", function (e) {
     e.preventDefault();
     $(".form-modal").removeClass("form-modal-open");
   });
-  $(".whatsappButton").on("click", function (e) {
-    e.preventDefault();
-    $(".ws-form").removeClass("d-none");
-    $(".whatsapp-modal").addClass("whatsapp-modal-open");
-    if (isHome) {
-      $(".ws-project").show();
-      $(".ws-form").addClass("d-none");
-    }
-  });
+  // $("#whatsappButton").on("click", function (e) {
+  //   e.preventDefault();
+  //   if (isHome) {
+  //     $(".ws-form").addClass("d-none");
+  //     $(".ws-project").show();
+  //     $(".whatsapp-modal").toggleClass("whatsapp-modal-open");
+  //     return;
+  //   }
+  //   // $(".ws-form").removeClass("d-none");
+  // });
 
   $("#selectProjectWhatsapp").on("click", function (e) {
     e.preventDefault();
@@ -93,12 +107,6 @@ $(function () {
     $(".ws-project").show();
     $(".ws-form").addClass("d-none");
   });
-
-  // if (window.innerWidth >= 768) {
-  //   setTimeout(function () {
-  //     $(".whatsapp-modal").addClass("whatsapp-modal-open");
-  //   }, 500);
-  // }
 
   $(".whatsappModalClose").on("click", function (e) {
     e.preventDefault();
@@ -133,9 +141,9 @@ $(function () {
     $(".ws-form").removeClass("d-none");
   });
 
-  $(".formulario_page_contacto").find(".nombreProyecto").val(
-    $("#selectNombreProyecto").val()
-  );
+  $(".formulario_page_contacto")
+    .find(".nombreProyecto")
+    .val($("#selectNombreProyecto").val());
 
   $("#selectNombreProyecto").on("change", function () {
     $(".formulario_page_contacto").find(".nombreProyecto").val($(this).val());
@@ -146,12 +154,6 @@ $(function () {
   $(".follow-button-pay").fadeOut();
 
   $(window).scroll(function () {
-    // if ($(this).scrollTop() >= 731) {
-    //   $(".follow-button-pay").removeClass("d-none").addClass("d-flex");
-    // } else {
-    //   $(".follow-button-pay").removeClass("d-flex").addClass("d-none");
-    // }
-
     if ($(this).scrollTop() >= 730) {
       $(".menu-nav-fixed").fadeIn();
       $(".follow-button-pay").fadeIn();
@@ -466,12 +468,6 @@ $(function () {
     return false;
   });
 
-  $(".whatsappButton").on("click", function () {});
-
-  $(".boton_enviar_whatsapp").on("click", function () {});
-
-  $(".cotizacionHit").on("click", function () {});
-
   // Validacion de Formularios
   $(".wpcf7Whatsapp").on("wpcf7mailsent", function (event) {
     sendFormEventToGTM(event);
@@ -568,7 +564,7 @@ $(function () {
       inputTelefonoFloatante: {
         required: "Ingresa tu numero de telefono",
         minlength: jQuery.validator.format(
-          "Introduce al menos {0} carácteres."
+          "Introduce al menos {0} carácteres.",
         ),
       },
     },
@@ -609,7 +605,7 @@ $(function () {
       inputTelefonoWhatsapp: {
         required: "Ingresa tu numero de telefono",
         minlength: jQuery.validator.format(
-          "Introduce al menos {0} carácteres."
+          "Introduce al menos {0} carácteres.",
         ),
       },
     },
@@ -652,7 +648,7 @@ $(function () {
       inputTelefonoContact: {
         required: "Ingresa tu numero de telefono",
         minlength: jQuery.validator.format(
-          "Introduce al menos {0} carácteres."
+          "Introduce al menos {0} carácteres.",
         ),
       },
     },
@@ -695,7 +691,7 @@ $(function () {
       inputTelefonoCotizar: {
         required: "Ingresa tu numero de telefono",
         minlength: jQuery.validator.format(
-          "Introduce al menos {0} carácteres."
+          "Introduce al menos {0} carácteres.",
         ),
       },
     },
@@ -741,7 +737,7 @@ $(function () {
       inputTelefonoCotizar: {
         required: "Ingresa tu numero de telefono",
         minlength: jQuery.validator.format(
-          "Introduce al menos {0} carácteres."
+          "Introduce al menos {0} carácteres.",
         ),
       },
     },
@@ -787,7 +783,7 @@ $(function () {
         return false;
       }
     },
-    "Debe ser un rut valido."
+    "Debe ser un rut valido.",
   );
 
   // Validación de sólo letras y espacio
@@ -796,7 +792,7 @@ $(function () {
     function (value, element) {
       return this.optional(element) || /^[a-z\s]+$/i.test(value);
     },
-    "Por favor ingresa sólo letras."
+    "Por favor ingresa sólo letras.",
   );
 
   // Active Menu items
@@ -890,12 +886,17 @@ $(function () {
       if (!hasError && !cotId?.message) {
         $(".btn-pok-spinner").show();
         const myHeaders = new Headers();
-        myHeaders.append("accept", "application/json");
-        myHeaders.append("Authorization", token);
+        myHeaders.append("Content-Type", "application/json");
+
+        const raw = JSON.stringify({
+          cotId: cotId[0].id_cotizacion,
+          token,
+        });
 
         const requestOptions = {
-          method: "GET",
+          method: "POST",
           headers: myHeaders,
+          body: raw,
           redirect: "follow",
         };
 
@@ -903,10 +904,11 @@ $(function () {
           "https://api-gci-rest.integracionplanok.io/api/cotizaciones/" +
             cotId[0].id_cotizacion +
             "/pdf?tipoDescarga=0",
-          requestOptions
+          requestOptions,
         )
           .then((response) => response.json())
           .then((result) => {
+            console.log({ result });
             if (result?.url) {
               $(".btn-pok-cot").attr("href", result.url);
               $(".btn-pok-spinner").removeClass("d-flex").addClass("d-none");
@@ -914,16 +916,18 @@ $(function () {
 
               $("#inputNamePok").val(event.target.inputNameCotizar.value);
               $("#inputLastNamePok").val(
-                event.target.inputLastNameCotizar.value
+                event.target.inputLastNameCotizar.value,
               );
               $("#inputEmailPok").val(event.target.inputEmailCotizar.value);
               $("#inputUrlPok").val(result.url);
             }
+            if (!result.url && result?.message) {
+              throw new Error(result.message);
+            }
           })
           .catch((error) => {
             console.error(error);
-            $(".btn-pok-spinner").hide();
-            $(".swal2-confirm").removeClass("cotizar-btn");
+            $(".btn-pok-spinner").removeClass("d-flex").addClass("d-none");
           })
           .finally(() => {
             $(".swal2-confirm.cotizar-btn").removeClass("d-none");
@@ -992,7 +996,7 @@ function _object_spread(target) {
       ownKeys = ownKeys.concat(
         Object.getOwnPropertySymbols(source).filter(function (sym) {
           return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-        })
+        }),
       );
     }
     ownKeys.forEach(function (key) {
@@ -1023,7 +1027,7 @@ function _object_spread_props(target, source) {
       Object.defineProperty(
         target,
         key,
-        Object.getOwnPropertyDescriptor(source, key)
+        Object.getOwnPropertyDescriptor(source, key),
       );
     });
   }
@@ -1061,7 +1065,7 @@ function sendModelEventToGTM(event) {
       : (_event_detail_inputs_ = _event_detail.inputs[0]) === null ||
         _event_detail_inputs_ === void 0
       ? void 0
-      : _event_detail_inputs_.value
+      : _event_detail_inputs_.value,
   );
   var modelTitle = cleanText(
     (_event_detail1 = event.detail) === null || _event_detail1 === void 0
@@ -1069,7 +1073,7 @@ function sendModelEventToGTM(event) {
       : (_event_detail_inputs_1 = _event_detail1.inputs[2]) === null ||
         _event_detail_inputs_1 === void 0
       ? void 0
-      : _event_detail_inputs_1.value
+      : _event_detail_inputs_1.value,
   );
   var leadEmail =
     (_event_detail2 = event.detail) === null || _event_detail2 === void 0
@@ -1122,7 +1126,7 @@ function sendGralEventToGTM(event) {
       : (_event_detail_inputs_2 = _event_detail2.inputs[2]) === null ||
         _event_detail_inputs_2 === void 0
       ? void 0
-      : _event_detail_inputs_2.value
+      : _event_detail_inputs_2.value,
   );
   dataLayer.push(
     _object_spread(
@@ -1132,8 +1136,8 @@ function sendGralEventToGTM(event) {
         leadEmail: leadEmail,
         leadPhone: leadPhone,
       },
-      !!projectTitle && { projectTitle: projectTitle }
-    )
+      !!projectTitle && { projectTitle: projectTitle },
+    ),
   );
 }
 function sendProjectEventToGTM(event) {
@@ -1164,7 +1168,7 @@ function sendProjectEventToGTM(event) {
       : (_event_detail_inputs_2 = _event_detail2.inputs[0]) === null ||
         _event_detail_inputs_2 === void 0
       ? void 0
-      : _event_detail_inputs_2.value
+      : _event_detail_inputs_2.value,
   );
   dataLayer.push({
     event: BASE_EVENT_NAME,
@@ -1202,7 +1206,7 @@ function sendWSPEventToGTM(event) {
       : (_event_detail_inputs_2 = _event_detail2.inputs[0]) === null ||
         _event_detail_inputs_2 === void 0
       ? void 0
-      : _event_detail_inputs_2.value
+      : _event_detail_inputs_2.value,
   );
   dataLayer.push(
     _object_spread(
@@ -1212,8 +1216,8 @@ function sendWSPEventToGTM(event) {
         leadEmail: leadEmail,
         leadPhone: leadPhone,
       },
-      !!projectTitle && { projectTitle: projectTitle }
-    )
+      !!projectTitle && { projectTitle: projectTitle },
+    ),
   );
 }
 var formsIdFnMap = {
@@ -1246,7 +1250,7 @@ addEventListener("message", function (message) {
           leadPhone: dataObj.clientPhone,
           projectTitle: dataObj.project,
           leadType: "chatbot",
-        })
+        }),
       );
     }
   } catch (e) {

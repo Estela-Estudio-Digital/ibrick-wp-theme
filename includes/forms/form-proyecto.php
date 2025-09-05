@@ -27,7 +27,14 @@
               <input type="hidden" name="correosVentas" class="correosVentas" >
               <input type="hidden" name="logoProyecto" class="logoProyecto">
               <input type="hidden" name="urlProyecto" class="urlProyecto" value="<?php echo get_permalink();?>">
-  
+
+              <input type="hidden" name="nombreAsesor" class="nombreAsesor" value="<?php echo get_field('nombre_asesor'); ?>">
+              <input type="hidden" name="cargoAsesor" class="cargoAsesor" value="<?php echo get_field('cargo_asesor'); ?>">
+              <input type="hidden" name="emailAsesor" class="emailAsesor" value="<?php echo get_field('email_asesor'); ?>">
+              <input type="hidden" name="telefonoAsesor" class="telefonoAsesor" value="<?php echo get_field('telefono_asesor'); ?>">
+              <input type="hidden" name="direccionSalaVentas" class="direccionSalaVentas" value="<?php echo get_field('direccion_sala_de_ventas'); ?>">
+              <input type="hidden" name="horarioAtencion" class="horarioAtencion" value="<?php echo get_field('horario_de_atencion'); ?>">
+
               <input type="hidden" name="fuenteSbj" class="fuenteSbj">
               <input type="hidden" name="medioSbj" class="medioSbj">
           </div>

@@ -524,67 +524,27 @@ button:focus {
   background: #a1a1a1 !important;
 }
 
-@media screen and (min-width: 1024px) {
-  .contact-floating-list {
-    padding-right: 40px !important;
-  }
-}
 .contact-floating-container-home {
   position: fixed;
   bottom: 0;
-  left: 12px;
+  right: 0;
   z-index: 4;
 }
 .contact-floating-container {
   position: fixed;
   right: 0;
-  top: 50%;
-  bottom: auto;
-  transform: translateY(-50%);
-  z-index: 4;
-}
-.contact-floating-link {
-  display: block;
-  width: 30px;
-  height: 30px;
-  position: relative;
-  padding: 22px;
-}
-.contact-floating-link i {
-  position: relative;
-  left: 50%;
-  top: 50%;
-  bottom: auto;
-  right: auto;
-  transform: translate(-50%, -50%);
-  font-size: 1.5rem;
-  color: white;
+  bottom: 0;
+  z-index: 999999;
 }
 .contact-floating-whatsapp {
-  background: #9DCE35;
-  border-radius: 50rem;
+  width: 190px;
+  height: 50px;
   transition: 0.2s ease-in-out all;
 }
-@media screen and (min-width: 1024px) {
-  .contact-floating-whatsapp {
-    box-shadow: 0 5px 5px -3px rgba(1, 83, 72, 0.2), 0 8px 10px 1px rgba(1, 83, 72, 0.2), 0 3px 14px 2px rgba(1, 83, 72, 0.2);
-    margin-bottom: 20px;
-  }
-}
-.contact-floating-whatsapp:hover {
-  background: #019682;
-}
 .contact-floating-form {
-  background: #2DAFE9;
-  border-radius: 50rem;
-}
-@media screen and (min-width: 1024px) {
-  .contact-floating-form {
-    box-shadow: 0 5px 5px -3px rgba(1, 83, 72, 0.2), 0 8px 10px 1px rgba(1, 83, 72, 0.2), 0 3px 14px 2px rgba(1, 83, 72, 0.2);
-  }
-}
-.contact-floating-form:hover {
-  background: #2876A2;
+  margin-bottom: 10px;
+  width: 60px;
+  height: 60px;
 }
 
 .social-fixed-container {
@@ -597,6 +557,7 @@ button:focus {
   max-width: 50px;
 }
 .social-fixed-list {
+  display: none;
   padding: 10px;
 }
 @media screen and (min-width: 1024px) {
@@ -635,7 +596,8 @@ button:focus {
   color: #3c3c3c;
 }
 
-.form-modal, .whatsapp-modal {
+.form-modal,
+.whatsapp-modal {
   position: fixed;
   bottom: -400%;
   z-index: 4;
@@ -644,17 +606,20 @@ button:focus {
   transition: all 0.5s ease-in-out;
 }
 @media screen and (min-width: 768px) {
-  .form-modal, .whatsapp-modal {
+  .form-modal,
+  .whatsapp-modal {
     border: 1px solid #c3c3c3;
     width: auto;
     height: auto;
   }
 }
-.form-modal-open, .whatsapp-modal-open {
+.form-modal-open,
+.whatsapp-modal-open {
   bottom: -2px;
 }
 
 .form-modal {
+  z-index: 99999999999;
   right: 0;
   color: #3c3c3c;
 }
