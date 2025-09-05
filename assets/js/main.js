@@ -879,6 +879,7 @@ $(function () {
     $(".swal2-confirm").removeClass("swal2-styled");
     $(".swal2-confirm").addClass("btn btn-secondary cotizar-btn d-none");
 
+    let fireCotEmail = false;
     if (!pdfUrl?.error_data && token && cotId) {
       console.log({ pdfUrl, token, cotId });
       const hasError = cotId[0]?.hasError;
@@ -915,6 +916,7 @@ $(function () {
               );
               $("#inputEmailPok").val(event.target.inputEmailCotizar.value);
               $("#inputUrlPok").val(result.url);
+              fireCotEmail = true;
             }
             if (!result.url && result?.message) {
               throw new Error(result.message);
@@ -923,6 +925,7 @@ $(function () {
           .catch((error) => {
             console.error(error);
             $(".btn-pok-spinner").removeClass("d-flex").addClass("d-none");
+            fireCotEmail = false;
           })
           .finally((data) => {
             $(".swal2-confirm.cotizar-btn").removeClass("d-none");
@@ -933,7 +936,9 @@ $(function () {
     }
 
     $(".swal2-confirm.cotizar-btn").on("click", function () {
-      $("#formulario_cotizar_ok").submit();
+      if (fireCotEmail) {
+        $("#formulario_cotizar_ok").submit();
+      }
     });
 
     $(".form-modal").removeClass("form-modal-open");
