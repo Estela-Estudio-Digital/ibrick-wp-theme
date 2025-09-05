@@ -750,44 +750,6 @@ include(locate_template('./includes/templates/banner-pasos.php', false, false));
             </li>
         </ul>
 </section>
-<section class="contact-mobile d-lg-none">
-    <ul class="contact-mobile-list  d-flex align-items-center justify-content-between px-5">
-        <li class="contact-mobile-item">
-            <a target="_blank" href="https://www.instagram.com/inmobiliariabrick/" class="contact-mobile-link social-fixed-link">
-                <i class="fab fa-instagram"></i>
-            </a>
-        </li>
-        <li class="contact-mobile-item">
-            <a target="_blank" href="https://www.facebook.com/BRICK-Inmobiliaria-100180791917908" class="contact-mobile-link social-fixed-link">
-                <i class="fab fa-facebook"></i>
-            </a>
-        </li>
-        <li class="contact-mobile-item">
-            <a target="_blank" href="https://www.youtube.com/channel/UCnUmucW8Jm1T--NaiDIw_DQ" class="contact-mobile-link social-fixed-link">
-                <i class="fab fa-youtube"></i>
-            </a>
-        </li>
-		<li class="contact-mobile-item">
-            <a target="_blank" href="https://www.linkedin.com/company/brick-inmobiliaria/posts/?feedView=all" class="social-fixed-link">
-                <i class="fab fa-linkedin"></i>
-            </a>
-        </li>
-        <?php if ($whatsapp) : ?>
-            <li class="contact-mobile-item contact-floating-whatsapp">
-                <a href="#" class="contact-mobile-link contact-floating-link whatsappButton">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </li>
-        <?php endif; ?>
-        <?php if ($correos_ventas) : ?>
-            <li class="contact-mobile-item contact-floating-form">
-                <a href="#" class="contact-mobile-link contact-floating-link contactFloatingForm">
-                    <i class="far fa-envelope"></i>
-                </a>
-            </li>
-        <?php endif; ?>
-    </ul>
-</section>
 <?php if ($id_planOk || $planok) : ?>
 <div class="modal fade" id="planok-modal" tabindex="-1" role="dialog" aria-labelledby="planok-modalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen" role="document">
