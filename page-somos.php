@@ -108,21 +108,21 @@ $bloque_3_imagen = get_field('bloque_3_imagen');
 ?>
 <div class="container py-5">
     <div class="row">
-        <div class="col-md-3 text-center text-md-left my-5 my-md-0">
+        <div class="col-md-4 text-center text-md-left my-5 my-md-0">
             <h4 class="text-uppercase section-title mb-3">
                 <span class="primary-title">Proyectos</span><br>
                 <span class="secondary-title">RESIDENCIALES</span>
             </h4>
             <a href="<?php echo site_url('residencial');?>" class="btn btn-primary shadow"> Ver proyectos</a>
         </div>
-        <div class="col-md-3 text-center text-md-left my-5 my-md-0">
+        <div class="col-md-4 text-center text-md-left my-5 my-md-0">
             <h4 class="text-uppercase section-title section-title_verde mb-3">
                 <span class="primary-title">Proyectos</span><br>
                 <span class="secondary-title">COMERCIALES</span>
             </h4>
             <a href="<?php echo site_url('comercial');?>" class="btn btn-primary shadow"> Ver proyectos</a>
         </div>
-        <div class="col-md-3 text-center text-md-left my-5 my-md-0">
+        <div class="col-md-4 text-center text-md-left my-5 my-md-0">
             <h4 class="text-uppercase section-title section-title_gris mb-3">
                 <span class="primary-title">Proyectos</span><br>
                 <span class="secondary-title">Bodegas</span>
