@@ -1,7 +1,7 @@
 <?php /*
 Template Name: Somos Brick
 */
-get_template_part('includes/header'); 
+get_template_part('includes/header');
 bk_main_before();
 $bloque_1_texto = get_field('bloque_1_texto');
 $bloque_1_imagen = get_field('bloque_1_imagen');
@@ -11,12 +11,12 @@ $bloque_3_texto = get_field('bloque_3_texto');
 $bloque_3_imagen = get_field('bloque_3_imagen');
 ?>
 <section class="primary-hero" style="position:relative;">
-    <div class="blur-img" style="background:url('<?php echo the_post_thumbnail_url( );?>')">
+    <div class="blur-img" style="background:url('<?php echo the_post_thumbnail_url();?>')">
     </div>
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <img src="<?php echo the_post_thumbnail_url( );?>" alt="Somos Brick" class="w-100">
+                    <img src="<?php echo the_post_thumbnail_url();?>" alt="Somos Brick" class="w-100">
                 </div>
             </div>
     </div> 
@@ -33,36 +33,80 @@ $bloque_3_imagen = get_field('bloque_3_imagen');
     </div>
     <hr>
     <div class="row align-items-stretch">
-        <div class="col-md-6 d-flex align-items-center">
-            <img class="w-100" src="<?php bloginfo('template_directory');?>/assets/img/teamBrick3.jpg" alt="Somos">
-        </div>
-        <div class="col-md-6 d-flex align-items-center mt-5 mt-md-0">
-                <ul class="pl-md-5">
-                    <li class="py-1">
-                        <img src="<?php bloginfo('template_directory');?>/assets/img/ubicaciones.svg" alt="">
-                        <p>
-                            <?php echo $bloque_1_texto; ?>
-                        </p>
+        <ul class="d-flex flex-column flex-md-row mt-5 mt-md-0 w-100">
+            <li class="d-flex flex-column py-1 px-4">
+                <ul class="my-5">
+                    <li class="primary-title">
+                        <h2 class="display-4">+50</h2>
                     </li>
-                    <li class="py-1">
-                        <img src="<?php bloginfo('template_directory');?>/assets/img/arquitectura.svg" alt="">
-                        <p>
-                        <?php echo $bloque_2_texto; ?>
-                        </p>    
+                    <li class="px-4 w-75">
+                        <hr style="border-top: 3px solid;">
                     </li>
-                    <li class="py-1">
-                    <img src="<?php bloginfo('template_directory');?>/assets/img/entornos.svg" alt="">
-                        <p>
-                        <?php echo $bloque_3_texto; ?>
-                        </p>
+                    <li class="primary-title px-4">
+                        Proyectos inmobiliarios <br>
+                        (comercial, habitacional y bodegas)
                     </li>
                 </ul>
-        </div>
+                <div class="mt-auto">
+                    <p class="text-center text-primary-color">
+                        <img src="<?php bloginfo('template_directory');?>/assets/img/ubicaciones.svg" alt="">
+                    </p>
+                    <p>
+                        <?php echo $bloque_1_texto; ?>
+                    </p>
+                </div>
+            </li>
+            <li class="d-flex flex-column py-1 px-4">
+                <ul class="my-5">
+                    <li class="primary-title">
+                        <h2 class="display-4">+1.000</h2>
+                    </li>
+                    <li class="px-4 w-75">
+                        <hr style="border-top: 3px solid;">
+                    </li>
+                    <li class="primary-title px-4">
+                        Departamentos <br>
+                        desarrollados
+                    </li>
+                </ul>
+                <div class="mt-auto">
+                    <p class="text-center text-primary-color">
+                        <img src="<?php bloginfo('template_directory');?>/assets/img/arquitectura.svg" alt="">
+                    </p>
+                    <p>
+                        <?php echo $bloque_2_texto; ?>
+                    </p>
+                </div>
+            </li>
+            <li class="d-flex flex-column py-1 px-4">
+                <ul class="my-5">
+                    <li class="primary-title">
+                        <h2 class="display-4">+400.000m2</h2>
+                    </li>
+                    <li class="px-4 w-75">
+                        <hr style="border-top: 3px solid;">
+                    </li>
+                    <li class="primary-title px-4">
+                        Desarrollados
+                    </li>
+                </ul>
+                <div class="mt-auto">
+                    <p class="text-center text-primary-color">
+                        <img src="<?php bloginfo('template_directory');?>/assets/img/entornos.svg" alt="">
+                    </p>
+                    <p>
+                        <?php echo $bloque_3_texto; ?>
+                        <br>
+                        <br>
+                    </p>
+                </div>
+            </li>
+        </ul>
     </div>
     <hr>
 </div>
 <?php
-// include( locate_template( './includes/templates/banner-pasos.php', false, false) ); 
+// include( locate_template( './includes/templates/banner-pasos.php', false, false) );
 ?>
 <div class="container py-5">
     <div class="row">
@@ -113,7 +157,7 @@ $bloque_3_imagen = get_field('bloque_3_imagen');
     </div>
 </section>
 
-<?php 
+<?php
 bk_main_after();
-get_template_part('includes/footer'); 
+get_template_part('includes/footer');
 ?>
