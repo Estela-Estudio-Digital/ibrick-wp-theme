@@ -48,7 +48,7 @@ $bloque_3_imagen = get_field('bloque_3_imagen');
                     </li>
                 </ul>
                 <div class="mt-auto">
-                    <p class="text-center text-primary-color">
+                    <p class="text-md-center text-primary-color">
                         <img src="<?php bloginfo('template_directory');?>/assets/img/ubicaciones.svg" alt="">
                     </p>
                     <p>
@@ -70,7 +70,7 @@ $bloque_3_imagen = get_field('bloque_3_imagen');
                     </li>
                 </ul>
                 <div class="mt-auto">
-                    <p class="text-center text-primary-color">
+                    <p class="text-md-center text-primary-color">
                         <img src="<?php bloginfo('template_directory');?>/assets/img/arquitectura.svg" alt="">
                     </p>
                     <p>
@@ -91,7 +91,7 @@ $bloque_3_imagen = get_field('bloque_3_imagen');
                     </li>
                 </ul>
                 <div class="mt-auto">
-                    <p class="text-center text-primary-color">
+                    <p class="text-md-center text-primary-color">
                         <img src="<?php bloginfo('template_directory');?>/assets/img/entornos.svg" alt="">
                     </p>
                     <p>
@@ -128,13 +128,6 @@ $bloque_3_imagen = get_field('bloque_3_imagen');
                 <span class="secondary-title">Bodegas</span>
             </h4>
             <a href="<?php echo site_url('bodegas');?>" class="btn btn-primary shadow"> Ver proyectos</a>
-        </div>
-        <div class="col-md-3 text-center text-md-left my-5 my-md-0">
-            <h4 class="text-uppercase section-title section-title_naranjo mb-3">
-                <span class="primary-title">Brick</span><br>
-                <span class="secondary-title">Rentas</span>
-            </h4>
-            <a href="<?php echo site_url('rentas');?>" class="btn btn-primary shadow"> Ver proyectos</a>
         </div>
     </div>
 </div>
