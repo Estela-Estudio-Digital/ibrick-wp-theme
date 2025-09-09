@@ -96,8 +96,6 @@ $bloque_3_imagen = get_field('bloque_3_imagen');
                     </p>
                     <p>
                         <?php echo $bloque_3_texto; ?>
-                        <br>
-                        <br>
                     </p>
                 </div>
             </li>
