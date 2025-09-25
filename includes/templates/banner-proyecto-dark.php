@@ -44,7 +44,7 @@
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cotiza.jpg" alt="Cotiza Online" class="w-100">
                             </a>
                             <?php if ($caracteristicas_complemento_url) : ?>
-                                <a href="<?php echo $caracteristicas_complemento_url; ?>" class="complement-ads-bottom bottom-banner">
+                                <a href="<?php echo $caracteristicas_complemento_url; ?>" class="complement-ads-bottom medium-banner">
                                     <img src="<?php echo $caracteristicas_complemento['url'];?>" alt="<?php echo $caracteristicas_complemento['alt'];?>" class="w-100">
                                 </a>
                             <?php endif; ?>
