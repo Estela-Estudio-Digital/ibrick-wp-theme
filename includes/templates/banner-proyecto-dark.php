@@ -48,6 +48,9 @@
                                     <img src="<?php echo $caracteristicas_complemento['url'];?>" alt="<?php echo $caracteristicas_complemento['alt'];?>" class="w-100">
                                 </a>
                             <?php endif; ?>
+                            <a class="complement-ads-bottom bottom-banner" href="https://creditos.banca.me/preloan?origin=brick&partner=Brick" target="_blank" rel="noopener">
+                              <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-simula.png" alt="simula">
+                            </a>
                         </div>
                     </li>
                     <?php endif; ?>

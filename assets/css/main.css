@@ -961,7 +961,7 @@ button:focus {
   background-size: contain;
 }
 .section-title_gris .primary-title {
-  color: #3C3C3C;
+  color: #3c3c3c;
 }
 .section-title_gris .primary-title::before {
   content: "";
@@ -1091,7 +1091,7 @@ button:focus {
   background: linear-gradient(90deg, #e6e6e6 0%, #e6e6e6 50%, #d6d5d5 50%, #d6d5d5 100%);
 }
 .bg-medio-azul.dark {
-  background: linear-gradient(90deg, #323E48 0%, #323E48 50%, #d6d5d5 50%, #d6d5d5 100%);
+  background: linear-gradient(90deg, #323e48 0%, #323e48 50%, #d6d5d5 50%, #d6d5d5 100%);
 }
 
 #caracteristicas img {
@@ -1220,7 +1220,7 @@ button:focus {
   background: #e6e6e6;
 }
 .dark .gallery-overlay {
-  background: #323E48;
+  background: #323e48;
 }
 
 .home-hero-container .overlay {
@@ -1816,14 +1816,27 @@ button:focus {
     max-height: 110px;
   }
 }
-.complement-ads-bottom.bottom-banner {
-  margin-top: 10px;
+.complement-ads-bottom.medium-banner {
   display: block;
+  margin-top: 10px;
+}
+@media screen and (min-width: 1024px) {
+  .complement-ads-bottom.medium-banner {
+    position: absolute;
+    top: 130px;
+    width: 100%;
+    right: 0;
+    margin-top: 0;
+  }
+}
+.complement-ads-bottom.bottom-banner {
+  display: block;
+  margin-top: 10px;
 }
 @media screen and (min-width: 1024px) {
   .complement-ads-bottom.bottom-banner {
     position: absolute;
-    top: 130px;
+    top: 250px;
     width: 100%;
     right: 0;
     margin-top: 0;
@@ -1833,7 +1846,7 @@ button:focus {
   padding: 0 15px;
 }
 .dark .complement-ads-bottom {
-  background: #C99D67;
+  background: #c99d67;
   display: block;
   margin-top: 10px;
 }
@@ -1882,9 +1895,7 @@ button:focus {
   aspect-ratio: 1;
   border-radius: 50%;
   background: #3c3c3c;
-  --_m:
-    conic-gradient(#0000 10%,#000),
-    linear-gradient(#000 0 0) content-box;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
   mask: var(--_m);
   mask-composite: subtract;
   animation: l3 1s infinite linear;
@@ -1906,7 +1917,7 @@ button:focus {
 }
 
 .precio-block {
-  color: #CD3868;
+  color: #cd3868;
   font-weight: 900;
 }
 .dark .precio-block {
@@ -1970,7 +1981,7 @@ button:focus {
 }
 
 .project-model {
-  background: #323E48;
+  background: #323e48;
   color: white;
 }
 .project-model .icon-box {
@@ -1978,13 +1989,20 @@ button:focus {
   display: inline-block;
   padding: 2px;
 }
-.project-model .formulario-general input, .project-model .formulario-general textarea, .project-model .formulario-general select, .project-model .content-table ul:last-child {
+.project-model .formulario-general input,
+.project-model .formulario-general textarea,
+.project-model .formulario-general select,
+.project-model .content-table ul:last-child {
   border-bottom: 1px solid white !important;
 }
-.project-model .formulario-general input, .project-model .formulario-general textarea, .project-model .formulario-general select {
+.project-model .formulario-general input,
+.project-model .formulario-general textarea,
+.project-model .formulario-general select {
   color: white;
 }
-.project-model .formulario-general input:focus, .project-model .formulario-general textarea:focus, .project-model .formulario-general select:focus {
+.project-model .formulario-general input:focus,
+.project-model .formulario-general textarea:focus,
+.project-model .formulario-general select:focus {
   color: #000;
 }
 .project-model .input-group-text {
