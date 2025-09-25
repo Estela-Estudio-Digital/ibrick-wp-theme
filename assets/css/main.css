@@ -1829,6 +1829,11 @@ button:focus {
     margin-top: 0;
   }
 }
+.dark .complement-ads-bottom.medium-banner {
+  padding: 0 15px;
+  background: #c99d67;
+  top: 100px;
+}
 .complement-ads-bottom.bottom-banner {
   display: block;
   margin-top: 10px;
@@ -1843,18 +1848,7 @@ button:focus {
   }
 }
 .dark .complement-ads-bottom.bottom-banner {
-  padding: 0 15px;
-}
-.dark .complement-ads-bottom {
-  background: #c99d67;
-  display: block;
-  margin-top: 10px;
-}
-@media screen and (min-width: 1024px) {
-  .dark .complement-ads-bottom {
-    top: 100px;
-    margin-top: 0;
-  }
+  top: 200px;
 }
 
 .link-residencial .nav-item {

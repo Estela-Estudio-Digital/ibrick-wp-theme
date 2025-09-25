@@ -1172,6 +1172,11 @@ $items: 1, 2, 3, 4;
         right: 0;
         margin-top: 0;
       }
+      .dark & {
+        padding: 0 15px;
+        background: #c99d67;
+        top: 100px;
+      }
     }
     &.bottom-banner {
       display: block;
@@ -1184,18 +1189,18 @@ $items: 1, 2, 3, 4;
         margin-top: 0;
       }
       .dark & {
-        padding: 0 15px;
+        top: 200px;
       }
     }
-    .dark & {
-      background: #c99d67;
-      display: block;
-      margin-top: 10px;
-      @include MQ(L) {
-        top: 100px;
-        margin-top: 0;
-      }
-    }
+    // .dark & {
+    //   background: #c99d67;
+    //   display: block;
+    //   margin-top: 10px;
+    //   @include MQ(L) {
+    //     top: 100px;
+    //     margin-top: 0;
+    //   }
+    // }
   }
 }
 
