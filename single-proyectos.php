@@ -120,7 +120,7 @@ get_template_part('includes/header');
 <?php endif; ?>
 
 <?php if ($arquitectura_interiorismo) : ?>
-<section class="container py-md-5 mt-md-5">
+<section class="container py-md-5 mt-md-5 position-relative" style="z-index:1;">
     <div class="row py-5 align-items-center" id="proyecto">
         <div class="col-md-6">
             <?php if ($theme === 'dark') : ?>
