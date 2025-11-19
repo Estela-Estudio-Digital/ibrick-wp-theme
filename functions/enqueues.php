@@ -121,6 +121,15 @@ if (! function_exists('bk_enqueues')) {
         //  	wp_register_script('chatbot-js', get_template_directory_uri() . '/assets/js/chatbot.js', false, false, true);
         //  	wp_enqueue_script('chatbot-js');
         // }
+        
+		wp_register_script(
+			'brick-event-lib',
+			'https://ibrick.cl/wp-content/uploads/2025/09/brick-event-lib.DPei0Zhq.js',
+			array(),
+			null,
+			true
+		);
+        wp_enqueue_script('brick-event-lib');
 
         wp_register_script('main', get_template_directory_uri() . '/assets/js/main.js', false, null, true);
 

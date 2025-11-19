@@ -11,6 +11,7 @@ $dormitorios_para_filtrar = get_field_object('dormitorios_para_filtrar');
 $value = $dormitorios_para_filtrar['value'];
 $label = $dormitorios_para_filtrar['choices'][$value];
 $texto_titulo = get_field('texto_titulo', $id_proyecto);
+$rentas_repeater = get_field('selector_de_renta', $id_proyecto);
 ?>
 
 <div class="wp-block-contact-form-7-contact-form-selector w-100">
@@ -30,9 +31,9 @@ $texto_titulo = get_field('texto_titulo', $id_proyecto);
           <div style="display: none;">
               <input type="hidden" name="_wpcf7" value="560">
               <?php
-                  $plugin_data = get_plugin_data(ABSPATH . 'wp-content/plugins/contact-form-7/wp-contact-form-7.php');
-echo '<input type="hidden" name="_wpcf7_version" value="'.$plugin_data['Version'].'">';
-?>
+                $plugin_data = get_plugin_data(ABSPATH . 'wp-content/plugins/contact-form-7/wp-contact-form-7.php');
+                echo '<input type="hidden" name="_wpcf7_version" value="'.$plugin_data['Version'].'">';
+            ?>
               <input type="hidden" name="_wpcf7_locale" value="en_US">
               <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f560-o1">
               <input type="hidden" name="_wpcf7_container_post" value="0">
@@ -90,6 +91,20 @@ echo ($cantidad_de_banos == "1") ? " Baño" : " Baños";?>">
                           <input type="text" class="form-control" id="inputTelefonoCotizar" name="inputTelefonoCotizar" required>
                       </div>
                   </div>
+              </div>
+              <div class="form-group col-md-12 py-4">
+                  <select class="form-control" id="selectRenta" name="selectRenta" required aria-label="¿Cuál es tu renta complementada estimada?">
+                      <option value="" disabled selected>¿Cuál es tu renta complementada estimada?</option>
+                        <?php if (!empty($rentas_repeater)): ?>
+                        <?php foreach ($rentas_repeater as $renta): ?>
+                            <option value="<?php echo esc_html($renta['item_de_renta']); ?>"><?php echo esc_html($renta['item_de_renta']); ?></option>
+                        <?php endforeach; ?>
+                        <?php else: ?>
+                            <option value="$1.400.000 a $2.000.000">$1.400.000 a $2.000.000</option>
+                            <option value="$2.000.000 a $2.500.000">$2.000.000 a $2.500.000</option>
+                            <option value="Más de $2.500.000">Más de $2.500.000</option>
+                        <?php endif; ?>
+                  </select>
               </div>
               <div class="form-group col-md-12 ">
                   <div class="custom-control custom-checkbox">

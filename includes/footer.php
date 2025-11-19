@@ -64,11 +64,14 @@
 
         </div>
     </div>
+	  <br>
     <div class="row justify-content-end">
-      <div class="col-lg-6 mb-2">
+		
+     <!-- <div class="col-lg-6 mb-2">
         <img src="<?php bloginfo('template_directory');?>/assets/img/footer-logo-hall.svg" alt="Pertecenecmos a la Asociación de Desarrolladores Inmobiliarios" class="w-100">
-      </div>
-      <span style="height:2px; width: 100%; background-color: #f2f2f2;"></span>
+      </div> -->
+		
+      <span style="height:1px; width: 100%; background-color: #f2f2f2;"></span>
     </div>
     <div class="row">
       <div class="col-sm-12 pt-2">

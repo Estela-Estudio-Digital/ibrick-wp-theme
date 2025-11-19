@@ -226,6 +226,10 @@ $(function () {
     }
   });
 
+  $(".formulario-general select").on("change", function () {
+    $(this).valid();
+  });
+
   // Video Background
   var videoSrc = "";
   $(".playvideo").click(function () {
@@ -470,7 +474,9 @@ $(function () {
 
   // Validacion de Formularios
   $(".wpcf7Whatsapp").on("wpcf7mailsent", function (event) {
-    sendFormEventToGTM(event);
+    if (event.originalEvent) {
+      window.BrickEventLib.handleWPCF7Events(event.originalEvent);
+    }
     const telefonoProyectoWhatsapp = event.detail.inputs[3].value,
       nombreProyectoWhatsapp = event.detail.inputs[0].value,
       nombreClienteWhatsapp = event.detail.inputs[7].value;
@@ -531,6 +537,12 @@ $(function () {
     $(".form-modal").removeClass("form-modal-open");
   });
 
+  // Mensajes Personalizados - Configurar ANTES de los validadores
+  jQuery.extend(jQuery.validator.messages, {
+    required: "Este campo es obligatorio.",
+    digits: "Por favor ingresa sólo números.",
+  });
+
   // Validacion de Formularios
   // Validador de Formulario de whatsapp
   $("#formulario_floatante").validate({
@@ -564,7 +576,7 @@ $(function () {
       inputTelefonoFloatante: {
         required: "Ingresa tu numero de telefono",
         minlength: jQuery.validator.format(
-          "Introduce al menos {0} carácteres.",
+          "Introduce al menos {0} carácteres."
         ),
       },
     },
@@ -605,7 +617,7 @@ $(function () {
       inputTelefonoWhatsapp: {
         required: "Ingresa tu numero de telefono",
         minlength: jQuery.validator.format(
-          "Introduce al menos {0} carácteres.",
+          "Introduce al menos {0} carácteres."
         ),
       },
     },
@@ -648,7 +660,7 @@ $(function () {
       inputTelefonoContact: {
         required: "Ingresa tu numero de telefono",
         minlength: jQuery.validator.format(
-          "Introduce al menos {0} carácteres.",
+          "Introduce al menos {0} carácteres."
         ),
       },
     },
@@ -691,7 +703,7 @@ $(function () {
       inputTelefonoCotizar: {
         required: "Ingresa tu numero de telefono",
         minlength: jQuery.validator.format(
-          "Introduce al menos {0} carácteres.",
+          "Introduce al menos {0} carácteres."
         ),
       },
     },
@@ -722,6 +734,9 @@ $(function () {
         minlength: 9,
         maxlength: 9,
       },
+      selectRenta: {
+        required: true,
+      },
       texAreaMensajeCotizar: {
         required: false,
       },
@@ -737,18 +752,21 @@ $(function () {
       inputTelefonoCotizar: {
         required: "Ingresa tu numero de telefono",
         minlength: jQuery.validator.format(
-          "Introduce al menos {0} carácteres.",
+          "Introduce al menos {0} carácteres."
         ),
+      },
+      selectRenta: {
+        required: "Selecciona una opción.",
       },
     },
     submitHandler: function (form) {},
     errorPlacement: function (error, element) {
-      $(element).parents(".form-group").append(error);
+      if (element.is("select")) {
+        $(element).parent(".form-group").append(error);
+      } else {
+        $(element).parents(".form-group").append(error);
+      }
     },
-  });
-  //Mensajes Personalizados
-  jQuery.extend(jQuery.validator.messages, {
-    digits: "Por favor ingresa sólo números.",
   });
   //Verificación de rut desde plugin, solo muestra datos en consola
   $(".Rut").Rut({
@@ -762,7 +780,7 @@ $(function () {
     //digito_verificador: "#digito-verificador",
     //format: false,
   });
-  $(".formulario-general").on("keyup keypress", function (e) {
+  $(".formulario-general").on("keyup keypress change", function (e) {
     if ($(this).valid()) {
       $(this).find(".boton_enviar").prop("disabled", false);
     } else {
@@ -783,7 +801,7 @@ $(function () {
         return false;
       }
     },
-    "Debe ser un rut valido.",
+    "Debe ser un rut valido."
   );
 
   // Validación de sólo letras y espacio
@@ -792,7 +810,7 @@ $(function () {
     function (value, element) {
       return this.optional(element) || /^[a-z\s]+$/i.test(value);
     },
-    "Por favor ingresa sólo letras.",
+    "Por favor ingresa sólo letras."
   );
 
   // Active Menu items
@@ -835,7 +853,9 @@ $(function () {
   })();
 
   $(".brickcf7").on("wpcf7mailsent", function (event) {
-    sendFormEventToGTM(event);
+    if (event.originalEvent) {
+      window.BrickEventLib.handleWPCF7Events(event.originalEvent);
+    }
     const pdfUrl = event.detail.apiResponse.pdf_api_response_url;
     const token = event.detail.apiResponse.pdf_api_client_token;
     const cotId = event.detail.apiResponse.pdf_api_cot_id;
@@ -900,7 +920,7 @@ $(function () {
           "https://api-gci-rest.integracionplanok.io/api/cotizaciones/" +
             cotId[0].id_cotizacion +
             "/pdf?tipoDescarga=0",
-          requestOptions,
+          requestOptions
         )
           .then((response) => response.json())
           .then((result) => {
@@ -912,7 +932,7 @@ $(function () {
 
               $("#inputNamePok").val(event.target.inputNameCotizar.value);
               $("#inputLastNamePok").val(
-                event.target.inputLastNameCotizar.value,
+                event.target.inputLastNameCotizar.value
               );
               $("#inputEmailPok").val(event.target.inputEmailCotizar.value);
               $("#inputUrlPok").val(result.url);
@@ -943,318 +963,4 @@ $(function () {
 
     $(".form-modal").removeClass("form-modal-open");
   });
-});
-
-addEventListener("message", function (message) {
-  try {
-    if (
-      message.data &&
-      typeof message.data === "string" &&
-      message.data.includes("planOkLead")
-    ) {
-      const dataObj = JSON.parse(message.data);
-      dataLayer.push(dataObj);
-    }
-
-    if (
-      message.data &&
-      typeof message.data === "string" &&
-      message.data.includes("chatbotLead")
-    ) {
-      const dataObj = JSON.parse(message.data);
-      dataLayer.push({
-        ...dataObj,
-        event: dataObj.event,
-        leadEmail: dataObj.clientEmail,
-        leadPhone: dataObj.clientPhone,
-        projectTitle: dataObj.project,
-      });
-    }
-  } catch (e) {
-    console.log(e);
-  }
-});
-
-// send events to GTM from FORMS
-function _define_property(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true,
-    });
-  } else {
-    obj[key] = value;
-  }
-  return obj;
-}
-function _object_spread(target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
-    var ownKeys = Object.keys(source);
-    if (typeof Object.getOwnPropertySymbols === "function") {
-      ownKeys = ownKeys.concat(
-        Object.getOwnPropertySymbols(source).filter(function (sym) {
-          return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-        }),
-      );
-    }
-    ownKeys.forEach(function (key) {
-      _define_property(target, key, source[key]);
-    });
-  }
-  return target;
-}
-function ownKeys(object, enumerableOnly) {
-  var keys = Object.keys(object);
-  if (Object.getOwnPropertySymbols) {
-    var symbols = Object.getOwnPropertySymbols(object);
-    if (enumerableOnly) {
-      symbols = symbols.filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-      });
-    }
-    keys.push.apply(keys, symbols);
-  }
-  return keys;
-}
-function _object_spread_props(target, source) {
-  source = source != null ? source : {};
-  if (Object.getOwnPropertyDescriptors) {
-    Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-  } else {
-    ownKeys(Object(source)).forEach(function (key) {
-      Object.defineProperty(
-        target,
-        key,
-        Object.getOwnPropertyDescriptor(source, key),
-      );
-    });
-  }
-  return target;
-}
-var BASE_EVENT_NAME = "newFormSubmissionEvent";
-function sendDataToGTM(data) {
-  dataLayer.push(data);
-}
-function cleanText(text) {
-  var _doc_body;
-  var parser = new DOMParser();
-  var doc = text ? parser.parseFromString(text, "text/html") : "";
-  return (
-    (doc === null || doc === void 0
-      ? void 0
-      : (_doc_body = doc.body) === null || _doc_body === void 0
-      ? void 0
-      : _doc_body.textContent) || text
-  );
-}
-function sendModelEventToGTM(event) {
-  var _event_detail_inputs_,
-    _event_detail,
-    _event_detail_inputs_1,
-    _event_detail1,
-    _event_detail_inputs_2,
-    _event_detail2,
-    _event_detail_inputs_3,
-    _event_detail3;
-  var formName = "planOk";
-  var projectTitle = cleanText(
-    (_event_detail = event.detail) === null || _event_detail === void 0
-      ? void 0
-      : (_event_detail_inputs_ = _event_detail.inputs[0]) === null ||
-        _event_detail_inputs_ === void 0
-      ? void 0
-      : _event_detail_inputs_.value,
-  );
-  var modelTitle = cleanText(
-    (_event_detail1 = event.detail) === null || _event_detail1 === void 0
-      ? void 0
-      : (_event_detail_inputs_1 = _event_detail1.inputs[2]) === null ||
-        _event_detail_inputs_1 === void 0
-      ? void 0
-      : _event_detail_inputs_1.value,
-  );
-  var leadEmail =
-    (_event_detail2 = event.detail) === null || _event_detail2 === void 0
-      ? void 0
-      : (_event_detail_inputs_2 = _event_detail2.inputs[19]) === null ||
-        _event_detail_inputs_2 === void 0
-      ? void 0
-      : _event_detail_inputs_2.value;
-  var leadPhone =
-    (_event_detail3 = event.detail) === null || _event_detail3 === void 0
-      ? void 0
-      : (_event_detail_inputs_3 = _event_detail3.inputs[21]) === null ||
-        _event_detail_inputs_3 === void 0
-      ? void 0
-      : _event_detail_inputs_3.value;
-  dataLayer.push({
-    event: BASE_EVENT_NAME,
-    leadType: formName,
-    leadEmail: leadEmail,
-    leadPhone: leadPhone,
-    projectTitle: projectTitle,
-    modelTitle: modelTitle,
-  });
-}
-function sendGralEventToGTM(event) {
-  var _event_detail_inputs_,
-    _event_detail,
-    _event_detail_inputs_1,
-    _event_detail1,
-    _event_detail_inputs_2,
-    _event_detail2;
-  var formName = "general";
-  var leadEmail =
-    (_event_detail = event.detail) === null || _event_detail === void 0
-      ? void 0
-      : (_event_detail_inputs_ = _event_detail.inputs[5]) === null ||
-        _event_detail_inputs_ === void 0
-      ? void 0
-      : _event_detail_inputs_.value;
-  var leadPhone =
-    (_event_detail1 = event.detail) === null || _event_detail1 === void 0
-      ? void 0
-      : (_event_detail_inputs_1 = _event_detail1.inputs[6]) === null ||
-        _event_detail_inputs_1 === void 0
-      ? void 0
-      : _event_detail_inputs_1.value;
-  var projectTitle = cleanText(
-    (_event_detail2 = event.detail) === null || _event_detail2 === void 0
-      ? void 0
-      : (_event_detail_inputs_2 = _event_detail2.inputs[2]) === null ||
-        _event_detail_inputs_2 === void 0
-      ? void 0
-      : _event_detail_inputs_2.value,
-  );
-  dataLayer.push(
-    _object_spread(
-      {
-        event: BASE_EVENT_NAME,
-        leadType: formName,
-        leadEmail: leadEmail,
-        leadPhone: leadPhone,
-      },
-      !!projectTitle && { projectTitle: projectTitle },
-    ),
-  );
-}
-function sendProjectEventToGTM(event) {
-  var _event_detail_inputs_,
-    _event_detail,
-    _event_detail_inputs_1,
-    _event_detail1,
-    _event_detail_inputs_2,
-    _event_detail2;
-  var formName = "proyecto";
-  var leadEmail =
-    (_event_detail = event.detail) === null || _event_detail === void 0
-      ? void 0
-      : (_event_detail_inputs_ = _event_detail.inputs[7]) === null ||
-        _event_detail_inputs_ === void 0
-      ? void 0
-      : _event_detail_inputs_.value;
-  var leadPhone =
-    (_event_detail1 = event.detail) === null || _event_detail1 === void 0
-      ? void 0
-      : (_event_detail_inputs_1 = _event_detail1.inputs[9]) === null ||
-        _event_detail_inputs_1 === void 0
-      ? void 0
-      : _event_detail_inputs_1.value;
-  var projectTitle = cleanText(
-    (_event_detail2 = event.detail) === null || _event_detail2 === void 0
-      ? void 0
-      : (_event_detail_inputs_2 = _event_detail2.inputs[0]) === null ||
-        _event_detail_inputs_2 === void 0
-      ? void 0
-      : _event_detail_inputs_2.value,
-  );
-  dataLayer.push({
-    event: BASE_EVENT_NAME,
-    leadType: formName,
-    leadEmail: leadEmail,
-    leadPhone: leadPhone,
-    projectTitle: projectTitle,
-  });
-}
-function sendWSPEventToGTM(event) {
-  var _event_detail_inputs_,
-    _event_detail,
-    _event_detail_inputs_1,
-    _event_detail1,
-    _event_detail_inputs_2,
-    _event_detail2;
-  var formName = "whatsapp";
-  var leadEmail =
-    (_event_detail = event.detail) === null || _event_detail === void 0
-      ? void 0
-      : (_event_detail_inputs_ = _event_detail.inputs[8]) === null ||
-        _event_detail_inputs_ === void 0
-      ? void 0
-      : _event_detail_inputs_.value;
-  var leadPhone =
-    (_event_detail1 = event.detail) === null || _event_detail1 === void 0
-      ? void 0
-      : (_event_detail_inputs_1 = _event_detail1.inputs[10]) === null ||
-        _event_detail_inputs_1 === void 0
-      ? void 0
-      : _event_detail_inputs_1.value;
-  var projectTitle = cleanText(
-    (_event_detail2 = event.detail) === null || _event_detail2 === void 0
-      ? void 0
-      : (_event_detail_inputs_2 = _event_detail2.inputs[0]) === null ||
-        _event_detail_inputs_2 === void 0
-      ? void 0
-      : _event_detail_inputs_2.value,
-  );
-  dataLayer.push(
-    _object_spread(
-      {
-        event: BASE_EVENT_NAME,
-        leadType: formName,
-        leadEmail: leadEmail,
-        leadPhone: leadPhone,
-      },
-      !!projectTitle && { projectTitle: projectTitle },
-    ),
-  );
-}
-var formsIdFnMap = {
-  560: sendModelEventToGTM,
-  523: sendGralEventToGTM,
-  988: sendProjectEventToGTM,
-  1022: sendWSPEventToGTM,
-};
-function sendFormEventToGTM(event) {
-  var _event_detail;
-  var contactFormId =
-    (_event_detail = event.detail) === null || _event_detail === void 0
-      ? void 0
-      : _event_detail.contactFormId;
-  var formFunction = formsIdFnMap[contactFormId];
-  formFunction(event);
-}
-addEventListener("message", function (message) {
-  try {
-    if (
-      message.data &&
-      typeof message.data === "string" &&
-      message.data.includes("chatbotLead")
-    ) {
-      var dataObj = JSON.parse(message.data);
-      dataLayer.push(
-        _object_spread_props(_object_spread({}, dataObj), {
-          event: "newChatbotLead",
-          leadEmail: dataObj.clientEmail,
-          leadPhone: dataObj.clientPhone,
-          projectTitle: dataObj.project,
-          leadType: "chatbot",
-        }),
-      );
-    }
-  } catch (e) {
-    console.log(e);
-  }
 });
