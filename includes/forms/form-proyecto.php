@@ -1,4 +1,6 @@
-<?php ?>
+<?php 
+$rentas_repeater = get_field('selector_de_renta');
+?>
 
 <div class="wp-block-contact-form-7-contact-form-selector">
   <div role="form" class="wpcf7 wpcf7Floatante" id="wpcf7-f988-o1" lang="es-ES" dir="ltr">
@@ -62,9 +64,23 @@
                       </div>
                   </div>
               </div>
-              <div class="form-group w-100">
+              <!-- <div class="form-group w-100">
                   <label class="label" for="texAreaMensajeCotizar">Consulta</label>
                   <input class="form-control" id="texAreaMensajeCotizar" name="texAreaMensajeCotizar"></input>
+              </div> -->
+            <div class="form-group col-md-12 py-4">
+                  <select class="form-control" id="selectRenta" name="selectRenta" required aria-label="¿Cuál es tu renta complementada estimada?">
+                      <option value="" disabled selected>¿Cuál es tu renta complementada estimada?</option>
+                        <?php if (!empty($rentas_repeater)): ?>
+                        <?php foreach ($rentas_repeater as $renta): ?>
+                            <option value="<?php echo esc_html($renta['item_de_renta']); ?>"><?php echo esc_html($renta['item_de_renta']); ?></option>
+                        <?php endforeach; ?>
+                        <?php else: ?>
+                            <option value="$1.400.000 a $2.000.000">$1.400.000 a $2.000.000</option>
+                            <option value="$2.000.000 a $2.500.000">$2.000.000 a $2.500.000</option>
+                            <option value="Más de $2.500.000">Más de $2.500.000</option>
+                        <?php endif; ?>
+                  </select>
               </div>
               <div class="form-group col-md-12 ">
                   <div class="custom-control custom-checkbox">
