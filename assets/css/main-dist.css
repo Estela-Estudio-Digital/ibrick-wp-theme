@@ -1841,14 +1841,14 @@ button:focus {
 @media screen and (min-width: 1024px) {
   .complement-ads-bottom.bottom-banner {
     position: absolute;
-    top: 250px;
+    top: var(--bottom-banner-top);
     width: 100%;
     right: 0;
     margin-top: 0;
   }
 }
 .dark .complement-ads-bottom.bottom-banner {
-  top: 240px;
+  top: var(--bottom-banner-top);
 }
 
 .link-residencial .nav-item {

@@ -37,23 +37,21 @@
                         </li>
                         <hr class="d-md-none">
                     <?php endif; ?>
-                    <?php if ($caracteristicas_complemento || $imagen_de_promocion_desktop) : ?>
                     <li class="pt-md-0 d-flex justify-content-center">
                         <div class="complement-ads-container shadow position-relative">
                             <a href="<?php echo $url_proyecto; ?>#plantas" class="complement-ads-bottom">
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cotiza.jpg" alt="Cotiza Online" class="w-100">
                             </a>
-                            <?php if ($caracteristicas_complemento_url) : ?>
+                            <?php if ($caracteristicas_complemento) : ?>
                                 <a href="<?php echo $caracteristicas_complemento_url; ?>" class="complement-ads-bottom medium-banner">
                                     <img src="<?php echo $caracteristicas_complemento['url'];?>" alt="<?php echo $caracteristicas_complemento['alt'];?>" class="w-100">
                                 </a>
                             <?php endif; ?>
-                            <a class="complement-ads-bottom bottom-banner" href="https://creditos.banca.me/preloan?origin=brick&partner=Brick" target="_blank" rel="noopener">
+                            <a class="complement-ads-bottom bottom-banner" style="<?php echo ($caracteristicas_complemento) ? "--bottom-banner-top:250px" : "top:130px"; ?>" href="https://creditos.banca.me/preloan?origin=brick&partner=Brick" target="_blank" rel="noopener">
                               <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-simula.png" alt="simula">
                             </a>
                         </div>
                     </li>
-                    <?php endif; ?>
                 </ul>
             </div>
         </div>

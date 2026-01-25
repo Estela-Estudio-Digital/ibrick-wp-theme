@@ -1183,13 +1183,13 @@ $items: 1, 2, 3, 4;
       margin-top: 10px;
       @include MQ(L) {
         position: absolute;
-        top: 250px;
+        top: var(--bottom-banner-top);
         width: 100%;
         right: 0;
         margin-top: 0;
       }
       .dark & {
-        top: 240px;
+        top: var(--bottom-banner-top);
       }
     }
     // .dark & {
